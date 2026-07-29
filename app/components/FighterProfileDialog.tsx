@@ -6,21 +6,13 @@ import {
   FIGHTER_PROFILES,
   type KoreanFighter,
 } from "../data/fighters";
+import { FighterFace } from "./FighterFace";
 
 export type FighterSelection = {
   name: string;
   koName: string;
   weight: string;
 };
-
-export function fighterInitials(name: string) {
-  return name
-    .split(" ")
-    .map((part) => part[0])
-    .join("")
-    .slice(0, 3)
-    .toUpperCase();
-}
 
 export function recordSummary(record: string) {
   const wins = Number(record.match(/(\d+)승/)?.[1] ?? 0);
@@ -63,9 +55,11 @@ export function KoreanFighterCard({
       aria-label={`${fighter.koName} 상세 정보 보기`}
     >
       <span className="korean-card-top">
-        <span className="korean-card-avatar" aria-hidden="true">
-          {fighterInitials(fighter.name)}
-        </span>
+        <FighterFace
+          name={fighter.name}
+          koName={fighter.koName}
+          className="korean-card-avatar"
+        />
         <span className="korean-card-status">
           <i aria-hidden="true" />
           {status === "active"
@@ -173,9 +167,12 @@ export function FighterProfileDialog({
         </button>
 
         <div className="fighter-profile-head">
-          <div className="fighter-avatar" aria-hidden="true">
-            <span>{fighterInitials(fighter.name)}</span>
-          </div>
+          <FighterFace
+            name={fighter.name}
+            koName={fighter.koName}
+            className="fighter-avatar"
+            eager
+          />
           <div>
             <span className="fighter-profile-kicker">
               {profile?.verificationSources

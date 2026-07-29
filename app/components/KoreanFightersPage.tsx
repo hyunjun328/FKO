@@ -132,9 +132,12 @@ export function KoreanFightersPage() {
             선수 정보는 공개된 공식 자료와 전적 자료를 바탕으로 검수합니다.
           </p>
         </div>
-        <Link className="footer-home-link" href="/">
-          일정 홈으로 →
-        </Link>
+        <span className="footer-links">
+          <Link href="/photo-credits">선수 사진 출처</Link>
+          <Link className="footer-home-link" href="/">
+            일정 홈으로 →
+          </Link>
+        </span>
       </footer>
 
       {selectedFighter ? (

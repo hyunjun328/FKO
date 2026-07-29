@@ -1,0 +1,47 @@
+# 선수 사진 대상 추출과 생성된 출처 데이터의 무결성을 검증한다.
+import json
+import unittest
+from pathlib import Path
+
+from scripts.collect_fighter_images import (
+    ALLOWED_LICENSE_PREFIXES,
+    OUTPUT_DATA,
+    OUTPUT_DIR,
+    requested_fighters,
+)
+
+
+class FighterImageCollectorTest(unittest.TestCase):
+    def test_extracts_every_requested_surface(self) -> None:
+        targets = requested_fighters()
+
+        self.assertEqual(len(targets), 219)
+        self.assertIn("Uros Medic", targets)
+        self.assertIn("Dooho Choi", targets)
+        self.assertIn("Islam Makhachev", targets)
+        self.assertIn("main-card", targets["Uros Medic"])
+        self.assertIn("korean", targets["Dooho Choi"])
+        self.assertIn("ranking", targets["Islam Makhachev"])
+
+    def test_generated_images_have_local_files_and_reuse_metadata(self) -> None:
+        targets = requested_fighters()
+        images = json.loads(OUTPUT_DATA.read_text(encoding="utf-8"))
+
+        self.assertGreaterEqual(len(images), 80)
+        for name, image in images.items():
+            with self.subTest(name=name):
+                self.assertIn(name, targets)
+                self.assertEqual(image["groups"], sorted(targets[name]))
+                self.assertTrue(
+                    image["license"].startswith(ALLOWED_LICENSE_PREFIXES)
+                )
+                self.assertTrue(image["sourceUrl"].startswith("https://"))
+                self.assertTrue(image["licenseUrl"].startswith("https://"))
+                self.assertTrue(image["wikidataId"].startswith("Q"))
+                local_path = OUTPUT_DIR.parent / image["src"].lstrip("/")
+                self.assertTrue(local_path.is_file())
+                self.assertGreater(local_path.stat().st_size, 500)
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -13,12 +13,16 @@ test("exports every public route below the FKO base path", async () => {
   const home = await readOutput("index.html");
   const rankings = await readOutput("rankings/index.html");
   const koreanFighters = await readOutput("korean-fighters/index.html");
+  const photoCredits = await readOutput("photo-credits/index.html");
 
   assert.match(home, /FKO/);
   assert.match(home, /\/FKO\/rankings\//);
   assert.match(home, /\/FKO\/korean-fighters\//);
+  assert.match(home, /\/FKO\/photo-credits\//);
   assert.match(rankings, /선수 랭킹/);
   assert.match(koreanFighters, /코리안 파이터/);
+  assert.match(photoCredits, /선수 사진 출처/);
+  assert.match(photoCredits, /src="\/FKO\/fighters\/[^"]+\.webp"/);
 });
 
 test("prefixes scripts, fonts, and social metadata for GitHub Pages", async () => {

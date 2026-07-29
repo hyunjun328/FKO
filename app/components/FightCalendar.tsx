@@ -10,6 +10,7 @@ import {
   recordSummary,
   type FighterSelection,
 } from "./FighterProfileDialog";
+import { FighterFace } from "./FighterFace";
 
 const KST_FORMATTER = new Intl.DateTimeFormat("ko-KR", {
   timeZone: "Asia/Seoul",
@@ -127,6 +128,13 @@ function EventDetail({
                     }
                     aria-label={`${bout.leftKo} 선수 정보 보기`}
                   >
+                    {section === "main" ? (
+                      <FighterFace
+                        name={bout.left}
+                        koName={bout.leftKo}
+                        className="bout-fighter-face"
+                      />
+                    ) : null}
                     <span className="fighter-name-line">
                       <strong>{bout.leftKo}</strong>
                       {leftProfile ? (
@@ -155,6 +163,13 @@ function EventDetail({
                     }
                     aria-label={`${bout.rightKo} 선수 정보 보기`}
                   >
+                    {section === "main" ? (
+                      <FighterFace
+                        name={bout.right}
+                        koName={bout.rightKo}
+                        className="bout-fighter-face"
+                      />
+                    ) : null}
                     <span className="fighter-name-line">
                       <strong>{bout.rightKo}</strong>
                       {rightProfile ? (
@@ -398,6 +413,12 @@ export function FightCalendar() {
                 }
                 aria-label={`${mainEvent.leftKo} 선수 정보 보기`}
               >
+                <FighterFace
+                  name={mainEvent.left}
+                  koName={mainEvent.leftKo}
+                  className="hero-fighter-face"
+                  eager
+                />
                 <b>{mainEvent.leftKo}</b>
                 <small lang="en">{mainEvent.left}</small>
               </button>
@@ -414,6 +435,12 @@ export function FightCalendar() {
                 }
                 aria-label={`${mainEvent.rightKo} 선수 정보 보기`}
               >
+                <FighterFace
+                  name={mainEvent.right}
+                  koName={mainEvent.rightKo}
+                  className="hero-fighter-face"
+                  eager
+                />
                 <b>{mainEvent.rightKo}</b>
                 <small lang="en">{mainEvent.right}</small>
               </button>
@@ -447,6 +474,18 @@ export function FightCalendar() {
               aria-label={`${featuredEvent.title} ${featuredBout.leftKo} 대 ${featuredBout.rightKo} 상세 보기`}
             >
               <span className="hero-panel-label">다음 주요 매치</span>
+              <span className="featured-fighter-faces" aria-hidden="true">
+                <FighterFace
+                  name={featuredBout.left}
+                  koName={featuredBout.leftKo}
+                  className="featured-fighter-face"
+                />
+                <FighterFace
+                  name={featuredBout.right}
+                  koName={featuredBout.rightKo}
+                  className="featured-fighter-face"
+                />
+              </span>
               <strong>
                 <span>{featuredBout.leftKo}</span>
                 <i>VS</i>
@@ -566,7 +605,10 @@ export function FightCalendar() {
             제공하지 않습니다.
           </p>
         </div>
-        <span className="footer-status">1차 공개 베타</span>
+        <span className="footer-links">
+          <Link href="/photo-credits">선수 사진 출처</Link>
+          <span className="footer-status">1차 공개 베타</span>
+        </span>
       </footer>
 
       {selectedFighter ? (

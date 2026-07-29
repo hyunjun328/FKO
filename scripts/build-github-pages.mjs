@@ -18,6 +18,7 @@ const result = spawnSync(process.execPath, [nextCli, "build"], {
   env: {
     ...process.env,
     GITHUB_PAGES: "true",
+    NEXT_PUBLIC_BASE_PATH: "/FKO",
     NEXT_PUBLIC_SITE_URL: pagesUrl,
   },
   stdio: "inherit",

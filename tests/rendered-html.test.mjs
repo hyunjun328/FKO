@@ -64,6 +64,9 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /href="\/korean-fighters"/);
   assert.match(html, /선수 랭킹/);
   assert.match(html, /href="\/rankings"/);
+  assert.match(html, /class="fighter-face hero-fighter-face"/);
+  assert.match(html, /class="fighter-face bout-fighter-face"/);
+  assert.match(html, /href="\/photo-credits"/);
   assert.doesNotMatch(normalizedHtml, /현역 6명[^<]*·[^<]*역대 6명/);
   assert.doesNotMatch(html, /korean-fighters-gateway/);
   assert.doesNotMatch(html, /정찬성|김동현/);
@@ -135,6 +138,8 @@ test("server-renders active and former Korean fighters on a separate page", asyn
   assert.doesNotMatch(html, /The Korean Tyson/);
   assert.match(html, /href="\/"/);
   assert.match(html, /href="\/rankings"/);
+  assert.match(html, /class="fighter-face korean-card-avatar"/);
+  assert.match(html, /href="\/photo-credits"/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
 
@@ -190,7 +195,25 @@ test("server-renders the official UFC ranking comparison page", async () => {
   );
   assert.match(html, /href="\/korean-fighters"/);
   assert.match(html, /href="\/"/);
+  assert.match(html, /class="fighter-face ranking-champion-face"/);
+  assert.match(html, /class="fighter-face ranking-fighter-face"/);
+  assert.match(html, /href="\/photo-credits"/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
+});
+
+test("server-renders reusable fighter photo credits", async () => {
+  const response = await render("/photo-credits");
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
+
+  const html = await response.text();
+  assert.match(html, /선수 사진 출처/);
+  assert.match(html, /Wikimedia Commons/);
+  assert.match(html, /class="photo-credit-card"/);
+  assert.match(html, /Commons 원본 파일 보기/);
+  assert.match(html, /라이선스/);
+  assert.match(html, /loading="lazy"/);
+  assert.match(html, /href="\/"/);
 });
 
 test("maps every ranked fighter to a Korean display name", async () => {

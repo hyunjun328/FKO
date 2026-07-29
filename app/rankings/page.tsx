@@ -119,9 +119,12 @@ export default function RankingsPage() {
             제공합니다.
           </p>
         </div>
-        <Link className="footer-home-link" href="/">
-          일정 홈으로 →
-        </Link>
+        <span className="footer-links">
+          <Link href="/photo-credits">선수 사진 출처</Link>
+          <Link className="footer-home-link" href="/">
+            일정 홈으로 →
+          </Link>
+        </span>
       </footer>
     </main>
   );

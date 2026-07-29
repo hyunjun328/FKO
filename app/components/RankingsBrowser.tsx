@@ -18,6 +18,7 @@ import {
   findUnrankedFighterMatches,
   normalizeRankingQuery,
 } from "../lib/ranking-search";
+import { FighterFace } from "./FighterFace";
 
 function compareRank(entry: RankingEntry, media: RankingEntry[]) {
   const mediaEntry = media.find((fighter) => fighter.name === entry.name);
@@ -51,6 +52,11 @@ function RankingChampionResult({ name }: { name: string }) {
   return (
     <div className="ranking-board-champion-result">
       <span className="ranking-champion-mark">C</span>
+      <FighterFace
+        name={name}
+        koName={rankingKoreanName(name)}
+        className="ranking-fighter-face"
+      />
       <RankingName name={name} />
       <strong>현 UFC 챔피언</strong>
     </div>
@@ -169,6 +175,11 @@ export function RankingsBrowser() {
                 {unrankedMatches.map((fighter) => (
                   <article key={fighter.name}>
                     <span className="ranking-unranked-mark">NR</span>
+                    <FighterFace
+                      name={fighter.name}
+                      koName={fighter.koName}
+                      className="ranking-fighter-face"
+                    />
                     <span className="ranking-fighter-name">
                       <strong>{fighter.koName}</strong>
                       <small lang="en">{fighter.name}</small>
@@ -201,6 +212,11 @@ export function RankingsBrowser() {
               {division.showChampionHeader ? (
                 <div className="ranking-champion-row">
                   <span className="ranking-champion-mark">C</span>
+                  <FighterFace
+                    name={division.champion}
+                    koName={rankingKoreanName(division.champion)}
+                    className="ranking-champion-face"
+                  />
                   <RankingName name={division.champion} />
                   <span className="ranking-champion-label">UFC 챔피언</span>
                 </div>
@@ -234,6 +250,11 @@ export function RankingsBrowser() {
                             <span className="ranking-number">
                               {fighter.rank}
                             </span>
+                            <FighterFace
+                              name={fighter.name}
+                              koName={rankingKoreanName(fighter.name)}
+                              className="ranking-fighter-face"
+                            />
                             <RankingName name={fighter.name} />
                             <small data-tone={comparison.tone}>
                               {comparison.label}
@@ -268,6 +289,11 @@ export function RankingsBrowser() {
                           <span className="ranking-number">
                             {fighter.rank}
                           </span>
+                          <FighterFace
+                            name={fighter.name}
+                            koName={rankingKoreanName(fighter.name)}
+                            className="ranking-fighter-face"
+                          />
                           <RankingName name={fighter.name} />
                         </li>
                       ))}

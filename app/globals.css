@@ -3299,3 +3299,335 @@ body :is(b, strong) {
     display: none;
   }
 }
+
+/* 검수된 선수 사진을 일정·한국 선수·랭킹 화면에 같은 규칙으로 표시한다. */
+.fighter-face {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #454545;
+  border-radius: 50%;
+  background: #1a1a1a;
+  color: #9b9b96;
+  font-size: 0.7rem;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+}
+
+.fighter-face[data-has-photo="false"] {
+  background:
+    linear-gradient(135deg, transparent 47%, #343434 48% 52%, transparent 53%),
+    #1a1a1a;
+}
+
+.fighter-face img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 22%;
+  filter: saturate(0.88) contrast(1.04);
+}
+
+.fighter-face > span {
+  line-height: 1;
+}
+
+.hero-fighter-face {
+  width: clamp(76px, 8vw, 104px);
+  height: clamp(76px, 8vw, 104px);
+  margin-bottom: 8px;
+  border-color: #505050;
+}
+
+.matchup-fighter:first-child .hero-fighter-face {
+  justify-self: start;
+}
+
+.matchup-fighter:last-child .hero-fighter-face {
+  justify-self: end;
+}
+
+.featured-fighter-faces {
+  display: flex;
+  margin-top: 17px;
+}
+
+.featured-fighter-face {
+  width: 58px;
+  height: 58px;
+}
+
+.featured-fighter-face + .featured-fighter-face {
+  margin-left: -11px;
+  box-shadow: 0 0 0 3px var(--ink);
+}
+
+.bout-fighter-face {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 3px;
+}
+
+.korean-card-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.korean-fighter-card[data-status="former"] .korean-card-avatar[data-has-photo="true"] {
+  background: #1a1a1a;
+}
+
+.fighter-avatar {
+  width: 116px;
+  height: 116px;
+  border-radius: 10px;
+}
+
+.fighter-avatar[data-has-photo="true"]::after {
+  content: none;
+}
+
+.fighter-avatar > span {
+  font-size: 2rem;
+}
+
+.ranking-board li {
+  grid-template-columns: 34px 38px minmax(0, 1fr) auto;
+  min-height: 60px;
+}
+
+.ranking-fighter-face {
+  width: 38px;
+  height: 38px;
+}
+
+.ranking-champion-row {
+  grid-template-columns: 40px 52px minmax(0, 1fr) auto;
+}
+
+.ranking-champion-face {
+  width: 52px;
+  height: 52px;
+}
+
+.ranking-board-champion-result {
+  grid-template-columns: 40px 44px minmax(0, 1fr) auto;
+}
+
+.ranking-board-champion-result .ranking-fighter-face {
+  width: 44px;
+  height: 44px;
+}
+
+.ranking-unranked-results article {
+  grid-template-columns: 42px 44px minmax(150px, 1fr) minmax(190px, auto) auto;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.footer-links > a {
+  color: var(--text);
+  font-size: 0.76rem;
+  font-weight: 560;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  white-space: nowrap;
+}
+
+.photo-credits-page {
+  width: min(1180px, 100%);
+}
+
+.photo-credits-hero {
+  display: grid;
+  gap: 12px;
+  padding: 70px 0 48px;
+  border-bottom: 1px solid var(--line);
+}
+
+.photo-credits-hero h1 {
+  margin: 0;
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  font-weight: 700;
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+}
+
+.photo-credits-hero p {
+  max-width: 680px;
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+
+.photo-credits-hero > strong {
+  color: var(--lime);
+  font-size: 0.76rem;
+  font-weight: 560;
+}
+
+.photo-credit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding-top: 38px;
+}
+
+.photo-credit-card {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 16px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+}
+
+.photo-credit-card > img {
+  width: 112px;
+  height: 112px;
+  border-radius: 6px;
+  object-fit: cover;
+  object-position: 50% 22%;
+  filter: saturate(0.88) contrast(1.04);
+}
+
+.photo-credit-card h2 {
+  margin: 2px 0 0;
+  font-size: 0.98rem;
+  font-weight: 650;
+}
+
+.photo-credit-card small {
+  color: var(--muted);
+  font-size: 0.68rem;
+}
+
+.photo-credit-card dl {
+  display: grid;
+  gap: 5px;
+  margin: 12px 0 8px;
+}
+
+.photo-credit-card dl > div {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 8px;
+  font-size: 0.65rem;
+  line-height: 1.4;
+}
+
+.photo-credit-card dt {
+  color: var(--muted);
+}
+
+.photo-credit-card dd {
+  overflow: hidden;
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.photo-credit-card a {
+  color: var(--text);
+  text-underline-offset: 3px;
+}
+
+.photo-credit-source {
+  font-size: 0.65rem;
+}
+
+@media (max-width: 680px) {
+  .hero-fighter-face {
+    width: 68px;
+    height: 68px;
+  }
+
+  .bout-fighter-face {
+    width: 42px;
+    height: 42px;
+  }
+
+  .korean-card-avatar {
+    width: 58px;
+    height: 58px;
+  }
+
+  .ranking-champion-row,
+  .ranking-board-champion-result {
+    grid-template-columns: 36px 42px minmax(0, 1fr);
+  }
+
+  .ranking-champion-face,
+  .ranking-board-champion-result .ranking-fighter-face {
+    width: 42px;
+    height: 42px;
+  }
+
+  .ranking-champion-label,
+  .ranking-board-champion-result > strong {
+    grid-column: 3;
+    margin-top: -8px;
+  }
+
+  .ranking-board li {
+    grid-template-columns: 32px 36px minmax(0, 1fr);
+  }
+
+  .ranking-fighter-face {
+    width: 36px;
+    height: 36px;
+  }
+
+  .ranking-board li > small {
+    grid-column: 3;
+  }
+
+  .ranking-unranked-results article {
+    grid-template-columns: 40px 40px minmax(0, 1fr);
+  }
+
+  .ranking-unranked-state,
+  .ranking-unranked-results article > a {
+    grid-column: 3;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+  }
+
+  .photo-credits-hero {
+    padding: 44px 0 34px;
+  }
+
+  .photo-credit-grid {
+    grid-template-columns: 1fr;
+    padding-top: 24px;
+  }
+
+  .photo-credit-card {
+    grid-template-columns: 88px minmax(0, 1fr);
+  }
+
+  .photo-credit-card > img {
+    width: 88px;
+    height: 88px;
+  }
+}
