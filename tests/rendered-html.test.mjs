@@ -60,6 +60,17 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /26전 19승 7패/);
   assert.match(html, /22전 17승 4패 1무/);
   assert.match(html, /다음 경기 미정/);
+  const seokHyeonCard =
+    normalizedHtml.match(
+      /<button[^>]*aria-label="고석현 상세 정보 보기"[^>]*>([\s\S]*?)<\/button>/,
+    )?.[1] ?? "";
+  assert.match(seokHyeonCard, /5곳 교차 검증/);
+  assert.match(seokHyeonCard, /“Technical”/);
+  assert.match(seokHyeonCard, /16전 13승 3패/);
+  assert.match(seokHyeonCard, /data-result="패"/);
+  assert.match(seokHyeonCard, /장폴 레보스노야니/);
+  assert.doesNotMatch(seokHyeonCard, /data-result="승"/);
+  assert.doesNotMatch(html, /The Korean Tyson/);
   assert.match(
     normalizedHtml,
     /메인카드[^<]*·[^<]*8월 2일[^<]*02:00[^<]*KST/,

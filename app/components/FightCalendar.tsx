@@ -90,6 +90,11 @@ function FighterProfileDialog({
   onClose: () => void;
 }) {
   const profile = FIGHTER_PROFILES[fighter.name];
+  const verificationSources =
+    profile?.verificationSources ??
+    (profile
+      ? [{ label: "UFC 공식 선수 정보", url: profile.sourceUrl }]
+      : []);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -134,7 +139,11 @@ function FighterProfileDialog({
           </div>
           <div>
             <span className="fighter-profile-kicker">
-              {profile ? "검수된 선수 정보" : "기본 선수 정보"}
+              {profile?.verificationSources
+                ? `${profile.verificationSources.length}개 출처 교차 검증`
+                : profile
+                  ? "검수된 선수 정보"
+                  : "기본 선수 정보"}
             </span>
             <h2 id="fighter-dialog-title">{fighter.koName}</h2>
             <p lang="en">{fighter.name}</p>
@@ -151,6 +160,9 @@ function FighterProfileDialog({
             <div className="fighter-profile-badges">
               <span>{profile.ranking}</span>
               <span>{recordSummary(profile.record)}</span>
+              {profile.verificationSources ? (
+                <span className="verified-badge">교차 검증 완료</span>
+              ) : null}
             </div>
             <p className="fighter-profile-summary">{profile.summary}</p>
             {profile.lastFight ? (
@@ -214,6 +226,12 @@ function FighterProfileDialog({
                 <dt>확인일</dt>
                 <dd>{profile.verifiedAt}</dd>
               </div>
+              {profile.verificationSources ? (
+                <div>
+                  <dt>검수 근거</dt>
+                  <dd>{profile.verificationSources.length}개 출처</dd>
+                </div>
+              ) : null}
             </dl>
           </>
         ) : (
@@ -227,11 +245,16 @@ function FighterProfileDialog({
         )}
 
         <div className="fighter-external-links">
-          {profile ? (
-            <a href={profile.sourceUrl} target="_blank" rel="noreferrer">
-              UFC 공식 선수 정보 ↗
+          {verificationSources.map((source) => (
+            <a
+              href={source.url}
+              target="_blank"
+              rel="noreferrer"
+              key={source.url}
+            >
+              {source.label} ↗
             </a>
-          ) : null}
+          ))}
           <a
             href={officialYoutubeSearch(fighter.name)}
             target="_blank"
@@ -766,7 +789,9 @@ export function FightCalendar() {
                   </span>
                   <span className="korean-card-status">
                     <i aria-hidden="true" />
-                    UFC 현역
+                    {profile.verificationSources
+                      ? `${profile.verificationSources.length}곳 교차 검증`
+                      : "UFC 현역"}
                   </span>
                 </span>
                 <span className="korean-card-name">

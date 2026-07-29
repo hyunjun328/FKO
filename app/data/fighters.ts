@@ -18,6 +18,10 @@ export type FighterProfile = {
     date: string;
     method: string;
   };
+  verificationSources?: {
+    label: string;
+    url: string;
+  }[];
   sourceUrl: string;
   verifiedAt: string;
 };
@@ -59,6 +63,20 @@ export const FIGHTER_PROFILES: Record<string, FighterProfile> = {
       method: "3라운드 만장일치 판정",
     },
     sourceUrl: "https://www.ufc.com/athlete/jun-yong-park",
+    verificationSources: [
+      {
+        label: "UFC 선수 프로필",
+        url: "https://www.ufc.com/athlete/jun-yong-park",
+      },
+      {
+        label: "UFC 321 공식 결과",
+        url: "https://www.ufc.com/event/ufc-321",
+      },
+      {
+        label: "Sherdog 전적",
+        url: "https://www.sherdog.com/fighter/Jun-Yong-Park-159071",
+      },
+    ],
     verifiedAt: "2026-07-29",
   },
   "Dooho Choi": {
@@ -82,11 +100,25 @@ export const FIGHTER_PROFILES: Record<string, FighterProfile> = {
       method: "2라운드 4:29 KO/TKO",
     },
     sourceUrl: "https://www.ufc.com/athlete/dooho-choi",
+    verificationSources: [
+      {
+        label: "UFC 선수 프로필",
+        url: "https://www.ufc.com/athlete/dooho-choi",
+      },
+      {
+        label: "UFC 공식 경기 결과",
+        url: "https://www.ufc.com/event/ufc-fight-night-may-16-2026",
+      },
+      {
+        label: "Sherdog 전적",
+        url: "https://www.sherdog.com/fighter/Doo-Ho-Choi-56689",
+      },
+    ],
     verifiedAt: "2026-07-29",
   },
   "SeokHyeon Ko": {
     name: "SeokHyeon Ko",
-    nickname: "The Korean Tyson",
+    nickname: "Technical",
     record: "13승 3패",
     ranking: "공식 랭킹 없음",
     country: "대한민국 부산",
@@ -96,15 +128,37 @@ export const FIGHTER_PROFILES: Record<string, FighterProfile> = {
     team: "HAVAS MMA",
     octagonDebut: "2025-06-21",
     summary:
-      "삼보 세계선수권 우승 경력을 바탕으로 타격과 그래플링을 연결하는 웰터급 선수. UFC 첫 세 경기를 모두 판정승으로 마쳤다.",
+      "삼보 세계선수권 우승 경력을 바탕으로 타격과 그래플링을 연결하는 웰터급 선수. UFC 첫 두 경기를 판정승으로 거둔 뒤 장폴 레보스노야니에게 판정패했다.",
     lastFight: {
-      result: "승",
+      result: "패",
       opponent: "Jean-Paul Lebosnoyani",
       opponentKo: "장폴 레보스노야니",
       date: "2026-07-18",
-      method: "3라운드 만장일치 판정",
+      method: "3라운드 만장일치 판정패 · 29-28×3",
     },
     sourceUrl: "https://www.ufc.com/athlete/seokhyeon-ko",
+    verificationSources: [
+      {
+        label: "UFC 공식 경기 결과",
+        url: "https://www.ufc.com/event/ufc-fight-night-july-18-2026",
+      },
+      {
+        label: "UFC 공식 스코어카드",
+        url: "https://www.ufc.com/news/ufc-oklahoma-city-official-scorecards",
+      },
+      {
+        label: "UFC 승자 인터뷰",
+        url: "https://www.ufc.com/video/158380",
+      },
+      {
+        label: "UFC 고석현 인터뷰",
+        url: "https://www.ufc.com/news/seokhyeon-ko-quietly-making-waves-welterweight-ufc-oklahoma-city",
+      },
+      {
+        label: "Sherdog 전적",
+        url: "https://www.sherdog.com/fighter/Seok-Hyeon-Ko-275977",
+      },
+    ],
     verifiedAt: "2026-07-29",
   },
   "HyunSung Park": {
@@ -128,6 +182,20 @@ export const FIGHTER_PROFILES: Record<string, FighterProfile> = {
       method: "3라운드 2:15 서브미션",
     },
     sourceUrl: "https://www.ufc.com/athlete/hyunsung-park",
+    verificationSources: [
+      {
+        label: "UFC 선수 프로필",
+        url: "https://www.ufc.com/athlete/hyunsung-park",
+      },
+      {
+        label: "UFC 공식 경기 결과",
+        url: "https://www.ufc.com/event/ufc-fight-night-october-18-2025",
+      },
+      {
+        label: "Sherdog 전적",
+        url: "https://www.sherdog.com/fighter/Hyun-Sung-Park-289999",
+      },
+    ],
     verifiedAt: "2026-07-29",
   },
   "JeongYeong Lee": {
@@ -151,6 +219,20 @@ export const FIGHTER_PROFILES: Record<string, FighterProfile> = {
       method: "3라운드 만장일치 판정",
     },
     sourceUrl: "https://www.ufc.com/athlete/jeongyeong-lee",
+    verificationSources: [
+      {
+        label: "UFC 선수 프로필",
+        url: "https://www.ufc.com/athlete/jeongyeong-lee",
+      },
+      {
+        label: "UFC 315 공식 결과",
+        url: "https://www.ufc.com/event/ufc-315",
+      },
+      {
+        label: "Sherdog 전적",
+        url: "https://www.sherdog.com/fighter/Jeong-Yeong-Lee-135897",
+      },
+    ],
     verifiedAt: "2026-07-29",
   },
   "JooSang Yoo": {
@@ -173,6 +255,20 @@ export const FIGHTER_PROFILES: Record<string, FighterProfile> = {
       method: "2라운드 0:21 KO/TKO",
     },
     sourceUrl: "https://www.ufc.com/athlete/joo-sang-yoo",
+    verificationSources: [
+      {
+        label: "UFC 선수 프로필",
+        url: "https://www.ufc.com/athlete/joo-sang-yoo",
+      },
+      {
+        label: "UFC 320 공식 결과",
+        url: "https://www.ufc.com/event/ufc-320",
+      },
+      {
+        label: "네바다 체육위원회 결과",
+        url: "https://boxing.nv.gov/uploadedFiles/boxingnvgov/content/results/2025_Results/10-04-25MMA_REDACTED.pdf",
+      },
+    ],
     verifiedAt: "2026-07-29",
   },
   "Uros Medic": {

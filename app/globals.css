@@ -783,6 +783,11 @@ a:focus-visible {
   font-weight: 900;
 }
 
+.fighter-profile-badges .verified-badge {
+  background: #148447;
+  color: white;
+}
+
 .fighter-profile-summary {
   margin: 18px 0;
   font-size: 0.95rem;
