@@ -70,6 +70,18 @@ function fighterInitials(name: string) {
     .toUpperCase();
 }
 
+function recordSummary(record: string) {
+  const wins = Number(record.match(/(\d+)승/)?.[1] ?? 0);
+  const losses = Number(record.match(/(\d+)패/)?.[1] ?? 0);
+  const draws = Number(record.match(/(\d+)무/)?.[1] ?? 0);
+  const total = wins + losses + draws;
+  return `${total}전 ${wins}승 ${losses}패${draws ? ` ${draws}무` : ""}`;
+}
+
+function officialYoutubeSearch(name: string) {
+  return `https://www.youtube.com/@ufc/search?query=${encodeURIComponent(name)}`;
+}
+
 function FighterProfileDialog({
   fighter,
   onClose,
@@ -138,9 +150,29 @@ function FighterProfileDialog({
           <>
             <div className="fighter-profile-badges">
               <span>{profile.ranking}</span>
-              <span>{profile.record}</span>
+              <span>{recordSummary(profile.record)}</span>
             </div>
             <p className="fighter-profile-summary">{profile.summary}</p>
+            {profile.lastFight ? (
+              <section className="fighter-last-fight">
+                <span className="fighter-last-label">최근 경기 결과</span>
+                <div className="fighter-last-row">
+                  <strong
+                    className="fighter-result"
+                    data-result={profile.lastFight.result}
+                  >
+                    {profile.lastFight.result}
+                  </strong>
+                  <div className="fighter-last-opponent">
+                    <b>{profile.lastFight.opponentKo}</b>
+                    <small lang="en">{profile.lastFight.opponent}</small>
+                  </div>
+                  <p>
+                    {profile.lastFight.date} · {profile.lastFight.method}
+                  </p>
+                </div>
+              </section>
+            ) : null}
             <dl className="fighter-profile-stats">
               <div>
                 <dt>출신</dt>
@@ -167,14 +199,6 @@ function FighterProfileDialog({
                 <dd>{profile.verifiedAt}</dd>
               </div>
             </dl>
-            <a
-              className="fighter-source-link"
-              href={profile.sourceUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              UFC 공식 선수 정보 보기 ↗
-            </a>
           </>
         ) : (
           <div className="fighter-profile-pending">
@@ -185,6 +209,21 @@ function FighterProfileDialog({
             </p>
           </div>
         )}
+
+        <div className="fighter-external-links">
+          {profile ? (
+            <a href={profile.sourceUrl} target="_blank" rel="noreferrer">
+              UFC 공식 선수 정보 ↗
+            </a>
+          ) : null}
+          <a
+            href={officialYoutubeSearch(fighter.name)}
+            target="_blank"
+            rel="noreferrer"
+          >
+            UFC 공식 유튜브 영상 찾기 ↗
+          </a>
+        </div>
       </section>
     </div>
   );
@@ -244,15 +283,18 @@ function EventDetail({
                 <span>{SECTION_LABELS[section]}</span>
                 <span>{grouped[section].length}경기</span>
               </div>
-              {grouped[section].map((bout) => (
-                <div
-                  className="bout"
-                  key={`${bout.left}-${bout.right}`}
-                  aria-label={`${bout.leftKo} ${bout.left} 대 ${bout.rightKo} ${bout.right}, ${bout.weight}`}
-                >
+              {grouped[section].map((bout) => {
+                const leftProfile = FIGHTER_PROFILES[bout.left];
+                const rightProfile = FIGHTER_PROFILES[bout.right];
+                return (
+                  <div
+                    className="bout"
+                    key={`${bout.left}-${bout.right}`}
+                    aria-label={`${bout.leftKo} ${bout.left} 대 ${bout.rightKo} ${bout.right}, ${bout.weight}`}
+                  >
                   <button
                     type="button"
-                    className="fighter fighter-trigger"
+                    className="fighter fighter-trigger fighter-left"
                     onClick={() =>
                       onFighterSelect({
                         name: bout.left,
@@ -262,13 +304,25 @@ function EventDetail({
                     }
                     aria-label={`${bout.leftKo} 선수 정보 보기`}
                   >
-                    <strong>{bout.leftKo}</strong>
+                    <span className="fighter-name-line">
+                      <strong>{bout.leftKo}</strong>
+                      {leftProfile ? (
+                        <span className="fighter-rank">
+                          {leftProfile.ranking}
+                        </span>
+                      ) : null}
+                    </span>
                     <small lang="en">{bout.left}</small>
+                    <span className="fighter-record">
+                      {leftProfile
+                        ? recordSummary(leftProfile.record)
+                        : "전적 확인 중"}
+                    </span>
                   </button>
                   <span className="bout-vs">VS</span>
                   <button
                     type="button"
-                    className="fighter fighter-trigger"
+                    className="fighter fighter-trigger fighter-right"
                     onClick={() =>
                       onFighterSelect({
                         name: bout.right,
@@ -278,15 +332,28 @@ function EventDetail({
                     }
                     aria-label={`${bout.rightKo} 선수 정보 보기`}
                   >
-                    <strong>{bout.rightKo}</strong>
+                    <span className="fighter-name-line">
+                      <strong>{bout.rightKo}</strong>
+                      {rightProfile ? (
+                        <span className="fighter-rank">
+                          {rightProfile.ranking}
+                        </span>
+                      ) : null}
+                    </span>
                     <small lang="en">{bout.right}</small>
+                    <span className="fighter-record">
+                      {rightProfile
+                        ? recordSummary(rightProfile.record)
+                        : "전적 확인 중"}
+                    </span>
                   </button>
                   <span className="weight">
                     {bout.title ? "TITLE · " : ""}
                     {bout.weight}
                   </span>
-                </div>
-              ))}
+                  </div>
+                );
+              })}
             </section>
           ) : null,
         )}

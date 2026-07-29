@@ -554,10 +554,10 @@ a:focus-visible {
 
 .bout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  gap: 10px;
+  grid-template-columns: minmax(0, 1fr) 52px minmax(0, 1fr);
+  gap: 18px;
   align-items: center;
-  padding: 13px 0;
+  padding: 17px 10px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -572,14 +572,6 @@ a:focus-visible {
   line-height: 1.25;
 }
 
-.fighter:last-child {
-  text-align: right;
-}
-
-.bout > .fighter:nth-of-type(2) {
-  text-align: right;
-}
-
 .fighter strong {
   font-size: 0.92rem;
   font-weight: 900;
@@ -590,6 +582,45 @@ a:focus-visible {
   color: var(--muted);
   font-size: 0.65rem;
   font-weight: 650;
+}
+
+.fighter-left {
+  justify-items: end;
+  text-align: right;
+}
+
+.fighter-right {
+  justify-items: start;
+  text-align: left;
+}
+
+.fighter-name-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+}
+
+.fighter-left .fighter-name-line {
+  justify-content: flex-end;
+}
+
+.fighter-rank {
+  padding: 3px 5px;
+  border-radius: 6px;
+  background: var(--ink);
+  color: var(--lime);
+  font-size: 0.55rem;
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.fighter-record {
+  color: var(--muted);
+  font-size: 0.61rem;
+  font-weight: 800;
+  white-space: nowrap;
 }
 
 .fighter-trigger {
@@ -610,6 +641,15 @@ a:focus-visible {
 }
 
 .fighter-trigger:hover small {
+  color: #4f4c45;
+}
+
+.fighter-trigger:hover .fighter-rank {
+  background: var(--orange);
+  color: white;
+}
+
+.fighter-trigger:hover .fighter-record {
   color: #4f4c45;
 }
 
@@ -751,6 +791,76 @@ a:focus-visible {
   word-break: keep-all;
 }
 
+.fighter-last-fight {
+  margin: 18px 0;
+  padding: 17px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper);
+}
+
+.fighter-last-label {
+  display: block;
+  margin-bottom: 11px;
+  color: var(--muted);
+  font-size: 0.67rem;
+  font-weight: 900;
+}
+
+.fighter-last-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.fighter-result {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--ink);
+  color: white;
+  font-size: 0.84rem;
+  font-weight: 950;
+}
+
+.fighter-result[data-result="승"] {
+  background: #148447;
+}
+
+.fighter-result[data-result="패"] {
+  background: #c23d2b;
+}
+
+.fighter-result[data-result="무"] {
+  background: #716b60;
+}
+
+.fighter-last-opponent {
+  display: grid;
+  gap: 2px;
+}
+
+.fighter-last-opponent b {
+  font-size: 0.9rem;
+}
+
+.fighter-last-opponent small {
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-weight: 700;
+}
+
+.fighter-last-row p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 750;
+  text-align: right;
+}
+
 .fighter-profile-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -779,9 +889,18 @@ a:focus-visible {
   word-break: keep-all;
 }
 
-.fighter-source-link {
-  display: inline-flex;
+.fighter-external-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-top: 18px;
+}
+
+.fighter-external-links a {
+  display: inline-flex;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
   color: var(--ink);
   font-size: 0.76rem;
   font-weight: 900;
@@ -1135,6 +1254,20 @@ button.calendar-day:hover {
     min-height: 92px;
   }
 
+  .bout {
+    grid-template-columns: minmax(0, 1fr) 34px minmax(0, 1fr);
+    gap: 7px;
+    padding: 15px 2px;
+  }
+
+  .fighter {
+    padding-inline: 4px;
+  }
+
+  .fighter-rank {
+    white-space: normal;
+  }
+
   .footer {
     grid-template-columns: 1fr;
   }
@@ -1168,6 +1301,15 @@ button.calendar-day:hover {
 
   .fighter-profile-stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .fighter-last-row {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .fighter-last-row p {
+    grid-column: 2;
+    text-align: left;
   }
 }
 

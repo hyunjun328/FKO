@@ -45,6 +45,9 @@ test("server-renders the UFC schedule product", async () => {
     /aria-label="우로시 메디치 선수 정보 보기"/,
   );
   assert.match(html, /aria-label="다니엘 로드리게스 선수 정보 보기"/);
+  assert.match(html, /웰터급 14위/);
+  assert.match(html, /16전 13승 3패/);
+  assert.match(html, /25전 20승 5패/);
   assert.match(
     normalizedHtml,
     /메인카드[^<]*·[^<]*8월 2일[^<]*02:00[^<]*KST/,
