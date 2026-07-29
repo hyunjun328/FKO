@@ -3030,6 +3030,87 @@ button.calendar-day:hover {
   text-align: center;
 }
 
+.ranking-board-champion-result {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  min-height: 72px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--line);
+  background: #181818;
+}
+
+.ranking-board-champion-result > strong {
+  color: var(--lime);
+  font-size: 0.68rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ranking-unranked-results {
+  margin-top: 26px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+}
+
+.ranking-unranked-results > header {
+  margin-bottom: 14px;
+}
+
+.ranking-unranked-results > header > span {
+  color: var(--orange);
+  font-size: 0.68rem;
+  font-weight: 650;
+}
+
+.ranking-unranked-results h2 {
+  margin: 4px 0 0;
+  font-size: 1rem;
+}
+
+.ranking-unranked-results article {
+  display: grid;
+  grid-template-columns: 42px minmax(150px, 1fr) minmax(190px, auto) auto;
+  gap: 14px;
+  align-items: center;
+  min-height: 72px;
+  padding: 12px 14px;
+  border: 1px solid #393939;
+  border-radius: 6px;
+  background: #181818;
+}
+
+.ranking-unranked-mark {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid #4a4a4a;
+  border-radius: 4px;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 650;
+}
+
+.ranking-unranked-state {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.ranking-unranked-results article > a {
+  color: var(--text);
+  font-size: 0.72rem;
+  font-weight: 560;
+  text-decoration: none;
+}
+
+.ranking-unranked-results article > a:hover {
+  color: var(--orange);
+}
+
 .ranking-no-results {
   margin-top: 26px;
   padding: 52px 24px;
@@ -3082,6 +3163,30 @@ button.calendar-day:hover {
   .ranking-board li > small {
     grid-column: 2;
     margin-top: -4px;
+  }
+
+  .ranking-board-champion-result {
+    grid-template-columns: 36px minmax(0, 1fr);
+    padding: 11px 12px;
+  }
+
+  .ranking-board-champion-result > strong {
+    grid-column: 2;
+    margin-top: -8px;
+  }
+
+  .ranking-unranked-results {
+    padding: 16px;
+  }
+
+  .ranking-unranked-results article {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .ranking-unranked-state,
+  .ranking-unranked-results article > a {
+    grid-column: 2;
   }
 }
 

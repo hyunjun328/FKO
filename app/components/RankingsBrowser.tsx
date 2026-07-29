@@ -2,20 +2,22 @@
 // UFC 랭킹을 한글·영문·체급으로 검색하고 체급별 비교표를 보여준다.
 
 import { FormEvent, useMemo, useState } from "react";
+import Link from "next/link";
+import {
+  FORMER_KOREAN_FIGHTERS,
+  KOREAN_FIGHTERS,
+} from "../data/fighters";
 import { rankingKoreanName } from "../data/ranking-names";
 import {
   UFC_RANKING_DIVISIONS,
   UFC_RANKING_SOURCE,
   type RankingEntry,
 } from "../data/rankings";
-
-function normalize(value: string) {
-  return value.toLocaleLowerCase("ko-KR").replace(/\s+/g, "");
-}
-
-function fighterMatches(name: string, query: string) {
-  return normalize(`${rankingKoreanName(name)} ${name}`).includes(query);
-}
+import {
+  filterRankingDivisions,
+  findUnrankedFighterMatches,
+  normalizeRankingQuery,
+} from "../lib/ranking-search";
 
 function compareRank(entry: RankingEntry, media: RankingEntry[]) {
   const mediaEntry = media.find((fighter) => fighter.name === entry.name);
@@ -45,59 +47,55 @@ function RankingName({ name }: { name: string }) {
   );
 }
 
+function RankingChampionResult({ name }: { name: string }) {
+  return (
+    <div className="ranking-board-champion-result">
+      <span className="ranking-champion-mark">C</span>
+      <RankingName name={name} />
+      <strong>현 UFC 챔피언</strong>
+    </div>
+  );
+}
+
 export function RankingsBrowser() {
   const [inputValue, setInputValue] = useState("");
   const [query, setQuery] = useState("");
-  const normalizedQuery = normalize(query);
+  const normalizedQuery = normalizeRankingQuery(query);
 
-  const divisions = useMemo(() => {
-    if (!normalizedQuery) {
-      return UFC_RANKING_DIVISIONS;
-    }
-
-    return UFC_RANKING_DIVISIONS.flatMap((division) => {
-      const divisionMatches = normalize(
-        `${division.label} ${division.englishLabel}`,
-      ).includes(normalizedQuery);
-      const championMatches = fighterMatches(
-        division.champion,
+  const divisions = useMemo(
+    () =>
+      filterRankingDivisions(
+        UFC_RANKING_DIVISIONS,
         normalizedQuery,
-      );
-      const meta = divisionMatches
-        ? division.meta
-        : division.meta.filter((fighter) =>
-            fighterMatches(fighter.name, normalizedQuery),
-          );
-      const media = divisionMatches
-        ? division.media
-        : division.media.filter((fighter) =>
-            fighterMatches(fighter.name, normalizedQuery),
-          );
+        rankingKoreanName,
+      ),
+    [normalizedQuery],
+  );
 
-      if (!divisionMatches && !championMatches && !meta.length && !media.length) {
-        return [];
-      }
-
-      return [{ ...division, meta, media }];
-    });
-  }, [normalizedQuery]);
+  const unrankedMatches = useMemo(
+    () =>
+      findUnrankedFighterMatches(
+        [...KOREAN_FIGHTERS, ...FORMER_KOREAN_FIGHTERS],
+        UFC_RANKING_DIVISIONS,
+        normalizedQuery,
+      ),
+    [normalizedQuery],
+  );
 
   const resultCount = useMemo(() => {
     const names = new Set<string>();
 
     divisions.forEach((division) => {
-      if (
-        !normalizedQuery ||
-        fighterMatches(division.champion, normalizedQuery)
-      ) {
+      if (!normalizedQuery || division.championMatches) {
         names.add(division.champion);
       }
       division.meta.forEach((fighter) => names.add(fighter.name));
       division.media.forEach((fighter) => names.add(fighter.name));
     });
+    unrankedMatches.forEach((fighter) => names.add(fighter.name));
 
     return names.size;
-  }, [divisions, normalizedQuery]);
+  }, [divisions, normalizedQuery, unrankedMatches]);
 
   function submitSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -132,7 +130,7 @@ export function RankingsBrowser() {
               <b>‘{query}’</b> 검색 결과 · {resultCount}명
             </>
           ) : (
-            <>챔피언과 체급별 공식 1~15위를 검색할 수 있습니다.</>
+            <>챔피언, 공식 1~15위와 코리안 파이터를 검색할 수 있습니다.</>
           )}
         </p>
         {query ? (
@@ -156,8 +154,37 @@ export function RankingsBrowser() {
         </nav>
       ) : null}
 
-      {divisions.length ? (
-        <div className="ranking-division-list">
+      {divisions.length || unrankedMatches.length ? (
+        <>
+          {unrankedMatches.length ? (
+            <section
+              className="ranking-unranked-results"
+              aria-labelledby="unranked-result-title"
+            >
+              <header>
+                <span>랭킹 외 선수</span>
+                <h2 id="unranked-result-title">코리안 파이터 검색 결과</h2>
+              </header>
+              <div>
+                {unrankedMatches.map((fighter) => (
+                  <article key={fighter.name}>
+                    <span className="ranking-unranked-mark">NR</span>
+                    <span className="ranking-fighter-name">
+                      <strong>{fighter.koName}</strong>
+                      <small lang="en">{fighter.name}</small>
+                    </span>
+                    <span className="ranking-unranked-state">
+                      {fighter.division} · UFC 공식 랭킹 없음
+                    </span>
+                    <Link href="/korean-fighters">선수 정보 보기 →</Link>
+                  </article>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
+          {divisions.length ? (
+            <div className="ranking-division-list">
           {divisions.map((division) => (
             <section
               className="ranking-division"
@@ -171,11 +198,13 @@ export function RankingsBrowser() {
                 </div>
               </div>
 
-              <div className="ranking-champion-row">
-                <span className="ranking-champion-mark">C</span>
-                <RankingName name={division.champion} />
-                <span className="ranking-champion-label">UFC 챔피언</span>
-              </div>
+              {division.showChampionHeader ? (
+                <div className="ranking-champion-row">
+                  <span className="ranking-champion-mark">C</span>
+                  <RankingName name={division.champion} />
+                  <span className="ranking-champion-label">UFC 챔피언</span>
+                </div>
+              ) : null}
 
               <div className="ranking-columns">
                 <article className="ranking-board meta-board">
@@ -188,7 +217,9 @@ export function RankingsBrowser() {
                       {UFC_RANKING_SOURCE.metaUpdated}
                     </time>
                   </header>
-                  {division.meta.length ? (
+                  {division.championMatches ? (
+                    <RankingChampionResult name={division.champion} />
+                  ) : division.meta.length ? (
                     <ol>
                       {division.meta.map((fighter) => {
                         const comparison = compareRank(
@@ -228,7 +259,9 @@ export function RankingsBrowser() {
                       {UFC_RANKING_SOURCE.mediaUpdated}
                     </time>
                   </header>
-                  {division.media.length ? (
+                  {division.championMatches ? (
+                    <RankingChampionResult name={division.champion} />
+                  ) : division.media.length ? (
                     <ol>
                       {division.media.map((fighter) => (
                         <li key={`${fighter.rank}-${fighter.name}`}>
@@ -248,7 +281,9 @@ export function RankingsBrowser() {
               </div>
             </section>
           ))}
-        </div>
+            </div>
+          ) : null}
+        </>
       ) : (
         <div className="ranking-no-results" role="status">
           <strong>검색 결과가 없습니다.</strong>

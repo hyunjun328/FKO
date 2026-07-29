@@ -9,7 +9,7 @@
     "dev": "vinext dev",
     "build": "vinext build",
     "start": "vinext start",
-    "test": "npm run build && node --test tests/rendered-html.test.mjs && python -m unittest tests.test_collector",
+    "test": "npm run build && node --test tests/rendered-html.test.mjs tests/ranking-search.test.mjs && python -m unittest tests.test_collector",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "drizzle-kit generate"
   },
