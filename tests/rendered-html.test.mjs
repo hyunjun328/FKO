@@ -62,6 +62,8 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /25전 20승 5패/);
   assert.match(html, /코리안 파이터/);
   assert.match(html, /href="\/korean-fighters"/);
+  assert.match(html, /선수 랭킹/);
+  assert.match(html, /href="\/rankings"/);
   assert.match(normalizedHtml, /현역 6명[^<]*·[^<]*역대 6명/);
   assert.match(html, /정찬성/);
   assert.match(html, /김동현/);
@@ -131,6 +133,56 @@ test("server-renders active and former Korean fighters on a separate page", asyn
   assert.match(seokHyeonCard, /장폴 레보스노야니/);
   assert.doesNotMatch(seokHyeonCard, /data-result="승"/);
   assert.doesNotMatch(html, /The Korean Tyson/);
+  assert.match(html, /href="\/"/);
+  assert.match(html, /href="\/rankings"/);
+  assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
+});
+
+test("server-renders the official UFC ranking comparison page", async () => {
+  const response = await render("/rankings");
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
+
+  const html = await response.text();
+  const normalizedHtml = html.replaceAll("<!-- -->", "");
+  assert.match(html, /OFFICIAL UFC RANKINGS/);
+  assert.match(html, /Meta UFC 랭킹/);
+  assert.match(html, /미디어 투표 랭킹/);
+  assert.match(html, /공식은 15위까지/);
+  assert.match(html, /2026-07-18/);
+  assert.match(html, /2026-07-21/);
+  assert.match(html, /2026-07-29/);
+  assert.match(html, /플라이급/);
+  assert.match(html, /밴텀급/);
+  assert.match(html, /페더급/);
+  assert.match(html, /라이트급/);
+  assert.match(html, /웰터급/);
+  assert.match(html, /미들급/);
+  assert.match(html, /라이트헤비급/);
+  assert.match(html, /헤비급/);
+  assert.match(html, /여성 스트로급/);
+  assert.match(html, /여성 플라이급/);
+  assert.match(html, /여성 밴텀급/);
+  assert.match(normalizedHtml, /CHAMPION[^<]*<\/span><strong[^>]*>Joshua Van/);
+  assert.match(
+    normalizedHtml,
+    /CHAMPION[^<]*<\/span><strong[^>]*>Islam Makhachev/,
+  );
+  assert.match(
+    normalizedHtml,
+    /CHAMPION[^<]*<\/span><strong[^>]*>Kayla Harrison/,
+  );
+  assert.match(
+    normalizedHtml,
+    /Meta UFC 랭킹[\s\S]*?1<\/span><strong[^>]*>Carlos Prates[\s\S]*?14<\/span><strong[^>]*>Uroš Medić/,
+  );
+  assert.equal((html.match(/class="ranking-number"/g) ?? []).length, 330);
+  assert.match(html, /https:\/\/www\.ufc\.com\/rankings/);
+  assert.match(
+    html,
+    /https:\/\/www\.ufc\.com\/news\/ufc-and-meta-unveil-meta-ufc-rankings/,
+  );
+  assert.match(html, /href="\/korean-fighters"/);
   assert.match(html, /href="\/"/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });

@@ -27,9 +27,14 @@ export function KoreanFightersPage() {
             <small>Fight Korea</small>
           </span>
         </Link>
-        <Link className="back-home-link" href="/">
-          ← UFC 일정
-        </Link>
+        <div className="topbar-actions">
+          <Link className="topbar-link" href="/rankings">
+            선수 랭킹
+          </Link>
+          <Link className="back-home-link" href="/">
+            ← UFC 일정
+          </Link>
+        </div>
       </header>
 
       <section className="fighters-page-hero">
