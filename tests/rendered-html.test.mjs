@@ -31,7 +31,9 @@ test("server-renders the UFC schedule product", async () => {
   const html = await response.text();
   const normalizedHtml = html.replaceAll("<!-- -->", "");
   assert.match(html, /<html lang="ko">/i);
-  assert.match(html, /파이트 캘린더 코리아/);
+  assert.match(html, /FKO/);
+  assert.match(html, /Fight Korea/);
+  assert.doesNotMatch(html, /파이트 캘린더 코리아/);
   assert.match(html, /UFC 일정/);
   assert.match(html, /한국시간/);
   assert.match(html, /Medic vs Rodriguez/);

@@ -73,16 +73,35 @@ a:focus-visible {
 }
 
 .brand-mark {
-  width: 34px;
+  width: 42px;
   height: 34px;
   display: grid;
   place-items: center;
   border-radius: 10px;
   background: var(--ink);
   color: var(--lime);
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   letter-spacing: -0.06em;
   transform: rotate(-4deg);
+}
+
+.brand-copy {
+  display: grid;
+  gap: 1px;
+  line-height: 1;
+}
+
+.brand-copy strong {
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.brand-copy small {
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .update-state {

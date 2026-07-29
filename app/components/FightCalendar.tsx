@@ -285,9 +285,12 @@ export function FightCalendar() {
   return (
     <main className="site-shell">
       <header className="topbar">
-        <div className="brand" aria-label="파이트 캘린더 코리아">
-          <span className="brand-mark">FK</span>
-          <span>파이트 캘린더 코리아</span>
+        <div className="brand" aria-label="FKO Fight Korea">
+          <span className="brand-mark">FKO</span>
+          <span className="brand-copy">
+            <strong>FKO</strong>
+            <small>Fight Korea</small>
+          </span>
         </div>
         <div className="update-state">
           <span className="update-dot" aria-hidden="true" />
@@ -297,7 +300,7 @@ export function FightCalendar() {
       </header>
 
       <section className="hero">
-        <div className="eyebrow">Korea Standard Time</div>
+        <div className="eyebrow">FKO · Korea Standard Time</div>
         <h1 className="hero-title">
           UFC 일정,
           <br />
@@ -450,7 +453,7 @@ export function FightCalendar() {
 
       <footer className="footer">
         <div>
-          <strong>파이트 캘린더 코리아</strong>
+          <strong>FKO · Fight Korea</strong>
           <p>
             UFC 및 Zuffa와 공식 제휴 관계가 없는 독립 일정 안내 서비스입니다.
             UFC와 관련 상표는 각 권리자에게 있습니다. 경기 영상과 공식 이미지는
