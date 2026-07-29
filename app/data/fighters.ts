@@ -30,6 +30,7 @@ export type KoreanFighter = {
   name: string;
   koName: string;
   division: string;
+  statusLabel?: string;
 };
 
 export const KOREAN_FIGHTERS: KoreanFighter[] = [
@@ -39,6 +40,45 @@ export const KOREAN_FIGHTERS: KoreanFighter[] = [
   { name: "HyunSung Park", koName: "박현성", division: "플라이급" },
   { name: "JeongYeong Lee", koName: "이정영", division: "페더급" },
   { name: "JooSang Yoo", koName: "유주상", division: "페더급" },
+];
+
+export const FORMER_KOREAN_FIGHTERS: KoreanFighter[] = [
+  {
+    name: "Chan Sung Jung",
+    koName: "정찬성",
+    division: "페더급",
+    statusLabel: "은퇴",
+  },
+  {
+    name: "Dong Hyun Kim",
+    koName: "김동현",
+    division: "웰터급",
+    statusLabel: "전 UFC",
+  },
+  {
+    name: "Kyung Ho Kang",
+    koName: "강경호",
+    division: "밴텀급",
+    statusLabel: "UFC 활동 종료",
+  },
+  {
+    name: "Da Woon Jung",
+    koName: "정다운",
+    division: "라이트헤비급",
+    statusLabel: "전 UFC",
+  },
+  {
+    name: "Hyun Gyu Lim",
+    koName: "임현규",
+    division: "웰터급",
+    statusLabel: "UFC 활동 종료",
+  },
+  {
+    name: "Dongi Yang",
+    koName: "양동이",
+    division: "미들급",
+    statusLabel: "전 UFC",
+  },
 ];
 
 export const FIGHTER_PROFILES: Record<string, FighterProfile> = {
@@ -267,6 +307,227 @@ export const FIGHTER_PROFILES: Record<string, FighterProfile> = {
       {
         label: "네바다 체육위원회 결과",
         url: "https://boxing.nv.gov/uploadedFiles/boxingnvgov/content/results/2025_Results/10-04-25MMA_REDACTED.pdf",
+      },
+    ],
+    verifiedAt: "2026-07-29",
+  },
+  "Chan Sung Jung": {
+    name: "Chan Sung Jung",
+    nickname: "The Korean Zombie",
+    record: "17승 8패",
+    ranking: "은퇴",
+    country: "대한민국",
+    style: "킥복싱",
+    heightCm: 175,
+    reachCm: 183,
+    team: "Korean Zombie MMA · Fight Ready",
+    octagonDebut: "2011-03-26",
+    summary:
+      "두 차례 UFC 페더급 타이틀에 도전한 한국 격투기의 대표 선수. UFC 최초 트위스터 승리와 7초 KO 기록을 남기고 2023년 은퇴했다.",
+    lastFight: {
+      result: "패",
+      opponent: "Max Holloway",
+      opponentKo: "맥스 할로웨이",
+      date: "2023-08-26",
+      method: "3라운드 0:23 KO/TKO",
+    },
+    sourceUrl: "https://www.ufc.com/athlete/chan-sung-jung",
+    verificationSources: [
+      {
+        label: "UFC 공식 은퇴 회고",
+        url: "https://www.ufc.com/news/thank-you-korean-zombie-retirement-chan-sung-jung",
+      },
+      {
+        label: "UFC 선수 프로필",
+        url: "https://www.ufc.com/athlete/chan-sung-jung",
+      },
+      {
+        label: "Sherdog 전적",
+        url: "https://www.sherdog.com/fighter/Chan-Sung-Jung-36155",
+      },
+    ],
+    verifiedAt: "2026-07-29",
+  },
+  "Dong Hyun Kim": {
+    name: "Dong Hyun Kim",
+    nickname: "Stun Gun",
+    record: "22승 4패 1무 1무효",
+    ranking: "전 UFC",
+    country: "대한민국 수원",
+    style: "유도 · 그래플링",
+    heightCm: 188,
+    reachCm: 193,
+    team: "Busan Team MAD",
+    octagonDebut: "2008-05-24",
+    summary:
+      "한국인 두 번째 UFC 진출 선수이자 한국 UFC 대중화를 이끈 개척자. 강한 클린치와 상위 압박으로 UFC에서 오랫동안 웰터급 상위권을 지켰다.",
+    lastFight: {
+      result: "패",
+      opponent: "Colby Covington",
+      opponentKo: "콜비 코빙턴",
+      date: "2017-06-17",
+      method: "3라운드 만장일치 판정",
+    },
+    sourceUrl: "https://www.ufc.com/news/dong-hyun-kim-ufcs-most-wanted",
+    verificationSources: [
+      {
+        label: "UFC 김동현 특집",
+        url: "https://www.ufc.com/news/dong-hyun-kim-ufcs-most-wanted",
+      },
+      {
+        label: "UFC 주요 경기 회고",
+        url: "https://www.ufc.com/news/fab-five-dong-hyun-kim",
+      },
+      {
+        label: "Sherdog 전적",
+        url: "https://www.sherdog.com/fighter/Dong-Hyun-Kim-16374",
+      },
+    ],
+    verifiedAt: "2026-07-29",
+  },
+  "Kyung Ho Kang": {
+    name: "Kyung Ho Kang",
+    nickname: "Mr. Perfect",
+    record: "19승 11패 1무효",
+    ranking: "UFC 상태 · Not Fighting",
+    country: "대한민국 부산",
+    style: "브라질리언 주짓수",
+    heightCm: 175,
+    reachCm: 185,
+    team: "Busan Team MAD",
+    octagonDebut: "2013-03-02",
+    summary:
+      "Road FC 밴텀급 챔피언 출신으로 UFC에서 10년 넘게 활동한 서브미션 강자. 공식 UFC 프로필은 현재 Not Fighting 상태로 표시한다.",
+    lastFight: {
+      result: "패",
+      opponent: "Muin Gafurov",
+      opponentKo: "무인 가푸로프",
+      date: "2024-06-22",
+      method: "3라운드 만장일치 판정",
+    },
+    sourceUrl: "https://www.ufc.com/athlete/kyung-ho-kang",
+    verificationSources: [
+      {
+        label: "UFC 선수 프로필",
+        url: "https://www.ufc.com/athlete/kyung-ho-kang",
+      },
+      {
+        label: "UFC 사우디 공식 결과",
+        url: "https://www.ufc.com/news/prelim-results-highlights-winner-interviews-ufc-saudi-arabia",
+      },
+      {
+        label: "Sherdog 전적",
+        url: "https://www.sherdog.com/fighter/Kyung-Ho-Kang-24067",
+      },
+    ],
+    verifiedAt: "2026-07-29",
+  },
+  "Da Woon Jung": {
+    name: "Da Woon Jung",
+    nickname: "Sseda",
+    record: "15승 7패 1무",
+    ranking: "전 UFC",
+    country: "대한민국 서울",
+    style: "종합격투기",
+    heightCm: 193,
+    reachCm: 199,
+    team: "Korean Top Team",
+    octagonDebut: "2019-08-31",
+    summary:
+      "한국인 최초 UFC 라이트헤비급 선수. UFC에서 4승 1무를 먼저 쌓았고, 현재 공식 프로필은 Not Fighting 상태다.",
+    lastFight: {
+      result: "패",
+      opponent: "Mickael Groguhe",
+      opponentKo: "미카엘 그로구에",
+      date: "2026-07-11",
+      method: "3라운드 3:32 KO/TKO",
+    },
+    sourceUrl: "https://www.ufc.com/athlete/da-woon-jung",
+    verificationSources: [
+      {
+        label: "UFC 선수 프로필",
+        url: "https://www.ufc.com/athlete/da-woon-jung",
+      },
+      {
+        label: "UFC 정다운 인터뷰",
+        url: "https://www.ufc.com/news/da-un-jung-rolls-changes-ufc-fight-night-prelims-vegas-23",
+      },
+      {
+        label: "Sherdog 최신 전적",
+        url: "https://www.sherdog.com/fighter/Da-Woon-Jung-202241",
+      },
+    ],
+    verifiedAt: "2026-07-29",
+  },
+  "Hyun Gyu Lim": {
+    name: "Hyun Gyu Lim",
+    nickname: "The Ace",
+    record: "14승 7패 1무",
+    ranking: "UFC 상태 · Not Fighting",
+    country: "대한민국 서울",
+    style: "무에타이",
+    heightCm: 191,
+    reachCm: 196,
+    team: "Team Macho",
+    octagonDebut: "2013-03-02",
+    summary:
+      "긴 리치와 강한 타격을 앞세워 UFC 싱가포르 대회 메인이벤트까지 오른 웰터급 선수. 통산 14승 가운데 10승을 KO/TKO로 거뒀다.",
+    lastFight: {
+      result: "승",
+      opponent: "Igor Svirid",
+      opponentKo: "이고르 스비리드",
+      date: "2018-11-18",
+      method: "3라운드 만장일치 판정",
+    },
+    sourceUrl: "https://www.ufc.com/athlete/hyun-gyu-lim",
+    verificationSources: [
+      {
+        label: "UFC 선수 프로필",
+        url: "https://www.ufc.com/athlete/hyun-gyu-lim",
+      },
+      {
+        label: "UFC 공식 경기 결과",
+        url: "https://www.ufc.com/news/tactical-upbeat-prelims-deliver-four-close-decisions-saitama",
+      },
+      {
+        label: "Sherdog 전적",
+        url: "https://www.sherdog.com/fighter/Hyun-Gyu-Lim-21040",
+      },
+    ],
+    verifiedAt: "2026-07-29",
+  },
+  "Dongi Yang": {
+    name: "Dongi Yang",
+    nickname: "The Ox",
+    record: "14승 4패",
+    ranking: "전 UFC",
+    country: "대한민국 서울",
+    style: "타격",
+    heightCm: 180,
+    team: "Team Macho",
+    octagonDebut: "2010-10-23",
+    summary:
+      "한국 UFC 초창기를 개척한 미들급 선수. 강한 펀치로 통산 14승 가운데 13승을 KO/TKO로 끝냈다.",
+    lastFight: {
+      result: "패",
+      opponent: "Callyugibrainn Marinho Borges",
+      opponentKo: "칼리우지브라인 마리뉴 보르지스",
+      date: "2019-03-30",
+      method: "1라운드 4:23 KO/TKO",
+    },
+    sourceUrl: "https://www.ufc.com/news/dongi-yang-good-time-ufc-return",
+    verificationSources: [
+      {
+        label: "UFC 양동이 특집",
+        url: "https://www.ufc.com/news/dongi-yang-good-time-ufc-return",
+      },
+      {
+        label: "UFC 인터뷰",
+        url: "https://www.ufc.com/news/koreas-dongi-yang-talks-fighting",
+      },
+      {
+        label: "Sherdog 전적",
+        url: "https://www.sherdog.com/fighter/Dongi-Yang-23501",
       },
     ],
     verifiedAt: "2026-07-29",

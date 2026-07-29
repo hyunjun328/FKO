@@ -67,9 +67,11 @@ a:focus-visible {
   display: flex;
   align-items: center;
   gap: 12px;
+  color: var(--ink);
   font-size: 0.92rem;
   font-weight: 900;
   letter-spacing: -0.03em;
+  text-decoration: none;
 }
 
 .brand-mark {
@@ -366,6 +368,20 @@ a:focus-visible {
   color: #a9a59c;
   font-size: 0.65rem;
   font-weight: 700;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.topbar-link,
+.back-home-link {
+  color: var(--ink);
+  font-size: 0.76rem;
+  font-weight: 900;
+  text-underline-offset: 4px;
 }
 
 .featured-match-meta {
@@ -1208,6 +1224,7 @@ button.calendar-day:hover {
 }
 
 .korean-fighter-count {
+  display: inline-flex;
   padding: 9px 13px;
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -1215,6 +1232,58 @@ button.calendar-day:hover {
   color: var(--muted);
   font-size: 0.72rem;
   font-weight: 850;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.korean-fighters-gateway {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 20px;
+  align-items: center;
+  padding: 28px;
+  border: 2px solid var(--ink);
+  border-radius: 24px;
+  background: var(--lime);
+  box-shadow: 8px 8px 0 var(--orange);
+  color: var(--ink);
+  text-decoration: none;
+  transition:
+    box-shadow 150ms ease,
+    transform 150ms ease;
+}
+
+.korean-fighters-gateway:hover {
+  box-shadow: 4px 4px 0 var(--orange);
+  transform: translate(4px, 4px);
+}
+
+.gateway-number {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 950;
+  letter-spacing: -0.09em;
+  line-height: 0.8;
+}
+
+.korean-fighters-gateway > span:nth-child(2) {
+  display: grid;
+  gap: 6px;
+}
+
+.korean-fighters-gateway b {
+  font-size: 1.1rem;
+  font-weight: 950;
+}
+
+.korean-fighters-gateway small {
+  color: #4f5728;
+  font-size: 0.76rem;
+  font-weight: 750;
+}
+
+.korean-fighters-gateway > strong {
+  font-size: 0.84rem;
+  font-weight: 950;
   white-space: nowrap;
 }
 
@@ -1245,6 +1314,26 @@ button.calendar-day:hover {
   border-color: var(--ink);
   box-shadow: 5px 5px 0 var(--orange);
   transform: translate(-2px, -2px);
+}
+
+.korean-fighter-card[data-status="former"] {
+  background: #f7f3ea;
+}
+
+.korean-fighter-card[data-status="former"] .korean-card-avatar {
+  background:
+    linear-gradient(
+      135deg,
+      transparent 46%,
+      var(--orange) 47% 54%,
+      transparent 55%
+    ),
+    #e3ded3;
+}
+
+.korean-fighter-card[data-status="former"] .korean-card-status i {
+  background: #716b60;
+  box-shadow: 0 0 0 3px rgba(113, 107, 96, 0.12);
 }
 
 .korean-fighter-card:focus-visible {
@@ -1393,6 +1482,105 @@ button.calendar-day:hover {
   font-weight: 950;
 }
 
+.korean-fighters-page {
+  width: min(1240px, 100%);
+}
+
+.fighters-page-hero {
+  padding: 72px 0 76px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.fighters-page-hero h1 {
+  margin: 0;
+  font-size: clamp(4rem, 11vw, 9rem);
+  font-weight: 950;
+  letter-spacing: -0.09em;
+  line-height: 0.78;
+}
+
+.fighters-page-hero h1 em {
+  color: var(--orange);
+  font-style: normal;
+}
+
+.fighters-page-hero > p {
+  max-width: 680px;
+  margin: 32px 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+.fighters-page-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 34px;
+}
+
+.fighters-page-summary span {
+  min-width: 116px;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  padding: 12px 15px;
+  border-radius: 15px;
+  background: var(--ink);
+  color: white;
+  font-size: 0.73rem;
+  font-weight: 850;
+}
+
+.fighters-page-summary b {
+  color: var(--lime);
+  font-size: 1.3rem;
+  font-weight: 950;
+}
+
+.fighters-roster-section {
+  padding-top: 76px;
+}
+
+.former-fighters-section {
+  margin-top: 82px;
+  padding-top: 72px;
+  border-top: 2px solid var(--ink);
+}
+
+.fighters-verification-note {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 18px;
+  margin-top: 64px;
+  padding: 22px;
+  border: 1px solid #d9cc79;
+  border-radius: 18px;
+  background: #fff6be;
+}
+
+.fighters-verification-note strong {
+  font-size: 0.82rem;
+  font-weight: 950;
+}
+
+.fighters-verification-note p {
+  margin: 0;
+  color: #6f6535;
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.footer-home-link {
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 950;
+  text-underline-offset: 4px;
+}
+
 .footer {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -1465,6 +1653,14 @@ button.calendar-day:hover {
   }
 
   .update-state span:last-child {
+    display: none;
+  }
+
+  .topbar-actions {
+    gap: 10px;
+  }
+
+  .topbar-link {
     display: none;
   }
 
@@ -1570,6 +1766,41 @@ button.calendar-day:hover {
   }
 
   .korean-fighter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .korean-fighters-gateway {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 14px;
+    padding: 21px;
+  }
+
+  .korean-fighters-gateway > strong {
+    grid-column: 2;
+  }
+
+  .fighters-page-hero {
+    padding: 48px 0 54px;
+  }
+
+  .fighters-page-hero h1 {
+    font-size: clamp(4rem, 22vw, 6.5rem);
+  }
+
+  .fighters-page-hero > p {
+    margin-top: 26px;
+    font-size: 0.9rem;
+  }
+
+  .fighters-roster-section {
+    padding-top: 54px;
+  }
+
+  .former-fighters-section {
+    margin-top: 60px;
+  }
+
+  .fighters-verification-note {
     grid-template-columns: 1fr;
   }
 

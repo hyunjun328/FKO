@@ -2,8 +2,14 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 import { EVENTS, type BoutSection, type FightEvent } from "../data/events";
-import { FIGHTER_PROFILES, KOREAN_FIGHTERS } from "../data/fighters";
+import { FIGHTER_PROFILES } from "../data/fighters";
+import {
+  FighterProfileDialog,
+  recordSummary,
+  type FighterSelection,
+} from "./FighterProfileDialog";
 
 const KST_FORMATTER = new Intl.DateTimeFormat("ko-KR", {
   timeZone: "Asia/Seoul",
@@ -45,12 +51,6 @@ const SECTION_LABELS: Record<BoutSection, string> = {
 
 const WEEKDAYS = ["일", "월", "화", "수", "목", "금", "토"];
 
-type FighterSelection = {
-  name: string;
-  koName: string;
-  weight: string;
-};
-
 function kstDateKey(iso: string) {
   return KST_DATE_FORMATTER.format(new Date(iso));
 }
@@ -65,213 +65,6 @@ function kstParts(iso: string) {
   const value = (type: Intl.DateTimeFormatPartTypes) =>
     parts.find((part) => part.type === type)?.value ?? "";
   return { month: value("month"), day: value("day"), weekday: value("weekday") };
-}
-
-function fighterInitials(name: string) {
-  return name
-    .split(" ")
-    .map((part) => part[0])
-    .join("")
-    .slice(0, 3)
-    .toUpperCase();
-}
-
-function recordSummary(record: string) {
-  const wins = Number(record.match(/(\d+)승/)?.[1] ?? 0);
-  const losses = Number(record.match(/(\d+)패/)?.[1] ?? 0);
-  const draws = Number(record.match(/(\d+)무/)?.[1] ?? 0);
-  const total = wins + losses + draws;
-  return `${total}전 ${wins}승 ${losses}패${draws ? ` ${draws}무` : ""}`;
-}
-
-function officialYoutubeSearch(name: string) {
-  return `https://www.youtube.com/@ufc/search?query=${encodeURIComponent(name)}`;
-}
-
-function FighterProfileDialog({
-  fighter,
-  onClose,
-}: {
-  fighter: FighterSelection;
-  onClose: () => void;
-}) {
-  const profile = FIGHTER_PROFILES[fighter.name];
-  const verificationSources =
-    profile?.verificationSources ??
-    (profile
-      ? [{ label: "UFC 공식 선수 정보", url: profile.sourceUrl }]
-      : []);
-
-  useEffect(() => {
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
-    };
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      window.removeEventListener("keydown", onKeyDown);
-    };
-  }, [onClose]);
-
-  return (
-    <div
-      className="fighter-dialog-backdrop"
-      role="presentation"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) onClose();
-      }}
-    >
-      <section
-        className="fighter-dialog"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="fighter-dialog-title"
-      >
-        <button
-          type="button"
-          className="fighter-dialog-close"
-          onClick={onClose}
-          aria-label="선수 정보 닫기"
-          autoFocus
-        >
-          닫기 ×
-        </button>
-
-        <div className="fighter-profile-head">
-          <div className="fighter-avatar" aria-hidden="true">
-            <span>{fighterInitials(fighter.name)}</span>
-          </div>
-          <div>
-            <span className="fighter-profile-kicker">
-              {profile?.verificationSources
-                ? `${profile.verificationSources.length}개 출처 교차 검증`
-                : profile
-                  ? "검수된 선수 정보"
-                  : "기본 선수 정보"}
-            </span>
-            <h2 id="fighter-dialog-title">{fighter.koName}</h2>
-            <p lang="en">{fighter.name}</p>
-            {profile?.nickname ? (
-              <strong className="fighter-nickname">
-                “{profile.nickname}”
-              </strong>
-            ) : null}
-          </div>
-        </div>
-
-        {profile ? (
-          <>
-            <div className="fighter-profile-badges">
-              <span>{profile.ranking}</span>
-              <span>{recordSummary(profile.record)}</span>
-              {profile.verificationSources ? (
-                <span className="verified-badge">교차 검증 완료</span>
-              ) : null}
-            </div>
-            <p className="fighter-profile-summary">{profile.summary}</p>
-            {profile.lastFight ? (
-              <section className="fighter-last-fight">
-                <span className="fighter-last-label">최근 경기 결과</span>
-                <div className="fighter-last-row">
-                  <strong
-                    className="fighter-result"
-                    data-result={profile.lastFight.result}
-                  >
-                    {profile.lastFight.result}
-                  </strong>
-                  <div className="fighter-last-opponent">
-                    <b>{profile.lastFight.opponentKo}</b>
-                    <small lang="en">{profile.lastFight.opponent}</small>
-                  </div>
-                  <p>
-                    {profile.lastFight.date} · {profile.lastFight.method}
-                  </p>
-                </div>
-              </section>
-            ) : null}
-            <dl className="fighter-profile-stats">
-              <div>
-                <dt>출신</dt>
-                <dd>{profile.country}</dd>
-              </div>
-              <div>
-                <dt>스타일</dt>
-                <dd>{profile.style}</dd>
-              </div>
-              <div>
-                <dt>신장</dt>
-                <dd>
-                  {profile.heightCm ? `${profile.heightCm}cm` : "확인 중"}
-                </dd>
-              </div>
-              <div>
-                <dt>리치</dt>
-                <dd>
-                  {profile.reachCm ? `${profile.reachCm}cm` : "확인 중"}
-                </dd>
-              </div>
-              <div>
-                <dt>체급</dt>
-                <dd>{fighter.weight}</dd>
-              </div>
-              {profile.team ? (
-                <div>
-                  <dt>소속</dt>
-                  <dd>{profile.team}</dd>
-                </div>
-              ) : null}
-              {profile.octagonDebut ? (
-                <div>
-                  <dt>UFC 데뷔</dt>
-                  <dd>{profile.octagonDebut}</dd>
-                </div>
-              ) : null}
-              <div>
-                <dt>확인일</dt>
-                <dd>{profile.verifiedAt}</dd>
-              </div>
-              {profile.verificationSources ? (
-                <div>
-                  <dt>검수 근거</dt>
-                  <dd>{profile.verificationSources.length}개 출처</dd>
-                </div>
-              ) : null}
-            </dl>
-          </>
-        ) : (
-          <div className="fighter-profile-pending">
-            <strong>{fighter.weight} 출전 예정</strong>
-            <p>
-              아직 공식 전적과 랭킹을 검수 중입니다. 확인되지 않은 정보는
-              추정해서 표시하지 않습니다.
-            </p>
-          </div>
-        )}
-
-        <div className="fighter-external-links">
-          {verificationSources.map((source) => (
-            <a
-              href={source.url}
-              target="_blank"
-              rel="noreferrer"
-              key={source.url}
-            >
-              {source.label} ↗
-            </a>
-          ))}
-          <a
-            href={officialYoutubeSearch(fighter.name)}
-            target="_blank"
-            rel="noreferrer"
-          >
-            UFC 공식 유튜브 영상 찾기 ↗
-          </a>
-        </div>
-      </section>
-    </div>
-  );
 }
 
 function EventDetail({
@@ -576,10 +369,15 @@ export function FightCalendar() {
             <small>Fight Korea</small>
           </span>
         </div>
-        <div className="update-state">
-          <span className="update-dot" aria-hidden="true" />
-          <span>일정 확인 완료</span>
-          <span>2026. 7. 29.</span>
+        <div className="topbar-actions">
+          <Link className="topbar-link" href="/korean-fighters">
+            코리안 파이터
+          </Link>
+          <div className="update-state">
+            <span className="update-dot" aria-hidden="true" />
+            <span>일정 확인 완료</span>
+            <span>2026. 7. 29.</span>
+          </div>
         </div>
       </header>
 
@@ -786,7 +584,7 @@ export function FightCalendar() {
       </section>
 
       <section
-        className="korean-fighters-section"
+        className="korean-fighters-section korean-fighters-preview"
         aria-labelledby="korean-fighters-title"
       >
         <div className="section-head korean-fighters-head">
@@ -794,76 +592,25 @@ export function FightCalendar() {
             <span className="section-kicker">KOREAN FIGHTERS</span>
             <h2 id="korean-fighters-title">코리안 파이터</h2>
             <p>
-              현재 UFC에서 활동 중인 한국 선수들의 전적과 최근 흐름을
-              모았습니다.
+              현역 선수부터 한국 UFC 역사를 만든 이전 선수까지 별도 화면에서
+              모아보세요.
             </p>
           </div>
-          <span className="korean-fighter-count">
-            공식 자료 확인 · {KOREAN_FIGHTERS.length}명
-          </span>
+          <Link className="korean-fighter-count" href="/korean-fighters">
+            전체 선수 보기 →
+          </Link>
         </div>
 
-        <div className="korean-fighter-grid">
-          {KOREAN_FIGHTERS.map((fighter) => {
-            const profile = FIGHTER_PROFILES[fighter.name];
-            return (
-              <button
-                type="button"
-                className="korean-fighter-card"
-                key={fighter.name}
-                onClick={() =>
-                  setSelectedFighter({
-                    name: fighter.name,
-                    koName: fighter.koName,
-                    weight: fighter.division,
-                  })
-                }
-                aria-label={`${fighter.koName} 상세 정보 보기`}
-              >
-                <span className="korean-card-top">
-                  <span className="korean-card-avatar" aria-hidden="true">
-                    {fighterInitials(fighter.name)}
-                  </span>
-                  <span className="korean-card-status">
-                    <i aria-hidden="true" />
-                    {profile.verificationSources
-                      ? `${profile.verificationSources.length}곳 교차 검증`
-                      : "UFC 현역"}
-                  </span>
-                </span>
-                <span className="korean-card-name">
-                  <strong>{fighter.koName}</strong>
-                  <small lang="en">{fighter.name}</small>
-                  {profile.nickname ? (
-                    <em lang="en">“{profile.nickname}”</em>
-                  ) : null}
-                </span>
-                <span className="korean-card-meta">
-                  <b>{fighter.division}</b>
-                  <b>{recordSummary(profile.record)}</b>
-                </span>
-                {profile.lastFight ? (
-                  <span className="korean-card-last">
-                    <span>
-                      최근 경기
-                      <b data-result={profile.lastFight.result}>
-                        {profile.lastFight.result}
-                      </b>
-                    </span>
-                    <small>
-                      vs {profile.lastFight.opponentKo} ·{" "}
-                      {profile.lastFight.date}
-                    </small>
-                  </span>
-                ) : null}
-                <span className="korean-card-next">
-                  <span>다음 경기 미정</span>
-                  <b aria-hidden="true">상세 →</b>
-                </span>
-              </button>
-            );
-          })}
-        </div>
+        <Link className="korean-fighters-gateway" href="/korean-fighters">
+          <span className="gateway-number">12</span>
+          <span>
+            <b>현역 6명 · 역대 6명</b>
+            <small>
+              박준용, 최두호, 고석현부터 정찬성, 김동현, 강경호까지.
+            </small>
+          </span>
+          <strong aria-hidden="true">선수 명단 →</strong>
+        </Link>
       </section>
 
       <footer className="footer">
