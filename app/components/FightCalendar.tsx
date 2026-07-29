@@ -22,6 +22,21 @@ const KST_DATE_FORMATTER = new Intl.DateTimeFormat("en-CA", {
   day: "2-digit",
 });
 
+const KST_CLOCK_FORMATTER = new Intl.DateTimeFormat("ko-KR", {
+  timeZone: "Asia/Seoul",
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: false,
+});
+
+const KST_TODAY_FORMATTER = new Intl.DateTimeFormat("ko-KR", {
+  timeZone: "Asia/Seoul",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  weekday: "long",
+});
+
 const SECTION_LABELS: Record<BoutSection, string> = {
   main: "메인카드",
   prelims: "언더카드",
@@ -50,15 +65,6 @@ function kstParts(iso: string) {
   const value = (type: Intl.DateTimeFormatPartTypes) =>
     parts.find((part) => part.type === type)?.value ?? "";
   return { month: value("month"), day: value("day"), weekday: value("weekday") };
-}
-
-function remaining(startUtc: string, now: number) {
-  const difference = Math.max(0, new Date(startUtc).getTime() - now);
-  return {
-    days: Math.floor(difference / 86_400_000),
-    hours: Math.floor((difference % 86_400_000) / 3_600_000),
-    minutes: Math.floor((difference % 3_600_000) / 60_000),
-  };
 }
 
 function fighterInitials(name: string) {
@@ -552,7 +558,13 @@ export function FightCalendar() {
   const nextEvent =
     EVENTS.find((event) => new Date(event.startUtc).getTime() > now) ?? EVENTS[0];
   const mainEvent = nextEvent.bouts[0];
-  const timeLeft = remaining(nextEvent.startUtc, now);
+  const featuredEvent =
+    EVENTS.find(
+      (event) =>
+        event.series === "UFC" &&
+        new Date(event.startUtc).getTime() > now,
+    ) ?? nextEvent;
+  const featuredBout = featuredEvent.bouts[0];
 
   return (
     <main className="site-shell">
@@ -636,23 +648,48 @@ export function FightCalendar() {
               <span>{nextEvent.bouts.length}경기 발표</span>
             </div>
           </div>
-          <div className="countdown-panel" aria-label="다음 대회까지 남은 시간">
-            <div className="countdown-label">메인카드 시작까지</div>
-            <div className="countdown">
-              <div className="countdown-unit">
-                <b>{timeLeft.days}</b>
-                <span>일</span>
-              </div>
-              <div className="countdown-unit">
-                <b>{String(timeLeft.hours).padStart(2, "0")}</b>
-                <span>시간</span>
-              </div>
-              <div className="countdown-unit">
-                <b>{String(timeLeft.minutes).padStart(2, "0")}</b>
-                <span>분</span>
-              </div>
+          <aside
+            className="hero-info-panel"
+            aria-label="현재 한국시간과 다음 주요 경기"
+          >
+            <div className="kst-now-card">
+              <span className="hero-panel-label">
+                <i aria-hidden="true" />
+                지금 한국시간
+              </span>
+              <time
+                className="kst-clock"
+                dateTime={new Date(now).toISOString()}
+                suppressHydrationWarning
+              >
+                {KST_CLOCK_FORMATTER.format(new Date(now))}
+              </time>
+              <span className="kst-date" suppressHydrationWarning>
+                {KST_TODAY_FORMATTER.format(new Date(now))}
+              </span>
             </div>
-          </div>
+            <a
+              className="featured-match-card"
+              href="#event-detail"
+              onClick={() => setSelectedId(featuredEvent.id)}
+              aria-label={`${featuredEvent.title} ${featuredBout.leftKo} 대 ${featuredBout.rightKo} 상세 보기`}
+            >
+              <span className="hero-panel-label">다음 주요 매치</span>
+              <strong>
+                <span>{featuredBout.leftKo}</span>
+                <i>VS</i>
+                <span>{featuredBout.rightKo}</span>
+              </strong>
+              <small lang="en">
+                {featuredBout.left} vs {featuredBout.right}
+              </small>
+              <span className="featured-match-meta">
+                {featuredEvent.title} ·{" "}
+                {KST_FORMATTER.format(new Date(featuredEvent.startUtc))} KST
+              </span>
+              <b>대진 전체 보기 →</b>
+            </a>
+          </aside>
         </article>
       </section>
 

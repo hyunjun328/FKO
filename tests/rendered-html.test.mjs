@@ -36,6 +36,16 @@ test("server-renders the UFC schedule product", async () => {
   assert.doesNotMatch(html, /파이트 캘린더 코리아/);
   assert.match(html, /UFC 일정/);
   assert.match(html, /한국시간/);
+  assert.match(html, /지금 한국시간/);
+  assert.match(html, /다음 주요 매치/);
+  assert.match(html, /UFC 330/);
+  assert.match(html, /이슬람 마카체프/);
+  assert.match(html, /이안 마샤두 개리/);
+  assert.match(
+    html,
+    /aria-label="UFC 330 이슬람 마카체프 대 이안 마샤두 개리 상세 보기"/,
+  );
+  assert.doesNotMatch(html, /메인카드 시작까지/);
   assert.match(html, /Medic vs Rodriguez/);
   assert.match(html, /Uros Medic/);
   assert.match(html, /우로시 메디치/);
