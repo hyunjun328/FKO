@@ -65,3 +65,4 @@
 - 한국 선수 집중 코너 버전 7을 기존 비공개 FKO 운영 주소에 배포했다.
 - 사용자가 요청한 GitHub 저장소는 `https://github.com/hyunjun328/FKO.git`이며 확인 시점에 브랜치가 없는 빈 저장소였다.
 - 기존 Sites 배포용 `origin`은 유지하고 GitHub 저장소는 `github`라는 별도 원격으로 연결한다.
+- FKO 전체 소스를 `hyunjun328/FKO`의 `main` 브랜치에 올리고 원격 커밋 일치를 확인했다.
