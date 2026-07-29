@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
     requestHeaders.get("x-forwarded-proto") ??
     (host?.startsWith("localhost") ? "http" : "https");
   const origin = host ? `${protocol}://${host}` : "https://fight-calendar-korea.invalid";
-  const socialImage = new URL("/og.png", origin).toString();
+  const socialImage = new URL("/og-dark.png", origin).toString();
 
   return {
     title: "FKO | UFC 한국시간 일정",
@@ -36,7 +36,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#11110f",
+  themeColor: "#050505",
 };
 
 export default function RootLayout({

@@ -2,13 +2,15 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #11110f;
-  --paper: #f3f0e8;
-  --card: #fffdf7;
-  --line: #d7d1c5;
-  --muted: #6f6a61;
-  --orange: #ff5426;
-  --lime: #d9ff43;
+  --ink: #080808;
+  --paper: #050505;
+  --card: #121212;
+  --line: #303030;
+  --muted: #a5a5a0;
+  --orange: #ff3434;
+  --lime: #ffd21f;
+  --text: #f7f7f2;
+  --subtle: #1a1a1a;
 }
 
 * {
@@ -17,7 +19,7 @@
 
 html {
   background: var(--paper);
-  color: var(--ink);
+  color: var(--text);
   scroll-behavior: smooth;
 }
 
@@ -25,9 +27,10 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at 88% 4%, rgba(217, 255, 67, 0.32), transparent 23rem),
+    radial-gradient(circle at 88% 3%, rgba(255, 52, 52, 0.17), transparent 25rem),
+    radial-gradient(circle at 12% 38%, rgba(255, 210, 31, 0.08), transparent 30rem),
     var(--paper);
-  color: var(--ink);
+  color: var(--text);
   font-family:
     Pretendard, "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
   text-rendering: optimizeLegibility;
@@ -60,14 +63,14 @@ a:focus-visible {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  border-bottom: 1px solid rgba(17, 17, 15, 0.2);
+  border-bottom: 1px solid var(--line);
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--ink);
+  color: var(--text);
   font-size: 0.92rem;
   font-weight: 900;
   letter-spacing: -0.03em;
@@ -80,8 +83,8 @@ a:focus-visible {
   display: grid;
   place-items: center;
   border-radius: 10px;
-  background: var(--ink);
-  color: var(--lime);
+  background: var(--lime);
+  color: var(--ink);
   font-size: 0.72rem;
   letter-spacing: -0.06em;
   transform: rotate(-4deg);
@@ -119,8 +122,8 @@ a:focus-visible {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #25a35a;
-  box-shadow: 0 0 0 5px rgba(37, 163, 90, 0.13);
+  background: var(--lime);
+  box-shadow: 0 0 0 5px rgba(255, 210, 31, 0.13);
 }
 
 .hero {
@@ -179,10 +182,10 @@ a:focus-visible {
   min-height: 360px;
   margin-top: 34px;
   padding: clamp(26px, 5vw, 56px);
-  border: 2px solid var(--ink);
+  border: 2px solid var(--line);
   border-radius: 30px;
   background: var(--ink);
-  color: #fffdf7;
+  color: var(--text);
   box-shadow: 12px 12px 0 var(--orange);
 }
 
@@ -219,7 +222,7 @@ a:focus-visible {
 .next-event h2 {
   max-width: 760px;
   margin: 20px 0 10px;
-  color: #c9c4b9;
+  color: var(--muted);
   font-size: clamp(1.35rem, 2.6vw, 2.25rem);
   font-weight: 850;
   letter-spacing: -0.045em;
@@ -254,7 +257,7 @@ a:focus-visible {
 }
 
 .matchup-fighter small {
-  color: #a9a59c;
+  color: var(--muted);
   font-size: clamp(0.78rem, 1.5vw, 0.95rem);
   font-weight: 700;
   line-height: 1.25;
@@ -270,7 +273,7 @@ a:focus-visible {
   display: grid;
   gap: 12px;
   margin-top: 24px;
-  color: #c9c4b9;
+  color: var(--muted);
   font-size: 0.9rem;
   font-weight: 650;
 }
@@ -280,13 +283,13 @@ a:focus-visible {
   width: fit-content;
   gap: 4px;
   padding: 13px 16px;
-  border: 1px solid rgba(217, 255, 67, 0.42);
+  border: 1px solid rgba(255, 210, 31, 0.55);
   border-radius: 14px;
-  background: rgba(217, 255, 67, 0.09);
+  background: rgba(255, 210, 31, 0.09);
 }
 
 .event-start-time small {
-  color: #c9c4b9;
+  color: var(--muted);
   font-size: 0.72rem;
   font-weight: 850;
 }
@@ -316,7 +319,7 @@ a:focus-visible {
   padding: 22px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(12px);
 }
 
@@ -324,7 +327,7 @@ a:focus-visible {
   display: flex;
   align-items: center;
   gap: 7px;
-  color: #c9c4b9;
+  color: var(--muted);
   font-size: 0.72rem;
   font-weight: 850;
 }
@@ -340,8 +343,8 @@ a:focus-visible {
 }
 
 .featured-match-card:hover {
-  border-color: var(--lime);
-  background: rgba(217, 255, 67, 0.1);
+  border-color: var(--orange);
+  background: rgba(255, 52, 52, 0.09);
 }
 
 .featured-match-card strong {
@@ -368,7 +371,7 @@ a:focus-visible {
 
 .featured-match-card > small {
   margin-top: 6px;
-  color: #a9a59c;
+  color: var(--muted);
   font-size: 0.65rem;
   font-weight: 700;
 }
@@ -381,7 +384,7 @@ a:focus-visible {
 
 .topbar-link,
 .back-home-link {
-  color: var(--ink);
+  color: var(--text);
   font-size: 0.76rem;
   font-weight: 900;
   text-underline-offset: 4px;
@@ -391,7 +394,7 @@ a:focus-visible {
   margin-top: 13px;
   padding: 10px 12px;
   border-radius: 10px;
-  background: rgba(217, 255, 67, 0.1);
+  background: rgba(255, 210, 31, 0.1);
   color: var(--lime);
   font-size: 0.88rem;
   font-weight: 900;
@@ -451,8 +454,8 @@ a:focus-visible {
 }
 
 .view-switcher button[aria-pressed="true"] {
-  background: var(--ink);
-  color: var(--lime);
+  background: var(--orange);
+  color: white;
 }
 
 .schedule-layout {
@@ -504,7 +507,7 @@ a:focus-visible {
 
 .event-row:hover,
 .event-row[aria-current="true"] {
-  background: #f0ffb5;
+  background: rgba(255, 52, 52, 0.12);
 }
 
 .event-row:hover {
@@ -515,7 +518,7 @@ a:focus-visible {
   display: grid;
   place-items: center;
   min-height: 76px;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--line);
   border-radius: 18px;
   background: var(--paper);
 }
@@ -583,7 +586,7 @@ a:focus-visible {
 .detail-top {
   padding: 26px;
   background: var(--ink);
-  color: var(--card);
+  color: var(--text);
 }
 
 .detail-badges {
@@ -698,8 +701,8 @@ a:focus-visible {
 .fighter-rank {
   padding: 3px 5px;
   border-radius: 6px;
-  background: var(--ink);
-  color: var(--lime);
+  background: var(--lime);
+  color: var(--ink);
   font-size: 0.55rem;
   font-weight: 900;
   line-height: 1;
@@ -748,12 +751,12 @@ a:focus-visible {
 }
 
 .hero-fighter-trigger:hover {
-  background: rgba(217, 255, 67, 0.13);
-  color: var(--card);
+  background: rgba(255, 52, 52, 0.14);
+  color: var(--text);
 }
 
 .hero-fighter-trigger:hover small {
-  color: var(--lime);
+  color: var(--text);
 }
 
 .fighter-dialog-backdrop {
@@ -773,7 +776,7 @@ a:focus-visible {
   max-height: min(760px, calc(100vh - 44px));
   overflow-y: auto;
   padding: clamp(24px, 5vw, 42px);
-  border: 2px solid var(--ink);
+  border: 2px solid var(--line);
   border-radius: 28px;
   background: var(--card);
   box-shadow: 10px 10px 0 var(--orange);
@@ -806,7 +809,7 @@ a:focus-visible {
   aspect-ratio: 1;
   display: grid;
   place-items: center;
-  border: 2px solid var(--ink);
+  border: 2px solid var(--text);
   border-radius: 26px;
   background:
     linear-gradient(135deg, transparent 46%, var(--orange) 47% 54%, transparent 55%),
@@ -867,15 +870,15 @@ a:focus-visible {
 .fighter-profile-badges span {
   padding: 8px 11px;
   border-radius: 999px;
-  background: var(--ink);
+  background: var(--subtle);
   color: var(--lime);
   font-size: 0.72rem;
   font-weight: 900;
 }
 
 .fighter-profile-badges .verified-badge {
-  background: #148447;
-  color: white;
+  background: var(--lime);
+  color: var(--ink);
 }
 
 .fighter-profile-summary {
@@ -896,8 +899,8 @@ a:focus-visible {
 }
 
 .fighter-next-fight {
-  border-color: rgba(20, 132, 71, 0.35);
-  background: #eff8e8;
+  border-color: rgba(255, 210, 31, 0.42);
+  background: rgba(255, 210, 31, 0.08);
 }
 
 .fighter-next-row {
@@ -926,7 +929,7 @@ a:focus-visible {
 .fighter-next-fight > a {
   display: inline-flex;
   margin-top: 12px;
-  color: #148447;
+  color: var(--lime);
   font-size: 0.67rem;
   font-weight: 900;
   text-underline-offset: 3px;
@@ -960,11 +963,12 @@ a:focus-visible {
 }
 
 .fighter-result[data-result="승"] {
-  background: #148447;
+  background: var(--lime);
+  color: var(--ink);
 }
 
 .fighter-result[data-result="패"] {
-  background: #c23d2b;
+  background: var(--orange);
 }
 
 .fighter-result[data-result="무"] {
@@ -1034,7 +1038,7 @@ a:focus-visible {
   padding: 9px 11px;
   border: 1px solid var(--line);
   border-radius: 10px;
-  color: var(--ink);
+  color: var(--text);
   font-size: 0.76rem;
   font-weight: 900;
   text-underline-offset: 3px;
@@ -1086,7 +1090,7 @@ a:focus-visible {
 }
 
 .source-box a {
-  color: var(--ink);
+  color: var(--text);
   font-weight: 850;
   text-underline-offset: 3px;
 }
@@ -1146,11 +1150,11 @@ a:focus-visible {
 }
 
 .weekday:first-child {
-  color: #df3b25;
+  color: var(--orange);
 }
 
 .weekday:last-child {
-  color: #2670a5;
+  color: var(--lime);
 }
 
 .calendar-grid {
@@ -1177,12 +1181,12 @@ button.calendar-day {
 }
 
 button.calendar-day:hover {
-  background: #f7f5ee;
+  background: var(--subtle);
 }
 
 .calendar-day.outside {
-  color: #b7b1a7;
-  background: #f2efe8;
+  color: #666660;
+  background: #0b0b0b;
 }
 
 .calendar-day.today .day-number {
@@ -1226,9 +1230,9 @@ button.calendar-day:hover {
   align-items: start;
   margin-top: 20px;
   padding: 18px;
-  border: 1px solid #d9cc79;
+  border: 1px solid rgba(255, 210, 31, 0.5);
   border-radius: 18px;
-  background: #fff6be;
+  background: rgba(255, 210, 31, 0.08);
 }
 
 .notice-icon {
@@ -1250,7 +1254,7 @@ button.calendar-day:hover {
 
 .notice p {
   margin: 4px 0 0;
-  color: #6f6535;
+  color: var(--muted);
   font-size: 0.72rem;
   line-height: 1.55;
 }
@@ -1346,7 +1350,7 @@ button.calendar-day:hover {
   border: 1px solid var(--line);
   border-radius: 22px;
   background: var(--card);
-  color: var(--ink);
+  color: var(--text);
   text-align: left;
   cursor: pointer;
   transition:
@@ -1356,13 +1360,13 @@ button.calendar-day:hover {
 }
 
 .korean-fighter-card:hover {
-  border-color: var(--ink);
+  border-color: var(--orange);
   box-shadow: 5px 5px 0 var(--orange);
   transform: translate(-2px, -2px);
 }
 
 .korean-fighter-card[data-status="former"] {
-  background: #f7f3ea;
+  background: #0c0c0c;
 }
 
 .korean-fighter-card[data-status="former"] .korean-card-avatar {
@@ -1373,12 +1377,12 @@ button.calendar-day:hover {
       var(--orange) 47% 54%,
       transparent 55%
     ),
-    #e3ded3;
+    #2a2a2a;
 }
 
 .korean-fighter-card[data-status="former"] .korean-card-status i {
-  background: #716b60;
-  box-shadow: 0 0 0 3px rgba(113, 107, 96, 0.12);
+  background: #777770;
+  box-shadow: 0 0 0 3px rgba(119, 119, 112, 0.14);
 }
 
 .korean-fighter-card:focus-visible {
@@ -1401,7 +1405,7 @@ button.calendar-day:hover {
   height: 46px;
   display: grid;
   place-items: center;
-  border: 2px solid var(--ink);
+  border: 2px solid var(--text);
   border-radius: 14px;
   background:
     linear-gradient(
@@ -1429,8 +1433,8 @@ button.calendar-day:hover {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #148447;
-  box-shadow: 0 0 0 3px rgba(20, 132, 71, 0.12);
+  background: var(--lime);
+  box-shadow: 0 0 0 3px rgba(255, 210, 31, 0.13);
 }
 
 .korean-card-name {
@@ -1494,11 +1498,12 @@ button.calendar-day:hover {
 }
 
 .korean-card-last b[data-result="승"] {
-  background: #148447;
+  background: var(--lime);
+  color: var(--ink);
 }
 
 .korean-card-last b[data-result="패"] {
-  background: #c23d2b;
+  background: var(--orange);
 }
 
 .korean-card-last b[data-result="무"] {
@@ -1507,7 +1512,7 @@ button.calendar-day:hover {
 
 .korean-card-last small {
   overflow: hidden;
-  color: var(--ink);
+  color: var(--text);
   font-size: 0.69rem;
   font-weight: 850;
   text-overflow: ellipsis;
@@ -1523,13 +1528,13 @@ button.calendar-day:hover {
 }
 
 .korean-card-next b {
-  color: var(--ink);
+  color: var(--text);
   font-weight: 950;
 }
 
 .korean-card-next-confirmed {
   align-items: end;
-  border-color: rgba(20, 132, 71, 0.32);
+  border-color: rgba(255, 210, 31, 0.38);
 }
 
 .korean-card-next-confirmed > span {
@@ -1539,14 +1544,14 @@ button.calendar-day:hover {
 }
 
 .korean-card-next-confirmed small {
-  color: #148447;
+  color: var(--lime);
   font-size: 0.61rem;
   font-weight: 950;
 }
 
 .korean-card-next-confirmed strong {
   overflow: hidden;
-  color: var(--ink);
+  color: var(--text);
   font-size: 0.82rem;
   font-weight: 950;
   text-overflow: ellipsis;
@@ -1567,7 +1572,7 @@ button.calendar-day:hover {
 
 .fighters-page-hero {
   padding: 72px 0 76px;
-  border-bottom: 2px solid var(--ink);
+  border-bottom: 2px solid var(--line);
 }
 
 .fighters-page-hero h1 {
@@ -1607,7 +1612,7 @@ button.calendar-day:hover {
   gap: 7px;
   padding: 12px 15px;
   border-radius: 15px;
-  background: var(--ink);
+  background: var(--card);
   color: white;
   font-size: 0.73rem;
   font-weight: 850;
@@ -1626,7 +1631,7 @@ button.calendar-day:hover {
 .former-fighters-section {
   margin-top: 82px;
   padding-top: 72px;
-  border-top: 2px solid var(--ink);
+  border-top: 2px solid var(--line);
 }
 
 .fighters-verification-note {
@@ -1635,9 +1640,9 @@ button.calendar-day:hover {
   gap: 18px;
   margin-top: 64px;
   padding: 22px;
-  border: 1px solid #d9cc79;
+  border: 1px solid rgba(255, 210, 31, 0.5);
   border-radius: 18px;
-  background: #fff6be;
+  background: rgba(255, 210, 31, 0.08);
 }
 
 .fighters-verification-note strong {
@@ -1647,14 +1652,14 @@ button.calendar-day:hover {
 
 .fighters-verification-note p {
   margin: 0;
-  color: #6f6535;
+  color: var(--muted);
   font-size: 0.76rem;
   font-weight: 700;
   line-height: 1.65;
 }
 
 .footer-home-link {
-  color: var(--ink);
+  color: var(--text);
   font-size: 0.8rem;
   font-weight: 950;
   text-underline-offset: 4px;
@@ -1667,7 +1672,7 @@ button.calendar-day:hover {
   align-items: end;
   margin-top: 76px;
   padding-top: 26px;
-  border-top: 2px solid var(--ink);
+  border-top: 2px solid var(--line);
 }
 
 .footer strong {

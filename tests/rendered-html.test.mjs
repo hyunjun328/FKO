@@ -1,5 +1,6 @@
 // 배포 빌드가 UFC 일정 제품 화면을 서버에서 렌더링하는지 검증하는 테스트
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render(pathname = "/") {
@@ -132,4 +133,17 @@ test("server-renders active and former Korean fighters on a separate page", asyn
   assert.doesNotMatch(html, /The Korean Tyson/);
   assert.match(html, /href="\/"/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
+});
+
+test("uses the black, white, red, and yellow FKO theme", async () => {
+  const css = await readFile(
+    new URL("../app/globals.css", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(css, /--paper: #050505/);
+  assert.match(css, /--text: #f7f7f2/);
+  assert.match(css, /--orange: #ff3434/);
+  assert.match(css, /--lime: #ffd21f/);
+  assert.doesNotMatch(css, /#25a35a|#148447|#2670a5|#f3f0e8|#fffdf7/i);
 });
