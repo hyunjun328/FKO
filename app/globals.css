@@ -205,12 +205,35 @@ a:focus-visible {
 }
 
 .main-matchup {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   gap: 12px;
   margin-top: 26px;
-  font-size: clamp(1.05rem, 2.5vw, 1.45rem);
-  font-weight: 850;
+}
+
+.matchup-fighter {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.matchup-fighter:last-child {
+  text-align: right;
+}
+
+.matchup-fighter b {
+  font-size: clamp(1.15rem, 3vw, 1.65rem);
+  font-weight: 900;
+  line-height: 1.2;
+  word-break: keep-all;
+}
+
+.matchup-fighter small {
+  color: #a9a59c;
+  font-size: clamp(0.68rem, 1.6vw, 0.82rem);
+  font-weight: 650;
+  line-height: 1.25;
 }
 
 .main-matchup strong {
@@ -407,10 +430,18 @@ a:focus-visible {
 }
 
 .event-row-copy h3 {
-  margin: 6px 0 8px;
+  margin: 6px 0 3px;
   font-size: clamp(1.15rem, 2.3vw, 1.55rem);
   font-weight: 900;
   letter-spacing: -0.04em;
+}
+
+.event-row-english {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 650;
 }
 
 .event-row-copy p {
@@ -515,14 +546,26 @@ a:focus-visible {
 }
 
 .fighter {
+  display: grid;
+  gap: 3px;
   min-width: 0;
-  font-size: 0.86rem;
-  font-weight: 850;
   line-height: 1.25;
 }
 
 .fighter:last-child {
   text-align: right;
+}
+
+.fighter strong {
+  font-size: 0.92rem;
+  font-weight: 900;
+  word-break: keep-all;
+}
+
+.fighter small {
+  color: var(--muted);
+  font-size: 0.65rem;
+  font-weight: 650;
 }
 
 .bout-vs {

@@ -36,6 +36,12 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /한국시간/);
   assert.match(html, /Medic vs Rodriguez/);
   assert.match(html, /Uros Medic/);
+  assert.match(html, /우로시 메디치/);
+  assert.match(html, /다니엘 로드리게스/);
+  assert.match(
+    html,
+    /<strong>우로시 메디치<\/strong><small lang="en">Uros Medic<\/small>/,
+  );
   assert.match(
     normalizedHtml,
     /메인카드[^<]*·[^<]*8월 2일[^<]*02:00[^<]*KST/,

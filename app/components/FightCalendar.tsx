@@ -106,11 +106,17 @@ function EventDetail({ event }: { event: FightEvent }) {
                 <div
                   className="bout"
                   key={`${bout.left}-${bout.right}`}
-                  aria-label={`${bout.left} 대 ${bout.right}, ${bout.weight}`}
+                  aria-label={`${bout.leftKo} ${bout.left} 대 ${bout.rightKo} ${bout.right}, ${bout.weight}`}
                 >
-                  <span className="fighter">{bout.left}</span>
+                  <span className="fighter">
+                    <strong>{bout.leftKo}</strong>
+                    <small lang="en">{bout.left}</small>
+                  </span>
                   <span className="bout-vs">VS</span>
-                  <span className="fighter">{bout.right}</span>
+                  <span className="fighter">
+                    <strong>{bout.rightKo}</strong>
+                    <small lang="en">{bout.right}</small>
+                  </span>
                   <span className="weight">
                     {bout.title ? "TITLE · " : ""}
                     {bout.weight}
@@ -307,9 +313,15 @@ export function FightCalendar() {
             <span className="event-kicker">다음 대회 · {nextEvent.status}</span>
             <h2>{nextEvent.title}</h2>
             <div className="main-matchup">
-              <span>{mainEvent.left}</span>
+              <span className="matchup-fighter">
+                <b>{mainEvent.leftKo}</b>
+                <small lang="en">{mainEvent.left}</small>
+              </span>
               <strong>VS</strong>
-              <span>{mainEvent.right}</span>
+              <span className="matchup-fighter">
+                <b>{mainEvent.rightKo}</b>
+                <small lang="en">{mainEvent.right}</small>
+              </span>
             </div>
             <div className="event-meta">
               <span>
@@ -394,7 +406,12 @@ export function FightCalendar() {
                       </span>
                       <span className="event-row-copy">
                         <small>{event.series}</small>
-                        <h3>{event.subtitle}</h3>
+                        <h3>
+                          {event.bouts[0].leftKo} vs {event.bouts[0].rightKo}
+                        </h3>
+                        <span className="event-row-english" lang="en">
+                          {event.bouts[0].left} vs {event.bouts[0].right}
+                        </span>
                         <p>
                           {KST_FORMATTER.format(new Date(event.startUtc))} ·{" "}
                           {event.city}
