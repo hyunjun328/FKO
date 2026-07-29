@@ -3,6 +3,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { EVENTS, type BoutSection, type FightEvent } from "../data/events";
+import { FIGHTER_PROFILES } from "../data/fighters";
 
 const KST_FORMATTER = new Intl.DateTimeFormat("ko-KR", {
   timeZone: "Asia/Seoul",
@@ -29,6 +30,12 @@ const SECTION_LABELS: Record<BoutSection, string> = {
 
 const WEEKDAYS = ["일", "월", "화", "수", "목", "금", "토"];
 
+type FighterSelection = {
+  name: string;
+  koName: string;
+  weight: string;
+};
+
 function kstDateKey(iso: string) {
   return KST_DATE_FORMATTER.format(new Date(iso));
 }
@@ -54,7 +61,142 @@ function remaining(startUtc: string, now: number) {
   };
 }
 
-function EventDetail({ event }: { event: FightEvent }) {
+function fighterInitials(name: string) {
+  return name
+    .split(" ")
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 3)
+    .toUpperCase();
+}
+
+function FighterProfileDialog({
+  fighter,
+  onClose,
+}: {
+  fighter: FighterSelection;
+  onClose: () => void;
+}) {
+  const profile = FIGHTER_PROFILES[fighter.name];
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      className="fighter-dialog-backdrop"
+      role="presentation"
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+    >
+      <section
+        className="fighter-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="fighter-dialog-title"
+      >
+        <button
+          type="button"
+          className="fighter-dialog-close"
+          onClick={onClose}
+          aria-label="선수 정보 닫기"
+          autoFocus
+        >
+          닫기 ×
+        </button>
+
+        <div className="fighter-profile-head">
+          <div className="fighter-avatar" aria-hidden="true">
+            <span>{fighterInitials(fighter.name)}</span>
+          </div>
+          <div>
+            <span className="fighter-profile-kicker">
+              {profile ? "검수된 선수 정보" : "기본 선수 정보"}
+            </span>
+            <h2 id="fighter-dialog-title">{fighter.koName}</h2>
+            <p lang="en">{fighter.name}</p>
+            {profile?.nickname ? (
+              <strong className="fighter-nickname">
+                “{profile.nickname}”
+              </strong>
+            ) : null}
+          </div>
+        </div>
+
+        {profile ? (
+          <>
+            <div className="fighter-profile-badges">
+              <span>{profile.ranking}</span>
+              <span>{profile.record}</span>
+            </div>
+            <p className="fighter-profile-summary">{profile.summary}</p>
+            <dl className="fighter-profile-stats">
+              <div>
+                <dt>출신</dt>
+                <dd>{profile.country}</dd>
+              </div>
+              <div>
+                <dt>스타일</dt>
+                <dd>{profile.style}</dd>
+              </div>
+              <div>
+                <dt>신장</dt>
+                <dd>{profile.heightCm}cm</dd>
+              </div>
+              <div>
+                <dt>리치</dt>
+                <dd>{profile.reachCm}cm</dd>
+              </div>
+              <div>
+                <dt>이번 대진</dt>
+                <dd>{fighter.weight}</dd>
+              </div>
+              <div>
+                <dt>확인일</dt>
+                <dd>{profile.verifiedAt}</dd>
+              </div>
+            </dl>
+            <a
+              className="fighter-source-link"
+              href={profile.sourceUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              UFC 공식 선수 정보 보기 ↗
+            </a>
+          </>
+        ) : (
+          <div className="fighter-profile-pending">
+            <strong>{fighter.weight} 출전 예정</strong>
+            <p>
+              아직 공식 전적과 랭킹을 검수 중입니다. 확인되지 않은 정보는
+              추정해서 표시하지 않습니다.
+            </p>
+          </div>
+        )}
+      </section>
+    </div>
+  );
+}
+
+function EventDetail({
+  event,
+  onFighterSelect,
+}: {
+  event: FightEvent;
+  onFighterSelect: (fighter: FighterSelection) => void;
+}) {
   const grouped = event.bouts.reduce(
     (result, bout) => {
       result[bout.section].push(bout);
@@ -108,15 +250,37 @@ function EventDetail({ event }: { event: FightEvent }) {
                   key={`${bout.left}-${bout.right}`}
                   aria-label={`${bout.leftKo} ${bout.left} 대 ${bout.rightKo} ${bout.right}, ${bout.weight}`}
                 >
-                  <span className="fighter">
+                  <button
+                    type="button"
+                    className="fighter fighter-trigger"
+                    onClick={() =>
+                      onFighterSelect({
+                        name: bout.left,
+                        koName: bout.leftKo,
+                        weight: bout.weight,
+                      })
+                    }
+                    aria-label={`${bout.leftKo} 선수 정보 보기`}
+                  >
                     <strong>{bout.leftKo}</strong>
                     <small lang="en">{bout.left}</small>
-                  </span>
+                  </button>
                   <span className="bout-vs">VS</span>
-                  <span className="fighter">
+                  <button
+                    type="button"
+                    className="fighter fighter-trigger"
+                    onClick={() =>
+                      onFighterSelect({
+                        name: bout.right,
+                        koName: bout.rightKo,
+                        weight: bout.weight,
+                      })
+                    }
+                    aria-label={`${bout.rightKo} 선수 정보 보기`}
+                  >
                     <strong>{bout.rightKo}</strong>
                     <small lang="en">{bout.right}</small>
-                  </span>
+                  </button>
                   <span className="weight">
                     {bout.title ? "TITLE · " : ""}
                     {bout.weight}
@@ -269,6 +433,8 @@ function CalendarView({
 export function FightCalendar() {
   const [view, setView] = useState<"list" | "calendar">("list");
   const [selectedId, setSelectedId] = useState(EVENTS[0].id);
+  const [selectedFighter, setSelectedFighter] =
+    useState<FighterSelection | null>(null);
   const [now, setNow] = useState(() => Date.now());
 
   useEffect(() => {
@@ -316,15 +482,37 @@ export function FightCalendar() {
             <span className="event-kicker">다음 대회 · {nextEvent.status}</span>
             <h2>{nextEvent.title}</h2>
             <div className="main-matchup">
-              <span className="matchup-fighter">
+              <button
+                type="button"
+                className="matchup-fighter fighter-trigger hero-fighter-trigger"
+                onClick={() =>
+                  setSelectedFighter({
+                    name: mainEvent.left,
+                    koName: mainEvent.leftKo,
+                    weight: mainEvent.weight,
+                  })
+                }
+                aria-label={`${mainEvent.leftKo} 선수 정보 보기`}
+              >
                 <b>{mainEvent.leftKo}</b>
                 <small lang="en">{mainEvent.left}</small>
-              </span>
+              </button>
               <strong>VS</strong>
-              <span className="matchup-fighter">
+              <button
+                type="button"
+                className="matchup-fighter fighter-trigger hero-fighter-trigger"
+                onClick={() =>
+                  setSelectedFighter({
+                    name: mainEvent.right,
+                    koName: mainEvent.rightKo,
+                    weight: mainEvent.weight,
+                  })
+                }
+                aria-label={`${mainEvent.rightKo} 선수 정보 보기`}
+              >
                 <b>{mainEvent.rightKo}</b>
                 <small lang="en">{mainEvent.right}</small>
-              </span>
+              </button>
             </div>
             <div className="event-meta">
               <span>
@@ -447,7 +635,10 @@ export function FightCalendar() {
             </div>
           </div>
 
-          <EventDetail event={selected} />
+          <EventDetail
+            event={selected}
+            onFighterSelect={setSelectedFighter}
+          />
         </div>
       </section>
 
@@ -462,6 +653,13 @@ export function FightCalendar() {
         </div>
         <span className="footer-status">1차 공개 베타</span>
       </footer>
+
+      {selectedFighter ? (
+        <FighterProfileDialog
+          fighter={selectedFighter}
+          onClose={() => setSelectedFighter(null)}
+        />
+      ) : null}
     </main>
   );
 }

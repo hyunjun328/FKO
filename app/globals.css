@@ -235,6 +235,7 @@ a:focus-visible {
   display: grid;
   gap: 4px;
   min-width: 0;
+  padding: 8px;
 }
 
 .matchup-fighter:last-child {
@@ -575,6 +576,10 @@ a:focus-visible {
   text-align: right;
 }
 
+.bout > .fighter:nth-of-type(2) {
+  text-align: right;
+}
+
 .fighter strong {
   font-size: 0.92rem;
   font-weight: 900;
@@ -585,6 +590,221 @@ a:focus-visible {
   color: var(--muted);
   font-size: 0.65rem;
   font-weight: 650;
+}
+
+.fighter-trigger {
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.fighter-trigger:hover {
+  background: var(--lime);
+  color: var(--ink);
+}
+
+.fighter-trigger:hover small {
+  color: #4f4c45;
+}
+
+.hero-fighter-trigger {
+  width: 100%;
+}
+
+.hero-fighter-trigger:hover {
+  background: rgba(217, 255, 67, 0.13);
+  color: var(--card);
+}
+
+.hero-fighter-trigger:hover small {
+  color: var(--lime);
+}
+
+.fighter-dialog-backdrop {
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  background: rgba(17, 17, 15, 0.72);
+  backdrop-filter: blur(8px);
+}
+
+.fighter-dialog {
+  position: relative;
+  width: min(620px, 100%);
+  max-height: min(760px, calc(100vh - 44px));
+  overflow-y: auto;
+  padding: clamp(24px, 5vw, 42px);
+  border: 2px solid var(--ink);
+  border-radius: 28px;
+  background: var(--card);
+  box-shadow: 10px 10px 0 var(--orange);
+}
+
+.fighter-dialog-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 850;
+}
+
+.fighter-profile-head {
+  display: grid;
+  grid-template-columns: 116px minmax(0, 1fr);
+  gap: 22px;
+  align-items: center;
+  padding-right: 56px;
+}
+
+.fighter-avatar {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--ink);
+  border-radius: 26px;
+  background:
+    linear-gradient(135deg, transparent 46%, var(--orange) 47% 54%, transparent 55%),
+    var(--lime);
+  color: var(--ink);
+}
+
+.fighter-avatar::after {
+  content: "FKO";
+  position: absolute;
+  right: 8px;
+  bottom: 6px;
+  font-size: 0.58rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+}
+
+.fighter-avatar span {
+  font-size: 2.25rem;
+  font-weight: 950;
+  letter-spacing: -0.08em;
+}
+
+.fighter-profile-kicker {
+  color: var(--orange);
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+.fighter-profile-head h2 {
+  margin: 5px 0 2px;
+  font-size: clamp(2rem, 7vw, 3.3rem);
+  font-weight: 950;
+  letter-spacing: -0.07em;
+  line-height: 0.98;
+}
+
+.fighter-profile-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.fighter-nickname {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.8rem;
+}
+
+.fighter-profile-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 26px;
+}
+
+.fighter-profile-badges span {
+  padding: 8px 11px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--lime);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.fighter-profile-summary {
+  margin: 18px 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.65;
+  word-break: keep-all;
+}
+
+.fighter-profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.fighter-profile-stats div {
+  min-width: 0;
+  padding: 14px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.fighter-profile-stats dt {
+  color: var(--muted);
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+.fighter-profile-stats dd {
+  margin: 5px 0 0;
+  font-size: 0.82rem;
+  font-weight: 900;
+  word-break: keep-all;
+}
+
+.fighter-source-link {
+  display: inline-flex;
+  margin-top: 18px;
+  color: var(--ink);
+  font-size: 0.76rem;
+  font-weight: 900;
+  text-underline-offset: 3px;
+}
+
+.fighter-profile-pending {
+  margin-top: 26px;
+  padding: 20px;
+  border-radius: 18px;
+  background: var(--paper);
+}
+
+.fighter-profile-pending strong {
+  font-size: 1rem;
+}
+
+.fighter-profile-pending p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 650;
+  line-height: 1.65;
 }
 
 .bout-vs {
@@ -917,6 +1137,37 @@ button.calendar-day:hover {
 
   .footer {
     grid-template-columns: 1fr;
+  }
+
+  .fighter-dialog-backdrop {
+    place-items: end center;
+    padding: 12px;
+  }
+
+  .fighter-dialog {
+    width: 100%;
+    max-height: calc(100vh - 24px);
+    padding: 24px 20px;
+    border-radius: 24px;
+    box-shadow: 6px 6px 0 var(--orange);
+  }
+
+  .fighter-profile-head {
+    grid-template-columns: 86px minmax(0, 1fr);
+    gap: 14px;
+    padding-right: 38px;
+  }
+
+  .fighter-avatar {
+    border-radius: 20px;
+  }
+
+  .fighter-avatar span {
+    font-size: 1.65rem;
+  }
+
+  .fighter-profile-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

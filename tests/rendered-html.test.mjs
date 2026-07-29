@@ -42,8 +42,9 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /다니엘 로드리게스/);
   assert.match(
     html,
-    /<strong>우로시 메디치<\/strong><small lang="en">Uros Medic<\/small>/,
+    /aria-label="우로시 메디치 선수 정보 보기"/,
   );
+  assert.match(html, /aria-label="다니엘 로드리게스 선수 정보 보기"/);
   assert.match(
     normalizedHtml,
     /메인카드[^<]*·[^<]*8월 2일[^<]*02:00[^<]*KST/,
