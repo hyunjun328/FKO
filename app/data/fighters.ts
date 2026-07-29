@@ -6,8 +6,10 @@ export type FighterProfile = {
   ranking: string;
   country: string;
   style: string;
-  heightCm: number;
-  reachCm: number;
+  heightCm?: number;
+  reachCm?: number;
+  team?: string;
+  octagonDebut?: string;
   summary: string;
   lastFight?: {
     result: "승" | "패" | "무";
@@ -20,7 +22,159 @@ export type FighterProfile = {
   verifiedAt: string;
 };
 
+export type KoreanFighter = {
+  name: string;
+  koName: string;
+  division: string;
+};
+
+export const KOREAN_FIGHTERS: KoreanFighter[] = [
+  { name: "JunYong Park", koName: "박준용", division: "미들급" },
+  { name: "Dooho Choi", koName: "최두호", division: "페더급" },
+  { name: "SeokHyeon Ko", koName: "고석현", division: "웰터급" },
+  { name: "HyunSung Park", koName: "박현성", division: "플라이급" },
+  { name: "JeongYeong Lee", koName: "이정영", division: "페더급" },
+  { name: "JooSang Yoo", koName: "유주상", division: "페더급" },
+];
+
 export const FIGHTER_PROFILES: Record<string, FighterProfile> = {
+  "JunYong Park": {
+    name: "JunYong Park",
+    nickname: "The Iron Turtle",
+    record: "19승 7패",
+    ranking: "공식 랭킹 없음",
+    country: "대한민국 서울",
+    style: "복싱",
+    heightCm: 178,
+    reachCm: 185,
+    team: "Korean Top Team",
+    octagonDebut: "2019-08-31",
+    summary:
+      "끈질긴 압박과 높은 타격량이 강점인 미들급 베테랑. UFC에서 판정과 서브미션을 고르게 쌓아 왔다.",
+    lastFight: {
+      result: "패",
+      opponent: "Ikram Aliskerov",
+      opponentKo: "이크람 알리스케로프",
+      date: "2025-10-25",
+      method: "3라운드 만장일치 판정",
+    },
+    sourceUrl: "https://www.ufc.com/athlete/jun-yong-park",
+    verifiedAt: "2026-07-29",
+  },
+  "Dooho Choi": {
+    name: "Dooho Choi",
+    nickname: "The Korean Superboy",
+    record: "17승 4패 1무",
+    ranking: "공식 랭킹 없음",
+    country: "대한민국",
+    style: "타격",
+    heightCm: 178,
+    reachCm: 178,
+    team: "Gumi MMA",
+    octagonDebut: "2014-11-22",
+    summary:
+      "통산 17승 가운데 14승을 KO로 끝낸 강력한 페더급 타격가. 컵 스완슨전으로 UFC 명예의 전당 파이트 부문에 헌액됐다.",
+    lastFight: {
+      result: "승",
+      opponent: "Daniel Santos",
+      opponentKo: "다니엘 산토스",
+      date: "2026-05-16",
+      method: "2라운드 4:29 KO/TKO",
+    },
+    sourceUrl: "https://www.ufc.com/athlete/dooho-choi",
+    verifiedAt: "2026-07-29",
+  },
+  "SeokHyeon Ko": {
+    name: "SeokHyeon Ko",
+    nickname: "The Korean Tyson",
+    record: "13승 3패",
+    ranking: "공식 랭킹 없음",
+    country: "대한민국 부산",
+    style: "유도",
+    heightCm: 178,
+    reachCm: 180,
+    team: "HAVAS MMA",
+    octagonDebut: "2025-06-21",
+    summary:
+      "삼보 세계선수권 우승 경력을 바탕으로 타격과 그래플링을 연결하는 웰터급 선수. UFC 첫 세 경기를 모두 판정승으로 마쳤다.",
+    lastFight: {
+      result: "승",
+      opponent: "Jean-Paul Lebosnoyani",
+      opponentKo: "장폴 레보스노야니",
+      date: "2026-07-18",
+      method: "3라운드 만장일치 판정",
+    },
+    sourceUrl: "https://www.ufc.com/athlete/seokhyeon-ko",
+    verifiedAt: "2026-07-29",
+  },
+  "HyunSung Park": {
+    name: "HyunSung Park",
+    nickname: "Peace of Mind",
+    record: "10승 2패",
+    ranking: "공식 랭킹 없음",
+    country: "대한민국",
+    style: "종합격투기",
+    heightCm: 170,
+    reachCm: 168,
+    team: "Tiger Muay Thai",
+    octagonDebut: "2023-02-04",
+    summary:
+      "Road to UFC 초대 플라이급 우승자. 10승 중 9승을 KO 또는 서브미션으로 끝낸 피니시 능력이 강점이다.",
+    lastFight: {
+      result: "패",
+      opponent: "Bruno Silva",
+      opponentKo: "브루노 실바",
+      date: "2025-10-18",
+      method: "3라운드 2:15 서브미션",
+    },
+    sourceUrl: "https://www.ufc.com/athlete/hyunsung-park",
+    verifiedAt: "2026-07-29",
+  },
+  "JeongYeong Lee": {
+    name: "JeongYeong Lee",
+    nickname: "Korean Tiger",
+    record: "11승 3패",
+    ranking: "공식 랭킹 없음",
+    country: "대한민국 대구",
+    style: "브라질리언 주짓수",
+    heightCm: 178,
+    reachCm: 187,
+    team: "Fight Ready",
+    octagonDebut: "2023-02-04",
+    summary:
+      "Road to UFC 초대 페더급 우승자이자 주짓수 블랙벨트. KO 4승과 서브미션 3승을 기록했다.",
+    lastFight: {
+      result: "패",
+      opponent: "Daniel Santos",
+      opponentKo: "다니엘 산토스",
+      date: "2025-05-10",
+      method: "3라운드 만장일치 판정",
+    },
+    sourceUrl: "https://www.ufc.com/athlete/jeongyeong-lee",
+    verifiedAt: "2026-07-29",
+  },
+  "JooSang Yoo": {
+    name: "JooSang Yoo",
+    nickname: "Zombie Jr.",
+    record: "9승 1패",
+    ranking: "공식 랭킹 없음",
+    country: "대한민국",
+    style: "프리스타일",
+    heightCm: 170,
+    team: "Pinnacle Gym · Vamos",
+    octagonDebut: "2025-06-07",
+    summary:
+      "정찬성의 제자로 알려진 페더급 유망주. UFC 데뷔전에서 제카 사라기를 28초 만에 KO로 꺾었다.",
+    lastFight: {
+      result: "패",
+      opponent: "Daniel Santos",
+      opponentKo: "다니엘 산토스",
+      date: "2025-10-04",
+      method: "2라운드 0:21 KO/TKO",
+    },
+    sourceUrl: "https://www.ufc.com/athlete/joo-sang-yoo",
+    verifiedAt: "2026-07-29",
+  },
   "Uros Medic": {
     name: "Uros Medic",
     nickname: "The Doctor",

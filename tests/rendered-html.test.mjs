@@ -48,6 +48,18 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /웰터급 14위/);
   assert.match(html, /16전 13승 3패/);
   assert.match(html, /25전 20승 5패/);
+  assert.match(html, /코리안 파이터/);
+  assert.match(normalizedHtml, /공식 자료 확인[^<]*·[^<]*6명/);
+  assert.match(html, /박준용/);
+  assert.match(html, /최두호/);
+  assert.match(html, /고석현/);
+  assert.match(html, /박현성/);
+  assert.match(html, /이정영/);
+  assert.match(html, /유주상/);
+  assert.match(html, /aria-label="박준용 상세 정보 보기"/);
+  assert.match(html, /26전 19승 7패/);
+  assert.match(html, /22전 17승 4패 1무/);
+  assert.match(html, /다음 경기 미정/);
   assert.match(
     normalizedHtml,
     /메인카드[^<]*·[^<]*8월 2일[^<]*02:00[^<]*KST/,

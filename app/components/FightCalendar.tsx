@@ -3,7 +3,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { EVENTS, type BoutSection, type FightEvent } from "../data/events";
-import { FIGHTER_PROFILES } from "../data/fighters";
+import { FIGHTER_PROFILES, KOREAN_FIGHTERS } from "../data/fighters";
 
 const KST_FORMATTER = new Intl.DateTimeFormat("ko-KR", {
   timeZone: "Asia/Seoul",
@@ -184,16 +184,32 @@ function FighterProfileDialog({
               </div>
               <div>
                 <dt>신장</dt>
-                <dd>{profile.heightCm}cm</dd>
+                <dd>
+                  {profile.heightCm ? `${profile.heightCm}cm` : "확인 중"}
+                </dd>
               </div>
               <div>
                 <dt>리치</dt>
-                <dd>{profile.reachCm}cm</dd>
+                <dd>
+                  {profile.reachCm ? `${profile.reachCm}cm` : "확인 중"}
+                </dd>
               </div>
               <div>
-                <dt>이번 대진</dt>
+                <dt>체급</dt>
                 <dd>{fighter.weight}</dd>
               </div>
+              {profile.team ? (
+                <div>
+                  <dt>소속</dt>
+                  <dd>{profile.team}</dd>
+                </div>
+              ) : null}
+              {profile.octagonDebut ? (
+                <div>
+                  <dt>UFC 데뷔</dt>
+                  <dd>{profile.octagonDebut}</dd>
+                </div>
+              ) : null}
               <div>
                 <dt>확인일</dt>
                 <dd>{profile.verifiedAt}</dd>
@@ -706,6 +722,85 @@ export function FightCalendar() {
             event={selected}
             onFighterSelect={setSelectedFighter}
           />
+        </div>
+      </section>
+
+      <section
+        className="korean-fighters-section"
+        aria-labelledby="korean-fighters-title"
+      >
+        <div className="section-head korean-fighters-head">
+          <div>
+            <span className="section-kicker">KOREAN FIGHTERS</span>
+            <h2 id="korean-fighters-title">코리안 파이터</h2>
+            <p>
+              현재 UFC에서 활동 중인 한국 선수들의 전적과 최근 흐름을
+              모았습니다.
+            </p>
+          </div>
+          <span className="korean-fighter-count">
+            공식 자료 확인 · {KOREAN_FIGHTERS.length}명
+          </span>
+        </div>
+
+        <div className="korean-fighter-grid">
+          {KOREAN_FIGHTERS.map((fighter) => {
+            const profile = FIGHTER_PROFILES[fighter.name];
+            return (
+              <button
+                type="button"
+                className="korean-fighter-card"
+                key={fighter.name}
+                onClick={() =>
+                  setSelectedFighter({
+                    name: fighter.name,
+                    koName: fighter.koName,
+                    weight: fighter.division,
+                  })
+                }
+                aria-label={`${fighter.koName} 상세 정보 보기`}
+              >
+                <span className="korean-card-top">
+                  <span className="korean-card-avatar" aria-hidden="true">
+                    {fighterInitials(fighter.name)}
+                  </span>
+                  <span className="korean-card-status">
+                    <i aria-hidden="true" />
+                    UFC 현역
+                  </span>
+                </span>
+                <span className="korean-card-name">
+                  <strong>{fighter.koName}</strong>
+                  <small lang="en">{fighter.name}</small>
+                  {profile.nickname ? (
+                    <em lang="en">“{profile.nickname}”</em>
+                  ) : null}
+                </span>
+                <span className="korean-card-meta">
+                  <b>{fighter.division}</b>
+                  <b>{recordSummary(profile.record)}</b>
+                </span>
+                {profile.lastFight ? (
+                  <span className="korean-card-last">
+                    <span>
+                      최근 경기
+                      <b data-result={profile.lastFight.result}>
+                        {profile.lastFight.result}
+                      </b>
+                    </span>
+                    <small>
+                      vs {profile.lastFight.opponentKo} ·{" "}
+                      {profile.lastFight.date}
+                    </small>
+                  </span>
+                ) : null}
+                <span className="korean-card-next">
+                  <span>다음 경기 미정</span>
+                  <b aria-hidden="true">상세 →</b>
+                </span>
+              </button>
+            );
+          })}
         </div>
       </section>
 
