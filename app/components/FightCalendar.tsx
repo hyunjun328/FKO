@@ -67,7 +67,12 @@ function EventDetail({ event }: { event: FightEvent }) {
   );
 
   return (
-    <aside className="detail-panel" aria-label={`${event.title} 대진`}>
+    <aside
+      className="detail-panel"
+      id="event-detail"
+      tabIndex={-1}
+      aria-label={`${event.title} 대진 상세`}
+    >
       <div className="detail-top">
         <div className="detail-badges">
           <span className="detail-badge highlight">{event.status}</span>
@@ -76,7 +81,14 @@ function EventDetail({ event }: { event: FightEvent }) {
         </div>
         <h3>{event.title}</h3>
         <p>{event.subtitle}</p>
-        <p>{KST_FORMATTER.format(new Date(event.startUtc))} 메인카드</p>
+        <p>
+          메인카드 · {KST_FORMATTER.format(new Date(event.startUtc))} KST
+        </p>
+        {event.prelimsUtc ? (
+          <p>
+            언더카드 · {KST_FORMATTER.format(new Date(event.prelimsUtc))} KST
+          </p>
+        ) : null}
         <p>
           {event.venue} · {event.city}, {event.country}
         </p>
@@ -300,7 +312,15 @@ export function FightCalendar() {
               <span>{mainEvent.right}</span>
             </div>
             <div className="event-meta">
-              <span>{KST_FORMATTER.format(new Date(nextEvent.startUtc))}</span>
+              <span>
+                메인카드 · {KST_FORMATTER.format(new Date(nextEvent.startUtc))} KST
+              </span>
+              {nextEvent.prelimsUtc ? (
+                <span>
+                  언더카드 ·{" "}
+                  {KST_FORMATTER.format(new Date(nextEvent.prelimsUtc))} KST
+                </span>
+              ) : null}
               <span>
                 {nextEvent.city} · {nextEvent.venue}
               </span>
@@ -358,12 +378,13 @@ export function FightCalendar() {
                 {EVENTS.map((event) => {
                   const parts = kstParts(event.startUtc);
                   return (
-                    <button
-                      type="button"
+                    <a
+                      href="#event-detail"
                       className="event-row"
                       key={event.id}
                       aria-current={selected.id === event.id}
                       onClick={() => setSelectedId(event.id)}
+                      aria-label={`${event.title} 상세 보기`}
                     >
                       <span className="date-block" aria-hidden="true">
                         <strong>{parts.day}</strong>
@@ -380,9 +401,9 @@ export function FightCalendar() {
                         </p>
                       </span>
                       <span className="row-arrow" aria-hidden="true">
-                        →
+                        상세&nbsp;→
                       </span>
-                    </button>
+                    </a>
                   );
                 })}
               </div>

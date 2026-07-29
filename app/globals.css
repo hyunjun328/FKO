@@ -351,7 +351,9 @@ a:focus-visible {
   border: 0;
   border-bottom: 1px solid var(--line);
   background: transparent;
+  color: inherit;
   text-align: left;
+  text-decoration: none;
   cursor: pointer;
   transition:
     background 180ms ease,
@@ -419,19 +421,22 @@ a:focus-visible {
 }
 
 .row-arrow {
-  width: 38px;
+  width: auto;
   height: 38px;
   display: grid;
   place-items: center;
+  padding: 0 12px;
   border: 1px solid var(--line);
-  border-radius: 50%;
-  font-size: 1.2rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 850;
 }
 
 .detail-panel {
   position: sticky;
   top: 18px;
   overflow: hidden;
+  scroll-margin-top: 18px;
 }
 
 .detail-top {
@@ -825,7 +830,9 @@ button.calendar-day:hover {
   }
 
   .row-arrow {
-    display: none;
+    grid-column: 2;
+    justify-self: start;
+    margin-top: -5px;
   }
 
   .calendar-panel {

@@ -29,11 +29,20 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
+  const normalizedHtml = html.replaceAll("<!-- -->", "");
   assert.match(html, /<html lang="ko">/i);
   assert.match(html, /파이트 캘린더 코리아/);
   assert.match(html, /UFC 일정/);
   assert.match(html, /한국시간/);
-  assert.match(html, /Medić vs Rodriguez/);
+  assert.match(html, /Medic vs Rodriguez/);
+  assert.match(html, /Uros Medic/);
+  assert.match(
+    normalizedHtml,
+    /메인카드[^<]*·[^<]*8월 2일[^<]*02:00[^<]*KST/,
+  );
+  assert.match(html, /href="#event-detail"/);
+  assert.match(html, /id="event-detail"/);
+  assert.match(html, /상세(?:&nbsp;|\u00a0)→/);
   assert.match(html, /UFC 및 Zuffa와 공식 제휴 관계가 없는/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
