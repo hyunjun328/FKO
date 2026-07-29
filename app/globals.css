@@ -1,6 +1,14 @@
 /* UFC 일정을 선명하게 전달하는 반응형 전역 스타일 */
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Pretendard Variable";
+  font-style: normal;
+  font-weight: 45 920;
+  font-display: swap;
+  src: url("/fonts/PretendardVariable.woff2") format("woff2-variations");
+}
+
 :root {
   --ink: #0a0a0a;
   --paper: #090909;
@@ -29,7 +37,10 @@ body {
   background: var(--paper);
   color: var(--text);
   font-family:
-    Pretendard, "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+    "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Noto Sans KR",
+    system-ui, sans-serif;
+  font-weight: 400;
+  font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
 
@@ -1860,28 +1871,6 @@ button.calendar-day:hover {
   line-height: 0.95;
 }
 
-.ranking-champion {
-  display: grid;
-  gap: 5px;
-  min-width: 220px;
-  padding: 13px 16px;
-  border: 1px solid rgba(255, 210, 31, 0.58);
-  border-radius: 15px;
-  background: rgba(255, 210, 31, 0.08);
-}
-
-.ranking-champion span {
-  color: var(--lime);
-  font-size: 0.6rem;
-  font-weight: 950;
-  letter-spacing: 0.12em;
-}
-
-.ranking-champion strong {
-  font-size: 0.94rem;
-  font-weight: 950;
-}
-
 .ranking-columns {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2316,10 +2305,6 @@ button.calendar-day:hover {
     display: grid;
     gap: 17px;
     padding-inline: 6px;
-  }
-
-  .ranking-champion {
-    min-width: 0;
   }
 
   .ranking-board header {
@@ -2827,18 +2812,6 @@ button.calendar-day:hover {
   letter-spacing: -0.05em;
 }
 
-.ranking-champion {
-  min-width: 210px;
-  padding: 11px 13px;
-  border-color: var(--line);
-  border-radius: 6px;
-  background: #181818;
-}
-
-.ranking-champion span {
-  color: var(--muted);
-}
-
 .ranking-board.meta-board {
   border-color: #414141;
 }
@@ -2939,4 +2912,313 @@ button.calendar-day:hover {
   .ranking-division {
     padding: 18px 10px 10px;
   }
+}
+
+/* Pretendard 기반으로 제목과 정보의 굵기 차이를 단순화한다. */
+:is(
+    .hero-title,
+    .fighters-page-hero h1,
+    .rankings-hero h1,
+    .section-head h2,
+    .ranking-division-head h2,
+    .detail-top h3
+  ) {
+  font-weight: 700;
+  letter-spacing: -0.045em;
+}
+
+:is(
+    .brand,
+    .matchup-fighter b,
+    .event-start-time strong,
+    .korean-card-name strong,
+    .fighter-profile-head h2,
+    .ranking-board header h3,
+    .ranking-champion-row strong
+  ) {
+  font-weight: 680;
+}
+
+:is(
+    .eyebrow,
+    .section-kicker,
+    .event-kicker,
+    .hero-panel-label,
+    .card-section-title,
+    .ranking-method-card > span,
+    .ranking-division-head > div:first-child > span,
+    .ranking-board header span,
+    .ranking-source-state,
+    .korean-fighter-count
+  ) {
+  font-weight: 560;
+}
+
+:is(
+    .hero-lead,
+    .section-head p,
+    .fighters-page-hero > p,
+    .rankings-hero > p,
+    .ranking-method-card p,
+    .footer p
+  ) {
+  font-weight: 400;
+}
+
+.ranking-search-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px 20px;
+  align-items: center;
+  margin-top: 28px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+}
+
+.ranking-search-panel form {
+  grid-column: 1 / -1;
+  max-width: 780px;
+}
+
+.ranking-search-panel label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 560;
+}
+
+.ranking-search-panel form > div {
+  display: flex;
+  gap: 8px;
+}
+
+.ranking-search-panel input {
+  min-width: 0;
+  height: 46px;
+  flex: 1;
+  padding: 0 14px;
+  border: 1px solid #3a3a3a;
+  border-radius: 5px;
+  outline: 0;
+  background: var(--paper);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.88rem;
+}
+
+.ranking-search-panel input:focus {
+  border-color: #777;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+
+.ranking-search-panel form button,
+.ranking-no-results button {
+  min-width: 84px;
+  height: 46px;
+  padding: 0 18px;
+  border: 1px solid var(--orange);
+  border-radius: 5px;
+  background: var(--orange);
+  color: white;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 650;
+}
+
+.ranking-search-panel > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.74rem;
+}
+
+.ranking-search-panel > p b {
+  color: var(--text);
+  font-weight: 650;
+}
+
+.ranking-search-reset {
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 560;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.ranking-division-head {
+  margin-bottom: 16px;
+}
+
+.ranking-champion-row {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  min-height: 72px;
+  margin-bottom: 14px;
+  padding: 12px 16px;
+  border: 1px solid #454545;
+  border-left: 3px solid var(--lime);
+  border-radius: 7px;
+  background: #181818;
+}
+
+.ranking-champion-mark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 4px;
+  background: var(--lime);
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.ranking-champion-label {
+  color: var(--lime);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.ranking-fighter-name {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.ranking-fighter-name strong {
+  overflow: hidden;
+  color: var(--text);
+  font-size: 0.84rem;
+  font-weight: 620;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ranking-board li .ranking-fighter-name small,
+.ranking-champion-row .ranking-fighter-name small {
+  grid-column: auto;
+  margin: 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 400;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ranking-board li > small {
+  font-weight: 520;
+}
+
+.ranking-board-empty {
+  margin: 0;
+  padding: 28px 16px;
+  color: var(--muted);
+  font-size: 0.74rem;
+  text-align: center;
+}
+
+.ranking-no-results {
+  margin-top: 26px;
+  padding: 52px 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  text-align: center;
+}
+
+.ranking-no-results strong {
+  font-size: 1.1rem;
+  font-weight: 680;
+}
+
+.ranking-no-results p {
+  margin: 8px 0 20px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+@media (max-width: 680px) {
+  .ranking-search-panel {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .ranking-search-panel form,
+  .ranking-search-panel > p {
+    grid-column: 1;
+  }
+
+  .ranking-search-reset {
+    justify-self: start;
+  }
+
+  .ranking-champion-row {
+    grid-template-columns: 36px minmax(0, 1fr);
+    padding: 11px 12px;
+  }
+
+  .ranking-champion-label {
+    grid-column: 2;
+    margin-top: -8px;
+  }
+
+  .ranking-board li {
+    min-height: 58px;
+  }
+
+  .ranking-board li > small {
+    grid-column: 2;
+    margin-top: -4px;
+  }
+}
+
+body :is(h1, h2, h3, h4) {
+  font-weight: 700 !important;
+}
+
+body :is(b, strong) {
+  font-weight: 650 !important;
+}
+
+:is(
+    .brand-mark,
+    .update-state,
+    .eyebrow,
+    .section-kicker,
+    .event-kicker,
+    .hero-panel-label,
+    .view-switcher button,
+    .event-row-copy small,
+    .row-arrow,
+    .detail-badge,
+    .card-section-title,
+    .fighter-rank,
+    .fighter-record,
+    .fighter-profile-kicker,
+    .fighter-profile-badges span,
+    .korean-card-status,
+    .korean-card-meta b,
+    .korean-fighter-count,
+    .ranking-source-state span,
+    .ranking-method-card > span,
+    .ranking-board header span,
+    .ranking-champion-label,
+    .footer-status
+  ) {
+  font-weight: 560 !important;
+}
+
+:is(.ranking-number, .ranking-champion-mark, .fighter-result) {
+  font-weight: 650 !important;
 }

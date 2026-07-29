@@ -1,36 +1,14 @@
 // UFC 공식 Meta 랭킹과 기존 미디어 랭킹을 체급별로 비교해 보여준다.
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  UFC_RANKING_DIVISIONS,
-  UFC_RANKING_SOURCE,
-  type RankingEntry,
-} from "../data/rankings";
+import { RankingsBrowser } from "../components/RankingsBrowser";
+import { UFC_RANKING_SOURCE } from "../data/rankings";
 
 export const metadata: Metadata = {
   title: "UFC 선수 랭킹 | FKO",
   description:
     "UFC 공식 Meta 랭킹과 기존 미디어 투표 랭킹을 체급별로 비교하세요.",
 };
-
-function compareRank(entry: RankingEntry, media: RankingEntry[]) {
-  const mediaEntry = media.find((fighter) => fighter.name === entry.name);
-
-  if (!mediaEntry) {
-    return { label: "미디어 NR", tone: "new" };
-  }
-
-  const difference = mediaEntry.rank - entry.rank;
-
-  if (difference === 0) {
-    return { label: `미디어 ${mediaEntry.rank}위 · 동일`, tone: "same" };
-  }
-
-  return {
-    label: `미디어 ${mediaEntry.rank}위 · ${difference > 0 ? "Meta ↑" : "Meta ↓"}${Math.abs(difference)}`,
-    tone: difference > 0 ? "up" : "down",
-  };
-}
 
 export default function RankingsPage() {
   return (
@@ -104,83 +82,7 @@ export default function RankingsPage() {
         </article>
       </section>
 
-      <nav className="ranking-jump" aria-label="체급 바로가기">
-        {UFC_RANKING_DIVISIONS.map((division) => (
-          <a href={`#${division.id}`} key={division.id}>
-            {division.label}
-          </a>
-        ))}
-      </nav>
-
-      <div className="ranking-division-list">
-        {UFC_RANKING_DIVISIONS.map((division) => (
-          <section
-            className="ranking-division"
-            id={division.id}
-            key={division.id}
-          >
-            <div className="ranking-division-head">
-              <div>
-                <span>{division.englishLabel}</span>
-                <h2>{division.label}</h2>
-              </div>
-              <div className="ranking-champion">
-                <span>챔피언</span>
-                <strong lang="en">{division.champion}</strong>
-              </div>
-            </div>
-
-            <div className="ranking-columns">
-              <article className="ranking-board meta-board">
-                <header>
-                  <div>
-                    <span>공식 기준</span>
-                    <h3>Meta UFC 랭킹</h3>
-                  </div>
-                  <time dateTime={UFC_RANKING_SOURCE.metaUpdated}>
-                    {UFC_RANKING_SOURCE.metaUpdated}
-                  </time>
-                </header>
-                <ol>
-                  {division.meta.map((fighter) => {
-                    const comparison = compareRank(fighter, division.media);
-
-                    return (
-                      <li key={fighter.name}>
-                        <span className="ranking-number">{fighter.rank}</span>
-                        <strong lang="en">{fighter.name}</strong>
-                        <small data-tone={comparison.tone}>
-                          {comparison.label}
-                        </small>
-                      </li>
-                    );
-                  })}
-                </ol>
-              </article>
-
-              <article className="ranking-board media-board">
-                <header>
-                  <div>
-                    <span>비교 자료</span>
-                    <h3>미디어 투표 랭킹</h3>
-                  </div>
-                  <time dateTime={UFC_RANKING_SOURCE.mediaUpdated}>
-                    {UFC_RANKING_SOURCE.mediaUpdated}
-                  </time>
-                </header>
-                <ol>
-                  {division.media.map((fighter) => (
-                    <li key={`${fighter.rank}-${fighter.name}`}>
-                      <span className="ranking-number">{fighter.rank}</span>
-                      <strong lang="en">{fighter.name}</strong>
-                    </li>
-                  ))}
-                </ol>
-              </article>
-            </div>
-          </section>
-        ))}
-      </div>
+      <RankingsBrowser />
 
       <aside className="ranking-source-note">
         <div>

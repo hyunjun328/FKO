@@ -149,6 +149,9 @@ test("server-renders the official UFC ranking comparison page", async () => {
   assert.match(html, /Meta UFC 랭킹/);
   assert.match(html, /미디어 투표 랭킹/);
   assert.match(html, /공식은 15위까지/);
+  assert.match(html, /선수 또는 체급 검색/);
+  assert.match(html, /placeholder="예: 마카체프, Makhachev, 웰터급"/);
+  assert.match(html, />검색<\/button>/);
   assert.match(html, /2026-07-18/);
   assert.match(html, /2026-07-21/);
   assert.match(html, /2026-07-29/);
@@ -163,18 +166,21 @@ test("server-renders the official UFC ranking comparison page", async () => {
   assert.match(html, /여성 스트로급/);
   assert.match(html, /여성 플라이급/);
   assert.match(html, /여성 밴텀급/);
-  assert.match(normalizedHtml, /챔피언[^<]*<\/span><strong[^>]*>Joshua Van/);
   assert.match(
     normalizedHtml,
-    /챔피언[^<]*<\/span><strong[^>]*>Islam Makhachev/,
+    /ranking-champion-row[\s\S]*?조슈아 반[\s\S]*?Joshua Van[\s\S]*?UFC 챔피언/,
   );
   assert.match(
     normalizedHtml,
-    /챔피언[^<]*<\/span><strong[^>]*>Kayla Harrison/,
+    /ranking-champion-row[\s\S]*?이슬람 마카체프[\s\S]*?Islam Makhachev[\s\S]*?UFC 챔피언/,
   );
   assert.match(
     normalizedHtml,
-    /Meta UFC 랭킹[\s\S]*?1<\/span><strong[^>]*>Carlos Prates[\s\S]*?14<\/span><strong[^>]*>Uroš Medić/,
+    /ranking-champion-row[\s\S]*?케일라 해리슨[\s\S]*?Kayla Harrison[\s\S]*?UFC 챔피언/,
+  );
+  assert.match(
+    normalizedHtml,
+    /Meta UFC 랭킹[\s\S]*?1<\/span>[\s\S]*?카를로스 프라치스[\s\S]*?Carlos Prates[\s\S]*?14<\/span>[\s\S]*?우로시 메디치[\s\S]*?Uroš Medić/,
   );
   assert.equal((html.match(/class="ranking-number"/g) ?? []).length, 330);
   assert.match(html, /https:\/\/www\.ufc\.com\/rankings/);
@@ -187,6 +193,37 @@ test("server-renders the official UFC ranking comparison page", async () => {
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
 
+test("maps every ranked fighter to a Korean display name", async () => {
+  const rankings = await readFile(
+    new URL("../app/data/rankings.ts", import.meta.url),
+    "utf8",
+  );
+  const rankingNames = await readFile(
+    new URL("../app/data/ranking-names.ts", import.meta.url),
+    "utf8",
+  );
+  const officialNames = new Set();
+  const mappedNames = new Set();
+
+  for (const match of rankings.matchAll(
+    /champion: "([^"]+)"|^\s{6,}\[?\d*,?\s*"([^"]+)"\]?[,]?$/gm,
+  )) {
+    officialNames.add(match[1] || match[2]);
+  }
+
+  for (const match of rankingNames.matchAll(
+    /^\s*(?:"([^"]+)"|([A-Za-z][A-Za-z]+)):\s*"/gm,
+  )) {
+    mappedNames.add(match[1] || match[2]);
+  }
+
+  assert.equal(officialNames.size, 200);
+  assert.deepEqual(
+    [...officialNames].filter((name) => !mappedNames.has(name)),
+    [],
+  );
+});
+
 test("uses the black, white, red, and yellow FKO theme", async () => {
   const css = await readFile(
     new URL("../app/globals.css", import.meta.url),
@@ -197,6 +234,7 @@ test("uses the black, white, red, and yellow FKO theme", async () => {
   assert.match(css, /--text: #f1f1ef/);
   assert.match(css, /--orange: #ef3e3e/);
   assert.match(css, /--lime: #e9c536/);
+  assert.match(css, /Pretendard Variable/);
   assert.match(css, /\.next-event::after\s*\{\s*content: none/);
   assert.match(css, /\.event-row\[aria-current="true"\]\s*\{[^}]*box-shadow: inset 3px 0 0/);
   assert.doesNotMatch(css, /#25a35a|#148447|#2670a5|#f3f0e8|#fffdf7/i);
