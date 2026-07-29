@@ -64,9 +64,9 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /href="\/korean-fighters"/);
   assert.match(html, /선수 랭킹/);
   assert.match(html, /href="\/rankings"/);
-  assert.match(normalizedHtml, /현역 6명[^<]*·[^<]*역대 6명/);
-  assert.match(html, /정찬성/);
-  assert.match(html, /김동현/);
+  assert.doesNotMatch(normalizedHtml, /현역 6명[^<]*·[^<]*역대 6명/);
+  assert.doesNotMatch(html, /korean-fighters-gateway/);
+  assert.doesNotMatch(html, /정찬성|김동현/);
   assert.doesNotMatch(html, /aria-label="박준용 상세 정보 보기"/);
   assert.doesNotMatch(html, /The Korean Tyson/);
   assert.match(
@@ -235,6 +235,11 @@ test("uses the black, white, red, and yellow FKO theme", async () => {
   assert.match(css, /--orange: #ef3e3e/);
   assert.match(css, /--lime: #e9c536/);
   assert.match(css, /Pretendard Variable/);
+  assert.match(
+    css,
+    /\.topbar-link,\s*\.back-home-link\s*\{[^}]*display: inline-flex !important/,
+  );
+  assert.match(css, /\.topbar-link,[\s\S]*?min-height: 40px/);
   assert.match(css, /\.next-event::after\s*\{\s*content: none/);
   assert.match(css, /\.event-row\[aria-current="true"\]\s*\{[^}]*box-shadow: inset 3px 0 0/);
   assert.doesNotMatch(css, /#25a35a|#148447|#2670a5|#f3f0e8|#fffdf7/i);

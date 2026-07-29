@@ -557,36 +557,6 @@ export function FightCalendar() {
         </div>
       </section>
 
-      <section
-        className="korean-fighters-section korean-fighters-preview"
-        aria-labelledby="korean-fighters-title"
-      >
-        <div className="section-head korean-fighters-head">
-          <div>
-            <span className="section-kicker">한국 선수 데이터</span>
-            <h2 id="korean-fighters-title">코리안 파이터</h2>
-            <p>
-              현역 선수부터 한국 UFC 역사를 만든 이전 선수까지 별도 화면에서
-              모아보세요.
-            </p>
-          </div>
-          <Link className="korean-fighter-count" href="/korean-fighters">
-            전체 선수 보기 →
-          </Link>
-        </div>
-
-        <Link className="korean-fighters-gateway" href="/korean-fighters">
-          <span className="gateway-number">12</span>
-          <span>
-            <b>현역 6명 · 역대 6명</b>
-            <small>
-              박준용, 최두호, 고석현부터 정찬성, 김동현, 강경호까지.
-            </small>
-          </span>
-          <strong aria-hidden="true">선수 명단 →</strong>
-        </Link>
-      </section>
-
       <footer className="footer">
         <div>
           <strong>FKO · Fight Korea</strong>

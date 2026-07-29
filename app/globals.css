@@ -1256,10 +1256,6 @@ button.calendar-day:hover {
   line-height: 1.55;
 }
 
-.korean-fighters-section {
-  margin-top: 86px;
-}
-
 .section-kicker {
   display: block;
   margin-bottom: 8px;
@@ -1280,57 +1276,6 @@ button.calendar-day:hover {
   font-weight: 850;
   white-space: nowrap;
   text-decoration: none;
-}
-
-.korean-fighters-gateway {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  gap: 20px;
-  align-items: center;
-  padding: 28px;
-  border: 2px solid var(--ink);
-  border-radius: 24px;
-  background: var(--lime);
-  box-shadow: 8px 8px 0 var(--orange);
-  color: var(--ink);
-  text-decoration: none;
-  transition:
-    box-shadow 150ms ease,
-    transform 150ms ease;
-}
-
-.korean-fighters-gateway:hover {
-  box-shadow: 4px 4px 0 var(--orange);
-  transform: translate(4px, 4px);
-}
-
-.gateway-number {
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  font-weight: 950;
-  letter-spacing: -0.09em;
-  line-height: 0.8;
-}
-
-.korean-fighters-gateway > span:nth-child(2) {
-  display: grid;
-  gap: 6px;
-}
-
-.korean-fighters-gateway b {
-  font-size: 1.1rem;
-  font-weight: 950;
-}
-
-.korean-fighters-gateway small {
-  color: #4f5728;
-  font-size: 0.76rem;
-  font-weight: 750;
-}
-
-.korean-fighters-gateway > strong {
-  font-size: 0.84rem;
-  font-weight: 950;
-  white-space: nowrap;
 }
 
 .korean-fighter-grid {
@@ -2182,22 +2127,8 @@ button.calendar-day:hover {
     grid-template-columns: 1fr;
   }
 
-  .korean-fighters-section {
-    margin-top: 64px;
-  }
-
   .korean-fighter-grid {
     grid-template-columns: 1fr;
-  }
-
-  .korean-fighters-gateway {
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 14px;
-    padding: 21px;
-  }
-
-  .korean-fighters-gateway > strong {
-    grid-column: 2;
   }
 
   .fighters-page-hero {
@@ -2614,35 +2545,6 @@ button.calendar-day:hover {
   color: var(--muted);
   font-weight: 800;
   letter-spacing: 0.08em;
-}
-
-.korean-fighters-section {
-  margin-top: 72px;
-}
-
-.korean-fighters-gateway {
-  padding: 24px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--card);
-  box-shadow: none;
-  color: var(--text);
-}
-
-.korean-fighters-gateway:hover {
-  border-color: #555;
-  box-shadow: none;
-  transform: none;
-}
-
-.gateway-number {
-  color: var(--lime);
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  font-weight: 850;
-}
-
-.korean-fighters-gateway small {
-  color: var(--muted);
 }
 
 .korean-fighter-card {
@@ -3221,4 +3123,74 @@ body :is(b, strong) {
 
 :is(.ranking-number, .ranking-champion-mark, .fighter-result) {
   font-weight: 650 !important;
+}
+
+/* 주요 화면 진입점을 상단의 명확한 메뉴 버튼으로 통일한다. */
+.topbar {
+  min-height: 76px;
+}
+
+.topbar-actions {
+  gap: 8px;
+}
+
+.topbar-link,
+.back-home-link {
+  display: inline-flex !important;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  border: 1px solid #3a3a3a;
+  border-radius: 5px;
+  background: #171717;
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.topbar-link:hover,
+.back-home-link:hover {
+  border-color: #666;
+  background: #222;
+}
+
+.topbar-link:focus-visible,
+.back-home-link:focus-visible {
+  outline-width: 2px;
+  outline-offset: 2px;
+}
+
+.back-home-link {
+  background: transparent;
+}
+
+.update-state {
+  margin-left: 6px;
+  padding-left: 14px;
+  border-left: 1px solid var(--line);
+}
+
+@media (max-width: 680px) {
+  .topbar {
+    min-height: 64px;
+  }
+
+  .topbar-actions {
+    flex: 1;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+
+  .topbar-link,
+  .back-home-link {
+    min-height: 38px;
+    padding: 0 10px;
+    font-size: 0.72rem;
+  }
+
+  .update-state {
+    display: none;
+  }
 }
