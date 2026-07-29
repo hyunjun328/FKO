@@ -1,0 +1,85 @@
+{
+  "source": "https://en.wikipedia.org/wiki/2026_in_UFC",
+  "license": "CC BY-SA 4.0",
+  "collectedAt": "2026-07-29T01:32:43.417278+00:00",
+  "reviewRequired": true,
+  "events": [
+    {
+      "title": "UFC Fight Night: Medić vs. Rodriguez",
+      "date": "2026-08-01",
+      "venue": "Belgrade Arena",
+      "city": "Belgrade",
+      "country": "Serbia"
+    },
+    {
+      "title": "UFC Fight Night: Gamrot vs. Salkilld",
+      "date": "2026-08-08",
+      "venue": "Meta Apex",
+      "city": "Las Vegas, Nevada",
+      "country": ""
+    },
+    {
+      "title": "UFC 330: Makhachev vs. Machado Garry",
+      "date": "2026-08-15",
+      "venue": "Xfinity Mobile Arena",
+      "city": "Philadelphia, Pennsylvania",
+      "country": ""
+    },
+    {
+      "title": "UFC Fight Night: Hernandez vs. Rodrigues",
+      "date": "2026-08-22",
+      "venue": "Golden 1 Center",
+      "city": "Sacramento, California",
+      "country": "United States"
+    },
+    {
+      "title": "UFC Fight Night: Nurmagomedov vs. Song",
+      "date": "2026-08-29",
+      "venue": "Shanghai Oriental Sports Center",
+      "city": "Shanghai",
+      "country": "China"
+    },
+    {
+      "title": "UFC Fight Night: Hooker vs. Parnasse",
+      "date": "2026-09-05",
+      "venue": "Accor Arena",
+      "city": "Paris",
+      "country": "France"
+    },
+    {
+      "title": "UFC Fight Night 288",
+      "date": "2026-09-12",
+      "venue": "Desert Diamond Arena",
+      "city": "Glendale, Arizona",
+      "country": ""
+    },
+    {
+      "title": "UFC 331",
+      "date": "2026-09-19",
+      "venue": "Crypto.com Arena",
+      "city": "Los Angeles, California",
+      "country": ""
+    },
+    {
+      "title": "UFC Fight Night 290",
+      "date": "2026-10-10",
+      "venue": "Meta Apex",
+      "city": "Las Vegas, Nevada",
+      "country": "United States"
+    },
+    {
+      "title": "UFC Fight Night 291",
+      "date": "2026-10-17",
+      "venue": "Rogers Place",
+      "city": "Edmonton, Alberta",
+      "country": "Canada"
+    },
+    {
+      "title": "UFC 333",
+      "date": "2026-10-24",
+      "venue": "Etihad Arena",
+      "city": "Abu Dhabi",
+      "country": "United Arab Emirates"
+    }
+  ]
+}

@@ -1,0 +1,426 @@
+// 일정 목록과 월간 캘린더, 대회 상세를 제어하는 클라이언트 화면
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+import { EVENTS, type BoutSection, type FightEvent } from "../data/events";
+
+const KST_FORMATTER = new Intl.DateTimeFormat("ko-KR", {
+  timeZone: "Asia/Seoul",
+  month: "long",
+  day: "numeric",
+  weekday: "short",
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: false,
+});
+
+const KST_DATE_FORMATTER = new Intl.DateTimeFormat("en-CA", {
+  timeZone: "Asia/Seoul",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+});
+
+const SECTION_LABELS: Record<BoutSection, string> = {
+  main: "메인카드",
+  prelims: "언더카드",
+  announced: "발표된 대진",
+};
+
+const WEEKDAYS = ["일", "월", "화", "수", "목", "금", "토"];
+
+function kstDateKey(iso: string) {
+  return KST_DATE_FORMATTER.format(new Date(iso));
+}
+
+function kstParts(iso: string) {
+  const parts = new Intl.DateTimeFormat("ko-KR", {
+    timeZone: "Asia/Seoul",
+    month: "2-digit",
+    day: "2-digit",
+    weekday: "short",
+  }).formatToParts(new Date(iso));
+  const value = (type: Intl.DateTimeFormatPartTypes) =>
+    parts.find((part) => part.type === type)?.value ?? "";
+  return { month: value("month"), day: value("day"), weekday: value("weekday") };
+}
+
+function remaining(startUtc: string, now: number) {
+  const difference = Math.max(0, new Date(startUtc).getTime() - now);
+  return {
+    days: Math.floor(difference / 86_400_000),
+    hours: Math.floor((difference % 86_400_000) / 3_600_000),
+    minutes: Math.floor((difference % 3_600_000) / 60_000),
+  };
+}
+
+function EventDetail({ event }: { event: FightEvent }) {
+  const grouped = event.bouts.reduce(
+    (result, bout) => {
+      result[bout.section].push(bout);
+      return result;
+    },
+    { main: [], prelims: [], announced: [] } as Record<
+      BoutSection,
+      FightEvent["bouts"]
+    >,
+  );
+
+  return (
+    <aside className="detail-panel" aria-label={`${event.title} 대진`}>
+      <div className="detail-top">
+        <div className="detail-badges">
+          <span className="detail-badge highlight">{event.status}</span>
+          <span className="detail-badge">한국시간</span>
+          <span className="detail-badge">{event.bouts.length}경기 발표</span>
+        </div>
+        <h3>{event.title}</h3>
+        <p>{event.subtitle}</p>
+        <p>{KST_FORMATTER.format(new Date(event.startUtc))} 메인카드</p>
+        <p>
+          {event.venue} · {event.city}, {event.country}
+        </p>
+      </div>
+
+      <div className="fight-card">
+        {(Object.keys(grouped) as BoutSection[]).map((section) =>
+          grouped[section].length ? (
+            <section className="card-section" key={section}>
+              <div className="card-section-title">
+                <span>{SECTION_LABELS[section]}</span>
+                <span>{grouped[section].length}경기</span>
+              </div>
+              {grouped[section].map((bout) => (
+                <div
+                  className="bout"
+                  key={`${bout.left}-${bout.right}`}
+                  aria-label={`${bout.left} 대 ${bout.right}, ${bout.weight}`}
+                >
+                  <span className="fighter">{bout.left}</span>
+                  <span className="bout-vs">VS</span>
+                  <span className="fighter">{bout.right}</span>
+                  <span className="weight">
+                    {bout.title ? "TITLE · " : ""}
+                    {bout.weight}
+                  </span>
+                </div>
+              ))}
+            </section>
+          ) : null,
+        )}
+      </div>
+
+      <div className="source-box">
+        대진 순서와 시작 시각은 변경될 수 있습니다.{" "}
+        <a href={event.sourceUrl} target="_blank" rel="noreferrer">
+          {event.sourceLabel}
+        </a>
+        에서 {new Date(event.verifiedAt).toLocaleString("ko-KR")}에 확인했습니다.
+      </div>
+    </aside>
+  );
+}
+
+function CalendarView({
+  events,
+  selected,
+  onSelect,
+}: {
+  events: FightEvent[];
+  selected: FightEvent;
+  onSelect: (event: FightEvent) => void;
+}) {
+  const selectedKey = kstDateKey(selected.startUtc);
+  const [month, setMonth] = useState(
+    new Date(
+      Number(selectedKey.slice(0, 4)),
+      Number(selectedKey.slice(5, 7)) - 1,
+      1,
+    ),
+  );
+
+  const cells = useMemo(() => {
+    const firstDay = new Date(month.getFullYear(), month.getMonth(), 1);
+    const gridStart = new Date(firstDay);
+    gridStart.setDate(firstDay.getDate() - firstDay.getDay());
+    return Array.from({ length: 42 }, (_, index) => {
+      const date = new Date(gridStart);
+      date.setDate(gridStart.getDate() + index);
+      return date;
+    });
+  }, [month]);
+
+  const eventsByDate = useMemo(
+    () =>
+      events.reduce<Record<string, FightEvent[]>>((result, event) => {
+        const key = kstDateKey(event.startUtc);
+        result[key] = [...(result[key] ?? []), event];
+        return result;
+      }, {}),
+    [events],
+  );
+
+  const todayKey = kstDateKey(new Date().toISOString());
+
+  return (
+    <div className="calendar-panel">
+      <div className="calendar-toolbar">
+        <h3>
+          {month.getFullYear()}년 {month.getMonth() + 1}월
+        </h3>
+        <div className="month-controls" aria-label="달력 월 이동">
+          <button
+            type="button"
+            aria-label="이전 달"
+            onClick={() =>
+              setMonth(new Date(month.getFullYear(), month.getMonth() - 1, 1))
+            }
+          >
+            ←
+          </button>
+          <button
+            type="button"
+            aria-label="다음 달"
+            onClick={() =>
+              setMonth(new Date(month.getFullYear(), month.getMonth() + 1, 1))
+            }
+          >
+            →
+          </button>
+        </div>
+      </div>
+      <div className="weekdays" aria-hidden="true">
+        {WEEKDAYS.map((day) => (
+          <div className="weekday" key={day}>
+            {day}
+          </div>
+        ))}
+      </div>
+      <div className="calendar-grid" role="grid" aria-label="UFC 월간 일정">
+        {cells.map((date) => {
+          const key = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+          const dayEvents = eventsByDate[key] ?? [];
+          const className = [
+            "calendar-day",
+            date.getMonth() !== month.getMonth() ? "outside" : "",
+            key === todayKey ? "today" : "",
+            key === selectedKey ? "selected" : "",
+          ]
+            .filter(Boolean)
+            .join(" ");
+          const content = (
+            <>
+              <span className="day-number">{date.getDate()}</span>
+              {dayEvents.map((event) => (
+                <span className="calendar-event" key={event.id}>
+                  {event.series === "UFC" ? event.title : event.subtitle}
+                  <time>
+                    {new Intl.DateTimeFormat("ko-KR", {
+                      timeZone: "Asia/Seoul",
+                      hour: "2-digit",
+                      minute: "2-digit",
+                      hour12: false,
+                    }).format(new Date(event.startUtc))}
+                  </time>
+                </span>
+              ))}
+            </>
+          );
+
+          return dayEvents.length ? (
+            <button
+              type="button"
+              className={className}
+              key={key}
+              onClick={() => onSelect(dayEvents[0])}
+              aria-label={`${key}, ${dayEvents[0].title} 선택`}
+            >
+              {content}
+            </button>
+          ) : (
+            <div className={className} key={key} role="gridcell">
+              {content}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+export function FightCalendar() {
+  const [view, setView] = useState<"list" | "calendar">("list");
+  const [selectedId, setSelectedId] = useState(EVENTS[0].id);
+  const [now, setNow] = useState(() => Date.now());
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setNow(Date.now()), 60_000);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  const selected = EVENTS.find((event) => event.id === selectedId) ?? EVENTS[0];
+  const nextEvent =
+    EVENTS.find((event) => new Date(event.startUtc).getTime() > now) ?? EVENTS[0];
+  const mainEvent = nextEvent.bouts[0];
+  const timeLeft = remaining(nextEvent.startUtc, now);
+
+  return (
+    <main className="site-shell">
+      <header className="topbar">
+        <div className="brand" aria-label="파이트 캘린더 코리아">
+          <span className="brand-mark">FK</span>
+          <span>파이트 캘린더 코리아</span>
+        </div>
+        <div className="update-state">
+          <span className="update-dot" aria-hidden="true" />
+          <span>일정 확인 완료</span>
+          <span>2026. 7. 29.</span>
+        </div>
+      </header>
+
+      <section className="hero">
+        <div className="eyebrow">Korea Standard Time</div>
+        <h1 className="hero-title">
+          UFC 일정,
+          <br />
+          <em>한국시간</em>으로.
+        </h1>
+        <p className="hero-lead">
+          시차 계산은 끝났습니다. 다가오는 대회부터 전체 대진까지,
+          한국에서 보기 편한 시간으로 빠르게 확인하세요.
+        </p>
+
+        <article className="next-event">
+          <div className="next-event-copy">
+            <span className="event-kicker">다음 대회 · {nextEvent.status}</span>
+            <h2>{nextEvent.title}</h2>
+            <div className="main-matchup">
+              <span>{mainEvent.left}</span>
+              <strong>VS</strong>
+              <span>{mainEvent.right}</span>
+            </div>
+            <div className="event-meta">
+              <span>{KST_FORMATTER.format(new Date(nextEvent.startUtc))}</span>
+              <span>
+                {nextEvent.city} · {nextEvent.venue}
+              </span>
+              <span>{nextEvent.bouts.length}경기 발표</span>
+            </div>
+          </div>
+          <div className="countdown-panel" aria-label="다음 대회까지 남은 시간">
+            <div className="countdown-label">메인카드 시작까지</div>
+            <div className="countdown">
+              <div className="countdown-unit">
+                <b>{timeLeft.days}</b>
+                <span>일</span>
+              </div>
+              <div className="countdown-unit">
+                <b>{String(timeLeft.hours).padStart(2, "0")}</b>
+                <span>시간</span>
+              </div>
+              <div className="countdown-unit">
+                <b>{String(timeLeft.minutes).padStart(2, "0")}</b>
+                <span>분</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section className="schedule-section">
+        <div className="section-head">
+          <div>
+            <h2>다가오는 대회</h2>
+            <p>대회를 선택하면 현재 발표된 대진을 확인할 수 있습니다.</p>
+          </div>
+          <div className="view-switcher" aria-label="일정 보기 방식">
+            <button
+              type="button"
+              aria-pressed={view === "list"}
+              onClick={() => setView("list")}
+            >
+              목록
+            </button>
+            <button
+              type="button"
+              aria-pressed={view === "calendar"}
+              onClick={() => setView("calendar")}
+            >
+              달력
+            </button>
+          </div>
+        </div>
+
+        <div className="schedule-layout">
+          <div>
+            {view === "list" ? (
+              <div className="list-panel event-list">
+                {EVENTS.map((event) => {
+                  const parts = kstParts(event.startUtc);
+                  return (
+                    <button
+                      type="button"
+                      className="event-row"
+                      key={event.id}
+                      aria-current={selected.id === event.id}
+                      onClick={() => setSelectedId(event.id)}
+                    >
+                      <span className="date-block" aria-hidden="true">
+                        <strong>{parts.day}</strong>
+                        <span>
+                          {parts.month} · {parts.weekday}
+                        </span>
+                      </span>
+                      <span className="event-row-copy">
+                        <small>{event.series}</small>
+                        <h3>{event.subtitle}</h3>
+                        <p>
+                          {KST_FORMATTER.format(new Date(event.startUtc))} ·{" "}
+                          {event.city}
+                        </p>
+                      </span>
+                      <span className="row-arrow" aria-hidden="true">
+                        →
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            ) : (
+              <CalendarView
+                events={EVENTS}
+                selected={selected}
+                onSelect={(event) => setSelectedId(event.id)}
+              />
+            )}
+
+            <div className="notice">
+              <span className="notice-icon">!</span>
+              <div>
+                <strong>시간과 대진은 경기 주간에도 바뀔 수 있습니다.</strong>
+                <p>
+                  변경된 정보는 검수 후 반영합니다. 모든 시간은 대한민국
+                  표준시(KST, UTC+9) 기준입니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <EventDetail event={selected} />
+        </div>
+      </section>
+
+      <footer className="footer">
+        <div>
+          <strong>파이트 캘린더 코리아</strong>
+          <p>
+            UFC 및 Zuffa와 공식 제휴 관계가 없는 독립 일정 안내 서비스입니다.
+            UFC와 관련 상표는 각 권리자에게 있습니다. 경기 영상과 공식 이미지는
+            제공하지 않습니다.
+          </p>
+        </div>
+        <span className="footer-status">1차 공개 베타</span>
+      </footer>
+    </main>
+  );
+}
