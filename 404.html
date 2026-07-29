@@ -1,0 +1,22 @@
+<!-- GitHub Pages의 하위 주소를 실제 FKO 운영 사이트의 같은 경로로 연결한다. -->
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FKO로 이동 중</title>
+    <script>
+      const path = window.location.pathname.replace(/^\/FKO(?=\/|$)/, "");
+      window.location.replace(
+        `https://fight-calendar-korea.jjh020104.chatgpt.site${path}${window.location.search}${window.location.hash}`,
+      );
+    </script>
+  </head>
+  <body>
+    <p>
+      <a href="https://fight-calendar-korea.jjh020104.chatgpt.site/">
+        FKO 최신 사이트로 이동.
+      </a>
+    </p>
+  </body>
+</html>
