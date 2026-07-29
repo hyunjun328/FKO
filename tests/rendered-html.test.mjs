@@ -36,7 +36,8 @@ test("server-renders the UFC schedule product", async () => {
   assert.doesNotMatch(html, /파이트 캘린더 코리아/);
   assert.match(html, /UFC 일정/);
   assert.match(html, /한국시간/);
-  assert.match(html, /지금 한국시간/);
+  assert.doesNotMatch(html, /지금 한국시간/);
+  assert.match(html, /메인카드 시작/);
   assert.match(html, /다음 주요 매치/);
   assert.match(html, /UFC 330/);
   assert.match(html, /이슬람 마카체프/);
@@ -67,7 +68,7 @@ test("server-renders the UFC schedule product", async () => {
   assert.doesNotMatch(html, /The Korean Tyson/);
   assert.match(
     normalizedHtml,
-    /메인카드[^<]*·[^<]*8월 2일[^<]*02:00[^<]*KST/,
+    /메인카드 시작<\/small><strong>8월 2일[^<]*02:00[^<]*KST/,
   );
   assert.match(html, /href="#event-detail"/);
   assert.match(html, /id="event-detail"/);

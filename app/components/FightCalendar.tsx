@@ -28,21 +28,6 @@ const KST_DATE_FORMATTER = new Intl.DateTimeFormat("en-CA", {
   day: "2-digit",
 });
 
-const KST_CLOCK_FORMATTER = new Intl.DateTimeFormat("ko-KR", {
-  timeZone: "Asia/Seoul",
-  hour: "2-digit",
-  minute: "2-digit",
-  hour12: false,
-});
-
-const KST_TODAY_FORMATTER = new Intl.DateTimeFormat("ko-KR", {
-  timeZone: "Asia/Seoul",
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-  weekday: "long",
-});
-
 const SECTION_LABELS: Record<BoutSection, string> = {
   main: "메인카드",
   prelims: "언더카드",
@@ -431,41 +416,27 @@ export function FightCalendar() {
               </button>
             </div>
             <div className="event-meta">
-              <span>
-                메인카드 · {KST_FORMATTER.format(new Date(nextEvent.startUtc))} KST
+              <span className="event-start-time">
+                <small>메인카드 시작</small>
+                <strong>
+                  {KST_FORMATTER.format(new Date(nextEvent.startUtc))} KST
+                </strong>
               </span>
-              {nextEvent.prelimsUtc ? (
+              <div className="event-meta-details">
+                {nextEvent.prelimsUtc ? (
+                  <span>
+                    언더카드 ·{" "}
+                    {KST_FORMATTER.format(new Date(nextEvent.prelimsUtc))} KST
+                  </span>
+                ) : null}
                 <span>
-                  언더카드 ·{" "}
-                  {KST_FORMATTER.format(new Date(nextEvent.prelimsUtc))} KST
+                  {nextEvent.city} · {nextEvent.venue}
                 </span>
-              ) : null}
-              <span>
-                {nextEvent.city} · {nextEvent.venue}
-              </span>
-              <span>{nextEvent.bouts.length}경기 발표</span>
+                <span>{nextEvent.bouts.length}경기 발표</span>
+              </div>
             </div>
           </div>
-          <aside
-            className="hero-info-panel"
-            aria-label="현재 한국시간과 다음 주요 경기"
-          >
-            <div className="kst-now-card">
-              <span className="hero-panel-label">
-                <i aria-hidden="true" />
-                지금 한국시간
-              </span>
-              <time
-                className="kst-clock"
-                dateTime={new Date(now).toISOString()}
-                suppressHydrationWarning
-              >
-                {KST_CLOCK_FORMATTER.format(new Date(now))}
-              </time>
-              <span className="kst-date" suppressHydrationWarning>
-                {KST_TODAY_FORMATTER.format(new Date(now))}
-              </span>
-            </div>
+          <aside className="hero-info-panel" aria-label="다음 주요 경기">
             <a
               className="featured-match-card"
               href="#event-detail"
