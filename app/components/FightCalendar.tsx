@@ -370,11 +370,11 @@ export function FightCalendar() {
       </header>
 
       <section className="hero">
-        <div className="eyebrow">FKO · Korea Standard Time</div>
+        <div className="eyebrow">대한민국 표준시 KST 기준</div>
         <h1 className="hero-title">
-          UFC 일정,
+          UFC 일정
           <br />
-          <em>한국시간</em>으로.
+          <em>한국시간 기준.</em>
         </h1>
         <p className="hero-lead">
           시차 계산은 끝났습니다. 다가오는 대회부터 전체 대진까지,
@@ -563,7 +563,7 @@ export function FightCalendar() {
       >
         <div className="section-head korean-fighters-head">
           <div>
-            <span className="section-kicker">KOREAN FIGHTERS</span>
+            <span className="section-kicker">한국 선수 데이터</span>
             <h2 id="korean-fighters-title">코리안 파이터</h2>
             <p>
               현역 선수부터 한국 UFC 역사를 만든 이전 선수까지 별도 화면에서

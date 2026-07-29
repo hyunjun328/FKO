@@ -145,7 +145,7 @@ test("server-renders the official UFC ranking comparison page", async () => {
 
   const html = await response.text();
   const normalizedHtml = html.replaceAll("<!-- -->", "");
-  assert.match(html, /OFFICIAL UFC RANKINGS/);
+  assert.match(html, /UFC 공식 자료 기준/);
   assert.match(html, /Meta UFC 랭킹/);
   assert.match(html, /미디어 투표 랭킹/);
   assert.match(html, /공식은 15위까지/);
@@ -163,14 +163,14 @@ test("server-renders the official UFC ranking comparison page", async () => {
   assert.match(html, /여성 스트로급/);
   assert.match(html, /여성 플라이급/);
   assert.match(html, /여성 밴텀급/);
-  assert.match(normalizedHtml, /CHAMPION[^<]*<\/span><strong[^>]*>Joshua Van/);
+  assert.match(normalizedHtml, /챔피언[^<]*<\/span><strong[^>]*>Joshua Van/);
   assert.match(
     normalizedHtml,
-    /CHAMPION[^<]*<\/span><strong[^>]*>Islam Makhachev/,
+    /챔피언[^<]*<\/span><strong[^>]*>Islam Makhachev/,
   );
   assert.match(
     normalizedHtml,
-    /CHAMPION[^<]*<\/span><strong[^>]*>Kayla Harrison/,
+    /챔피언[^<]*<\/span><strong[^>]*>Kayla Harrison/,
   );
   assert.match(
     normalizedHtml,
@@ -193,9 +193,11 @@ test("uses the black, white, red, and yellow FKO theme", async () => {
     "utf8",
   );
 
-  assert.match(css, /--paper: #050505/);
-  assert.match(css, /--text: #f7f7f2/);
-  assert.match(css, /--orange: #ff3434/);
-  assert.match(css, /--lime: #ffd21f/);
+  assert.match(css, /--paper: #090909/);
+  assert.match(css, /--text: #f1f1ef/);
+  assert.match(css, /--orange: #ef3e3e/);
+  assert.match(css, /--lime: #e9c536/);
+  assert.match(css, /\.next-event::after\s*\{\s*content: none/);
+  assert.match(css, /\.event-row\[aria-current="true"\]\s*\{[^}]*box-shadow: inset 3px 0 0/);
   assert.doesNotMatch(css, /#25a35a|#148447|#2670a5|#f3f0e8|#fffdf7/i);
 });

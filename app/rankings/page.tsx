@@ -54,12 +54,8 @@ export default function RankingsPage() {
       </header>
 
       <section className="rankings-hero">
-        <span className="section-kicker">OFFICIAL UFC RANKINGS</span>
-        <h1>
-          선수
-          <br />
-          <em>랭킹.</em>
-        </h1>
+        <span className="section-kicker">UFC 공식 자료 기준</span>
+        <h1>선수 랭킹</h1>
         <p>
           UFC가 공식 페이지에 공개한 Meta 데이터 랭킹을 중심으로, 전환
           기간에 함께 제공되는 기존 미디어 투표 순위를 나란히 비교합니다.
@@ -82,7 +78,7 @@ export default function RankingsPage() {
 
       <section className="ranking-method-grid" aria-label="랭킹 방식 안내">
         <article className="ranking-method-card primary">
-          <span>META UFC RANKINGS</span>
+          <span>현재 공식 기준</span>
           <h2>공식 데이터 랭킹</h2>
           <p>
             상대 수준, 승리 방식, 최근 경기와 미활동 등을 반영한 UFC의 신규
@@ -91,7 +87,7 @@ export default function RankingsPage() {
           </p>
         </article>
         <article className="ranking-method-card">
-          <span>MEDIA PANEL</span>
+          <span>비교 자료</span>
           <h2>기존 미디어 랭킹</h2>
           <p>
             UFC가 선정한 미디어 패널의 투표 결과입니다. 현재 공식 페이지에
@@ -99,7 +95,7 @@ export default function RankingsPage() {
           </p>
         </article>
         <article className="ranking-method-card warning">
-          <span>OFFICIAL BOUNDARY</span>
+          <span>표기 범위</span>
           <h2>공식은 15위까지</h2>
           <p>
             챔피언과 체급별 1~15위만 UFC 공식 순위로 표시합니다. 그 밖의
@@ -129,7 +125,7 @@ export default function RankingsPage() {
                 <h2>{division.label}</h2>
               </div>
               <div className="ranking-champion">
-                <span>CHAMPION</span>
+                <span>챔피언</span>
                 <strong lang="en">{division.champion}</strong>
               </div>
             </div>
@@ -138,7 +134,7 @@ export default function RankingsPage() {
               <article className="ranking-board meta-board">
                 <header>
                   <div>
-                    <span>PRIMARY</span>
+                    <span>공식 기준</span>
                     <h3>Meta UFC 랭킹</h3>
                   </div>
                   <time dateTime={UFC_RANKING_SOURCE.metaUpdated}>
@@ -165,7 +161,7 @@ export default function RankingsPage() {
               <article className="ranking-board media-board">
                 <header>
                   <div>
-                    <span>COMPARISON</span>
+                    <span>비교 자료</span>
                     <h3>미디어 투표 랭킹</h3>
                   </div>
                   <time dateTime={UFC_RANKING_SOURCE.mediaUpdated}>

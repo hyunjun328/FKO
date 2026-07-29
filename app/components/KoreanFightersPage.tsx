@@ -38,12 +38,8 @@ export function KoreanFightersPage() {
       </header>
 
       <section className="fighters-page-hero">
-        <span className="section-kicker">KOREAN FIGHTERS ARCHIVE</span>
-        <h1>
-          코리안
-          <br />
-          <em>파이터.</em>
-        </h1>
+        <span className="section-kicker">한국 선수 기록</span>
+        <h1>코리안 파이터</h1>
         <p>
           지금 옥타곤에서 뛰는 선수와 한국 UFC 역사를 만든 선수들의 전적,
           최근 경기, 검수 근거를 한곳에 모았습니다.
@@ -70,7 +66,7 @@ export function KoreanFightersPage() {
       >
         <div className="section-head">
           <div>
-            <span className="section-kicker">ACTIVE ROSTER</span>
+            <span className="section-kicker">현재 활동 선수</span>
             <h2 id="active-fighters-title">현역 한국 선수</h2>
             <p>현재 UFC 공식 선수 자료를 기준으로 관리하는 선수입니다.</p>
           </div>
@@ -96,7 +92,7 @@ export function KoreanFightersPage() {
       >
         <div className="section-head">
           <div>
-            <span className="section-kicker">KOREAN UFC HISTORY</span>
+            <span className="section-kicker">한국 UFC 기록</span>
             <h2 id="former-fighters-title">은퇴·전 UFC 선수</h2>
             <p>
               정찬성의 공식 은퇴와 UFC의 Not Fighting 상태, 이후 전적을
