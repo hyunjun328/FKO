@@ -8,9 +8,11 @@
   "scripts": {
     "dev": "vinext dev",
     "build": "vinext build",
+    "build:pages": "node scripts/build-github-pages.mjs",
     "start": "vinext start",
     "test": "npm run build && node --test tests/rendered-html.test.mjs tests/ranking-search.test.mjs && python -m unittest tests.test_collector",
-    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "test:pages": "npm run build:pages && node --test tests/github-pages-export.test.mjs",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next --ignore-pattern out",
     "db:generate": "drizzle-kit generate"
   },
   "dependencies": {
