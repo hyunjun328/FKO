@@ -109,6 +109,15 @@ test("server-renders active and former Korean fighters on a separate page", asyn
   assert.match(html, /28전 22승 4패 1무 1무효/);
   assert.match(html, /다음 경기 미정/);
   assert.match(html, /커리어 정보 보기/);
+  const doohoCard =
+    normalizedHtml.match(
+      /<button[^>]*aria-label="최두호 상세 정보 보기"[^>]*>([\s\S]*?)<\/button>/,
+    )?.[1] ?? "";
+  assert.match(doohoCard, /파트리시우 핏불/);
+  assert.match(doohoCard, /UFC 331/);
+  assert.match(doohoCard, /2026-09-20 KST/);
+  assert.match(doohoCard, /UFC 공식 발표 전/);
+  assert.doesNotMatch(doohoCard, /다음 경기 미정/);
   const seokHyeonCard =
     normalizedHtml.match(
       /<button[^>]*aria-label="고석현 상세 정보 보기"[^>]*>([\s\S]*?)<\/button>/,

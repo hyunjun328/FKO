@@ -97,12 +97,26 @@ export function KoreanFighterCard({
           </small>
         </span>
       ) : null}
-      <span className="korean-card-next">
-        <span>
-          {status === "active" ? "다음 경기 미정" : "커리어 정보 보기"}
+      {status === "active" && profile.nextFight ? (
+        <span className="korean-card-next korean-card-next-confirmed">
+          <span>
+            <small>{profile.nextFight.status}</small>
+            <strong>vs {profile.nextFight.opponentKo}</strong>
+            <em>
+              {profile.nextFight.event} · {profile.nextFight.dateKst} KST ·{" "}
+              {profile.nextFight.timing}
+            </em>
+          </span>
+          <b aria-hidden="true">상세 →</b>
         </span>
-        <b aria-hidden="true">상세 →</b>
-      </span>
+      ) : (
+        <span className="korean-card-next">
+          <span>
+            {status === "active" ? "다음 경기 미정" : "커리어 정보 보기"}
+          </span>
+          <b aria-hidden="true">상세 →</b>
+        </span>
+      )}
     </button>
   );
 }
@@ -190,6 +204,31 @@ export function FighterProfileDialog({
               ) : null}
             </div>
             <p className="fighter-profile-summary">{profile.summary}</p>
+            {profile.nextFight ? (
+              <section className="fighter-next-fight">
+                <span className="fighter-last-label">다음 경기</span>
+                <div className="fighter-next-row">
+                  <span>
+                    <b>{profile.nextFight.opponentKo}</b>
+                    <small lang="en">{profile.nextFight.opponent}</small>
+                  </span>
+                  <span>
+                    <b>{profile.nextFight.event}</b>
+                    <small>
+                      {profile.nextFight.dateKst} KST ·{" "}
+                      {profile.nextFight.timing}
+                    </small>
+                  </span>
+                </div>
+                <a
+                  href={profile.nextFight.sourceUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {profile.nextFight.status} ↗
+                </a>
+              </section>
+            ) : null}
             {profile.lastFight ? (
               <section className="fighter-last-fight">
                 <span className="fighter-last-label">최근 경기 결과</span>

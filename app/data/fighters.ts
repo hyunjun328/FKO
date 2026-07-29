@@ -18,6 +18,15 @@ export type FighterProfile = {
     date: string;
     method: string;
   };
+  nextFight?: {
+    opponent: string;
+    opponentKo: string;
+    event: string;
+    dateKst: string;
+    timing: string;
+    status: string;
+    sourceUrl: string;
+  };
   verificationSources?: {
     label: string;
     url: string;
@@ -139,6 +148,16 @@ export const FIGHTER_PROFILES: Record<string, FighterProfile> = {
       date: "2026-05-16",
       method: "2라운드 4:29 KO/TKO",
     },
+    nextFight: {
+      opponent: "Patricio Pitbull",
+      opponentKo: "파트리시우 핏불",
+      event: "UFC 331",
+      dateKst: "2026-09-20",
+      timing: "시작 시각 미정",
+      status: "대진 보도 확인 · UFC 공식 발표 전",
+      sourceUrl:
+        "https://www.mmafighting.com/ufc/501089/patricio-pitbull-vs-doo-ho-choi-added-to-ufc-331-in-los-angeles",
+    },
     sourceUrl: "https://www.ufc.com/athlete/dooho-choi",
     verificationSources: [
       {
@@ -152,6 +171,10 @@ export const FIGHTER_PROFILES: Record<string, FighterProfile> = {
       {
         label: "Sherdog 전적",
         url: "https://www.sherdog.com/fighter/Doo-Ho-Choi-56689",
+      },
+      {
+        label: "UFC 331 대진 보도",
+        url: "https://www.mmafighting.com/ufc/501089/patricio-pitbull-vs-doo-ho-choi-added-to-ufc-331-in-los-angeles",
       },
     ],
     verifiedAt: "2026-07-29",
