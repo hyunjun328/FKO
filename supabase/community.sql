@@ -29,13 +29,11 @@ create or replace function public.create_guest_post(
   p_title text,
   p_body text,
   p_password text
-) returns public.community_posts
+) returns void
 language plpgsql
 security definer
 set search_path = public, extensions
 as $$
-declare
-  created_post public.community_posts;
 begin
   if char_length(trim(p_password)) < 6 then
     raise exception '비밀번호는 6자 이상이어야 합니다.';
@@ -43,11 +41,59 @@ begin
 
   insert into public.community_posts (nickname, title, body, password_hash)
   values (trim(p_nickname), trim(p_title), trim(p_body), crypt(p_password, gen_salt('bf')))
-  returning * into created_post;
-
-  return created_post;
+  return;
 end;
 $$;
 
 revoke all on function public.create_guest_post(text, text, text, text) from public;
 grant execute on function public.create_guest_post(text, text, text, text) to anon;
+
+create table if not exists public.community_comments (
+  id bigint generated always as identity primary key,
+  target_id text not null check (char_length(target_id) between 3 and 160),
+  nickname text not null check (char_length(nickname) between 2 and 20),
+  body text not null check (char_length(body) between 2 and 1000),
+  password_hash text not null,
+  created_at timestamptz not null default now()
+);
+
+create index if not exists community_comments_target_created_at_idx
+  on public.community_comments (target_id, created_at desc);
+
+alter table public.community_comments enable row level security;
+
+drop policy if exists "public read community comments" on public.community_comments;
+create policy "public read community comments" on public.community_comments for select using (true);
+
+revoke all on table public.community_comments from anon, authenticated;
+
+create or replace view public.community_comment_feed as
+  select id, target_id, nickname, body, created_at
+  from public.community_comments;
+
+revoke all on public.community_comment_feed from public, anon, authenticated;
+grant select on public.community_comment_feed to anon;
+
+create or replace function public.create_guest_comment(
+  p_target_id text,
+  p_nickname text,
+  p_body text,
+  p_password text
+) returns void
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+begin
+  if char_length(trim(p_password)) < 6 then
+    raise exception '비밀번호는 6자 이상이어야 합니다.';
+  end if;
+
+  insert into public.community_comments (target_id, nickname, body, password_hash)
+  values (trim(p_target_id), trim(p_nickname), trim(p_body), crypt(p_password, gen_salt('bf')))
+  return;
+end;
+$$;
+
+revoke all on function public.create_guest_comment(text, text, text, text) from public;
+grant execute on function public.create_guest_comment(text, text, text, text) to anon;

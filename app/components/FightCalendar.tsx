@@ -12,6 +12,7 @@ import {
   type FighterSelection,
 } from "./FighterProfileDialog";
 import { FighterFace } from "./FighterFace";
+import { GuestCommentThread } from "./GuestCommentThread";
 
 const KST_FORMATTER = new Intl.DateTimeFormat("ko-KR", {
   timeZone: "Asia/Seoul",
@@ -528,6 +529,11 @@ export function FightCalendar() {
           </aside>
         </article>
       </section>
+
+      <GuestCommentThread
+        targetId={`event:${featuredEvent.id}:main-event`}
+        title={`${featuredEvent.title} 메인 이벤트 반응`}
+      />
 
       <section className="schedule-section">
         <div className="section-head">

@@ -9,6 +9,7 @@ import {
 import { LEGEND_PROFILES } from "../data/legend-profiles";
 import { unofficialWorldRanking } from "../data/unofficial-rankings";
 import { FighterFace } from "./FighterFace";
+import { GuestCommentThread } from "./GuestCommentThread";
 
 export type FighterSelection = {
   name: string;
@@ -415,6 +416,10 @@ export function FighterProfileDialog({
             UFC 공식 유튜브 영상 찾기 ↗
           </a>
         </div>
+        <GuestCommentThread
+          targetId={`fighter:${fighter.name}`}
+          title={`${fighter.koName} 선수 이야기`}
+        />
       </section>
     </div>
   );
