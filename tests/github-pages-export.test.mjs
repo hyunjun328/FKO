@@ -30,7 +30,7 @@ test("exports every public route below the FKO base path", async () => {
   assert.match(p4p, /P4P 랭킹/);
   assert.match(p4p, /\/FKO\/rankings\//);
   assert.match(home, /\/FKO\/fighters\/nobody\.webp/);
-  assert.match(rankings, /\/FKO\/fighters\/nobody-woman\.webp/);
+  assert.match(p4p, /\/FKO\/fighters\/nobody-woman\.webp/);
   assert.match(koreanFighters, /코리안 파이터/);
   assert.match(photoCredits, /선수 사진 출처/);
   assert.match(photoCredits, /src="\/FKO\/fighters\/[^"]+\.webp"/);

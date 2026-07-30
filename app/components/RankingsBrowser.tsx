@@ -75,21 +75,77 @@ function RankingChampionResult({
   );
 }
 
+function RankingFighterRow({
+  fighter,
+  female,
+  comparison,
+  onSelect,
+}: {
+  fighter: RankingEntry;
+  female: boolean;
+  comparison?: ReturnType<typeof compareRank>;
+  onSelect?: () => void;
+}) {
+  const content = (
+    <>
+      <span className="ranking-number">{fighter.rank}</span>
+      <FighterFace
+        name={fighter.name}
+        koName={rankingKoreanName(fighter.name)}
+        className="ranking-fighter-face"
+        gender={female ? "female" : "male"}
+      />
+      <RankingName name={fighter.name} />
+      {comparison ? (
+        <small data-tone={comparison.tone}>{comparison.label}</small>
+      ) : null}
+      {onSelect ? <span className="ranking-detail-hint">상세 →</span> : null}
+    </>
+  );
+
+  return (
+    <li>
+      {onSelect ? (
+        <button
+          type="button"
+          className="ranking-row ranking-detail-trigger"
+          onClick={onSelect}
+          aria-label={`${rankingKoreanName(fighter.name)} 상세 정보 보기`}
+        >
+          {content}
+        </button>
+      ) : (
+        <div className="ranking-row">{content}</div>
+      )}
+    </li>
+  );
+}
+
 export function RankingsBrowser() {
   const [inputValue, setInputValue] = useState("");
   const [query, setQuery] = useState("");
+  const [selectedDivisionId, setSelectedDivisionId] = useState(
+    UFC_RANKING_DIVISIONS[0].id,
+  );
   const [selectedFighter, setSelectedFighter] =
     useState<FighterSelection | null>(null);
   const normalizedQuery = normalizeRankingQuery(query);
 
   const divisions = useMemo(
-    () =>
-      filterRankingDivisions(
-        UFC_RANKING_DIVISIONS,
+    () => {
+      const sourceDivisions = normalizedQuery
+        ? UFC_RANKING_DIVISIONS
+        : UFC_RANKING_DIVISIONS.filter(
+            (division) => division.id === selectedDivisionId,
+          );
+
+      return filterRankingDivisions(
+        sourceDivisions,
         normalizedQuery,
         rankingKoreanName,
-      ),
-    [normalizedQuery],
+      );
+    },
+    [normalizedQuery, selectedDivisionId],
   );
 
   const unrankedMatches = useMemo(
@@ -125,6 +181,21 @@ export function RankingsBrowser() {
   function resetSearch() {
     setInputValue("");
     setQuery("");
+  }
+
+  function selectRankedFighter(
+    fighter: RankingEntry,
+    divisionLabel: string,
+    boardLabel: string,
+  ) {
+    setSelectedFighter({
+      name: fighter.name,
+      koName: rankingKoreanName(fighter.name),
+      weight: divisionLabel,
+      ranking: `${boardLabel} ${divisionLabel} ${fighter.rank}위`,
+      summary: `${rankingKoreanName(fighter.name)}은 현재 ${boardLabel} 기준 ${divisionLabel} ${fighter.rank}위 선수입니다. 공개된 순위와 검수된 선수 정보만 표시하며, 확인되지 않은 전적이나 기록은 추정하지 않습니다.`,
+      sourceUrl: UFC_RANKING_SOURCE.officialUrl,
+    });
   }
 
   return (
@@ -168,11 +239,22 @@ export function RankingsBrowser() {
       </section>
 
       {!query ? (
-        <nav className="ranking-jump" aria-label="체급 바로가기">
+        <nav
+          className="ranking-jump"
+          aria-label="체급 선택"
+          role="tablist"
+        >
           {UFC_RANKING_DIVISIONS.map((division) => (
-            <a href={`#${division.id}`} key={division.id}>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={selectedDivisionId === division.id}
+              aria-controls={division.id}
+              onClick={() => setSelectedDivisionId(division.id)}
+              key={division.id}
+            >
               {division.label}
-            </a>
+            </button>
           ))}
         </nav>
       ) : null}
@@ -252,6 +334,7 @@ export function RankingsBrowser() {
                     className="ranking-division"
                     id={division.id}
                     key={division.id}
+                    role={!query ? "tabpanel" : undefined}
                   >
               <div className="ranking-division-head">
                 <div>
@@ -303,25 +386,22 @@ export function RankingsBrowser() {
                         );
 
                         return (
-                          <li key={fighter.name}>
-                            <span className="ranking-number">
-                              {fighter.rank}
-                            </span>
-                            <FighterFace
-                              name={fighter.name}
-                              koName={rankingKoreanName(fighter.name)}
-                              className="ranking-fighter-face"
-                              gender={
-                                isWomensDivision(division.id)
-                                  ? "female"
-                                  : "male"
-                              }
-                            />
-                            <RankingName name={fighter.name} />
-                            <small data-tone={comparison.tone}>
-                              {comparison.label}
-                            </small>
-                          </li>
+                          <RankingFighterRow
+                            key={fighter.name}
+                            fighter={fighter}
+                            female={isWomensDivision(division.id)}
+                            comparison={comparison}
+                            onSelect={
+                              fighter.rank <= 10
+                                ? () =>
+                                    selectRankedFighter(
+                                      fighter,
+                                      division.label,
+                                      "Meta UFC 랭킹",
+                                    )
+                                : undefined
+                            }
+                          />
                         );
                       })}
                     </ol>
@@ -350,20 +430,21 @@ export function RankingsBrowser() {
                   ) : division.media.length ? (
                     <ol>
                       {division.media.map((fighter) => (
-                        <li key={`${fighter.rank}-${fighter.name}`}>
-                          <span className="ranking-number">
-                            {fighter.rank}
-                          </span>
-                          <FighterFace
-                            name={fighter.name}
-                            koName={rankingKoreanName(fighter.name)}
-                            className="ranking-fighter-face"
-                            gender={
-                              isWomensDivision(division.id) ? "female" : "male"
-                            }
-                          />
-                          <RankingName name={fighter.name} />
-                        </li>
+                        <RankingFighterRow
+                          key={`${fighter.rank}-${fighter.name}`}
+                          fighter={fighter}
+                          female={isWomensDivision(division.id)}
+                          onSelect={
+                            fighter.rank <= 10
+                              ? () =>
+                                  selectRankedFighter(
+                                    fighter,
+                                    division.label,
+                                    "미디어 랭킹",
+                                  )
+                              : undefined
+                          }
+                        />
                       ))}
                     </ol>
                   ) : (

@@ -13,6 +13,9 @@ export type FighterSelection = {
   name: string;
   koName: string;
   weight: string;
+  ranking?: string;
+  summary?: string;
+  sourceUrl?: string;
 };
 
 export function recordSummary(record: string) {
@@ -64,11 +67,7 @@ export function KoreanFighterCard({
         />
         <span className="korean-card-status">
           <i aria-hidden="true" />
-          {status === "active"
-            ? profile.verificationSources
-              ? `${profile.verificationSources.length}곳 교차 검증`
-              : "UFC 현역"
-            : fighter.statusLabel}
+          {status === "active" ? "UFC 현역" : fighter.statusLabel}
         </span>
       </span>
       <span className="korean-card-name">
@@ -130,7 +129,10 @@ export function FighterProfileDialog({
     profile?.verificationSources ??
     (profile
       ? [{ label: "UFC 공식 선수 정보", url: profile.sourceUrl }]
-      : []);
+      : fighter.sourceUrl
+        ? [{ label: "UFC 공식 랭킹", url: fighter.sourceUrl }]
+        : []);
+  const topSources = verificationSources.slice(0, 4);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -179,11 +181,7 @@ export function FighterProfileDialog({
           />
           <div>
             <span className="fighter-profile-kicker">
-              {profile?.verificationSources
-                ? `${profile.verificationSources.length}개 출처 교차 검증`
-                : profile
-                  ? "검수된 선수 정보"
-                  : "기본 선수 정보"}
+              {profile ? "선수 상세 정보" : "랭킹 선수 정보"}
             </span>
             <h2 id="fighter-dialog-title">{fighter.koName}</h2>
             <p lang="en">{fighter.name}</p>
@@ -195,18 +193,34 @@ export function FighterProfileDialog({
           </div>
         </div>
 
+        {topSources.length ? (
+          <nav className="fighter-top-sources" aria-label="선수 정보 출처">
+            <span>출처</span>
+            {topSources.map((source) => (
+              <a
+                href={source.url}
+                target="_blank"
+                rel="noreferrer"
+                key={source.url}
+              >
+                {source.label} ↗
+              </a>
+            ))}
+          </nav>
+        ) : null}
+
         {profile ? (
           <>
             <div className="fighter-profile-badges">
               <span>{profile.ranking}</span>
+              {fighter.ranking && fighter.ranking !== profile.ranking ? (
+                <span>{fighter.ranking}</span>
+              ) : null}
               <span>{recordSummary(profile.record)}</span>
               {worldRanking ? (
                 <span className="unofficial-ranking-badge">
                   비공식 세계 #{worldRanking.rank} · {worldRanking.provider}
                 </span>
-              ) : null}
-              {profile.verificationSources ? (
-                <span className="verified-badge">교차 검증 완료</span>
               ) : null}
             </div>
             <p className="fighter-profile-summary">{profile.summary}</p>
@@ -322,17 +336,14 @@ export function FighterProfileDialog({
                 <dt>확인일</dt>
                 <dd>{profile.verifiedAt}</dd>
               </div>
-              {profile.verificationSources ? (
-                <div>
-                  <dt>검수 근거</dt>
-                  <dd>{profile.verificationSources.length}개 출처</dd>
-                </div>
-              ) : null}
             </dl>
           </>
         ) : (
           <div className="fighter-profile-pending">
-            <strong>{fighter.weight} 출전 예정</strong>
+            <strong>{fighter.ranking ?? `${fighter.weight} 선수`}</strong>
+            {fighter.summary ? (
+              <p className="fighter-ranking-summary">{fighter.summary}</p>
+            ) : null}
             {worldRanking ? (
               <div className="fighter-pending-ranking">
                 <b>비공식 세계 #{worldRanking.rank}</b>
@@ -341,24 +352,16 @@ export function FighterProfileDialog({
                 </span>
               </div>
             ) : null}
-            <p>
-              아직 공식 전적과 랭킹을 검수 중입니다. 확인되지 않은 정보는
-              추정해서 표시하지 않습니다.
-            </p>
+            {!fighter.summary ? (
+              <p>
+                아직 공식 전적과 랭킹을 검수 중입니다. 확인되지 않은 정보는
+                추정해서 표시하지 않습니다.
+              </p>
+            ) : null}
           </div>
         )}
 
         <div className="fighter-external-links">
-          {verificationSources.map((source) => (
-            <a
-              href={source.url}
-              target="_blank"
-              rel="noreferrer"
-              key={source.url}
-            >
-              {source.label} ↗
-            </a>
-          ))}
           {worldRanking ? (
             <a
               href={worldRanking.sourceUrl}

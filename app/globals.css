@@ -873,11 +873,6 @@ a:focus-visible {
   font-weight: 900;
 }
 
-.fighter-profile-badges .verified-badge {
-  background: var(--lime);
-  color: var(--ink);
-}
-
 .fighter-profile-summary {
   margin: 18px 0;
   font-size: 0.95rem;
@@ -2499,12 +2494,6 @@ button.calendar-day:hover {
   background: #1c1c1c;
   color: var(--text);
   font-weight: 750;
-}
-
-.fighter-profile-badges .verified-badge {
-  border: 1px solid rgba(233, 197, 54, 0.45);
-  background: rgba(233, 197, 54, 0.08);
-  color: var(--lime);
 }
 
 .fighter-next-fight,
@@ -4184,5 +4173,168 @@ body :is(b, strong) {
 
   .fighter-career-highlights {
     padding: 14px;
+  }
+}
+
+.ranking-jump button {
+  flex: 0 0 auto;
+  padding: 9px 12px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: #181818;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.ranking-jump button:hover,
+.ranking-jump button:focus-visible {
+  border-color: #555;
+  background: #242424;
+}
+
+.ranking-jump button[aria-selected="true"] {
+  border-color: var(--orange);
+  background: var(--orange);
+  color: white;
+}
+
+.ranking-board li {
+  display: block;
+  min-height: 0;
+  padding: 0;
+}
+
+.ranking-row {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 34px 42px minmax(0, 1fr) auto auto;
+  gap: 10px;
+  align-items: center;
+  min-height: 68px;
+  padding: 8px 14px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+}
+
+.ranking-detail-trigger {
+  cursor: pointer;
+}
+
+.ranking-detail-trigger:hover,
+.ranking-detail-trigger:focus-visible {
+  background: #202020;
+  outline: 1px solid rgba(232, 65, 47, 0.72);
+  outline-offset: -1px;
+}
+
+.ranking-row > small {
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 520;
+}
+
+.ranking-detail-hint,
+.p4p-detail-hint {
+  color: var(--orange);
+  font-size: 0.64rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.p4p-board li {
+  display: block;
+  padding: 0;
+}
+
+.p4p-row {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 42px 52px minmax(0, 1fr) minmax(110px, auto) auto;
+  gap: 12px;
+  align-items: center;
+  min-height: 76px;
+  padding: 10px 16px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+}
+
+.p4p-detail-trigger {
+  cursor: pointer;
+}
+
+.p4p-detail-trigger:hover,
+.p4p-detail-trigger:focus-visible {
+  background: #202020;
+  outline: 1px solid rgba(232, 65, 47, 0.72);
+  outline-offset: -1px;
+}
+
+.fighter-top-sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: -4px 0 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.fighter-top-sources span,
+.fighter-top-sources a {
+  padding: 5px 7px;
+  border: 1px solid #3c3c3c;
+  border-radius: 4px;
+  color: var(--muted);
+  font-size: 0.6rem;
+  font-weight: 560;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.fighter-top-sources span {
+  border-color: transparent;
+  padding-left: 0;
+}
+
+.fighter-top-sources a:hover,
+.fighter-top-sources a:focus-visible {
+  border-color: #666;
+  color: var(--text);
+}
+
+.fighter-ranking-summary {
+  margin: 12px 0 0;
+  color: #d5d5d0;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+@media (max-width: 680px) {
+  .ranking-row {
+    grid-template-columns: 32px 36px minmax(0, 1fr);
+  }
+
+  .ranking-row > small,
+  .ranking-detail-hint {
+    grid-column: 3;
+  }
+
+  .p4p-row {
+    grid-template-columns: 34px 44px minmax(0, 1fr);
+  }
+
+  .p4p-row .p4p-division,
+  .p4p-detail-hint {
+    grid-column: 3;
   }
 }

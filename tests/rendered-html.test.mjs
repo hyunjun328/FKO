@@ -131,7 +131,8 @@ test("server-renders active and former Korean fighters on a separate page", asyn
     normalizedHtml.match(
       /<button[^>]*aria-label="고석현 상세 정보 보기"[^>]*>([\s\S]*?)<\/button>/,
     )?.[1] ?? "";
-  assert.match(seokHyeonCard, /5곳 교차 검증/);
+  assert.match(seokHyeonCard, /UFC 현역/);
+  assert.doesNotMatch(seokHyeonCard, /교차\s*검증/);
   assert.match(seokHyeonCard, /“Technical”/);
   assert.match(seokHyeonCard, /16전 13승 3패/);
   assert.match(seokHyeonCard, /data-result="패"/);
@@ -158,8 +159,7 @@ test("server-renders the official UFC ranking comparison page", async () => {
   assert.match(html, /공식은 15위까지/);
   assert.match(html, /15위 밖 주요 선수/);
   assert.match(html, /UFC 공식 NR/);
-  assert.match(html, /고석현/);
-  assert.match(normalizedHtml, /비공식 세계 #23/);
+  assert.match(html, /박현성/);
   assert.match(html, /선수 또는 체급 검색/);
   assert.match(html, /placeholder="예: 맥그리거, 메디치, Makhachev"/);
   assert.match(html, />검색<\/button>/);
@@ -181,19 +181,14 @@ test("server-renders the official UFC ranking comparison page", async () => {
     normalizedHtml,
     /ranking-champion-row[\s\S]*?조슈아 반[\s\S]*?Joshua Van[\s\S]*?UFC 챔피언/,
   );
-  assert.match(
-    normalizedHtml,
-    /ranking-champion-row[\s\S]*?이슬람 마카체프[\s\S]*?Islam Makhachev[\s\S]*?UFC 챔피언/,
+  assert.doesNotMatch(normalizedHtml, /Islam Makhachev|Kayla Harrison/);
+  assert.equal((html.match(/class="ranking-number"/g) ?? []).length, 30);
+  assert.equal(
+    (html.match(/class="ranking-row ranking-detail-trigger"/g) ?? []).length,
+    20,
   );
-  assert.match(
-    normalizedHtml,
-    /ranking-champion-row[\s\S]*?케일라 해리슨[\s\S]*?Kayla Harrison[\s\S]*?UFC 챔피언/,
-  );
-  assert.match(
-    normalizedHtml,
-    /Meta UFC 랭킹[\s\S]*?1<\/span>[\s\S]*?카를로스 프라치스[\s\S]*?Carlos Prates[\s\S]*?14<\/span>[\s\S]*?우로시 메디치[\s\S]*?Uroš Medić/,
-  );
-  assert.equal((html.match(/class="ranking-number"/g) ?? []).length, 330);
+  assert.match(html, /aria-label="체급 선택"/);
+  assert.equal((html.match(/role="tab"/g) ?? []).length, 11);
   assert.match(html, /https:\/\/www\.ufc\.com\/rankings/);
   assert.match(
     html,
@@ -204,7 +199,6 @@ test("server-renders the official UFC ranking comparison page", async () => {
   assert.match(html, /href="\/"/);
   assert.match(html, /class="fighter-face ranking-champion-face"/);
   assert.match(html, /class="fighter-face ranking-fighter-face"/);
-  assert.match(html, /src="\/fighters\/nobody-woman\.webp"/);
   assert.match(html, /href="\/photo-credits"/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
@@ -223,6 +217,10 @@ test("server-renders separate men and women P4P rankings", async () => {
   assert.match(html, /찰스 올리베이라/);
   assert.match(html, /메이시 바버/);
   assert.equal((html.match(/class="p4p-number"/g) ?? []).length, 30);
+  assert.equal(
+    (html.match(/class="p4p-row p4p-detail-trigger"/g) ?? []).length,
+    20,
+  );
   assert.match(html, /href="\/rankings"/);
   assert.match(html, /https:\/\/www\.ufc\.com\/rankings/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
@@ -306,4 +304,15 @@ test("uses the black, white, red, and yellow FKO theme", async () => {
   );
   assert.match(css, /\.event-row\[aria-current="true"\]\s*\{[^}]*box-shadow: inset 3px 0 0/);
   assert.doesNotMatch(css, /#25a35a|#148447|#2670a5|#f3f0e8|#fffdf7/i);
+});
+
+test("keeps at most four compact sources at the top of fighter details", async () => {
+  const dialog = await readFile(
+    new URL("../app/components/FighterProfileDialog.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(dialog, /verificationSources\.slice\(0, 4\)/);
+  assert.match(dialog, /className="fighter-top-sources"/);
+  assert.doesNotMatch(dialog, /교차\s*검증/);
 });

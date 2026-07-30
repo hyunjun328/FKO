@@ -1,68 +1,14 @@
 // UFC 남녀 파운드 포 파운드 랭킹을 별도 화면으로 제공한다.
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FighterFace } from "../components/FighterFace";
-import {
-  MENS_P4P_RANKINGS,
-  P4P_RANKING_SOURCE,
-  WOMENS_P4P_RANKINGS,
-  type PoundForPoundEntry,
-} from "../data/p4p-rankings";
-import { rankingKoreanName } from "../data/ranking-names";
+import { P4PBrowser } from "../components/P4PBrowser";
+import { P4P_RANKING_SOURCE } from "../data/p4p-rankings";
 
 export const metadata: Metadata = {
   title: "UFC P4P 랭킹 | FKO",
   description:
     "UFC 남성·여성 파운드 포 파운드 공식 상위 15명을 한글로 확인하세요.",
 };
-
-function P4PBoard({
-  title,
-  englishTitle,
-  entries,
-  female = false,
-}: {
-  title: string;
-  englishTitle: string;
-  entries: PoundForPoundEntry[];
-  female?: boolean;
-}) {
-  return (
-    <article className="p4p-board">
-      <header>
-        <div>
-          <span>{englishTitle}</span>
-          <h2>{title}</h2>
-        </div>
-        <time dateTime={P4P_RANKING_SOURCE.updatedAt}>
-          {P4P_RANKING_SOURCE.updatedAt}
-        </time>
-      </header>
-      <ol>
-        {entries.map((fighter) => (
-          <li key={fighter.name}>
-            <span className="p4p-number">{fighter.rank}</span>
-            <FighterFace
-              name={fighter.name}
-              koName={rankingKoreanName(fighter.name)}
-              className="p4p-fighter-face"
-              gender={female ? "female" : "male"}
-              eager={fighter.rank <= 3}
-            />
-            <span className="p4p-fighter-name">
-              <strong>{rankingKoreanName(fighter.name)}</strong>
-              <small lang="en">{fighter.name}</small>
-            </span>
-            <span className="p4p-division">
-              <b>{fighter.division}</b>
-              <small>{fighter.status}</small>
-            </span>
-          </li>
-        ))}
-      </ol>
-    </article>
-  );
-}
 
 export default function P4PPage() {
   return (
@@ -119,19 +65,7 @@ export default function P4PPage() {
         <span aria-current="page">P4P 랭킹</span>
       </nav>
 
-      <section className="p4p-grid" aria-label="UFC 파운드 포 파운드 랭킹">
-        <P4PBoard
-          title="남성 P4P"
-          englishTitle="Men’s Pound-for-Pound"
-          entries={MENS_P4P_RANKINGS}
-        />
-        <P4PBoard
-          title="여성 P4P"
-          englishTitle="Women’s Pound-for-Pound"
-          entries={WOMENS_P4P_RANKINGS}
-          female
-        />
-      </section>
+      <P4PBrowser />
 
       <aside className="p4p-note">
         <strong>P4P는 체급별 순위와 다릅니다.</strong>
