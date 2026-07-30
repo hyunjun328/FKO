@@ -22,6 +22,9 @@ export default function RankingsPage() {
           </span>
         </Link>
         <div className="topbar-actions">
+          <Link className="topbar-link" href="/p4p">
+            P4P 랭킹
+          </Link>
           <Link className="topbar-link" href="/korean-fighters">
             코리안 파이터
           </Link>
@@ -57,6 +60,11 @@ export default function RankingsPage() {
           </span>
         </div>
       </section>
+
+      <nav className="ranking-view-switch" aria-label="랭킹 화면 선택">
+        <span aria-current="page">체급별 랭킹</span>
+        <Link href="/p4p">P4P 랭킹</Link>
+      </nav>
 
       <section className="ranking-method-grid" aria-label="랭킹 방식 안내">
         <article className="ranking-method-card primary">

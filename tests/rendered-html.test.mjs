@@ -200,11 +200,31 @@ test("server-renders the official UFC ranking comparison page", async () => {
     /https:\/\/www\.ufc\.com\/news\/ufc-and-meta-unveil-meta-ufc-rankings/,
   );
   assert.match(html, /href="\/korean-fighters"/);
+  assert.match(html, /href="\/p4p"/);
   assert.match(html, /href="\/"/);
   assert.match(html, /class="fighter-face ranking-champion-face"/);
   assert.match(html, /class="fighter-face ranking-fighter-face"/);
   assert.match(html, /src="\/fighters\/nobody-woman\.webp"/);
   assert.match(html, /href="\/photo-credits"/);
+  assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
+});
+
+test("server-renders separate men and women P4P rankings", async () => {
+  const response = await render("/p4p");
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
+
+  const html = await response.text();
+  assert.match(html, /P4P 랭킹/);
+  assert.match(html, /남성 P4P/);
+  assert.match(html, /여성 P4P/);
+  assert.match(html, /이슬람 마카체프/);
+  assert.match(html, /발렌티나 셰브첸코/);
+  assert.match(html, /찰스 올리베이라/);
+  assert.match(html, /메이시 바버/);
+  assert.equal((html.match(/class="p4p-number"/g) ?? []).length, 30);
+  assert.match(html, /href="\/rankings"/);
+  assert.match(html, /https:\/\/www\.ufc\.com\/rankings/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
 

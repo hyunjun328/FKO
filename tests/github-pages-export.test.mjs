@@ -12,6 +12,7 @@ async function readOutput(path) {
 test("exports every public route below the FKO base path", async () => {
   const home = await readOutput("index.html");
   const rankings = await readOutput("rankings/index.html");
+  const p4p = await readOutput("p4p/index.html");
   const koreanFighters = await readOutput("korean-fighters/index.html");
   const photoCredits = await readOutput("photo-credits/index.html");
   const nobodyMan = await readFile(new URL("fighters/nobody.webp", output));
@@ -21,9 +22,13 @@ test("exports every public route below the FKO base path", async () => {
 
   assert.match(home, /FKO/);
   assert.match(home, /\/FKO\/rankings\//);
+  assert.match(home, /\/FKO\/p4p\//);
   assert.match(home, /\/FKO\/korean-fighters\//);
   assert.match(home, /\/FKO\/photo-credits\//);
   assert.match(rankings, /선수 랭킹/);
+  assert.match(rankings, /15위 밖 주요 선수/);
+  assert.match(p4p, /P4P 랭킹/);
+  assert.match(p4p, /\/FKO\/rankings\//);
   assert.match(home, /\/FKO\/fighters\/nobody\.webp/);
   assert.match(rankings, /\/FKO\/fighters\/nobody-woman\.webp/);
   assert.match(koreanFighters, /코리안 파이터/);
