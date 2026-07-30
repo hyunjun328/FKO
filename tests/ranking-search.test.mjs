@@ -13,6 +13,7 @@ import { UFC_RANKING_DIVISIONS } from "../app/data/rankings.ts";
 import { UNOFFICIAL_WORLD_RANKINGS } from "../app/data/unofficial-rankings.ts";
 import {
   filterRankingDivisions,
+  findBeyondOfficialRankingFighters,
   findUnrankedFighterMatches,
 } from "../app/lib/ranking-search.ts";
 
@@ -104,6 +105,24 @@ test("labels Fight Matrix positions as date-stamped unofficial world rankings", 
   assert.equal(orolbai.provider, "Fight Matrix");
   assert.equal(orolbai.asOf, "2026-07-26");
   assert.match(orolbai.sourceUrl, /fightmatrix\.com/);
+});
+
+test("lists active fighters beyond the official top 15 by division", () => {
+  const welterweight = UFC_RANKING_DIVISIONS.find(
+    (division) => division.id === "welterweight",
+  );
+  const fighters = findBeyondOfficialRankingFighters(
+    SEARCHABLE_FIGHTERS,
+    welterweight,
+    rankingKoreanName,
+  );
+  const names = fighters.map((fighter) => fighter.name);
+
+  assert.equal(names.includes("SeokHyeon Ko"), true);
+  assert.equal(names.includes("Myktybek Orolbai"), true);
+  assert.equal(names.includes("Islam Makhachev"), false);
+  assert.equal(names.includes("Dong Hyun Kim"), false);
+  assert.equal(fighters[0].unofficialRanking.rank <= 23, true);
 });
 
 test("keeps famous career claims attached to explicit verification sources", () => {

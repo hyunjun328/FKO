@@ -11,6 +11,7 @@ import {
 } from "../data/rankings";
 import {
   filterRankingDivisions,
+  findBeyondOfficialRankingFighters,
   findUnrankedFighterMatches,
   normalizeRankingQuery,
 } from "../lib/ranking-search";
@@ -239,12 +240,19 @@ export function RankingsBrowser() {
 
           {divisions.length ? (
             <div className="ranking-division-list">
-          {divisions.map((division) => (
-            <section
-              className="ranking-division"
-              id={division.id}
-              key={division.id}
-            >
+              {divisions.map((division) => {
+                const beyondFighters = findBeyondOfficialRankingFighters(
+                  SEARCHABLE_FIGHTERS,
+                  division,
+                  rankingKoreanName,
+                );
+
+                return (
+                  <section
+                    className="ranking-division"
+                    id={division.id}
+                    key={division.id}
+                  >
               <div className="ranking-division-head">
                 <div>
                   <span>{division.englishLabel}</span>
@@ -365,8 +373,79 @@ export function RankingsBrowser() {
                   )}
                 </article>
               </div>
-            </section>
-          ))}
+
+              {!query && beyondFighters.length ? (
+                <details className="ranking-beyond">
+                  <summary>
+                    <span>
+                      <b>15위 밖 주요 선수</b>
+                      <small>UFC 공식 NR · {beyondFighters.length}명</small>
+                    </span>
+                    <strong>선수 보기</strong>
+                  </summary>
+                  <p className="ranking-beyond-note">
+                    UFC는 체급별 15위까지만 공식 발표합니다. 아래 선수에게
+                    16위부터 임의 번호를 붙이지 않으며, 확인된 외부 순위만
+                    출처와 함께 따로 표시합니다.
+                  </p>
+                  <div className="ranking-beyond-grid">
+                    {beyondFighters.map((fighter) => (
+                      <button
+                        type="button"
+                        className="ranking-beyond-fighter"
+                        key={fighter.name}
+                        onClick={() =>
+                          setSelectedFighter({
+                            name: fighter.name,
+                            koName: fighter.koName,
+                            weight: fighter.division,
+                          })
+                        }
+                        aria-label={`${fighter.koName} 상세 정보 보기`}
+                      >
+                        <span className="ranking-unranked-mark">NR</span>
+                        <FighterFace
+                          name={fighter.name}
+                          koName={fighter.koName}
+                          className="ranking-fighter-face"
+                          gender={
+                            fighter.division.includes("여성")
+                              ? "female"
+                              : "male"
+                          }
+                        />
+                        <span className="ranking-fighter-name">
+                          <strong>{fighter.koName}</strong>
+                          <small lang="en">{fighter.name}</small>
+                        </span>
+                        <span className="ranking-beyond-state">
+                          {fighter.unofficialRanking ? (
+                            <>
+                              <b>
+                                비공식 세계 #{fighter.unofficialRanking.rank}
+                              </b>
+                              <small>
+                                {fighter.unofficialRanking.provider} ·{" "}
+                                {fighter.unofficialRanking.asOf}
+                              </small>
+                            </>
+                          ) : (
+                            <>
+                              <b>UFC 공식 NR</b>
+                              <small>
+                                {fighter.statusLabel ?? "15위 밖 주요 선수"}
+                              </small>
+                            </>
+                          )}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                </details>
+              ) : null}
+                  </section>
+                );
+              })}
             </div>
           ) : null}
         </>

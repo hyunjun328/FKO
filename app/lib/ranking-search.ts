@@ -106,3 +106,43 @@ export function findUnrankedFighterMatches(
       normalizeRankingQuery(`${fighter.koName} ${fighter.name}`).includes(query),
   );
 }
+
+export function findBeyondOfficialRankingFighters(
+  fighters: readonly SearchableFighter[],
+  division: RankingDivision,
+  koreanName: (name: string) => string,
+) {
+  const rankedNames = new Set([
+    division.champion,
+    ...division.meta.map((fighter) => fighter.name),
+    ...division.media.map((fighter) => fighter.name),
+  ]);
+  const rankedKoreanNames = new Set(
+    [...rankedNames].map((name) => koreanName(name)),
+  );
+  const inactiveStatuses = new Set([
+    "은퇴",
+    "전 UFC",
+    "UFC 활동 종료",
+    "명예의 전당",
+  ]);
+
+  return fighters
+    .filter(
+      (fighter) =>
+        fighter.division.split(" · ").includes(division.label) &&
+        !rankedNames.has(fighter.name) &&
+        !rankedKoreanNames.has(fighter.koName) &&
+        !inactiveStatuses.has(fighter.statusLabel ?? ""),
+    )
+    .sort((left, right) => {
+      const leftRank = left.unofficialRanking?.rank ?? Number.MAX_SAFE_INTEGER;
+      const rightRank = right.unofficialRanking?.rank ?? Number.MAX_SAFE_INTEGER;
+
+      if (leftRank !== rightRank) {
+        return leftRank - rightRank;
+      }
+
+      return left.koName.localeCompare(right.koName, "ko-KR");
+    });
+}
