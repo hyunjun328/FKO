@@ -39,6 +39,19 @@ test("finds Choi Doo-ho as an unranked Korean fighter", () => {
   );
 });
 
+test("finds SeokHyeon Ko by the Korean name", () => {
+  const unranked = findUnrankedFighterMatches(
+    SEARCHABLE_FIGHTERS,
+    UFC_RANKING_DIVISIONS,
+    "고석현",
+  );
+
+  assert.deepEqual(
+    unranked.map((fighter) => fighter.name),
+    ["SeokHyeon Ko"],
+  );
+});
+
 test("does not expose the unrelated lightweight champion for Oliveira", () => {
   const [lightweight] = filterRankingDivisions(
     UFC_RANKING_DIVISIONS,

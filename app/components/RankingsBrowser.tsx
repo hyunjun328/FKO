@@ -8,6 +8,7 @@ import {
   type FightMatrixRankingEntry,
 } from "../data/fightmatrix-rankings";
 import { rankingKoreanName } from "../data/ranking-names";
+import { SEARCHABLE_FIGHTERS } from "../data/fighter-catalog";
 import {
   UFC_RANKING_DIVISIONS,
   UFC_RANKING_SOURCE,
@@ -15,6 +16,7 @@ import {
   type RankingDivision,
 } from "../data/rankings";
 import {
+  findUnrankedFighterMatches,
   filterRankingDivisions,
   normalizeRankingQuery,
   rankingFighterMatches,
@@ -202,6 +204,18 @@ export function RankingsBrowser() {
     );
   }, [normalizedQuery]);
 
+  const unrankedMatches = useMemo(
+    () =>
+      normalizedQuery
+        ? findUnrankedFighterMatches(
+            SEARCHABLE_FIGHTERS,
+            MENS_RANKING_DIVISIONS,
+            normalizedQuery,
+          )
+        : [],
+    [normalizedQuery],
+  );
+
   const resultCount = useMemo(() => {
     const names = new Set<string>();
     divisions.forEach((division) => {
@@ -210,8 +224,9 @@ export function RankingsBrowser() {
       division.media.forEach((fighter) => names.add(fighter.name));
     });
     unofficialMatches.forEach(({ entry }) => names.add(entry.name));
+    unrankedMatches.forEach((fighter) => names.add(fighter.name));
     return names.size;
-  }, [divisions, unofficialMatches]);
+  }, [divisions, unofficialMatches, unrankedMatches]);
 
   const selectedDivision = MENS_RANKING_DIVISIONS.find(
     (division) => division.id === selectedDivisionId,
@@ -256,6 +271,18 @@ export function RankingsBrowser() {
     });
   }
 
+  function openUnrankedFighter(fighter: (typeof unrankedMatches)[number]) {
+    setSelectedFighter({
+      name: fighter.name,
+      koName: fighter.koName,
+      weight: fighter.division,
+      ranking: fighter.statusLabel ?? "UFC 선수 정보",
+      sourceLabel: "FKO 선수 정보",
+      sourceUrl: "https://www.ufc.com/athletes/all",
+      simple: true,
+    });
+  }
+
   function submitSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const nextQuery = inputValue.trim();
@@ -281,7 +308,9 @@ export function RankingsBrowser() {
     setUnofficialPage(1);
   }
 
-  const hasResults = Boolean(divisions.length || unofficialMatches.length);
+  const hasResults = Boolean(
+    divisions.length || unofficialMatches.length || unrankedMatches.length,
+  );
 
   return (
     <>
@@ -327,6 +356,24 @@ export function RankingsBrowser() {
                   </button>
                 ))}
               </div>
+            </section>
+          ) : null}
+
+          {unrankedMatches.length ? (
+            <section className="ranking-unranked-results" aria-labelledby="unranked-search-title">
+              <header>
+                <span>UFC 선수 검색</span>
+                <h2 id="unranked-search-title">랭킹 밖 선수 결과</h2>
+              </header>
+              {unrankedMatches.map((fighter) => (
+                <button className="ranking-unranked-result" type="button" key={fighter.name} onClick={() => openUnrankedFighter(fighter)}>
+                  <span className="ranking-unranked-mark">UFC</span>
+                  <FighterFace name={fighter.name} koName={fighter.koName} className="ranking-fighter-face" gender="male" />
+                  <span className="ranking-fighter-name"><strong>{fighter.koName}</strong><small lang="en">{fighter.name}</small></span>
+                  <span className="ranking-unranked-state"><b>{fighter.division}</b><small>{fighter.statusLabel ?? "공식 순위 밖"}</small></span>
+                  <span className="ranking-unranked-open">상세 보기 →</span>
+                </button>
+              ))}
             </section>
           ) : null}
 
