@@ -14,15 +14,23 @@ test("exports every public route below the FKO base path", async () => {
   const rankings = await readOutput("rankings/index.html");
   const koreanFighters = await readOutput("korean-fighters/index.html");
   const photoCredits = await readOutput("photo-credits/index.html");
+  const nobodyMan = await readFile(new URL("fighters/nobody.webp", output));
+  const nobodyWoman = await readFile(
+    new URL("fighters/nobody-woman.webp", output),
+  );
 
   assert.match(home, /FKO/);
   assert.match(home, /\/FKO\/rankings\//);
   assert.match(home, /\/FKO\/korean-fighters\//);
   assert.match(home, /\/FKO\/photo-credits\//);
   assert.match(rankings, /선수 랭킹/);
+  assert.match(home, /\/FKO\/fighters\/nobody\.webp/);
+  assert.match(rankings, /\/FKO\/fighters\/nobody-woman\.webp/);
   assert.match(koreanFighters, /코리안 파이터/);
   assert.match(photoCredits, /선수 사진 출처/);
   assert.match(photoCredits, /src="\/FKO\/fighters\/[^"]+\.webp"/);
+  assert.ok(nobodyMan.byteLength > 1000);
+  assert.ok(nobodyWoman.byteLength > 1000);
 });
 
 test("prefixes scripts, fonts, and social metadata for GitHub Pages", async () => {

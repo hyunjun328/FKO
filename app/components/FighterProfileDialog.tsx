@@ -60,6 +60,7 @@ export function KoreanFighterCard({
           name={fighter.name}
           koName={fighter.koName}
           className="korean-card-avatar"
+          gender={fighter.division.includes("여성") ? "female" : "male"}
         />
         <span className="korean-card-status">
           <i aria-hidden="true" />
@@ -174,6 +175,7 @@ export function FighterProfileDialog({
             koName={fighter.koName}
             className="fighter-avatar"
             eager
+            gender={fighter.weight.includes("여성") ? "female" : "male"}
           />
           <div>
             <span className="fighter-profile-kicker">

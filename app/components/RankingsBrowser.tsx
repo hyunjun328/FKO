@@ -15,6 +15,10 @@ import {
   normalizeRankingQuery,
 } from "../lib/ranking-search";
 import { FighterFace } from "./FighterFace";
+
+function isWomensDivision(id: string) {
+  return id.startsWith("womens-");
+}
 import {
   FighterProfileDialog,
   type FighterSelection,
@@ -48,7 +52,13 @@ function RankingName({ name }: { name: string }) {
   );
 }
 
-function RankingChampionResult({ name }: { name: string }) {
+function RankingChampionResult({
+  name,
+  female,
+}: {
+  name: string;
+  female: boolean;
+}) {
   return (
     <div className="ranking-board-champion-result">
       <span className="ranking-champion-mark">C</span>
@@ -56,6 +66,7 @@ function RankingChampionResult({ name }: { name: string }) {
         name={name}
         koName={rankingKoreanName(name)}
         className="ranking-fighter-face"
+        gender={female ? "female" : "male"}
       />
       <RankingName name={name} />
       <strong>현 UFC 챔피언</strong>
@@ -196,6 +207,9 @@ export function RankingsBrowser() {
                       name={fighter.name}
                       koName={fighter.koName}
                       className="ranking-fighter-face"
+                      gender={
+                        fighter.division.includes("여성") ? "female" : "male"
+                      }
                     />
                     <span className="ranking-fighter-name">
                       <strong>{fighter.koName}</strong>
@@ -245,6 +259,9 @@ export function RankingsBrowser() {
                     name={division.champion}
                     koName={rankingKoreanName(division.champion)}
                     className="ranking-champion-face"
+                    gender={
+                      isWomensDivision(division.id) ? "female" : "male"
+                    }
                   />
                   <RankingName name={division.champion} />
                   <span className="ranking-champion-label">UFC 챔피언</span>
@@ -263,7 +280,10 @@ export function RankingsBrowser() {
                     </time>
                   </header>
                   {division.championMatches ? (
-                    <RankingChampionResult name={division.champion} />
+                    <RankingChampionResult
+                      name={division.champion}
+                      female={isWomensDivision(division.id)}
+                    />
                   ) : division.meta.length ? (
                     <ol>
                       {division.meta.map((fighter) => {
@@ -283,6 +303,11 @@ export function RankingsBrowser() {
                               name={fighter.name}
                               koName={rankingKoreanName(fighter.name)}
                               className="ranking-fighter-face"
+                              gender={
+                                isWomensDivision(division.id)
+                                  ? "female"
+                                  : "male"
+                              }
                             />
                             <RankingName name={fighter.name} />
                             <small data-tone={comparison.tone}>
@@ -310,7 +335,10 @@ export function RankingsBrowser() {
                     </time>
                   </header>
                   {division.championMatches ? (
-                    <RankingChampionResult name={division.champion} />
+                    <RankingChampionResult
+                      name={division.champion}
+                      female={isWomensDivision(division.id)}
+                    />
                   ) : division.media.length ? (
                     <ol>
                       {division.media.map((fighter) => (
@@ -322,6 +350,9 @@ export function RankingsBrowser() {
                             name={fighter.name}
                             koName={rankingKoreanName(fighter.name)}
                             className="ranking-fighter-face"
+                            gender={
+                              isWomensDivision(division.id) ? "female" : "male"
+                            }
                           />
                           <RankingName name={fighter.name} />
                         </li>

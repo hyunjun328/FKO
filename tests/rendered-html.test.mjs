@@ -66,7 +66,8 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /href="\/rankings"/);
   assert.match(html, /class="fighter-face hero-fighter-face"/);
   assert.match(html, /class="fighter-face bout-fighter-face"/);
-  assert.match(html, /class="fighter-silhouette"/);
+  assert.match(html, /src="\/fighters\/nobody\.webp"/);
+  assert.doesNotMatch(html, /class="fighter-silhouette"/);
   assert.match(html, /href="\/photo-credits"/);
   assert.doesNotMatch(normalizedHtml, /현역 6명[^<]*·[^<]*역대 6명/);
   assert.doesNotMatch(html, /korean-fighters-gateway/);
@@ -198,6 +199,7 @@ test("server-renders the official UFC ranking comparison page", async () => {
   assert.match(html, /href="\/"/);
   assert.match(html, /class="fighter-face ranking-champion-face"/);
   assert.match(html, /class="fighter-face ranking-fighter-face"/);
+  assert.match(html, /src="\/fighters\/nobody-woman\.webp"/);
   assert.match(html, /href="\/photo-credits"/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
@@ -271,8 +273,9 @@ test("uses the black, white, red, and yellow FKO theme", async () => {
     css,
     /\.fighter-face\s*\{[\s\S]*?width: 40px;[\s\S]*?height: 50px;[\s\S]*?border-radius: 6px;/,
   );
-  assert.match(css, /\.fighter-silhouette::before/);
-  assert.match(css, /\.fighter-silhouette::after/);
+  assert.match(css, /\.fighter-face\[data-has-photo="false"\] img/);
+  assert.doesNotMatch(css, /\.fighter-silhouette::before/);
+  assert.doesNotMatch(css, /\.fighter-silhouette::after/);
   assert.doesNotMatch(
     css,
     /\.fighter-face\s*\{[^}]*border-radius:\s*50%/,

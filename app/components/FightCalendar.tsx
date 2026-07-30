@@ -136,6 +136,7 @@ function EventDetail({
                         name={bout.left}
                         koName={bout.leftKo}
                         className="bout-fighter-face"
+                        gender={bout.weight.includes("여성") ? "female" : "male"}
                       />
                     ) : null}
                     <span className="fighter-name-line">
@@ -172,6 +173,7 @@ function EventDetail({
                         name={bout.right}
                         koName={bout.rightKo}
                         className="bout-fighter-face"
+                        gender={bout.weight.includes("여성") ? "female" : "male"}
                       />
                     ) : null}
                     <span className="fighter-name-line">
@@ -423,6 +425,9 @@ export function FightCalendar() {
                   koName={mainEvent.leftKo}
                   className="hero-fighter-face"
                   eager
+                  gender={
+                    mainEvent.weight.includes("여성") ? "female" : "male"
+                  }
                 />
                 <b>{mainEvent.leftKo}</b>
                 <small lang="en">{mainEvent.left}</small>
@@ -445,6 +450,9 @@ export function FightCalendar() {
                   koName={mainEvent.rightKo}
                   className="hero-fighter-face"
                   eager
+                  gender={
+                    mainEvent.weight.includes("여성") ? "female" : "male"
+                  }
                 />
                 <b>{mainEvent.rightKo}</b>
                 <small lang="en">{mainEvent.right}</small>
@@ -484,11 +492,17 @@ export function FightCalendar() {
                   name={featuredBout.left}
                   koName={featuredBout.leftKo}
                   className="featured-fighter-face"
+                  gender={
+                    featuredBout.weight.includes("여성") ? "female" : "male"
+                  }
                 />
                 <FighterFace
                   name={featuredBout.right}
                   koName={featuredBout.rightKo}
                   className="featured-fighter-face"
+                  gender={
+                    featuredBout.weight.includes("여성") ? "female" : "male"
+                  }
                 />
               </span>
               <strong>

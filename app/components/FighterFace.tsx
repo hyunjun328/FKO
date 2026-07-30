@@ -1,4 +1,4 @@
-// 검수된 선수 사진을 표시하고 사진이 없으면 이니셜로 대체한다.
+// 검수된 선수 사진을 표시하고 사진이 없으면 성별 실루엣 이미지로 대체한다.
 import fighterImages from "../data/fighter-images.json";
 
 export type FighterImageCredit = {
@@ -22,14 +22,21 @@ export function FighterFace({
   koName,
   className = "",
   eager = false,
+  gender = "male",
 }: {
   name: string;
   koName?: string;
   className?: string;
   eager?: boolean;
+  gender?: "male" | "female";
 }) {
   const image = FIGHTER_IMAGES[name];
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  const imagePath =
+    image?.src ??
+    (gender === "female"
+      ? "/fighters/nobody-woman.webp"
+      : "/fighters/nobody.webp");
 
   return (
     <span
@@ -41,20 +48,16 @@ export function FighterFace({
           : `${koName ?? name} · 선수 사진 준비 중`
       }
     >
-      {image ? (
-        // WebP가 이미 360px로 최적화되어 정적 호스팅 경로를 그대로 사용한다.
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={`${basePath}${image.src}`}
-          alt=""
-          width="180"
-          height="180"
-          loading={eager ? "eager" : "lazy"}
-          decoding="async"
-        />
-      ) : (
-        <span className="fighter-silhouette" aria-hidden="true" />
-      )}
+      {/* WebP가 이미 360px로 최적화되어 정적 호스팅 경로를 그대로 사용한다. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={`${basePath}${imagePath}`}
+        alt=""
+        width="180"
+        height="240"
+        loading={eager ? "eager" : "lazy"}
+        decoding="async"
+      />
     </span>
   );
 }

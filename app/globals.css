@@ -3331,36 +3331,9 @@ body :is(b, strong) {
   filter: saturate(0.88) contrast(1.04);
 }
 
-.fighter-face > .fighter-silhouette {
-  position: absolute;
-  inset: 0;
-  display: block;
-  opacity: 0.72;
-}
-
-.fighter-silhouette::before,
-.fighter-silhouette::after {
-  position: absolute;
-  left: 50%;
-  display: block;
-  content: "";
-  transform: translateX(-50%);
-}
-
-.fighter-silhouette::before {
-  top: 17%;
-  width: 31%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #8c8c88;
-}
-
-.fighter-silhouette::after {
-  bottom: 9%;
-  width: 61%;
-  height: 36%;
-  border-radius: 50% 50% 9% 9% / 72% 72% 14% 14%;
-  background: #8c8c88;
+.fighter-face[data-has-photo="false"] img {
+  object-position: 50% 48%;
+  filter: none;
 }
 
 .hero-fighter-face {
