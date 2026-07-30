@@ -54,10 +54,6 @@ export default function RankingsPage() {
             {UFC_RANKING_SOURCE.mediaUpdated} 기준
           </span>
           <span>
-            <b>FKO 확인</b>
-            {UFC_RANKING_SOURCE.checkedAt}
-          </span>
-          <span>
             <b>비공식 세계 순위</b>
             Fight Matrix · 2026-07-26
           </span>
@@ -131,6 +127,9 @@ export default function RankingsPage() {
           >
             Fight Matrix 세계 순위 ↗
           </a>
+          <small className="ranking-checked-at">
+            FKO 정보 확인일 {UFC_RANKING_SOURCE.checkedAt}
+          </small>
         </span>
       </aside>
 

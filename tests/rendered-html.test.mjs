@@ -175,9 +175,9 @@ test("server-renders the official UFC ranking comparison page", async () => {
   assert.match(html, /미들급/);
   assert.match(html, /라이트헤비급/);
   assert.match(html, /헤비급/);
-  assert.match(html, /여성 스트로급/);
-  assert.match(html, /여성 플라이급/);
-  assert.match(html, /여성 밴텀급/);
+  assert.doesNotMatch(html, /여성 스트로급/);
+  assert.doesNotMatch(html, /여성 플라이급/);
+  assert.doesNotMatch(html, /여성 밴텀급/);
   assert.match(
     normalizedHtml,
     /ranking-champion-row[\s\S]*?조슈아 반[\s\S]*?Joshua Van[\s\S]*?UFC 챔피언/,
@@ -186,10 +186,10 @@ test("server-renders the official UFC ranking comparison page", async () => {
   assert.equal((html.match(/class="ranking-number"/g) ?? []).length, 30);
   assert.equal(
     (html.match(/class="ranking-row ranking-detail-trigger"/g) ?? []).length,
-    20,
+    30,
   );
   assert.match(html, /aria-label="체급 선택"/);
-  assert.equal((html.match(/role="tab"/g) ?? []).length, 11);
+  assert.equal((html.match(/role="tab"/g) ?? []).length, 8);
   assert.match(html, /https:\/\/www\.ufc\.com\/rankings/);
   assert.match(
     html,

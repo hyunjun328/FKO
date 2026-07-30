@@ -4534,3 +4534,35 @@ body :is(b, strong) {
     grid-template-columns: 1fr;
   }
 }
+.ranking-method-grid {
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.ranking-method-card {
+  min-height: 0;
+  padding: 15px 18px;
+  border-radius: 10px;
+}
+
+.ranking-method-card h2 {
+  margin-top: 7px;
+  font-size: 1.04rem;
+  font-weight: 780;
+  letter-spacing: -0.03em;
+}
+
+.ranking-method-card p {
+  margin-top: 7px;
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.ranking-checked-at {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 560;
+}

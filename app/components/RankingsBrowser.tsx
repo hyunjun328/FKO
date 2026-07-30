@@ -17,13 +17,14 @@ import {
 } from "../lib/ranking-search";
 import { FighterFace } from "./FighterFace";
 
-function isWomensDivision(id: string) {
-  return id.startsWith("womens-");
-}
 import {
   FighterProfileDialog,
   type FighterSelection,
 } from "./FighterProfileDialog";
+
+const MENS_RANKING_DIVISIONS = UFC_RANKING_DIVISIONS.filter(
+  (division) => !division.id.startsWith("womens-"),
+);
 
 function compareRank(entry: RankingEntry, media: RankingEntry[]) {
   const mediaEntry = media.find((fighter) => fighter.name === entry.name);
@@ -125,7 +126,7 @@ export function RankingsBrowser() {
   const [inputValue, setInputValue] = useState("");
   const [query, setQuery] = useState("");
   const [selectedDivisionId, setSelectedDivisionId] = useState(
-    UFC_RANKING_DIVISIONS[0].id,
+    MENS_RANKING_DIVISIONS[0].id,
   );
   const [selectedFighter, setSelectedFighter] =
     useState<FighterSelection | null>(null);
@@ -134,8 +135,8 @@ export function RankingsBrowser() {
   const divisions = useMemo(
     () => {
       const sourceDivisions = normalizedQuery
-        ? UFC_RANKING_DIVISIONS
-        : UFC_RANKING_DIVISIONS.filter(
+        ? MENS_RANKING_DIVISIONS
+        : MENS_RANKING_DIVISIONS.filter(
             (division) => division.id === selectedDivisionId,
           );
 
@@ -152,7 +153,7 @@ export function RankingsBrowser() {
     () =>
       findUnrankedFighterMatches(
         SEARCHABLE_FIGHTERS,
-        UFC_RANKING_DIVISIONS,
+        MENS_RANKING_DIVISIONS,
         normalizedQuery,
       ),
     [normalizedQuery],
@@ -244,7 +245,7 @@ export function RankingsBrowser() {
           aria-label="체급 선택"
           role="tablist"
         >
-          {UFC_RANKING_DIVISIONS.map((division) => (
+          {MENS_RANKING_DIVISIONS.map((division) => (
             <button
               type="button"
               role="tab"
@@ -352,9 +353,7 @@ export function RankingsBrowser() {
                     name={division.champion}
                     koName={rankingKoreanName(division.champion)}
                     className="ranking-champion-face"
-                    gender={
-                      isWomensDivision(division.id) ? "female" : "male"
-                    }
+                    gender="male"
                   />
                   <RankingName name={division.champion} />
                   <span className="ranking-champion-label">UFC 챔피언</span>
@@ -375,14 +374,14 @@ export function RankingsBrowser() {
                   {division.championMatches ? (
                     <RankingChampionResult
                       name={division.champion}
-                      female={isWomensDivision(division.id)}
+                      female={false}
                     />
                   ) : division.meta.length ? (
                     <ol>
                       {division.meta.map((fighter) => {
                         const comparison = compareRank(
                           fighter,
-                          UFC_RANKING_DIVISIONS.find(
+                          MENS_RANKING_DIVISIONS.find(
                             (item) => item.id === division.id,
                           )?.media ?? [],
                         );
@@ -391,17 +390,14 @@ export function RankingsBrowser() {
                           <RankingFighterRow
                             key={fighter.name}
                             fighter={fighter}
-                            female={isWomensDivision(division.id)}
+                            female={false}
                             comparison={comparison}
-                            onSelect={
-                              fighter.rank <= 10
-                                ? () =>
-                                    selectRankedFighter(
-                                      fighter,
-                                      division.label,
-                                      "Meta UFC 랭킹",
-                                    )
-                                : undefined
+                            onSelect={() =>
+                              selectRankedFighter(
+                                fighter,
+                                division.label,
+                                "Meta UFC 랭킹",
+                              )
                             }
                           />
                         );
@@ -427,7 +423,7 @@ export function RankingsBrowser() {
                   {division.championMatches ? (
                     <RankingChampionResult
                       name={division.champion}
-                      female={isWomensDivision(division.id)}
+                      female={false}
                     />
                   ) : division.media.length ? (
                     <ol>
@@ -435,9 +431,9 @@ export function RankingsBrowser() {
                         <RankingFighterRow
                           key={`${fighter.rank}-${fighter.name}`}
                           fighter={fighter}
-                          female={isWomensDivision(division.id)}
+                          female={false}
                           onSelect={
-                            fighter.rank <= 10
+                            fighter.rank <= 15
                               ? () =>
                                   selectRankedFighter(
                                     fighter,

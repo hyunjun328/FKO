@@ -340,10 +340,29 @@ export function FighterProfileDialog({
           </>
         ) : (
           <div className="fighter-profile-pending">
-            <strong>{fighter.ranking ?? `${fighter.weight} 선수`}</strong>
-            {fighter.summary ? (
-              <p className="fighter-ranking-summary">{fighter.summary}</p>
-            ) : null}
+            <div className="fighter-profile-badges">
+              <span>{fighter.ranking ?? `${fighter.weight} 선수`}</span>
+              <span>{fighter.weight}</span>
+              <span>UFC 공식 랭킹</span>
+            </div>
+            <p className="fighter-ranking-summary">
+              {fighter.summary ??
+                "공개된 UFC 공식 랭킹을 기준으로 제공하는 선수 정보입니다."}
+            </p>
+            <dl className="fighter-profile-stats fighter-ranking-stats">
+              <div>
+                <dt>체급</dt>
+                <dd>{fighter.weight}</dd>
+              </div>
+              <div>
+                <dt>공식 순위</dt>
+                <dd>{fighter.ranking ?? "UFC 공식 랭킹"}</dd>
+              </div>
+              <div>
+                <dt>정보 기준</dt>
+                <dd>UFC 공식 랭킹</dd>
+              </div>
+            </dl>
             {worldRanking ? (
               <div className="fighter-pending-ranking">
                 <b>비공식 세계 #{worldRanking.rank}</b>
