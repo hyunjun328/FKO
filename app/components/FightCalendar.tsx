@@ -575,7 +575,7 @@ export function FightCalendar() {
                         </span>
                       </span>
                       <span className="event-row-copy">
-                        <small>{event.series}</small>
+                        <small>{event.series === "UFC" ? event.title : event.series}</small>
                         <h3>
                           {event.bouts[0].leftKo} vs {event.bouts[0].rightKo}
                         </h3>

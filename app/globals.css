@@ -453,6 +453,7 @@ a:focus-visible {
 }
 
 .featured-match-meta {
+  order: 1;
   margin-top: 13px;
   padding: 10px 12px;
   border-radius: 5px;
@@ -463,7 +464,20 @@ a:focus-visible {
   line-height: 1.4;
 }
 
+.featured-fighter-faces {
+  order: 2;
+}
+
+.featured-match-card strong {
+  order: 3;
+}
+
+.featured-match-card > small {
+  order: 4;
+}
+
 .featured-match-card > b {
+  order: 5;
   margin-top: 13px;
   color: var(--muted);
   font-size: 0.7rem;
