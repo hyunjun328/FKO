@@ -71,7 +71,7 @@ export default function CommunityPage() {
         <h2>글쓰기.</h2>
         <form onSubmit={submit}>
           <input value={nickname} onChange={(event) => setNickname(event.target.value)} placeholder="닉네임" minLength={2} maxLength={20} required />
-          <input value={password} onChange={(event) => setPassword(event.target.value)} placeholder="수정·삭제용 비밀번호 6자 이상" type="password" minLength={6} required />
+          <input value={password} onChange={(event) => setPassword(event.target.value)} placeholder="게시글 비밀번호 6자 이상" type="password" minLength={6} required />
           <input value={title} onChange={(event) => setTitle(event.target.value)} placeholder="제목" minLength={2} maxLength={100} required />
           <textarea value={body} onChange={(event) => setBody(event.target.value)} placeholder="내용" minLength={2} maxLength={3000} required />
           <button type="submit">게시글 등록</button>
