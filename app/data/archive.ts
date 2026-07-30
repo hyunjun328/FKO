@@ -20,6 +20,11 @@ export const HALL_OF_FAME_FIGHTERS: ArchiveFighter[] = [
 ];
 
 export const FORMER_UFC_FIGHTERS: ArchiveFighter[] = [
+  { name: "Dustin Poirier", koName: "더스틴 포이리에", record: "30-10-0", era: "전 UFC 라이트급 잠정 챔피언", note: "라이트급 타이틀전과 BMF 타이틀전을 거친 루이지애나 출신 베테랑. 게이치·맥그리거·챈들러전으로 대표되는 커리어를 남겼다.", sourceUrl: "https://www.ufc.com/athlete/dustin-poirier" },
+  { name: "Jon Jones", koName: "존 존스", record: "28-1-0", era: "전 UFC 라이트헤비급 · 헤비급 챔피언", note: "UFC 최연소 챔피언이자 라이트헤비급 장기 지배 뒤 헤비급 타이틀까지 차지한 역대급 챔피언.", sourceUrl: "https://www.ufc.com/athlete/jon-jones" },
+  { name: "Stipe Miocic", koName: "스티페 미오치치", record: "20-5-0", era: "전 UFC 헤비급 챔피언", note: "UFC 헤비급 타이틀을 세 차례 연속 방어한 소방관 출신 챔피언.", sourceUrl: "https://www.ufc.com/athlete/stipe-miocic" },
+  { name: "Francis Ngannou", koName: "프란시스 은가누", record: "18-3-0", era: "전 UFC 헤비급 챔피언", note: "압도적인 피니시 파워로 헤비급 정상에 오른 카메룬 출신 챔피언.", sourceUrl: "https://www.ufc.com/athlete/francis-ngannou" },
+  { name: "Daniel Cormier", koName: "다니엘 코미어", record: "22-3-0", era: "전 UFC 라이트헤비급 · 헤비급 챔피언", note: "올림픽 레슬링 경력 위에 두 체급 UFC 챔피언을 달성한 전설급 선수.", sourceUrl: "https://www.ufc.com/athlete/daniel-cormier" },
   { name: "Randy Couture", koName: "랜디 커투어", record: "19승 11패", era: "전 헤비급 · 라이트헤비급 챔피언", note: "UFC 최초로 두 체급 타이틀을 획득한 명예의 전당 헌액자.", sourceUrl: "https://www.ufc.com/athlete/randy-couture" },
   { name: "Tito Ortiz", koName: "티토 오티즈", record: "21승 12패 1무", era: "전 라이트헤비급 챔피언", note: "2000년대 초반 라이트헤비급 타이틀을 여러 차례 방어한 스타.", sourceUrl: "https://www.ufc.com/athlete/tito-ortiz" },
   { name: "Rich Franklin", koName: "리치 프랭클린", record: "29승 7패 1무", era: "전 미들급 챔피언", note: "전 미들급 챔피언이자 UFC 명예의 전당 헌액자.", sourceUrl: "https://www.ufc.com/athlete/rich-franklin" },

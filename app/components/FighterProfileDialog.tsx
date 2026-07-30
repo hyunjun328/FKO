@@ -6,6 +6,7 @@ import {
   FIGHTER_PROFILES,
   type KoreanFighter,
 } from "../data/fighters";
+import { LEGEND_PROFILES } from "../data/legend-profiles";
 import { unofficialWorldRanking } from "../data/unofficial-rankings";
 import { FighterFace } from "./FighterFace";
 
@@ -45,7 +46,7 @@ export function KoreanFighterCard({
   status: "active" | "former";
   onSelect: (fighter: FighterSelection) => void;
 }) {
-  const profile = FIGHTER_PROFILES[fighter.name];
+  const profile = FIGHTER_PROFILES[fighter.name] ?? LEGEND_PROFILES[fighter.name];
 
   return (
     <button
@@ -126,7 +127,7 @@ export function FighterProfileDialog({
   fighter: FighterSelection;
   onClose: () => void;
 }) {
-  const profile = FIGHTER_PROFILES[fighter.name];
+  const profile = FIGHTER_PROFILES[fighter.name] ?? LEGEND_PROFILES[fighter.name];
   const showProfile = Boolean(profile && !fighter.simple);
   const worldRanking = unofficialWorldRanking(fighter.name);
   const verificationSources =
