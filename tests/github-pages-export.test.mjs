@@ -28,7 +28,8 @@ test("exports every public route below the FKO base path", async () => {
   assert.match(home, /\/FKO\/photo-credits\//);
   assert.match(home, /\/FKO\/archive\//);
   assert.match(rankings, /선수 랭킹/);
-  assert.match(rankings, /15위 밖 주요 선수/);
+  assert.match(rankings, /Fight Matrix 세계 랭킹 16~50위/);
+  assert.match(rankings, /총 400명 범위에서 검색합니다/);
   assert.match(p4p, /P4P 랭킹/);
   assert.match(p4p, /\/FKO\/rankings\//);
   assert.match(home, /\/FKO\/fighters\/nobody\.webp/);

@@ -16,6 +16,9 @@ export type FighterSelection = {
   ranking?: string;
   summary?: string;
   sourceUrl?: string;
+  sourceLabel?: string;
+  record?: string;
+  simple?: boolean;
 };
 
 export function recordSummary(record: string) {
@@ -124,13 +127,14 @@ export function FighterProfileDialog({
   onClose: () => void;
 }) {
   const profile = FIGHTER_PROFILES[fighter.name];
+  const showProfile = Boolean(profile && !fighter.simple);
   const worldRanking = unofficialWorldRanking(fighter.name);
   const verificationSources =
-    profile?.verificationSources ??
-    (profile
-      ? [{ label: "UFC 공식 선수 정보", url: profile.sourceUrl }]
-      : fighter.sourceUrl
-        ? [{ label: "UFC 공식 랭킹", url: fighter.sourceUrl }]
+    showProfile ? profile?.verificationSources ?? [] :
+    (fighter.sourceUrl
+      ? [{ label: fighter.sourceLabel ?? "UFC 공식 랭킹", url: fighter.sourceUrl }]
+      : profile
+        ? [{ label: "UFC 공식 선수 정보", url: profile.sourceUrl }]
         : []);
   const topSources = verificationSources.slice(0, 4);
 
@@ -185,7 +189,7 @@ export function FighterProfileDialog({
             </span>
             <h2 id="fighter-dialog-title">{fighter.koName}</h2>
             <p lang="en">{fighter.name}</p>
-            {profile?.nickname ? (
+            {showProfile && profile?.nickname ? (
               <strong className="fighter-nickname">
                 “{profile.nickname}”
               </strong>
@@ -209,7 +213,7 @@ export function FighterProfileDialog({
           </nav>
         ) : null}
 
-        {profile ? (
+        {showProfile && profile ? (
           <>
             <div className="fighter-profile-badges">
               <span>{profile.ranking}</span>
@@ -343,6 +347,7 @@ export function FighterProfileDialog({
             <div className="fighter-profile-badges">
               <span>{fighter.ranking ?? `${fighter.weight} 선수`}</span>
               <span>{fighter.weight}</span>
+              {fighter.record ? <span>전적 {fighter.record}</span> : null}
               <span>UFC 공식 랭킹</span>
             </div>
             <p className="fighter-ranking-summary">
@@ -363,7 +368,12 @@ export function FighterProfileDialog({
                 <dd>UFC 공식 랭킹</dd>
               </div>
             </dl>
-            {worldRanking ? (
+            {fighter.simple ? (
+              <p className="fighter-ranking-summary">
+                Fight Matrix 공개 순위에 표시된 기본 정보입니다.
+              </p>
+            ) : null}
+            {worldRanking && !fighter.simple ? (
               <div className="fighter-pending-ranking">
                 <b>비공식 세계 #{worldRanking.rank}</b>
                 <span>
@@ -371,7 +381,7 @@ export function FighterProfileDialog({
                 </span>
               </div>
             ) : null}
-            {!fighter.summary ? (
+            {!fighter.summary && !fighter.simple ? (
               <p>
                 아직 공식 전적과 랭킹을 검수 중입니다. 확인되지 않은 정보는
                 추정해서 표시하지 않습니다.
@@ -381,7 +391,7 @@ export function FighterProfileDialog({
         )}
 
         <div className="fighter-external-links">
-          {worldRanking ? (
+          {worldRanking && !fighter.simple ? (
             <a
               href={worldRanking.sourceUrl}
               target="_blank"
@@ -389,6 +399,11 @@ export function FighterProfileDialog({
             >
               {worldRanking.provider} 비공식 세계 순위 ·{" "}
               {worldRanking.asOf} ↗
+            </a>
+          ) : null}
+          {fighter.simple && fighter.sourceUrl ? (
+            <a href={fighter.sourceUrl} target="_blank" rel="noreferrer">
+              {fighter.sourceLabel ?? "Fight Matrix 비공식 순위"} 보기 →
             </a>
           ) : null}
           <a

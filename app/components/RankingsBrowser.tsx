@@ -1,46 +1,50 @@
 "use client";
-// UFC 랭킹을 한글·영문·체급으로 검색하고 체급별 비교표를 보여준다.
+// UFC 공식 1~15위와 Fight Matrix 비공식 16~50위를 검색·열람하는 랭킹 화면이다.
 
 import { FormEvent, useMemo, useState } from "react";
-import { SEARCHABLE_FIGHTERS } from "../data/fighter-catalog";
+import {
+  FIGHT_MATRIX_RANKINGS,
+  FIGHT_MATRIX_RANKING_CHECKED_AT,
+  type FightMatrixRankingEntry,
+} from "../data/fightmatrix-rankings";
 import { rankingKoreanName } from "../data/ranking-names";
 import {
   UFC_RANKING_DIVISIONS,
   UFC_RANKING_SOURCE,
   type RankingEntry,
+  type RankingDivision,
 } from "../data/rankings";
 import {
   filterRankingDivisions,
-  findBeyondOfficialRankingFighters,
-  findUnrankedFighterMatches,
   normalizeRankingQuery,
+  rankingFighterMatches,
 } from "../lib/ranking-search";
 import { FighterFace } from "./FighterFace";
-
 import {
   FighterProfileDialog,
   type FighterSelection,
 } from "./FighterProfileDialog";
 
+const PAGE_SIZE = 10;
 const MENS_RANKING_DIVISIONS = UFC_RANKING_DIVISIONS.filter(
   (division) => !division.id.startsWith("womens-"),
 );
 
+type UnofficialMatch = {
+  division: RankingDivision;
+  entry: FightMatrixRankingEntry;
+};
+
 function compareRank(entry: RankingEntry, media: RankingEntry[]) {
   const mediaEntry = media.find((fighter) => fighter.name === entry.name);
 
-  if (!mediaEntry) {
-    return { label: "미디어 NR", tone: "new" };
-  }
+  if (!mediaEntry) return { label: "미디어 NR", tone: "new" };
 
   const difference = mediaEntry.rank - entry.rank;
-
-  if (difference === 0) {
-    return { label: `미디어 ${mediaEntry.rank}위 · 동일`, tone: "same" };
-  }
+  if (difference === 0) return { label: `미디어 ${mediaEntry.rank}위 · 동일`, tone: "same" };
 
   return {
-    label: `미디어 ${mediaEntry.rank}위 · ${difference > 0 ? "Meta ↑" : "Meta ↓"}${Math.abs(difference)}`,
+    label: `미디어 ${mediaEntry.rank}위 · ${difference > 0 ? "Meta보다 " : "Meta보다 "}${Math.abs(difference)}위`,
     tone: difference > 0 ? "up" : "down",
   };
 }
@@ -54,13 +58,7 @@ function RankingName({ name }: { name: string }) {
   );
 }
 
-function RankingChampionResult({
-  name,
-  female,
-}: {
-  name: string;
-  female: boolean;
-}) {
+function RankingChampionResult({ name }: { name: string }) {
   return (
     <div className="ranking-board-champion-result">
       <span className="ranking-champion-mark">C</span>
@@ -68,57 +66,102 @@ function RankingChampionResult({
         name={name}
         koName={rankingKoreanName(name)}
         className="ranking-fighter-face"
-        gender={female ? "female" : "male"}
+        gender="male"
       />
       <RankingName name={name} />
-      <strong>현 UFC 챔피언</strong>
+      <strong>UFC 챔피언</strong>
     </div>
   );
 }
 
 function RankingFighterRow({
   fighter,
-  female,
   comparison,
   onSelect,
 }: {
   fighter: RankingEntry;
-  female: boolean;
   comparison?: ReturnType<typeof compareRank>;
-  onSelect?: () => void;
+  onSelect: () => void;
 }) {
-  const content = (
-    <>
-      <span className="ranking-number">{fighter.rank}</span>
-      <FighterFace
-        name={fighter.name}
-        koName={rankingKoreanName(fighter.name)}
-        className="ranking-fighter-face"
-        gender={female ? "female" : "male"}
-      />
-      <RankingName name={fighter.name} />
-      {comparison ? (
-        <small data-tone={comparison.tone}>{comparison.label}</small>
-      ) : null}
-      {onSelect ? <span className="ranking-detail-hint">상세 →</span> : null}
-    </>
-  );
-
   return (
     <li>
-      {onSelect ? (
-        <button
-          type="button"
-          className="ranking-row ranking-detail-trigger"
-          onClick={onSelect}
-          aria-label={`${rankingKoreanName(fighter.name)} 상세 정보 보기`}
-        >
-          {content}
-        </button>
-      ) : (
-        <div className="ranking-row">{content}</div>
-      )}
+      <button
+        type="button"
+        className="ranking-row ranking-detail-trigger"
+        onClick={onSelect}
+        aria-label={`${rankingKoreanName(fighter.name)} 상세 정보 보기`}
+      >
+        <span className="ranking-number">{fighter.rank}</span>
+        <FighterFace
+          name={fighter.name}
+          koName={rankingKoreanName(fighter.name)}
+          className="ranking-fighter-face"
+          gender="male"
+        />
+        <RankingName name={fighter.name} />
+        {comparison ? <small data-tone={comparison.tone}>{comparison.label}</small> : null}
+        <span className="ranking-detail-hint">상세 보기 →</span>
+      </button>
     </li>
+  );
+}
+
+function UnofficialRankingSection({
+  division,
+  entries,
+  page,
+  onPageChange,
+  onSelect,
+}: {
+  division: RankingDivision;
+  entries: FightMatrixRankingEntry[];
+  page: number;
+  onPageChange: (page: number) => void;
+  onSelect: (entry: FightMatrixRankingEntry) => void;
+}) {
+  const totalPages = Math.ceil(entries.length / PAGE_SIZE);
+  const visibleEntries = entries.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+
+  return (
+    <section className="ranking-unofficial-board" aria-labelledby={`${division.id}-unofficial-title`}>
+      <header>
+        <div>
+          <span>공식 순위 밖의 비공식 참고 자료</span>
+          <h3 id={`${division.id}-unofficial-title`}>Fight Matrix 세계 랭킹 16~50위</h3>
+        </div>
+        <small>정보 확인 {FIGHT_MATRIX_RANKING_CHECKED_AT}</small>
+      </header>
+      <p>UFC 공식 순위는 15위까지입니다. 아래 순위와 전적은 Fight Matrix 공개 자료를 기준으로 합니다.</p>
+      <ol start={entries[0]?.rank}>
+        {visibleEntries.map((entry) => (
+          <li key={entry.rank}>
+            <button
+              type="button"
+              className="ranking-unofficial-row"
+              onClick={() => onSelect(entry)}
+              aria-label={`${rankingKoreanName(entry.name)} Fight Matrix ${entry.rank}위 간단 정보 보기`}
+            >
+              <span>#{entry.rank}</span>
+              <RankingName name={entry.name} />
+              <small>전적 {entry.record}</small>
+              <em>간단 정보 →</em>
+            </button>
+          </li>
+        ))}
+      </ol>
+      <nav className="ranking-pagination" aria-label={`${division.label} 비공식 랭킹 페이지`}>
+        {Array.from({ length: totalPages }, (_, index) => index + 1).map((pageNumber) => (
+          <button
+            type="button"
+            key={pageNumber}
+            onClick={() => onPageChange(pageNumber)}
+            aria-current={pageNumber === page ? "page" : undefined}
+          >
+            {pageNumber}
+          </button>
+        ))}
+      </nav>
+    </section>
   );
 }
 
@@ -128,55 +171,81 @@ export function RankingsBrowser() {
   const [selectedDivisionId, setSelectedDivisionId] = useState(
     MENS_RANKING_DIVISIONS[0].id,
   );
-  const [selectedFighter, setSelectedFighter] =
-    useState<FighterSelection | null>(null);
+  const [unofficialPage, setUnofficialPage] = useState(1);
+  const [selectedFighter, setSelectedFighter] = useState<FighterSelection | null>(null);
   const normalizedQuery = normalizeRankingQuery(query);
 
-  const divisions = useMemo(
-    () => {
-      const sourceDivisions = normalizedQuery
-        ? MENS_RANKING_DIVISIONS
-        : MENS_RANKING_DIVISIONS.filter(
-            (division) => division.id === selectedDivisionId,
-          );
+  const divisions = useMemo(() => {
+    const sourceDivisions = normalizedQuery
+      ? MENS_RANKING_DIVISIONS
+      : MENS_RANKING_DIVISIONS.filter((division) => division.id === selectedDivisionId);
+    return filterRankingDivisions(sourceDivisions, normalizedQuery, rankingKoreanName);
+  }, [normalizedQuery, selectedDivisionId]);
 
-      return filterRankingDivisions(
-        sourceDivisions,
-        normalizedQuery,
-        rankingKoreanName,
-      );
-    },
-    [normalizedQuery, selectedDivisionId],
-  );
-
-  const unrankedMatches = useMemo(
-    () =>
-      findUnrankedFighterMatches(
-        SEARCHABLE_FIGHTERS,
-        MENS_RANKING_DIVISIONS,
-        normalizedQuery,
-      ),
-    [normalizedQuery],
-  );
+  const unofficialMatches = useMemo<UnofficialMatch[]>(() => {
+    if (!normalizedQuery) return [];
+    return MENS_RANKING_DIVISIONS.flatMap((division) =>
+      (FIGHT_MATRIX_RANKINGS[division.id] ?? [])
+        .filter((entry) => rankingFighterMatches(entry.name, normalizedQuery, rankingKoreanName))
+        .map((entry) => ({ division, entry })),
+    );
+  }, [normalizedQuery]);
 
   const resultCount = useMemo(() => {
     const names = new Set<string>();
-
     divisions.forEach((division) => {
-      if (!normalizedQuery || division.championMatches) {
-        names.add(division.champion);
-      }
+      if (division.championMatches) names.add(division.champion);
       division.meta.forEach((fighter) => names.add(fighter.name));
       division.media.forEach((fighter) => names.add(fighter.name));
     });
-    unrankedMatches.forEach((fighter) => names.add(fighter.name));
-
+    unofficialMatches.forEach(({ entry }) => names.add(entry.name));
     return names.size;
-  }, [divisions, normalizedQuery, unrankedMatches]);
+  }, [divisions, unofficialMatches]);
+
+  const selectedDivision = MENS_RANKING_DIVISIONS.find(
+    (division) => division.id === selectedDivisionId,
+  )!;
+  const selectedUnofficialEntries = (FIGHT_MATRIX_RANKINGS[selectedDivision.id] ?? []).filter(
+    (entry) => entry.rank >= 16,
+  );
+
+  function openOfficialFighter(fighter: RankingEntry, divisionLabel: string, boardLabel: string) {
+    setSelectedFighter({
+      name: fighter.name,
+      koName: rankingKoreanName(fighter.name),
+      weight: divisionLabel,
+      ranking: `${boardLabel} ${divisionLabel} ${fighter.rank}위`,
+      summary: `${rankingKoreanName(fighter.name)}은 현재 ${boardLabel} 기준 ${divisionLabel} ${fighter.rank}위 선수입니다.`,
+      sourceUrl: UFC_RANKING_SOURCE.officialUrl,
+    });
+  }
+
+  function openUnofficialFighter(division: RankingDivision, entry: FightMatrixRankingEntry) {
+    setSelectedFighter({
+      name: entry.name,
+      koName: rankingKoreanName(entry.name),
+      weight: `${division.label} · ${division.weightLimitKg}`,
+      ranking: `Fight Matrix ${division.label} #${entry.rank}`,
+      record: entry.record,
+      sourceLabel: "Fight Matrix 비공식 세계 랭킹",
+      sourceUrl: entry.sourceUrl,
+      simple: true,
+    });
+  }
 
   function submitSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setQuery(inputValue.trim());
+    const nextQuery = inputValue.trim();
+    const firstMatch = MENS_RANKING_DIVISIONS.flatMap((division) =>
+      (FIGHT_MATRIX_RANKINGS[division.id] ?? [])
+        .filter((entry) => rankingFighterMatches(entry.name, normalizeRankingQuery(nextQuery), rankingKoreanName))
+        .map((entry) => ({ division, entry })),
+    )[0];
+    if (firstMatch) {
+      setSelectedDivisionId(firstMatch.division.id);
+      setUnofficialPage(Math.floor((firstMatch.entry.rank - 16) / PAGE_SIZE) + 1);
+    }
+    setQuery(nextQuery);
   }
 
   function resetSearch() {
@@ -184,20 +253,12 @@ export function RankingsBrowser() {
     setQuery("");
   }
 
-  function selectRankedFighter(
-    fighter: RankingEntry,
-    divisionLabel: string,
-    boardLabel: string,
-  ) {
-    setSelectedFighter({
-      name: fighter.name,
-      koName: rankingKoreanName(fighter.name),
-      weight: divisionLabel,
-      ranking: `${boardLabel} ${divisionLabel} ${fighter.rank}위`,
-      summary: `${rankingKoreanName(fighter.name)}은 현재 ${boardLabel} 기준 ${divisionLabel} ${fighter.rank}위 선수입니다. 공개된 순위와 검수된 선수 정보만 표시하며, 확인되지 않은 전적이나 기록은 추정하지 않습니다.`,
-      sourceUrl: UFC_RANKING_SOURCE.officialUrl,
-    });
+  function selectDivision(divisionId: string) {
+    setSelectedDivisionId(divisionId);
+    setUnofficialPage(1);
   }
+
+  const hasResults = Boolean(divisions.length || unofficialMatches.length);
 
   return (
     <>
@@ -205,116 +266,41 @@ export function RankingsBrowser() {
         <form onSubmit={submitSearch} role="search">
           <label htmlFor="ranking-search">선수 또는 체급 검색</label>
           <div>
-            <input
-              id="ranking-search"
-              type="search"
-              value={inputValue}
-              onChange={(event) => setInputValue(event.target.value)}
-              placeholder="예: 맥그리거, 메디치, Makhachev"
-              autoComplete="off"
-            />
+            <input id="ranking-search" type="search" value={inputValue} onChange={(event) => setInputValue(event.target.value)} placeholder="예. 마카체프, Medic, Makhachev" autoComplete="off" />
             <button type="submit">검색</button>
           </div>
         </form>
         <p aria-live="polite">
-          {query ? (
-            <>
-              <b>‘{query}’</b> 검색 결과 · {resultCount}명
-            </>
-          ) : (
-            <>
-              챔피언, 공식 1~15위, 전체 대진표 선수와 대표 선수를 검색할 수
-              있습니다.
-            </>
-          )}
+          {query ? <><b>“{query}”</b> 검색 결과 · {resultCount}명</> : <>공식 1~15위와 Fight Matrix 비공식 1~50위, 총 400명 범위에서 검색합니다.</>}
         </p>
-        {query ? (
-          <button
-            className="ranking-search-reset"
-            type="button"
-            onClick={resetSearch}
-          >
-            전체 랭킹 보기
-          </button>
-        ) : null}
+        {query ? <button className="ranking-search-reset" type="button" onClick={resetSearch}>전체 랭킹 보기</button> : null}
       </section>
 
       {!query ? (
-        <nav
-          className="ranking-jump"
-          aria-label="체급 선택"
-          role="tablist"
-        >
+        <nav className="ranking-jump" aria-label="체급 선택" role="tablist">
           {MENS_RANKING_DIVISIONS.map((division) => (
-            <button
-              type="button"
-              role="tab"
-              aria-selected={selectedDivisionId === division.id}
-              aria-controls={division.id}
-              onClick={() => setSelectedDivisionId(division.id)}
-              key={division.id}
-            >
+            <button type="button" role="tab" aria-selected={selectedDivisionId === division.id} aria-controls={division.id} onClick={() => selectDivision(division.id)} key={division.id}>
               {division.label} · {division.weightLimitKg}
             </button>
           ))}
         </nav>
       ) : null}
 
-      {divisions.length || unrankedMatches.length ? (
+      {hasResults ? (
         <>
-          {unrankedMatches.length ? (
-            <section
-              className="ranking-unranked-results"
-              aria-labelledby="unranked-result-title"
-            >
+          {unofficialMatches.length ? (
+            <section className="ranking-unofficial-search" aria-labelledby="unofficial-search-title">
               <header>
-                <span>랭킹 외 선수</span>
-                <h2 id="unranked-result-title">공식 15위 밖 선수 검색 결과</h2>
+                <span>전 체급 1~50위 검색</span>
+                <h2 id="unofficial-search-title">Fight Matrix 비공식 순위 결과</h2>
               </header>
               <div>
-                {unrankedMatches.map((fighter) => (
-                  <button
-                    type="button"
-                    className="ranking-unranked-result"
-                    key={fighter.name}
-                    onClick={() =>
-                      setSelectedFighter({
-                        name: fighter.name,
-                        koName: fighter.koName,
-                        weight: fighter.division,
-                      })
-                    }
-                    aria-label={`${fighter.koName} 상세 정보 보기`}
-                  >
-                    <span className="ranking-unranked-mark">NR</span>
-                    <FighterFace
-                      name={fighter.name}
-                      koName={fighter.koName}
-                      className="ranking-fighter-face"
-                      gender={
-                        fighter.division.includes("여성") ? "female" : "male"
-                      }
-                    />
-                    <span className="ranking-fighter-name">
-                      <strong>{fighter.koName}</strong>
-                      <small lang="en">{fighter.name}</small>
-                    </span>
-                    <span className="ranking-unranked-state">
-                      <b>{fighter.division} · UFC 공식 NR</b>
-                      {fighter.unofficialRanking ? (
-                        <small>
-                          비공식 세계 #{fighter.unofficialRanking.rank} ·{" "}
-                          {fighter.unofficialRanking.provider} ·{" "}
-                          {fighter.unofficialRanking.asOf}
-                        </small>
-                      ) : (
-                        <small>
-                          {fighter.statusLabel ??
-                            "공개된 비공식 순위는 별도 검수 중"}
-                        </small>
-                      )}
-                    </span>
-                    <span className="ranking-unranked-open">상세 보기 →</span>
+                {unofficialMatches.map(({ division, entry }) => (
+                  <button type="button" key={`${division.id}-${entry.rank}`} onClick={() => openUnofficialFighter(division, entry)}>
+                    <span>#{entry.rank}</span>
+                    <RankingName name={entry.name} />
+                    <small>{division.label} · {division.weightLimitKg} · 전적 {entry.record}</small>
+                    <em>간단 정보 →</em>
                   </button>
                 ))}
               </div>
@@ -323,227 +309,35 @@ export function RankingsBrowser() {
 
           {divisions.length ? (
             <div className="ranking-division-list">
-              {divisions.map((division) => {
-                const beyondFighters = findBeyondOfficialRankingFighters(
-                  SEARCHABLE_FIGHTERS,
-                  division,
-                  rankingKoreanName,
-                );
-
-                return (
-                  <section
-                    className="ranking-division"
-                    id={division.id}
-                    key={division.id}
-                    role={!query ? "tabpanel" : undefined}
-                  >
-              <div className="ranking-division-head">
-                <div>
-                  <span>{division.englishLabel}</span>
-                  <h2>
-                    {division.label} <small>{division.weightLimitKg}</small>
-                  </h2>
-                </div>
-              </div>
-
-              {division.showChampionHeader ? (
-                <div className="ranking-champion-row">
-                  <span className="ranking-champion-mark">C</span>
-                  <FighterFace
-                    name={division.champion}
-                    koName={rankingKoreanName(division.champion)}
-                    className="ranking-champion-face"
-                    gender="male"
-                  />
-                  <RankingName name={division.champion} />
-                  <span className="ranking-champion-label">UFC 챔피언</span>
-                </div>
-              ) : null}
-
-              <div className="ranking-columns">
-                <article className="ranking-board meta-board">
-                  <header>
-                    <div>
-                      <span>공식 기준</span>
-                      <h3>Meta UFC 랭킹</h3>
-                    </div>
-                    <time dateTime={UFC_RANKING_SOURCE.metaUpdated}>
-                      {UFC_RANKING_SOURCE.metaUpdated}
-                    </time>
-                  </header>
-                  {division.championMatches ? (
-                    <RankingChampionResult
-                      name={division.champion}
-                      female={false}
-                    />
-                  ) : division.meta.length ? (
-                    <ol>
-                      {division.meta.map((fighter) => {
-                        const comparison = compareRank(
-                          fighter,
-                          MENS_RANKING_DIVISIONS.find(
-                            (item) => item.id === division.id,
-                          )?.media ?? [],
-                        );
-
-                        return (
-                          <RankingFighterRow
-                            key={fighter.name}
-                            fighter={fighter}
-                            female={false}
-                            comparison={comparison}
-                            onSelect={() =>
-                              selectRankedFighter(
-                                fighter,
-                                division.label,
-                                "Meta UFC 랭킹",
-                              )
-                            }
-                          />
-                        );
-                      })}
-                    </ol>
-                  ) : (
-                    <p className="ranking-board-empty">
-                      Meta 랭킹에는 검색 결과가 없습니다.
-                    </p>
-                  )}
-                </article>
-
-                <article className="ranking-board media-board">
-                  <header>
-                    <div>
-                      <span>비교 자료</span>
-                      <h3>미디어 투표 랭킹</h3>
-                    </div>
-                    <time dateTime={UFC_RANKING_SOURCE.mediaUpdated}>
-                      {UFC_RANKING_SOURCE.mediaUpdated}
-                    </time>
-                  </header>
-                  {division.championMatches ? (
-                    <RankingChampionResult
-                      name={division.champion}
-                      female={false}
-                    />
-                  ) : division.media.length ? (
-                    <ol>
-                      {division.media.map((fighter) => (
-                        <RankingFighterRow
-                          key={`${fighter.rank}-${fighter.name}`}
-                          fighter={fighter}
-                          female={false}
-                          onSelect={
-                            fighter.rank <= 15
-                              ? () =>
-                                  selectRankedFighter(
-                                    fighter,
-                                    division.label,
-                                    "미디어 랭킹",
-                                  )
-                              : undefined
-                          }
-                        />
-                      ))}
-                    </ol>
-                  ) : (
-                    <p className="ranking-board-empty">
-                      미디어 랭킹에는 검색 결과가 없습니다.
-                    </p>
-                  )}
-                </article>
-              </div>
-
-              {!query && beyondFighters.length ? (
-                <details className="ranking-beyond">
-                  <summary>
-                    <span>
-                      <b>15위 밖 주요 선수</b>
-                      <small>UFC 공식 NR · {beyondFighters.length}명</small>
-                    </span>
-                    <strong>선수 보기</strong>
-                  </summary>
-                  <p className="ranking-beyond-note">
-                    UFC는 체급별 15위까지만 공식 발표합니다. 아래 선수에게
-                    16위부터 임의 번호를 붙이지 않으며, 확인된 외부 순위만
-                    출처와 함께 따로 표시합니다.
-                  </p>
-                  <div className="ranking-beyond-grid">
-                    {beyondFighters.map((fighter) => (
-                      <button
-                        type="button"
-                        className="ranking-beyond-fighter"
-                        key={fighter.name}
-                        onClick={() =>
-                          setSelectedFighter({
-                            name: fighter.name,
-                            koName: fighter.koName,
-                            weight: fighter.division,
-                          })
-                        }
-                        aria-label={`${fighter.koName} 상세 정보 보기`}
-                      >
-                        <span className="ranking-unranked-mark">NR</span>
-                        <FighterFace
-                          name={fighter.name}
-                          koName={fighter.koName}
-                          className="ranking-fighter-face"
-                          gender={
-                            fighter.division.includes("여성")
-                              ? "female"
-                              : "male"
-                          }
-                        />
-                        <span className="ranking-fighter-name">
-                          <strong>{fighter.koName}</strong>
-                          <small lang="en">{fighter.name}</small>
-                        </span>
-                        <span className="ranking-beyond-state">
-                          {fighter.unofficialRanking ? (
-                            <>
-                              <b>
-                                비공식 세계 #{fighter.unofficialRanking.rank}
-                              </b>
-                              <small>
-                                {fighter.unofficialRanking.provider} ·{" "}
-                                {fighter.unofficialRanking.asOf}
-                              </small>
-                            </>
-                          ) : (
-                            <>
-                              <b>UFC 공식 NR</b>
-                              <small>
-                                {fighter.statusLabel ?? "15위 밖 주요 선수"}
-                              </small>
-                            </>
-                          )}
-                        </span>
-                      </button>
-                    ))}
+              {divisions.map((division) => (
+                <section className="ranking-division" id={division.id} key={division.id} role={!query ? "tabpanel" : undefined}>
+                  <div className="ranking-division-head">
+                    <div><span>{division.englishLabel}</span><h2>{division.label} <small>{division.weightLimitKg}</small></h2></div>
                   </div>
-                </details>
-              ) : null}
-                  </section>
-                );
-              })}
+                  {division.showChampionHeader ? (
+                    <div className="ranking-champion-row"><span className="ranking-champion-mark">C</span><FighterFace name={division.champion} koName={rankingKoreanName(division.champion)} className="ranking-champion-face" gender="male" /><RankingName name={division.champion} /><span className="ranking-champion-label">UFC 챔피언</span></div>
+                  ) : null}
+                  <div className="ranking-columns">
+                    <article className="ranking-board meta-board">
+                      <header><div><span>공식 기준</span><h3>Meta UFC 랭킹</h3></div><time dateTime={UFC_RANKING_SOURCE.metaUpdated}>{UFC_RANKING_SOURCE.metaUpdated}</time></header>
+                      {division.championMatches ? <RankingChampionResult name={division.champion} /> : division.meta.length ? <ol>{division.meta.map((fighter) => <RankingFighterRow key={fighter.name} fighter={fighter} comparison={compareRank(fighter, MENS_RANKING_DIVISIONS.find((item) => item.id === division.id)?.media ?? [])} onSelect={() => openOfficialFighter(fighter, division.label, "Meta UFC 랭킹")} />)}</ol> : <p className="ranking-board-empty">Meta 랭킹에는 검색 결과가 없습니다.</p>}
+                    </article>
+                    <article className="ranking-board media-board">
+                      <header><div><span>비교 자료</span><h3>미디어 투표 랭킹</h3></div><time dateTime={UFC_RANKING_SOURCE.mediaUpdated}>{UFC_RANKING_SOURCE.mediaUpdated}</time></header>
+                      {division.championMatches ? <RankingChampionResult name={division.champion} /> : division.media.length ? <ol>{division.media.map((fighter) => <RankingFighterRow key={`${fighter.rank}-${fighter.name}`} fighter={fighter} onSelect={() => openOfficialFighter(fighter, division.label, "미디어 투표 랭킹")} />)}</ol> : <p className="ranking-board-empty">미디어 랭킹에는 검색 결과가 없습니다.</p>}
+                    </article>
+                  </div>
+                  {!query && division.id === selectedDivision.id ? <UnofficialRankingSection division={division} entries={selectedUnofficialEntries} page={unofficialPage} onPageChange={setUnofficialPage} onSelect={(entry) => openUnofficialFighter(division, entry)} /> : null}
+                </section>
+              ))}
             </div>
           ) : null}
         </>
       ) : (
-        <div className="ranking-no-results" role="status">
-          <strong>검색 결과가 없습니다.</strong>
-          <p>선수의 한글·영문 이름 또는 체급을 다시 확인해주세요.</p>
-          <button type="button" onClick={resetSearch}>
-            전체 랭킹 보기
-          </button>
-        </div>
+        <div className="ranking-no-results" role="status"><strong>검색 결과가 없습니다.</strong><p>선수의 한글·영문 이름 또는 체급을 다시 확인해 주세요.</p><button type="button" onClick={resetSearch}>전체 랭킹 보기</button></div>
       )}
 
-      {selectedFighter ? (
-        <FighterProfileDialog
-          fighter={selectedFighter}
-          onClose={() => setSelectedFighter(null)}
-        />
-      ) : null}
+      {selectedFighter ? <FighterProfileDialog fighter={selectedFighter} onClose={() => setSelectedFighter(null)} /> : null}
     </>
   );
 }
