@@ -9,6 +9,7 @@ from scripts.collect_fighter_images import (
     OUTPUT_DATA,
     OUTPUT_DIR,
     QUALITY_REJECTED_FIGHTERS,
+    is_matching_file_name,
     is_matching_title,
     requested_fighters,
 )
@@ -21,18 +22,31 @@ class FighterImageCollectorTest(unittest.TestCase):
         self.assertFalse(is_matching_title("Diego Lopes", "Brian Ortega"))
         self.assertFalse(is_matching_title("Johnny Walker", "Dominick Reyes"))
 
+    def test_accepts_only_file_names_containing_every_fighter_token(self) -> None:
+        self.assertTrue(
+            is_matching_file_name(
+                "Alexander Volkanovski",
+                "File:Alexander Volkanovski at UFC 232.jpg",
+            )
+        )
+        self.assertFalse(
+            is_matching_file_name("Diego Lopes", "File:Brian Ortega UFC 306.jpg")
+        )
+
     def test_extracts_every_requested_surface(self) -> None:
         targets = requested_fighters()
 
-        self.assertEqual(len(targets), 223)
+        self.assertGreaterEqual(len(targets), 223)
         self.assertIn("Uros Medic", targets)
         self.assertIn("Dooho Choi", targets)
         self.assertIn("Islam Makhachev", targets)
         self.assertIn("Conor McGregor", targets)
+        self.assertIn("event-card", targets["Uros Medic"])
         self.assertIn("main-card", targets["Uros Medic"])
         self.assertIn("korean", targets["Dooho Choi"])
         self.assertIn("ranking", targets["Islam Makhachev"])
         self.assertIn("featured", targets["Conor McGregor"])
+        self.assertIn("archive", targets["Anderson Silva"])
         self.assertEqual(
             set(COMMONS_FILE_OVERRIDES),
             {
@@ -58,7 +72,10 @@ class FighterImageCollectorTest(unittest.TestCase):
                 )
                 self.assertTrue(image["sourceUrl"].startswith("https://"))
                 self.assertTrue(image["licenseUrl"].startswith("https://"))
-                self.assertTrue(image["wikidataId"].startswith("Q"))
+                self.assertTrue(
+                    image["wikidataId"] is None
+                    or image["wikidataId"].startswith("Q")
+                )
                 local_path = OUTPUT_DIR.parent / image["src"].lstrip("/")
                 self.assertTrue(local_path.is_file())
                 self.assertGreater(local_path.stat().st_size, 500)

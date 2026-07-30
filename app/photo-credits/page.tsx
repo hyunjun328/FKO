@@ -20,7 +20,7 @@ export default function PhotoCreditsPage() {
       license: string;
       licenseUrl: string;
       file: string;
-      wikidataId: string;
+      wikidataId: string | null;
     }
   >;
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";

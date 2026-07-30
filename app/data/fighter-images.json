@@ -23,6 +23,43 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:UFC_Freedom_250_Press_Conference_(9747954)(cropped).jpg",
     "file": "UFC Freedom 250 Press Conference (9747954)(cropped).jpg"
   },
+  "Aleksandar Rakic": {
+    "src": "/fighters/aleksandar-rakic.webp",
+    "groups": [
+      "event-card",
+      "main-card"
+    ],
+    "wikidataId": "Q48869757",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aleksandar_Rakic.jpg",
+    "author": "SE Asian Football",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "Aleksandar Rakic.jpg"
+  },
+  "Aleksandar Rakić": {
+    "src": "/fighters/aleksandar-rakic.webp",
+    "groups": [
+      "ranking"
+    ],
+    "wikidataId": "Q48869757",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aleksandar_Rakic.jpg",
+    "author": "SE Asian Football",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "Aleksandar Rakic.jpg"
+  },
+  "Alessandro Costa": {
+    "src": "/fighters/alessandro-costa.webp",
+    "groups": [
+      "ranking"
+    ],
+    "wikidataId": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alessandro_Costa.jpg",
+    "author": "Unknown author Unknown author",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "Alessandro Costa.jpg"
+  },
   "Alex Pereira": {
     "src": "/fighters/alex-pereira.webp",
     "groups": [
@@ -34,6 +71,19 @@
     "license": "Public domain",
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:Alex_Pereira_in_the_Oval_Office_(while_President_Donald_J._Trump_is_holding_a_meeting_with_UFC_fighters).jpg",
     "file": "Alex Pereira in the Oval Office (while President Donald J. Trump is holding a meeting with UFC fighters).jpg"
+  },
+  "Alex Perez": {
+    "src": "/fighters/alex-perez.webp",
+    "groups": [
+      "event-card",
+      "ranking"
+    ],
+    "wikidataId": "Q48471390",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alex_P%C3%A9rez_2_Tofa%C5%9F_SK_TBSL_20251031_(1).jpg",
+    "author": "Zafer",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "file": "Alex Pérez 2 Tofaş SK TBSL 20251031 (1).jpg"
   },
   "Alexa Grasso": {
     "src": "/fighters/alexa-grasso.webp",
@@ -95,6 +145,18 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Alonzo Menifield Jan 20, 2019.jpg"
   },
+  "Amanda Nunes": {
+    "src": "/fighters/amanda-nunes.webp",
+    "groups": [
+      "featured"
+    ],
+    "wikidataId": "Q4739716",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ceremonial_weigh_ins_-_Amanda_Nunes_vs_Julianna_Pe%C3%B1a_UFC_269_(cropped).jpg",
+    "author": "MMAnytt",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "file": "Ceremonial weigh ins - Amanda Nunes vs Julianna Peña UFC 269 (cropped).jpg"
+  },
   "Amanda Ribas": {
     "src": "/fighters/amanda-ribas.webp",
     "groups": [
@@ -106,6 +168,32 @@
     "license": "CC BY 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
     "file": "VR5 1744 (52868673328) (cropped).jpg"
+  },
+  "Anderson Silva": {
+    "src": "/fighters/anderson-silva.webp",
+    "groups": [
+      "archive"
+    ],
+    "wikidataId": "Q356871",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anderson_Silva.jpg",
+    "author": "The original uploader was Ninjasp at English Wikipedia . and is also the copyright holder",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "file": "Anderson Silva.jpg"
+  },
+  "Anthony Hernandez": {
+    "src": "/fighters/anthony-hernandez.webp",
+    "groups": [
+      "event-card",
+      "main-card",
+      "ranking"
+    ],
+    "wikidataId": "Q96372195",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anthony_Hernandez_(Gibraltar).jpg",
+    "author": "InfoGibraltar",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "file": "Anthony Hernandez (Gibraltar).jpg"
   },
   "Arman Tsarukyan": {
     "src": "/fighters/arman-tsarukyan.webp",
@@ -142,6 +230,18 @@
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
     "file": "AsuAlmabayev.png"
+  },
+  "BJ Penn": {
+    "src": "/fighters/bj-penn.webp",
+    "groups": [
+      "archive"
+    ],
+    "wikidataId": "Q402779",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:US_Army_51883_Ultimate_Fighting_Champion_motivates_wounded_warriors_cropped.jpg",
+    "author": "Vanessa M. Forloine, Hickam Air Force Base Public Affairs",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:US_Army_51883_Ultimate_Fighting_Champion_motivates_wounded_warriors_cropped.jpg",
+    "file": "US Army 51883 Ultimate Fighting Champion motivates wounded warriors cropped.jpg"
   },
   "Belal Muhammad": {
     "src": "/fighters/belal-muhammad.webp",
@@ -215,6 +315,18 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "file": "Jung Chan-Sung from acrofan (2).jpg"
   },
+  "Charles Johnson": {
+    "src": "/fighters/charles-johnson.webp",
+    "groups": [
+      "ranking"
+    ],
+    "wikidataId": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Captain-charles-johnson-f3fb42c8-4e4e-40f4-9ce7-4ca8c84a083-resize-750.jpg",
+    "author": "Հակոբջանյան Լիլիթ",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "Captain-charles-johnson-f3fb42c8-4e4e-40f4-9ce7-4ca8c84a083-resize-750.jpg"
+  },
   "Charles Oliveira": {
     "src": "/fighters/charles-oliveira.webp",
     "groups": [
@@ -226,6 +338,18 @@
     "license": "CC0",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "file": "Charles Oliveira do Bronxs.jpg"
+  },
+  "Chuck Liddell": {
+    "src": "/fighters/chuck-liddell.webp",
+    "groups": [
+      "archive"
+    ],
+    "wikidataId": "Q380050",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chuck_Liddell_in_Santa_Monica-California_2005_photo_by_Ithaka_Darin_Pappas.jpg",
+    "author": "IthakaDarinPappas",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "Chuck Liddell in Santa Monica-California 2005 photo by Ithaka Darin Pappas.jpg"
   },
   "Ciryl Gane": {
     "src": "/fighters/ciryl-gane.webp",
@@ -239,6 +363,18 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:Ciryl_Gane_in_the_Oval_Office_(while_President_Donald_J._Trump_is_holding_a_meeting_with_UFC_fighters).jpg",
     "file": "Ciryl Gane in the Oval Office (while President Donald J. Trump is holding a meeting with UFC fighters).jpg"
   },
+  "Conor McGregor": {
+    "src": "/fighters/conor-mcgregor.webp",
+    "groups": [
+      "featured"
+    ],
+    "wikidataId": "Q5162259",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Conor_McGregor_2025.jpeg",
+    "author": "U.S. Secretary of Defense",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Conor_McGregor_2025.jpeg",
+    "file": "Conor McGregor 2025.jpeg"
+  },
   "Cory Sandhagen": {
     "src": "/fighters/cory-sandhagen.webp",
     "groups": [
@@ -250,6 +386,44 @@
     "license": "Public domain",
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:UFC%27s_Corey_Sandhagen_brings_his_fighting_spirit_to_the_1st_SOW_(1)_(cropped).jpg",
     "file": "UFC's Corey Sandhagen brings his fighting spirit to the 1st SOW (1) (cropped).jpg"
+  },
+  "David Martinez": {
+    "src": "/fighters/david-martinez.webp",
+    "groups": [
+      "ranking"
+    ],
+    "wikidataId": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luis_David_Mart%C3%ADnez_(2023_Cary_2)_02.jpg",
+    "author": "Hameltion",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "Luis David Martínez (2023 Cary 2) 02.jpg"
+  },
+  "Demetrious Johnson": {
+    "src": "/fighters/demetrious-johnson.webp",
+    "groups": [
+      "archive"
+    ],
+    "wikidataId": "Q2698272",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Demetrious_Johnson_2024.png",
+    "author": "Onlyfans",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "file": "Demetrious Johnson 2024.png"
+  },
+  "Denise Gomes": {
+    "src": "/fighters/denise-gomes.webp",
+    "groups": [
+      "event-card",
+      "main-card",
+      "ranking"
+    ],
+    "wikidataId": "Q122272654",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2020_DENISE_GOMES_CANDIDATO_VICE-PREFEITO_MG_SABARA_TSE_(130000679621).jpg",
+    "author": "Portal de Dados Abertos do Tribunal Superior Eleitoral do Brasil (TSE)",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "file": "2020 DENISE GOMES CANDIDATO VICE-PREFEITO MG SABARA TSE (130000679621).jpg"
   },
   "Derrick Lewis": {
     "src": "/fighters/derrick-lewis.webp",
@@ -263,6 +437,42 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Derrick Lewis after UFC 239.jpg"
   },
+  "Diego Ferreira": {
+    "src": "/fighters/diego-ferreira.webp",
+    "groups": [
+      "event-card"
+    ],
+    "wikidataId": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2012_DIEGO_FERREIRA_CANDIDATO_PREFEITO_SP_BARRETOS_TSE_(250000057369).jpg",
+    "author": "Portal de Dados Abertos do Tribunal Superior Eleitoral do Brasil (TSE)",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "file": "2012 DIEGO FERREIRA CANDIDATO PREFEITO SP BARRETOS TSE (250000057369).jpg"
+  },
+  "Diego Lopes": {
+    "src": "/fighters/diego-lopes.webp",
+    "groups": [
+      "ranking"
+    ],
+    "wikidataId": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Diego_Lopes_2025.jpg",
+    "author": "Sexto Round",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "file": "Diego Lopes 2025.jpg"
+  },
+  "Dominick Cruz": {
+    "src": "/fighters/dominick-cruz.webp",
+    "groups": [
+      "archive"
+    ],
+    "wikidataId": "Q713618",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dom_Cruz_2.png",
+    "author": "James K. McCann",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Dom_Cruz_2.png",
+    "file": "Dom Cruz 2.png"
+  },
   "Dominick Reyes": {
     "src": "/fighters/dominick-reyes.webp",
     "groups": [
@@ -274,6 +484,18 @@
     "license": "CC BY 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Dominick Reyes 2024.png"
+  },
+  "Dong Hyun Kim": {
+    "src": "/fighters/dong-hyun-kim.webp",
+    "groups": [
+      "korean"
+    ],
+    "wikidataId": "Q39075054",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kim_Dong-Hyun_(fighter)_from_acrofan.jpg",
+    "author": "[1]",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "Kim Dong-Hyun (fighter) from acrofan.jpg"
   },
   "Dricus Du Plessis": {
     "src": "/fighters/dricus-du-plessis.webp",
@@ -290,6 +512,7 @@
   "Dusko Todorovic": {
     "src": "/fighters/dusko-todorovic.webp",
     "groups": [
+      "event-card",
       "main-card"
     ],
     "wikidataId": "Q107124934",
@@ -299,9 +522,59 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "file": "Duško Todorović (1).jpg"
   },
+  "Forrest Griffin": {
+    "src": "/fighters/forrest-griffin.webp",
+    "groups": [
+      "archive"
+    ],
+    "wikidataId": "Q204147",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:USMC-100809-M-6457M-001_CROPPED.jpg",
+    "author": "This image was released by the United States Marine Corps with the ID 100809-M-6457M-001 (next) . This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing . العربي",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:USMC-100809-M-6457M-001_CROPPED.jpg",
+    "file": "USMC-100809-M-6457M-001 CROPPED.jpg"
+  },
+  "Frankie Edgar": {
+    "src": "/fighters/frankie-edgar.webp",
+    "groups": [
+      "archive"
+    ],
+    "wikidataId": "Q552182",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frankie_Edgar.jpg",
+    "author": "Jemaleddin Cole",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "file": "Frankie Edgar.jpg"
+  },
+  "Geoff Neal": {
+    "src": "/fighters/geoff-neal.webp",
+    "groups": [
+      "event-card"
+    ],
+    "wikidataId": "Q61046269",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Geoff_Neal_at_UFC_228.jpg",
+    "author": "MMAnytt",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "file": "Geoff Neal at UFC 228.jpg"
+  },
+  "Georges St-Pierre": {
+    "src": "/fighters/georges-st-pierre.webp",
+    "groups": [
+      "archive",
+      "featured"
+    ],
+    "wikidataId": "Q356271",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Georges_St-Pierre.png",
+    "author": "Cpl. Orrin G. Farmer, US Marine Corps.",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Georges_St-Pierre.png",
+    "file": "Georges St-Pierre.png"
+  },
   "Gregory Rodrigues": {
     "src": "/fighters/gregory-rodrigues.webp",
     "groups": [
+      "event-card",
       "main-card",
       "ranking"
     ],
@@ -311,6 +584,18 @@
     "license": "CC BY 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "GregoryRodrigues.png"
+  },
+  "Herb Dean": {
+    "src": "/fighters/herb-dean.webp",
+    "groups": [
+      "archive"
+    ],
+    "wikidataId": "Q5732922",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Herb_Dean_interview_with_MMAnytt.jpg",
+    "author": "MMAnytt",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "file": "Herb Dean interview with MMAnytt.jpg"
   },
   "Hyun Gyu Lim": {
     "src": "/fighters/hyun-gyu-lim.webp",
@@ -327,6 +612,7 @@
   "Ian Machado Garry": {
     "src": "/fighters/ian-machado-garry.webp",
     "groups": [
+      "event-card",
       "main-card",
       "ranking"
     ],
@@ -364,6 +650,7 @@
   "Islam Makhachev": {
     "src": "/fighters/islam-makhachev.webp",
     "groups": [
+      "event-card",
       "main-card",
       "ranking"
     ],
@@ -386,9 +673,22 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "file": "Israel Adesanya 2014.jpg"
   },
+  "Jalin Turner": {
+    "src": "/fighters/jalin-turner.webp",
+    "groups": [
+      "event-card"
+    ],
+    "wikidataId": "Q59660366",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jalin_Turner_at_UFC_234.jpg",
+    "author": "MMAnytt",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "file": "Jalin Turner at UFC 234.jpg"
+  },
   "Jan Blachowicz": {
     "src": "/fighters/jan-blachowicz.webp",
     "groups": [
+      "event-card",
       "main-card"
     ],
     "wikidataId": "Q11717161",
@@ -421,6 +721,19 @@
     "license": "CC BY 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Jared Cannonier at UFC Fight Night 160 in Copenhagen.jpg"
+  },
+  "Jasmine Jasudavicius": {
+    "src": "/fighters/jasmine-jasudavicius.webp",
+    "groups": [
+      "event-card",
+      "ranking"
+    ],
+    "wikidataId": "Q128115823",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jasmine_Jasudavicius_in_2023_02.png",
+    "author": "MM-eh",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "file": "Jasmine Jasudavicius in 2023 02.png"
   },
   "Jean Silva": {
     "src": "/fighters/jean-silva.webp",
@@ -457,6 +770,30 @@
     "license": "Public domain",
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:AFSOC_celebrates_Outstanding_Airmen_of_the_Year_(5).jpg",
     "file": "AFSOC celebrates Outstanding Airmen of the Year (5).jpg"
+  },
+  "Jose Aldo": {
+    "src": "/fighters/jose-aldo.webp",
+    "groups": [
+      "archive"
+    ],
+    "wikidataId": "Q512119",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Aldo,_UFC_189_World_Tour_London_(2)_(cropped).jpg",
+    "author": "Andrius Petrucenia on Flickr (Original version) UCinternational (Crop)",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "file": "José Aldo, UFC 189 World Tour London (2) (cropped).jpg"
+  },
+  "Joshua Van": {
+    "src": "/fighters/joshua-van.webp",
+    "groups": [
+      "ranking"
+    ],
+    "wikidataId": "Q131411649",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joshua_Van_Sant_(Baltimore_mayor).jpg",
+    "author": "Theodore A. Ross, author. M. W. Hazen Co. (New York, NY), publisher.",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Joshua_Van_Sant_(Baltimore_mayor).jpg",
+    "file": "Joshua Van Sant (Baltimore mayor).jpg"
   },
   "Julianna Peña": {
     "src": "/fighters/julianna-pena.webp",
@@ -518,6 +855,31 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:President_Donald_Trump_congratulates_Kayla_Harrison_after_her_victory_during_UFC_316_(54577590491)_(cropped).jpg",
     "file": "President Donald Trump congratulates Kayla Harrison after her victory during UFC 316 (54577590491) (cropped).jpg"
   },
+  "Kennedy Nzechukwu": {
+    "src": "/fighters/kennedy-nzechukwu.webp",
+    "groups": [
+      "event-card"
+    ],
+    "wikidataId": "Q105811323",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ig-Kennedy_Nzechukwu.ogg",
+    "author": "Dagentle",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "file": "Ig-Kennedy Nzechukwu.ogg"
+  },
+  "Khabib Nurmagomedov": {
+    "src": "/fighters/khabib-nurmagomedov.webp",
+    "groups": [
+      "archive",
+      "featured"
+    ],
+    "wikidataId": "Q3526023",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Khabib_nurmagomedov.jpg",
+    "author": "Airotcivss",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "Khabib nurmagomedov.jpg"
+  },
   "Khalil Rountree Jr.": {
     "src": "/fighters/khalil-rountree-jr.webp",
     "groups": [
@@ -578,6 +940,18 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Leon Edwards 2021.png"
   },
+  "Ludovit Klein": {
+    "src": "/fighters/ludovit-klein.webp",
+    "groups": [
+      "event-card"
+    ],
+    "wikidataId": "Q100396352",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ludovit_Klein.jpg",
+    "author": "TV JOJ",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "Ludovit Klein.jpg"
+  },
   "Magomed Ankalaev": {
     "src": "/fighters/magomed-ankalaev.webp",
     "groups": [
@@ -602,6 +976,42 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "ManelKape2017.png"
   },
+  "Manuel Torres": {
+    "src": "/fighters/manuel-torres.webp",
+    "groups": [
+      "ranking"
+    ],
+    "wikidataId": "Q125164131",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Manuel_Torres.jpg",
+    "author": "Bloomclaudia",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "Juan Manuel Torres.jpg"
+  },
+  "Mario Bautista": {
+    "src": "/fighters/mario-bautista.webp",
+    "groups": [
+      "ranking"
+    ],
+    "wikidataId": "Q86954930",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mario_Bautista_y_su_vida.jpg",
+    "author": "Dianaaa14",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "Mario Bautista y su vida.jpg"
+  },
+  "Mark Smith": {
+    "src": "/fighters/mark-smith.webp",
+    "groups": [
+      "archive"
+    ],
+    "wikidataId": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mark_Smith_Rhino_2015.png",
+    "author": "RealTVfilms",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "Mark Smith Rhino 2015.png"
+  },
   "Marlon Vera": {
     "src": "/fighters/marlon-vera.webp",
     "groups": [
@@ -617,6 +1027,7 @@
   "Mateusz Gamrot": {
     "src": "/fighters/mateusz-gamrot.webp",
     "groups": [
+      "event-card",
       "main-card",
       "ranking"
     ],
@@ -626,6 +1037,18 @@
     "license": "CC BY 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Mateusz Gamrot.jpg"
+  },
+  "Matt Hughes": {
+    "src": "/fighters/matt-hughes.webp",
+    "groups": [
+      "archive"
+    ],
+    "wikidataId": "Q455763",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Matt_Hughes_(cropped).png",
+    "author": "Tom Nguyen (\" enviziondotnet \") on Flickr.",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "file": "Matt Hughes (cropped).png"
   },
   "Mauricio Ruffy": {
     "src": "/fighters/mauricio-ruffy.webp",
@@ -675,6 +1098,18 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:Michael_Morales._QUITO,_27_DE_MAYO_DEL_2025_(cropped).jpg",
     "file": "Michael Morales. QUITO, 27 DE MAYO DEL 2025 (cropped).jpg"
   },
+  "Michael Venom Page": {
+    "src": "/fighters/michael-venom-page.webp",
+    "groups": [
+      "ranking"
+    ],
+    "wikidataId": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michael_Venom_Page.png",
+    "author": "Hrhr prph",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "file": "Michael Venom Page.png"
+  },
   "Miesha Tate": {
     "src": "/fighters/miesha-tate.webp",
     "groups": [
@@ -687,6 +1122,18 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "MIESHA TATE BREAKS DOWN CONOR MCGREGOR VS KHABIB NURMAGOMEDOV UFC 229 - YouTube - 0-46 (cropped).jpg"
   },
+  "Mike Beltran": {
+    "src": "/fighters/mike-beltran.webp",
+    "groups": [
+      "archive"
+    ],
+    "wikidataId": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mike_Beltran.jpg",
+    "author": "Florida House of Representatives",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Mike_Beltran.jpg",
+    "file": "Mike Beltran.jpg"
+  },
   "Mike Malott": {
     "src": "/fighters/mike-malott.webp",
     "groups": [
@@ -698,6 +1145,18 @@
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "file": "Mike-malott-2023-ufc-fighter-canada.png"
+  },
+  "Mizuki": {
+    "src": "/fighters/mizuki.webp",
+    "groups": [
+      "ranking"
+    ],
+    "wikidataId": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nana_Mizuki_2018-2.jpg",
+    "author": "KniBaron from Bangkok, Thailand",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "file": "Nana Mizuki 2018-2.jpg"
   },
   "Montel Jackson": {
     "src": "/fighters/montel-jackson.webp",
@@ -735,6 +1194,18 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "file": "Nassourdine Imavov.jpg"
   },
+  "Natalia Silva": {
+    "src": "/fighters/natalia-silva.webp",
+    "groups": [
+      "ranking"
+    ],
+    "wikidataId": "Q121898011",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nat%C3%A1lia_Silva_2025.jpg",
+    "author": "Sexto Round",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "file": "Natália Silva 2025.jpg"
+  },
   "Nathaniel Wood": {
     "src": "/fighters/nathaniel-wood.webp",
     "groups": [
@@ -746,6 +1217,30 @@
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "file": "Nathaniel Wood Cage Warriors belt 02062017 .jpg"
+  },
+  "Neil Magny": {
+    "src": "/fighters/neil-magny.webp",
+    "groups": [
+      "event-card"
+    ],
+    "wikidataId": "Q15987654",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Neil_Magny.jpg",
+    "author": "3d U.S. Infantry Regiment \"The Old Guard\"",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "file": "Neil Magny.jpg"
+  },
+  "Nina Milosevic": {
+    "src": "/fighters/nina-milosevic.webp",
+    "groups": [
+      "event-card"
+    ],
+    "wikidataId": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nina_Milo%C5%A1evi%C4%87_(SLO)_2015.jpg",
+    "author": "Johnson Barros",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "file": "Nina Milošević (SLO) 2015.jpg"
   },
   "Paddy Pimblett": {
     "src": "/fighters/paddy-pimblett.webp",
@@ -783,6 +1278,18 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
     "file": "Petr Yan at Kremlin award ceremonies with president Putin.jpg"
   },
+  "Rafa Garcia": {
+    "src": "/fighters/rafa-garcia.webp",
+    "groups": [
+      "ranking"
+    ],
+    "wikidataId": "Q108437049",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rafa_Garcia_enduro_equipment_2010.JPG",
+    "author": "Peprovira",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "Rafa Garcia enduro equipment 2010.JPG"
+  },
   "Raquel Pennington": {
     "src": "/fighters/raquel-pennington.webp",
     "groups": [
@@ -810,6 +1317,7 @@
   "Reinier de Ridder": {
     "src": "/fighters/reinier-de-ridder.webp",
     "groups": [
+      "event-card",
       "ranking"
     ],
     "wikidataId": "Q103783008",
@@ -831,6 +1339,18 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Renato Moicano 2024.png"
   },
+  "Robbie Lawler": {
+    "src": "/fighters/robbie-lawler.webp",
+    "groups": [
+      "archive"
+    ],
+    "wikidataId": "Q4900149",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Robbie_Lawler.png",
+    "author": "Atlanta Falcons",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "file": "Robbie Lawler.png"
+  },
   "Robert Whittaker": {
     "src": "/fighters/robert-whittaker.webp",
     "groups": [
@@ -846,6 +1366,7 @@
   "Roman Dolidze": {
     "src": "/fighters/roman-dolidze.webp",
     "groups": [
+      "event-card",
       "ranking"
     ],
     "wikidataId": "Q64861182",
@@ -854,6 +1375,18 @@
     "license": "CC BY 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Dolidze 2019.jpg"
+  },
+  "Ronda Rousey": {
+    "src": "/fighters/ronda-rousey.webp",
+    "groups": [
+      "archive"
+    ],
+    "wikidataId": "Q242201",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rousey_HOF_2018_(cropped).jpg",
+    "author": "Shared Account",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "file": "Rousey HOF 2018 (cropped).jpg"
   },
   "Rose Namajunas": {
     "src": "/fighters/rose-namajunas.webp",
@@ -927,6 +1460,30 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Tatiana Suarez at UFC 228.jpg"
   },
+  "Tatsuro Taira": {
+    "src": "/fighters/tatsuro-taira.webp",
+    "groups": [
+      "ranking"
+    ],
+    "wikidataId": "Q108109936",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tatsuro_taira_2025.png",
+    "author": "에이든 우지",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "file": "Tatsuro taira 2025.png"
+  },
+  "Tim Elliott": {
+    "src": "/fighters/tim-elliott.webp",
+    "groups": [
+      "ranking"
+    ],
+    "wikidataId": "Q7803464",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tim_Elliott_Royal_Society.jpg",
+    "author": "Duncan.Hull",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "Tim Elliott Royal Society.jpg"
+  },
   "Tracy Cortez": {
     "src": "/fighters/tracy-cortez.webp",
     "groups": [
@@ -942,6 +1499,7 @@
   "Umar Nurmagomedov": {
     "src": "/fighters/umar-nurmagomedov.webp",
     "groups": [
+      "event-card",
       "main-card",
       "ranking"
     ],
@@ -964,6 +1522,18 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Valentina Shevchenko 2020.jpg"
   },
+  "Vitor Belfort": {
+    "src": "/fighters/vitor-belfort.webp",
+    "groups": [
+      "archive"
+    ],
+    "wikidataId": "Q458716",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vitor_belfort_cropped.jpg",
+    "author": "https://www.flickr.com/photos/tiagoluiz/",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "file": "Vitor belfort cropped.jpg"
+  },
   "Yair Rodriguez": {
     "src": "/fighters/yair-rodriguez.webp",
     "groups": [
@@ -975,53 +1545,5 @@
     "license": "CC0",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "file": "Carrera con Yair \"Pantera\" Rodríguez -i---i- (30657689682) cropped.jpg"
-  },
-  "Conor McGregor": {
-    "src": "/fighters/conor-mcgregor.webp",
-    "groups": [
-      "featured"
-    ],
-    "wikidataId": "Q5162259",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Conor_McGregor_2025.jpeg",
-    "author": "U.S. Secretary of Defense",
-    "license": "Public domain",
-    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Conor_McGregor_2025.jpeg",
-    "file": "Conor McGregor 2025.jpeg"
-  },
-  "Khabib Nurmagomedov": {
-    "src": "/fighters/khabib-nurmagomedov.webp",
-    "groups": [
-      "featured"
-    ],
-    "wikidataId": "Q3526023",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Khabib_nurmagomedov.jpg",
-    "author": "Airotcivss",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "file": "Khabib nurmagomedov.jpg"
-  },
-  "Georges St-Pierre": {
-    "src": "/fighters/georges-st-pierre.webp",
-    "groups": [
-      "featured"
-    ],
-    "wikidataId": "Q356271",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Georges_St-Pierre.png",
-    "author": "Cpl. Orrin G. Farmer, US Marine Corps.",
-    "license": "Public domain",
-    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Georges_St-Pierre.png",
-    "file": "Georges St-Pierre.png"
-  },
-  "Amanda Nunes": {
-    "src": "/fighters/amanda-nunes.webp",
-    "groups": [
-      "featured"
-    ],
-    "wikidataId": "Q4739716",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ceremonial_weigh_ins_-_Amanda_Nunes_vs_Julianna_Pe%C3%B1a_UFC_269_(cropped).jpg",
-    "author": "MMAnytt",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Ceremonial weigh ins - Amanda Nunes vs Julianna Peña UFC 269 (cropped).jpg"
   }
 }

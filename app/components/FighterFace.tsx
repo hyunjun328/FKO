@@ -12,7 +12,7 @@ export type FighterImageCredit = {
   license: string;
   licenseUrl: string;
   file: string;
-  wikidataId: string;
+  wikidataId: string | null;
 };
 
 export const FIGHTER_IMAGES = fighterImages as Record<

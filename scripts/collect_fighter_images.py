@@ -92,6 +92,7 @@ def requested_fighters() -> dict[str, set[str]]:
     rankings = (ROOT / "app" / "data" / "rankings.ts").read_text(encoding="utf-8")
     events = (ROOT / "app" / "data" / "events.ts").read_text(encoding="utf-8")
     fighters = (ROOT / "app" / "data" / "fighters.ts").read_text(encoding="utf-8")
+    archive = (ROOT / "app" / "data" / "archive.ts").read_text(encoding="utf-8")
 
     targets: dict[str, set[str]] = {}
 
@@ -109,12 +110,13 @@ def requested_fighters() -> dict[str, set[str]]:
             add(name, "ranking")
 
     for line in events.splitlines():
-        if 'section: "main"' not in line:
-            continue
         match = re.search(r'left: "([^"]+)".*right: "([^"]+)"', line)
         if match:
-            add(match.group(1), "main-card")
-            add(match.group(2), "main-card")
+            add(match.group(1), "event-card")
+            add(match.group(2), "event-card")
+            if 'section: "main"' in line:
+                add(match.group(1), "main-card")
+                add(match.group(2), "main-card")
 
     korean_lists = fighters.split("export const FEATURED_FIGHTERS", 1)[0]
     for name in re.findall(r'name: "([^"]+)"', korean_lists):
@@ -126,6 +128,9 @@ def requested_fighters() -> dict[str, set[str]]:
     )[0]
     for name in re.findall(r'name: "([^"]+)"', featured_lists):
         add(name, "featured")
+
+    for name in re.findall(r'name: "([^"]+)"', archive):
+        add(name, "archive")
 
     return dict(sorted(targets.items()))
 
@@ -214,6 +219,12 @@ def is_matching_title(fighter_name: str, page_title: str) -> bool:
     return SequenceMatcher(None, expected, candidate).ratio() >= 0.82
 
 
+def is_matching_file_name(fighter_name: str, filename: str) -> bool:
+    expected_tokens = set(normalize_title(fighter_name).split())
+    candidate_tokens = set(normalize_title(filename.removeprefix("File:")).split())
+    return bool(expected_tokens) and expected_tokens.issubset(candidate_tokens)
+
+
 def commons_file(
     session: requests.Session,
     qid: str,
@@ -283,6 +294,32 @@ def commons_file(
     }
 
 
+def commons_search_file(
+    session: requests.Session,
+    fighter_name: str,
+) -> dict | None:
+    data = api_json(
+        session,
+        COMMONS_API,
+        {
+            "action": "query",
+            "format": "json",
+            "formatversion": 2,
+            "list": "search",
+            "srnamespace": 6,
+            "srlimit": 10,
+            "srsearch": f'"{fighter_name}"',
+        },
+    )
+    for result in data.get("query", {}).get("search", []):
+        title = result.get("title", "")
+        if is_matching_file_name(fighter_name, title):
+            image = commons_file(session, "", title.removeprefix("File:"))
+            if image:
+                return image
+    return None
+
+
 def metadata_value(metadata: dict, key: str) -> str:
     return str(metadata.get(key, {}).get("value", "")).strip()
 
@@ -329,14 +366,17 @@ def main() -> None:
         fighters = dict(list(fighters.items())[: args.limit])
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    if not args.limit and not args.only:
-        for old_image in OUTPUT_DIR.glob("*.webp"):
-            old_image.unlink()
     session = requests.Session()
     session.headers.update({"User-Agent": USER_AGENT})
     result: dict[str, dict] = {}
     if args.only and OUTPUT_DATA.exists():
         result = json.loads(OUTPUT_DATA.read_text(encoding="utf-8"))
+    elif not args.limit and OUTPUT_DATA.exists():
+        previous = json.loads(OUTPUT_DATA.read_text(encoding="utf-8"))
+        for image in previous.values():
+            old_image = OUTPUT_DIR.parent / image["src"].lstrip("/")
+            if old_image.is_file():
+                old_image.unlink()
     misses: list[str] = []
     quality_rejected: list[str] = []
 
@@ -352,6 +392,8 @@ def main() -> None:
                 if qid
                 else None
             )
+            if not image:
+                image = commons_search_file(session, name)
             if not image or not image["downloadUrl"]:
                 misses.append(name)
                 print(f"[{index}/{len(fighters)}] miss {name}", flush=True)
