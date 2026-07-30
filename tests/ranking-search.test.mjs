@@ -2,11 +2,15 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  FIGHTER_PROFILES,
   FORMER_KOREAN_FIGHTERS,
   KOREAN_FIGHTERS,
 } from "../app/data/fighters.ts";
+import { EVENTS } from "../app/data/events.ts";
+import { SEARCHABLE_FIGHTERS } from "../app/data/fighter-catalog.ts";
 import { rankingKoreanName } from "../app/data/ranking-names.ts";
 import { UFC_RANKING_DIVISIONS } from "../app/data/rankings.ts";
+import { UNOFFICIAL_WORLD_RANKINGS } from "../app/data/unofficial-rankings.ts";
 import {
   filterRankingDivisions,
   findUnrankedFighterMatches,
@@ -64,4 +68,56 @@ test("marks a champion search instead of returning empty ranking boards", () => 
   assert.equal(lightweight.showChampionHeader, false);
   assert.deepEqual(lightweight.meta, []);
   assert.deepEqual(lightweight.media, []);
+});
+
+test("makes every scheduled fighter searchable outside the official top 15", () => {
+  const scheduledNames = new Set(
+    EVENTS.flatMap((event) =>
+      event.bouts.flatMap((bout) => [bout.left, bout.right]),
+    ),
+  );
+  const searchableNames = new Set(
+    SEARCHABLE_FIGHTERS.map((fighter) => fighter.name),
+  );
+
+  for (const name of scheduledNames) {
+    assert.equal(searchableNames.has(name), true, `${name} is missing`);
+  }
+
+  const matches = findUnrankedFighterMatches(
+    SEARCHABLE_FIGHTERS,
+    UFC_RANKING_DIVISIONS,
+    "오롤바이",
+  );
+  assert.deepEqual(
+    matches.map((fighter) => fighter.name),
+    ["Myktybek Orolbai"],
+  );
+});
+
+test("labels Fight Matrix positions as date-stamped unofficial world rankings", () => {
+  const medic = UNOFFICIAL_WORLD_RANKINGS["Uros Medic"];
+  const orolbai = UNOFFICIAL_WORLD_RANKINGS["Myktybek Orolbai"];
+
+  assert.equal(medic.rank, 18);
+  assert.equal(orolbai.rank, 23);
+  assert.equal(orolbai.provider, "Fight Matrix");
+  assert.equal(orolbai.asOf, "2026-07-26");
+  assert.match(orolbai.sourceUrl, /fightmatrix\.com/);
+});
+
+test("keeps famous career claims attached to explicit verification sources", () => {
+  const mcgregor = FIGHTER_PROFILES["Conor McGregor"];
+
+  assert.equal(mcgregor.record, "22승 7패");
+  assert.equal(mcgregor.careerHighlights.length, 3);
+  assert.equal(mcgregor.verificationSources.length, 4);
+  assert.equal(
+    mcgregor.careerHighlights.every(
+      (highlight) =>
+        highlight.sourceLabel.length > 0 &&
+        highlight.sourceUrl.startsWith("https://"),
+    ),
+    true,
+  );
 });

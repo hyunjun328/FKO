@@ -3645,3 +3645,143 @@ body :is(b, strong) {
     height: 95px;
   }
 }
+
+.ranking-unranked-result {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 42px 44px minmax(150px, 1fr) minmax(230px, auto) auto;
+  gap: 14px;
+  align-items: center;
+  min-height: 76px;
+  padding: 12px 14px;
+  border: 1px solid #393939;
+  border-radius: 6px;
+  background: #171717;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ranking-unranked-result:hover,
+.ranking-unranked-result:focus-visible {
+  border-color: rgba(232, 65, 47, 0.8);
+  background: #1c1c1c;
+}
+
+.ranking-unranked-state {
+  display: grid;
+  gap: 4px;
+}
+
+.ranking-unranked-state b {
+  color: var(--text);
+  font-size: 0.72rem;
+  font-weight: 650;
+}
+
+.ranking-unranked-state small {
+  color: var(--muted);
+  font-size: 0.66rem;
+}
+
+.ranking-unranked-open {
+  color: var(--text);
+  font-size: 0.72rem;
+  font-weight: 650;
+}
+
+.fighter-profile-badges .unofficial-ranking-badge {
+  border: 1px solid rgba(232, 65, 47, 0.5);
+  background: rgba(232, 65, 47, 0.08);
+  color: #ff7b6d;
+}
+
+.fighter-career-highlights {
+  margin: 22px 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #151515;
+}
+
+.fighter-career-highlights > header {
+  margin-bottom: 12px;
+}
+
+.fighter-career-highlights > header span {
+  color: var(--orange);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.fighter-career-highlights h3 {
+  margin: 4px 0 0;
+  font-size: 1.05rem;
+}
+
+.fighter-career-highlights > div {
+  display: grid;
+  gap: 10px;
+}
+
+.fighter-career-highlights article {
+  padding: 14px;
+  border-left: 3px solid var(--orange);
+  background: #1b1b1b;
+}
+
+.fighter-career-highlights strong {
+  font-size: 0.86rem;
+}
+
+.fighter-career-highlights p {
+  margin: 6px 0 8px;
+  color: #d5d5d5;
+  font-size: 0.76rem;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.fighter-career-highlights a {
+  color: var(--lime);
+  font-size: 0.68rem;
+  text-underline-offset: 3px;
+}
+
+.fighter-pending-ranking {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 12px;
+  align-items: baseline;
+  margin-top: 12px;
+  padding: 11px 12px;
+  border: 1px solid rgba(232, 65, 47, 0.4);
+  border-radius: 6px;
+  background: rgba(232, 65, 47, 0.06);
+}
+
+.fighter-pending-ranking b {
+  color: #ff7b6d;
+}
+
+.fighter-pending-ranking span {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+@media (max-width: 680px) {
+  .ranking-unranked-result {
+    grid-template-columns: 40px 40px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .ranking-unranked-state,
+  .ranking-unranked-open {
+    grid-column: 3;
+  }
+
+  .fighter-career-highlights {
+    padding: 14px;
+  }
+}

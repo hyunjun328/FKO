@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { EVENTS, type BoutSection, type FightEvent } from "../data/events";
 import { FIGHTER_PROFILES } from "../data/fighters";
+import { unofficialWorldRanking } from "../data/unofficial-rankings";
 import {
   FighterProfileDialog,
   recordSummary,
@@ -110,6 +111,8 @@ function EventDetail({
               {grouped[section].map((bout) => {
                 const leftProfile = FIGHTER_PROFILES[bout.left];
                 const rightProfile = FIGHTER_PROFILES[bout.right];
+                const leftWorldRanking = unofficialWorldRanking(bout.left);
+                const rightWorldRanking = unofficialWorldRanking(bout.right);
                 return (
                   <div
                     className="bout"
@@ -137,9 +140,10 @@ function EventDetail({
                     ) : null}
                     <span className="fighter-name-line">
                       <strong>{bout.leftKo}</strong>
-                      {leftProfile ? (
+                      {leftProfile || leftWorldRanking ? (
                         <span className="fighter-rank">
-                          {leftProfile.ranking}
+                          {leftProfile?.ranking ??
+                            `비공식 세계 #${leftWorldRanking?.rank}`}
                         </span>
                       ) : null}
                     </span>
@@ -147,7 +151,7 @@ function EventDetail({
                     <span className="fighter-record">
                       {leftProfile
                         ? recordSummary(leftProfile.record)
-                        : "전적 확인 중"}
+                        : leftWorldRanking?.record ?? "전적 확인 중"}
                     </span>
                   </button>
                   <span className="bout-vs">VS</span>
@@ -172,9 +176,10 @@ function EventDetail({
                     ) : null}
                     <span className="fighter-name-line">
                       <strong>{bout.rightKo}</strong>
-                      {rightProfile ? (
+                      {rightProfile || rightWorldRanking ? (
                         <span className="fighter-rank">
-                          {rightProfile.ranking}
+                          {rightProfile?.ranking ??
+                            `비공식 세계 #${rightWorldRanking?.rank}`}
                         </span>
                       ) : null}
                     </span>
@@ -182,7 +187,7 @@ function EventDetail({
                     <span className="fighter-record">
                       {rightProfile
                         ? recordSummary(rightProfile.record)
-                        : "전적 확인 중"}
+                        : rightWorldRanking?.record ?? "전적 확인 중"}
                     </span>
                   </button>
                   <span className="weight">

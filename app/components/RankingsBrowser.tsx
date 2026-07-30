@@ -2,11 +2,7 @@
 // UFC 랭킹을 한글·영문·체급으로 검색하고 체급별 비교표를 보여준다.
 
 import { FormEvent, useMemo, useState } from "react";
-import Link from "next/link";
-import {
-  FORMER_KOREAN_FIGHTERS,
-  KOREAN_FIGHTERS,
-} from "../data/fighters";
+import { SEARCHABLE_FIGHTERS } from "../data/fighter-catalog";
 import { rankingKoreanName } from "../data/ranking-names";
 import {
   UFC_RANKING_DIVISIONS,
@@ -19,6 +15,10 @@ import {
   normalizeRankingQuery,
 } from "../lib/ranking-search";
 import { FighterFace } from "./FighterFace";
+import {
+  FighterProfileDialog,
+  type FighterSelection,
+} from "./FighterProfileDialog";
 
 function compareRank(entry: RankingEntry, media: RankingEntry[]) {
   const mediaEntry = media.find((fighter) => fighter.name === entry.name);
@@ -66,6 +66,8 @@ function RankingChampionResult({ name }: { name: string }) {
 export function RankingsBrowser() {
   const [inputValue, setInputValue] = useState("");
   const [query, setQuery] = useState("");
+  const [selectedFighter, setSelectedFighter] =
+    useState<FighterSelection | null>(null);
   const normalizedQuery = normalizeRankingQuery(query);
 
   const divisions = useMemo(
@@ -81,7 +83,7 @@ export function RankingsBrowser() {
   const unrankedMatches = useMemo(
     () =>
       findUnrankedFighterMatches(
-        [...KOREAN_FIGHTERS, ...FORMER_KOREAN_FIGHTERS],
+        SEARCHABLE_FIGHTERS,
         UFC_RANKING_DIVISIONS,
         normalizedQuery,
       ),
@@ -124,7 +126,7 @@ export function RankingsBrowser() {
               type="search"
               value={inputValue}
               onChange={(event) => setInputValue(event.target.value)}
-              placeholder="예: 마카체프, Makhachev, 웰터급"
+              placeholder="예: 맥그리거, 메디치, Makhachev"
               autoComplete="off"
             />
             <button type="submit">검색</button>
@@ -136,7 +138,10 @@ export function RankingsBrowser() {
               <b>‘{query}’</b> 검색 결과 · {resultCount}명
             </>
           ) : (
-            <>챔피언, 공식 1~15위와 코리안 파이터를 검색할 수 있습니다.</>
+            <>
+              챔피언, 공식 1~15위, 전체 대진표 선수와 대표 선수를 검색할 수
+              있습니다.
+            </>
           )}
         </p>
         {query ? (
@@ -169,11 +174,23 @@ export function RankingsBrowser() {
             >
               <header>
                 <span>랭킹 외 선수</span>
-                <h2 id="unranked-result-title">코리안 파이터 검색 결과</h2>
+                <h2 id="unranked-result-title">공식 15위 밖 선수 검색 결과</h2>
               </header>
               <div>
                 {unrankedMatches.map((fighter) => (
-                  <article key={fighter.name}>
+                  <button
+                    type="button"
+                    className="ranking-unranked-result"
+                    key={fighter.name}
+                    onClick={() =>
+                      setSelectedFighter({
+                        name: fighter.name,
+                        koName: fighter.koName,
+                        weight: fighter.division,
+                      })
+                    }
+                    aria-label={`${fighter.koName} 상세 정보 보기`}
+                  >
                     <span className="ranking-unranked-mark">NR</span>
                     <FighterFace
                       name={fighter.name}
@@ -185,10 +202,22 @@ export function RankingsBrowser() {
                       <small lang="en">{fighter.name}</small>
                     </span>
                     <span className="ranking-unranked-state">
-                      {fighter.division} · UFC 공식 랭킹 없음
+                      <b>{fighter.division} · UFC 공식 NR</b>
+                      {fighter.unofficialRanking ? (
+                        <small>
+                          비공식 세계 #{fighter.unofficialRanking.rank} ·{" "}
+                          {fighter.unofficialRanking.provider} ·{" "}
+                          {fighter.unofficialRanking.asOf}
+                        </small>
+                      ) : (
+                        <small>
+                          {fighter.statusLabel ??
+                            "공개된 비공식 순위는 별도 검수 중"}
+                        </small>
+                      )}
                     </span>
-                    <Link href="/korean-fighters">선수 정보 보기 →</Link>
-                  </article>
+                    <span className="ranking-unranked-open">상세 보기 →</span>
+                  </button>
                 ))}
               </div>
             </section>
@@ -319,6 +348,13 @@ export function RankingsBrowser() {
           </button>
         </div>
       )}
+
+      {selectedFighter ? (
+        <FighterProfileDialog
+          fighter={selectedFighter}
+          onClose={() => setSelectedFighter(null)}
+        />
+      ) : null}
     </>
   );
 }

@@ -31,6 +31,12 @@ export type FighterProfile = {
     label: string;
     url: string;
   }[];
+  careerHighlights?: {
+    title: string;
+    detail: string;
+    sourceLabel: string;
+    sourceUrl: string;
+  }[];
   sourceUrl: string;
   verifiedAt: string;
 };
@@ -87,6 +93,33 @@ export const FORMER_KOREAN_FIGHTERS: KoreanFighter[] = [
     koName: "양동이",
     division: "미들급",
     statusLabel: "전 UFC",
+  },
+];
+
+export const FEATURED_FIGHTERS: KoreanFighter[] = [
+  {
+    name: "Conor McGregor",
+    koName: "코너 맥그리거",
+    division: "웰터급",
+    statusLabel: "대표 선수",
+  },
+  {
+    name: "Khabib Nurmagomedov",
+    koName: "하빕 누르마고메도프",
+    division: "라이트급",
+    statusLabel: "은퇴",
+  },
+  {
+    name: "Georges St-Pierre",
+    koName: "조르주 생피에르",
+    division: "웰터급 · 미들급",
+    statusLabel: "은퇴",
+  },
+  {
+    name: "Amanda Nunes",
+    koName: "아만다 누네스",
+    division: "여성 밴텀급 · 페더급",
+    statusLabel: "명예의 전당",
   },
 ];
 
@@ -947,5 +980,242 @@ export const FIGHTER_PROFILES: Record<string, FighterProfile> = {
     },
     sourceUrl: "https://www.ufc.com/athlete/amanda-lemos",
     verifiedAt: "2026-07-29",
+  },
+  "Conor McGregor": {
+    name: "Conor McGregor",
+    nickname: "The Notorious",
+    record: "22승 7패",
+    ranking: "전 페더급 · 라이트급 챔피언",
+    country: "아일랜드 더블린",
+    style: "타격",
+    heightCm: 175,
+    reachCm: 188,
+    team: "SBG Ireland",
+    octagonDebut: "2013-04-06",
+    summary:
+      "UFC 최초로 두 체급 타이틀을 동시에 보유한 선수이자 UFC 역대 최대 PPV 흥행 기록의 중심에 선 대표 스타. 페더급과 라이트급 챔피언을 차례로 차지했다.",
+    lastFight: {
+      result: "패",
+      opponent: "Max Holloway",
+      opponentKo: "맥스 할로웨이",
+      date: "2026-07-11",
+      method: "1라운드 1:09 TKO · 부상",
+    },
+    careerHighlights: [
+      {
+        title: "UFC 최초 동시 두 체급 챔피언",
+        detail:
+          "2016년 UFC 205에서 에디 알바레즈를 꺾고 페더급과 라이트급 벨트를 동시에 보유한 첫 UFC 선수가 됐다.",
+        sourceLabel: "UFC 공식 챔프-챔프 역사",
+        sourceUrl:
+          "https://www.ufc.com/news/history-of-champ-champs-ufc-284-makhachev-volkanovski-couture-penn-st-pierre-gsp-conor-mcgregor-daniel-cormier-amanda-nunes-henry-cejudo-read",
+      },
+      {
+        title: "UFC 역대 최대 PPV 대회",
+        detail:
+          "맥그리거가 하빕 누르마고메도프와 맞붙은 UFC 229는 추정 240만 건으로 UFC PPV 구매 기록을 세웠다.",
+        sourceLabel: "기네스 세계기록",
+        sourceUrl:
+          "https://www.guinnessworldrecords.com/world-records/90053-largest-ultimate-fighting-championship-television-audience",
+      },
+      {
+        title: "두 체급 타이틀 획득",
+        detail:
+          "UFC 공식 프로필은 맥그리거를 두 체급 타이틀을 획득한 세 번째 선수이자 최초 동시 보유자로 기록한다.",
+        sourceLabel: "UFC 선수 프로필",
+        sourceUrl: "https://www.ufc.com/athlete/conor-mcgregor?page=1",
+      },
+    ],
+    verificationSources: [
+      {
+        label: "UFC 선수 프로필",
+        url: "https://www.ufc.com/athlete/conor-mcgregor?page=1",
+      },
+      {
+        label: "UFC 챔프-챔프 역사",
+        url: "https://www.ufc.com/news/history-of-champ-champs-ufc-284-makhachev-volkanovski-couture-penn-st-pierre-gsp-conor-mcgregor-daniel-cormier-amanda-nunes-henry-cejudo-read",
+      },
+      {
+        label: "기네스 UFC PPV 기록",
+        url: "https://www.guinnessworldrecords.com/world-records/90053-largest-ultimate-fighting-championship-television-audience",
+      },
+      {
+        label: "위키백과 보조 확인",
+        url: "https://en.wikipedia.org/wiki/Conor_McGregor",
+      },
+    ],
+    sourceUrl: "https://www.ufc.com/athlete/conor-mcgregor?page=1",
+    verifiedAt: "2026-07-30",
+  },
+  "Khabib Nurmagomedov": {
+    name: "Khabib Nurmagomedov",
+    nickname: "The Eagle",
+    record: "29승 무패",
+    ranking: "은퇴 · 전 라이트급 챔피언",
+    country: "러시아 다게스탄",
+    style: "삼보 · 레슬링",
+    heightCm: 178,
+    reachCm: 178,
+    team: "American Kickboxing Academy",
+    octagonDebut: "2012-01-21",
+    summary:
+      "프로 통산 29전 전승으로 은퇴한 전 UFC 라이트급 챔피언. 맥그리거, 포이리에, 게이치를 상대로 타이틀을 방어했다.",
+    lastFight: {
+      result: "승",
+      opponent: "Justin Gaethje",
+      opponentKo: "저스틴 게이치",
+      date: "2020-10-24",
+      method: "2라운드 1:34 트라이앵글 초크",
+    },
+    careerHighlights: [
+      {
+        title: "29전 전승 은퇴",
+        detail:
+          "UFC는 2021년 하빕의 공식 은퇴를 발표하며 최종 프로 전적을 29승 무패로 확인했다.",
+        sourceLabel: "UFC 공식 은퇴 발표",
+        sourceUrl:
+          "https://www.ufc.com/news/khabib-nurmagomedov-officially-retires",
+      },
+      {
+        title: "라이트급 타이틀 3차례 방어",
+        detail:
+          "UFC 229, 242, 254에서 맥그리거, 포이리에, 게이치를 연달아 꺾고 타이틀을 지켰다.",
+        sourceLabel: "UFC 선수 프로필",
+        sourceUrl:
+          "https://www.ufc.com/athlete/khabib-nurmagomedov?language_content_entity=en",
+      },
+    ],
+    verificationSources: [
+      {
+        label: "UFC 선수 프로필",
+        url: "https://www.ufc.com/athlete/khabib-nurmagomedov?language_content_entity=en",
+      },
+      {
+        label: "UFC 공식 은퇴 발표",
+        url: "https://www.ufc.com/news/khabib-nurmagomedov-officially-retires",
+      },
+      {
+        label: "위키백과 보조 확인",
+        url: "https://en.wikipedia.org/wiki/Khabib_Nurmagomedov",
+      },
+    ],
+    sourceUrl:
+      "https://www.ufc.com/athlete/khabib-nurmagomedov?language_content_entity=en",
+    verifiedAt: "2026-07-30",
+  },
+  "Georges St-Pierre": {
+    name: "Georges St-Pierre",
+    nickname: "Rush",
+    record: "26승 2패",
+    ranking: "은퇴 · 전 웰터급 · 미들급 챔피언",
+    country: "캐나다 몬트리올",
+    style: "가라테 · 레슬링",
+    heightCm: 179,
+    reachCm: 193,
+    octagonDebut: "2004-01-31",
+    summary:
+      "웰터급 타이틀을 9차례 방어하고 4년 만의 복귀전에서 미들급 타이틀까지 획득한 UFC 명예의 전당 헌액자.",
+    lastFight: {
+      result: "승",
+      opponent: "Michael Bisping",
+      opponentKo: "마이클 비스핑",
+      date: "2017-11-04",
+      method: "3라운드 4:23 리어네이키드 초크",
+    },
+    careerHighlights: [
+      {
+        title: "웰터급 타이틀 9차례 방어",
+        detail:
+          "UFC 공식 은퇴 발표는 생피에르가 웰터급 최다 타이틀 방어 기록 9회를 보유했다고 확인한다.",
+        sourceLabel: "UFC 공식 은퇴 발표",
+        sourceUrl:
+          "https://www.ufc.com/news/ufc-and-canadian-icon-georges-st-pierre-retires",
+      },
+      {
+        title: "웰터급 · 미들급 두 체급 챔피언",
+        detail:
+          "2017년 UFC 217에서 마이클 비스핑을 꺾고 미들급 타이틀을 획득해 두 체급 챔피언이 됐다.",
+        sourceLabel: "UFC 커리어 회고",
+        sourceUrl: "https://www.ufc.com/news/new-chapter-georges-st-pierre",
+      },
+    ],
+    verificationSources: [
+      {
+        label: "UFC 선수 프로필",
+        url: "https://www.ufc.com/athlete/georges-st-pierre?page=1",
+      },
+      {
+        label: "UFC 명예의 전당 발표",
+        url: "https://www.ufc.com/news/georges-st-pierre-named-ufc-hall-fame-class-2020",
+      },
+      {
+        label: "UFC 공식 은퇴 발표",
+        url: "https://www.ufc.com/news/ufc-and-canadian-icon-georges-st-pierre-retires",
+      },
+      {
+        label: "위키백과 보조 확인",
+        url: "https://en.wikipedia.org/wiki/Georges_St-Pierre",
+      },
+    ],
+    sourceUrl: "https://www.ufc.com/athlete/georges-st-pierre?page=1",
+    verifiedAt: "2026-07-30",
+  },
+  "Amanda Nunes": {
+    name: "Amanda Nunes",
+    nickname: "The Lioness",
+    record: "23승 5패",
+    ranking: "명예의 전당 · 전 밴텀급 · 페더급 챔피언",
+    country: "브라질",
+    style: "타격 · 주짓수",
+    heightCm: 173,
+    reachCm: 175,
+    team: "Team Nunes",
+    octagonDebut: "2013-08-04",
+    summary:
+      "UFC 여성 최초 두 체급 동시 챔피언이자 두 벨트를 모두 방어한 유일한 동시 두 체급 챔피언. 2025년 UFC 명예의 전당에 헌액됐다.",
+    lastFight: {
+      result: "승",
+      opponent: "Irene Aldana",
+      opponentKo: "이레네 알다나",
+      date: "2023-06-10",
+      method: "5라운드 만장일치 판정",
+    },
+    careerHighlights: [
+      {
+        title: "UFC 여성 최초 두 체급 챔피언",
+        detail:
+          "밴텀급 챔피언 시절 크리스 사이보그를 51초 만에 KO로 꺾고 페더급 벨트까지 차지했다.",
+        sourceLabel: "UFC 공식 커리어 회고",
+        sourceUrl:
+          "https://www.ufc.com/news/amanda-nunes-becomes-double-champ-breaking-barriers",
+      },
+      {
+        title: "2025 UFC 명예의 전당",
+        detail:
+          "UFC는 누네스의 23승 5패 전적과 여성부 최다 타이틀전 승리 11회를 공식 기록했다.",
+        sourceLabel: "UFC 명예의 전당",
+        sourceUrl: "https://www.ufc.com/hof/amanda-nunes-hall-of-fame",
+      },
+    ],
+    verificationSources: [
+      {
+        label: "UFC 선수 프로필",
+        url: "https://www.ufc.com/athlete/amanda-nunes",
+      },
+      {
+        label: "UFC 명예의 전당",
+        url: "https://www.ufc.com/hof/amanda-nunes-hall-of-fame",
+      },
+      {
+        label: "UFC 두 체급 챔피언 회고",
+        url: "https://www.ufc.com/news/amanda-nunes-becomes-double-champ-breaking-barriers",
+      },
+      {
+        label: "위키백과 보조 확인",
+        url: "https://en.wikipedia.org/wiki/Amanda_Nunes",
+      },
+    ],
+    sourceUrl: "https://www.ufc.com/athlete/amanda-nunes",
+    verifiedAt: "2026-07-30",
   },
 };

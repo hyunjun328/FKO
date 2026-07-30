@@ -108,9 +108,16 @@ def requested_fighters() -> dict[str, set[str]]:
             add(match.group(1), "main-card")
             add(match.group(2), "main-card")
 
-    korean_lists = fighters.split("export const FIGHTER_PROFILES", 1)[0]
+    korean_lists = fighters.split("export const FEATURED_FIGHTERS", 1)[0]
     for name in re.findall(r'name: "([^"]+)"', korean_lists):
         add(name, "korean")
+
+    featured_lists = fighters.split("export const FEATURED_FIGHTERS", 1)[1].split(
+        "export const FIGHTER_PROFILES",
+        1,
+    )[0]
+    for name in re.findall(r'name: "([^"]+)"', featured_lists):
+        add(name, "featured")
 
     return dict(sorted(targets.items()))
 

@@ -1,11 +1,13 @@
 // 랭킹 선수와 랭킹 밖 코리안 파이터의 검색 결과를 정확히 구분한다.
 import type { RankingDivision } from "../data/rankings";
+import type { UnofficialWorldRanking } from "../data/unofficial-rankings";
 
 export type SearchableFighter = {
   name: string;
   koName: string;
   division: string;
   statusLabel?: string;
+  unofficialRanking?: UnofficialWorldRanking;
 };
 
 export type RankingDivisionSearchResult = RankingDivision & {

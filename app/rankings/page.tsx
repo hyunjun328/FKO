@@ -51,6 +51,10 @@ export default function RankingsPage() {
             <b>FKO 확인</b>
             {UFC_RANKING_SOURCE.checkedAt}
           </span>
+          <span>
+            <b>비공식 세계 순위</b>
+            Fight Matrix · 2026-07-26
+          </span>
         </div>
       </section>
 
@@ -76,8 +80,9 @@ export default function RankingsPage() {
           <span>표기 범위</span>
           <h2>공식은 15위까지</h2>
           <p>
-            챔피언과 체급별 1~15위만 UFC 공식 순위로 표시합니다. 그 밖의
-            선수에게는 임의 순위를 붙이지 않습니다.
+            챔피언과 체급별 1~15위만 UFC 공식 순위로 표시합니다. 그 밖
+            선수는 확인 가능한 경우에만 날짜가 붙은 Fight Matrix 세계
+            순위를 별도의 비공식 자료로 표시합니다.
           </p>
         </article>
       </section>
@@ -86,10 +91,11 @@ export default function RankingsPage() {
 
       <aside className="ranking-source-note">
         <div>
-          <strong>공식 발표값만 사용합니다.</strong>
+          <strong>UFC 공식 순위와 외부 세계 순위를 섞지 않습니다.</strong>
           <p>
-            정확한 Meta 점수식과 가중치는 공개되지 않았습니다. 순위가
-            갱신되면 UFC 원문과 대조한 뒤 날짜와 함께 반영합니다.
+            공식 1~15위는 UFC 원문 그대로, 그 아래는 8,000명 이상을
+            주간 계산하는 Fight Matrix 자료를 별도 표기합니다. 외부 순위를
+            UFC 순위처럼 바꿔 쓰지 않습니다.
           </p>
         </div>
         <span>
@@ -106,6 +112,13 @@ export default function RankingsPage() {
             rel="noreferrer"
           >
             Meta 랭킹 발표 ↗
+          </a>
+          <a
+            href="https://www.fightmatrix.com/mma-ranks/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Fight Matrix 세계 순위 ↗
           </a>
         </span>
       </aside>

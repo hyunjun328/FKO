@@ -6,6 +6,7 @@ import {
   FIGHTER_PROFILES,
   type KoreanFighter,
 } from "../data/fighters";
+import { unofficialWorldRanking } from "../data/unofficial-rankings";
 import { FighterFace } from "./FighterFace";
 
 export type FighterSelection = {
@@ -123,6 +124,7 @@ export function FighterProfileDialog({
   onClose: () => void;
 }) {
   const profile = FIGHTER_PROFILES[fighter.name];
+  const worldRanking = unofficialWorldRanking(fighter.name);
   const verificationSources =
     profile?.verificationSources ??
     (profile
@@ -196,11 +198,42 @@ export function FighterProfileDialog({
             <div className="fighter-profile-badges">
               <span>{profile.ranking}</span>
               <span>{recordSummary(profile.record)}</span>
+              {worldRanking ? (
+                <span className="unofficial-ranking-badge">
+                  비공식 세계 #{worldRanking.rank} · {worldRanking.provider}
+                </span>
+              ) : null}
               {profile.verificationSources ? (
                 <span className="verified-badge">교차 검증 완료</span>
               ) : null}
             </div>
             <p className="fighter-profile-summary">{profile.summary}</p>
+            {profile.careerHighlights?.length ? (
+              <section
+                className="fighter-career-highlights"
+                aria-labelledby="fighter-career-title"
+              >
+                <header>
+                  <span>검증된 커리어 핵심</span>
+                  <h3 id="fighter-career-title">왜 유명한 선수인가</h3>
+                </header>
+                <div>
+                  {profile.careerHighlights.map((highlight) => (
+                    <article key={highlight.title}>
+                      <strong>{highlight.title}</strong>
+                      <p>{highlight.detail}</p>
+                      <a
+                        href={highlight.sourceUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {highlight.sourceLabel}에서 확인 ↗
+                      </a>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            ) : null}
             {profile.nextFight ? (
               <section className="fighter-next-fight">
                 <span className="fighter-last-label">다음 경기</span>
@@ -298,6 +331,14 @@ export function FighterProfileDialog({
         ) : (
           <div className="fighter-profile-pending">
             <strong>{fighter.weight} 출전 예정</strong>
+            {worldRanking ? (
+              <div className="fighter-pending-ranking">
+                <b>비공식 세계 #{worldRanking.rank}</b>
+                <span>
+                  {worldRanking.provider} · {worldRanking.asOf} 발표
+                </span>
+              </div>
+            ) : null}
             <p>
               아직 공식 전적과 랭킹을 검수 중입니다. 확인되지 않은 정보는
               추정해서 표시하지 않습니다.
@@ -316,6 +357,16 @@ export function FighterProfileDialog({
               {source.label} ↗
             </a>
           ))}
+          {worldRanking ? (
+            <a
+              href={worldRanking.sourceUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {worldRanking.provider} 비공식 세계 순위 ·{" "}
+              {worldRanking.asOf} ↗
+            </a>
+          ) : null}
           <a
             href={officialYoutubeSearch(fighter.name)}
             target="_blank"
