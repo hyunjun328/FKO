@@ -28,6 +28,9 @@ export default function RankingsPage() {
           <Link className="topbar-link" href="/korean-fighters">
             코리안 파이터
           </Link>
+          <Link className="topbar-link" href="/archive">
+            UFC 아카이브
+          </Link>
           <Link className="back-home-link" href="/">
             ← UFC 일정
           </Link>

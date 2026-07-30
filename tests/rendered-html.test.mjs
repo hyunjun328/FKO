@@ -36,7 +36,8 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /Fight Korea/);
   assert.doesNotMatch(html, /파이트 캘린더 코리아/);
   assert.match(html, /UFC 일정/);
-  assert.match(html, /한국시간/);
+  assert.match(html, /대진과 선수 정보/);
+  assert.match(html, /한국시간\(KST\)/);
   assert.doesNotMatch(html, /지금 한국시간/);
   assert.match(html, /메인카드 시작/);
   assert.match(html, /다음 주요 매치/);
@@ -241,6 +242,21 @@ test("server-renders reusable fighter photo credits", async () => {
   assert.match(html, /https:\/\/www\.ufc\.com\/news\/terms-use/);
   assert.match(html, /loading="lazy"/);
   assert.match(html, /href="\/"/);
+});
+
+test("server-renders the UFC archive with hall of fame, former fighters, and referees", async () => {
+  const response = await render("/archive");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /UFC 아카이브/);
+  assert.match(html, /명예의 전당/);
+  assert.match(html, /과거 UFC 선수/);
+  assert.match(html, /심판진/);
+  assert.match(html, /조르주 생피에르/);
+  assert.match(html, /29승 0패/);
+  assert.match(html, /class="archive-tabs"/);
+  assert.match(html, /class="fighter-face archive-fighter-face"/);
 });
 
 test("maps every ranked fighter to a Korean display name", async () => {

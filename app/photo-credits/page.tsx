@@ -1,7 +1,7 @@
 // FKO에 사용된 선수 사진의 저작자와 라이선스 원문을 공개한다.
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FIGHTER_IMAGES } from "../components/FighterFace";
+import fighterImages from "../data/fighter-images.json";
 import { rankingKoreanName } from "../data/ranking-names";
 
 export const metadata: Metadata = {
@@ -10,6 +10,19 @@ export const metadata: Metadata = {
 };
 
 export default function PhotoCreditsPage() {
+  const FIGHTER_IMAGES = fighterImages as Record<
+    string,
+    {
+      src: string;
+      groups: string[];
+      sourceUrl: string;
+      author: string;
+      license: string;
+      licenseUrl: string;
+      file: string;
+      wikidataId: string;
+    }
+  >;
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   const credits = Object.entries(FIGHTER_IMAGES).sort(([left], [right]) =>
     left.localeCompare(right),

@@ -8,6 +8,7 @@ export type RankingDivision = {
   id: string;
   label: string;
   englishLabel: string;
+  weightLimitKg: string;
   champion: string;
   media: RankingEntry[];
   meta: RankingEntry[];
@@ -36,6 +37,7 @@ export const UFC_RANKING_DIVISIONS: RankingDivision[] = [
     id: "flyweight",
     label: "플라이급",
     englishLabel: "Flyweight",
+    weightLimitKg: "56.7kg",
     champion: "Joshua Van",
     media: ranked(
       "Alexandre Pantoja",
@@ -76,6 +78,7 @@ export const UFC_RANKING_DIVISIONS: RankingDivision[] = [
     id: "bantamweight",
     label: "밴텀급",
     englishLabel: "Bantamweight",
+    weightLimitKg: "61.2kg",
     champion: "Petr Yan",
     media: ranked(
       "Merab Dvalishvili",
@@ -116,6 +119,7 @@ export const UFC_RANKING_DIVISIONS: RankingDivision[] = [
     id: "featherweight",
     label: "페더급",
     englishLabel: "Featherweight",
+    weightLimitKg: "65.8kg",
     champion: "Alexander Volkanovski",
     media: ranked(
       "Movsar Evloev",
@@ -156,6 +160,7 @@ export const UFC_RANKING_DIVISIONS: RankingDivision[] = [
     id: "lightweight",
     label: "라이트급",
     englishLabel: "Lightweight",
+    weightLimitKg: "70.3kg",
     champion: "Justin Gaethje",
     media: ranked(
       "Ilia Topuria",
@@ -196,6 +201,7 @@ export const UFC_RANKING_DIVISIONS: RankingDivision[] = [
     id: "welterweight",
     label: "웰터급",
     englishLabel: "Welterweight",
+    weightLimitKg: "77.1kg",
     champion: "Islam Makhachev",
     media: ranked(
       "Ian Machado Garry",
@@ -236,6 +242,7 @@ export const UFC_RANKING_DIVISIONS: RankingDivision[] = [
     id: "middleweight",
     label: "미들급",
     englishLabel: "Middleweight",
+    weightLimitKg: "83.9kg",
     champion: "Sean Strickland",
     media: ranked(
       "Khamzat Chimaev",
@@ -276,6 +283,7 @@ export const UFC_RANKING_DIVISIONS: RankingDivision[] = [
     id: "light-heavyweight",
     label: "라이트헤비급",
     englishLabel: "Light Heavyweight",
+    weightLimitKg: "93.0kg",
     champion: "Carlos Ulberg",
     media: ranked(
       "Magomed Ankalaev",
@@ -316,6 +324,7 @@ export const UFC_RANKING_DIVISIONS: RankingDivision[] = [
     id: "heavyweight",
     label: "헤비급",
     englishLabel: "Heavyweight",
+    weightLimitKg: "120.2kg",
     champion: "Tom Aspinall",
     media: ranked(
       "Ciryl Gane",
@@ -356,6 +365,7 @@ export const UFC_RANKING_DIVISIONS: RankingDivision[] = [
     id: "womens-strawweight",
     label: "여성 스트로급",
     englishLabel: "Women's Strawweight",
+    weightLimitKg: "52.2kg",
     champion: "Mackenzie Dern",
     media: ranked(
       "Zhang Weili",
@@ -396,6 +406,7 @@ export const UFC_RANKING_DIVISIONS: RankingDivision[] = [
     id: "womens-flyweight",
     label: "여성 플라이급",
     englishLabel: "Women's Flyweight",
+    weightLimitKg: "56.7kg",
     champion: "Valentina Shevchenko",
     media: ranked(
       "Natalia Silva",
@@ -436,6 +447,7 @@ export const UFC_RANKING_DIVISIONS: RankingDivision[] = [
     id: "womens-bantamweight",
     label: "여성 밴텀급",
     englishLabel: "Women's Bantamweight",
+    weightLimitKg: "61.2kg",
     champion: "Kayla Harrison",
     media: ranked(
       "Julianna Peña",

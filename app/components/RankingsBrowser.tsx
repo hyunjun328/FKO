@@ -253,7 +253,7 @@ export function RankingsBrowser() {
               onClick={() => setSelectedDivisionId(division.id)}
               key={division.id}
             >
-              {division.label}
+              {division.label} · {division.weightLimitKg}
             </button>
           ))}
         </nav>
@@ -339,7 +339,9 @@ export function RankingsBrowser() {
               <div className="ranking-division-head">
                 <div>
                   <span>{division.englishLabel}</span>
-                  <h2>{division.label}</h2>
+                  <h2>
+                    {division.label} <small>{division.weightLimitKg}</small>
+                  </h2>
                 </div>
               </div>
 

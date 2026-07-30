@@ -82,7 +82,7 @@ function EventDetail({
       <div className="detail-top">
         <div className="detail-badges">
           <span className="detail-badge highlight">{event.status}</span>
-          <span className="detail-badge">한국시간</span>
+          <span className="detail-badge">시간 KST</span>
           <span className="detail-badge">{event.bouts.length}경기 발표</span>
         </div>
         <h3>{event.title}</h3>
@@ -386,6 +386,9 @@ export function FightCalendar() {
           <Link className="topbar-link" href="/korean-fighters">
             코리안 파이터
           </Link>
+          <Link className="topbar-link" href="/archive">
+            UFC 아카이브
+          </Link>
           <div className="update-state">
             <span className="update-dot" aria-hidden="true" />
             <span>일정 확인 완료</span>
@@ -395,15 +398,15 @@ export function FightCalendar() {
       </header>
 
       <section className="hero">
-        <div className="eyebrow">대한민국 표준시 KST 기준</div>
+        <div className="eyebrow">UFC EVENTS · FIGHTERS · RANKINGS</div>
         <h1 className="hero-title">
           UFC 일정
           <br />
-          <em>한국시간 기준.</em>
+          <em>대진과 선수 정보.</em>
         </h1>
         <p className="hero-lead">
-          시차 계산은 끝났습니다. 다가오는 대회부터 전체 대진까지,
-          한국에서 보기 편한 시간으로 빠르게 확인하세요.
+          다가오는 UFC 대회, 전체 대진, 선수 정보를 한곳에서 확인하세요.
+          일정 시간은 한국시간(KST)으로 제공합니다.
         </p>
 
         <article className="next-event">

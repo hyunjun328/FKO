@@ -15,6 +15,7 @@ test("exports every public route below the FKO base path", async () => {
   const p4p = await readOutput("p4p/index.html");
   const koreanFighters = await readOutput("korean-fighters/index.html");
   const photoCredits = await readOutput("photo-credits/index.html");
+  const archive = await readOutput("archive/index.html");
   const nobodyMan = await readFile(new URL("fighters/nobody.webp", output));
   const nobodyWoman = await readFile(
     new URL("fighters/nobody-woman.webp", output),
@@ -25,6 +26,7 @@ test("exports every public route below the FKO base path", async () => {
   assert.match(home, /\/FKO\/p4p\//);
   assert.match(home, /\/FKO\/korean-fighters\//);
   assert.match(home, /\/FKO\/photo-credits\//);
+  assert.match(home, /\/FKO\/archive\//);
   assert.match(rankings, /선수 랭킹/);
   assert.match(rankings, /15위 밖 주요 선수/);
   assert.match(p4p, /P4P 랭킹/);
@@ -34,6 +36,8 @@ test("exports every public route below the FKO base path", async () => {
   assert.match(koreanFighters, /코리안 파이터/);
   assert.match(photoCredits, /선수 사진 출처/);
   assert.match(photoCredits, /src="\/FKO\/fighters\/[^"]+\.webp"/);
+  assert.match(archive, /UFC 아카이브/);
+  assert.match(archive, /명예의 전당/);
   assert.ok(nobodyMan.byteLength > 1000);
   assert.ok(nobodyWoman.byteLength > 1000);
 });
