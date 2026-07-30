@@ -1135,6 +1135,11 @@ a:focus-visible {
 }
 
 .bout-vs {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  justify-self: center;
+  transform: translateY(-9px);
   color: var(--orange);
   font-size: 0.68rem;
   font-weight: 950;
@@ -1142,8 +1147,12 @@ a:focus-visible {
 }
 
 .weight {
-  grid-column: 1 / -1;
-  margin-top: -7px;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  justify-self: center;
+  margin: 0;
+  transform: translateY(10px);
   color: var(--muted);
   font-size: 0.63rem;
   font-weight: 700;
