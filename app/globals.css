@@ -3349,19 +3349,23 @@ body :is(b, strong) {
 }
 
 .featured-fighter-faces {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: flex-end;
   margin-top: 17px;
 }
 
 .featured-fighter-face {
-  width: 58px;
-  height: 72px;
+  width: 64px;
+  height: 80px;
+}
+
+.featured-fighter-faces .fighter-face:first-child {
+  justify-self: start;
 }
 
 .featured-fighter-face + .featured-fighter-face {
-  margin-left: -11px;
-  box-shadow: 0 0 0 3px var(--ink);
+  justify-self: end;
 }
 
 .featured-fighter-faces .fighter-face:first-child img {
