@@ -20,12 +20,57 @@ export function normalizeRankingQuery(value: string) {
   return value.toLocaleLowerCase("ko-KR").replace(/\s+/g, "");
 }
 
+function editDistance(left: string, right: string) {
+  const previous = Array.from({ length: right.length + 1 }, (_, index) => index);
+
+  for (let leftIndex = 1; leftIndex <= left.length; leftIndex += 1) {
+    let diagonal = previous[0];
+    previous[0] = leftIndex;
+    for (let rightIndex = 1; rightIndex <= right.length; rightIndex += 1) {
+      const above = previous[rightIndex];
+      previous[rightIndex] = Math.min(
+        previous[rightIndex] + 1,
+        previous[rightIndex - 1] + 1,
+        diagonal + Number(left[leftIndex - 1] !== right[rightIndex - 1]),
+      );
+      diagonal = above;
+    }
+  }
+
+  return previous[right.length];
+}
+
+function fuzzyIncludes(candidate: string, query: string) {
+  if (candidate.includes(query)) return true;
+  if (query.length < 3) return false;
+
+  const tolerance = query.length >= 7 ? 2 : 1;
+  for (let length = query.length - tolerance; length <= query.length + tolerance; length += 1) {
+    for (let start = 0; start + length <= candidate.length; start += 1) {
+      if (editDistance(candidate.slice(start, start + length), query) <= tolerance) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
 export function rankingFighterMatches(
   name: string,
   query: string,
   koreanName: (name: string) => string,
+  allowFuzzy = true,
 ) {
-  return normalizeRankingQuery(`${koreanName(name)} ${name}`).includes(query);
+  const normalizedQuery = normalizeRankingQuery(query);
+  const candidates = [koreanName(name), name, ...name.split(/\s+/)].map(
+    normalizeRankingQuery,
+  );
+  return candidates.some((candidate) =>
+    allowFuzzy
+      ? fuzzyIncludes(candidate, normalizedQuery)
+      : candidate.includes(normalizedQuery),
+  );
 }
 
 export function filterRankingDivisions(
@@ -44,6 +89,14 @@ export function filterRankingDivisions(
     }));
   }
 
+  const hasExactFighterMatch = divisions.some((division) =>
+    [
+      division.champion,
+      ...division.meta.map((fighter) => fighter.name),
+      ...division.media.map((fighter) => fighter.name),
+    ].some((name) => rankingFighterMatches(name, query, koreanName, false)),
+  );
+
   return divisions.flatMap((division) => {
     const divisionMatches = normalizeRankingQuery(
       `${division.label} ${division.englishLabel}`,
@@ -52,16 +105,27 @@ export function filterRankingDivisions(
       division.champion,
       query,
       koreanName,
+      !hasExactFighterMatch,
     );
     const meta = divisionMatches
       ? division.meta
       : division.meta.filter((fighter) =>
-          rankingFighterMatches(fighter.name, query, koreanName),
+          rankingFighterMatches(
+            fighter.name,
+            query,
+            koreanName,
+            !hasExactFighterMatch,
+          ),
         );
     const media = divisionMatches
       ? division.media
       : division.media.filter((fighter) =>
-          rankingFighterMatches(fighter.name, query, koreanName),
+          rankingFighterMatches(
+            fighter.name,
+            query,
+            koreanName,
+            !hasExactFighterMatch,
+          ),
         );
 
     if (!divisionMatches && !championMatches && !meta.length && !media.length) {
@@ -103,7 +167,7 @@ export function findUnrankedFighterMatches(
   return fighters.filter(
     (fighter) =>
       !rankedNames.has(fighter.name) &&
-      normalizeRankingQuery(`${fighter.koName} ${fighter.name}`).includes(query),
+      rankingFighterMatches(fighter.name, query, () => fighter.koName),
   );
 }
 

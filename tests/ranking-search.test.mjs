@@ -52,6 +52,25 @@ test("finds SeokHyeon Ko by the Korean name", () => {
   );
 });
 
+test("finds fighters with small Korean and English spelling mistakes", () => {
+  const korean = findUnrankedFighterMatches(
+    SEARCHABLE_FIGHTERS,
+    UFC_RANKING_DIVISIONS,
+    "최두하",
+  );
+  const english = filterRankingDivisions(
+    UFC_RANKING_DIVISIONS,
+    "makachef",
+    rankingKoreanName,
+  );
+
+  assert.deepEqual(korean.map((fighter) => fighter.name), ["Dooho Choi"]);
+  assert.equal(
+    english.some((division) => division.champion === "Islam Makhachev"),
+    true,
+  );
+});
+
 test("does not expose the unrelated lightweight champion for Oliveira", () => {
   const [lightweight] = filterRankingDivisions(
     UFC_RANKING_DIVISIONS,
