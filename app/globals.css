@@ -3319,9 +3319,7 @@ body :is(b, strong) {
 }
 
 .fighter-face[data-has-photo="false"] {
-  background:
-    linear-gradient(135deg, transparent 47%, #343434 48% 52%, transparent 53%),
-    #1a1a1a;
+  background: linear-gradient(160deg, #272727 0%, #171717 78%);
 }
 
 .fighter-face img {
@@ -3333,8 +3331,36 @@ body :is(b, strong) {
   filter: saturate(0.88) contrast(1.04);
 }
 
-.fighter-face > span {
-  line-height: 1;
+.fighter-face > .fighter-silhouette {
+  position: absolute;
+  inset: 0;
+  display: block;
+  opacity: 0.72;
+}
+
+.fighter-silhouette::before,
+.fighter-silhouette::after {
+  position: absolute;
+  left: 50%;
+  display: block;
+  content: "";
+  transform: translateX(-50%);
+}
+
+.fighter-silhouette::before {
+  top: 17%;
+  width: 31%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #8c8c88;
+}
+
+.fighter-silhouette::after {
+  bottom: 9%;
+  width: 61%;
+  height: 36%;
+  border-radius: 50% 50% 9% 9% / 72% 72% 14% 14%;
+  background: #8c8c88;
 }
 
 .hero-fighter-face {

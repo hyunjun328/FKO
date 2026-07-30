@@ -975,5 +975,53 @@
     "license": "CC0",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "file": "Carrera con Yair \"Pantera\" Rodríguez -i---i- (30657689682) cropped.jpg"
+  },
+  "Conor McGregor": {
+    "src": "/fighters/conor-mcgregor.webp",
+    "groups": [
+      "featured"
+    ],
+    "wikidataId": "Q5162259",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Conor_McGregor_2025.jpeg",
+    "author": "U.S. Secretary of Defense",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Conor_McGregor_2025.jpeg",
+    "file": "Conor McGregor 2025.jpeg"
+  },
+  "Khabib Nurmagomedov": {
+    "src": "/fighters/khabib-nurmagomedov.webp",
+    "groups": [
+      "featured"
+    ],
+    "wikidataId": "Q3526023",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Khabib_nurmagomedov.jpg",
+    "author": "Airotcivss",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "Khabib nurmagomedov.jpg"
+  },
+  "Georges St-Pierre": {
+    "src": "/fighters/georges-st-pierre.webp",
+    "groups": [
+      "featured"
+    ],
+    "wikidataId": "Q356271",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Georges_St-Pierre.png",
+    "author": "Cpl. Orrin G. Farmer, US Marine Corps.",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Georges_St-Pierre.png",
+    "file": "Georges St-Pierre.png"
+  },
+  "Amanda Nunes": {
+    "src": "/fighters/amanda-nunes.webp",
+    "groups": [
+      "featured"
+    ],
+    "wikidataId": "Q4739716",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ceremonial_weigh_ins_-_Amanda_Nunes_vs_Julianna_Pe%C3%B1a_UFC_269_(cropped).jpg",
+    "author": "MMAnytt",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "file": "Ceremonial weigh ins - Amanda Nunes vs Julianna Peña UFC 269 (cropped).jpg"
   }
 }

@@ -5,6 +5,7 @@ from pathlib import Path
 
 from scripts.collect_fighter_images import (
     ALLOWED_LICENSE_PREFIXES,
+    COMMONS_FILE_OVERRIDES,
     OUTPUT_DATA,
     OUTPUT_DIR,
     QUALITY_REJECTED_FIGHTERS,
@@ -32,6 +33,15 @@ class FighterImageCollectorTest(unittest.TestCase):
         self.assertIn("korean", targets["Dooho Choi"])
         self.assertIn("ranking", targets["Islam Makhachev"])
         self.assertIn("featured", targets["Conor McGregor"])
+        self.assertEqual(
+            set(COMMONS_FILE_OVERRIDES),
+            {
+                "Conor McGregor",
+                "Khabib Nurmagomedov",
+                "Georges St-Pierre",
+                "Amanda Nunes",
+            },
+        )
 
     def test_generated_images_have_local_files_and_reuse_metadata(self) -> None:
         targets = requested_fighters()

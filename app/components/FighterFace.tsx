@@ -17,15 +17,6 @@ export const FIGHTER_IMAGES = fighterImages as Record<
   FighterImageCredit
 >;
 
-export function fighterInitials(name: string) {
-  return name
-    .split(" ")
-    .map((part) => part[0])
-    .join("")
-    .slice(0, 3)
-    .toUpperCase();
-}
-
 export function FighterFace({
   name,
   koName,
@@ -44,7 +35,11 @@ export function FighterFace({
     <span
       className={`fighter-face ${className}`.trim()}
       data-has-photo={image ? "true" : "false"}
-      title={image ? `${koName ?? name} · Wikimedia Commons 사진` : undefined}
+      title={
+        image
+          ? `${koName ?? name} · Wikimedia Commons 사진`
+          : `${koName ?? name} · 선수 사진 준비 중`
+      }
     >
       {image ? (
         // WebP가 이미 360px로 최적화되어 정적 호스팅 경로를 그대로 사용한다.
@@ -58,7 +53,7 @@ export function FighterFace({
           decoding="async"
         />
       ) : (
-        <span aria-hidden="true">{fighterInitials(name)}</span>
+        <span className="fighter-silhouette" aria-hidden="true" />
       )}
     </span>
   );

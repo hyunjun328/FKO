@@ -42,6 +42,13 @@ PAGE_ALIASES = {
     "Benoît Saint Denis": "Benoît Saint-Denis",
 }
 
+COMMONS_FILE_OVERRIDES = {
+    "Conor McGregor": "Conor McGregor 2025.jpeg",
+    "Khabib Nurmagomedov": "Khabib nurmagomedov.jpg",
+    "Georges St-Pierre": "Georges St-Pierre.png",
+    "Amanda Nunes": "Ceremonial weigh ins - Amanda Nunes vs Julianna Peña UFC 269 (cropped).jpg",
+}
+
 ALLOWED_LICENSE_PREFIXES = (
     "CC BY",
     "CC0",
@@ -77,6 +84,7 @@ QUALITY_REJECTED_FIGHTERS = {
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=0)
+    parser.add_argument("--only", action="append", default=[])
     return parser.parse_args()
 
 
@@ -206,29 +214,35 @@ def is_matching_title(fighter_name: str, page_title: str) -> bool:
     return SequenceMatcher(None, expected, candidate).ratio() >= 0.82
 
 
-def commons_file(session: requests.Session, qid: str) -> dict | None:
-    entity_data = api_json(
-        session,
-        WIKIDATA_API,
-        {
-            "action": "wbgetentities",
-            "format": "json",
-            "ids": qid,
-            "props": "claims",
-        },
-    )
-    claims = entity_data.get("entities", {}).get(qid, {}).get("claims", {})
-    image_claims = claims.get("P18", [])
-    if not image_claims:
-        return None
-    filename = (
-        image_claims[0]
-        .get("mainsnak", {})
-        .get("datavalue", {})
-        .get("value")
-    )
+def commons_file(
+    session: requests.Session,
+    qid: str,
+    filename_override: str | None = None,
+) -> dict | None:
+    filename = filename_override
     if not filename:
-        return None
+        entity_data = api_json(
+            session,
+            WIKIDATA_API,
+            {
+                "action": "wbgetentities",
+                "format": "json",
+                "ids": qid,
+                "props": "claims",
+            },
+        )
+        claims = entity_data.get("entities", {}).get(qid, {}).get("claims", {})
+        image_claims = claims.get("P18", [])
+        if not image_claims:
+            return None
+        filename = (
+            image_claims[0]
+            .get("mainsnak", {})
+            .get("datavalue", {})
+            .get("value")
+        )
+        if not filename:
+            return None
 
     file_data = api_json(
         session,
@@ -304,24 +318,40 @@ def main() -> None:
         sys.stderr.reconfigure(encoding="utf-8")
 
     args = parse_args()
-    fighters = requested_fighters()
+    all_fighters = requested_fighters()
+    fighters = all_fighters
+    if args.only:
+        unknown = sorted(set(args.only) - set(all_fighters))
+        if unknown:
+            raise ValueError(f"Unknown fighters: {', '.join(unknown)}")
+        fighters = {name: all_fighters[name] for name in args.only}
     if args.limit:
         fighters = dict(list(fighters.items())[: args.limit])
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    if not args.limit:
+    if not args.limit and not args.only:
         for old_image in OUTPUT_DIR.glob("*.webp"):
             old_image.unlink()
     session = requests.Session()
     session.headers.update({"User-Agent": USER_AGENT})
     result: dict[str, dict] = {}
+    if args.only and OUTPUT_DATA.exists():
+        result = json.loads(OUTPUT_DATA.read_text(encoding="utf-8"))
     misses: list[str] = []
     quality_rejected: list[str] = []
 
     for index, (name, groups) in enumerate(fighters.items(), start=1):
         try:
             qid = wikipedia_item(session, name)
-            image = commons_file(session, qid) if qid else None
+            image = (
+                commons_file(
+                    session,
+                    qid,
+                    COMMONS_FILE_OVERRIDES.get(name),
+                )
+                if qid
+                else None
+            )
             if not image or not image["downloadUrl"]:
                 misses.append(name)
                 print(f"[{index}/{len(fighters)}] miss {name}", flush=True)
@@ -351,18 +381,20 @@ def main() -> None:
         encoding="utf-8",
     )
     report = {
-        "requested": len(fighters),
+        "requested": len(all_fighters),
         "collected": len(result),
-        "missing": misses,
-        "qualityRejected": quality_rejected,
+        "missing": sorted(
+            set(all_fighters) - set(result) - QUALITY_REJECTED_FIGHTERS
+        ),
+        "qualityRejected": sorted(set(all_fighters) & QUALITY_REJECTED_FIGHTERS),
     }
     (OUTPUT_DIR / "collection-report.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
     print(
-        f"Collected {len(result)}/{len(fighters)} photos; "
-        f"{len(misses) + len(quality_rejected)} fallbacks.",
+        f"Collected {len(result)}/{len(all_fighters)} photos; "
+        f"{len(all_fighters) - len(result)} fallbacks.",
         flush=True,
     )
 
