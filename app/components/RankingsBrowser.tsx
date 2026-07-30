@@ -58,9 +58,20 @@ function RankingName({ name }: { name: string }) {
   );
 }
 
-function RankingChampionResult({ name }: { name: string }) {
+function RankingChampionResult({
+  name,
+  onSelect,
+}: {
+  name: string;
+  onSelect: () => void;
+}) {
   return (
-    <div className="ranking-board-champion-result">
+    <button
+      type="button"
+      className="ranking-board-champion-result ranking-detail-trigger"
+      onClick={onSelect}
+      aria-label={`${rankingKoreanName(name)} 챔피언 상세 정보 보기`}
+    >
       <span className="ranking-champion-mark">C</span>
       <FighterFace
         name={name}
@@ -70,7 +81,7 @@ function RankingChampionResult({ name }: { name: string }) {
       />
       <RankingName name={name} />
       <strong>UFC 챔피언</strong>
-    </div>
+    </button>
   );
 }
 
@@ -220,6 +231,18 @@ export function RankingsBrowser() {
     });
   }
 
+  function openChampion(division: RankingDivision) {
+    setSelectedFighter({
+      name: division.champion,
+      koName: rankingKoreanName(division.champion),
+      weight: division.label,
+      ranking: `UFC 챔피언 · ${division.label}`,
+      summary: `${rankingKoreanName(division.champion)}은 현재 ${division.label} UFC 챔피언입니다.`,
+      sourceLabel: "UFC 공식 랭킹",
+      sourceUrl: UFC_RANKING_SOURCE.officialUrl,
+    });
+  }
+
   function openUnofficialFighter(division: RankingDivision, entry: FightMatrixRankingEntry) {
     setSelectedFighter({
       name: entry.name,
@@ -315,16 +338,16 @@ export function RankingsBrowser() {
                     <div><span>{division.englishLabel}</span><h2>{division.label} <small>{division.weightLimitKg}</small></h2></div>
                   </div>
                   {division.showChampionHeader ? (
-                    <div className="ranking-champion-row"><span className="ranking-champion-mark">C</span><FighterFace name={division.champion} koName={rankingKoreanName(division.champion)} className="ranking-champion-face" gender="male" /><RankingName name={division.champion} /><span className="ranking-champion-label">UFC 챔피언</span></div>
+                    <button type="button" className="ranking-champion-row ranking-detail-trigger" onClick={() => openChampion(division)} aria-label={`${rankingKoreanName(division.champion)} 챔피언 상세 정보 보기`}><span className="ranking-champion-mark">C</span><FighterFace name={division.champion} koName={rankingKoreanName(division.champion)} className="ranking-champion-face" gender="male" /><RankingName name={division.champion} /><span className="ranking-champion-label">UFC 챔피언</span></button>
                   ) : null}
                   <div className="ranking-columns">
                     <article className="ranking-board meta-board">
                       <header><div><span>공식 기준</span><h3>Meta UFC 랭킹</h3></div><time dateTime={UFC_RANKING_SOURCE.metaUpdated}>{UFC_RANKING_SOURCE.metaUpdated}</time></header>
-                      {division.championMatches ? <RankingChampionResult name={division.champion} /> : division.meta.length ? <ol>{division.meta.map((fighter) => <RankingFighterRow key={fighter.name} fighter={fighter} comparison={compareRank(fighter, MENS_RANKING_DIVISIONS.find((item) => item.id === division.id)?.media ?? [])} onSelect={() => openOfficialFighter(fighter, division.label, "Meta UFC 랭킹")} />)}</ol> : <p className="ranking-board-empty">Meta 랭킹에는 검색 결과가 없습니다.</p>}
+                      {division.championMatches ? <RankingChampionResult name={division.champion} onSelect={() => openChampion(division)} /> : division.meta.length ? <ol>{division.meta.map((fighter) => <RankingFighterRow key={fighter.name} fighter={fighter} comparison={compareRank(fighter, MENS_RANKING_DIVISIONS.find((item) => item.id === division.id)?.media ?? [])} onSelect={() => openOfficialFighter(fighter, division.label, "Meta UFC 랭킹")} />)}</ol> : <p className="ranking-board-empty">Meta 랭킹에는 검색 결과가 없습니다.</p>}
                     </article>
                     <article className="ranking-board media-board">
                       <header><div><span>비교 자료</span><h3>미디어 투표 랭킹</h3></div><time dateTime={UFC_RANKING_SOURCE.mediaUpdated}>{UFC_RANKING_SOURCE.mediaUpdated}</time></header>
-                      {division.championMatches ? <RankingChampionResult name={division.champion} /> : division.media.length ? <ol>{division.media.map((fighter) => <RankingFighterRow key={`${fighter.rank}-${fighter.name}`} fighter={fighter} onSelect={() => openOfficialFighter(fighter, division.label, "미디어 투표 랭킹")} />)}</ol> : <p className="ranking-board-empty">미디어 랭킹에는 검색 결과가 없습니다.</p>}
+                      {division.championMatches ? <RankingChampionResult name={division.champion} onSelect={() => openChampion(division)} /> : division.media.length ? <ol>{division.media.map((fighter) => <RankingFighterRow key={`${fighter.rank}-${fighter.name}`} fighter={fighter} onSelect={() => openOfficialFighter(fighter, division.label, "미디어 투표 랭킹")} />)}</ol> : <p className="ranking-board-empty">미디어 랭킹에는 검색 결과가 없습니다.</p>}
                     </article>
                   </div>
                   {!query && division.id === selectedDivision.id ? <UnofficialRankingSection division={division} entries={selectedUnofficialEntries} page={unofficialPage} onPageChange={setUnofficialPage} onSelect={(entry) => openUnofficialFighter(division, entry)} /> : null}

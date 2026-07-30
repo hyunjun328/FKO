@@ -183,6 +183,7 @@ test("server-renders the official UFC ranking comparison page", async () => {
     normalizedHtml,
     /ranking-champion-row[\s\S]*?조슈아 반[\s\S]*?Joshua Van[\s\S]*?UFC 챔피언/,
   );
+  assert.match(html, /aria-label="조슈아 반 챔피언 상세 정보 보기"/);
   assert.doesNotMatch(normalizedHtml, /Islam Makhachev|Kayla Harrison/);
   assert.equal((html.match(/class="ranking-number"/g) ?? []).length, 30);
   assert.equal(

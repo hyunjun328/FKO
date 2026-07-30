@@ -2959,6 +2959,14 @@ button.calendar-day:hover {
   background: #181818;
 }
 
+button.ranking-champion-row,
+button.ranking-board-champion-result {
+  width: 100%;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+}
+
 .ranking-champion-mark {
   display: grid;
   width: 34px;
