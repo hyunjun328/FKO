@@ -42,6 +42,17 @@ export default function PhotoCreditsPage() {
           Wikimedia Commons의 재사용 가능한 사진만 사용합니다. 원본 파일,
           저작자, 라이선스를 선수별로 확인할 수 있습니다.
         </p>
+        <p className="photo-rights-note">
+          UFC 공식 프로필 사진은 UFC가 재사용을 허가한 자료가 아니므로
+          복사하지 않습니다.{" "}
+          <a
+            href="https://www.ufc.com/news/terms-use"
+            target="_blank"
+            rel="noreferrer"
+          >
+            UFC 이용약관 확인 ↗
+          </a>
+        </p>
         <strong>{credits.length}장 공개</strong>
       </section>
 

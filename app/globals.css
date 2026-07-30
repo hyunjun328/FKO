@@ -3307,10 +3307,10 @@ body :is(b, strong) {
   display: grid;
   flex: 0 0 auto;
   place-items: center;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 50px;
   border: 1px solid #454545;
-  border-radius: 50%;
+  border-radius: 6px;
   background: #1a1a1a;
   color: #9b9b96;
   font-size: 0.7rem;
@@ -3339,7 +3339,7 @@ body :is(b, strong) {
 
 .hero-fighter-face {
   width: clamp(76px, 8vw, 104px);
-  height: clamp(76px, 8vw, 104px);
+  height: clamp(94px, 10vw, 130px);
   margin-bottom: 8px;
   border-color: #505050;
 }
@@ -3359,7 +3359,7 @@ body :is(b, strong) {
 
 .featured-fighter-face {
   width: 58px;
-  height: 58px;
+  height: 72px;
 }
 
 .featured-fighter-face + .featured-fighter-face {
@@ -3368,14 +3368,14 @@ body :is(b, strong) {
 }
 
 .bout-fighter-face {
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 58px;
   margin-bottom: 3px;
 }
 
 .korean-card-avatar {
   width: 72px;
-  height: 72px;
+  height: 90px;
   border-radius: 8px;
   font-size: 0.85rem;
 }
@@ -3386,7 +3386,7 @@ body :is(b, strong) {
 
 .fighter-avatar {
   width: 116px;
-  height: 116px;
+  height: 145px;
   border-radius: 10px;
 }
 
@@ -3399,13 +3399,13 @@ body :is(b, strong) {
 }
 
 .ranking-board li {
-  grid-template-columns: 34px 38px minmax(0, 1fr) auto;
-  min-height: 60px;
+  grid-template-columns: 34px 42px minmax(0, 1fr) auto;
+  min-height: 68px;
 }
 
 .ranking-fighter-face {
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 52px;
 }
 
 .ranking-champion-row {
@@ -3414,16 +3414,16 @@ body :is(b, strong) {
 
 .ranking-champion-face {
   width: 52px;
-  height: 52px;
+  height: 65px;
 }
 
 .ranking-board-champion-result {
-  grid-template-columns: 40px 44px minmax(0, 1fr) auto;
+  grid-template-columns: 40px 46px minmax(0, 1fr) auto;
 }
 
 .ranking-board-champion-result .ranking-fighter-face {
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 58px;
 }
 
 .ranking-unranked-results article {
@@ -3479,6 +3479,20 @@ body :is(b, strong) {
   font-weight: 560;
 }
 
+.photo-credits-hero .photo-rights-note {
+  max-width: 760px;
+  padding: 12px 14px;
+  border-left: 2px solid var(--orange);
+  background: #141414;
+  color: #c7c7c2;
+  font-size: 0.74rem;
+}
+
+.photo-rights-note a {
+  color: var(--text);
+  text-underline-offset: 3px;
+}
+
 .photo-credit-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3488,7 +3502,7 @@ body :is(b, strong) {
 
 .photo-credit-card {
   display: grid;
-  grid-template-columns: 112px minmax(0, 1fr);
+  grid-template-columns: 96px minmax(0, 1fr);
   gap: 16px;
   padding: 14px;
   border: 1px solid var(--line);
@@ -3497,8 +3511,8 @@ body :is(b, strong) {
 }
 
 .photo-credit-card > img {
-  width: 112px;
-  height: 112px;
+  width: 96px;
+  height: 120px;
   border-radius: 6px;
   object-fit: cover;
   object-position: 50% 22%;
@@ -3552,18 +3566,18 @@ body :is(b, strong) {
 
 @media (max-width: 680px) {
   .hero-fighter-face {
-    width: 68px;
-    height: 68px;
+    width: 64px;
+    height: 80px;
   }
 
   .bout-fighter-face {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 50px;
   }
 
   .korean-card-avatar {
     width: 58px;
-    height: 58px;
+    height: 72px;
   }
 
   .ranking-champion-row,
@@ -3574,7 +3588,7 @@ body :is(b, strong) {
   .ranking-champion-face,
   .ranking-board-champion-result .ranking-fighter-face {
     width: 42px;
-    height: 42px;
+    height: 52px;
   }
 
   .ranking-champion-label,
@@ -3589,7 +3603,7 @@ body :is(b, strong) {
 
   .ranking-fighter-face {
     width: 36px;
-    height: 36px;
+    height: 45px;
   }
 
   .ranking-board li > small {
@@ -3623,11 +3637,11 @@ body :is(b, strong) {
   }
 
   .photo-credit-card {
-    grid-template-columns: 88px minmax(0, 1fr);
+    grid-template-columns: 76px minmax(0, 1fr);
   }
 
   .photo-credit-card > img {
-    width: 88px;
-    height: 88px;
+    width: 76px;
+    height: 95px;
   }
 }

@@ -23,18 +23,6 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:UFC_Freedom_250_Press_Conference_(9747954)(cropped).jpg",
     "file": "UFC Freedom 250 Press Conference (9747954)(cropped).jpg"
   },
-  "Aleksandar Rakic": {
-    "src": "/fighters/aleksandar-rakic.webp",
-    "groups": [
-      "main-card"
-    ],
-    "wikidataId": "Q11717161",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jan_B%C5%82achowicz.jpg",
-    "author": "Artur Andrzej",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "file": "Jan Błachowicz.jpg"
-  },
   "Alex Pereira": {
     "src": "/fighters/alex-pereira.webp",
     "groups": [
@@ -83,30 +71,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "file": "Alexander Volkov in M-1.jpg"
   },
-  "Alexandre Pantoja": {
-    "src": "/fighters/alexandre-pantoja.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q27999203",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alexandre_Pantoja.png",
-    "author": "Sexto Round",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Alexandre Pantoja.png"
-  },
-  "Alexia Thainara": {
-    "src": "/fighters/alexia-thainara.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q64875539",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Molly_McCann_2018.jpg",
-    "author": "Everton Football Club",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Molly McCann 2018.jpg"
-  },
   "Aljamain Sterling": {
     "src": "/fighters/aljamain-sterling.webp",
     "groups": [
@@ -142,18 +106,6 @@
     "license": "CC BY 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
     "file": "VR5 1744 (52868673328) (cropped).jpg"
-  },
-  "Angela Hill": {
-    "src": "/fighters/angela-hill.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q20979276",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Angela_Hill_victorious_at_Friday_Night_Fights.jpg",
-    "author": "Friday Night Fights MuayThai",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Angela Hill victorious at Friday Night Fights.jpg"
   },
   "Arman Tsarukyan": {
     "src": "/fighters/arman-tsarukyan.webp",
@@ -203,18 +155,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "file": "Belal Muhammad UFC.jpg"
   },
-  "Beneil Dariush": {
-    "src": "/fighters/beneil-dariush.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q17505060",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:MMA_Holiday_Tour_at_Al_Asad_Air_Base_11_(cropped).jpg",
-    "author": "AL ASAD AIR BASE, IRAQ 12.18.2018 Photo by 1st Lt. Leland White 201st Regional Support Group",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "file": "MMA Holiday Tour at Al Asad Air Base 11 (cropped).jpg"
-  },
   "Benoît Saint Denis": {
     "src": "/fighters/benoit-saint-denis.webp",
     "groups": [
@@ -251,18 +191,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "file": "Brandon Moreno February 2021.jpg"
   },
-  "Brendan Allen": {
-    "src": "/fighters/brendan-allen.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q96694248",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:BrendanAllen.png",
-    "author": "WEIGHING IN",
-    "license": "CC BY 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-    "file": "BrendanAllen.png"
-  },
   "Brian Ortega": {
     "src": "/fighters/brian-ortega.webp",
     "groups": [
@@ -274,30 +202,6 @@
     "license": "CC BY 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Brian Ortega on MMAnytt.jpg"
-  },
-  "Caio Borralho": {
-    "src": "/fighters/caio-borralho.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q120264548",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Borralho_en_Future_FC.png",
-    "author": "BDA - Batalha Da Aldeia",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Borralho en Future FC.png"
-  },
-  "Carlos Prates": {
-    "src": "/fighters/carlos-prates.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q131010375",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carlos_Prates_2026.jpg",
-    "author": "Sexto Round",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Carlos Prates 2026.jpg"
   },
   "Chan Sung Jung": {
     "src": "/fighters/chan-sung-jung.webp",
@@ -347,54 +251,6 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:UFC%27s_Corey_Sandhagen_brings_his_fighting_spirit_to_the_1st_SOW_(1)_(cropped).jpg",
     "file": "UFC's Corey Sandhagen brings his fighting spirit to the 1st SOW (1) (cropped).jpg"
   },
-  "Curtis Blaydes": {
-    "src": "/fighters/curtis-blaydes.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q28709155",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Curtis_Blaydes_at_UFC_221.png",
-    "author": "MMA Zone",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Curtis Blaydes at UFC 221.png"
-  },
-  "Dan Hooker": {
-    "src": "/fighters/dan-hooker.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q19946041",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:DanHooker2016.png",
-    "author": "Fight Bros NZ",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "DanHooker2016.png"
-  },
-  "David Martinez": {
-    "src": "/fighters/david-martinez.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q17466006",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FONT.jpg",
-    "author": "Matchmakermike",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "file": "FONT.jpg"
-  },
-  "Deiveson Figueiredo": {
-    "src": "/fighters/deiveson-figueiredo.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q48122905",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Deiveson_Figueiredo_2024.jpg",
-    "author": "Show Me The Money",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Deiveson Figueiredo 2024.jpg"
-  },
   "Derrick Lewis": {
     "src": "/fighters/derrick-lewis.webp",
     "groups": [
@@ -406,18 +262,6 @@
     "license": "CC BY 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Derrick Lewis after UFC 239.jpg"
-  },
-  "Diego Lopes": {
-    "src": "/fighters/diego-lopes.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q4964959",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brian_Ortega_on_MMAnytt.jpg",
-    "author": "MMAnytt",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Brian Ortega on MMAnytt.jpg"
   },
   "Dominick Reyes": {
     "src": "/fighters/dominick-reyes.webp",
@@ -454,43 +298,6 @@
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "file": "Duško Todorović (1).jpg"
-  },
-  "Dustin Jacoby": {
-    "src": "/fighters/dustin-jacoby.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q5317107",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:JTF-DC_-_Freedom_250_UFC_Fan_Fest_Day_2_(1)_(cropped).jpg",
-    "author": "Staff Sgt. Tianna Wilson",
-    "license": "Public domain",
-    "licenseUrl": "https://commons.wikimedia.org/wiki/File:JTF-DC_-_Freedom_250_UFC_Fan_Fest_Day_2_(1)_(cropped).jpg",
-    "file": "JTF-DC - Freedom 250 UFC Fan Fest Day 2 (1) (cropped).jpg"
-  },
-  "Gabriel Bonfim": {
-    "src": "/fighters/gabriel-bonfim.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q121590551",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gabriel_Bonfim_2025.jpg",
-    "author": "Sexto Round",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Gabriel Bonfim 2025.jpg"
-  },
-  "Gillian Robertson": {
-    "src": "/fighters/gillian-robertson.webp",
-    "groups": [
-      "main-card",
-      "ranking"
-    ],
-    "wikidataId": "Q47523129",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gillian_Robertson.png",
-    "author": "MM-eh",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Gillian Robertson.png"
   },
   "Gregory Rodrigues": {
     "src": "/fighters/gregory-rodrigues.webp",
@@ -603,18 +410,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "file": "Jan Błachowicz.jpg"
   },
-  "Jaqueline Amorim": {
-    "src": "/fighters/jaqueline-amorim.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q48468666",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Polyana_Viana_OF_02.jpg",
-    "author": "OnlyFans",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Polyana Viana OF 02.jpg"
-  },
   "Jared Cannonier": {
     "src": "/fighters/jared-cannonier.webp",
     "groups": [
@@ -656,24 +451,12 @@
     "groups": [
       "ranking"
     ],
-    "wikidataId": "Q30323656",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dominick_Reyes_2024.png",
-    "author": "Chamatkar Sandhu",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Dominick Reyes 2024.png"
-  },
-  "Josh Hokit": {
-    "src": "/fighters/josh-hokit.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q108055029",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:JoshHokit.jpg",
-    "author": "{From YouTube|1=vAd1ikaxclM= https://www.youtube.com/watch?v=vAd1ikaxclM",
-    "license": "CC BY 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-    "file": "JoshHokit.jpg"
+    "wikidataId": "Q61478503",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:AFSOC_celebrates_Outstanding_Airmen_of_the_Year_(5).jpg",
+    "author": "Airman Ashton Hamby",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:AFSOC_celebrates_Outstanding_Airmen_of_the_Year_(5).jpg",
+    "file": "AFSOC celebrates Outstanding Airmen of the Year (5).jpg"
   },
   "Julianna Peña": {
     "src": "/fighters/julianna-pena.webp",
@@ -795,19 +578,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Leon Edwards 2021.png"
   },
-  "Mackenzie Dern": {
-    "src": "/fighters/mackenzie-dern.webp",
-    "groups": [
-      "main-card",
-      "ranking"
-    ],
-    "wikidataId": "Q21005601",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mackenzie_Dern.png",
-    "author": "Canal Faixa Preta",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Mackenzie Dern.png"
-  },
   "Magomed Ankalaev": {
     "src": "/fighters/magomed-ankalaev.webp",
     "groups": [
@@ -831,30 +601,6 @@
     "license": "CC BY 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "ManelKape2017.png"
-  },
-  "Manon Fiorot": {
-    "src": "/fighters/manon-fiorot.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q106358942",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:MANON_FIOROT_ET_ALDRIC_CASSATA,_LE_COUPLE_GOAL_DU_MMA_-_MMA_EXTRA_ROUND_-22_-_YouTube_-_0-28-31_(cropped).jpg",
-    "author": "Lucie Bertaud",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "MANON FIOROT ET ALDRIC CASSATA, LE COUPLE GOAL DU MMA - MMA EXTRA ROUND -22 - YouTube - 0-28-31 (cropped).jpg"
-  },
-  "Manuel Torres": {
-    "src": "/fighters/manuel-torres.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q75012682",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fiziev_2023.png",
-    "author": "SPORTS UZ",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Fiziev 2023.png"
   },
   "Marlon Vera": {
     "src": "/fighters/marlon-vera.webp",
@@ -917,17 +663,17 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:Merab_Dvalishvili_at_UFC_316_(cropped).jpg",
     "file": "Merab Dvalishvili at UFC 316 (cropped).jpg"
   },
-  "Michael Venom Page": {
-    "src": "/fighters/michael-venom-page.webp",
+  "Michael Morales": {
+    "src": "/fighters/michael-morales.webp",
     "groups": [
       "ranking"
     ],
-    "wikidataId": "Q6833334",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michael_Venom_Page.png",
-    "author": "Hrhr prph",
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "file": "Michael Venom Page.png"
+    "wikidataId": "Q115298767",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michael_Morales._QUITO,_27_DE_MAYO_DEL_2025_(cropped).jpg",
+    "author": "Presidencia de la República del Ecuador",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Michael_Morales._QUITO,_27_DE_MAYO_DEL_2025_(cropped).jpg",
+    "file": "Michael Morales. QUITO, 27 DE MAYO DEL 2025 (cropped).jpg"
   },
   "Miesha Tate": {
     "src": "/fighters/miesha-tate.webp",
@@ -989,41 +735,17 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "file": "Nassourdine Imavov.jpg"
   },
-  "Natalia Silva": {
-    "src": "/fighters/natalia-silva.webp",
+  "Nathaniel Wood": {
+    "src": "/fighters/nathaniel-wood.webp",
     "groups": [
       "ranking"
     ],
-    "wikidataId": "Q19560601",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alexa_Grasso_2023_03.png",
-    "author": "Alexa Lopez Col",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Alexa Grasso 2023 03.png"
-  },
-  "Norma Dumont": {
-    "src": "/fighters/norma-dumont.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q106950074",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Norma_Dumont_OF.jpg",
-    "author": "OnlyFans",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Norma Dumont OF.jpg"
-  },
-  "Nursulton Ruziboev": {
-    "src": "/fighters/nursulton-ruziboev.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q109493783",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:NursultonRuziboev2024.png",
-    "author": "SPORTS UZ",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "NursultonRuziboev2024.png"
+    "wikidataId": "Q61435520",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nathaniel_Wood_Cage_Warriors_belt_02062017_.jpg",
+    "author": "Thecatof35",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "Nathaniel Wood Cage Warriors belt 02062017 .jpg"
   },
   "Paddy Pimblett": {
     "src": "/fighters/paddy-pimblett.webp",
@@ -1060,30 +782,6 @@
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
     "file": "Petr Yan at Kremlin award ceremonies with president Putin.jpg"
-  },
-  "Piera Rodriguez": {
-    "src": "/fighters/piera-rodriguez.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q47523129",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gillian_Robertson.png",
-    "author": "MM-eh",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Gillian Robertson.png"
-  },
-  "Rafael Fiziev": {
-    "src": "/fighters/rafael-fiziev.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q75012682",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fiziev_2023.png",
-    "author": "SPORTS UZ",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Fiziev 2023.png"
   },
   "Raquel Pennington": {
     "src": "/fighters/raquel-pennington.webp",
@@ -1133,18 +831,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Renato Moicano 2024.png"
   },
-  "Robert Valentin": {
-    "src": "/fighters/robert-valentin.webp",
-    "groups": [
-      "main-card"
-    ],
-    "wikidataId": "Q107124934",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Du%C5%A1ko_Todorovi%C4%87_(1).jpg",
-    "author": "Lotom",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "file": "Duško Todorović (1).jpg"
-  },
   "Robert Whittaker": {
     "src": "/fighters/robert-whittaker.webp",
     "groups": [
@@ -1181,29 +867,17 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "file": "Rose Namajunas.jpg"
   },
-  "Sean Brady": {
-    "src": "/fighters/sean-brady.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q27068531",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Belal_Muhammad_UFC.jpg",
-    "author": "Inaquout",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "file": "Belal Muhammad UFC.jpg"
-  },
   "Sean O'Malley": {
     "src": "/fighters/sean-o-malley.webp",
     "groups": [
       "ranking"
     ],
-    "wikidataId": "Q18704247",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marlon_%22Chito%22_Vera_2019.jpg",
-    "author": "Asamblea Nacional del Ecuador",
-    "license": "CC BY-SA 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-    "file": "Marlon \"Chito\" Vera 2019.jpg"
+    "wikidataId": "Q45189135",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sean_O%27Malley_in_2024.jpg",
+    "author": "Musicmakestheworldgoround",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "file": "Sean O'Malley in 2024.jpg"
   },
   "Sean Strickland": {
     "src": "/fighters/sean-strickland.webp",
@@ -1290,18 +964,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Valentina Shevchenko 2020.jpg"
   },
-  "Waldo Cortes Acosta": {
-    "src": "/fighters/waldo-cortes-acosta.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q72386202",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SergeiPavlovich2018.png",
-    "author": "Страна FM",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "SergeiPavlovich2018.png"
-  },
   "Yair Rodriguez": {
     "src": "/fighters/yair-rodriguez.webp",
     "groups": [
@@ -1313,17 +975,5 @@
     "license": "CC0",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "file": "Carrera con Yair \"Pantera\" Rodríguez -i---i- (30657689682) cropped.jpg"
-  },
-  "Zhang Weili": {
-    "src": "/fighters/zhang-weili.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q61949317",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%BC%A0%E4%BC%9F%E4%B8%BD.png",
-    "author": "中国新闻网",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "张伟丽.png"
   }
 }

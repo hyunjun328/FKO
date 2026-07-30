@@ -7,11 +7,19 @@ from scripts.collect_fighter_images import (
     ALLOWED_LICENSE_PREFIXES,
     OUTPUT_DATA,
     OUTPUT_DIR,
+    QUALITY_REJECTED_FIGHTERS,
+    is_matching_title,
     requested_fighters,
 )
 
 
 class FighterImageCollectorTest(unittest.TestCase):
+    def test_rejects_unrelated_search_results(self) -> None:
+        self.assertTrue(is_matching_title("Uros Medic", "Uroš Medić"))
+        self.assertTrue(is_matching_title("Sean Brady", "Sean Brady (fighter)"))
+        self.assertFalse(is_matching_title("Diego Lopes", "Brian Ortega"))
+        self.assertFalse(is_matching_title("Johnny Walker", "Dominick Reyes"))
+
     def test_extracts_every_requested_surface(self) -> None:
         targets = requested_fighters()
 
@@ -27,7 +35,8 @@ class FighterImageCollectorTest(unittest.TestCase):
         targets = requested_fighters()
         images = json.loads(OUTPUT_DATA.read_text(encoding="utf-8"))
 
-        self.assertGreaterEqual(len(images), 80)
+        self.assertGreaterEqual(len(images), 70)
+        self.assertEqual(set(images) & QUALITY_REJECTED_FIGHTERS, set())
         for name, image in images.items():
             with self.subTest(name=name):
                 self.assertIn(name, targets)

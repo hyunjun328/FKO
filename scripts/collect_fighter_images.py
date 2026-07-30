@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+from difflib import SequenceMatcher
 import html
 import io
 import json
@@ -47,6 +48,30 @@ ALLOWED_LICENSE_PREFIXES = (
     "Public domain",
     "PDM",
 )
+
+QUALITY_REJECTED_FIGHTERS = {
+    "Alexandre Pantoja",
+    "Angela Hill",
+    "Beneil Dariush",
+    "Brendan Allen",
+    "Caio Borralho",
+    "Carlos Prates",
+    "Curtis Blaydes",
+    "Dan Hooker",
+    "Deiveson Figueiredo",
+    "Dustin Jacoby",
+    "Edgar Chairez",
+    "Gabriel Bonfim",
+    "Gillian Robertson",
+    "Josh Hokit",
+    "Mackenzie Dern",
+    "Manon Fiorot",
+    "Norma Dumont",
+    "Nursulton Ruziboev",
+    "Rafael Fiziev",
+    "Sean Brady",
+    "Zhang Weili",
+}
 
 
 def parse_args() -> argparse.Namespace:
@@ -125,10 +150,7 @@ def wikipedia_item(
     pages = data.get("query", {}).get("pages", [])
     if pages and not pages[0].get("missing"):
         description = pages[0].get("description", "").lower()
-        if any(
-            term in description
-            for term in ("mixed martial", "martial artist", "ufc fighter")
-        ):
+        if is_fighter_description(description):
             return pages[0].get("pageprops", {}).get("wikibase_item")
 
     search = api_json(
@@ -144,14 +166,37 @@ def wikipedia_item(
             "prop": "pageprops|description",
         },
     )
-    for page in search.get("query", {}).get("pages", []):
+    pages = sorted(
+        search.get("query", {}).get("pages", []),
+        key=lambda page: page.get("index", 999),
+    )
+    for page in pages:
         description = page.get("description", "").lower()
-        if any(
-            term in description
-            for term in ("mixed martial", "martial artist", "ufc fighter")
+        if is_fighter_description(description) and is_matching_title(
+            fighter_name,
+            page.get("title", ""),
         ):
             return page.get("pageprops", {}).get("wikibase_item")
     return None
+
+
+def is_fighter_description(description: str) -> bool:
+    return any(
+        term in description
+        for term in ("mixed martial", "martial artist", "ufc fighter")
+    )
+
+
+def normalize_title(value: str) -> str:
+    normalized = unicodedata.normalize("NFKD", value)
+    ascii_value = normalized.encode("ascii", "ignore").decode("ascii").lower()
+    return re.sub(r"[^a-z0-9]+", " ", ascii_value).strip()
+
+
+def is_matching_title(fighter_name: str, page_title: str) -> bool:
+    expected = normalize_title(PAGE_ALIASES.get(fighter_name, fighter_name))
+    candidate = normalize_title(re.sub(r"\s*\([^)]*\)\s*$", "", page_title))
+    return SequenceMatcher(None, expected, candidate).ratio() >= 0.82
 
 
 def commons_file(session: requests.Session, qid: str) -> dict | None:
@@ -264,6 +309,7 @@ def main() -> None:
     session.headers.update({"User-Agent": USER_AGENT})
     result: dict[str, dict] = {}
     misses: list[str] = []
+    quality_rejected: list[str] = []
 
     for index, (name, groups) in enumerate(fighters.items(), start=1):
         try:
@@ -272,6 +318,10 @@ def main() -> None:
             if not image or not image["downloadUrl"]:
                 misses.append(name)
                 print(f"[{index}/{len(fighters)}] miss {name}", flush=True)
+                continue
+            if name in QUALITY_REJECTED_FIGHTERS:
+                quality_rejected.append(name)
+                print(f"[{index}/{len(fighters)}] reject {name}", flush=True)
                 continue
 
             filename = f"{slugify(name)}.webp"
@@ -297,6 +347,7 @@ def main() -> None:
         "requested": len(fighters),
         "collected": len(result),
         "missing": misses,
+        "qualityRejected": quality_rejected,
     }
     (OUTPUT_DIR / "collection-report.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n",
@@ -304,7 +355,7 @@ def main() -> None:
     )
     print(
         f"Collected {len(result)}/{len(fighters)} photos; "
-        f"{len(misses)} fallbacks.",
+        f"{len(misses) + len(quality_rejected)} fallbacks.",
         flush=True,
     )
 

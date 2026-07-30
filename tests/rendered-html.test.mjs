@@ -212,6 +212,8 @@ test("server-renders reusable fighter photo credits", async () => {
   assert.match(html, /class="photo-credit-card"/);
   assert.match(html, /Commons 원본 파일 보기/);
   assert.match(html, /라이선스/);
+  assert.match(html, /UFC 공식 프로필 사진/);
+  assert.match(html, /https:\/\/www\.ufc\.com\/news\/terms-use/);
   assert.match(html, /loading="lazy"/);
   assert.match(html, /href="\/"/);
 });
@@ -264,6 +266,14 @@ test("uses the black, white, red, and yellow FKO theme", async () => {
   );
   assert.match(css, /\.topbar-link,[\s\S]*?min-height: 40px/);
   assert.match(css, /\.next-event::after\s*\{\s*content: none/);
+  assert.match(
+    css,
+    /\.fighter-face\s*\{[\s\S]*?width: 40px;[\s\S]*?height: 50px;[\s\S]*?border-radius: 6px;/,
+  );
+  assert.doesNotMatch(
+    css,
+    /\.fighter-face\s*\{[^}]*border-radius:\s*50%/,
+  );
   assert.match(css, /\.event-row\[aria-current="true"\]\s*\{[^}]*box-shadow: inset 3px 0 0/);
   assert.doesNotMatch(css, /#25a35a|#148447|#2670a5|#f3f0e8|#fffdf7/i);
 });
