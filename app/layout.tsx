@@ -1,6 +1,7 @@
 // FKO의 문서 메타데이터와 전역 레이아웃
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { AppHeader } from "./components/AppHeader";
 
 const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ??
@@ -42,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body><AppHeader />{children}</body>
     </html>
   );
 }
