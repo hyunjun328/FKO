@@ -1182,6 +1182,7 @@
   "Rose Namajunas": {
     "src": "/fighters/rose-namajunas.webp",
     "groups": [
+      "archive",
       "ranking"
     ],
     "wikidataId": "Q16226725",
