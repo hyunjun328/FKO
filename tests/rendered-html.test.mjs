@@ -252,6 +252,8 @@ test("server-renders the UFC archive with hall of fame, former fighters, and ref
 
   const html = await response.text();
   assert.match(html, /UFC 아카이브/);
+  assert.match(html, /조르주 생피에르/);
+  assert.match(html, /상세 정보 보기/);
   assert.match(html, /명예의 전당/);
   assert.match(html, /과거 UFC 선수/);
   assert.match(html, /심판진/);

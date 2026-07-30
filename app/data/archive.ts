@@ -20,6 +20,14 @@ export const HALL_OF_FAME_FIGHTERS: ArchiveFighter[] = [
 ];
 
 export const FORMER_UFC_FIGHTERS: ArchiveFighter[] = [
+  { name: "Randy Couture", koName: "랜디 커투어", record: "19승 11패", era: "전 헤비급 · 라이트헤비급 챔피언", note: "UFC 최초로 두 체급 타이틀을 획득한 명예의 전당 헌액자.", sourceUrl: "https://www.ufc.com/athlete/randy-couture" },
+  { name: "Tito Ortiz", koName: "티토 오티즈", record: "21승 12패 1무", era: "전 라이트헤비급 챔피언", note: "2000년대 초반 라이트헤비급 타이틀을 여러 차례 방어한 스타.", sourceUrl: "https://www.ufc.com/athlete/tito-ortiz" },
+  { name: "Rich Franklin", koName: "리치 프랭클린", record: "29승 7패 1무", era: "전 미들급 챔피언", note: "전 미들급 챔피언이자 UFC 명예의 전당 헌액자.", sourceUrl: "https://www.ufc.com/athlete/rich-franklin" },
+  { name: "Lyoto Machida", koName: "료토 마치다", record: "26승 12패", era: "전 라이트헤비급 챔피언", note: "가라테 기반의 역습 스타일로 라이트헤비급 정상에 올랐다.", sourceUrl: "https://www.ufc.com/athlete/lyoto-machida" },
+  { name: "Mauricio Rua", koName: "마우리시오 쇼군", record: "27승 14패 1무", era: "전 라이트헤비급 챔피언", note: "PRIDE와 UFC 정상급 무대를 모두 경험한 브라질의 전 챔피언.", sourceUrl: "https://www.ufc.com/athlete/mauricio-rua" },
+  { name: "Urijah Faber", koName: "유라이어 페이버", record: "35승 11패", era: "WEC 전 페더급 챔피언", note: "WEC 시대를 대표했고 UFC 밴텀급 타이틀전에 여러 차례 도전했다.", sourceUrl: "https://www.ufc.com/athlete/urijah-faber" },
+  { name: "Joanna Jedrzejczyk", koName: "요안나 옌드제이치크", record: "16승 5패", era: "전 여성 스트로급 챔피언", note: "여성 스트로급 타이틀을 다섯 차례 방어한 전 챔피언.", sourceUrl: "https://www.ufc.com/athlete/joanna-jedrzejczyk" },
+  { name: "Tony Ferguson", koName: "토니 퍼거슨", record: "26승 12패", era: "전 임시 라이트급 챔피언", note: "12연승으로 라이트급 정상권을 지킨 TUF 우승자.", sourceUrl: "https://www.ufc.com/athlete/tony-ferguson" },
   { name: "Chuck Liddell", koName: "척 리델", record: "21승 9패", era: "전 라이트헤비급 챔피언", note: "2000년대 UFC를 대표한 스트라이커.", sourceUrl: "https://www.ufc.com/athlete/chuck-liddell" },
   { name: "Matt Hughes", koName: "맷 휴즈", record: "45승 9패", era: "전 웰터급 챔피언", note: "웰터급 타이틀을 여러 차례 방어했다.", sourceUrl: "https://www.ufc.com/athlete/matt-hughes" },
   { name: "Jose Aldo", koName: "조제 알도", record: "32승 9패", era: "전 페더급 챔피언", note: "WEC·UFC 시대를 잇는 페더급 레전드.", sourceUrl: "https://www.ufc.com/athlete/jose-aldo" },

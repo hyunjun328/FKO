@@ -4,11 +4,13 @@
 import { useState } from "react";
 import { FORMER_UFC_FIGHTERS, HALL_OF_FAME_FIGHTERS, UFC_REFEREES } from "../data/archive";
 import { FighterFace } from "./FighterFace";
+import { FighterProfileDialog, type FighterSelection } from "./FighterProfileDialog";
 
 type ArchiveTab = "hall" | "former" | "referees";
 
 export function ArchiveBrowser() {
   const [tab, setTab] = useState<ArchiveTab>("hall");
+  const [selectedFighter, setSelectedFighter] = useState<FighterSelection | null>(null);
   const fighters = tab === "hall" ? HALL_OF_FAME_FIGHTERS : FORMER_UFC_FIGHTERS;
 
   return (
@@ -29,12 +31,13 @@ export function ArchiveBrowser() {
           {fighters.map((fighter) => (
             <article key={fighter.name}>
               <FighterFace name={fighter.name} koName={fighter.koName} className="archive-fighter-face" />
-              <div><span>{fighter.era}</span><h2>{fighter.koName}</h2><small lang="en">{fighter.name}</small><strong>{fighter.record}</strong><p>{fighter.note}</p><a href={fighter.sourceUrl} target="_blank" rel="noreferrer">UFC 출처 보기 ↗</a></div>
+              <div><span>{fighter.era}</span><h2>{fighter.koName}</h2><small lang="en">{fighter.name}</small><strong>{fighter.record}</strong><p>{fighter.note}</p><button type="button" onClick={() => setSelectedFighter({ name: fighter.name, koName: fighter.koName, weight: fighter.era, record: fighter.record, summary: fighter.note, sourceLabel: "UFC 아카이브 출처", sourceUrl: fighter.sourceUrl })}>상세 정보 보기 →</button><a href={fighter.sourceUrl} target="_blank" rel="noreferrer">UFC 출처 보기 ↗</a></div>
             </article>
           ))}
           <p className="archive-disclaimer">전적은 선수의 종합격투기 커리어 기준이며, 무효 경기는 별도로 표기합니다.</p>
         </div>
       )}
+      {selectedFighter ? <FighterProfileDialog fighter={selectedFighter} onClose={() => setSelectedFighter(null)} /> : null}
     </section>
   );
 }

@@ -3350,6 +3350,7 @@ body :is(b, strong) {
 
 .featured-fighter-faces {
   display: flex;
+  align-items: flex-end;
   margin-top: 17px;
 }
 
@@ -3361,6 +3362,14 @@ body :is(b, strong) {
 .featured-fighter-face + .featured-fighter-face {
   margin-left: -11px;
   box-shadow: 0 0 0 3px var(--ink);
+}
+
+.featured-fighter-faces .fighter-face:first-child img {
+  object-position: 62% 18%;
+}
+
+.featured-fighter-faces .fighter-face:last-child img {
+  object-position: 50% 16%;
 }
 
 .bout-fighter-face {
@@ -4507,6 +4516,18 @@ body :is(b, strong) {
   color: var(--lime);
   font-size: 13px;
   font-weight: 750;
+}
+
+.archive-fighter-grid button {
+  margin: 4px 10px 0 0;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--orange);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 750;
+  cursor: pointer;
 }
 
 .referee-list article > span {

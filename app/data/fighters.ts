@@ -788,12 +788,15 @@ export const FIGHTER_PROFILES: Record<string, FighterProfile> = {
   },
   "Islam Makhachev": {
     name: "Islam Makhachev",
+    nickname: "The Eagle",
     record: "28승 1패",
     ranking: "웰터급 챔피언 · P4P 1위",
     country: "러시아",
     style: "삼보",
     heightCm: 178,
     reachCm: 179,
+    team: "American Kickboxing Academy",
+    octagonDebut: "2015-05-23",
     summary: "라이트급 타이틀을 네 차례 방어한 뒤 웰터급 정상까지 오른 챔피언.",
     lastFight: {
       result: "승",
@@ -802,6 +805,11 @@ export const FIGHTER_PROFILES: Record<string, FighterProfile> = {
       date: "2025-11-15",
       method: "5라운드 만장일치 판정",
     },
+    careerHighlights: [
+      { title: "라이트급 타이틀 4차례 방어", detail: "찰스 올리베이라를 꺾어 타이틀을 차지한 뒤 볼카노프스키, 포이리에, 모이카노, 마다레나를 상대로 정상급 경쟁을 이어 갔다.", sourceLabel: "UFC 선수 프로필", sourceUrl: "https://www.ufc.com/athlete/islam-makhachev" },
+      { title: "웰터급 정상 도전", detail: "라이트급 챔피언 경력 뒤 웰터급 타이틀 경쟁에 나선 두 체급 정상급 선수다.", sourceLabel: "UFC 공식 랭킹", sourceUrl: "https://www.ufc.com/rankings" },
+    ],
+    verificationSources: [{ label: "UFC 선수 프로필", url: "https://www.ufc.com/athlete/islam-makhachev" }, { label: "UFC 공식 랭킹", url: "https://www.ufc.com/rankings" }],
     sourceUrl: "https://www.ufc.com/athlete/islam-makhachev",
     verifiedAt: "2026-07-29",
   },
@@ -814,6 +822,8 @@ export const FIGHTER_PROFILES: Record<string, FighterProfile> = {
     style: "종합격투기",
     heightCm: 191,
     reachCm: 189,
+    team: "Kill Cliff FC",
+    octagonDebut: "2021-11-06",
     summary: "긴 거리 타격과 높은 테이크다운 방어율을 갖춘 웰터급 최상위 도전자.",
     lastFight: {
       result: "승",
@@ -822,6 +832,11 @@ export const FIGHTER_PROFILES: Record<string, FighterProfile> = {
       date: "2025-11-22",
       method: "3라운드 만장일치 판정",
     },
+    careerHighlights: [
+      { title: "UFC 무대 무패 출발", detail: "Cage Warriors 웰터급 챔피언 경력 뒤 UFC에 입성해 웰터급 상위권까지 올랐다.", sourceLabel: "UFC 선수 프로필", sourceUrl: "https://www.ufc.com/athlete/ian-machado-garry" },
+      { title: "웰터급 타이틀 경쟁", detail: "긴 거리의 타격과 테이크다운 방어를 바탕으로 상위 랭커와 경쟁하는 도전자다.", sourceLabel: "UFC 공식 랭킹", sourceUrl: "https://www.ufc.com/rankings" },
+    ],
+    verificationSources: [{ label: "UFC 선수 프로필", url: "https://www.ufc.com/athlete/ian-machado-garry" }, { label: "UFC 공식 랭킹", url: "https://www.ufc.com/rankings" }],
     sourceUrl: "https://www.ufc.com/athlete/ian-machado-garry",
     verifiedAt: "2026-07-29",
   },
