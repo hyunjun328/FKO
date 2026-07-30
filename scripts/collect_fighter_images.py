@@ -80,11 +80,30 @@ QUALITY_REJECTED_FIGHTERS = {
     "Zhang Weili",
 }
 
+# 동명이인 또는 다른 종목 인물로 확인되어 자동 사진 수집에서 제외한 선수다.
+MANUAL_REJECTED_FIGHTERS = {
+    "Alex Perez",
+    "Anthony Hernandez",
+    "Charles Johnson",
+    "David Martinez",
+    "Denise Gomes",
+    "Diego Ferreira",
+    "Joshua Van",
+    "Kennedy Nzechukwu",
+    "Manuel Torres",
+    "Mark Smith",
+    "Mizuki",
+    "Nina Milosevic",
+    "Rafa Garcia",
+    "Tim Elliott",
+}
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--only", action="append", default=[])
+    parser.add_argument("--prune", action="store_true")
     return parser.parse_args()
 
 
@@ -170,7 +189,10 @@ def wikipedia_item(
     pages = data.get("query", {}).get("pages", [])
     if pages and not pages[0].get("missing"):
         description = pages[0].get("description", "").lower()
-        if is_fighter_description(description):
+        if is_fighter_description(description) and is_matching_title(
+            fighter_name,
+            pages[0].get("title", ""),
+        ):
             return pages[0].get("pageprops", {}).get("wikibase_item")
 
     search = api_json(
@@ -349,6 +371,15 @@ def save_webp(session: requests.Session, url: str, destination: Path) -> None:
         image.save(destination, "WEBP", quality=78, method=6)
 
 
+def prune_unverified_images(images: dict[str, dict]) -> dict[str, dict]:
+    rejected = QUALITY_REJECTED_FIGHTERS | MANUAL_REJECTED_FIGHTERS
+    return {
+        name: image
+        for name, image in images.items()
+        if name not in rejected and image.get("wikidataId")
+    }
+
+
 def main() -> None:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
@@ -364,6 +395,24 @@ def main() -> None:
         fighters = {name: all_fighters[name] for name in args.only}
     if args.limit:
         fighters = dict(list(fighters.items())[: args.limit])
+
+    if args.prune:
+        if not OUTPUT_DATA.exists():
+            raise FileNotFoundError(f"Missing image data: {OUTPUT_DATA}")
+        previous = json.loads(OUTPUT_DATA.read_text(encoding="utf-8"))
+        result = prune_unverified_images(previous)
+        for name, image in previous.items():
+            if name in result:
+                continue
+            old_image = OUTPUT_DIR.parent / image["src"].lstrip("/")
+            if old_image.is_file():
+                old_image.unlink()
+        OUTPUT_DATA.write_text(
+            json.dumps(result, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        print(f"Pruned {len(previous) - len(result)} unverified photos.")
+        return
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     session = requests.Session()
@@ -392,13 +441,11 @@ def main() -> None:
                 if qid
                 else None
             )
-            if not image:
-                image = commons_search_file(session, name)
             if not image or not image["downloadUrl"]:
                 misses.append(name)
                 print(f"[{index}/{len(fighters)}] miss {name}", flush=True)
                 continue
-            if name in QUALITY_REJECTED_FIGHTERS:
+            if name in QUALITY_REJECTED_FIGHTERS | MANUAL_REJECTED_FIGHTERS:
                 quality_rejected.append(name)
                 print(f"[{index}/{len(fighters)}] reject {name}", flush=True)
                 continue
@@ -426,9 +473,15 @@ def main() -> None:
         "requested": len(all_fighters),
         "collected": len(result),
         "missing": sorted(
-            set(all_fighters) - set(result) - QUALITY_REJECTED_FIGHTERS
+            set(all_fighters)
+            - set(result)
+            - QUALITY_REJECTED_FIGHTERS
+            - MANUAL_REJECTED_FIGHTERS
         ),
-        "qualityRejected": sorted(set(all_fighters) & QUALITY_REJECTED_FIGHTERS),
+        "qualityRejected": sorted(
+            set(all_fighters)
+            & (QUALITY_REJECTED_FIGHTERS | MANUAL_REJECTED_FIGHTERS)
+        ),
     }
     (OUTPUT_DIR / "collection-report.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n",

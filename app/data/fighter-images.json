@@ -48,18 +48,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "file": "Aleksandar Rakic.jpg"
   },
-  "Alessandro Costa": {
-    "src": "/fighters/alessandro-costa.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": null,
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alessandro_Costa.jpg",
-    "author": "Unknown author Unknown author",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "file": "Alessandro Costa.jpg"
-  },
   "Alex Pereira": {
     "src": "/fighters/alex-pereira.webp",
     "groups": [
@@ -71,19 +59,6 @@
     "license": "Public domain",
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:Alex_Pereira_in_the_Oval_Office_(while_President_Donald_J._Trump_is_holding_a_meeting_with_UFC_fighters).jpg",
     "file": "Alex Pereira in the Oval Office (while President Donald J. Trump is holding a meeting with UFC fighters).jpg"
-  },
-  "Alex Perez": {
-    "src": "/fighters/alex-perez.webp",
-    "groups": [
-      "event-card",
-      "ranking"
-    ],
-    "wikidataId": "Q48471390",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alex_P%C3%A9rez_2_Tofa%C5%9F_SK_TBSL_20251031_(1).jpg",
-    "author": "Zafer",
-    "license": "CC BY 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-    "file": "Alex Pérez 2 Tofaş SK TBSL 20251031 (1).jpg"
   },
   "Alexa Grasso": {
     "src": "/fighters/alexa-grasso.webp",
@@ -180,20 +155,6 @@
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
     "file": "Anderson Silva.jpg"
-  },
-  "Anthony Hernandez": {
-    "src": "/fighters/anthony-hernandez.webp",
-    "groups": [
-      "event-card",
-      "main-card",
-      "ranking"
-    ],
-    "wikidataId": "Q96372195",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anthony_Hernandez_(Gibraltar).jpg",
-    "author": "InfoGibraltar",
-    "license": "CC BY 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-    "file": "Anthony Hernandez (Gibraltar).jpg"
   },
   "Arman Tsarukyan": {
     "src": "/fighters/arman-tsarukyan.webp",
@@ -315,18 +276,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "file": "Jung Chan-Sung from acrofan (2).jpg"
   },
-  "Charles Johnson": {
-    "src": "/fighters/charles-johnson.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": null,
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Captain-charles-johnson-f3fb42c8-4e4e-40f4-9ce7-4ca8c84a083-resize-750.jpg",
-    "author": "Հակոբջանյան Լիլիթ",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "file": "Captain-charles-johnson-f3fb42c8-4e4e-40f4-9ce7-4ca8c84a083-resize-750.jpg"
-  },
   "Charles Oliveira": {
     "src": "/fighters/charles-oliveira.webp",
     "groups": [
@@ -387,18 +336,6 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:UFC%27s_Corey_Sandhagen_brings_his_fighting_spirit_to_the_1st_SOW_(1)_(cropped).jpg",
     "file": "UFC's Corey Sandhagen brings his fighting spirit to the 1st SOW (1) (cropped).jpg"
   },
-  "David Martinez": {
-    "src": "/fighters/david-martinez.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": null,
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luis_David_Mart%C3%ADnez_(2023_Cary_2)_02.jpg",
-    "author": "Hameltion",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "file": "Luis David Martínez (2023 Cary 2) 02.jpg"
-  },
   "Demetrious Johnson": {
     "src": "/fighters/demetrious-johnson.webp",
     "groups": [
@@ -411,20 +348,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Demetrious Johnson 2024.png"
   },
-  "Denise Gomes": {
-    "src": "/fighters/denise-gomes.webp",
-    "groups": [
-      "event-card",
-      "main-card",
-      "ranking"
-    ],
-    "wikidataId": "Q122272654",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2020_DENISE_GOMES_CANDIDATO_VICE-PREFEITO_MG_SABARA_TSE_(130000679621).jpg",
-    "author": "Portal de Dados Abertos do Tribunal Superior Eleitoral do Brasil (TSE)",
-    "license": "CC BY 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-    "file": "2020 DENISE GOMES CANDIDATO VICE-PREFEITO MG SABARA TSE (130000679621).jpg"
-  },
   "Derrick Lewis": {
     "src": "/fighters/derrick-lewis.webp",
     "groups": [
@@ -436,30 +359,6 @@
     "license": "CC BY 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Derrick Lewis after UFC 239.jpg"
-  },
-  "Diego Ferreira": {
-    "src": "/fighters/diego-ferreira.webp",
-    "groups": [
-      "event-card"
-    ],
-    "wikidataId": null,
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2012_DIEGO_FERREIRA_CANDIDATO_PREFEITO_SP_BARRETOS_TSE_(250000057369).jpg",
-    "author": "Portal de Dados Abertos do Tribunal Superior Eleitoral do Brasil (TSE)",
-    "license": "CC BY 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-    "file": "2012 DIEGO FERREIRA CANDIDATO PREFEITO SP BARRETOS TSE (250000057369).jpg"
-  },
-  "Diego Lopes": {
-    "src": "/fighters/diego-lopes.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": null,
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Diego_Lopes_2025.jpg",
-    "author": "Sexto Round",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Diego Lopes 2025.jpg"
   },
   "Dominick Cruz": {
     "src": "/fighters/dominick-cruz.webp",
@@ -783,18 +682,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
     "file": "José Aldo, UFC 189 World Tour London (2) (cropped).jpg"
   },
-  "Joshua Van": {
-    "src": "/fighters/joshua-van.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q131411649",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joshua_Van_Sant_(Baltimore_mayor).jpg",
-    "author": "Theodore A. Ross, author. M. W. Hazen Co. (New York, NY), publisher.",
-    "license": "Public domain",
-    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Joshua_Van_Sant_(Baltimore_mayor).jpg",
-    "file": "Joshua Van Sant (Baltimore mayor).jpg"
-  },
   "Julianna Peña": {
     "src": "/fighters/julianna-pena.webp",
     "groups": [
@@ -854,18 +741,6 @@
     "license": "Public domain",
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:President_Donald_Trump_congratulates_Kayla_Harrison_after_her_victory_during_UFC_316_(54577590491)_(cropped).jpg",
     "file": "President Donald Trump congratulates Kayla Harrison after her victory during UFC 316 (54577590491) (cropped).jpg"
-  },
-  "Kennedy Nzechukwu": {
-    "src": "/fighters/kennedy-nzechukwu.webp",
-    "groups": [
-      "event-card"
-    ],
-    "wikidataId": "Q105811323",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ig-Kennedy_Nzechukwu.ogg",
-    "author": "Dagentle",
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "file": "Ig-Kennedy Nzechukwu.ogg"
   },
   "Khabib Nurmagomedov": {
     "src": "/fighters/khabib-nurmagomedov.webp",
@@ -976,18 +851,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "ManelKape2017.png"
   },
-  "Manuel Torres": {
-    "src": "/fighters/manuel-torres.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q125164131",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Manuel_Torres.jpg",
-    "author": "Bloomclaudia",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "file": "Juan Manuel Torres.jpg"
-  },
   "Mario Bautista": {
     "src": "/fighters/mario-bautista.webp",
     "groups": [
@@ -999,18 +862,6 @@
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "file": "Mario Bautista y su vida.jpg"
-  },
-  "Mark Smith": {
-    "src": "/fighters/mark-smith.webp",
-    "groups": [
-      "archive"
-    ],
-    "wikidataId": null,
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mark_Smith_Rhino_2015.png",
-    "author": "RealTVfilms",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "file": "Mark Smith Rhino 2015.png"
   },
   "Marlon Vera": {
     "src": "/fighters/marlon-vera.webp",
@@ -1098,18 +949,6 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:Michael_Morales._QUITO,_27_DE_MAYO_DEL_2025_(cropped).jpg",
     "file": "Michael Morales. QUITO, 27 DE MAYO DEL 2025 (cropped).jpg"
   },
-  "Michael Venom Page": {
-    "src": "/fighters/michael-venom-page.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": null,
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michael_Venom_Page.png",
-    "author": "Hrhr prph",
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "file": "Michael Venom Page.png"
-  },
   "Miesha Tate": {
     "src": "/fighters/miesha-tate.webp",
     "groups": [
@@ -1122,18 +961,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "MIESHA TATE BREAKS DOWN CONOR MCGREGOR VS KHABIB NURMAGOMEDOV UFC 229 - YouTube - 0-46 (cropped).jpg"
   },
-  "Mike Beltran": {
-    "src": "/fighters/mike-beltran.webp",
-    "groups": [
-      "archive"
-    ],
-    "wikidataId": null,
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mike_Beltran.jpg",
-    "author": "Florida House of Representatives",
-    "license": "Public domain",
-    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Mike_Beltran.jpg",
-    "file": "Mike Beltran.jpg"
-  },
   "Mike Malott": {
     "src": "/fighters/mike-malott.webp",
     "groups": [
@@ -1145,18 +972,6 @@
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "file": "Mike-malott-2023-ufc-fighter-canada.png"
-  },
-  "Mizuki": {
-    "src": "/fighters/mizuki.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": null,
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nana_Mizuki_2018-2.jpg",
-    "author": "KniBaron from Bangkok, Thailand",
-    "license": "CC BY 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-    "file": "Nana Mizuki 2018-2.jpg"
   },
   "Montel Jackson": {
     "src": "/fighters/montel-jackson.webp",
@@ -1230,18 +1045,6 @@
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "file": "Neil Magny.jpg"
   },
-  "Nina Milosevic": {
-    "src": "/fighters/nina-milosevic.webp",
-    "groups": [
-      "event-card"
-    ],
-    "wikidataId": null,
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nina_Milo%C5%A1evi%C4%87_(SLO)_2015.jpg",
-    "author": "Johnson Barros",
-    "license": "CC BY 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-    "file": "Nina Milošević (SLO) 2015.jpg"
-  },
   "Paddy Pimblett": {
     "src": "/fighters/paddy-pimblett.webp",
     "groups": [
@@ -1277,18 +1080,6 @@
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
     "file": "Petr Yan at Kremlin award ceremonies with president Putin.jpg"
-  },
-  "Rafa Garcia": {
-    "src": "/fighters/rafa-garcia.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q108437049",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rafa_Garcia_enduro_equipment_2010.JPG",
-    "author": "Peprovira",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "file": "Rafa Garcia enduro equipment 2010.JPG"
   },
   "Raquel Pennington": {
     "src": "/fighters/raquel-pennington.webp",
@@ -1471,18 +1262,6 @@
     "license": "CC BY 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Tatsuro taira 2025.png"
-  },
-  "Tim Elliott": {
-    "src": "/fighters/tim-elliott.webp",
-    "groups": [
-      "ranking"
-    ],
-    "wikidataId": "Q7803464",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tim_Elliott_Royal_Society.jpg",
-    "author": "Duncan.Hull",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "file": "Tim Elliott Royal Society.jpg"
   },
   "Tracy Cortez": {
     "src": "/fighters/tracy-cortez.webp",

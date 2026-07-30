@@ -8,9 +8,11 @@ from scripts.collect_fighter_images import (
     COMMONS_FILE_OVERRIDES,
     OUTPUT_DATA,
     OUTPUT_DIR,
+    MANUAL_REJECTED_FIGHTERS,
     QUALITY_REJECTED_FIGHTERS,
     is_matching_file_name,
     is_matching_title,
+    prune_unverified_images,
     requested_fighters,
 )
 
@@ -31,6 +33,28 @@ class FighterImageCollectorTest(unittest.TestCase):
         )
         self.assertFalse(
             is_matching_file_name("Diego Lopes", "File:Brian Ortega UFC 306.jpg")
+        )
+
+    def test_blocks_known_same_name_photo_mismatches(self) -> None:
+        self.assertTrue(
+            {
+                "Joshua Van",
+                "Alex Perez",
+                "Anthony Hernandez",
+                "Tim Elliott",
+            }.issubset(MANUAL_REJECTED_FIGHTERS)
+        )
+
+    def test_prunes_fallback_and_manual_rejection_entries(self) -> None:
+        images = {
+            "Joshua Van": {"wikidataId": "Q1"},
+            "Charles Johnson": {"wikidataId": None},
+            "Islam Makhachev": {"wikidataId": "Q2"},
+        }
+
+        self.assertEqual(
+            prune_unverified_images(images),
+            {"Islam Makhachev": {"wikidataId": "Q2"}},
         )
 
     def test_extracts_every_requested_surface(self) -> None:
@@ -63,6 +87,7 @@ class FighterImageCollectorTest(unittest.TestCase):
 
         self.assertGreaterEqual(len(images), 70)
         self.assertEqual(set(images) & QUALITY_REJECTED_FIGHTERS, set())
+        self.assertEqual(set(images) & MANUAL_REJECTED_FIGHTERS, set())
         for name, image in images.items():
             with self.subTest(name=name):
                 self.assertIn(name, targets)
