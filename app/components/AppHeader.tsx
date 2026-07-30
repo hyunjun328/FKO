@@ -14,6 +14,7 @@ export function AppHeader() {
           <Link href="/rankings">선수 랭킹</Link>
           <Link href="/p4p">P4P</Link>
           <Link href="/korean-fighters">코리안 파이터</Link>
+          <Link href="/community">커뮤니티</Link>
           <Link href="/archive">UFC 아카이브</Link>
         </nav>
         <span className="app-update-state"><i aria-hidden="true" />일정 확인 완료 · 2026. 7. 29.</span>

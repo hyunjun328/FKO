@@ -263,6 +263,16 @@ test("server-renders the UFC archive with hall of fame, former fighters, and ref
   assert.match(html, /class="fighter-face archive-fighter-face"/);
 });
 
+test("server-renders the guest community entry page", async () => {
+  const response = await render("/community");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /FKO COMMUNITY/);
+  assert.match(html, /href="\/community"/);
+  assert.match(html, /community-compose/);
+});
+
 test("maps every ranked fighter to a Korean display name", async () => {
   const rankings = await readFile(
     new URL("../app/data/rankings.ts", import.meta.url),

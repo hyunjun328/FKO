@@ -2444,6 +2444,130 @@ button.calendar-day:hover {
   margin-top: 58px;
 }
 
+.community-page {
+  padding-top: 46px;
+  padding-bottom: 72px;
+}
+
+.community-hero {
+  padding: 34px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(135deg, #171717, #0f0f0f);
+}
+
+.community-hero span,
+.community-hero p,
+.community-list header span {
+  color: var(--muted);
+}
+
+.community-hero span {
+  color: var(--red);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.community-hero h1 {
+  margin: 10px 0 8px;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.community-hero p {
+  margin: 0;
+}
+
+.community-compose,
+.community-list {
+  margin-top: 24px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
+}
+
+.community-compose h2,
+.community-list h2 {
+  margin: 0 0 18px;
+}
+
+.community-compose form {
+  display: grid;
+  gap: 10px;
+}
+
+.community-compose input,
+.community-compose textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  background: var(--bg);
+  font: inherit;
+}
+
+.community-compose textarea {
+  min-height: 132px;
+  resize: vertical;
+}
+
+.community-compose button {
+  justify-self: end;
+  padding: 11px 16px;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--red);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.community-list article {
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+
+.community-list article header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.community-list article header strong {
+  font-size: 1.05rem;
+}
+
+.community-list article header span {
+  flex: none;
+  font-size: 0.8rem;
+}
+
+.community-list article p,
+.community-message {
+  margin: 10px 0 0;
+  white-space: pre-wrap;
+  line-height: 1.65;
+}
+
+@media (max-width: 640px) {
+  .community-page {
+    padding-top: 26px;
+  }
+
+  .community-hero,
+  .community-compose,
+  .community-list {
+    padding: 18px;
+  }
+
+  .community-list article header {
+    display: grid;
+    gap: 5px;
+  }
+}
+
 .section-head h2 {
   font-size: clamp(1.75rem, 3.5vw, 2.7rem);
   font-weight: 850;
