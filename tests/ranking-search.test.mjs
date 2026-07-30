@@ -8,7 +8,10 @@ import {
 } from "../app/data/fighters.ts";
 import { EVENTS } from "../app/data/events.ts";
 import { SEARCHABLE_FIGHTERS } from "../app/data/fighter-catalog.ts";
-import { rankingKoreanName } from "../app/data/ranking-names.ts";
+import {
+  rankingKoreanName,
+  romanizedNameToKorean,
+} from "../app/data/ranking-names.ts";
 import { UFC_RANKING_DIVISIONS } from "../app/data/rankings.ts";
 import { UNOFFICIAL_WORLD_RANKINGS } from "../app/data/unofficial-rankings.ts";
 import {
@@ -139,4 +142,10 @@ test("keeps famous career claims attached to explicit verification sources", () 
     ),
     true,
   );
+});
+
+test("transliterates unmapped romanized fighter names into Korean", () => {
+  assert.equal(romanizedNameToKorean("Thomas Williams"), "토마스 윌리엄스");
+  assert.equal(rankingKoreanName("Thomas Williams"), "토마스 윌리엄스");
+  assert.equal(rankingKoreanName("Islam Makhachev"), "이슬람 마카체프");
 });

@@ -202,6 +202,69 @@ export const RANKING_KOREAN_NAMES: Record<string, string> = {
   "Zhang Weili": "장웨일리",
 };
 
+const HANGUL_ONSETS: Record<string, number> = {
+  b: 7, c: 15, d: 3, f: 17, g: 0, h: 18, j: 12, k: 15, l: 5,
+  m: 6, n: 2, p: 17, q: 15, r: 5, s: 9, t: 16, v: 7, w: 11,
+  x: 9, y: 11, z: 12, ch: 14, ph: 17, sh: 9, th: 16, kh: 15,
+};
+
+const HANGUL_VOWELS: Record<string, number> = {
+  a: 0, ae: 1, ai: 5, au: 0, ay: 5, e: 5, ea: 20, ee: 20,
+  ei: 5, eo: 4, eu: 18, i: 20, o: 8, oa: 9, oi: 11, oo: 13,
+  ou: 14, u: 13, ui: 19, wa: 9, we: 15, wi: 16, wo: 14, y: 20,
+};
+
+const ROMANIZED_WORD_OVERRIDES: Record<string, string> = {
+  thomas: "토마스",
+  williams: "윌리엄스",
+};
+
+const CONSONANTS = Object.keys(HANGUL_ONSETS).sort((left, right) => right.length - left.length);
+const VOWELS = Object.keys(HANGUL_VOWELS).sort((left, right) => right.length - left.length);
+
+function composeHangul(onset: number, vowel: number) {
+  return String.fromCharCode(0xac00 + onset * 21 * 28 + vowel * 28);
+}
+
+function romanizedWordToKorean(word: string) {
+  const normalized = word
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z]/g, "");
+  if (ROMANIZED_WORD_OVERRIDES[normalized]) {
+    return ROMANIZED_WORD_OVERRIDES[normalized];
+  }
+
+  let result = "";
+  let index = 0;
+
+  while (index < normalized.length) {
+    const consonant = CONSONANTS.find((value) => normalized.startsWith(value, index));
+    const onset = consonant ? HANGUL_ONSETS[consonant] : 11;
+    if (consonant) index += consonant.length;
+    const vowel = VOWELS.find((value) => normalized.startsWith(value, index));
+
+    if (vowel) {
+      result += composeHangul(onset, HANGUL_VOWELS[vowel]);
+      index += vowel.length;
+    } else if (consonant) {
+      result += composeHangul(onset, 18);
+    } else {
+      index += 1;
+    }
+  }
+
+  return result || word;
+}
+
+export function romanizedNameToKorean(name: string) {
+  return name
+    .split(/(\s+|[-'.])/)
+    .map((part) => (/^[A-Za-zÀ-ÿ]+$/.test(part) ? romanizedWordToKorean(part) : part))
+    .join("");
+}
+
 export function rankingKoreanName(name: string) {
-  return RANKING_KOREAN_NAMES[name] ?? name;
+  return RANKING_KOREAN_NAMES[name] ?? romanizedNameToKorean(name);
 }
