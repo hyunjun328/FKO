@@ -602,10 +602,8 @@ export function FightCalendar() {
                       featuredBout.weight.includes("여성") ? "female" : "male"
                     }
                   />
-                  <span>
-                    <strong>{featuredBout.leftKo}</strong>
-                    <small lang="en">{featuredBout.left}</small>
-                  </span>
+                  <strong>{featuredBout.leftKo}</strong>
+                  <small lang="en">{featuredBout.left}</small>
                 </span>
                 <i>VS</i>
                 <span className="featured-matchup-fighter">
@@ -617,10 +615,8 @@ export function FightCalendar() {
                       featuredBout.weight.includes("여성") ? "female" : "male"
                     }
                   />
-                  <span>
-                    <strong>{featuredBout.rightKo}</strong>
-                    <small lang="en">{featuredBout.right}</small>
-                  </span>
+                  <strong>{featuredBout.rightKo}</strong>
+                  <small lang="en">{featuredBout.right}</small>
                 </span>
               </span>
               <span className="featured-match-meta">
