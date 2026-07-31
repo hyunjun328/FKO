@@ -5109,11 +5109,25 @@ body :is(b, strong) {
 @media (max-width: 680px) {
   .ranking-row {
     grid-template-columns: 32px 36px minmax(0, 1fr);
+    grid-template-areas:
+      "rank face name"
+      ". . comparison"
+      ". . hint";
+    align-items: start;
+    row-gap: 4px;
+    padding: 10px 12px;
   }
 
-  .ranking-row > small,
-  .ranking-detail-hint {
-    grid-column: 3;
+  .ranking-row > .ranking-number { grid-area: rank; align-self: center; }
+  .ranking-row > .ranking-fighter-face { grid-area: face; }
+  .ranking-row > .ranking-fighter-name { grid-area: name; min-width: 0; }
+  .ranking-row > small { grid-area: comparison; min-width: 0; white-space: normal; }
+  .ranking-row > .ranking-detail-hint { grid-area: hint; }
+
+  .ranking-fighter-name strong,
+  .ranking-board li .ranking-fighter-name small {
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .p4p-row {
