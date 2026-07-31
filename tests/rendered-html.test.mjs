@@ -275,6 +275,7 @@ test("server-renders the guest community entry page", async () => {
   assert.match(html, /FKO COMMUNITY/);
   assert.match(html, /href="\/community"/);
   assert.match(html, /community-compose/);
+  assert.doesNotMatch(html, /비밀번호/);
 });
 
 test("maps every ranked fighter to a Korean display name", async () => {

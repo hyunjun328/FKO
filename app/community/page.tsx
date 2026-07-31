@@ -24,7 +24,6 @@ export default function CommunityPage() {
   const [nickname, setNickname] = useState("");
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const [password, setPassword] = useState("");
   const [message, setMessage] = useState("게시글을 불러오는 중입니다.");
 
   async function loadPosts() {
@@ -48,7 +47,7 @@ export default function CommunityPage() {
     const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/create_guest_post`, {
       method: "POST",
       headers: { ...headers, "Content-Type": "application/json" },
-      body: JSON.stringify({ p_nickname: nickname, p_title: title, p_body: body, p_password: password }),
+      body: JSON.stringify({ p_nickname: nickname, p_title: title, p_body: body }),
     });
     if (!response.ok) {
       setMessage("등록하지 못했습니다. 입력 내용을 확인해 주세요.");
@@ -56,7 +55,6 @@ export default function CommunityPage() {
     }
     setTitle("");
     setBody("");
-    setPassword("");
     await loadPosts();
   }
 
@@ -65,13 +63,12 @@ export default function CommunityPage() {
       <section className="community-hero">
         <span>FKO COMMUNITY</span>
         <h1>격투기 이야기.</h1>
-        <p>로그인 없이 닉네임과 비밀번호만으로 글을 남길 수 있습니다.</p>
+        <p>로그인 없이 닉네임만으로 글을 남길 수 있습니다.</p>
       </section>
       <section className="community-compose">
         <h2>글쓰기.</h2>
         <form onSubmit={submit}>
           <input value={nickname} onChange={(event) => setNickname(event.target.value)} placeholder="닉네임" minLength={2} maxLength={20} required />
-          <input value={password} onChange={(event) => setPassword(event.target.value)} placeholder="게시글 비밀번호 6자 이상" type="password" minLength={6} required />
           <input value={title} onChange={(event) => setTitle(event.target.value)} placeholder="제목" minLength={2} maxLength={100} required />
           <textarea value={body} onChange={(event) => setBody(event.target.value)} placeholder="내용" minLength={2} maxLength={3000} required />
           <button type="submit">게시글 등록</button>

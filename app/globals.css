@@ -2584,7 +2584,7 @@ button.calendar-day:hover {
 
 .guest-comment-thread form > div {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 9px;
 }
 

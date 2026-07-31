@@ -27,7 +27,6 @@ export function GuestCommentThread({
 }) {
   const [comments, setComments] = useState<GuestComment[]>([]);
   const [nickname, setNickname] = useState("");
-  const [password, setPassword] = useState("");
   const [body, setBody] = useState("");
   const [message, setMessage] = useState("댓글을 불러오는 중입니다.");
 
@@ -57,7 +56,6 @@ export function GuestCommentThread({
         p_target_id: targetId,
         p_nickname: nickname,
         p_body: body,
-        p_password: password,
       }),
     });
     if (!response.ok) {
@@ -65,7 +63,6 @@ export function GuestCommentThread({
       return;
     }
     setBody("");
-    setPassword("");
     await loadComments();
   }
 
@@ -79,7 +76,6 @@ export function GuestCommentThread({
       <form onSubmit={submit}>
         <div>
           <input value={nickname} onChange={(event) => setNickname(event.target.value)} placeholder="닉네임" minLength={2} maxLength={20} required />
-          <input value={password} onChange={(event) => setPassword(event.target.value)} placeholder="댓글 비밀번호 6자 이상" type="password" minLength={6} required />
         </div>
         <textarea value={body} onChange={(event) => setBody(event.target.value)} placeholder="반응을 남겨 주세요." minLength={2} maxLength={1000} required />
         <button type="submit">댓글 등록</button>
