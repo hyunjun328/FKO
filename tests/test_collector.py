@@ -3,7 +3,7 @@ import unittest
 from datetime import date
 
 from scripts.collect_wikipedia import find_scheduled_events
-from scripts.collect_ufc_results import find_completed_events
+from scripts.collect_ufc_results import find_bout_results, find_completed_events
 
 
 class CollectorTest(unittest.TestCase):
@@ -43,6 +43,20 @@ class CollectorTest(unittest.TestCase):
                 "date": "2024-04-13",
                 "url": "http://ufcstats.com/event-details/abc",
             }],
+        )
+
+    def test_reads_result_fields_from_their_table_cells(self) -> None:
+        html = '''
+        <tr class="b-fight-details__table-row">
+          <td><i class="b-fight-details__person-status">W</i><i class="b-fight-details__person-status">L</i></td>
+          <td><a>Winner Name</a><a>Loser Name</a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>Lightweight</td>
+          <td>KO/TKO</td><td>3</td><td>2:17</td>
+        </tr>
+        '''
+
+        self.assertEqual(
+            find_bout_results(html),
+            [{"winner": "Winner Name", "loser": "Loser Name", "method": "KO/TKO", "round": 3, "time": "2:17"}],
         )
 
 

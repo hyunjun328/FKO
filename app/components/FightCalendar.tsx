@@ -4,6 +4,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { EVENTS, type BoutSection, type FightEvent } from "../data/events";
+import { AUTO_SCHEDULED_EVENTS } from "../data/auto-scheduled-events";
 import { EVENT_RESULTS } from "../data/event-results";
 import { FIGHTER_PROFILES } from "../data/fighters";
 import { eventDisplayStatus } from "../lib/event-status";
@@ -52,6 +53,37 @@ const SECTION_LABELS: Record<BoutSection, string> = {
 };
 
 const WEEKDAYS = ["일", "월", "화", "수", "목", "금", "토"];
+
+const TBA_BOUT = {
+  left: "TBA",
+  leftKo: "대진 발표 대기",
+  right: "TBA",
+  rightKo: "대진 발표 대기",
+  weight: "체급 발표 대기",
+  section: "announced" as const,
+};
+
+const ALL_EVENTS: FightEvent[] = [
+  ...EVENTS,
+  ...AUTO_SCHEDULED_EVENTS
+    .filter((event) => !EVENTS.some((known) => known.startUtc.slice(0, 10) === event.date))
+    .map((event) => ({
+      id: event.id,
+      series: "UFC FIGHT NIGHT" as const,
+      title: event.title,
+      subtitle: "Fight card to be announced",
+      startUtc: `${event.date}T00:00:00Z`,
+      timeTbd: true,
+      venue: "UFC 공식 발표 대기",
+      city: "장소 발표 대기",
+      country: "",
+      status: "예정" as const,
+      sourceLabel: "UFCStats 예정 대회 목록",
+      sourceUrl: event.sourceUrl,
+      verifiedAt: "",
+      bouts: [TBA_BOUT],
+    })),
+];
 
 function kstDateKey(iso: string) {
   return KST_DATE_FORMATTER.format(new Date(iso));
@@ -102,7 +134,7 @@ function EventDetail({
         <h3>{event.title}</h3>
         <p>{event.subtitle}</p>
         <p>
-          메인카드 · {KST_FORMATTER.format(new Date(event.startUtc))} KST
+          메인카드 · {event.timeTbd ? "시간 발표 대기" : `${KST_FORMATTER.format(new Date(event.startUtc))} KST`}
         </p>
         {event.prelimsUtc ? (
           <p>
@@ -371,7 +403,7 @@ function CalendarView({
 
 export function FightCalendar() {
   const [view, setView] = useState<"list" | "calendar">("list");
-  const [selectedId, setSelectedId] = useState(EVENTS[0].id);
+  const [selectedId, setSelectedId] = useState(ALL_EVENTS[0].id);
   const [selectedFighter, setSelectedFighter] =
     useState<FighterSelection | null>(null);
   const [now, setNow] = useState(() => Date.now());
@@ -384,7 +416,7 @@ export function FightCalendar() {
   const resultsByEventId = new Map(
     EVENT_RESULTS.map((result) => [result.eventId, result]),
   );
-  const visibleEvents = EVENTS.filter(
+  const visibleEvents = ALL_EVENTS.filter(
     (event) => eventDisplayStatus(event, now, resultsByEventId.get(event.id)) !== "completed",
   );
   const nextEvent =
@@ -393,7 +425,7 @@ export function FightCalendar() {
     ) ??
     visibleEvents.find(
       (event) => eventDisplayStatus(event, now, resultsByEventId.get(event.id)) === "upcoming",
-    ) ?? EVENTS[0];
+    ) ?? ALL_EVENTS[0];
   const selected = visibleEvents.find((event) => event.id === selectedId) ?? nextEvent;
   const scheduledEvents = [...visibleEvents].sort((left, right) => {
     const leftStatus = eventDisplayStatus(left, now, resultsByEventId.get(left.id));
@@ -530,7 +562,7 @@ export function FightCalendar() {
               <span className="event-start-time">
                 <small>메인카드 시작</small>
                 <strong>
-                  {KST_FORMATTER.format(new Date(nextEvent.startUtc))} KST
+                  {nextEvent.timeTbd ? "시간 발표 대기" : `${KST_FORMATTER.format(new Date(nextEvent.startUtc))} KST`}
                 </strong>
               </span>
               <div className="event-meta-details">
@@ -585,7 +617,7 @@ export function FightCalendar() {
               </small>
               <span className="featured-match-meta">
                 {featuredEvent.title} ·{" "}
-                {KST_FORMATTER.format(new Date(featuredEvent.startUtc))} KST
+                {featuredEvent.timeTbd ? "시간 발표 대기" : `${KST_FORMATTER.format(new Date(featuredEvent.startUtc))} KST`}
               </span>
               <b>대진 전체 보기 →</b>
             </a>
@@ -623,6 +655,11 @@ export function FightCalendar() {
               <div className="list-panel event-list">
                 {scheduledEvents.map((event) => {
                   const mainBout = event.bouts[0];
+                  const displayStatus = eventDisplayStatus(
+                    event,
+                    now,
+                    resultsByEventId.get(event.id),
+                  );
                   const leftRank = eventRankBadge(mainBout.left);
                   const rightRank = eventRankBadge(mainBout.right);
                   const mainCardCount = event.bouts.filter(
@@ -639,8 +676,13 @@ export function FightCalendar() {
                     >
                       <div className="event-row-copy">
                         <span className="event-row-timing">
-                          {KST_FORMATTER.format(new Date(event.startUtc))} KST
+                          {event.timeTbd ? "시간 발표 대기" : `${KST_FORMATTER.format(new Date(event.startUtc))} KST`}
                         </span>
+                        {displayStatus === "awaiting-results" ? (
+                          <span className="event-result-pending">
+                            결과 확인 중 · {SCHEDULE_CHECK_FORMATTER.format(new Date(SCHEDULE_CHECKED_AT))} 마지막 확인
+                          </span>
+                        ) : null}
                         <strong className="event-row-event">
                           {event.series === "UFC" ? event.title : event.series}
                           <span aria-hidden="true"> · </span>

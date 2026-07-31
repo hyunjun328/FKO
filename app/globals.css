@@ -757,6 +757,17 @@ a:focus-visible {
   font-weight: 800;
 }
 
+.event-result-pending {
+  display: inline-flex;
+  margin: 0 0 8px;
+  padding: 5px 9px;
+  border: 1px solid rgba(255, 197, 61, 0.5);
+  border-radius: 999px;
+  color: #ffd166;
+  font-size: 0.72rem;
+  font-weight: 850;
+}
+
 .event-row-event {
   display: block;
   color: var(--orange);

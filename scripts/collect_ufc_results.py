@@ -54,23 +54,25 @@ def find_bout_results(html: str) -> list[dict[str, object]]:
     bouts: list[dict[str, object]] = []
     rows = re.findall(r"<tr[^>]*b-fight-details__table-row[^>]*>(.*?)</tr>", html, re.DOTALL)
     for row in rows:
-        statuses = re.findall(r"b-fight-details__person-status[^>]*>\s*([^<]+)", row)
-        names = [clean_html(name) for name in re.findall(r"b-fight-details__person-name[^>]*>(.*?)</a>", row, re.DOTALL)]
+        cells = re.findall(r"<td[^>]*>(.*?)</td>", row, re.DOTALL)
+        if len(cells) < 3:
+            continue
+        statuses = re.findall(r"b-fight-details__person-status[^>]*>\s*([^<]+)", cells[0])
+        names = [clean_html(name) for name in re.findall(r"<a[^>]*>(.*?)</a>", cells[1], re.DOTALL)]
         if len(names) < 2 or len(statuses) < 2:
             continue
         winner_index = next((index for index, status in enumerate(statuses[:2]) if status.strip() == "W"), None)
         loser_index = next((index for index, status in enumerate(statuses[:2]) if status.strip() == "L"), None)
-        text = clean_html(row)
-        method = next((value for value in ("KO/TKO", "Submission", "Decision", "Draw", "NC") if value.casefold() in text.casefold()), "Official result")
-        round_match = re.search(r"\b([1-5])\b", text)
-        time_match = re.search(r"\b(\d{1,2}:\d{2})\b", text)
+        method = clean_html(cells[-3]) or "Official result"
+        round_value = clean_html(cells[-2])
+        time_value = clean_html(cells[-1])
         bouts.append(
             {
                 "winner": names[winner_index] if winner_index is not None else None,
                 "loser": names[loser_index] if loser_index is not None else None,
                 "method": method,
-                "round": int(round_match.group(1)) if round_match else None,
-                "time": time_match.group(1) if time_match else None,
+                "round": int(round_value) if round_value.isdigit() else None,
+                "time": time_value if re.fullmatch(r"\d{1,2}:\d{2}", time_value) else None,
             }
         )
     return bouts
@@ -91,9 +93,10 @@ def match_event(event: dict[str, str], completed: list[dict[str, str]]) -> dict[
         for part in fighters
         if part.strip()
     ]
+    event_date = datetime.fromisoformat(event["start"].replace("Z", "+00:00")).date().isoformat()
     for candidate in completed:
         title = normalize(candidate["title"])
-        if terms and all(term in title for term in terms):
+        if candidate["date"] == event_date and terms and all(term in title for term in terms):
             return candidate
     return None
 

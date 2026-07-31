@@ -17,6 +17,7 @@ export type FightEvent = {
   title: string;
   subtitle: string;
   startUtc: string;
+  timeTbd?: boolean;
   prelimsUtc?: string;
   venue: string;
   city: string;
