@@ -3117,8 +3117,8 @@ button.calendar-day:hover {
 }
 
 .event-row-fighter-face {
-  width: 74px;
-  height: 94px;
+  width: 86px;
+  height: 108px;
 }
 
 .event-row-fighter {
@@ -3134,11 +3134,11 @@ button.calendar-day:hover {
 }
 
 .event-row-english {
-  padding: 0 86px;
+  padding: 0 98px;
 }
 
 .event-row-card-count {
-  padding-left: 86px;
+  padding-left: 98px;
 }
 
 .event-row-card-count {
@@ -3163,8 +3163,8 @@ button.calendar-day:hover {
   }
 
   .event-row-fighter-face {
-    width: 54px;
-    height: 68px;
+    width: 60px;
+    height: 75px;
   }
 
   .event-row-fighter { gap: 8px; }
