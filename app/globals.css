@@ -235,7 +235,7 @@ a:focus-visible {
   margin-top: 20px;
 }
 
-.account-tabs { grid-template-columns: 1fr 1fr; }
+.account-tabs { grid-template-columns: repeat(3, 1fr); }
 
 .account-page input,
 .account-page button,

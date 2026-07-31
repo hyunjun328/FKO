@@ -297,6 +297,7 @@ test("server-renders a separate account page with nickname sign-up", async () =>
   assert.match(account, /닉네임 수정/);
   assert.match(account, /method: "PUT"/);
   assert.match(account, /grant_type=refresh_token/);
+  assert.match(account, /mode === "rename"/);
 });
 
 test("maps every ranked fighter to a Korean display name", async () => {
