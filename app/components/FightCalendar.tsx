@@ -676,20 +676,6 @@ export function FightCalendar() {
                       onClick={() => selectEvent(event.id)}
                       aria-label={`${event.title} 상세 보기`}
                     >
-                      <span className="event-row-faces" aria-hidden="true">
-                        <FighterFace
-                          name={mainBout.left}
-                          koName={mainBout.leftKo}
-                          className="event-row-fighter-face"
-                          gender={mainBout.weight.includes("여성") ? "female" : "male"}
-                        />
-                        <FighterFace
-                          name={mainBout.right}
-                          koName={mainBout.rightKo}
-                          className="event-row-fighter-face"
-                          gender={mainBout.weight.includes("여성") ? "female" : "male"}
-                        />
-                      </span>
                       <div className="event-row-copy">
                         <span className="event-row-timing">
                           {event.timeTbd ? "시간 발표 대기" : `${KST_FORMATTER.format(new Date(event.startUtc))} KST`}
@@ -706,21 +692,37 @@ export function FightCalendar() {
                         </strong>
                         <h3 className="event-row-matchup">
                           <span className="event-row-fighter">
-                            {mainBout.leftKo}
-                            {leftRank ? (
-                              <b className="event-ranking-badge" aria-label={leftRank.label}>
-                                {leftRank.value}
-                              </b>
-                            ) : null}
+                            <FighterFace
+                              name={mainBout.left}
+                              koName={mainBout.leftKo}
+                              className="event-row-fighter-face"
+                              gender={mainBout.weight.includes("여성") ? "female" : "male"}
+                            />
+                            <span>
+                              {mainBout.leftKo}
+                              {leftRank ? (
+                                <b className="event-ranking-badge" aria-label={leftRank.label}>
+                                  {leftRank.value}
+                                </b>
+                              ) : null}
+                            </span>
                           </span>
                           <i>vs</i>
                           <span className="event-row-fighter">
-                            {mainBout.rightKo}
-                            {rightRank ? (
-                              <b className="event-ranking-badge" aria-label={rightRank.label}>
-                                {rightRank.value}
-                              </b>
-                            ) : null}
+                            <FighterFace
+                              name={mainBout.right}
+                              koName={mainBout.rightKo}
+                              className="event-row-fighter-face"
+                              gender={mainBout.weight.includes("여성") ? "female" : "male"}
+                            />
+                            <span>
+                              {mainBout.rightKo}
+                              {rightRank ? (
+                                <b className="event-ranking-badge" aria-label={rightRank.label}>
+                                  {rightRank.value}
+                                </b>
+                              ) : null}
+                            </span>
                           </span>
                         </h3>
                         <span className="event-row-english" lang="en">

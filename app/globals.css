@@ -896,19 +896,10 @@ a:focus-visible {
   font-style: normal;
 }
 
-.event-row-faces {
-  display: flex;
-  align-items: flex-end;
-}
-
 .event-row-fighter-face {
   width: 58px;
   height: 72px;
   border-color: #454545;
-}
-
-.event-row-fighter-face + .event-row-fighter-face {
-  margin-left: -18px;
 }
 
 .event-ranking-badge {
@@ -3091,7 +3082,7 @@ button.calendar-day:hover {
 
 .event-row {
   position: relative;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 22px;
   min-height: 0;
   padding: 24px;
@@ -3130,6 +3121,26 @@ button.calendar-day:hover {
   height: 94px;
 }
 
+.event-row-fighter {
+  gap: 12px;
+}
+
+.event-row-fighter > span {
+  min-width: 0;
+}
+
+.event-row-fighter:last-child {
+  flex-direction: row-reverse;
+}
+
+.event-row-english {
+  padding: 0 86px;
+}
+
+.event-row-card-count {
+  padding-left: 86px;
+}
+
 .event-row-card-count {
   font-size: 0.88rem;
 }
@@ -3145,7 +3156,7 @@ button.calendar-day:hover {
   }
 
   .event-row {
-    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 12px;
     min-height: 0;
     padding: 18px;
@@ -3154,6 +3165,13 @@ button.calendar-day:hover {
   .event-row-fighter-face {
     width: 54px;
     height: 68px;
+  }
+
+  .event-row-fighter { gap: 8px; }
+
+  .event-row-english,
+  .event-row-card-count {
+    padding: 0;
   }
 
   .row-arrow {
