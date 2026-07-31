@@ -104,11 +104,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--only", action="append", default=[])
     parser.add_argument("--prune", action="store_true")
+    parser.add_argument("--include-world-ranking", action="store_true")
     return parser.parse_args()
 
 
-def requested_fighters() -> dict[str, set[str]]:
+def requested_fighters(include_world_ranking: bool = False) -> dict[str, set[str]]:
     rankings = (ROOT / "app" / "data" / "rankings.ts").read_text(encoding="utf-8")
+    fightmatrix_path = ROOT / "app" / "data" / "fightmatrix-rankings.ts"
+    fightmatrix = fightmatrix_path.read_text(encoding="utf-8") if fightmatrix_path.exists() else ""
     events = (ROOT / "app" / "data" / "events.ts").read_text(encoding="utf-8")
     fighters = (ROOT / "app" / "data" / "fighters.ts").read_text(encoding="utf-8")
     archive = (ROOT / "app" / "data" / "archive.ts").read_text(encoding="utf-8")
@@ -127,6 +130,10 @@ def requested_fighters() -> dict[str, set[str]]:
     ):
         for name in re.findall(r'"([^"]+)"', block):
             add(name, "ranking")
+
+    if include_world_ranking:
+        for name in re.findall(r'name: "([^"]+)"', fightmatrix):
+            add(name, "world-ranking")
 
     for line in events.splitlines():
         match = re.search(r'left: "([^"]+)".*right: "([^"]+)"', line)
@@ -386,7 +393,7 @@ def main() -> None:
         sys.stderr.reconfigure(encoding="utf-8")
 
     args = parse_args()
-    all_fighters = requested_fighters()
+    all_fighters = requested_fighters(args.include_world_ranking)
     fighters = all_fighters
     if args.only:
         unknown = sorted(set(args.only) - set(all_fighters))
@@ -417,20 +424,25 @@ def main() -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     session = requests.Session()
     session.headers.update({"User-Agent": USER_AGENT})
-    result: dict[str, dict] = {}
-    if args.only and OUTPUT_DATA.exists():
-        result = json.loads(OUTPUT_DATA.read_text(encoding="utf-8"))
-    elif not args.limit and OUTPUT_DATA.exists():
-        previous = json.loads(OUTPUT_DATA.read_text(encoding="utf-8"))
-        for image in previous.values():
-            old_image = OUTPUT_DIR.parent / image["src"].lstrip("/")
-            if old_image.is_file():
-                old_image.unlink()
+    previous: dict[str, dict] = (
+        json.loads(OUTPUT_DATA.read_text(encoding="utf-8"))
+        if OUTPUT_DATA.exists()
+        else {}
+    )
+    result: dict[str, dict] = dict(previous) if args.only else {}
     misses: list[str] = []
     quality_rejected: list[str] = []
 
     for index, (name, groups) in enumerate(fighters.items(), start=1):
         try:
+            cached = previous.get(name)
+            if cached:
+                cached_path = OUTPUT_DIR.parent / cached.get("src", "").lstrip("/")
+                if cached_path.is_file() and cached.get("wikidataId"):
+                    result[name] = {**cached, "groups": sorted(groups)}
+                    print(f"[{index}/{len(fighters)}] cached {name}", flush=True)
+                    continue
+
             qid = wikipedia_item(session, name)
             image = (
                 commons_file(

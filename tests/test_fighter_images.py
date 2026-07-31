@@ -59,6 +59,7 @@ class FighterImageCollectorTest(unittest.TestCase):
 
     def test_extracts_every_requested_surface(self) -> None:
         targets = requested_fighters()
+        world_ranking_targets = requested_fighters(include_world_ranking=True)
 
         self.assertGreaterEqual(len(targets), 223)
         self.assertIn("Uros Medic", targets)
@@ -71,6 +72,7 @@ class FighterImageCollectorTest(unittest.TestCase):
         self.assertIn("ranking", targets["Islam Makhachev"])
         self.assertIn("featured", targets["Conor McGregor"])
         self.assertIn("archive", targets["Anderson Silva"])
+        self.assertIn("world-ranking", world_ranking_targets["Islam Makhachev"])
         self.assertEqual(
             set(COMMONS_FILE_OVERRIDES),
             {
