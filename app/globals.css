@@ -5868,3 +5868,271 @@ body :is(b, strong) {
   .matchup-fighter b { font-size: 1.15rem; }
   .matchup-fighter small { font-size: 0.72rem; }
 }
+
+/* 전 화면에 적용하는 전광판형 UFC 정보 계층과 절제된 포인트 색상입니다. */
+:root {
+  --ink: #080909;
+  --paper: #0b0c0d;
+  --card: #121416;
+  --subtle: #181a1c;
+  --line: #303337;
+  --muted: #9da2a8;
+  --orange: #f23b3b;
+  --lime: #f0ca31;
+  --text: #f5f4f0;
+}
+
+body {
+  background:
+    linear-gradient(90deg, transparent 0, rgba(255, 255, 255, 0.012) 50%, transparent 100%),
+    var(--paper);
+}
+
+.app-topbar,
+.topbar {
+  border-bottom-color: #383b3f;
+}
+
+.app-topbar-actions a,
+.topbar-link,
+.view-switcher button,
+.row-arrow,
+.fighter-trigger,
+.fighter-dialog-close,
+.guest-comment-thread button {
+  border-radius: 2px;
+}
+
+.app-topbar-actions a,
+.topbar-link {
+  border-color: #3e4246;
+  letter-spacing: 0.01em;
+}
+
+.app-topbar-actions a[aria-current="page"],
+.topbar-link[aria-current="page"],
+.view-switcher button[aria-pressed="true"] {
+  border-color: var(--orange);
+  background: rgba(242, 59, 59, 0.13);
+  box-shadow: inset 3px 0 0 var(--orange);
+}
+
+.next-event,
+.featured-match-card,
+.detail-panel,
+.list-panel,
+.ranking-board,
+.p4p-board,
+.korean-fighter-card,
+.archive-fighter-grid article,
+.guest-comment-thread {
+  border-color: #36393d;
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.next-event,
+.featured-match-card,
+.detail-panel {
+  position: relative;
+  background: linear-gradient(135deg, #151719 0%, #101113 65%);
+}
+
+.next-event::before,
+.featured-match-card::before,
+.detail-panel::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--orange);
+  content: "";
+}
+
+.next-event h2,
+.featured-match-meta b,
+.event-row-event,
+.detail-top h3,
+.results-hero h1,
+.p4p-hero h1,
+.fighters-page-hero h1 {
+  color: var(--orange);
+}
+
+.event-kicker,
+.hero-panel-label,
+.featured-match-context,
+.card-section-title,
+.ranking-board header span,
+.p4p-board > header span {
+  color: var(--lime);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.main-matchup,
+.featured-matchup {
+  padding: 16px 0;
+  border-top: 1px solid #2e3135;
+  border-bottom: 1px solid #2e3135;
+}
+
+.main-matchup strong,
+.featured-matchup > i,
+.event-row-matchup i,
+.bout-vs {
+  color: var(--orange);
+  font-weight: 950;
+  letter-spacing: -0.06em;
+}
+
+.matchup-fighter b,
+.featured-matchup-fighter strong,
+.fighter strong,
+.event-row-copy h3,
+.ranking-fighter-name strong,
+.p4p-fighter-name strong {
+  color: var(--text);
+  font-weight: 920;
+  letter-spacing: -0.045em;
+}
+
+.matchup-fighter small,
+.featured-matchup-fighter small,
+.fighter small,
+.fighter-record,
+.event-row-english,
+.event-row-card-count {
+  color: #aeb3b8;
+  font-weight: 700;
+}
+
+.event-row {
+  border-color: #33363a;
+  background: #111315;
+}
+
+.event-row:hover,
+.event-row[aria-current="true"] {
+  border-color: #5d2528;
+  background: linear-gradient(90deg, rgba(242, 59, 59, 0.1), #121416 34%);
+}
+
+.event-row[aria-current="true"] {
+  box-shadow: inset 4px 0 0 var(--orange);
+}
+
+.row-arrow {
+  border-color: #45494e;
+  color: var(--text);
+  font-weight: 900;
+}
+
+.event-ranking-badge,
+.fighter-rank,
+.detail-badge.highlight,
+.ranking-pagination button[aria-current="page"] {
+  border-radius: 2px;
+  background: var(--lime);
+  color: #151515;
+}
+
+.detail-top {
+  background: #0c0d0e;
+}
+
+.detail-badge {
+  border-radius: 2px;
+  font-weight: 850;
+}
+
+.fight-card {
+  background: #121416;
+}
+
+.card-section-title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #33363a;
+}
+
+.bout {
+  min-height: 118px;
+  padding: 18px 22px;
+  border-bottom-color: #303337;
+}
+
+.bout:hover {
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.fighter-trigger:hover {
+  background: rgba(240, 202, 49, 0.1);
+  color: var(--text);
+}
+
+.fighter-trigger:hover small,
+.fighter-trigger:hover .fighter-record {
+  background: transparent;
+  color: var(--lime);
+}
+
+.ranking-board,
+.p4p-board {
+  background: #121416;
+}
+
+.ranking-board header,
+.p4p-board > header {
+  border-bottom-color: #35383c;
+}
+
+.ranking-board li,
+.p4p-board li {
+  border-bottom-color: #2e3135;
+}
+
+.ranking-board li:hover,
+.p4p-detail-trigger:hover,
+.p4p-detail-trigger:focus-visible {
+  background: rgba(242, 59, 59, 0.08);
+}
+
+.korean-fighter-card,
+.archive-fighter-grid article {
+  background: #121416;
+}
+
+.korean-fighter-card:hover,
+.archive-fighter-grid article:hover {
+  border-color: #6f2528;
+  box-shadow: inset 3px 0 0 var(--orange);
+}
+
+.guest-comment-thread {
+  background: #121416;
+}
+
+.guest-comment-thread > header span,
+.guest-comment-thread button {
+  color: var(--lime);
+}
+
+.guest-comment-thread button {
+  border-color: var(--orange);
+  background: #251113;
+  font-weight: 900;
+}
+
+@media (max-width: 680px) {
+  .main-matchup,
+  .featured-matchup {
+    padding: 12px 0;
+  }
+
+  .bout {
+    min-height: 0;
+    padding: 15px 12px;
+  }
+}
