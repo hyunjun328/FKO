@@ -16,7 +16,7 @@ create or replace view public.community_post_feed as
   from public.community_posts;
 
 revoke all on public.community_post_feed from public, anon, authenticated;
-grant select on public.community_post_feed to anon;
+grant select on public.community_post_feed to anon, authenticated;
 
 drop function if exists public.create_guest_post(text, text, text, text);
 create or replace function public.create_guest_post(
@@ -30,13 +30,17 @@ set search_path = public
 as $$
 begin
   insert into public.community_posts (nickname, title, body)
-  values (trim(p_nickname), trim(p_title), trim(p_body));
+  values (
+    coalesce(nullif(auth.jwt() -> 'user_metadata' ->> 'username', ''), trim(p_nickname), '익명 1'),
+    trim(p_title),
+    trim(p_body)
+  );
   return;
 end;
 $$;
 
 revoke all on function public.create_guest_post(text, text, text) from public;
-grant execute on function public.create_guest_post(text, text, text) to anon;
+grant execute on function public.create_guest_post(text, text, text) to anon, authenticated;
 
 create table if not exists public.community_comments (
   id bigint generated always as identity primary key,
@@ -57,7 +61,7 @@ create or replace view public.community_comment_feed as
   from public.community_comments;
 
 revoke all on public.community_comment_feed from public, anon, authenticated;
-grant select on public.community_comment_feed to anon;
+grant select on public.community_comment_feed to anon, authenticated;
 
 drop function if exists public.create_guest_comment(text, text, text, text);
 create or replace function public.create_guest_comment(
@@ -71,13 +75,17 @@ set search_path = public
 as $$
 begin
   insert into public.community_comments (target_id, nickname, body)
-  values (trim(p_target_id), trim(p_nickname), trim(p_body));
+  values (
+    trim(p_target_id),
+    coalesce(nullif(auth.jwt() -> 'user_metadata' ->> 'username', ''), trim(p_nickname), '익명 1'),
+    trim(p_body)
+  );
   return;
 end;
 $$;
 
 revoke all on function public.create_guest_comment(text, text, text) from public;
-grant execute on function public.create_guest_comment(text, text, text) to anon;
+grant execute on function public.create_guest_comment(text, text, text) to anon, authenticated;
 
 create table if not exists public.community_predictions (
   id bigint generated always as identity primary key,
@@ -98,7 +106,7 @@ create or replace view public.community_prediction_summary as
   group by target_id, pick;
 
 revoke all on public.community_prediction_summary from public, anon, authenticated;
-grant select on public.community_prediction_summary to anon;
+grant select on public.community_prediction_summary to anon, authenticated;
 
 create or replace function public.upsert_guest_prediction(
   p_target_id text,
@@ -119,4 +127,4 @@ end;
 $$;
 
 revoke all on function public.upsert_guest_prediction(text, text, uuid) from public;
-grant execute on function public.upsert_guest_prediction(text, text, uuid) to anon;
+grant execute on function public.upsert_guest_prediction(text, text, uuid) to anon, authenticated;

@@ -136,6 +136,49 @@ a:focus-visible {
 
 .app-topbar-actions a:hover { border-color: var(--orange); color: var(--orange); }
 
+.account-panel,
+.account-panel form {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.account-panel input,
+.account-panel button {
+  min-height: 38px;
+  padding: 0 10px;
+  border: 1px solid #484848;
+  border-radius: 5px;
+  color: var(--text);
+  background: #111;
+  font: inherit;
+  font-size: 0.72rem;
+}
+
+.account-panel button {
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.account-panel b {
+  color: var(--lime);
+  font-size: 0.76rem;
+  white-space: nowrap;
+}
+
+.account-panel small {
+  position: absolute;
+  top: 62px;
+  right: 18px;
+  max-width: 230px;
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--text);
+  background: #171717;
+  font-size: 0.7rem;
+}
+
 .app-update-state {
   display: flex;
   align-items: center;

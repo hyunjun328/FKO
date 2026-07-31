@@ -2,19 +2,12 @@
 // 메인카드 대진의 익명 승부예측을 집계하고 브라우저별 선택을 저장한다.
 
 import { useEffect, useState } from "react";
-
-const SUPABASE_URL = "https://jnjhtoqmpnxrtgywcnjy.supabase.co";
-const SUPABASE_KEY = "sb_publishable_b2_cjV_CWjFG-oKAtylebg_yb3s8HvE";
+import { authHeaders, getAuthSession, SUPABASE_URL } from "../lib/guest-auth";
 const GUEST_ID_KEY = "fko-prediction-guest-id";
 
 type PredictionRow = {
   pick: string;
   votes: number;
-};
-
-const headers = {
-  apikey: SUPABASE_KEY,
-  Authorization: `Bearer ${SUPABASE_KEY}`,
 };
 
 function getGuestId() {
@@ -46,7 +39,7 @@ export function BoutPrediction({
   async function loadPredictions() {
     const response = await fetch(
       `${SUPABASE_URL}/rest/v1/community_prediction_summary?select=pick,votes&target_id=eq.${encodeURIComponent(targetId)}`,
-      { headers },
+      { headers: authHeaders() },
     );
     if (!response.ok) throw new Error("예측을 불러오지 못했습니다.");
     const rows = (await response.json()) as PredictionRow[];
@@ -63,10 +56,11 @@ export function BoutPrediction({
   async function choose(pick: string) {
     if (!guestId) return;
     setMessage("반영 중입니다.");
+    const currentGuestId = getAuthSession()?.user.id ?? guestId;
     const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/upsert_guest_prediction`, {
       method: "POST",
-      headers: { ...headers, "Content-Type": "application/json" },
-      body: JSON.stringify({ p_target_id: targetId, p_pick: pick, p_guest_id: guestId }),
+      headers: { ...authHeaders(), "Content-Type": "application/json" },
+      body: JSON.stringify({ p_target_id: targetId, p_pick: pick, p_guest_id: currentGuestId }),
     });
     if (!response.ok) {
       setMessage("예측을 반영하지 못했습니다.");

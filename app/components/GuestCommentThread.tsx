@@ -2,20 +2,13 @@
 // 특정 대회나 선수에 대한 익명 게스트 댓글을 조회하고 작성하는 화면을 제공한다.
 
 import { FormEvent, useEffect, useState } from "react";
-
-const SUPABASE_URL = "https://jnjhtoqmpnxrtgywcnjy.supabase.co";
-const SUPABASE_KEY = "sb_publishable_b2_cjV_CWjFG-oKAtylebg_yb3s8HvE";
+import { authHeaders, displayNickname, SUPABASE_URL } from "../lib/guest-auth";
 
 type GuestComment = {
   id: number;
   nickname: string;
   body: string;
   created_at: string;
-};
-
-const headers = {
-  apikey: SUPABASE_KEY,
-  Authorization: `Bearer ${SUPABASE_KEY}`,
 };
 
 export function GuestCommentThread({
@@ -26,7 +19,6 @@ export function GuestCommentThread({
   title: string;
 }) {
   const [comments, setComments] = useState<GuestComment[]>([]);
-  const [nickname, setNickname] = useState("");
   const [body, setBody] = useState("");
   const [message, setMessage] = useState("댓글을 불러오는 중입니다.");
 
@@ -34,7 +26,7 @@ export function GuestCommentThread({
     const target = encodeURIComponent(`eq.${targetId}`);
     const response = await fetch(
       `${SUPABASE_URL}/rest/v1/community_comment_feed?select=id,nickname,body,created_at&target_id=${target}&order=created_at.desc&limit=30`,
-      { headers },
+      { headers: authHeaders() },
     );
     if (!response.ok) throw new Error("댓글을 불러오지 못했습니다.");
     const nextComments = (await response.json()) as GuestComment[];
@@ -51,10 +43,10 @@ export function GuestCommentThread({
     setMessage("등록 중입니다.");
     const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/create_guest_comment`, {
       method: "POST",
-      headers: { ...headers, "Content-Type": "application/json" },
+      headers: { ...authHeaders(), "Content-Type": "application/json" },
       body: JSON.stringify({
         p_target_id: targetId,
-        p_nickname: nickname,
+        p_nickname: displayNickname(),
         p_body: body,
       }),
     });
@@ -74,9 +66,6 @@ export function GuestCommentThread({
         <p>로그인 없이 남길 수 있는 익명 반응입니다.</p>
       </header>
       <form onSubmit={submit}>
-        <div>
-          <input value={nickname} onChange={(event) => setNickname(event.target.value)} placeholder="닉네임" minLength={2} maxLength={20} required />
-        </div>
         <textarea value={body} onChange={(event) => setBody(event.target.value)} placeholder="반응을 남겨 주세요." minLength={2} maxLength={1000} required />
         <button type="submit">댓글 등록</button>
       </form>

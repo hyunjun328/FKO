@@ -2,9 +2,7 @@
 // Supabase에 저장된 게스트 게시글을 읽고 작성하는 커뮤니티 화면을 제공한다.
 
 import { FormEvent, useEffect, useState } from "react";
-
-const SUPABASE_URL = "https://jnjhtoqmpnxrtgywcnjy.supabase.co";
-const SUPABASE_KEY = "sb_publishable_b2_cjV_CWjFG-oKAtylebg_yb3s8HvE";
+import { authHeaders, displayNickname, SUPABASE_URL } from "../lib/guest-auth";
 
 type CommunityPost = {
   id: number;
@@ -14,14 +12,8 @@ type CommunityPost = {
   created_at: string;
 };
 
-const headers = {
-  apikey: SUPABASE_KEY,
-  Authorization: `Bearer ${SUPABASE_KEY}`,
-};
-
 export default function CommunityPage() {
   const [posts, setPosts] = useState<CommunityPost[]>([]);
-  const [nickname, setNickname] = useState("");
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [message, setMessage] = useState("게시글을 불러오는 중입니다.");
@@ -29,7 +21,7 @@ export default function CommunityPage() {
   async function loadPosts() {
     const response = await fetch(
       `${SUPABASE_URL}/rest/v1/community_post_feed?select=id,nickname,title,body,created_at&order=created_at.desc&limit=40`,
-      { headers },
+      { headers: authHeaders() },
     );
     if (!response.ok) throw new Error("게시글을 불러오지 못했습니다.");
     const nextPosts = (await response.json()) as CommunityPost[];
@@ -46,8 +38,8 @@ export default function CommunityPage() {
     setMessage("등록 중입니다.");
     const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/create_guest_post`, {
       method: "POST",
-      headers: { ...headers, "Content-Type": "application/json" },
-      body: JSON.stringify({ p_nickname: nickname, p_title: title, p_body: body }),
+      headers: { ...authHeaders(), "Content-Type": "application/json" },
+      body: JSON.stringify({ p_nickname: displayNickname(), p_title: title, p_body: body }),
     });
     if (!response.ok) {
       setMessage("등록하지 못했습니다. 입력 내용을 확인해 주세요.");
@@ -68,7 +60,6 @@ export default function CommunityPage() {
       <section className="community-compose">
         <h2>글쓰기.</h2>
         <form onSubmit={submit}>
-          <input value={nickname} onChange={(event) => setNickname(event.target.value)} placeholder="닉네임" minLength={2} maxLength={20} required />
           <input value={title} onChange={(event) => setTitle(event.target.value)} placeholder="제목" minLength={2} maxLength={100} required />
           <textarea value={body} onChange={(event) => setBody(event.target.value)} placeholder="내용" minLength={2} maxLength={3000} required />
           <button type="submit">게시글 등록</button>

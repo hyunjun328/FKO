@@ -275,7 +275,8 @@ test("server-renders the guest community entry page", async () => {
   assert.match(html, /FKO COMMUNITY/);
   assert.match(html, /href="\/community"/);
   assert.match(html, /community-compose/);
-  assert.doesNotMatch(html, /비밀번호/);
+  assert.doesNotMatch(html, /게시글 비밀번호|댓글 비밀번호/);
+  assert.match(html, /로그인/);
 });
 
 test("maps every ranked fighter to a Korean display name", async () => {
@@ -363,4 +364,14 @@ test("keeps anonymous predictions separate from comments", async () => {
   assert.match(prediction, /community_prediction_summary/);
   assert.match(prediction, /upsert_guest_prediction/);
   assert.match(prediction, /fko-prediction-guest-id/);
+});
+
+test("stores logged-in names separately from anonymous posting", async () => {
+  const auth = await readFile(new URL("../app/lib/guest-auth.ts", import.meta.url), "utf8");
+  const schema = await readFile(new URL("../supabase/community.sql", import.meta.url), "utf8");
+
+  assert.match(auth, /@fko\.local/);
+  assert.match(auth, /익명 1/);
+  assert.match(schema, /auth\.jwt\(\)/);
+  assert.match(schema, /to anon, authenticated/);
 });
