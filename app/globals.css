@@ -1001,7 +1001,7 @@ a:focus-visible {
   justify-content: space-between;
   margin-bottom: 12px;
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 0.92rem;
   font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1009,10 +1009,10 @@ a:focus-visible {
 
 .bout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 72px minmax(0, 1fr);
-  gap: 26px;
+  grid-template-columns: minmax(0, 1fr) 84px minmax(0, 1fr);
+  gap: 30px;
   align-items: center;
-  padding: 25px 18px;
+  padding: 30px 20px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -1028,14 +1028,14 @@ a:focus-visible {
 }
 
 .fighter strong {
-  font-size: 1.18rem;
+  font-size: 1.36rem;
   font-weight: 900;
   word-break: keep-all;
 }
 
 .fighter small {
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 0.92rem;
   font-weight: 650;
 }
 
@@ -1061,11 +1061,11 @@ a:focus-visible {
 }
 
 .fighter-rank {
-  padding: 4px 7px;
+  padding: 5px 8px;
   border-radius: 6px;
   background: var(--lime);
   color: var(--ink);
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   font-weight: 900;
   line-height: 1;
   white-space: nowrap;
@@ -1073,7 +1073,7 @@ a:focus-visible {
 
 .fighter-record {
   color: var(--muted);
-  font-size: 0.74rem;
+  font-size: 0.84rem;
   font-weight: 800;
   white-space: nowrap;
 }
@@ -1440,7 +1440,7 @@ a:focus-visible {
   margin: 0;
   transform: translateY(18px);
   color: var(--muted);
-  font-size: 0.63rem;
+  font-size: 0.76rem;
   font-weight: 700;
   text-align: center;
 }
@@ -2996,7 +2996,7 @@ button.calendar-day:hover {
 .bout-prediction {
   grid-column: 1 / -1;
   margin-top: 12px;
-  padding: 11px;
+  padding: 14px;
   border: 1px solid var(--line);
   border-radius: 10px;
   background: #111;
@@ -3012,7 +3012,7 @@ button.calendar-day:hover {
 .bout-prediction header {
   margin-bottom: 8px;
   color: var(--muted);
-  font-size: 0.74rem;
+  font-size: 0.86rem;
 }
 
 .bout-prediction header span {
@@ -3025,12 +3025,13 @@ button.calendar-day:hover {
   flex: 1;
   justify-content: space-between;
   gap: 8px;
-  padding: 9px;
+  padding: 11px;
   border: 1px solid var(--line);
   border-radius: 7px;
   color: var(--text);
   background: var(--bg);
   font: inherit;
+  font-size: 0.96rem;
   cursor: pointer;
 }
 
@@ -3048,7 +3049,7 @@ button.calendar-day:hover {
   display: block;
   margin: 8px 0 0;
   color: var(--muted);
-  font-size: 0.72rem;
+  font-size: 0.82rem;
 }
 
 @media (max-width: 640px) {
