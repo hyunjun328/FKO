@@ -81,7 +81,7 @@ test("server-renders the UFC schedule product", async () => {
   );
   assert.match(html, /href="#event-detail"/);
   assert.match(html, /id="event-detail"/);
-  assert.match(html, /UFC 330 메인 이벤트 반응/);
+  assert.match(html, /메인 이벤트 반응/);
   assert.match(html, /GUEST COMMENTS/);
   assert.match(html, /상세(?:&nbsp;|\u00a0)→/);
   assert.match(html, /UFC 및 Zuffa와 공식 제휴 관계가 없는/);

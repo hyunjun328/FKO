@@ -212,6 +212,10 @@ function EventDetail({
         </a>
         에서 {new Date(event.verifiedAt).toLocaleString("ko-KR")}에 확인했습니다.
       </div>
+      <GuestCommentThread
+        targetId={`event:${event.id}:main-event`}
+        title={`${event.title} 메인 이벤트 반응`}
+      />
     </aside>
   );
 }
@@ -529,11 +533,6 @@ export function FightCalendar() {
           </aside>
         </article>
       </section>
-
-      <GuestCommentThread
-        targetId={`event:${featuredEvent.id}:main-event`}
-        title={`${featuredEvent.title} 메인 이벤트 반응`}
-      />
 
       <section className="schedule-section">
         <div className="section-head">
