@@ -859,7 +859,7 @@ a:focus-visible {
 }
 
 .detail-top {
-  padding: 26px;
+  padding: 34px;
   background: var(--ink);
   color: var(--text);
 }
@@ -886,22 +886,22 @@ a:focus-visible {
 }
 
 .detail-top h3 {
-  margin: 18px 0 8px;
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin: 20px 0 10px;
+  font-size: clamp(2.1rem, 4.6vw, 3.5rem);
   font-weight: 950;
   letter-spacing: -0.06em;
   line-height: 1;
 }
 
 .detail-top p {
-  margin: 8px 0 0;
+  margin: 10px 0 0;
   color: #bbb6ac;
-  font-size: 0.82rem;
+  font-size: 0.94rem;
   font-weight: 650;
 }
 
 .fight-card {
-  padding: 20px 22px 24px;
+  padding: 28px 32px 34px;
 }
 
 .card-section + .card-section {
@@ -912,9 +912,9 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   color: var(--muted);
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -922,10 +922,10 @@ a:focus-visible {
 
 .bout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 52px minmax(0, 1fr);
-  gap: 18px;
+  grid-template-columns: minmax(0, 1fr) 72px minmax(0, 1fr);
+  gap: 26px;
   align-items: center;
-  padding: 17px 10px;
+  padding: 25px 18px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -941,14 +941,14 @@ a:focus-visible {
 }
 
 .fighter strong {
-  font-size: 0.92rem;
+  font-size: 1.18rem;
   font-weight: 900;
   word-break: keep-all;
 }
 
 .fighter small {
   color: var(--muted);
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   font-weight: 650;
 }
 
@@ -974,11 +974,11 @@ a:focus-visible {
 }
 
 .fighter-rank {
-  padding: 3px 5px;
+  padding: 4px 7px;
   border-radius: 6px;
   background: var(--lime);
   color: var(--ink);
-  font-size: 0.55rem;
+  font-size: 0.68rem;
   font-weight: 900;
   line-height: 1;
   white-space: nowrap;
@@ -986,7 +986,7 @@ a:focus-visible {
 
 .fighter-record {
   color: var(--muted);
-  font-size: 0.61rem;
+  font-size: 0.74rem;
   font-weight: 800;
   white-space: nowrap;
 }
@@ -3946,9 +3946,9 @@ body :is(b, strong) {
 }
 
 .bout-fighter-face {
-  width: 46px;
-  height: 58px;
-  margin-bottom: 3px;
+  width: 82px;
+  height: 102px;
+  margin-bottom: 7px;
 }
 
 .korean-card-avatar {
@@ -4191,8 +4191,8 @@ body :is(b, strong) {
   }
 
   .bout-fighter-face {
-    width: 40px;
-    height: 50px;
+    width: 64px;
+    height: 80px;
   }
 
   .korean-card-avatar {

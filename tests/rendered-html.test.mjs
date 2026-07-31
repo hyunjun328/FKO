@@ -36,6 +36,8 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /Fight Korea/);
   assert.match(html, /일정 자동 확인/);
   assert.match(html, /aria-current="page">UFC 일정<\/a>/);
+  const header = await readFile(new URL("../app/components/AppHeader.tsx", import.meta.url), "utf8");
+  assert.match(header, /hour: "2-digit"/);
   assert.doesNotMatch(html, /파이트 캘린더 코리아/);
   assert.match(html, /UFC 일정/);
   assert.match(html, /대진과 선수 정보/);
