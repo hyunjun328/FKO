@@ -5,6 +5,7 @@ export const SUPABASE_KEY = "sb_publishable_b2_cjV_CWjFG-oKAtylebg_yb3s8HvE";
 
 type StoredSession = {
   access_token: string;
+  refresh_token?: string;
   user: { id: string; user_metadata?: { username?: string } };
 };
 

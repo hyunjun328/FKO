@@ -21,7 +21,9 @@ export default function AccountPage() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    setLoggedInName(getAuthSession()?.user.user_metadata?.username ?? "");
+    const savedNickname = getAuthSession()?.user.user_metadata?.username ?? "";
+    setLoggedInName(savedNickname);
+    setNickname(savedNickname);
   }, []);
 
   async function submit(event: FormEvent<HTMLFormElement>) {
@@ -58,15 +60,75 @@ export default function AccountPage() {
       setMessage("Supabase에서 Confirm email을 끈 뒤 다시 가입해 주세요.");
       return;
     }
-    saveAuthSession({ access_token: result.access_token, user: result.user });
+    saveAuthSession({
+      access_token: result.access_token,
+      refresh_token: result.refresh_token,
+      user: result.user,
+    });
     setLoggedInName(result.user.user_metadata?.username ?? nickname.trim());
     setPassword("");
     setMessage("");
   }
 
-  if (loggedInName) {
-    return <main className="site-shell account-page"><section><span>FKO ACCOUNT</span><h1>{loggedInName}님 로그인됨.</h1><p>이 닉네임으로 글, 댓글, 투표에 참여합니다.</p><button type="button" onClick={() => { clearAuthSession(); setLoggedInName(""); }}>로그아웃</button><Link href="/">일정 홈으로</Link></section></main>;
+  async function updateNickname(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const nextNickname = nickname.trim();
+    const session = getAuthSession();
+    if (!session) {
+      setMessage("로그인 상태를 다시 확인해 주세요.");
+      return;
+    }
+    if (nextNickname.length < 2 || nextNickname.length > 20) {
+      setMessage("닉네임은 2~20자로 입력해 주세요.");
+      return;
+    }
+
+    setMessage("닉네임을 수정하고 있습니다.");
+    const response = await fetch(`${SUPABASE_URL}/auth/v1/user`, {
+      method: "PUT",
+      headers: {
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${session.access_token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ data: { username: nextNickname } }),
+    });
+    if (!response.ok) {
+      setMessage("닉네임을 수정하지 못했습니다. 잠시 후 다시 시도해 주세요.");
+      return;
+    }
+
+    const user = await response.json();
+    let nextSession = { ...session, user };
+    if (session.refresh_token) {
+      const tokenResponse = await fetch(
+        `${SUPABASE_URL}/auth/v1/token?grant_type=refresh_token`,
+        {
+          method: "POST",
+          headers: { apikey: SUPABASE_KEY, "Content-Type": "application/json" },
+          body: JSON.stringify({ refresh_token: session.refresh_token }),
+        },
+      );
+      if (tokenResponse.ok) {
+        const refreshed = await tokenResponse.json();
+        if (refreshed.access_token && refreshed.user) {
+          nextSession = {
+            access_token: refreshed.access_token,
+            refresh_token: refreshed.refresh_token,
+            user: refreshed.user,
+          };
+        }
+      }
+    }
+    saveAuthSession(nextSession);
+    setLoggedInName(nextSession.user.user_metadata?.username ?? nextNickname);
+    setNickname(nextSession.user.user_metadata?.username ?? nextNickname);
+    setMessage(session.refresh_token ? "닉네임을 수정했습니다." : "닉네임을 수정했습니다. 글을 쓰기 전 한 번 다시 로그인해 주세요.");
   }
 
-  return <main className="site-shell account-page"><section><span>FKO ACCOUNT</span><h1>{mode === "login" ? "로그인." : "회원가입."}</h1><p>이메일 인증 없이 아이디, 비밀번호, 닉네임만 사용합니다.</p><div className="account-tabs"><button type="button" data-active={mode === "login"} onClick={() => setMode("login")}>로그인</button><button type="button" data-active={mode === "signup"} onClick={() => setMode("signup")}>회원가입</button></div><form onSubmit={submit}><input value={username} onChange={(event) => setUsername(event.target.value)} placeholder="아이디" autoComplete="username" required />{mode === "signup" ? <input value={nickname} onChange={(event) => setNickname(event.target.value)} placeholder="고정 닉네임" minLength={2} maxLength={20} required /> : null}<input value={password} onChange={(event) => setPassword(event.target.value)} type="password" placeholder="비밀번호 6자 이상" autoComplete={mode === "login" ? "current-password" : "new-password"} required /><button type="submit">{mode === "login" ? "로그인" : "회원가입"}</button></form>{message ? <p className="account-message">{message}</p> : null}<Link href="/">일정 홈으로</Link></section></main>;
+  if (loggedInName) {
+    return <main className="site-shell account-page"><section><span>FKO ACCOUNT</span><h1>{loggedInName}님 로그인됨.</h1><p>이 닉네임으로 글, 댓글, 투표에 참여합니다.</p><form onSubmit={updateNickname}><label htmlFor="nickname-edit">닉네임</label><input id="nickname-edit" value={nickname} onChange={(event) => setNickname(event.target.value)} placeholder="고정 닉네임" minLength={2} maxLength={20} autoComplete="nickname" required /><button type="submit">닉네임 수정</button></form>{message ? <p className="account-message">{message}</p> : null}<button type="button" onClick={() => { clearAuthSession(); setLoggedInName(""); setNickname(""); setMessage(""); }}>로그아웃</button><Link href="/">일정 홈으로</Link></section></main>;
+  }
+
+  return <main className="site-shell account-page"><section><span>FKO ACCOUNT</span><h1>{mode === "login" ? "로그인." : "회원가입."}</h1><p>이메일 인증 없이 아이디, 비밀번호, 닉네임만 사용합니다.</p><div className="account-tabs"><button type="button" data-active={mode === "login"} onClick={() => setMode("login")}>로그인</button><button type="button" data-active={mode === "signup"} onClick={() => setMode("signup")}>회원가입</button></div><form onSubmit={submit}>{mode === "signup" ? <input value={nickname} onChange={(event) => setNickname(event.target.value)} placeholder="고정 닉네임" minLength={2} maxLength={20} autoComplete="nickname" required /> : null}<input value={username} onChange={(event) => setUsername(event.target.value)} placeholder="아이디" autoComplete="username" required /><input value={password} onChange={(event) => setPassword(event.target.value)} type="password" placeholder="비밀번호 6자 이상" autoComplete={mode === "login" ? "current-password" : "new-password"} required /><button type="submit">{mode === "login" ? "로그인" : "회원가입"}</button></form>{message ? <p className="account-message">{message}</p> : null}<Link href="/">일정 홈으로</Link></section></main>;
 }

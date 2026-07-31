@@ -226,6 +226,7 @@ a:focus-visible {
 
 .account-page h1 { margin: 10px 0 8px; }
 .account-page p { color: var(--muted); }
+.account-page label { color: var(--muted); font-size: 0.78rem; font-weight: 750; }
 
 .account-tabs,
 .account-page form {

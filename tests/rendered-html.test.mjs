@@ -294,6 +294,9 @@ test("server-renders a separate account page with nickname sign-up", async () =>
   assert.match(html, /회원가입/);
   const account = await readFile(new URL("../app/account/page.tsx", import.meta.url), "utf8");
   assert.match(account, /고정 닉네임/);
+  assert.match(account, /닉네임 수정/);
+  assert.match(account, /method: "PUT"/);
+  assert.match(account, /grant_type=refresh_token/);
 });
 
 test("maps every ranked fighter to a Korean display name", async () => {
