@@ -17,6 +17,7 @@ test("exports every public route below the FKO base path", async () => {
   const photoCredits = await readOutput("photo-credits/index.html");
   const archive = await readOutput("archive/index.html");
   const community = await readOutput("community/index.html");
+  const account = await readOutput("account/index.html");
   const nobodyMan = await readFile(new URL("fighters/nobody.webp", output));
   const nobodyWoman = await readFile(
     new URL("fighters/nobody-woman.webp", output),
@@ -41,6 +42,7 @@ test("exports every public route below the FKO base path", async () => {
   assert.match(archive, /UFC 아카이브/);
   assert.match(archive, /명예의 전당/);
   assert.match(community, /FKO COMMUNITY/);
+  assert.match(account, /FKO ACCOUNT/);
   assert.ok(nobodyMan.byteLength > 1000);
   assert.ok(nobodyWoman.byteLength > 1000);
 });

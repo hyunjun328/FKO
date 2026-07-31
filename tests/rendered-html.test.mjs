@@ -279,6 +279,17 @@ test("server-renders the guest community entry page", async () => {
   assert.match(html, /로그인/);
 });
 
+test("server-renders a separate account page with nickname sign-up", async () => {
+  const response = await render("/account");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /FKO ACCOUNT/);
+  assert.match(html, /회원가입/);
+  const account = await readFile(new URL("../app/account/page.tsx", import.meta.url), "utf8");
+  assert.match(account, /고정 닉네임/);
+});
+
 test("maps every ranked fighter to a Korean display name", async () => {
   const rankings = await readFile(
     new URL("../app/data/rankings.ts", import.meta.url),
