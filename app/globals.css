@@ -509,12 +509,12 @@ a:focus-visible {
 }
 
 .featured-match-section {
-  margin-top: 18px;
+  margin-top: 22px;
 }
 
 .featured-match-section .featured-match-card {
-  min-height: 260px;
-  padding: 26px;
+  min-height: 390px;
+  padding: 32px;
 }
 
 .featured-match-card {
@@ -529,7 +529,7 @@ a:focus-visible {
   align-items: center;
   gap: 7px;
   color: var(--muted);
-  font-size: 0.72rem;
+  font-size: 0.84rem;
   font-weight: 850;
 }
 
@@ -551,10 +551,10 @@ a:focus-visible {
 .featured-match-card strong {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  gap: 7px;
+  gap: 16px;
   align-items: center;
-  margin-top: 15px;
-  font-size: clamp(0.95rem, 2vw, 1.25rem);
+  margin-top: 20px;
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
   font-weight: 950;
   line-height: 1.25;
   word-break: keep-all;
@@ -562,7 +562,7 @@ a:focus-visible {
 
 .featured-match-card strong i {
   color: var(--orange);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   font-style: italic;
 }
 
@@ -571,9 +571,9 @@ a:focus-visible {
 }
 
 .featured-match-card > small {
-  margin-top: 6px;
+  margin-top: 8px;
   color: var(--muted);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   font-weight: 700;
 }
 
@@ -594,12 +594,12 @@ a:focus-visible {
 
 .featured-match-meta {
   order: 1;
-  margin-top: 13px;
-  padding: 10px 12px;
+  margin-top: 16px;
+  padding: 15px 18px;
   border-radius: 5px;
   background: #171717;
   color: var(--text);
-  font-size: 0.78rem;
+  font-size: 1rem;
   font-weight: 750;
   line-height: 1.4;
 }
@@ -618,9 +618,9 @@ a:focus-visible {
 
 .featured-match-card > b {
   order: 5;
-  margin-top: 13px;
+  margin-top: 18px;
   color: var(--muted);
-  font-size: 0.7rem;
+  font-size: 0.84rem;
   font-weight: 900;
 }
 
@@ -3921,12 +3921,12 @@ body :is(b, strong) {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: flex-end;
-  margin-top: 17px;
+  margin-top: 26px;
 }
 
 .featured-fighter-face {
-  width: 64px;
-  height: 80px;
+  width: clamp(108px, 11vw, 154px);
+  height: clamp(135px, 14vw, 192px);
 }
 
 .featured-fighter-faces .fighter-face:first-child {
@@ -4168,6 +4168,26 @@ body :is(b, strong) {
   .hero-fighter-face {
     width: 64px;
     height: 80px;
+  }
+
+  .featured-match-section .featured-match-card {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .featured-fighter-face {
+    width: 88px;
+    height: 110px;
+  }
+
+  .featured-match-card strong {
+    gap: 10px;
+    font-size: clamp(1.05rem, 5vw, 1.4rem);
+  }
+
+  .featured-match-meta {
+    padding: 12px 14px;
+    font-size: 0.86rem;
   }
 
   .bout-fighter-face {

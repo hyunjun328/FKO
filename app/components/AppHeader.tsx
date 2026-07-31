@@ -2,7 +2,15 @@
 // 모든 화면에서 같은 위치와 순서로 제공하는 공통 상단 내비게이션
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { SCHEDULE_CHECKED_AT } from "../data/schedule-status";
 import { AccountPanel } from "./AccountPanel";
+
+const SCHEDULE_CHECK_FORMATTER = new Intl.DateTimeFormat("ko-KR", {
+  timeZone: "Asia/Seoul",
+  year: "numeric",
+  month: "numeric",
+  day: "numeric",
+});
 
 export function AppHeader() {
   const pathname = usePathname();
@@ -34,7 +42,10 @@ export function AppHeader() {
           ))}
           <AccountPanel />
         </nav>
-        <span className="app-update-state"><i aria-hidden="true" />일정 확인 완료 · 2026. 7. 29.</span>
+        <span className="app-update-state">
+          <i aria-hidden="true" />
+          일정 자동 확인 · {SCHEDULE_CHECK_FORMATTER.format(new Date(SCHEDULE_CHECKED_AT))}
+        </span>
       </div>
     </header>
   );
