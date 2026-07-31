@@ -90,6 +90,10 @@ test("server-renders the UFC schedule product", async () => {
   );
   assert.match(html, /href="#event-detail"/);
   assert.match(html, /id="event-detail"/);
+  const schedule = await readFile(new URL("../app/components/FightCalendar.tsx", import.meta.url), "utf8");
+  assert.match(schedule, /<\/div>\s*<EventDetail/s);
+  assert.match(schedule, /function selectEvent\(eventId: string\)/);
+  assert.match(schedule, /scrollIntoView/);
   assert.match(html, /메인 이벤트 반응/);
   assert.match(html, /GUEST COMMENTS/);
   assert.match(html, /승부예측/);

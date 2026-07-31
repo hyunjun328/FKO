@@ -380,6 +380,16 @@ export function FightCalendar() {
     ) ?? nextEvent;
   const featuredBout = featuredEvent.bouts[0];
 
+  function selectEvent(eventId: string) {
+    setSelectedId(eventId);
+    window.requestAnimationFrame(() => {
+      document.getElementById("event-detail")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  }
+
   return (
     <main className="site-shell">
       <header className="topbar">
@@ -505,7 +515,7 @@ export function FightCalendar() {
             <a
               className="featured-match-card"
               href="#event-detail"
-              onClick={() => setSelectedId(featuredEvent.id)}
+              onClick={() => selectEvent(featuredEvent.id)}
               aria-label={`${featuredEvent.title} ${featuredBout.leftKo} 대 ${featuredBout.rightKo} 상세 보기`}
             >
               <span className="hero-panel-label">다음 주요 매치</span>
@@ -586,7 +596,7 @@ export function FightCalendar() {
                       className="event-row"
                       key={event.id}
                       aria-current={selected.id === event.id}
-                      onClick={() => setSelectedId(event.id)}
+                      onClick={() => selectEvent(event.id)}
                       aria-label={`${event.title} 상세 보기`}
                     >
                       <div className="event-row-copy">
@@ -637,7 +647,7 @@ export function FightCalendar() {
               <CalendarView
                 events={EVENTS}
                 selected={selected}
-                onSelect={(event) => setSelectedId(event.id)}
+                onSelect={(event) => selectEvent(event.id)}
               />
             )}
 
@@ -653,11 +663,12 @@ export function FightCalendar() {
             </div>
           </div>
 
-          <EventDetail
-            event={selected}
-            onFighterSelect={setSelectedFighter}
-          />
         </div>
+
+        <EventDetail
+          event={selected}
+          onFighterSelect={setSelectedFighter}
+        />
       </section>
 
       <footer className="footer">

@@ -675,10 +675,7 @@ a:focus-visible {
 }
 
 .schedule-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.52fr);
-  gap: 22px;
-  align-items: start;
+  display: block;
 }
 
 .list-panel,
@@ -856,10 +853,9 @@ a:focus-visible {
 }
 
 .detail-panel {
-  position: sticky;
-  top: 18px;
+  margin-top: 22px;
   overflow: hidden;
-  scroll-margin-top: 18px;
+  scroll-margin-top: 104px;
 }
 
 .detail-top {
