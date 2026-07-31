@@ -1,5 +1,5 @@
 # 매일 UFC 예정 일정을 수집해 운영자 검수 파일로 보관하는 작업
-name: Refresh UFC schedule, rankings, and photos
+name: Refresh UFC schedule and results
 
 on:
   schedule:
@@ -28,21 +28,19 @@ jobs:
         run: python scripts/collect_ufc_schedule.py
       - name: Collect completed event results
         run: python scripts/collect_ufc_results.py
-      - name: Collect Fight Matrix rankings
-        run: python scripts/collect_fightmatrix_rankings.py
-      - name: Collect verified fighter photos
-        run: python scripts/collect_fighter_images.py --include-world-ranking
+      - name: Collect missing scheduled fighter photos
+        run: python scripts/collect_fighter_images.py
       - name: Update visible check time
         run: node scripts/write-schedule-status.mjs
       - name: Commit refreshed public data
         run: |
-          git add app/data/schedule-status.ts app/data/auto-scheduled-events.ts app/data/event-results.ts app/data/fightmatrix-rankings.ts app/data/fighter-images.json public/fighters
+          git add app/data/schedule-status.ts app/data/auto-scheduled-events.ts app/data/event-results.ts app/data/fighter-images.json public/fighters
           if git diff --cached --quiet; then
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore(data): refresh UFC schedule, rankings, and photos"
+          git commit -m "chore(schedule): refresh UFC schedule and results"
           git push
       - name: Upload review file
         uses: actions/upload-artifact@v4
