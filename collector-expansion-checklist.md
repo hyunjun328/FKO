@@ -5,4 +5,4 @@
 - [x] Collect Fight Matrix rankings and verified Wikimedia Commons fighter photos in that run.
 - [x] Commit every generated schedule, result, ranking, image, and status artifact only when changed.
 - [x] Add workflow dependency installation and validate generated outputs locally.
-- [ ] Deploy the verified workflow update.
+- [x] Deploy the verified workflow update.
