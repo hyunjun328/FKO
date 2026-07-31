@@ -1003,7 +1003,7 @@ a:focus-visible {
   grid-template-columns: minmax(0, 1fr) 84px minmax(0, 1fr);
   gap: 30px;
   align-items: center;
-  padding: 30px 20px;
+  padding: 18px 20px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -1013,7 +1013,7 @@ a:focus-visible {
 
 .fighter {
   display: grid;
-  gap: 3px;
+  gap: 2px;
   min-width: 0;
   line-height: 1.25;
 }
@@ -2986,8 +2986,8 @@ button.calendar-day:hover {
 
 .bout-prediction {
   grid-column: 1 / -1;
-  margin-top: 12px;
-  padding: 14px;
+  margin-top: 7px;
+  padding: 10px 12px;
   border: 1px solid var(--line);
   border-radius: 10px;
   background: #111;
@@ -3001,7 +3001,7 @@ button.calendar-day:hover {
 }
 
 .bout-prediction header {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   color: var(--muted);
   font-size: 0.86rem;
 }
@@ -3016,7 +3016,7 @@ button.calendar-day:hover {
   flex: 1;
   justify-content: space-between;
   gap: 8px;
-  padding: 11px;
+  padding: 8px 10px;
   border: 1px solid var(--line);
   border-radius: 7px;
   color: var(--text);
@@ -4199,9 +4199,9 @@ body :is(b, strong) {
 }
 
 .bout-fighter-face {
-  width: 82px;
-  height: 102px;
-  margin-bottom: 7px;
+  width: 70px;
+  height: 88px;
+  margin-bottom: 4px;
 }
 
 .korean-card-avatar {
