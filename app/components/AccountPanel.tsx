@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getAuthSession } from "../lib/guest-auth";
 
-export function AccountPanel() {
+export function AccountPanel({ className = "" }: { className?: string }) {
   const [nickname, setNickname] = useState("");
 
   useEffect(() => {
@@ -15,5 +15,5 @@ export function AccountPanel() {
     return () => window.removeEventListener("fko-auth-change", sync);
   }, []);
 
-  return <Link className="account-panel" href="/account">{nickname || "로그인"}</Link>;
+  return <Link className={`account-panel ${className}`.trim()} href="/account">{nickname || "로그인"}</Link>;
 }

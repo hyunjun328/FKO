@@ -1,5 +1,6 @@
 "use client";
-// 모든 화면에서 같은 위치와 순서로 제공하는 공통 상단 내비게이션
+// 모든 화면에서 공통 메뉴와 사이트 상태를 제공하는 상단 내비게이션입니다.
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SCHEDULE_CHECKED_AT } from "../data/schedule-status";
@@ -28,29 +29,30 @@ export function AppHeader() {
   ];
 
   return (
-    <header className="app-topbar">
-      <div>
-        <Link className="brand" href="/" aria-label="FKO 일정 홈으로">
-          <span className="brand-mark">FKO</span>
-          <span className="brand-copy"><strong>FKO</strong><small>Fight Korea</small></span>
-        </Link>
-        <nav className="app-topbar-actions" aria-label="주요 메뉴">
-          {navigationItems.map((item) => (
-            <Link
-              href={item.href}
-              key={item.href}
-              aria-current={pathname === item.href ? "page" : undefined}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-        <AccountPanel />
-        <span className="app-update-state">
-          <i aria-hidden="true" />
-          일정 자동 확인 · {SCHEDULE_CHECK_FORMATTER.format(new Date(SCHEDULE_CHECKED_AT))}
-        </span>
-      </div>
-    </header>
+    <>
+      <Link className="site-brand" href="/" aria-label="FKO 일정 처음으로">
+        FKO
+      </Link>
+      <AccountPanel className="site-account-panel" />
+      <header className="app-topbar">
+        <div>
+          <nav className="app-topbar-actions" aria-label="주요 메뉴">
+            {navigationItems.map((item) => (
+              <Link
+                href={item.href}
+                key={item.href}
+                aria-current={pathname === item.href ? "page" : undefined}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <span className="app-update-state">
+            <i aria-hidden="true" />
+            일정 자동 확인 · {SCHEDULE_CHECK_FORMATTER.format(new Date(SCHEDULE_CHECKED_AT))}
+          </span>
+        </div>
+      </header>
+    </>
   );
 }
