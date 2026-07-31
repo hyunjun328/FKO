@@ -4,7 +4,9 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { EVENTS, type BoutSection, type FightEvent } from "../data/events";
+import { EVENT_RESULTS } from "../data/event-results";
 import { FIGHTER_PROFILES } from "../data/fighters";
+import { eventDisplayStatus } from "../lib/event-status";
 import { SCHEDULE_CHECKED_AT } from "../data/schedule-status";
 import { unofficialWorldRanking } from "../data/unofficial-rankings";
 import {
@@ -379,15 +381,33 @@ export function FightCalendar() {
     return () => window.clearInterval(timer);
   }, []);
 
-  const selected = EVENTS.find((event) => event.id === selectedId) ?? EVENTS[0];
+  const resultsByEventId = new Map(
+    EVENT_RESULTS.map((result) => [result.eventId, result]),
+  );
+  const visibleEvents = EVENTS.filter(
+    (event) => eventDisplayStatus(event, now, resultsByEventId.get(event.id)) !== "completed",
+  );
   const nextEvent =
-    EVENTS.find((event) => new Date(event.startUtc).getTime() > now) ?? EVENTS[0];
+    visibleEvents.find(
+      (event) => eventDisplayStatus(event, now, resultsByEventId.get(event.id)) === "fight-day",
+    ) ??
+    visibleEvents.find(
+      (event) => eventDisplayStatus(event, now, resultsByEventId.get(event.id)) === "upcoming",
+    ) ?? EVENTS[0];
+  const selected = visibleEvents.find((event) => event.id === selectedId) ?? nextEvent;
+  const scheduledEvents = [...visibleEvents].sort((left, right) => {
+    const leftStatus = eventDisplayStatus(left, now, resultsByEventId.get(left.id));
+    const rightStatus = eventDisplayStatus(right, now, resultsByEventId.get(right.id));
+    if (leftStatus === "fight-day" && rightStatus !== "fight-day") return -1;
+    if (rightStatus === "fight-day" && leftStatus !== "fight-day") return 1;
+    return new Date(left.startUtc).getTime() - new Date(right.startUtc).getTime();
+  });
   const mainEvent = nextEvent.bouts[0];
   const featuredEvent =
-    EVENTS.find(
+    scheduledEvents.find(
       (event) =>
         event.series === "UFC" &&
-        new Date(event.startUtc).getTime() > now,
+        eventDisplayStatus(event, now, resultsByEventId.get(event.id)) !== "awaiting-results",
     ) ?? nextEvent;
   const featuredBout = featuredEvent.bouts[0];
 
@@ -424,6 +444,9 @@ export function FightCalendar() {
           <Link className="topbar-link" href="/archive">
             UFC 아카이브
           </Link>
+          <Link className="topbar-link" href="/results">
+            대회 결과
+          </Link>
           <div className="update-state">
             <span className="update-dot" aria-hidden="true" />
             <span>일정 확인 완료</span>
@@ -446,7 +469,11 @@ export function FightCalendar() {
 
         <article className="next-event">
           <div className="next-event-copy">
-            <span className="event-kicker">다음 대회 · {nextEvent.status}</span>
+            <span className="event-kicker">
+              {eventDisplayStatus(nextEvent, now, resultsByEventId.get(nextEvent.id)) === "fight-day"
+                ? "FIGHT DAY"
+                : `다음 대회 · ${nextEvent.status}`}
+            </span>
             <h2>{nextEvent.title}</h2>
             <div className="main-matchup">
               <button
@@ -594,7 +621,7 @@ export function FightCalendar() {
           <div>
             {view === "list" ? (
               <div className="list-panel event-list">
-                {EVENTS.map((event) => {
+                {scheduledEvents.map((event) => {
                   const mainBout = event.bouts[0];
                   const leftRank = eventRankBadge(mainBout.left);
                   const rightRank = eventRankBadge(mainBout.right);
@@ -656,7 +683,7 @@ export function FightCalendar() {
               </div>
             ) : (
               <CalendarView
-                events={EVENTS}
+                events={scheduledEvents}
                 selected={selected}
                 onSelect={(event) => selectEvent(event.id)}
               />

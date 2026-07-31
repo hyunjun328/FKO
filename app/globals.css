@@ -2643,6 +2643,71 @@ button.calendar-day:hover {
   margin-top: 58px;
 }
 
+.results-page {
+  padding-bottom: 72px;
+}
+
+.results-hero {
+  margin-top: 52px;
+  max-width: 680px;
+}
+
+.results-hero h1 {
+  margin: 10px 0;
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+  letter-spacing: -0.06em;
+}
+
+.results-hero p,
+.event-results-empty {
+  color: var(--muted);
+  font-weight: 650;
+}
+
+.event-results-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.event-results-card {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--card);
+}
+
+.event-results-card header,
+.event-results-card li {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.event-results-card header span,
+.event-results-card li strong {
+  display: block;
+  font-size: 1.12rem;
+}
+
+.event-results-card header small,
+.event-results-card li small,
+.event-results-card time {
+  color: var(--muted);
+}
+
+.event-results-card ol {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.event-results-card li span { margin-left: auto; }
+
+.event-results-card a { color: var(--lime); font-weight: 800; }
+
 .community-page {
   padding-top: 46px;
   padding-bottom: 72px;

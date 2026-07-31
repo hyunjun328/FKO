@@ -24,6 +24,7 @@ export function AppHeader() {
     { href: "/korean-fighters", label: "코리안 파이터" },
     { href: "/community", label: "커뮤니티" },
     { href: "/archive", label: "UFC 아카이브" },
+    { href: "/results", label: "대회 결과" },
   ];
 
   return (

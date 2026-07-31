@@ -3,6 +3,7 @@ import unittest
 from datetime import date
 
 from scripts.collect_wikipedia import find_scheduled_events
+from scripts.collect_ufc_results import find_completed_events
 
 
 class CollectorTest(unittest.TestCase):
@@ -28,6 +29,20 @@ class CollectorTest(unittest.TestCase):
                     "country": "Japan",
                 }
             ],
+        )
+
+    def test_reads_completed_ufcstats_event_rows(self) -> None:
+        html = '''
+        <a href="http://ufcstats.com/event-details/abc"><span>UFC 300: Pereira vs. Hill</span><span>April 13, 2024</span></a>
+        '''
+
+        self.assertEqual(
+            find_completed_events(html),
+            [{
+                "title": "UFC 300: Pereira vs. Hill",
+                "date": "2024-04-13",
+                "url": "http://ufcstats.com/event-details/abc",
+            }],
         )
 
 
