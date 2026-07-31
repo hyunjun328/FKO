@@ -3081,33 +3081,43 @@ button.calendar-day:hover {
   }
 }
 
-/* 홈 일정 목록을 사진 중심의 두 열 카드로 구성한다. */
+/* 홈 일정 목록을 사진 중심의 가로 카드로 구성한다. */
 .event-list {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  padding: 12px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  padding: 0;
 }
 
 .event-row {
   position: relative;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 20px;
-  min-height: 202px;
-  padding: 26px 88px 26px 26px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 22px;
+  min-height: 0;
+  padding: 24px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
 }
 
 .event-row:first-child,
 .event-row:last-child {
-  border-radius: 14px;
+  border-radius: 0;
+}
+
+.event-row:first-child {
+  border-radius: 25px 25px 0 0;
+}
+
+.event-row:last-child {
+  border-bottom: 0;
+  border-radius: 0 0 25px 25px;
 }
 
 .event-row-copy h3 {
   margin-top: 12px;
-  font-size: clamp(1.2rem, 1.75vw, 1.55rem);
-  line-height: 1.38;
-  letter-spacing: -0.025em;
+  font-size: clamp(1.35rem, 2.1vw, 1.8rem);
+  line-height: 1.25;
+  letter-spacing: -0.04em;
 }
 
 .event-row-event {
@@ -3124,15 +3134,13 @@ button.calendar-day:hover {
 }
 
 .event-row .row-arrow {
-  position: absolute;
-  top: 24px;
-  right: 20px;
+  position: static;
 }
 
 @media (max-width: 680px) {
   .event-list {
     grid-template-columns: minmax(0, 1fr);
-    padding: 8px;
+    padding: 0;
   }
 
   .event-row {
