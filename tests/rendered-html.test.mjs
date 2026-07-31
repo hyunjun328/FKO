@@ -42,6 +42,8 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /메인카드 시작/);
   assert.match(html, /다음 주요 매치/);
   assert.match(html, /UFC 330/);
+  assert.match(html, /class="event-ranking-badge" aria-label="챔피언">C<\/b>/);
+  assert.match(html, /class="event-ranking-badge" aria-label="1위">1<\/b>/);
   assert.match(html, /이슬람 마카체프/);
   assert.match(html, /이안 마샤두 개리/);
   assert.match(

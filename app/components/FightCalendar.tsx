@@ -44,16 +44,15 @@ function kstDateKey(iso: string) {
   return KST_DATE_FORMATTER.format(new Date(iso));
 }
 
-function kstParts(iso: string) {
-  const parts = new Intl.DateTimeFormat("ko-KR", {
-    timeZone: "Asia/Seoul",
-    month: "2-digit",
-    day: "2-digit",
-    weekday: "short",
-  }).formatToParts(new Date(iso));
-  const value = (type: Intl.DateTimeFormatPartTypes) =>
-    parts.find((part) => part.type === type)?.value ?? "";
-  return { month: value("month"), day: value("day"), weekday: value("weekday") };
+function eventRankBadge(name: string) {
+  const ranking = FIGHTER_PROFILES[name]?.ranking ?? "";
+
+  if (ranking.includes("챔피언")) {
+    return { label: "챔피언", value: "C" };
+  }
+
+  const rank = ranking.match(/(\d+)위/)?.[1];
+  return rank ? { label: `${rank}위`, value: rank } : null;
 }
 
 function EventDetail({
@@ -573,7 +572,9 @@ export function FightCalendar() {
             {view === "list" ? (
               <div className="list-panel event-list">
                 {EVENTS.map((event) => {
-                  const parts = kstParts(event.startUtc);
+                  const mainBout = event.bouts[0];
+                  const leftRank = eventRankBadge(mainBout.left);
+                  const rightRank = eventRankBadge(mainBout.right);
                   return (
                     <a
                       href="#event-detail"
@@ -583,19 +584,29 @@ export function FightCalendar() {
                       onClick={() => setSelectedId(event.id)}
                       aria-label={`${event.title} 상세 보기`}
                     >
-                      <span className="date-block" aria-hidden="true">
-                        <strong>{parts.day}</strong>
-                        <span>
-                          {parts.month} · {parts.weekday}
-                        </span>
-                      </span>
                       <span className="event-row-copy">
                         <small>{event.series === "UFC" ? event.title : event.series}</small>
-                        <h3>
-                          {event.bouts[0].leftKo} vs {event.bouts[0].rightKo}
+                        <h3 className="event-row-matchup">
+                          <span>
+                            {mainBout.leftKo}
+                            {leftRank ? (
+                              <b className="event-ranking-badge" aria-label={leftRank.label}>
+                                {leftRank.value}
+                              </b>
+                            ) : null}
+                          </span>
+                          <i>vs</i>
+                          <span>
+                            {mainBout.rightKo}
+                            {rightRank ? (
+                              <b className="event-ranking-badge" aria-label={rightRank.label}>
+                                {rightRank.value}
+                              </b>
+                            ) : null}
+                          </span>
                         </h3>
                         <span className="event-row-english" lang="en">
-                          {event.bouts[0].left} vs {event.bouts[0].right}
+                          {mainBout.left} vs {mainBout.right}
                         </span>
                         <p>
                           {KST_FORMATTER.format(new Date(event.startUtc))} ·{" "}
