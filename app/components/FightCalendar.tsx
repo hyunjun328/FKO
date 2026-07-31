@@ -575,6 +575,9 @@ export function FightCalendar() {
                   const mainBout = event.bouts[0];
                   const leftRank = eventRankBadge(mainBout.left);
                   const rightRank = eventRankBadge(mainBout.right);
+                  const mainCardCount = event.bouts.filter(
+                    (bout) => bout.section === "main",
+                  ).length;
                   return (
                     <a
                       href="#event-detail"
@@ -584,10 +587,17 @@ export function FightCalendar() {
                       onClick={() => setSelectedId(event.id)}
                       aria-label={`${event.title} 상세 보기`}
                     >
-                      <span className="event-row-copy">
-                        <small>{event.series === "UFC" ? event.title : event.series}</small>
+                      <div className="event-row-copy">
+                        <span className="event-row-timing">
+                          {KST_FORMATTER.format(new Date(event.startUtc))} KST
+                        </span>
+                        <strong className="event-row-event">
+                          {event.series === "UFC" ? event.title : event.series}
+                          <span aria-hidden="true"> · </span>
+                          {event.city}
+                        </strong>
                         <h3 className="event-row-matchup">
-                          <span>
+                          <span className="event-row-fighter">
                             {mainBout.leftKo}
                             {leftRank ? (
                               <b className="event-ranking-badge" aria-label={leftRank.label}>
@@ -596,7 +606,7 @@ export function FightCalendar() {
                             ) : null}
                           </span>
                           <i>vs</i>
-                          <span>
+                          <span className="event-row-fighter">
                             {mainBout.rightKo}
                             {rightRank ? (
                               <b className="event-ranking-badge" aria-label={rightRank.label}>
@@ -606,13 +616,14 @@ export function FightCalendar() {
                           </span>
                         </h3>
                         <span className="event-row-english" lang="en">
-                          {mainBout.left} vs {mainBout.right}
+                          <span>{mainBout.left}</span>
+                          <i aria-hidden="true">vs</i>
+                          <span>{mainBout.right}</span>
                         </span>
-                        <p>
-                          {KST_FORMATTER.format(new Date(event.startUtc))} ·{" "}
-                          {event.city}
-                        </p>
-                      </span>
+                        <span className="event-row-card-count">
+                          {mainBout.weight} · 메인카드 {mainCardCount}경기
+                        </span>
+                      </div>
                       <span className="row-arrow" aria-hidden="true">
                         상세&nbsp;→
                       </span>

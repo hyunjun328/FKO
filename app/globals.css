@@ -717,39 +717,73 @@ a:focus-visible {
   font-weight: 850;
 }
 
-.event-row-copy small {
+.event-row-timing {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.93rem;
+  font-weight: 800;
+}
+
+.event-row-event {
+  display: block;
   color: var(--orange);
-  font-size: 0.88rem;
+  font-size: clamp(1.05rem, 2vw, 1.22rem);
   font-weight: 900;
+  letter-spacing: -0.02em;
 }
 
 .event-row-copy h3 {
-  margin: 6px 0 3px;
-  font-size: clamp(1.15rem, 2.3vw, 1.55rem);
+  margin: 10px 0 4px;
+  font-size: clamp(1.18rem, 2.3vw, 1.55rem);
   font-weight: 900;
   letter-spacing: -0.04em;
 }
 
 .event-row-english {
-  display: block;
-  margin-bottom: 8px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 7px;
+  margin-bottom: 10px;
   color: var(--muted);
   font-size: 0.72rem;
   font-weight: 650;
 }
 
-.event-row-copy p {
-  margin: 0;
+.event-row-english span:last-child {
+  text-align: right;
+}
+
+.event-row-english i {
+  color: #777;
+  font-size: 0.9em;
+  font-style: normal;
+}
+
+.event-row-card-count {
+  display: block;
   color: var(--muted);
-  font-size: 0.96rem;
-  font-weight: 650;
+  font-size: 0.78rem;
+  font-weight: 750;
 }
 
 .event-row-matchup {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   gap: 7px;
+}
+
+.event-row-fighter {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.event-row-fighter:last-child {
+  justify-self: end;
+  justify-content: flex-end;
+  text-align: right;
 }
 
 .event-row-matchup i {
@@ -2920,17 +2954,8 @@ button.calendar-day:hover {
   font-weight: 850;
 }
 
-.event-row-copy small {
-  font-size: 0.88rem;
-  font-weight: 750;
-}
-
 .event-row-copy h3 {
   font-weight: 800;
-}
-
-.event-row-copy p {
-  font-size: 0.96rem;
 }
 
 .row-arrow,
