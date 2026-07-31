@@ -6002,7 +6002,12 @@ body {
 
 .event-kicker,
 .hero-panel-label,
-.featured-match-context,
+.featured-match-context {
+  color: var(--muted);
+  font-weight: 850;
+  letter-spacing: 0.04em;
+}
+
 .card-section-title,
 .ranking-board header span,
 .p4p-board > header span {
