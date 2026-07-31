@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { EVENTS, type BoutSection, type FightEvent } from "../data/events";
 import { FIGHTER_PROFILES } from "../data/fighters";
+import { SCHEDULE_CHECKED_AT } from "../data/schedule-status";
 import { unofficialWorldRanking } from "../data/unofficial-rankings";
 import {
   FighterProfileDialog,
@@ -30,6 +31,16 @@ const KST_DATE_FORMATTER = new Intl.DateTimeFormat("en-CA", {
   year: "numeric",
   month: "2-digit",
   day: "2-digit",
+});
+
+const SCHEDULE_CHECK_FORMATTER = new Intl.DateTimeFormat("ko-KR", {
+  timeZone: "Asia/Seoul",
+  year: "numeric",
+  month: "numeric",
+  day: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: false,
 });
 
 const SECTION_LABELS: Record<BoutSection, string> = {
@@ -416,7 +427,7 @@ export function FightCalendar() {
           <div className="update-state">
             <span className="update-dot" aria-hidden="true" />
             <span>일정 확인 완료</span>
-            <span>2026. 7. 29.</span>
+            <span>{SCHEDULE_CHECK_FORMATTER.format(new Date(SCHEDULE_CHECKED_AT))}</span>
           </div>
         </div>
       </header>
