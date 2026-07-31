@@ -589,32 +589,40 @@ export function FightCalendar() {
               aria-label={`${featuredEvent.title} ${featuredBout.leftKo} 대 ${featuredBout.rightKo} 상세 보기`}
             >
               <span className="hero-panel-label">다음 주요 매치</span>
-              <span className="featured-fighter-faces" aria-hidden="true">
-                <FighterFace
-                  name={featuredBout.left}
-                  koName={featuredBout.leftKo}
-                  className="featured-fighter-face"
-                  gender={
-                    featuredBout.weight.includes("여성") ? "female" : "male"
-                  }
-                />
-                <FighterFace
-                  name={featuredBout.right}
-                  koName={featuredBout.rightKo}
-                  className="featured-fighter-face"
-                  gender={
-                    featuredBout.weight.includes("여성") ? "female" : "male"
-                  }
-                />
+              <span className="featured-match-context">
+                {featuredBout.weight} · {featuredEvent.city}
               </span>
-              <strong>
-                <span>{featuredBout.leftKo}</span>
+              <span className="featured-matchup">
+                <span className="featured-matchup-fighter">
+                  <FighterFace
+                    name={featuredBout.left}
+                    koName={featuredBout.leftKo}
+                    className="featured-fighter-face"
+                    gender={
+                      featuredBout.weight.includes("여성") ? "female" : "male"
+                    }
+                  />
+                  <span>
+                    <strong>{featuredBout.leftKo}</strong>
+                    <small lang="en">{featuredBout.left}</small>
+                  </span>
+                </span>
                 <i>VS</i>
-                <span>{featuredBout.rightKo}</span>
-              </strong>
-              <small lang="en">
-                {featuredBout.left} vs {featuredBout.right}
-              </small>
+                <span className="featured-matchup-fighter">
+                  <FighterFace
+                    name={featuredBout.right}
+                    koName={featuredBout.rightKo}
+                    className="featured-fighter-face"
+                    gender={
+                      featuredBout.weight.includes("여성") ? "female" : "male"
+                    }
+                  />
+                  <span>
+                    <strong>{featuredBout.rightKo}</strong>
+                    <small lang="en">{featuredBout.right}</small>
+                  </span>
+                </span>
+              </span>
               <span className="featured-match-meta">
                 <b>{featuredEvent.title}</b>
                 <small>
