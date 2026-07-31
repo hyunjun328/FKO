@@ -616,8 +616,10 @@ export function FightCalendar() {
                 {featuredBout.left} vs {featuredBout.right}
               </small>
               <span className="featured-match-meta">
-                {featuredEvent.title} ·{" "}
-                {featuredEvent.timeTbd ? "시간 발표 대기" : `${KST_FORMATTER.format(new Date(featuredEvent.startUtc))} KST`}
+                <b>{featuredEvent.title}</b>
+                <small>
+                  {featuredEvent.timeTbd ? "시간 발표 대기" : `${KST_FORMATTER.format(new Date(featuredEvent.startUtc))} KST`}
+                </small>
               </span>
               <b>대진 전체 보기 →</b>
             </a>

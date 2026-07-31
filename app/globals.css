@@ -5617,3 +5617,73 @@ body :is(b, strong) {
     display: none;
   }
 }
+
+/* 다음 주요 매치에서 사진보다 대진과 대회 정보를 우선한다. */
+.featured-match-section .featured-match-card {
+  min-height: 356px;
+  padding: 30px 32px;
+}
+
+.hero-panel-label {
+  color: var(--lime);
+  font-size: 0.92rem;
+}
+
+.featured-match-meta {
+  display: grid;
+  gap: 5px;
+  margin-top: 12px;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  line-height: 1.2;
+}
+
+.featured-match-meta b {
+  color: var(--orange);
+  font-size: clamp(1.25rem, 2.3vw, 1.7rem);
+  font-weight: 900;
+}
+
+.featured-match-meta small {
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 750;
+}
+
+.featured-fighter-faces {
+  margin-top: 18px;
+}
+
+.featured-fighter-face {
+  width: clamp(108px, 10vw, 148px);
+  height: clamp(135px, 12.5vw, 184px);
+}
+
+.featured-match-card strong {
+  margin-top: 14px;
+  font-size: clamp(1.6rem, 2.7vw, 2.2rem);
+}
+
+.featured-match-card > small {
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+.featured-match-card > b {
+  margin-top: 14px;
+  color: var(--orange);
+  font-size: 0.94rem;
+}
+
+@media (max-width: 680px) {
+  .featured-match-section .featured-match-card {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .featured-fighter-face {
+    width: 88px;
+    height: 110px;
+  }
+}
