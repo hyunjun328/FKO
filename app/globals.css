@@ -3089,10 +3089,11 @@ button.calendar-day:hover {
 }
 
 .event-row {
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  gap: 16px;
-  min-height: 176px;
-  padding: 24px;
+  position: relative;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 20px;
+  min-height: 202px;
+  padding: 26px 88px 26px 26px;
   border: 1px solid var(--line);
   border-radius: 14px;
 }
@@ -3104,7 +3105,9 @@ button.calendar-day:hover {
 
 .event-row-copy h3 {
   margin-top: 12px;
-  font-size: clamp(1.35rem, 2.1vw, 1.8rem);
+  font-size: clamp(1.2rem, 1.75vw, 1.55rem);
+  line-height: 1.38;
+  letter-spacing: -0.025em;
 }
 
 .event-row-event {
@@ -3112,12 +3115,18 @@ button.calendar-day:hover {
 }
 
 .event-row-fighter-face {
-  width: 68px;
-  height: 86px;
+  width: 74px;
+  height: 94px;
 }
 
 .event-row-card-count {
   font-size: 0.88rem;
+}
+
+.event-row .row-arrow {
+  position: absolute;
+  top: 24px;
+  right: 20px;
 }
 
 @media (max-width: 680px) {
@@ -3139,6 +3148,7 @@ button.calendar-day:hover {
   }
 
   .row-arrow {
+    position: static !important;
     grid-column: 2;
     justify-self: start;
     margin-top: 0;
