@@ -70,6 +70,7 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /src="\/fighters\/nobody\.webp"/);
   assert.doesNotMatch(html, /class="fighter-silhouette"/);
   assert.match(html, /href="\/photo-credits"/);
+  assert.match(html, /Made by 정현준/);
   assert.doesNotMatch(normalizedHtml, /현역 6명[^<]*·[^<]*역대 6명/);
   assert.doesNotMatch(html, /korean-fighters-gateway/);
   assert.doesNotMatch(html, /정찬성|김동현/);

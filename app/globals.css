@@ -3829,6 +3829,12 @@ body :is(b, strong) {
   white-space: nowrap;
 }
 
+.footer-credit {
+  color: var(--muted);
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
 .photo-credits-page {
   width: min(1180px, 100%);
 }

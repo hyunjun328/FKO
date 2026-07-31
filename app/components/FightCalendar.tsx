@@ -648,6 +648,7 @@ export function FightCalendar() {
         <span className="footer-links">
           <Link href="/photo-credits">선수 사진 출처</Link>
           <span className="footer-status">1차 공개 베타</span>
+          <span className="footer-credit">© 2026 FKO · Made by 정현준</span>
         </span>
       </footer>
 
