@@ -97,3 +97,45 @@ $$;
 
 revoke all on function public.create_guest_comment(text, text, text, text) from public;
 grant execute on function public.create_guest_comment(text, text, text, text) to anon;
+
+create table if not exists public.community_predictions (
+  id bigint generated always as identity primary key,
+  target_id text not null check (char_length(target_id) between 3 and 160),
+  pick text not null check (char_length(pick) between 2 and 120),
+  guest_id uuid not null,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  unique (target_id, guest_id)
+);
+
+alter table public.community_predictions enable row level security;
+revoke all on table public.community_predictions from anon, authenticated;
+
+create or replace view public.community_prediction_summary as
+  select target_id, pick, count(*)::integer as votes
+  from public.community_predictions
+  group by target_id, pick;
+
+revoke all on public.community_prediction_summary from public, anon, authenticated;
+grant select on public.community_prediction_summary to anon;
+
+create or replace function public.upsert_guest_prediction(
+  p_target_id text,
+  p_pick text,
+  p_guest_id uuid
+) returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  insert into public.community_predictions (target_id, pick, guest_id)
+  values (trim(p_target_id), trim(p_pick), p_guest_id)
+  on conflict (target_id, guest_id)
+  do update set pick = excluded.pick, updated_at = now();
+  return;
+end;
+$$;
+
+revoke all on function public.upsert_guest_prediction(text, text, uuid) from public;
+grant execute on function public.upsert_guest_prediction(text, text, uuid) to anon;

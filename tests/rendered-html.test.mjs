@@ -83,6 +83,7 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /id="event-detail"/);
   assert.match(html, /메인 이벤트 반응/);
   assert.match(html, /GUEST COMMENTS/);
+  assert.match(html, /승부예측/);
   assert.match(html, /상세(?:&nbsp;|\u00a0)→/);
   assert.match(html, /UFC 및 Zuffa와 공식 제휴 관계가 없는/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
@@ -349,4 +350,15 @@ test("keeps at most four compact sources at the top of fighter details", async (
   assert.match(dialog, /GuestCommentThread/);
   assert.match(dialog, /targetId={`fighter:\$\{fighter\.name\}`}/);
   assert.doesNotMatch(dialog, /교차\s*검증/);
+});
+
+test("keeps anonymous predictions separate from comments", async () => {
+  const prediction = await readFile(
+    new URL("../app/components/BoutPrediction.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(prediction, /community_prediction_summary/);
+  assert.match(prediction, /upsert_guest_prediction/);
+  assert.match(prediction, /fko-prediction-guest-id/);
 });

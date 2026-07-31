@@ -13,6 +13,7 @@ import {
 } from "./FighterProfileDialog";
 import { FighterFace } from "./FighterFace";
 import { GuestCommentThread } from "./GuestCommentThread";
+import { BoutPrediction } from "./BoutPrediction";
 
 const KST_FORMATTER = new Intl.DateTimeFormat("ko-KR", {
   timeZone: "Asia/Seoul",
@@ -197,6 +198,15 @@ function EventDetail({
                     {bout.title ? "TITLE · " : ""}
                     {bout.weight}
                   </span>
+                  {section === "main" ? (
+                    <BoutPrediction
+                      targetId={`event:${event.id}:bout:${bout.left}-${bout.right}`}
+                      left={bout.left}
+                      leftKo={bout.leftKo}
+                      right={bout.right}
+                      rightKo={bout.rightKo}
+                    />
+                  ) : null}
                   </div>
                 );
               })}

@@ -2642,6 +2642,64 @@ button.calendar-day:hover {
   line-height: 1.55;
 }
 
+.bout-prediction {
+  grid-column: 1 / -1;
+  margin-top: 12px;
+  padding: 11px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #111;
+}
+
+.bout-prediction header,
+.bout-prediction > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.bout-prediction header {
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.74rem;
+}
+
+.bout-prediction header span {
+  color: var(--lime);
+  font-weight: 900;
+}
+
+.bout-prediction > div button {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--text);
+  background: var(--bg);
+  font: inherit;
+  cursor: pointer;
+}
+
+.bout-prediction > div button[data-selected="true"] {
+  border-color: var(--lime);
+  color: var(--lime);
+}
+
+.bout-prediction > div button b {
+  color: var(--lime);
+}
+
+.bout-prediction > p,
+.bout-prediction-message {
+  display: block;
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
 @media (max-width: 640px) {
   .community-page {
     padding-top: 26px;
@@ -2663,6 +2721,11 @@ button.calendar-day:hover {
   }
 
   .guest-comment-thread form > div {
+    grid-template-columns: 1fr;
+  }
+
+  .bout-prediction > div {
+    display: grid;
     grid-template-columns: 1fr;
   }
 }
