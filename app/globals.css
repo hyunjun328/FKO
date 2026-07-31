@@ -273,25 +273,31 @@ a:focus-visible {
     position: fixed;
     top: 50%;
     right: 28px;
-    width: 172px;
+    width: 218px;
     transform: translateY(-50%);
     border: 1px solid var(--line);
-    border-radius: 12px;
+    border-radius: 18px;
     background: rgba(10, 10, 10, 0.96);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.36);
   }
 
   .app-topbar > div {
     width: 100%;
     min-height: 0;
-    padding: 16px 12px;
+    padding: 22px 16px;
     flex-direction: column;
     align-items: stretch;
-    gap: 14px;
+    gap: 20px;
   }
 
   .app-topbar .brand {
     justify-content: center;
+  }
+
+  .app-topbar .brand-mark {
+    width: 58px;
+    height: 48px;
+    font-size: 0.96rem;
   }
 
   .app-topbar .brand-copy {
@@ -301,17 +307,17 @@ a:focus-visible {
   .app-topbar-actions {
     display: grid;
     flex: none;
-    gap: 7px;
+    gap: 10px;
     overflow: visible;
   }
 
   .app-topbar-actions a,
   .app-topbar-actions > .account-panel {
     width: 100%;
-    min-height: 38px;
+    min-height: 50px;
     justify-content: center;
-    padding: 0 10px;
-    font-size: 0.74rem;
+    padding: 0 14px;
+    font-size: 0.92rem;
   }
 
   .app-update-state {
@@ -319,7 +325,7 @@ a:focus-visible {
   }
 
   .site-shell {
-    width: min(1240px, calc(100% - 230px));
+    width: min(1240px, calc(100% - 276px));
   }
 }
 
