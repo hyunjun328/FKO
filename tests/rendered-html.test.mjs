@@ -34,6 +34,7 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /<html lang="ko">/i);
   assert.match(html, /FKO/);
   assert.match(html, /Fight Korea/);
+  assert.match(html, /aria-current="page">UFC 일정<\/a>/);
   assert.doesNotMatch(html, /파이트 캘린더 코리아/);
   assert.match(html, /UFC 일정/);
   assert.match(html, /대진과 선수 정보/);

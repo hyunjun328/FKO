@@ -95,14 +95,13 @@ a:focus-visible {
 }
 
 .app-topbar > div {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  display: flex;
   align-items: center;
   width: min(1240px, 100%);
   min-height: 86px;
   margin: 0 auto;
   padding: 0 28px;
-  gap: 28px;
+  gap: 20px;
 }
 
 .app-topbar .brand-mark {
@@ -116,11 +115,19 @@ a:focus-visible {
 
 .app-topbar-actions {
   display: flex;
+  flex: 1;
+  min-width: 0;
   justify-content: center;
   gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
 }
 
+.app-topbar-actions::-webkit-scrollbar { display: none; }
+
 .app-topbar-actions a {
+  flex: none;
   min-height: 44px;
   display: inline-flex;
   align-items: center;
@@ -135,6 +142,12 @@ a:focus-visible {
 }
 
 .app-topbar-actions a:hover { border-color: var(--orange); color: var(--orange); }
+
+.app-topbar-actions a[aria-current="page"] {
+  border-color: var(--orange);
+  background: rgba(239, 62, 62, 0.12);
+  color: var(--text);
+}
 
 .account-panel,
 .account-panel form {
@@ -242,6 +255,7 @@ a:focus-visible {
 .account-message { color: var(--orange) !important; }
 
 .app-update-state {
+  flex: none;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -252,6 +266,22 @@ a:focus-visible {
 }
 
 .app-update-state i { width: 7px; height: 7px; border-radius: 50%; background: var(--lime); }
+
+@media (max-width: 1080px) {
+  .app-topbar > div {
+    min-height: 76px;
+    padding-inline: 20px;
+    gap: 16px;
+  }
+
+  .app-topbar-actions {
+    justify-content: flex-start;
+  }
+
+  .app-update-state {
+    display: none;
+  }
+}
 
 .site-shell > .topbar { display: none; }
 
@@ -4119,18 +4149,13 @@ body :is(b, strong) {
 
 @media (max-width: 680px) {
   .app-topbar > div {
-    grid-template-columns: auto 1fr;
-    min-height: 72px;
+    min-height: 68px;
     padding: 0 16px;
-    gap: 14px;
+    gap: 12px;
   }
-
-  .app-update-state { display: none; }
 
   .app-topbar-actions {
     justify-content: flex-start;
-    overflow-x: auto;
-    scrollbar-width: none;
   }
 
   .app-topbar-actions a {
