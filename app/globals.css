@@ -168,6 +168,19 @@ a:focus-visible {
   white-space: nowrap;
 }
 
+.app-topbar > div > .account-panel {
+  flex: none;
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid #484848;
+  border-radius: 3px;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 850;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
 .account-panel input,
 .account-panel button {
   min-height: 38px;
@@ -291,13 +304,24 @@ a:focus-visible {
   }
 
   .app-topbar .brand {
-    justify-content: center;
+    position: fixed;
+    top: 22px;
+    left: 50%;
+    z-index: 31;
+    display: block;
+    transform: translateX(-50%);
   }
 
   .app-topbar .brand-mark {
-    width: 58px;
-    height: 48px;
-    font-size: 0.96rem;
+    width: auto;
+    height: auto;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--text);
+    font-size: 1.15rem;
+    font-weight: 950;
+    letter-spacing: -0.07em;
   }
 
   .app-topbar .brand-copy {
@@ -311,8 +335,7 @@ a:focus-visible {
     overflow: visible;
   }
 
-  .app-topbar-actions a,
-  .app-topbar-actions > .account-panel {
+  .app-topbar-actions a {
     width: 100%;
     min-height: 50px;
     justify-content: center;
@@ -322,6 +345,19 @@ a:focus-visible {
 
   .app-update-state {
     display: none;
+  }
+
+  .app-topbar > div > .account-panel {
+    position: fixed;
+    top: 20px;
+    right: 28px;
+    z-index: 31;
+    min-height: 30px;
+    padding: 0 9px;
+    border-color: #34373a;
+    background: rgba(10, 10, 10, 0.88);
+    color: var(--muted);
+    font-size: 0.64rem;
   }
 
   .site-shell {
@@ -338,6 +374,10 @@ a:focus-visible {
 
   .app-topbar-actions {
     justify-content: flex-start;
+  }
+
+  .app-topbar > div > .account-panel {
+    margin-left: auto;
   }
 
   .app-update-state {

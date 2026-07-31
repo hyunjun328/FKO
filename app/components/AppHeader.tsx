@@ -44,8 +44,8 @@ export function AppHeader() {
               {item.label}
             </Link>
           ))}
-          <AccountPanel />
         </nav>
+        <AccountPanel />
         <span className="app-update-state">
           <i aria-hidden="true" />
           일정 자동 확인 · {SCHEDULE_CHECK_FORMATTER.format(new Date(SCHEDULE_CHECKED_AT))}
