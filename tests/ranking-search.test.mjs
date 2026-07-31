@@ -52,6 +52,28 @@ test("finds SeokHyeon Ko by the Korean name", () => {
   );
 });
 
+test("orders same-name search results by the higher available ranking", () => {
+  const fighters = [
+    {
+      name: "Lower Ranked Fighter",
+      koName: "동명이인",
+      division: "웰터급",
+      unofficialRanking: { rank: 28 },
+    },
+    {
+      name: "Higher Ranked Fighter",
+      koName: "동명이인",
+      division: "웰터급",
+      unofficialRanking: { rank: 7 },
+    },
+  ];
+
+  assert.deepEqual(
+    findUnrankedFighterMatches(fighters, [], "동명이인").map((fighter) => fighter.name),
+    ["Higher Ranked Fighter", "Lower Ranked Fighter"],
+  );
+});
+
 test("finds fighters with small Korean and English spelling mistakes", () => {
   const korean = findUnrankedFighterMatches(
     SEARCHABLE_FIGHTERS,

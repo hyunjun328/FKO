@@ -11,6 +11,19 @@ type GuestComment = {
   created_at: string;
 };
 
+async function responseError(response: Response) {
+  try {
+    const payload = (await response.json()) as {
+      message?: string;
+      details?: string;
+      hint?: string;
+    };
+    return payload.message ?? payload.details ?? payload.hint ?? `HTTP ${response.status}`;
+  } catch {
+    return `HTTP ${response.status}`;
+  }
+}
+
 export function GuestCommentThread({
   targetId,
   title,
@@ -28,7 +41,9 @@ export function GuestCommentThread({
       `${SUPABASE_URL}/rest/v1/community_comment_feed?select=id,nickname,body,created_at&target_id=${target}&order=created_at.desc&limit=30`,
       { headers: authHeaders() },
     );
-    if (!response.ok) throw new Error("댓글을 불러오지 못했습니다.");
+    if (!response.ok) {
+      throw new Error(`댓글을 불러오지 못했습니다. ${await responseError(response)}`);
+    }
     const nextComments = (await response.json()) as GuestComment[];
     setComments(nextComments);
     setMessage(nextComments.length ? "" : "아직 반응이 없습니다. 첫 댓글을 남겨 보세요.");
@@ -41,21 +56,26 @@ export function GuestCommentThread({
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setMessage("등록 중입니다.");
-    const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/create_guest_comment`, {
-      method: "POST",
-      headers: { ...authHeaders(), "Content-Type": "application/json" },
-      body: JSON.stringify({
-        p_target_id: targetId,
-        p_nickname: displayNickname(),
-        p_body: body,
-      }),
-    });
-    if (!response.ok) {
-      setMessage("등록하지 못했습니다. 입력 내용을 확인해 주세요.");
-      return;
+    try {
+      const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/create_guest_comment`, {
+        method: "POST",
+        headers: { ...authHeaders(), "Content-Type": "application/json" },
+        body: JSON.stringify({
+          p_target_id: targetId,
+          p_nickname: displayNickname(),
+          p_body: body.trim(),
+        }),
+      });
+      if (!response.ok) {
+        setMessage(`댓글을 저장하지 못했습니다. ${await responseError(response)}`);
+        return;
+      }
+      setBody("");
+      await loadComments();
+      setMessage("댓글이 저장되었습니다.");
+    } catch {
+      setMessage("댓글 저장 중 네트워크 오류가 발생했습니다. 연결을 확인한 뒤 다시 시도해 주세요.");
     }
-    setBody("");
-    await loadComments();
   }
 
   return (

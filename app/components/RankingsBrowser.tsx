@@ -201,7 +201,7 @@ export function RankingsBrowser() {
       (FIGHT_MATRIX_RANKINGS[division.id] ?? [])
         .filter((entry) => rankingFighterMatches(entry.name, normalizedQuery, rankingKoreanName))
         .map((entry) => ({ division, entry })),
-    );
+    ).sort((left, right) => left.entry.rank - right.entry.rank || left.entry.name.localeCompare(right.entry.name));
   }, [normalizedQuery]);
 
   const unrankedMatches = useMemo(

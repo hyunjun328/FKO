@@ -16,6 +16,16 @@ export type RankingDivisionSearchResult = RankingDivision & {
   showChampionHeader: boolean;
 };
 
+function lowestMatchingRank(division: RankingDivisionSearchResult) {
+  if (division.championMatches) return 0;
+
+  return Math.min(
+    ...division.meta.map((fighter) => fighter.rank),
+    ...division.media.map((fighter) => fighter.rank),
+    Number.MAX_SAFE_INTEGER,
+  );
+}
+
 export function normalizeRankingQuery(value: string) {
   return value.toLocaleLowerCase("ko-KR").replace(/\s+/g, "");
 }
@@ -142,6 +152,9 @@ export function filterRankingDivisions(
         media,
       },
     ];
+  }).sort((left, right) => {
+    const rankDifference = lowestMatchingRank(left) - lowestMatchingRank(right);
+    return rankDifference || left.label.localeCompare(right.label, "ko-KR");
   });
 }
 
@@ -164,11 +177,18 @@ export function findUnrankedFighterMatches(
     ]),
   );
 
-  return fighters.filter(
-    (fighter) =>
-      !rankedNames.has(fighter.name) &&
-      rankingFighterMatches(fighter.name, query, () => fighter.koName),
-  );
+  return fighters
+    .filter(
+      (fighter) =>
+        !rankedNames.has(fighter.name) &&
+        rankingFighterMatches(fighter.name, query, () => fighter.koName),
+    )
+    .sort((left, right) => {
+      const rankDifference =
+        (left.unofficialRanking?.rank ?? Number.MAX_SAFE_INTEGER) -
+        (right.unofficialRanking?.rank ?? Number.MAX_SAFE_INTEGER);
+      return rankDifference || left.koName.localeCompare(right.koName, "ko-KR");
+    });
 }
 
 export function findBeyondOfficialRankingFighters(
