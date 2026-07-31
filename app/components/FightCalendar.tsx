@@ -499,7 +499,9 @@ export function FightCalendar() {
               </div>
             </div>
           </div>
-          <aside className="hero-info-panel" aria-label="다음 주요 경기">
+        </article>
+        <section className="featured-match-section" aria-label="다음 주요 경기">
+          <aside className="hero-info-panel">
             <a
               className="featured-match-card"
               href="#event-detail"
@@ -540,7 +542,7 @@ export function FightCalendar() {
               <b>대진 전체 보기 →</b>
             </a>
           </aside>
-        </article>
+        </section>
       </section>
 
       <section className="schedule-section">
