@@ -5983,10 +5983,13 @@ body {
 .featured-match-meta b,
 .event-row-event,
 .detail-top h3,
-.results-hero h1,
+.results-hero h1 {
+  color: var(--orange);
+}
+
 .p4p-hero h1,
 .fighters-page-hero h1 {
-  color: var(--orange);
+  color: var(--text);
 }
 
 .event-kicker,
