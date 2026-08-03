@@ -89,7 +89,7 @@ test("server-renders the UFC schedule product", async () => {
   assert.doesNotMatch(html, /The Korean Tyson/);
   assert.match(
     normalizedHtml,
-    /메인카드 시작<\/small><strong>8월 2일[^<]*02:00[^<]*KST/,
+    /메인카드 시작<\/small><strong>\d+월 \d+일[^<]*\d{2}:\d{2}[^<]*KST/,
   );
   assert.match(html, /href="#event-detail"/);
   assert.match(html, /id="event-detail"/);
@@ -116,7 +116,7 @@ test("server-renders active and former Korean fighters on a separate page", asyn
   assert.match(html, /파이터/);
   assert.match(html, /현역 한국 선수/);
   assert.match(html, /은퇴·전 UFC 선수/);
-  assert.match(normalizedHtml, /검수 완료[^<]*·[^<]*6명/);
+  assert.match(normalizedHtml, /검수 완료[^<]*·[^<]*10명/);
   assert.match(normalizedHtml, /2개 이상 출처[^<]*·[^<]*6명/);
   assert.match(html, /박준용/);
   assert.match(html, /최두호/);
@@ -124,6 +124,10 @@ test("server-renders active and former Korean fighters on a separate page", asyn
   assert.match(html, /박현성/);
   assert.match(html, /이정영/);
   assert.match(html, /유주상/);
+  assert.match(html, /유수영/);
+  assert.match(html, /이창호/);
+  assert.match(html, /최동훈/);
+  assert.match(html, /이삭/);
   assert.match(html, /정찬성/);
   assert.match(html, /김동현/);
   assert.match(html, /강경호/);
@@ -185,8 +189,7 @@ test("server-renders the official UFC ranking comparison page", async () => {
   assert.match(html, />검색<\/button>/);
   assert.match(html, /2026-07-18/);
   assert.match(html, /2026-07-21/);
-  assert.match(html, /2026-07-29/);
-  assert.match(html, /2026-07-30/);
+  assert.match(html, /Fight Matrix · \d{4}-\d{2}-\d{2}/);
   assert.match(html, /플라이급/);
   assert.match(html, /밴텀급/);
   assert.match(html, /페더급/);

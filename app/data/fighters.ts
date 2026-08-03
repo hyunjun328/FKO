@@ -51,10 +51,14 @@ export type KoreanFighter = {
 export const KOREAN_FIGHTERS: KoreanFighter[] = [
   { name: "JunYong Park", koName: "박준용", division: "미들급" },
   { name: "Dooho Choi", koName: "최두호", division: "페더급" },
+  { name: "SuYoung You", koName: "유수영", division: "밴텀급" },
+  { name: "ChangHo Lee", koName: "이창호", division: "밴텀급" },
   { name: "SeokHyeon Ko", koName: "고석현", division: "웰터급" },
   { name: "HyunSung Park", koName: "박현성", division: "플라이급" },
+  { name: "DongHun Choi", koName: "최동훈", division: "플라이급" },
   { name: "JeongYeong Lee", koName: "이정영", division: "페더급" },
   { name: "JooSang Yoo", koName: "유주상", division: "페더급" },
+  { name: "YiSak Lee", koName: "이삭", division: "미들급" },
 ];
 
 export const FORMER_KOREAN_FIGHTERS: KoreanFighter[] = [
@@ -124,6 +128,107 @@ export const FEATURED_FIGHTERS: KoreanFighter[] = [
 ];
 
 export const FIGHTER_PROFILES: Record<string, FighterProfile> = {
+  "SuYoung You": {
+    name: "SuYoung You",
+    nickname: "Yoo-Jitsu",
+    record: "16승 4패 2무효",
+    ranking: "공식 랭킹 없음",
+    country: "대한민국",
+    style: "종합격투기",
+    heightCm: 168,
+    reachCm: 165,
+    team: "Black Combat",
+    octagonDebut: "2024-11-23",
+    summary:
+      "Road to UFC 시즌 3 밴텀급 우승으로 UFC 계약을 맺은 그래플링 기반 파이터입니다. UFC 공식 프로필은 대한민국 출신·현역 상태를 표시합니다.",
+    sourceUrl: "https://www.ufc.com/athlete/suyoung-yu",
+    verificationSources: [
+      {
+        label: "UFC 선수 프로필",
+        url: "https://www.ufc.com/athlete/suyoung-yu",
+      },
+      {
+        label: "UFC Road to UFC 계약 선수 안내",
+        url: "https://www.ufc.com/news/road-ufc-returns-season-4-opening-round-may-22-23",
+      },
+    ],
+    verifiedAt: "2026-08-03",
+  },
+  "ChangHo Lee": {
+    name: "ChangHo Lee",
+    record: "11승 2패",
+    ranking: "공식 랭킹 없음",
+    country: "대한민국",
+    style: "종합격투기",
+    heightCm: 173,
+    reachCm: 175,
+    team: "Extreme Combat",
+    octagonDebut: "2024-06-22",
+    summary:
+      "Road to UFC 시즌 2 밴텀급 우승자입니다. UFC 공식 프로필에서 대한민국 출신의 현역 밴텀급 선수로 확인됩니다.",
+    sourceUrl: "https://www.ufc.com/athlete/chang-ho-lee",
+    verificationSources: [
+      {
+        label: "UFC 선수 프로필",
+        url: "https://www.ufc.com/athlete/chang-ho-lee",
+      },
+      {
+        label: "UFC Road to UFC 계약 선수 안내",
+        url: "https://www.ufc.com/news/road-ufc-returns-season-4-opening-round-may-22-23",
+      },
+    ],
+    verifiedAt: "2026-08-03",
+  },
+  "DongHun Choi": {
+    name: "DongHun Choi",
+    record: "9승 0패",
+    ranking: "공식 랭킹 없음",
+    country: "대한민국 포항",
+    style: "종합격투기",
+    heightCm: 165,
+    reachCm: 168,
+    team: "포항 팀매드",
+    octagonDebut: "2024-11-23",
+    summary:
+      "Road to UFC 시즌 3 플라이급 우승자입니다. UFC 공식 프로필은 대한민국 출신의 현역 플라이급 선수로 표시합니다.",
+    sourceUrl: "https://www.ufc.com/athlete/donghun-choi",
+    verificationSources: [
+      {
+        label: "UFC 선수 프로필",
+        url: "https://www.ufc.com/athlete/donghun-choi",
+      },
+      {
+        label: "UFC Road to UFC 계약 선수 안내",
+        url: "https://www.ufc.com/news/road-ufc-returns-season-4-opening-round-may-22-23",
+      },
+    ],
+    verifiedAt: "2026-08-03",
+  },
+  "YiSak Lee": {
+    name: "YiSak Lee",
+    nickname: "The Tank",
+    record: "8승 2패",
+    ranking: "공식 랭킹 없음",
+    country: "대한민국",
+    style: "유도",
+    heightCm: 188,
+    team: "Korean Top Team",
+    octagonDebut: "2026-05-30",
+    summary:
+      "2026년 UFC 데뷔전을 치른 미들급 파이터입니다. UFC 공식 프로필에서 대한민국 출신·현역 상태와 Korean Top Team 소속을 확인했습니다.",
+    sourceUrl: "https://www.ufc.com/athlete/yi-sak-lee",
+    verificationSources: [
+      {
+        label: "UFC 선수 프로필",
+        url: "https://www.ufc.com/athlete/yi-sak-lee",
+      },
+      {
+        label: "UFC 공식 경기 결과",
+        url: "https://www.ufc.com/event/ufc-fight-night-may-30-2026",
+      },
+    ],
+    verifiedAt: "2026-08-03",
+  },
   "JunYong Park": {
     name: "JunYong Park",
     nickname: "The Iron Turtle",

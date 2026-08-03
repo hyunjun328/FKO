@@ -7,6 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: write
   contents: write
 
 jobs:
@@ -33,15 +34,23 @@ jobs:
       - name: Update visible check time
         run: node scripts/write-schedule-status.mjs
       - name: Commit refreshed public data
+        id: commit
         run: |
           git add app/data/schedule-status.ts app/data/auto-scheduled-events.ts app/data/event-results.ts app/data/fighter-images.json public/fighters
           if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "chore(schedule): refresh UFC schedule and results"
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Deploy refreshed site
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-pages.yml --ref main
       - name: Upload review file
         uses: actions/upload-artifact@v4
         with:

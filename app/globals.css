@@ -6184,11 +6184,10 @@ body {
 
 /* 메뉴 패널과 분리된 전역 로고 및 계정 위치입니다. */
 .site-brand {
-  position: fixed;
-  top: 22px;
-  left: 50%;
-  z-index: 50;
-  transform: translateX(-50%);
+  display: block;
+  width: min(1240px, 100%);
+  margin: 26px auto 42px;
+  padding: 0 28px;
   color: #fff;
   font-size: 3.6rem;
   font-weight: 950;
@@ -6223,5 +6222,13 @@ body {
   .site-account-panel {
     top: 16px;
     right: 16px;
+  }
+}
+
+@media (max-width: 680px) {
+  .site-brand {
+    margin: 20px auto 30px;
+    padding: 0 20px;
+    font-size: 2.65rem;
   }
 }
