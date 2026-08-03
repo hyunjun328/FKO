@@ -462,9 +462,6 @@ export function FightCalendar() {
           <Link className="topbar-link" href="/rankings">
             선수 랭킹
           </Link>
-          <Link className="topbar-link" href="/p4p">
-            P4P
-          </Link>
           <Link className="topbar-link" href="/korean-fighters">
             코리안 파이터
           </Link>

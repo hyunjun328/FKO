@@ -21,7 +21,6 @@ export function AppHeader() {
   const navigationItems = [
     { href: "/", label: "UFC 일정" },
     { href: "/rankings", label: "선수 랭킹" },
-    { href: "/p4p", label: "P4P" },
     { href: "/korean-fighters", label: "코리안 파이터" },
     { href: "/community", label: "커뮤니티" },
     { href: "/archive", label: "UFC 아카이브" },
