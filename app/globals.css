@@ -6224,3 +6224,151 @@ body {
     font-size: 2.65rem;
   }
 }
+
+/* 태블릿과 모바일에서 정보 밀도를 낮춰 텍스트 겹침을 막습니다. */
+@media (max-width: 1024px) {
+  .site-shell {
+    min-width: 0;
+  }
+
+  .app-topbar > div {
+    min-height: 72px;
+    padding: 10px 24px;
+  }
+
+  .app-topbar-actions {
+    gap: 8px;
+    justify-content: flex-start;
+  }
+
+  .app-update-state {
+    display: none;
+  }
+
+  .fighters-page-hero,
+  .rankings-hero,
+  .p4p-hero {
+    padding-block: 48px 38px;
+  }
+
+  .section-head {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 680px) {
+  .app-topbar > div {
+    min-height: 62px;
+    padding: 8px 16px;
+  }
+
+  .app-topbar-actions a {
+    min-height: 36px;
+    padding-inline: 11px;
+    font-size: 0.7rem;
+  }
+
+  .fighters-page-hero h1,
+  .rankings-hero h1,
+  .p4p-hero h1 {
+    line-height: 1;
+    overflow-wrap: anywhere;
+  }
+
+  .korean-fighter-count,
+  .view-switcher {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .p4p-row {
+    grid-template-areas:
+      "rank face name"
+      ". . division"
+      ". . hint";
+    row-gap: 5px;
+  }
+
+  .p4p-row .p4p-number { grid-area: rank; align-self: center; }
+  .p4p-row .p4p-fighter-face { grid-area: face; }
+  .p4p-row .p4p-fighter-name { grid-area: name; min-width: 0; }
+  .p4p-row .p4p-division { grid-area: division; }
+  .p4p-row .p4p-detail-hint { grid-area: hint; }
+
+  .p4p-fighter-name strong,
+  .p4p-fighter-name small {
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-brand {
+    margin: 16px auto 24px;
+    padding-inline: 16px;
+    font-size: 2.35rem;
+  }
+
+  .site-account-panel {
+    top: 12px;
+    right: 12px;
+    padding-inline: 6px;
+    font-size: 0.58rem;
+  }
+
+  .site-shell {
+    padding-inline: 14px;
+  }
+
+  .fighters-page-hero h1,
+  .rankings-hero h1 {
+    font-size: clamp(2.75rem, 14vw, 4.2rem);
+  }
+
+  .p4p-hero h1 {
+    font-size: clamp(2.75rem, 15vw, 4rem);
+  }
+
+  .main-matchup {
+    gap: 8px;
+  }
+
+  .matchup-fighter,
+  .matchup-fighter:last-child {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "photo"
+      "name"
+      "english";
+    justify-items: center;
+    text-align: center;
+  }
+
+  .hero-fighter-face {
+    width: 56px;
+    height: 70px;
+  }
+
+  .matchup-fighter b {
+    font-size: 1rem;
+    line-height: 1.18;
+    word-break: normal;
+  }
+
+  .matchup-fighter small {
+    font-size: 0.64rem;
+    overflow-wrap: anywhere;
+  }
+
+  .korean-card-next {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .korean-card-next-confirmed strong {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+  }
+}
