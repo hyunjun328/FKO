@@ -58,18 +58,10 @@ test("server-renders the UFC schedule product", async () => {
     /aria-label="UFC 330 이슬람 마카체프 대 이안 마샤두 개리 상세 보기"/,
   );
   assert.doesNotMatch(html, /메인카드 시작까지/);
-  assert.match(html, /Medic vs Rodriguez/);
-  assert.match(html, /Uros Medic/);
-  assert.match(html, /우로시 메디치/);
-  assert.match(html, /다니엘 로드리게스/);
-  assert.match(
-    html,
-    /aria-label="우로시 메디치 선수 정보 보기"/,
-  );
-  assert.match(html, /aria-label="다니엘 로드리게스 선수 정보 보기"/);
-  assert.match(html, /웰터급 14위/);
-  assert.match(html, /16전 13승 3패/);
-  assert.match(html, /25전 20승 5패/);
+  assert.match(html, /Mateusz Gamrot/);
+  assert.match(html, /마테우시 감롯/);
+  assert.match(html, /퀼런 살킬드/);
+  assert.match(html, /aria-label="마테우시 감롯 선수 정보 보기"/);
   assert.match(html, /코리안 파이터/);
   assert.match(html, /href="\/korean-fighters"/);
   assert.match(html, /선수 랭킹/);
@@ -168,6 +160,18 @@ test("server-renders active and former Korean fighters on a separate page", asyn
   assert.match(html, /class="fighter-face korean-card-avatar"/);
   assert.match(html, /href="\/photo-credits"/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
+});
+
+test("moves finished events to the results page while collection is pending", async () => {
+  const home = await render();
+  const homeHtml = await home.text();
+  const results = await render("/results");
+  const resultsHtml = await results.text();
+
+  assert.doesNotMatch(homeHtml, /UFC 파이트 나이트 베오그라드/);
+  assert.match(resultsHtml, /UFC 파이트 나이트 베오그라드/);
+  assert.match(resultsHtml, /공식 결과 수집 중/);
+  assert.match(resultsHtml, /공식 결과가 확인되면 승패와 종료 방식을 자동으로 표시합니다/);
 });
 
 test("server-renders the official UFC ranking comparison page", async () => {

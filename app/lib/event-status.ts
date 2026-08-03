@@ -2,7 +2,7 @@
 import type { FightEvent } from "../data/events";
 import type { EventResult } from "../data/event-results";
 
-export type EventDisplayStatus = "upcoming" | "fight-day" | "awaiting-results" | "completed";
+export type EventDisplayStatus = "upcoming" | "fight-day" | "completed";
 
 const KST_DATE_FORMATTER = new Intl.DateTimeFormat("en-CA", {
   timeZone: "Asia/Seoul",
@@ -31,6 +31,6 @@ export function eventDisplayStatus(
   const today = kstDate(now);
   if (today < eventDate) return "upcoming";
   if (today === eventDate) return "fight-day";
-  if (today >= nextKstDate(eventDate)) return "awaiting-results";
+  if (today >= nextKstDate(eventDate)) return "completed";
   return "upcoming";
 }

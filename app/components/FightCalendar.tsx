@@ -435,12 +435,7 @@ export function FightCalendar() {
     return new Date(left.startUtc).getTime() - new Date(right.startUtc).getTime();
   });
   const mainEvent = nextEvent.bouts[0];
-  const featuredEvent =
-    scheduledEvents.find(
-      (event) =>
-        event.series === "UFC" &&
-        eventDisplayStatus(event, now, resultsByEventId.get(event.id)) !== "awaiting-results",
-    ) ?? nextEvent;
+  const featuredEvent = scheduledEvents.find((event) => event.series === "UFC") ?? nextEvent;
   const featuredBout = featuredEvent.bouts[0];
 
   function selectEvent(eventId: string) {
@@ -661,11 +656,6 @@ export function FightCalendar() {
               <div className="list-panel event-list">
                 {scheduledEvents.map((event) => {
                   const mainBout = event.bouts[0];
-                  const displayStatus = eventDisplayStatus(
-                    event,
-                    now,
-                    resultsByEventId.get(event.id),
-                  );
                   const leftRank = eventRankBadge(mainBout.left);
                   const rightRank = eventRankBadge(mainBout.right);
                   const mainCardCount = event.bouts.filter(
@@ -684,11 +674,6 @@ export function FightCalendar() {
                         <span className="event-row-timing">
                           {event.timeTbd ? "시간 발표 대기" : `${KST_FORMATTER.format(new Date(event.startUtc))} KST`}
                         </span>
-                        {displayStatus === "awaiting-results" ? (
-                          <span className="event-result-pending">
-                            결과 확인 중 · {SCHEDULE_CHECK_FORMATTER.format(new Date(SCHEDULE_CHECKED_AT))} 마지막 확인
-                          </span>
-                        ) : null}
                         <strong className="event-row-event">
                           {event.series === "UFC" ? event.title : event.series}
                           <span aria-hidden="true"> · </span>
