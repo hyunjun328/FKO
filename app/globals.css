@@ -6377,7 +6377,7 @@ body {
 @media (min-width: 1281px) {
   .app-topbar {
     right: 34px;
-    width: 210px;
+    width: 273px;
     border: 0;
     border-left: 1px solid #34373a;
     border-radius: 0;
@@ -6386,7 +6386,7 @@ body {
   }
 
   .app-topbar > div {
-    padding: 6px 0 6px 16px;
+    padding: 8px 0 8px 21px;
     gap: 0;
   }
 
@@ -6395,13 +6395,13 @@ body {
   }
 
   .app-topbar-actions a {
-    min-height: 46px;
-    padding: 0 14px;
+    min-height: 60px;
+    padding: 0 18px;
     border: 0;
     border-left: 2px solid transparent;
     background: transparent;
     color: var(--muted);
-    font-size: 0.9rem;
+    font-size: 1.17rem;
     font-weight: 750;
   }
 
