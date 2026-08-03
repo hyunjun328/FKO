@@ -6372,3 +6372,52 @@ body {
     white-space: normal;
   }
 }
+
+/* 데스크톱에서는 메뉴를 버튼 묶음 대신 가벼운 세로 내비게이션으로 표시합니다. */
+@media (min-width: 1281px) {
+  .app-topbar {
+    right: 34px;
+    width: 178px;
+    border: 0;
+    border-left: 1px solid #34373a;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .app-topbar > div {
+    padding: 4px 0 4px 14px;
+    gap: 0;
+  }
+
+  .app-topbar-actions {
+    gap: 2px;
+  }
+
+  .app-topbar-actions a {
+    min-height: 38px;
+    padding: 0 10px;
+    border: 0;
+    border-left: 2px solid transparent;
+    background: transparent;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 750;
+  }
+
+  .app-topbar-actions a:hover,
+  .app-topbar-actions a:focus-visible {
+    border-color: transparent;
+    border-left-color: var(--text);
+    background: transparent;
+    color: var(--text);
+  }
+
+  .app-topbar-actions a[aria-current="page"] {
+    border-color: transparent;
+    border-left-color: var(--orange);
+    background: transparent;
+    box-shadow: none;
+    color: var(--text);
+  }
+}
