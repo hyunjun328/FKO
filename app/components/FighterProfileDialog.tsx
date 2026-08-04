@@ -153,12 +153,24 @@ export function FighterProfileDialog({
   onClose: () => void;
 }) {
   const [isFavorite, setIsFavorite] = useState(false);
-  const profile = FIGHTER_PROFILES[fighter.name] ?? LEGEND_PROFILES[fighter.name];
+  const baseProfile = FIGHTER_PROFILES[fighter.name] ?? LEGEND_PROFILES[fighter.name];
+  const officialProfile = OFFICIAL_PROFILE_STATUS[fighter.name];
+  const profile = baseProfile && officialProfile
+    ? {
+        ...baseProfile,
+        record: officialProfile.record ?? baseProfile.record,
+        heightCm: officialProfile.heightCm ?? baseProfile.heightCm,
+        reachCm: officialProfile.reachCm ?? baseProfile.reachCm,
+        verifiedAt: officialProfile.checkedAt || baseProfile.verifiedAt,
+      }
+    : baseProfile;
   const showProfile = Boolean(profile && !fighter.simple);
   const worldRanking = unofficialWorldRanking(fighter.name);
   const verificationSources =
     showProfile ? profile?.verificationSources ?? [] :
-    (fighter.sourceUrl
+    (officialProfile
+      ? [{ label: "UFC 공식 선수 프로필", url: officialProfile.sourceUrl }]
+      : fighter.sourceUrl
       ? [{ label: fighter.sourceLabel ?? "UFC 공식 랭킹", url: fighter.sourceUrl }]
       : profile
         ? [{ label: "UFC 공식 선수 정보", url: profile.sourceUrl }]
@@ -379,6 +391,36 @@ export function FighterProfileDialog({
                 <dt>확인일</dt>
                 <dd>{profile.verifiedAt}</dd>
               </div>
+              {officialProfile?.division ? (
+                <div>
+                  <dt>UFC 표기 체급</dt>
+                  <dd>{officialProfile.division}</dd>
+                </div>
+              ) : null}
+              {officialProfile?.status ? (
+                <div>
+                  <dt>UFC 상태</dt>
+                  <dd>{officialProfile.status}</dd>
+                </div>
+              ) : null}
+              {officialProfile?.knockoutWins !== undefined ? (
+                <div>
+                  <dt>KO승</dt>
+                  <dd>{officialProfile.knockoutWins}</dd>
+                </div>
+              ) : null}
+              {officialProfile?.submissionWins !== undefined ? (
+                <div>
+                  <dt>서브미션승</dt>
+                  <dd>{officialProfile.submissionWins}</dd>
+                </div>
+              ) : null}
+              {officialProfile?.firstRoundFinishes !== undefined ? (
+                <div>
+                  <dt>1라운드 피니쉬</dt>
+                  <dd>{officialProfile.firstRoundFinishes}</dd>
+                </div>
+              ) : null}
             </dl>
           </>
         ) : (
@@ -386,7 +428,7 @@ export function FighterProfileDialog({
             <div className="fighter-profile-badges">
               <span>{fighter.ranking ?? `${fighter.weight} 선수`}</span>
               <span>{fighter.weight}</span>
-              {fighter.record ? <span>전적 {fighter.record}</span> : null}
+              {fighter.record || officialProfile?.record ? <span>전적 {officialProfile?.record ?? fighter.record}</span> : null}
               <span>UFC 공식 랭킹</span>
             </div>
             <p className="fighter-ranking-summary">
@@ -406,6 +448,13 @@ export function FighterProfileDialog({
                 <dt>정보 기준</dt>
                 <dd>UFC 공식 랭킹</dd>
               </div>
+              {officialProfile?.heightCm ? <div><dt>키</dt><dd>{officialProfile.heightCm}cm</dd></div> : null}
+              {officialProfile?.reachCm ? <div><dt>리치</dt><dd>{officialProfile.reachCm}cm</dd></div> : null}
+              {officialProfile?.division ? <div><dt>UFC 표기 체급</dt><dd>{officialProfile.division}</dd></div> : null}
+              {officialProfile?.status ? <div><dt>UFC 상태</dt><dd>{officialProfile.status}</dd></div> : null}
+              {officialProfile?.knockoutWins !== undefined ? <div><dt>KO승</dt><dd>{officialProfile.knockoutWins}</dd></div> : null}
+              {officialProfile?.submissionWins !== undefined ? <div><dt>서브미션승</dt><dd>{officialProfile.submissionWins}</dd></div> : null}
+              {officialProfile?.firstRoundFinishes !== undefined ? <div><dt>1라운드 피니쉬</dt><dd>{officialProfile.firstRoundFinishes}</dd></div> : null}
             </dl>
             {fighter.simple ? (
               <p className="fighter-ranking-summary">
