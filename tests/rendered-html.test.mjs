@@ -55,11 +55,12 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /다음 주요 매치/);
   assert.match(html, /UFC 330/);
   assert.match(html, /30분 전 알림/);
-  assert.match(html, /class="event-row-timing"/);
-  assert.match(html, /class="event-row-card-count"/);
-  assert.doesNotMatch(html, /class="date-block"/);
-  assert.match(html, /class="event-ranking-badge" aria-label="챔피언">C<\/b>/);
-  assert.match(html, /class="event-ranking-badge" aria-label="1위">1<\/b>/);
+  assert.match(html, /class="event-open-button">대회 상세 보기<\/button>/);
+  assert.match(html, /class="event-selector-grid"/);
+  assert.match(html, /class="event-selector-card"/);
+  assert.match(html, /class="schedule-section calendar-section"/);
+  assert.doesNotMatch(html, /class="event-row-timing"/);
+  assert.doesNotMatch(html, /class="event-row-card-count"/);
   assert.match(html, /이슬람 마카체프/);
   assert.match(html, /이안 마샤두 개리/);
   assert.match(
@@ -78,8 +79,10 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /class="fighter-face hero-fighter-face"/);
   const calendar = await readFile(new URL("../app/components/FightCalendar.tsx", import.meta.url), "utf8");
   assert.match(calendar, /className="featured-match-section"/);
-  assert.match(calendar, /\{event\.city\}\s*<span className="event-row-card-count">/);
-  assert.match(html, /class="fighter-face bout-fighter-face"/);
+  assert.match(calendar, /function EventDialog/);
+  assert.match(calendar, /className="event-dialog-backdrop"/);
+  assert.match(calendar, /<EventDetail event=\{event\}/);
+  assert.doesNotMatch(html, /class="fighter-face bout-fighter-face"/);
   assert.match(html, /src="\/fighters\/nobody\.webp"/);
   assert.doesNotMatch(html, /class="fighter-silhouette"/);
   assert.match(html, /href="\/photo-credits"/);
@@ -93,16 +96,12 @@ test("server-renders the UFC schedule product", async () => {
     normalizedHtml,
     /메인카드 시작<\/small><strong>\d+월 \d+일[^<]*\d{2}:\d{2}[^<]*KST/,
   );
-  assert.match(html, /href="#event-detail"/);
-  assert.match(html, /id="event-detail"/);
   const schedule = await readFile(new URL("../app/components/FightCalendar.tsx", import.meta.url), "utf8");
-  assert.match(schedule, /<\/div>\s*<EventDetail/s);
-  assert.match(schedule, /function selectEvent\(eventId: string\)/);
-  assert.match(schedule, /scrollIntoView/);
-  assert.match(html, /메인 이벤트 반응/);
-  assert.match(html, /GUEST COMMENTS/);
-  assert.match(html, /승부예측/);
-  assert.match(html, /상세(?:&nbsp;|\u00a0)→/);
+  assert.match(schedule, /function openEvent\(eventId: string\)/);
+  assert.match(schedule, /setOpenEventId\(eventId\)/);
+  assert.doesNotMatch(schedule, /scrollIntoView/);
+  assert.match(schedule, /메인 이벤트 반응/);
+  assert.match(schedule, /<BoutPrediction/);
   assert.match(html, /FKO는 UFC와 무관한 비공식 팬 프로젝트입니다/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });

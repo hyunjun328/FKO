@@ -92,17 +92,6 @@ function kstDateKey(iso: string) {
   return KST_DATE_FORMATTER.format(new Date(iso));
 }
 
-function eventRankBadge(name: string) {
-  const ranking = FIGHTER_PROFILES[name]?.ranking ?? "";
-
-  if (ranking.includes("챔피언")) {
-    return { label: "챔피언", value: "C" };
-  }
-
-  const rank = ranking.match(/(\d+)위/)?.[1];
-  return rank ? { label: `${rank}위`, value: rank } : null;
-}
-
 function EventDetail({
   event,
   onFighterSelect,
@@ -278,6 +267,51 @@ function EventDetail({
   );
 }
 
+function EventDialog({
+  event,
+  onClose,
+  onFighterSelect,
+}: {
+  event: FightEvent;
+  onClose: () => void;
+  onFighterSelect: (fighter: FighterSelection) => void;
+}) {
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      className="event-dialog-backdrop"
+      role="presentation"
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+    >
+      <section
+        className="event-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-label={`${event.title} 대진 상세`}
+      >
+        <button type="button" className="event-dialog-close" onClick={onClose} autoFocus>
+          닫기 ×
+        </button>
+        <EventDetail event={event} onFighterSelect={onFighterSelect} />
+      </section>
+    </div>
+  );
+}
+
 function CalendarView({
   events,
   selected,
@@ -406,8 +440,8 @@ function CalendarView({
 }
 
 export function FightCalendar() {
-  const [view, setView] = useState<"list" | "calendar">("list");
   const [selectedId, setSelectedId] = useState(ALL_EVENTS[0].id);
+  const [openEventId, setOpenEventId] = useState<string | null>(null);
   const [selectedFighter, setSelectedFighter] =
     useState<FighterSelection | null>(null);
   const [now, setNow] = useState(() => Date.now());
@@ -442,15 +476,12 @@ export function FightCalendar() {
   const featuredEvent = scheduledEvents.find((event) => event.series === "UFC") ?? nextEvent;
   const featuredBout = featuredEvent.bouts[0];
 
-  function selectEvent(eventId: string) {
+  function openEvent(eventId: string) {
     setSelectedId(eventId);
-    window.requestAnimationFrame(() => {
-      document.getElementById("event-detail")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    });
+    setOpenEventId(eventId);
   }
+
+  const openedEvent = scheduledEvents.find((event) => event.id === openEventId) ?? null;
 
   return (
     <main className="site-shell">
@@ -506,6 +537,13 @@ export function FightCalendar() {
               startUtc={nextEvent.startUtc}
               timeTbd={Boolean(nextEvent.timeTbd)}
             />
+            <button
+              type="button"
+              className="event-open-button"
+              onClick={() => openEvent(nextEvent.id)}
+            >
+              대회 상세 보기
+            </button>
             <div className="main-matchup">
               <button
                 type="button"
@@ -581,10 +619,10 @@ export function FightCalendar() {
         </article>
         <section className="featured-match-section" aria-label="다음 주요 경기">
           <aside className="hero-info-panel">
-            <a
+            <button
+              type="button"
               className="featured-match-card"
-              href="#event-detail"
-              onClick={() => selectEvent(featuredEvent.id)}
+              onClick={() => openEvent(featuredEvent.id)}
               aria-label={`${featuredEvent.title} ${featuredBout.leftKo} 대 ${featuredBout.rightKo} 상세 보기`}
             >
               <span className="hero-panel-label">다음 주요 매치</span>
@@ -625,7 +663,7 @@ export function FightCalendar() {
                 </small>
               </span>
               <b>대진 전체 보기 →</b>
-            </a>
+            </button>
           </aside>
         </section>
       </section>
@@ -634,130 +672,40 @@ export function FightCalendar() {
         <div className="section-head">
           <div>
             <h2>다가오는 대회</h2>
-          </div>
-          <div className="view-switcher" aria-label="일정 보기 방식">
-            <button
-              type="button"
-              aria-pressed={view === "list"}
-              onClick={() => setView("list")}
-            >
-              목록
-            </button>
-            <button
-              type="button"
-              aria-pressed={view === "calendar"}
-              onClick={() => setView("calendar")}
-            >
-              달력
-            </button>
+            <p>대회를 누르면 시간, 전체 대진, 선수 정보를 봅니다.</p>
           </div>
         </div>
+        <div className="event-selector-grid">
+          {scheduledEvents.slice(0, 6).map((event) => {
+            const mainBout = event.bouts[0];
+            return (
+              <button
+                type="button"
+                className="event-selector-card"
+                key={event.id}
+                onClick={() => openEvent(event.id)}
+              >
+                <span>{event.timeTbd ? "시간 발표 대기" : KST_FORMATTER.format(new Date(event.startUtc))}</span>
+                <strong>{event.title}</strong>
+                <b>{mainBout.leftKo} <i>vs</i> {mainBout.rightKo}</b>
+                <small>{mainBout.weight} · 대진 보기 →</small>
+              </button>
+            );
+          })}
+        </div>
+      </section>
 
-        <div className="schedule-layout">
+      <section className="schedule-section calendar-section">
+        <div className="section-head">
           <div>
-            {view === "list" ? (
-              <div className="list-panel event-list">
-                {scheduledEvents.map((event) => {
-                  const mainBout = event.bouts[0];
-                  const leftRank = eventRankBadge(mainBout.left);
-                  const rightRank = eventRankBadge(mainBout.right);
-                  const mainCardCount = event.bouts.filter(
-                    (bout) => bout.section === "main",
-                  ).length;
-                  return (
-                    <a
-                      href="#event-detail"
-                      className="event-row"
-                      key={event.id}
-                      aria-current={selected.id === event.id}
-                      onClick={() => selectEvent(event.id)}
-                      aria-label={`${event.title} 상세 보기`}
-                    >
-                      <div className="event-row-copy">
-                        <span className="event-row-timing">
-                          {event.timeTbd ? "시간 발표 대기" : `${KST_FORMATTER.format(new Date(event.startUtc))} KST`}
-                        </span>
-                        <strong className="event-row-event">
-                          {event.series === "UFC" ? event.title : event.series}
-                          <span aria-hidden="true"> · </span>
-                          {event.city}
-                          <span className="event-row-card-count">
-                            {mainBout.weight} · 메인카드 {mainCardCount}경기
-                          </span>
-                        </strong>
-                        <h3 className="event-row-matchup">
-                          <span className="event-row-fighter">
-                            <FighterFace
-                              name={mainBout.left}
-                              koName={mainBout.leftKo}
-                              className="event-row-fighter-face"
-                              gender={mainBout.weight.includes("여성") ? "female" : "male"}
-                            />
-                            <span>
-                              {mainBout.leftKo}
-                              {leftRank ? (
-                                <b className="event-ranking-badge" aria-label={leftRank.label}>
-                                  {leftRank.value}
-                                </b>
-                              ) : null}
-                            </span>
-                          </span>
-                          <i>vs</i>
-                          <span className="event-row-fighter">
-                            <FighterFace
-                              name={mainBout.right}
-                              koName={mainBout.rightKo}
-                              className="event-row-fighter-face"
-                              gender={mainBout.weight.includes("여성") ? "female" : "male"}
-                            />
-                            <span>
-                              {mainBout.rightKo}
-                              {rightRank ? (
-                                <b className="event-ranking-badge" aria-label={rightRank.label}>
-                                  {rightRank.value}
-                                </b>
-                              ) : null}
-                            </span>
-                          </span>
-                        </h3>
-                        <span className="event-row-english" lang="en">
-                          <span>{mainBout.left}</span>
-                          <i aria-hidden="true">vs</i>
-                          <span>{mainBout.right}</span>
-                        </span>
-                      </div>
-                      <span className="row-arrow" aria-hidden="true">
-                        상세&nbsp;→
-                      </span>
-                    </a>
-                  );
-                })}
-              </div>
-            ) : (
-              <CalendarView
-                events={scheduledEvents}
-                selected={selected}
-                onSelect={(event) => selectEvent(event.id)}
-              />
-            )}
-
-            <div className="notice">
-              <span className="notice-icon">!</span>
-              <div>
-                <strong>시간과 대진은 경기 주간에도 바뀔 수 있습니다.</strong>
-                <p>
-                  변경된 정보는 검수 후 반영합니다. 모든 시간은 대한민국
-                  표준시(KST, UTC+9) 기준입니다.
-                </p>
-              </div>
-            </div>
+            <h2>월간 일정</h2>
+            <p>모든 시간은 KST입니다.</p>
           </div>
-
         </div>
-
-        <EventDetail
-          event={selected}
-          onFighterSelect={setSelectedFighter}
+        <CalendarView
+          events={scheduledEvents}
+          selected={selected}
+          onSelect={(event) => openEvent(event.id)}
         />
       </section>
 
@@ -781,6 +729,13 @@ export function FightCalendar() {
         <FighterProfileDialog
           fighter={selectedFighter}
           onClose={() => setSelectedFighter(null)}
+        />
+      ) : null}
+      {openedEvent ? (
+        <EventDialog
+          event={openedEvent}
+          onClose={() => setOpenEventId(null)}
+          onFighterSelect={setSelectedFighter}
         />
       ) : null}
     </main>
