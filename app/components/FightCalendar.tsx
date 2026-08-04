@@ -765,7 +765,7 @@ export function FightCalendar() {
         <div>
           <strong>FKO · Fight Korea</strong>
           <p>
-            UFC 및 Zuffa와 공식 제휴 관계가 없는 독립 일정 안내 서비스입니다.
+            FKO는 UFC와 무관한 비공식 팬 프로젝트입니다.
             UFC와 관련 상표는 각 권리자에게 있습니다. 경기 영상과 공식 이미지는
             제공하지 않습니다.
           </p>

@@ -137,8 +137,7 @@ export default function RankingsPage() {
         <div>
           <strong>FKO · Fight Korea</strong>
           <p>
-            UFC 및 Zuffa와 공식 제휴 관계가 없는 독립 일정 안내
-            서비스입니다. 랭킹은 UFC 공식 페이지의 공개값을 출처와 함께
+            FKO는 UFC와 무관한 비공식 팬 프로젝트입니다. 랭킹은 UFC 공식 페이지의 공개값을 출처와 함께
             제공합니다.
           </p>
         </div>

@@ -82,8 +82,7 @@ export default function P4PPage() {
         <div>
           <strong>FKO · Fight Korea</strong>
           <p>
-            UFC 및 Zuffa와 공식 제휴 관계가 없는 독립 일정 안내
-            서비스입니다.
+            FKO는 UFC와 무관한 비공식 팬 프로젝트입니다.
           </p>
         </div>
         <span className="footer-links">

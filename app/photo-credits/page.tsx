@@ -126,6 +126,7 @@ export default function PhotoCreditsPage() {
             사진은 원본 비율을 유지해 WebP로 축소했습니다. 각 저작권은 해당
             저작자에게 있습니다.
           </p>
+          <p>FKO는 UFC와 무관한 비공식 팬 프로젝트입니다.</p>
         </div>
         <Link className="footer-home-link" href="/">
           일정 홈으로 →

@@ -59,6 +59,7 @@ export default function ResultsPage() {
           </article>
         )) : <p className="event-results-empty">아직 자동 수집으로 확정된 대회 결과가 없습니다.</p>}
       </section>
+      <footer className="footer"><div><strong>FKO · Fight Korea</strong><p>FKO는 UFC와 무관한 비공식 팬 프로젝트입니다.</p></div><span className="footer-links"><Link className="footer-home-link" href="/">일정으로</Link></span></footer>
     </main>
   );
 }

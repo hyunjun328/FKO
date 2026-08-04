@@ -103,7 +103,7 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /GUEST COMMENTS/);
   assert.match(html, /승부예측/);
   assert.match(html, /상세(?:&nbsp;|\u00a0)→/);
-  assert.match(html, /UFC 및 Zuffa와 공식 제휴 관계가 없는/);
+  assert.match(html, /FKO는 UFC와 무관한 비공식 팬 프로젝트입니다/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
 
