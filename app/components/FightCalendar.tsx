@@ -16,6 +16,7 @@ import {
   type FighterSelection,
 } from "./FighterProfileDialog";
 import { FighterFace } from "./FighterFace";
+import { HomeFighterSearch } from "./HomeFighterSearch";
 import { GuestCommentThread } from "./GuestCommentThread";
 import { BoutPrediction } from "./BoutPrediction";
 
@@ -490,6 +491,8 @@ export function FightCalendar() {
           다가오는 UFC 대회, 전체 대진, 선수 정보를 한곳에서 확인하세요.
           일정 시간은 한국시간(KST)으로 제공합니다.
         </p>
+
+        <HomeFighterSearch onSelect={setSelectedFighter} />
 
         <article className="next-event">
           <div className="next-event-copy">

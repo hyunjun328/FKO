@@ -19,6 +19,7 @@ import {
   findBeyondOfficialRankingFighters,
   findUnrankedFighterMatches,
 } from "../app/lib/ranking-search.ts";
+import { findFighterSearchResults } from "../app/lib/fighter-search.ts";
 
 test("finds Choi Doo-ho as an unranked Korean fighter", () => {
   const divisions = filterRankingDivisions(
@@ -91,6 +92,19 @@ test("finds fighters with small Korean and English spelling mistakes", () => {
     english.some((division) => division.champion === "Islam Makhachev"),
     true,
   );
+});
+
+test("combines an event, recent fight, and ranking in home fighter search", () => {
+  const [makhachev] = findFighterSearchResults(
+    "마카체프",
+    Date.parse("2026-08-04T00:00:00Z"),
+  );
+
+  assert.equal(makhachev.name, "Islam Makhachev");
+  assert.equal(makhachev.event.label, "예정 대회");
+  assert.equal(makhachev.event.title, "UFC 330");
+  assert.equal(makhachev.lastFight.opponentKo, "잭 델라 마달레나");
+  assert.match(makhachev.ranking, /웰터급 챔피언/);
 });
 
 test("does not expose the unrelated lightweight champion for Oliveira", () => {
