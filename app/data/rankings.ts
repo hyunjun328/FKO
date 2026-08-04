@@ -1,4 +1,5 @@
 // UFC 공식 Meta 랭킹과 기존 미디어 랭킹의 체급별 스냅샷을 제공한다.
+import { OFFICIAL_RANKING_SNAPSHOT } from "./official-ranking-snapshot.ts";
 export type RankingEntry = {
   rank: number;
   name: string;
@@ -23,7 +24,7 @@ const ranked = (...fighters: RankingInput[]): RankingEntry[] =>
       : { rank: fighter[0], name: fighter[1] },
   );
 
-export const UFC_RANKING_SOURCE = {
+const UFC_RANKING_FALLBACK_SOURCE = {
   officialUrl: "https://www.ufc.com/rankings",
   announcementUrl:
     "https://www.ufc.com/news/ufc-and-meta-unveil-meta-ufc-rankings",
@@ -32,7 +33,7 @@ export const UFC_RANKING_SOURCE = {
   checkedAt: "2026-07-29",
 };
 
-export const UFC_RANKING_DIVISIONS: RankingDivision[] = [
+const UFC_RANKING_FALLBACK_DIVISIONS: RankingDivision[] = [
   {
     id: "flyweight",
     label: "플라이급",
@@ -485,3 +486,27 @@ export const UFC_RANKING_DIVISIONS: RankingDivision[] = [
     ),
   },
 ];
+
+const snapshotEntries = (names: string[]) =>
+  names.map((name, index) => ({ rank: index + 1, name }));
+
+export const UFC_RANKING_SOURCE = {
+  ...UFC_RANKING_FALLBACK_SOURCE,
+  mediaUpdated: OFFICIAL_RANKING_SNAPSHOT.checkedAt || UFC_RANKING_FALLBACK_SOURCE.mediaUpdated,
+  metaUpdated: OFFICIAL_RANKING_SNAPSHOT.checkedAt || UFC_RANKING_FALLBACK_SOURCE.metaUpdated,
+  checkedAt: OFFICIAL_RANKING_SNAPSHOT.checkedAt || UFC_RANKING_FALLBACK_SOURCE.checkedAt,
+};
+
+export const UFC_RANKING_DIVISIONS: RankingDivision[] = UFC_RANKING_FALLBACK_DIVISIONS.map(
+  (division) => {
+    const snapshot = OFFICIAL_RANKING_SNAPSHOT.divisions[division.id];
+    if (!snapshot?.entries.length) return division;
+    const entries = snapshotEntries(snapshot.entries);
+    return {
+      ...division,
+      champion: snapshot.champion || division.champion,
+      media: entries,
+      meta: entries,
+    };
+  },
+);

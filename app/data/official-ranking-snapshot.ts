@@ -1,0 +1,242 @@
+// UFC 공식 랭킹 페이지에서 자동 수집한 체급별·P4P 스냅샷을 제공한다.
+export type OfficialRankingSnapshot = { checkedAt: string; divisions: Record<string, { champion?: string; entries: string[] }>; mensP4p: string[]; womensP4p: string[] };
+
+export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
+  "checkedAt": "2026-08-04",
+  "divisions": {
+    "flyweight": {
+      "champion": "Joshua Van",
+      "entries": [
+        "Alexandre Pantoja",
+        "Manel Kape",
+        "Brandon Royval",
+        "Tatsuro Taira",
+        "Asu Almabayev",
+        "Lone’er Kavanagh",
+        "Ramazan Temirov",
+        "Kyoji Horiguchi",
+        "Amir Albazi",
+        "Brandon Moreno",
+        "Kevin Borjas",
+        "Mitch Raposo",
+        "Sumudaerji",
+        "Alessandro Costa",
+        "Alex Perez"
+      ]
+    },
+    "bantamweight": {
+      "champion": "Petr Yan",
+      "entries": [
+        "Merab Dvalishvili",
+        "Umar Nurmagomedov",
+        "Sean O'Malley",
+        "Mario Bautista",
+        "Cory Sandhagen",
+        "Song Yadong",
+        "David Martinez",
+        "Raoni Barcelos",
+        "Farid Basharat",
+        "Marcus McGhee",
+        "Deiveson Figueiredo",
+        "Aiemann Zahabi",
+        "Charles Jourdain",
+        "Bryce Mitchell",
+        "Montel Jackson"
+      ]
+    },
+    "featherweight": {
+      "champion": "Alexander Volkanovski",
+      "entries": [
+        "Movsar Evloev",
+        "Diego Lopes",
+        "Lerone Murphy",
+        "Aljamain Sterling",
+        "Arnold Allen",
+        "Jean Silva",
+        "Pat Sabatini",
+        "Youssef Zalal",
+        "Nathaniel Wood",
+        "Kevin Vallejos",
+        "Melquizael Costa",
+        "Steve Garcia",
+        "Aaron Pico",
+        "Jose Miguel Delgado",
+        "Joanderson Brito"
+      ]
+    },
+    "lightweight": {
+      "champion": "Justin Gaethje",
+      "entries": [
+        "Ilia Topuria",
+        "Arman Tsarukyan",
+        "Charles Oliveira",
+        "Max Holloway",
+        "Paddy Pimblett",
+        "Mateusz Gamrot",
+        "Renato Moicano",
+        "Benoît Saint Denis",
+        "Quillan Salkilld",
+        "Mauricio Ruffy",
+        "Tom Nolan",
+        "Dan Hooker",
+        "Rafael Fiziev",
+        "Tofiq Musayev",
+        "Grant Dawson"
+      ]
+    },
+    "welterweight": {
+      "champion": "Islam Makhachev",
+      "entries": [
+        "Carlos Prates",
+        "Ian Machado Garry",
+        "Michael Morales",
+        "Jack Della Maddalena",
+        "Sean Brady",
+        "Gabriel Bonfim",
+        "Belal Muhammad",
+        "Leon Edwards",
+        "Joaquin Buckley",
+        "Uroš Medić",
+        "Kamaru Usman",
+        "Mike Malott",
+        "Michael Venom Page",
+        "Yaroslav Amosov",
+        "Kevin Holland"
+      ]
+    },
+    "middleweight": {
+      "champion": "Sean Strickland",
+      "entries": [
+        "Khamzat Chimaev",
+        "Dricus Du Plessis",
+        "Nassourdine Imavov",
+        "Joe Pyfer",
+        "Brendan Allen",
+        "Caio Borralho",
+        "Anthony Hernandez",
+        "Israel Adesanya",
+        "Gregory Rodrigues",
+        "Christian Leroy Duncan",
+        "Ikram Aliskerov",
+        "Bo Nickal",
+        "Abus Magomedov",
+        "Nursulton Ruziboev",
+        "Reinier de Ridder"
+      ]
+    },
+    "heavyweight": {
+      "champion": "Tom Aspinall",
+      "entries": [
+        "Ciryl Gane",
+        "Alexander Volkov",
+        "Sergei Pavlovich",
+        "Alex Pereira",
+        "Rizvan Kuniev",
+        "Josh Hokit",
+        "Waldo Cortes Acosta",
+        "Valter Walker",
+        "Serghei Spivac",
+        "Curtis Blaydes",
+        "Vitor Petrino",
+        "Brando Peričić",
+        "Mario Pinto",
+        "Mick Parkin",
+        "Ryan Spann"
+      ]
+    },
+    "womens-strawweight": {
+      "champion": "Mackenzie Dern",
+      "entries": [
+        "Zhang Weili",
+        "Virna Jandiroba",
+        "Tatiana Suarez",
+        "Gillian Robertson",
+        "Yan Xiaonan",
+        "Fatima Kline",
+        "Piera Rodriguez",
+        "Denise Gomes",
+        "Mizuki",
+        "Alexia Thainara",
+        "Amanda Lemos",
+        "Loopy Godinez",
+        "Tabatha Ricci",
+        "Jaqueline Amorim",
+        "Talita Alencar"
+      ]
+    },
+    "womens-flyweight": {
+      "champion": "Valentina Shevchenko",
+      "entries": [
+        "Natalia Silva",
+        "Manon Fiorot",
+        "Alexa Grasso",
+        "Erin Blanchfield",
+        "Zhang Weili",
+        "Wang Cong",
+        "Jasmine Jasudavicius",
+        "Rose Namajunas",
+        "Maycee Barber",
+        "Tracy Cortez",
+        "Miranda Maverick",
+        "JJ Aldrich",
+        "Karine Silva",
+        "Eduarda Moura",
+        "Casey O'Neill"
+      ]
+    },
+    "womens-bantamweight": {
+      "champion": "Kayla Harrison",
+      "entries": [
+        "Joselyne Edwards",
+        "Norma Dumont",
+        "Luana Santos",
+        "Ailin Perez",
+        "Julianna Peña",
+        "Yana Santos",
+        "Jacqueline Cavalcanti",
+        "Michelle Montague",
+        "Melissa Croden",
+        "Karol Rosa",
+        "Bia Mesquita",
+        "Macy Chiasson",
+        "Daria Zhelezniakova",
+        "Raquel Pennington",
+        "Klaudia Sygula"
+      ]
+    }
+  },
+  "mensP4p": [
+    "Islam Makhachev",
+    "Alexander Volkanovski",
+    "Petr Yan",
+    "Justin Gaethje",
+    "Ilia Topuria",
+    "Tom Aspinall",
+    "Sean Strickland",
+    "Merab Dvalishvili",
+    "Alex Pereira",
+    "Ciryl Gane",
+    "Joshua Van",
+    "Khamzat Chimaev",
+    "Alexandre Pantoja",
+    "Arman Tsarukyan",
+    "Charles Oliveira"
+  ],
+  "womensP4p": [
+    "Valentina Shevchenko",
+    "Kayla Harrison",
+    "Zhang Weili",
+    "Natalia Silva",
+    "Manon Fiorot",
+    "Mackenzie Dern",
+    "Alexa Grasso",
+    "Erin Blanchfield",
+    "Julianna Peña",
+    "Tatiana Suarez",
+    "Virna Jandiroba",
+    "Yan Xiaonan",
+    "Raquel Pennington",
+    "Rose Namajunas",
+    "Maycee Barber"
+  ]
+};

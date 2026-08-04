@@ -201,8 +201,7 @@ test("server-renders the official UFC ranking comparison page", async () => {
   assert.match(html, /선수 또는 체급 검색/);
   assert.match(html, /placeholder="예\. 마카체프, Medic, Makhachev"/);
   assert.match(html, />검색<\/button>/);
-  assert.match(html, /2026-07-18/);
-  assert.match(html, /2026-07-21/);
+  assert.match(html, /2026-\d{2}-\d{2}/);
   assert.match(html, /Fight Matrix · \d{4}-\d{2}-\d{2}/);
   assert.match(html, /플라이급/);
   assert.match(html, /밴텀급/);

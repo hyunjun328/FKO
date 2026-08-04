@@ -7,6 +7,7 @@ import {
   type KoreanFighter,
 } from "../data/fighters";
 import { LEGEND_PROFILES } from "../data/legend-profiles";
+import { OFFICIAL_PROFILE_STATUS } from "../data/official-profile-status.ts";
 import { unofficialWorldRanking } from "../data/unofficial-rankings";
 import { FighterFace } from "./FighterFace";
 import { GuestCommentThread } from "./GuestCommentThread";
@@ -60,7 +61,17 @@ export function KoreanFighterCard({
   status: "active" | "former";
   onSelect: (fighter: FighterSelection) => void;
 }) {
-  const profile = FIGHTER_PROFILES[fighter.name] ?? LEGEND_PROFILES[fighter.name];
+  const baseProfile = FIGHTER_PROFILES[fighter.name] ?? LEGEND_PROFILES[fighter.name];
+  const officialProfile = OFFICIAL_PROFILE_STATUS[fighter.name];
+  const profile = baseProfile && officialProfile
+    ? {
+        ...baseProfile,
+        record: officialProfile.record ?? baseProfile.record,
+        heightCm: officialProfile.heightCm ?? baseProfile.heightCm,
+        reachCm: officialProfile.reachCm ?? baseProfile.reachCm,
+        verifiedAt: officialProfile.checkedAt || baseProfile.verifiedAt,
+      }
+    : baseProfile;
 
   return (
     <button

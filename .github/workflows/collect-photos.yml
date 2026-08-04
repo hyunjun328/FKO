@@ -1,8 +1,9 @@
-name: Refresh rankings and fight card details
+# 공개 라이선스 선수 사진을 하루 한 번 수집해 사이트에 반영한다.
+name: Refresh fighter photos
 
 on:
   schedule:
-    - cron: "0 21 * * 0,2,4"
+    - cron: "0 3 * * *"
   workflow_dispatch:
 
 permissions:
@@ -19,23 +20,19 @@ jobs:
           python-version: "3.12"
       - name: Install collector dependencies
         run: python -m pip install --disable-pip-version-check requests beautifulsoup4 pillow
-      - name: Collect Fight Matrix rankings
-        run: python scripts/collect_fightmatrix_rankings.py
-      - name: Collect UFC official rankings and P4P
-        run: python scripts/collect_ufc_rankings.py
-      - name: Collect UFC official fight card details
-        run: python scripts/collect_ufc_schedule.py
-      - name: Commit refreshed rankings and photos
+      - name: Collect verified fighter photos
+        run: python scripts/collect_fighter_images.py --include-world-ranking
+      - name: Commit refreshed fighter photos
         id: commit
         run: |
-          git add app/data/fightmatrix-rankings.ts app/data/official-ranking-snapshot.ts app/data/auto-scheduled-events.ts
+          git add app/data/fighter-images.json public/fighters
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore(rankings): refresh rankings and fight cards"
+          git commit -m "chore(photos): refresh fighter photos"
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
       - name: Deploy refreshed site
