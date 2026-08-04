@@ -2,7 +2,12 @@
 // 메인카드 대진의 익명 승부예측을 집계하고 브라우저별 선택을 저장한다.
 
 import { useEffect, useState } from "react";
-import { authHeaders, getAuthSession, SUPABASE_URL } from "../lib/guest-auth";
+import {
+  authHeaders,
+  getAuthSession,
+  publicAuthHeaders,
+  SUPABASE_URL,
+} from "../lib/guest-auth";
 import { isPredictionClosed } from "../lib/prediction-close";
 const GUEST_ID_KEY = "fko-prediction-guest-id";
 
@@ -10,6 +15,19 @@ type PredictionRow = {
   pick: string;
   votes: number;
 };
+
+async function responseError(response: Response) {
+  try {
+    const payload = (await response.json()) as { message?: string };
+    return payload.message ?? `HTTP ${response.status}`;
+  } catch {
+    return `HTTP ${response.status}`;
+  }
+}
+
+function hasExpiredToken(message: string) {
+  return /(?:jwt|token).*expired|expired.*(?:jwt|token)/i.test(message);
+}
 
 function getGuestId() {
   const saved = window.localStorage.getItem(GUEST_ID_KEY);
@@ -42,10 +60,12 @@ export function BoutPrediction({
   const closed = isPredictionClosed(closesAt, now);
 
   async function loadPredictions() {
-    const response = await fetch(
-      `${SUPABASE_URL}/rest/v1/community_prediction_summary?select=pick,votes&target_id=eq.${encodeURIComponent(targetId)}`,
-      { headers: authHeaders() },
-    );
+    const url =
+      `${SUPABASE_URL}/rest/v1/community_prediction_summary?select=pick,votes&target_id=eq.${encodeURIComponent(targetId)}`;
+    let response = await fetch(url, { headers: authHeaders() });
+    if (!response.ok && hasExpiredToken(await responseError(response))) {
+      response = await fetch(url, { headers: publicAuthHeaders() });
+    }
     if (!response.ok) throw new Error("예측을 불러오지 못했습니다.");
     const rows = (await response.json()) as PredictionRow[];
     setVotes(Object.fromEntries(rows.map((row) => [row.pick, row.votes])));
@@ -71,11 +91,16 @@ export function BoutPrediction({
     if (!guestId) return;
     setMessage("반영 중입니다.");
     const currentGuestId = getAuthSession()?.user.id ?? guestId;
-    const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/upsert_guest_prediction`, {
+    const url = `${SUPABASE_URL}/rest/v1/rpc/upsert_guest_prediction`;
+    const request = (headers: HeadersInit) => fetch(url, {
       method: "POST",
-      headers: { ...authHeaders(), "Content-Type": "application/json" },
+      headers: { ...headers, "Content-Type": "application/json" },
       body: JSON.stringify({ p_target_id: targetId, p_pick: pick, p_guest_id: currentGuestId }),
     });
+    let response = await request(authHeaders());
+    if (!response.ok && hasExpiredToken(await responseError(response))) {
+      response = await request(publicAuthHeaders());
+    }
     if (!response.ok) {
       setMessage("예측을 반영하지 못했습니다.");
       return;

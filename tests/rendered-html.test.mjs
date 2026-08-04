@@ -468,6 +468,8 @@ test("keeps anonymous predictions separate from comments", async () => {
   assert.match(prediction, /community_prediction_summary/);
   assert.match(prediction, /upsert_guest_prediction/);
   assert.match(prediction, /fko-prediction-guest-id/);
+  assert.match(prediction, /publicAuthHeaders/);
+  assert.match(prediction, /hasExpiredToken/);
 });
 
 test("stores logged-in names separately from anonymous posting", async () => {
