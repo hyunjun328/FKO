@@ -28,6 +28,15 @@ export type FighterSelection = {
 };
 
 export function recordSummary(record: string) {
+  const hyphenRecord = record.match(/^(\d+)-(\d+)-(\d+)(?:-(\d+))?$/);
+  if (hyphenRecord) {
+    const [, win, loss, draw, noContest = "0"] = hyphenRecord;
+    const wins = Number(win);
+    const losses = Number(loss);
+    const draws = Number(draw);
+    const noContests = Number(noContest);
+    return `${wins + losses + draws + noContests}전 ${wins}승 ${losses}패${draws ? ` ${draws}무` : ""}${noContests ? ` ${noContests}무효` : ""}`;
+  }
   const wins = Number(record.match(/(\d+)승/)?.[1] ?? 0);
   const losses = Number(record.match(/(\d+)패/)?.[1] ?? 0);
   const draws = Number(record.match(/(\d+)무(?!효)/)?.[1] ?? 0);

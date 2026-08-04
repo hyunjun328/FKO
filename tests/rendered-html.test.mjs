@@ -287,16 +287,28 @@ test("server-renders the UFC archive with hall of fame, former fighters, and ref
   assert.equal(response.status, 200);
 
   const html = await response.text();
+  const normalizedHtml = html.replaceAll("<!-- -->", "");
   assert.match(html, /UFC 아카이브/);
-  assert.match(html, /조르주 생피에르/);
   assert.match(html, /상세 정보 보기/);
   assert.match(html, /명예의 전당/);
   assert.match(html, /과거 UFC 선수/);
   assert.match(html, /심판진/);
-  assert.match(html, /조르주 생피에르/);
-  assert.match(html, /29승 0패/);
+  assert.match(html, /코너 맥그리거/);
+  assert.match(html, /아만다 누네스/);
   assert.match(html, /class="archive-tabs"/);
   assert.match(html, /class="fighter-face archive-fighter-face"/);
+  const archive = await readFile(new URL("../app/data/archive.ts", import.meta.url), "utf8");
+  const legends = await readFile(new URL("../app/data/legend-profiles.ts", import.meta.url), "utf8");
+  assert.match(normalizedHtml, /과거 UFC 선수 56명/);
+  for (const name of [
+    "Conor McGregor", "Amanda Nunes", "Henry Cejudo", "Eddie Alvarez", "Anthony Pettis",
+    "Benson Henderson", "Nate Diaz", "Nick Diaz", "Chael Sonnen", "Rashad Evans",
+    "Dan Henderson", "Alistair Overeem", "Mark Hunt", "Glover Teixeira", "Demian Maia",
+    "T.J. Dillashaw", "Renan Barao", "Carla Esparza", "Germaine de Randamie", "Rory MacDonald",
+  ]) {
+    assert.match(archive, new RegExp(`name: "${name}"`));
+    assert.match(legends, new RegExp(`"${name}": archivedLegend`));
+  }
 });
 
 test("server-renders the guest community entry page", async () => {

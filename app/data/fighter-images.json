@@ -123,6 +123,7 @@
   "Amanda Nunes": {
     "src": "/fighters/amanda-nunes.webp",
     "groups": [
+      "archive",
       "featured"
     ],
     "wikidataId": "Q4739716",
@@ -375,6 +376,7 @@
   "Conor McGregor": {
     "src": "/fighters/conor-mcgregor.webp",
     "groups": [
+      "archive",
       "featured"
     ],
     "wikidataId": "Q5162259",
