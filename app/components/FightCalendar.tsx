@@ -250,6 +250,7 @@ function EventDetail({
                       leftKo={bout.leftKo}
                       right={bout.right}
                       rightKo={bout.rightKo}
+                      closesAt={event.prelimsUtc ?? event.startUtc}
                     />
                   ) : null}
                   </div>

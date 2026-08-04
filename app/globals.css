@@ -3060,6 +3060,11 @@ button.calendar-day:hover {
   color: var(--lime);
 }
 
+.bout-prediction > div button:disabled {
+  cursor: not-allowed;
+  opacity: 0.56;
+}
+
 .bout-prediction > div button b {
   color: var(--lime);
 }
