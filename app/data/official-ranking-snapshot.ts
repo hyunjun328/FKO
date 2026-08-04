@@ -124,6 +124,26 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Reinier de Ridder"
       ]
     },
+    "light-heavyweight": {
+      "champion": "Carlos Ulberg",
+      "entries": [
+        "Alex Pereira",
+        "Magomed Ankalaev",
+        "Jiří Procházka",
+        "Paulo Costa",
+        "Jamahal Hill",
+        "Khalil Rountree Jr.",
+        "Navajo Stirling",
+        "Dominick Reyes",
+        "Azamat Murzakanov",
+        "Bogdan Guskov",
+        "Robert Whittaker",
+        "Johnny Walker",
+        "Alonzo Menifield",
+        "Muhammad Saidov",
+        "Iwo Baraniewski"
+      ]
+    },
     "heavyweight": {
       "champion": "Tom Aspinall",
       "entries": [
