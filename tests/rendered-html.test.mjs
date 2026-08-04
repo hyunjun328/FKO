@@ -297,7 +297,8 @@ test("server-renders the UFC archive with hall of fame, former fighters, and ref
   assert.match(html, /class="fighter-face archive-fighter-face"/);
   const archive = await readFile(new URL("../app/data/archive.ts", import.meta.url), "utf8");
   const legends = await readFile(new URL("../app/data/legend-profiles.ts", import.meta.url), "utf8");
-  assert.match(normalizedHtml, /과거 UFC 선수 56명/);
+  assert.match(normalizedHtml, /과거 UFC 선수/);
+  assert.doesNotMatch(normalizedHtml, /과거 UFC 선수 \d+명/);
   for (const name of [
     "Conor McGregor", "Amanda Nunes", "Henry Cejudo", "Eddie Alvarez", "Anthony Pettis",
     "Benson Henderson", "Nate Diaz", "Nick Diaz", "Chael Sonnen", "Rashad Evans",

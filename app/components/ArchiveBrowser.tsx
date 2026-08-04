@@ -17,7 +17,7 @@ export function ArchiveBrowser() {
     <section className="archive-browser" aria-label="UFC 아카이브">
       <div className="archive-tabs" role="tablist" aria-label="아카이브 분류">
         <button type="button" role="tab" aria-selected={tab === "hall"} onClick={() => setTab("hall")}>명예의 전당</button>
-        <button type="button" role="tab" aria-selected={tab === "former"} onClick={() => setTab("former")}>과거 UFC 선수 {FORMER_UFC_FIGHTERS.length}명</button>
+        <button type="button" role="tab" aria-selected={tab === "former"} onClick={() => setTab("former")}>과거 UFC 선수</button>
         <button type="button" role="tab" aria-selected={tab === "referees"} onClick={() => setTab("referees")}>심판진</button>
       </div>
 
