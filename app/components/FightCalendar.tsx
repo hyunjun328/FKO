@@ -303,6 +303,7 @@ function EventDialog({
         aria-modal="true"
         aria-label={`${event.title} 대진 상세`}
       >
+        <span className="event-dialog-handle" aria-hidden="true" />
         <button type="button" className="event-dialog-close" onClick={onClose} autoFocus>
           닫기 ×
         </button>
@@ -352,6 +353,10 @@ function CalendarView({
   );
 
   const todayKey = kstDateKey(new Date().toISOString());
+  const monthEvents = events.filter((event) => {
+    const date = new Date(event.startUtc);
+    return date.getFullYear() === month.getFullYear() && date.getMonth() === month.getMonth();
+  });
 
   return (
     <div className="calendar-panel">
@@ -379,6 +384,21 @@ function CalendarView({
             →
           </button>
         </div>
+      </div>
+      <div className="mobile-calendar-agenda" aria-label="이번 달 UFC 일정 목록">
+        {monthEvents.length ? monthEvents.map((event) => {
+          const mainBout = event.bouts[0];
+          return (
+            <button type="button" key={event.id} onClick={() => onSelect(event)}>
+              <time>{KST_FORMATTER.format(new Date(event.startUtc))}</time>
+              <span>
+                <strong>{event.title}</strong>
+                <small>{mainBout.leftKo} vs {mainBout.rightKo}</small>
+              </span>
+              <b>보기 →</b>
+            </button>
+          );
+        }) : <p>이 달에 예정된 UFC 대회가 없습니다.</p>}
       </div>
       <div className="weekdays" aria-hidden="true">
         {WEEKDAYS.map((day) => (
@@ -473,8 +493,6 @@ export function FightCalendar() {
     return new Date(left.startUtc).getTime() - new Date(right.startUtc).getTime();
   });
   const mainEvent = nextEvent.bouts[0];
-  const featuredEvent = scheduledEvents.find((event) => event.series === "UFC") ?? nextEvent;
-  const featuredBout = featuredEvent.bouts[0];
 
   function openEvent(eventId: string) {
     setSelectedId(eventId);
@@ -617,55 +635,6 @@ export function FightCalendar() {
             </div>
           </div>
         </article>
-        <section className="featured-match-section" aria-label="다음 주요 경기">
-          <aside className="hero-info-panel">
-            <button
-              type="button"
-              className="featured-match-card"
-              onClick={() => openEvent(featuredEvent.id)}
-              aria-label={`${featuredEvent.title} ${featuredBout.leftKo} 대 ${featuredBout.rightKo} 상세 보기`}
-            >
-              <span className="hero-panel-label">다음 주요 매치</span>
-              <span className="featured-match-context">
-                {featuredBout.weight} · {featuredEvent.city}
-              </span>
-              <span className="featured-matchup">
-                <span className="featured-matchup-fighter">
-                  <FighterFace
-                    name={featuredBout.left}
-                    koName={featuredBout.leftKo}
-                    className="featured-fighter-face"
-                    gender={
-                      featuredBout.weight.includes("여성") ? "female" : "male"
-                    }
-                  />
-                  <strong>{featuredBout.leftKo}</strong>
-                  <small lang="en">{featuredBout.left}</small>
-                </span>
-                <i>VS</i>
-                <span className="featured-matchup-fighter">
-                  <FighterFace
-                    name={featuredBout.right}
-                    koName={featuredBout.rightKo}
-                    className="featured-fighter-face"
-                    gender={
-                      featuredBout.weight.includes("여성") ? "female" : "male"
-                    }
-                  />
-                  <strong>{featuredBout.rightKo}</strong>
-                  <small lang="en">{featuredBout.right}</small>
-                </span>
-              </span>
-              <span className="featured-match-meta">
-                <b>{featuredEvent.title}</b>
-                <small>
-                  {featuredEvent.timeTbd ? "시간 발표 대기" : `${KST_FORMATTER.format(new Date(featuredEvent.startUtc))} KST`}
-                </small>
-              </span>
-              <b>대진 전체 보기 →</b>
-            </button>
-          </aside>
-        </section>
       </section>
 
       <section className="schedule-section">

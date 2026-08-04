@@ -52,7 +52,6 @@ test("server-renders the UFC schedule product", async () => {
   assert.doesNotMatch(homeSearch, /FIGHTER LOOKUP|예정 대회, 최근 경기, 랭킹을 한 번에 확인하세요/);
   assert.doesNotMatch(html, /지금 한국시간/);
   assert.match(html, /메인카드 시작/);
-  assert.match(html, /다음 주요 매치/);
   assert.match(html, /UFC 330/);
   assert.match(html, /30분 전 알림/);
   assert.match(html, /class="event-open-button">대회 상세 보기<\/button>/);
@@ -63,10 +62,7 @@ test("server-renders the UFC schedule product", async () => {
   assert.doesNotMatch(html, /class="event-row-card-count"/);
   assert.match(html, /이슬람 마카체프/);
   assert.match(html, /이안 마샤두 개리/);
-  assert.match(
-    html,
-    /aria-label="UFC 330 이슬람 마카체프 대 이안 마샤두 개리 상세 보기"/,
-  );
+  assert.doesNotMatch(html, /다음 주요 매치/);
   assert.doesNotMatch(html, /메인카드 시작까지/);
   assert.match(html, /Mateusz Gamrot/);
   assert.match(html, /마테우시 감롯/);
@@ -78,7 +74,8 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /href="\/rankings"/);
   assert.match(html, /class="fighter-face hero-fighter-face"/);
   const calendar = await readFile(new URL("../app/components/FightCalendar.tsx", import.meta.url), "utf8");
-  assert.match(calendar, /className="featured-match-section"/);
+  assert.match(calendar, /className="mobile-calendar-agenda"/);
+  assert.doesNotMatch(calendar, /className="featured-match-section"/);
   assert.match(calendar, /function EventDialog/);
   assert.match(calendar, /className="event-dialog-backdrop"/);
   assert.match(calendar, /<EventDetail event=\{event\}/);

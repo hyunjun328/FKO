@@ -6067,6 +6067,7 @@ body {
 }
 
 .event-open-button {
+  min-height: 44px;
   margin: 16px 0 2px;
   padding: 9px 13px;
   border: 1px solid #555a60;
@@ -6150,7 +6151,7 @@ body {
   inset: 0;
   display: grid;
   place-items: center;
-  padding: 24px;
+  padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
   overflow-y: auto;
   background: rgba(0, 0, 0, 0.78);
 }
@@ -6176,6 +6177,8 @@ body {
   top: 12px;
   float: right;
   margin: 12px 12px -50px 0;
+  min-width: 44px;
+  min-height: 44px;
   padding: 8px 11px;
   border: 1px solid #5b6066;
   background: #121416;
@@ -6194,6 +6197,12 @@ body {
   text-align: left;
 }
 
+.event-dialog-handle,
+.mobile-calendar-agenda,
+.app-menu-swipe-hint {
+  display: none;
+}
+
 @media (max-width: 760px) {
   .event-selector-grid {
     grid-template-columns: 1fr;
@@ -6205,12 +6214,101 @@ body {
 
   .event-dialog-backdrop {
     align-items: end;
-    padding: 0;
+    padding: 0 max(0px, env(safe-area-inset-right)) 0 max(0px, env(safe-area-inset-left));
   }
 
   .event-dialog {
     max-height: 92vh;
     border-width: 1px 0 0;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  .event-dialog-handle {
+    width: 42px;
+    height: 4px;
+    display: block;
+    margin: 10px auto -2px;
+    border-radius: 999px;
+    background: #686d72;
+  }
+
+  .calendar-panel {
+    overflow: visible;
+  }
+
+  .weekdays,
+  .calendar-grid {
+    display: none;
+  }
+
+  .mobile-calendar-agenda {
+    display: grid;
+    gap: 8px;
+  }
+
+  .mobile-calendar-agenda > button {
+    width: 100%;
+    min-height: 76px;
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid #36393d;
+    background: #111315;
+    color: var(--text);
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+  }
+
+  .mobile-calendar-agenda time,
+  .mobile-calendar-agenda small {
+    color: #aeb3b8;
+    font-size: 0.72rem;
+    font-weight: 750;
+  }
+
+  .mobile-calendar-agenda span {
+    min-width: 0;
+    display: grid;
+    gap: 4px;
+  }
+
+  .mobile-calendar-agenda strong,
+  .mobile-calendar-agenda small {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mobile-calendar-agenda > button > b {
+    color: var(--orange);
+    font-size: 0.78rem;
+  }
+
+  .mobile-calendar-agenda > p {
+    margin: 0;
+    padding: 18px 4px;
+    color: var(--muted);
+  }
+
+  .app-topbar > div {
+    position: relative;
+  }
+
+  .app-menu-swipe-hint {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    display: block;
+    padding: 0 10px 0 28px;
+    background: linear-gradient(90deg, transparent, #0b0c0d 28%);
+    color: #c2c7cc;
+    font-size: 0.62rem;
+    font-weight: 850;
+    line-height: 46px;
+    pointer-events: none;
   }
 }
 

@@ -57,6 +57,7 @@ export function AppHeader() {
               </Link>
             ))}
           </nav>
+          <span className="app-menu-swipe-hint" aria-hidden="true">더보기 →</span>
           <span className="app-update-state">
             <i aria-hidden="true" />
             일정 자동 확인 · {SCHEDULE_CHECK_FORMATTER.format(new Date(SCHEDULE_CHECKED_AT))}
