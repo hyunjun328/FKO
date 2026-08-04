@@ -217,3 +217,7 @@ test("transliterates unmapped romanized fighter names into Korean", () => {
   assert.equal(rankingKoreanName("Thomas Williams"), "토마스 윌리엄스");
   assert.equal(rankingKoreanName("Islam Makhachev"), "이슬람 마카체프");
 });
+
+test("uses the confirmed Korean spelling for Sung Hoon Woo", () => {
+  assert.equal(rankingKoreanName("Sung Hoon Woo"), "우성훈");
+});

@@ -175,6 +175,7 @@ export const RANKING_KOREAN_NAMES: Record<string, string> = {
   "Song Yadong": "송야동",
   "Steve Erceg": "스티브 얼섹",
   "Steve Garcia": "스티브 가르시아",
+  "Sung Hoon Woo": "우성훈",
   Sumudaerji: "수무다얼지",
   "Tabatha Ricci": "타바사 히치",
   "Tagir Ulanbekov": "타기르 울란베코프",
