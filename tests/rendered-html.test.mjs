@@ -77,6 +77,7 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /class="fighter-face hero-fighter-face"/);
   const calendar = await readFile(new URL("../app/components/FightCalendar.tsx", import.meta.url), "utf8");
   assert.match(calendar, /className="featured-match-section"/);
+  assert.match(calendar, /\{event\.city\}\s*<span className="event-row-card-count">/);
   assert.match(html, /class="fighter-face bout-fighter-face"/);
   assert.match(html, /src="\/fighters\/nobody\.webp"/);
   assert.doesNotMatch(html, /class="fighter-silhouette"/);

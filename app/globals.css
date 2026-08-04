@@ -6952,6 +6952,23 @@ body {
   font-size: 0.78rem;
 }
 
+/* 대회명과 카드 구성을 한 줄의 대회 정보로 묶는다. */
+.event-row-event {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0 8px;
+}
+
+.event-row-event .event-row-card-count {
+  display: inline;
+  padding: 0;
+  color: #aeb3b8;
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0;
+}
+
 /* 관심 선수의 다음 경기와 랭킹을 간결하게 보여 준다. */
 .favorite-fighters {
   margin-top: 22px;

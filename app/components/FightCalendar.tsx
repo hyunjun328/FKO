@@ -674,6 +674,9 @@ export function FightCalendar() {
                           {event.series === "UFC" ? event.title : event.series}
                           <span aria-hidden="true"> · </span>
                           {event.city}
+                          <span className="event-row-card-count">
+                            {mainBout.weight} · 메인카드 {mainCardCount}경기
+                          </span>
                         </strong>
                         <h3 className="event-row-matchup">
                           <span className="event-row-fighter">
@@ -714,9 +717,6 @@ export function FightCalendar() {
                           <span>{mainBout.left}</span>
                           <i aria-hidden="true">vs</i>
                           <span>{mainBout.right}</span>
-                        </span>
-                        <span className="event-row-card-count">
-                          {mainBout.weight} · 메인카드 {mainCardCount}경기
                         </span>
                       </div>
                       <span className="row-arrow" aria-hidden="true">
