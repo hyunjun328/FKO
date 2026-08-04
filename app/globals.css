@@ -7007,6 +7007,106 @@ body {
   font-weight: 650;
 }
 
+/* 커뮤니티 목록을 유지하면서 게시글 본문과 댓글을 모달로 연다. */
+.community-list article {
+  padding: 0;
+}
+
+.community-post-trigger {
+  display: block;
+  width: 100%;
+  padding: 15px 12px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.community-post-trigger:hover,
+.community-post-trigger:focus-visible {
+  background: #17191b;
+}
+
+.community-post-dialog-backdrop {
+  position: fixed;
+  z-index: 40;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.76);
+}
+
+.community-post-dialog {
+  position: relative;
+  width: min(720px, 100%);
+  max-height: min(820px, calc(100vh - 48px));
+  overflow-y: auto;
+  padding: 32px;
+  border: 1px solid #42464a;
+  border-radius: 8px;
+  background: #101214;
+}
+
+.community-post-dialog-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid #555a5f;
+  border-radius: 3px;
+  background: #101214;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.community-post-dialog > header {
+  display: grid;
+  gap: 10px;
+  padding-right: 74px;
+}
+
+.community-post-dialog > header h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 4vw, 2rem);
+  letter-spacing: -0.045em;
+}
+
+.community-post-dialog > header > span:last-child {
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.community-post-body {
+  margin: 24px 0 28px;
+  color: #e4e5e7;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .community-post-trigger {
+    padding-inline: 0;
+  }
+
+  .community-post-dialog-backdrop {
+    padding: 12px;
+  }
+
+  .community-post-dialog {
+    max-height: calc(100vh - 24px);
+    padding: 24px 18px;
+  }
+}
+
 /* 관심 선수의 다음 경기와 랭킹을 간결하게 보여 준다. */
 .favorite-fighters {
   margin-top: 22px;

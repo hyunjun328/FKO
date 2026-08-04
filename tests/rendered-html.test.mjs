@@ -309,6 +309,12 @@ test("server-renders the guest community entry page", async () => {
   assert.match(html, /community-board-tabs/);
   assert.match(html, /글쓰기/);
   assert.doesNotMatch(html, /새 글 작성/);
+  const community = await readFile(new URL("../app/community/page.tsx", import.meta.url), "utf8");
+  const postDialog = await readFile(new URL("../app/components/CommunityPostDialog.tsx", import.meta.url), "utf8");
+  assert.match(community, /CommunityPostDialog/);
+  assert.match(community, /community-post-trigger/);
+  assert.match(postDialog, /community-post:\$\{post\.id\}/);
+  assert.match(postDialog, /GuestCommentThread/);
   assert.doesNotMatch(html, /게시글 비밀번호|댓글 비밀번호/);
   assert.match(html, /로그인/);
 });

@@ -11,6 +11,7 @@ import {
   type CommunityBoardId,
   type WritableCommunityBoardId,
 } from "../lib/community-board";
+import { CommunityPostDialog } from "../components/CommunityPostDialog";
 
 type CommunityPost = {
   id: number;
@@ -28,6 +29,7 @@ export default function CommunityPage() {
   const [selectedBoard, setSelectedBoard] = useState<CommunityBoardId>("all");
   const [writeBoard, setWriteBoard] = useState<WritableCommunityBoardId>("free");
   const [composerOpen, setComposerOpen] = useState(false);
+  const [selectedPost, setSelectedPost] = useState<CommunityPost | null>(null);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [message, setMessage] = useState("게시글을 불러오는 중입니다.");
@@ -141,18 +143,38 @@ export default function CommunityPage() {
           <div className="community-list-head"><span>게시글 {visiblePosts.length}</span><span>작성자 · 작성일</span></div>
           {visiblePosts.map((post) => (
             <article key={post.id}>
-              <header>
-                <span className="community-post-board">{communityBoardLabel(post.boardId)}</span>
-                <strong>{post.title}</strong>
-                <span>{post.nickname} · {new Date(post.created_at).toLocaleString("ko-KR")}</span>
-              </header>
-              <p>{post.body}</p>
+              <button
+                type="button"
+                className="community-post-trigger"
+                onClick={() => setSelectedPost(post)}
+                aria-label={`${post.title} 게시글 보기`}
+              >
+                <header>
+                  <span className="community-post-board">{communityBoardLabel(post.boardId)}</span>
+                  <strong>{post.title}</strong>
+                  <span>{post.nickname} · {new Date(post.created_at).toLocaleString("ko-KR")}</span>
+                </header>
+                <p>{post.body}</p>
+              </button>
             </article>
           ))}
           {!visiblePosts.length && !message ? <p className="community-message">이 게시판의 첫 글을 남겨 보세요.</p> : null}
           {message ? <p className="community-message">{message}</p> : null}
         </section>
       </section>
+      {selectedPost ? (
+        <CommunityPostDialog
+          post={{
+            id: selectedPost.id,
+            nickname: selectedPost.nickname,
+            title: selectedPost.title,
+            body: selectedPost.body,
+            createdAt: selectedPost.created_at,
+            boardLabel: communityBoardLabel(selectedPost.boardId),
+          }}
+          onClose={() => setSelectedPost(null)}
+        />
+      ) : null}
     </main>
   );
 }
