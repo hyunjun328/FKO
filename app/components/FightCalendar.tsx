@@ -20,6 +20,7 @@ import { HomeFighterSearch } from "./HomeFighterSearch";
 import { FavoriteFighters } from "./FavoriteFighters";
 import { GuestCommentThread } from "./GuestCommentThread";
 import { BoutPrediction } from "./BoutPrediction";
+import { EventReminder } from "./EventReminder";
 
 const KST_FORMATTER = new Intl.DateTimeFormat("ko-KR", {
   timeZone: "Asia/Seoul",
@@ -499,6 +500,12 @@ export function FightCalendar() {
                 : `다음 대회 · ${nextEvent.status}`}
             </span>
             <h2>{nextEvent.title}</h2>
+            <EventReminder
+              eventId={nextEvent.id}
+              title={nextEvent.title}
+              startUtc={nextEvent.startUtc}
+              timeTbd={Boolean(nextEvent.timeTbd)}
+            />
             <div className="main-matchup">
               <button
                 type="button"

@@ -54,6 +54,7 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /메인카드 시작/);
   assert.match(html, /다음 주요 매치/);
   assert.match(html, /UFC 330/);
+  assert.match(html, /30분 전 알림/);
   assert.match(html, /class="event-row-timing"/);
   assert.match(html, /class="event-row-card-count"/);
   assert.doesNotMatch(html, /class="date-block"/);
