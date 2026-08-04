@@ -226,7 +226,7 @@ export function FighterProfileDialog({
             eager
             gender={fighter.weight.includes("여성") ? "female" : "male"}
           />
-          <div>
+          <div className="fighter-profile-copy">
             <span className="fighter-profile-kicker">
               {profile ? "선수 상세 정보" : "랭킹 선수 정보"}
             </span>

@@ -2,7 +2,13 @@
 // 특정 대회나 선수에 대한 익명 게스트 댓글을 조회하고 작성하는 화면을 제공한다.
 
 import { FormEvent, useEffect, useState } from "react";
-import { authHeaders, displayNickname, isAdmin, SUPABASE_URL } from "../lib/guest-auth";
+import {
+  authHeaders,
+  displayNickname,
+  isAdmin,
+  publicAuthHeaders,
+  SUPABASE_URL,
+} from "../lib/guest-auth";
 import { CommunityReportButton } from "./CommunityReportButton";
 import { validateCommunityContent } from "../lib/community-moderation";
 import {
@@ -31,6 +37,10 @@ async function responseError(response: Response) {
   }
 }
 
+function hasExpiredToken(message: string) {
+  return /(?:jwt|token).*expired|expired.*(?:jwt|token)/i.test(message);
+}
+
 export function GuestCommentThread({
   targetId,
   title,
@@ -45,12 +55,17 @@ export function GuestCommentThread({
 
   async function loadComments() {
     const target = encodeURIComponent(`eq.${targetId}`);
-    const response = await fetch(
-      `${SUPABASE_URL}/rest/v1/community_comment_feed?select=id,nickname,body,created_at&target_id=${target}&order=created_at.desc&limit=30`,
-      { headers: authHeaders() },
-    );
+    const url =
+      `${SUPABASE_URL}/rest/v1/community_comment_feed?select=id,nickname,body,created_at&target_id=${target}&order=created_at.desc&limit=30`;
+    let response = await fetch(url, { headers: authHeaders() });
     if (!response.ok) {
-      throw new Error(`댓글을 불러오지 못했습니다. ${await responseError(response)}`);
+      const error = await responseError(response);
+      if (hasExpiredToken(error)) {
+        response = await fetch(url, { headers: publicAuthHeaders() });
+      }
+    }
+    if (!response.ok) {
+      throw new Error("댓글을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.");
     }
     const nextComments = (await response.json()) as GuestComment[];
     setComments(nextComments);
@@ -96,17 +111,25 @@ export function GuestCommentThread({
     }
     setMessage("등록 중입니다.");
     try {
-      const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/create_guest_comment`, {
+      const url = `${SUPABASE_URL}/rest/v1/rpc/create_guest_comment`;
+      const request = (headers: HeadersInit) => fetch(url, {
         method: "POST",
-        headers: { ...authHeaders(), "Content-Type": "application/json" },
+        headers: { ...headers, "Content-Type": "application/json" },
         body: JSON.stringify({
           p_target_id: targetId,
           p_nickname: displayNickname(),
           p_body: body.trim(),
         }),
       });
+      let response = await request(authHeaders());
       if (!response.ok) {
-        setMessage(`댓글을 저장하지 못했습니다. ${await responseError(response)}`);
+        const error = await responseError(response);
+        if (hasExpiredToken(error)) {
+          response = await request(publicAuthHeaders());
+        }
+      }
+      if (!response.ok) {
+        setMessage("댓글을 저장하지 못했습니다. 잠시 후 다시 시도해 주세요.");
         return;
       }
       setBody("");

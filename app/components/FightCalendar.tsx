@@ -538,7 +538,7 @@ export function FightCalendar() {
           <br />
           <em>대진과 선수 정보.</em>
         </h1>
-        <HomeFighterSearch onSelect={setSelectedFighter} />
+        <HomeFighterSearch onSelect={setSelectedFighter} onOpenEvent={openEvent} />
         <FavoriteFighters onSelect={setSelectedFighter} />
 
         <article className="next-event">

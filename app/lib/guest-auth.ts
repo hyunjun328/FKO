@@ -49,6 +49,13 @@ export function authHeaders() {
   };
 }
 
+export function publicAuthHeaders() {
+  return {
+    apikey: SUPABASE_KEY,
+    Authorization: `Bearer ${SUPABASE_KEY}`,
+  };
+}
+
 export function displayNickname() {
   return getAuthSession()?.user.user_metadata?.username ?? "익명 1";
 }

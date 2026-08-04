@@ -102,6 +102,7 @@ test("combines an event, recent fight, and ranking in home fighter search", () =
 
   assert.equal(makhachev.name, "Islam Makhachev");
   assert.equal(makhachev.event.label, "예정 대회");
+  assert.equal(makhachev.event.id, "ufc-330-2026");
   assert.equal(makhachev.event.title, "UFC 330");
   assert.equal(makhachev.lastFight.opponentKo, "잭 델라 마달레나");
   assert.match(makhachev.ranking, /웰터급 챔피언/);

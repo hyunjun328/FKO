@@ -21,6 +21,7 @@ export type FighterSearchResult = SearchableFighter & {
     method: string;
   };
   event?: {
+    id: string;
     label: "예정 대회" | "최근 대회";
     title: string;
     opponentKo: string;
@@ -115,6 +116,7 @@ function relatedEvent(name: string, now: number) {
   if (!match) return undefined;
 
   return {
+    id: match.event.id,
     label: upcoming ? "예정 대회" as const : "최근 대회" as const,
     title: match.event.title,
     opponentKo: match.opponentKo,

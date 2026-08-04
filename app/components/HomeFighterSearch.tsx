@@ -2,6 +2,7 @@
 // 홈 화면에서 선수의 대회, 최근 경기, 랭킹 정보를 함께 검색한다.
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import {
   findFighterSearchResults,
   formatFighterSearchEvent,
@@ -11,8 +12,10 @@ import { FighterFace } from "./FighterFace";
 
 export function HomeFighterSearch({
   onSelect,
+  onOpenEvent,
 }: {
   onSelect: (fighter: FighterSelection) => void;
+  onOpenEvent: (eventId: string) => void;
 }) {
   const [query, setQuery] = useState("");
   const results = useMemo(() => findFighterSearchResults(query), [query]);
@@ -42,21 +45,20 @@ export function HomeFighterSearch({
         results.length ? (
           <div className="home-fighter-search-results" aria-live="polite">
             {results.map((fighter) => (
-              <button
-                type="button"
-                className="home-fighter-search-result"
-                key={fighter.name}
-                onClick={() =>
-                  onSelect({
-                    name: fighter.name,
-                    koName: fighter.koName,
-                    weight: fighter.division,
-                    ranking: fighter.ranking,
-                  })
-                }
-                aria-label={`${fighter.koName} 통합 정보 보기`}
-              >
-                <span className="home-fighter-search-name">
+              <article className="home-fighter-search-result" key={fighter.name}>
+                <button
+                  type="button"
+                  className="home-fighter-search-name"
+                  onClick={() =>
+                    onSelect({
+                      name: fighter.name,
+                      koName: fighter.koName,
+                      weight: fighter.division,
+                      ranking: fighter.ranking,
+                    })
+                  }
+                  aria-label={`${fighter.koName} 선수 정보 보기`}
+                >
                   <FighterFace
                     name={fighter.name}
                     koName={fighter.koName}
@@ -67,17 +69,31 @@ export function HomeFighterSearch({
                     <strong>{fighter.koName}</strong>
                     <small lang="en">{fighter.name}</small>
                   </span>
-                </span>
-                <span className="home-fighter-search-facts">
-                  <span>
-                    <b>대회</b>
-                    <small>
-                      {fighter.event
-                        ? `${fighter.event.label} · ${fighter.event.title} · vs ${fighter.event.opponentKo} · ${formatFighterSearchEvent(fighter.event.startUtc)}`
-                        : "연결된 대회 정보 없음"}
-                    </small>
-                  </span>
-                  <span>
+                </button>
+                <div className="home-fighter-search-facts">
+                  {fighter.event?.label === "예정 대회" ? (
+                    <button
+                      type="button"
+                      className="home-fighter-search-fact home-fighter-search-fact-action"
+                      onClick={() => onOpenEvent(fighter.event!.id)}
+                      aria-label={`${fighter.event.title} 예정 경기 보기`}
+                    >
+                      <b>예정 경기</b>
+                      <small>
+                        {`${fighter.event.title} · vs ${fighter.event.opponentKo} · ${formatFighterSearchEvent(fighter.event.startUtc)}`}
+                      </small>
+                    </button>
+                  ) : (
+                    <span className="home-fighter-search-fact">
+                      <b>대회</b>
+                      <small>
+                        {fighter.event
+                          ? `${fighter.event.label} · ${fighter.event.title} · vs ${fighter.event.opponentKo} · ${formatFighterSearchEvent(fighter.event.startUtc)}`
+                          : "연결된 대회 정보 없음"}
+                      </small>
+                    </span>
+                  )}
+                  <span className="home-fighter-search-fact">
                     <b>최근 경기</b>
                     <small>
                       {fighter.lastFight
@@ -85,12 +101,12 @@ export function HomeFighterSearch({
                         : "검수된 최근 경기 정보 없음"}
                     </small>
                   </span>
-                  <span>
+                  <Link className="home-fighter-search-fact home-fighter-search-fact-action" href="/rankings">
                     <b>랭킹</b>
                     <small>{fighter.ranking}</small>
-                  </span>
-                </span>
-              </button>
+                  </Link>
+                </div>
+              </article>
             ))}
           </div>
         ) : <p className="home-fighter-search-empty">일치하는 선수를 찾지 못했습니다.</p>

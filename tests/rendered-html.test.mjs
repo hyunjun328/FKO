@@ -50,6 +50,9 @@ test("server-renders the UFC schedule product", async () => {
     "utf8",
   );
   assert.doesNotMatch(homeSearch, /FIGHTER LOOKUP|예정 대회, 최근 경기, 랭킹을 한 번에 확인하세요/);
+  assert.match(homeSearch, /onOpenEvent/);
+  assert.match(homeSearch, /예정 경기/);
+  assert.match(homeSearch, /href="\/rankings"/);
   assert.doesNotMatch(html, /지금 한국시간/);
   assert.match(html, /메인카드 시작/);
   assert.match(html, /UFC 330/);
@@ -432,13 +435,27 @@ test("keeps at most four compact sources at the top of fighter details", async (
     new URL("../app/components/FighterProfileDialog.tsx", import.meta.url),
     "utf8",
   );
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
 
   assert.match(dialog, /verificationSources\.slice\(0, 4\)/);
   assert.match(dialog, /className="fighter-top-sources"/);
   assert.match(dialog, /GuestCommentThread/);
   assert.match(dialog, /toggleFavoriteFighter/);
   assert.match(dialog, /targetId={`fighter:\$\{fighter\.name\}`}/);
+  assert.match(dialog, /className="fighter-profile-copy"/);
+  assert.match(css, /\.fighter-profile-copy\s*\{[^}]*padding-right/);
   assert.doesNotMatch(dialog, /교차\s*검증/);
+});
+
+test("recovers public comments when the stored session token is expired", async () => {
+  const comments = await readFile(
+    new URL("../app/components/GuestCommentThread.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(comments, /publicAuthHeaders/);
+  assert.match(comments, /hasExpiredToken/);
+  assert.doesNotMatch(comments, /못했습니다\.\s*\$\{await responseError/);
 });
 
 test("keeps anonymous predictions separate from comments", async () => {

@@ -1154,6 +1154,7 @@ a:focus-visible {
 
 .fighter-dialog {
   position: relative;
+  box-sizing: border-box;
   width: min(620px, 100%);
   max-height: min(760px, calc(100vh - 44px));
   overflow-y: auto;
@@ -1166,8 +1167,10 @@ a:focus-visible {
 
 .fighter-dialog-close {
   position: absolute;
+  z-index: 1;
   top: 18px;
   right: 18px;
+  min-width: 44px;
   padding: 8px 11px;
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -1175,14 +1178,19 @@ a:focus-visible {
   cursor: pointer;
   font-size: 0.72rem;
   font-weight: 850;
+  white-space: nowrap;
 }
 
 .fighter-profile-head {
   display: grid;
   grid-template-columns: 116px minmax(0, 1fr);
   gap: 22px;
-  align-items: center;
-  padding-right: 56px;
+  align-items: start;
+}
+
+.fighter-profile-copy {
+  min-width: 0;
+  padding-right: 64px;
 }
 
 .fighter-avatar {
@@ -1223,10 +1231,12 @@ a:focus-visible {
 
 .fighter-profile-head h2 {
   margin: 5px 0 2px;
-  font-size: clamp(2rem, 7vw, 3.3rem);
+  font-size: clamp(1.8rem, 5vw, 2.7rem);
   font-weight: 950;
-  letter-spacing: -0.07em;
-  line-height: 0.98;
+  letter-spacing: -0.045em;
+  line-height: 1.06;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
 }
 
 .fighter-profile-head p {
@@ -2561,7 +2571,14 @@ button.calendar-day:hover {
   .fighter-profile-head {
     grid-template-columns: 86px minmax(0, 1fr);
     gap: 14px;
-    padding-right: 38px;
+  }
+
+  .fighter-profile-copy {
+    padding-right: 48px;
+  }
+
+  .fighter-profile-head h2 {
+    font-size: clamp(1.65rem, 7.5vw, 2.15rem);
   }
 
   .fighter-avatar {
@@ -3342,7 +3359,7 @@ button.calendar-day:hover {
 }
 
 .fighter-profile-head h2 {
-  font-size: clamp(1.8rem, 6vw, 2.7rem);
+  font-size: clamp(1.8rem, 5vw, 2.7rem);
   font-weight: 850;
 }
 
@@ -6780,7 +6797,6 @@ body {
   color: var(--text);
   font: inherit;
   text-align: left;
-  cursor: pointer;
 }
 
 .home-fighter-search-result:hover,
@@ -6794,6 +6810,13 @@ body {
   align-items: center;
   gap: 10px;
   min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
 .home-fighter-search-face {
@@ -6828,11 +6851,28 @@ body {
   gap: 12px;
 }
 
-.home-fighter-search-facts > span {
+.home-fighter-search-fact {
   display: grid;
   align-content: start;
   gap: 4px;
   min-width: 0;
+}
+
+.home-fighter-search-fact-action {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.home-fighter-search-fact-action:hover b,
+.home-fighter-search-fact-action:focus-visible b,
+.home-fighter-search-name:hover strong,
+.home-fighter-search-name:focus-visible strong {
+  color: var(--orange);
 }
 
 .home-fighter-search-empty {
