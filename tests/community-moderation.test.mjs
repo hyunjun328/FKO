@@ -18,6 +18,6 @@ test("allows normal fight discussion", () => {
 test("limits post and comment frequency", () => {
   const now = 1_000_000;
   assert.equal(communitySubmissionWait("post", [now - 30_000], now), 30_000);
-  assert.equal(communitySubmissionWait("comment", [now - 21_000, now - 15_000, now - 10_000, now - 5_000, now - 1_000], now), 19_000);
+  assert.equal(communitySubmissionWait("comment", [now - 7_000], now), 1_000);
   assert.equal(communitySubmissionWait("comment", [now - 11 * 60_000], now), 0);
 });

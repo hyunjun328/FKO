@@ -4,7 +4,7 @@ export type CommunitySubmissionKind = "post" | "comment";
 const STORAGE_PREFIX = "fko-community-submissions";
 const RULES = {
   post: { intervalMs: 60_000, windowMs: 10 * 60_000, maximum: 2 },
-  comment: { intervalMs: 20_000, windowMs: 10 * 60_000, maximum: 5 },
+  comment: { intervalMs: 8_000, windowMs: 10 * 60_000, maximum: 15 },
 } as const;
 
 export function communitySubmissionWait(
