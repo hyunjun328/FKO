@@ -7083,6 +7083,95 @@ body {
   font-size: 0.76rem;
 }
 
+.community-post-actions,
+.guest-comment-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.guest-comment-actions {
+  margin-top: 10px;
+}
+
+.community-report-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.community-report-control button,
+.community-delete-button {
+  min-height: 32px;
+  padding: 0 11px;
+  border: 1px solid #3f454d;
+  border-radius: 4px;
+  background: transparent;
+  color: #d6d9dd;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.community-delete-button {
+  border-color: #f0444c;
+  color: #ff7379;
+}
+
+.community-report-control small,
+.community-admin-message {
+  color: #aeb5bd;
+  font-size: 13px;
+}
+
+.admin-page > section {
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid #343a42;
+  border-radius: 10px;
+  background: #111418;
+}
+
+.admin-page h1 {
+  margin: 8px 0;
+}
+
+.admin-report-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.admin-report-list article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px;
+  border: 1px solid #313740;
+  border-radius: 6px;
+}
+
+.admin-report-list article div,
+.admin-report-list article span {
+  display: grid;
+  gap: 4px;
+}
+
+.admin-report-list article p {
+  margin: 2px 0 0;
+  color: #c9ced4;
+}
+
+@media (max-width: 560px) {
+  .community-post-actions,
+  .guest-comment-actions,
+  .admin-report-list article {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
 .community-post-body {
   margin: 24px 0 28px;
   color: #e4e5e7;

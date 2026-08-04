@@ -2,7 +2,8 @@
 // 특정 대회나 선수에 대한 익명 게스트 댓글을 조회하고 작성하는 화면을 제공한다.
 
 import { FormEvent, useEffect, useState } from "react";
-import { authHeaders, displayNickname, SUPABASE_URL } from "../lib/guest-auth";
+import { authHeaders, displayNickname, isAdmin, SUPABASE_URL } from "../lib/guest-auth";
+import { CommunityReportButton } from "./CommunityReportButton";
 import { validateCommunityContent } from "../lib/community-moderation";
 import {
   communitySubmissionWaitFromStorage,
@@ -40,6 +41,7 @@ export function GuestCommentThread({
   const [comments, setComments] = useState<GuestComment[]>([]);
   const [body, setBody] = useState("");
   const [message, setMessage] = useState("댓글을 불러오는 중입니다.");
+  const [admin, setAdmin] = useState(false);
 
   async function loadComments() {
     const target = encodeURIComponent(`eq.${targetId}`);
@@ -58,6 +60,27 @@ export function GuestCommentThread({
   useEffect(() => {
     loadComments().catch((error: Error) => setMessage(error.message));
   }, [targetId]);
+
+  useEffect(() => {
+    const syncAdmin = () => setAdmin(isAdmin());
+    syncAdmin();
+    window.addEventListener("fko-auth-change", syncAdmin);
+    return () => window.removeEventListener("fko-auth-change", syncAdmin);
+  }, []);
+
+  async function deleteComment(commentId: number) {
+    if (!window.confirm("댓글을 삭제할까요?")) return;
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/delete_community_comment`, {
+      method: "POST",
+      headers: { ...authHeaders(), "Content-Type": "application/json" },
+      body: JSON.stringify({ p_comment_id: commentId }),
+    });
+    if (!response.ok) {
+      setMessage("댓글을 삭제하지 못했습니다.");
+      return;
+    }
+    await loadComments();
+  }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -112,6 +135,10 @@ export function GuestCommentThread({
             <strong>{comment.nickname}</strong>
             <time dateTime={comment.created_at}>{new Date(comment.created_at).toLocaleString("ko-KR")}</time>
             <p>{comment.body}</p>
+            <div className="guest-comment-actions">
+              <CommunityReportButton targetType="comment" targetId={String(comment.id)} />
+              {admin ? <button type="button" className="community-delete-button" onClick={() => deleteComment(comment.id)}>댓글 삭제</button> : null}
+            </div>
           </article>
         ))}
         {message ? <p className="guest-comment-message">{message}</p> : null}

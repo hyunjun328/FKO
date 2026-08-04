@@ -199,6 +199,7 @@ export default function CommunityPage() {
             boardLabel: communityBoardLabel(selectedPost.boardId),
           }}
           onClose={() => setSelectedPost(null)}
+          onDeleted={() => { void loadPosts(); }}
         />
       ) : null}
     </main>

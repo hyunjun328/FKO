@@ -2,8 +2,10 @@
 // 모든 화면에서 공통 메뉴와 사이트 상태를 제공하는 상단 내비게이션입니다.
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { SCHEDULE_CHECKED_AT } from "../data/schedule-status";
+import { isAdmin } from "../lib/guest-auth";
 import { AccountPanel } from "./AccountPanel";
 
 const SCHEDULE_CHECK_FORMATTER = new Intl.DateTimeFormat("ko-KR", {
@@ -18,6 +20,14 @@ const SCHEDULE_CHECK_FORMATTER = new Intl.DateTimeFormat("ko-KR", {
 
 export function AppHeader() {
   const pathname = usePathname();
+  const [admin, setAdmin] = useState(false);
+
+  useEffect(() => {
+    const syncAdmin = () => setAdmin(isAdmin());
+    syncAdmin();
+    window.addEventListener("fko-auth-change", syncAdmin);
+    return () => window.removeEventListener("fko-auth-change", syncAdmin);
+  }, []);
   const navigationItems = [
     { href: "/", label: "UFC 일정" },
     { href: "/rankings", label: "선수 랭킹" },
@@ -25,6 +35,7 @@ export function AppHeader() {
     { href: "/community", label: "커뮤니티" },
     { href: "/archive", label: "UFC 아카이브" },
     { href: "/results", label: "대회 결과" },
+    ...(admin ? [{ href: "/admin", label: "관리" }] : []),
   ];
 
   return (

@@ -1,12 +1,15 @@
 "use client";
 // 커뮤니티 게시글의 본문과 익명 댓글을 모달로 보여 준다.
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { authHeaders, isAdmin, SUPABASE_URL } from "../lib/guest-auth";
+import { CommunityReportButton } from "./CommunityReportButton";
 import { GuestCommentThread } from "./GuestCommentThread";
 
 export function CommunityPostDialog({
   post,
   onClose,
+  onDeleted,
 }: {
   post: {
     id: number;
@@ -17,7 +20,11 @@ export function CommunityPostDialog({
     boardLabel: string;
   };
   onClose: () => void;
+  onDeleted?: () => void;
 }) {
+  const [admin, setAdmin] = useState(false);
+  const [message, setMessage] = useState("");
+
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") onClose();
@@ -30,6 +37,29 @@ export function CommunityPostDialog({
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [onClose]);
+
+  useEffect(() => {
+    const syncAdmin = () => setAdmin(isAdmin());
+    syncAdmin();
+    window.addEventListener("fko-auth-change", syncAdmin);
+    return () => window.removeEventListener("fko-auth-change", syncAdmin);
+  }, []);
+
+  async function deletePost() {
+    if (!window.confirm("이 게시글과 댓글을 삭제할까요?")) return;
+    setMessage("삭제 중입니다.");
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/delete_community_post`, {
+      method: "POST",
+      headers: { ...authHeaders(), "Content-Type": "application/json" },
+      body: JSON.stringify({ p_post_id: post.id }),
+    });
+    if (!response.ok) {
+      setMessage("게시글을 삭제하지 못했습니다.");
+      return;
+    }
+    onDeleted?.();
+    onClose();
+  }
 
   return (
     <div
@@ -48,6 +78,11 @@ export function CommunityPostDialog({
           <h2 id="community-post-title">{post.title}</h2>
           <span>{post.nickname} · {new Date(post.createdAt).toLocaleString("ko-KR")}</span>
         </header>
+        <div className="community-post-actions">
+          <CommunityReportButton targetType="post" targetId={String(post.id)} />
+          {admin ? <button type="button" className="community-delete-button" onClick={deletePost}>게시글 삭제</button> : null}
+        </div>
+        {message ? <p className="community-admin-message">{message}</p> : null}
         <p className="community-post-body">{post.body}</p>
         <GuestCommentThread targetId={`community-post:${post.id}`} title="댓글" />
       </section>

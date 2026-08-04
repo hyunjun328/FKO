@@ -6,7 +6,11 @@ export const SUPABASE_KEY = "sb_publishable_b2_cjV_CWjFG-oKAtylebg_yb3s8HvE";
 type StoredSession = {
   access_token: string;
   refresh_token?: string;
-  user: { id: string; user_metadata?: { username?: string } };
+  user: {
+    id: string;
+    user_metadata?: { username?: string };
+    app_metadata?: { role?: string };
+  };
 };
 
 const STORAGE_KEY = "fko-auth-session";
@@ -47,4 +51,8 @@ export function authHeaders() {
 
 export function displayNickname() {
   return getAuthSession()?.user.user_metadata?.username ?? "익명 1";
+}
+
+export function isAdmin() {
+  return getAuthSession()?.user.app_metadata?.role === "admin";
 }

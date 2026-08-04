@@ -324,6 +324,24 @@ test("server-renders the guest community entry page", async () => {
   assert.match(html, /로그인/);
 });
 
+test("provides a role-gated community report admin page", async () => {
+  const response = await render("/admin");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  const admin = await readFile(new URL("../app/admin/page.tsx", import.meta.url), "utf8");
+  const reportButton = await readFile(new URL("../app/components/CommunityReportButton.tsx", import.meta.url), "utf8");
+  const schema = await readFile(new URL("../supabase/community.sql", import.meta.url), "utf8");
+
+  assert.match(html, /FKO ADMIN/);
+  assert.match(html, /신고 관리/);
+  assert.match(admin, /get_community_reports/);
+  assert.match(admin, /delete_community_post/);
+  assert.match(reportButton, /create_community_report/);
+  assert.match(schema, /app_metadata/);
+  assert.match(schema, /create_community_report/);
+  assert.match(schema, /delete_community_comment/);
+});
+
 test("server-renders a separate account page with nickname sign-up", async () => {
   const response = await render("/account");
   assert.equal(response.status, 200);

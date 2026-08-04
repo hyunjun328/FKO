@@ -174,3 +174,138 @@ $$;
 
 revoke all on function public.upsert_guest_prediction(text, text, uuid) from public;
 grant execute on function public.upsert_guest_prediction(text, text, uuid) to anon, authenticated;
+
+-- 커뮤니티 신고와 관리자 삭제 권한을 서버에서 처리한다.
+create table if not exists public.community_reports (
+  id bigint generated always as identity primary key,
+  target_type text not null check (target_type in ('post', 'comment')),
+  target_id text not null check (char_length(target_id) between 1 and 160),
+  reporter_id uuid not null,
+  created_at timestamptz not null default now(),
+  unique (target_type, target_id, reporter_id)
+);
+
+create index if not exists community_reports_created_at_idx
+  on public.community_reports (created_at desc);
+alter table public.community_reports enable row level security;
+revoke all on table public.community_reports from anon, authenticated;
+
+create or replace function public.is_fko_admin() returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select coalesce((auth.jwt() -> 'app_metadata' ->> 'role') = 'admin', false);
+$$;
+
+create or replace function public.create_community_report(
+  p_target_type text,
+  p_target_id text
+) returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if auth.uid() is null then
+    raise exception '신고하려면 로그인해야 합니다.';
+  end if;
+  if trim(p_target_type) not in ('post', 'comment') or char_length(trim(p_target_id)) = 0 then
+    raise exception '신고 대상이 올바르지 않습니다.';
+  end if;
+  if trim(p_target_type) = 'post' and not exists (
+    select 1 from public.community_posts where id::text = trim(p_target_id)
+  ) then
+    raise exception '존재하지 않는 게시글입니다.';
+  end if;
+  if trim(p_target_type) = 'comment' and not exists (
+    select 1 from public.community_comments where id::text = trim(p_target_id)
+  ) then
+    raise exception '존재하지 않는 댓글입니다.';
+  end if;
+  insert into public.community_reports (target_type, target_id, reporter_id)
+  values (trim(p_target_type), trim(p_target_id), auth.uid())
+  on conflict (target_type, target_id, reporter_id) do nothing;
+end;
+$$;
+
+create or replace function public.get_community_reports()
+returns table (
+  id bigint,
+  target_type text,
+  target_id text,
+  created_at timestamptz,
+  target_nickname text,
+  target_title text,
+  target_body text
+)
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if not public.is_fko_admin() then
+    raise exception '관리자 권한이 필요합니다.';
+  end if;
+  return query
+    select
+      report.id,
+      report.target_type,
+      report.target_id,
+      report.created_at,
+      coalesce(post.nickname, comment.nickname, '삭제됨'),
+      case when report.target_type = 'post' then coalesce(post.title, '삭제된 게시글') else '댓글' end,
+      coalesce(post.body, comment.body, '삭제된 콘텐츠')
+    from public.community_reports as report
+    left join public.community_posts as post
+      on report.target_type = 'post' and post.id::text = report.target_id
+    left join public.community_comments as comment
+      on report.target_type = 'comment' and comment.id::text = report.target_id
+    order by report.created_at desc;
+end;
+$$;
+
+create or replace function public.delete_community_post(p_post_id bigint)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if not public.is_fko_admin() then
+    raise exception '관리자 권한이 필요합니다.';
+  end if;
+  delete from public.community_comments where target_id = 'community-post:' || p_post_id::text;
+  delete from public.community_reports where target_type = 'post' and target_id = p_post_id::text;
+  delete from public.community_posts where id = p_post_id;
+end;
+$$;
+
+create or replace function public.delete_community_comment(p_comment_id bigint)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if not public.is_fko_admin() then
+    raise exception '관리자 권한이 필요합니다.';
+  end if;
+  delete from public.community_reports where target_type = 'comment' and target_id = p_comment_id::text;
+  delete from public.community_comments where id = p_comment_id;
+end;
+$$;
+
+revoke all on function public.is_fko_admin() from public;
+revoke all on function public.create_community_report(text, text) from public;
+revoke all on function public.get_community_reports() from public;
+revoke all on function public.delete_community_post(bigint) from public;
+revoke all on function public.delete_community_comment(bigint) from public;
+grant execute on function public.create_community_report(text, text) to authenticated;
+grant execute on function public.get_community_reports() to authenticated;
+grant execute on function public.delete_community_post(bigint) to authenticated;
+grant execute on function public.delete_community_comment(bigint) to authenticated;
+
+-- Supabase SQL Editor에서 본인 계정을 관리자 계정으로 지정한다.
+-- update auth.users set raw_app_meta_data = coalesce(raw_app_meta_data, '{}'::jsonb) || '{"role":"admin"}'::jsonb where email = '<관리자아이디>@fko.local';
