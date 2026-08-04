@@ -6620,3 +6620,66 @@ body {
     gap: 9px;
   }
 }
+
+/* 작은 화면에서는 메뉴를 가벼운 가로 탭 바로 유지합니다. */
+@media (max-width: 1280px) {
+  .app-topbar {
+    border-top: 1px solid #25282b;
+    border-bottom-color: #34373a;
+    background: rgba(11, 12, 13, 0.94);
+  }
+
+  .app-topbar > div {
+    min-height: 58px;
+    padding: 0 clamp(16px, 3vw, 28px);
+  }
+
+  .app-topbar-actions {
+    gap: 0;
+    justify-content: flex-start;
+    scroll-padding-inline: 16px;
+    scroll-snap-type: x proximity;
+  }
+
+  .app-topbar-actions a {
+    min-height: 50px;
+    padding: 0 16px;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    background: transparent;
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 780;
+    scroll-snap-align: start;
+  }
+
+  .app-topbar-actions a:hover,
+  .app-topbar-actions a:focus-visible {
+    border-color: transparent;
+    border-bottom-color: #85898d;
+    background: transparent;
+    color: var(--text);
+  }
+
+  .app-topbar-actions a[aria-current="page"] {
+    border-color: transparent;
+    border-bottom-color: var(--orange);
+    background: linear-gradient(180deg, transparent, rgba(242, 59, 59, 0.09));
+    box-shadow: none;
+    color: var(--text);
+  }
+}
+
+@media (max-width: 680px) {
+  .app-topbar > div {
+    min-height: 52px;
+    padding-inline: 10px;
+  }
+
+  .app-topbar-actions a {
+    min-height: 46px;
+    padding-inline: 13px;
+    font-size: 0.74rem;
+  }
+}
