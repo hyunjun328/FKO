@@ -7092,6 +7092,48 @@ body {
   overflow-wrap: anywhere;
 }
 
+/* 커뮤니티 작성 제한을 짧은 운영 규칙으로 안내한다. */
+.community-rules {
+  display: grid;
+  gap: 9px;
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--orange);
+  background: #151719;
+}
+
+.community-rules h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.82rem;
+}
+
+.community-rules ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.community-rules li {
+  color: #c0c3c6;
+  font-size: 0.74rem;
+  font-weight: 650;
+}
+
+@media (max-width: 640px) {
+  .community-rules {
+    padding: 13px 14px;
+  }
+
+  .community-rules ul {
+    display: grid;
+    gap: 7px;
+  }
+}
+
 @media (max-width: 640px) {
   .community-post-trigger {
     padding-inline: 0;

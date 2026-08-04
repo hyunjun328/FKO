@@ -308,6 +308,7 @@ test("server-renders the guest community entry page", async () => {
   assert.match(html, /href="\/community"/);
   assert.match(html, /community-board-tabs/);
   assert.match(html, /글쓰기/);
+  assert.match(html, /운영 규칙/);
   assert.doesNotMatch(html, /새 글 작성/);
   const community = await readFile(new URL("../app/community/page.tsx", import.meta.url), "utf8");
   const postDialog = await readFile(new URL("../app/components/CommunityPostDialog.tsx", import.meta.url), "utf8");
@@ -315,6 +316,10 @@ test("server-renders the guest community entry page", async () => {
   assert.match(community, /community-post-trigger/);
   assert.match(postDialog, /community-post:\$\{post\.id\}/);
   assert.match(postDialog, /GuestCommentThread/);
+  const moderation = await readFile(new URL("../app/lib/community-moderation.ts", import.meta.url), "utf8");
+  const schema = await readFile(new URL("../supabase/community.sql", import.meta.url), "utf8");
+  assert.match(moderation, /ADVERTISEMENT_PATTERN/);
+  assert.match(schema, /작성 간격 제한이 적용 중입니다/);
   assert.doesNotMatch(html, /게시글 비밀번호|댓글 비밀번호/);
   assert.match(html, /로그인/);
 });

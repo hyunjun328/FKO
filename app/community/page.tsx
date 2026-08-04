@@ -12,6 +12,12 @@ import {
   type WritableCommunityBoardId,
 } from "../lib/community-board";
 import { CommunityPostDialog } from "../components/CommunityPostDialog";
+import { validateCommunityContent } from "../lib/community-moderation";
+import {
+  communitySubmissionWaitFromStorage,
+  formatCommunityWait,
+  recordCommunitySubmission,
+} from "../lib/community-rate-limit";
 
 type CommunityPost = {
   id: number;
@@ -61,6 +67,16 @@ export default function CommunityPage() {
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const moderation = validateCommunityContent(title, body);
+    if (!moderation.ok) {
+      setMessage(moderation.message);
+      return;
+    }
+    const waitMs = communitySubmissionWaitFromStorage("post");
+    if (waitMs) {
+      setMessage(formatCommunityWait(waitMs));
+      return;
+    }
     setMessage("등록 중입니다.");
     const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/create_guest_post`, {
       method: "POST",
@@ -77,6 +93,7 @@ export default function CommunityPage() {
     }
     setTitle("");
     setBody("");
+    recordCommunitySubmission("post");
     setComposerOpen(false);
     setSelectedBoard(writeBoard);
     await loadPosts();
@@ -119,6 +136,15 @@ export default function CommunityPage() {
             </button>
           ))}
         </nav>
+
+        <aside className="community-rules" aria-labelledby="community-rules-title">
+          <h2 id="community-rules-title">운영 규칙</h2>
+          <ul>
+            <li>광고, 외부 링크, 연락처 유도는 금지합니다.</li>
+            <li>욕설, 혐오 표현, 반복 도배는 제한합니다.</li>
+            <li>게시글은 60초, 댓글은 20초 간격으로 작성할 수 있습니다.</li>
+          </ul>
+        </aside>
 
         {composerOpen ? (
           <section className="community-compose" id="community-compose" aria-labelledby="community-compose-title">

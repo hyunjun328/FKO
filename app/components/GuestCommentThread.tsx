@@ -3,6 +3,12 @@
 
 import { FormEvent, useEffect, useState } from "react";
 import { authHeaders, displayNickname, SUPABASE_URL } from "../lib/guest-auth";
+import { validateCommunityContent } from "../lib/community-moderation";
+import {
+  communitySubmissionWaitFromStorage,
+  formatCommunityWait,
+  recordCommunitySubmission,
+} from "../lib/community-rate-limit";
 
 type GuestComment = {
   id: number;
@@ -55,6 +61,16 @@ export function GuestCommentThread({
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const moderation = validateCommunityContent(body);
+    if (!moderation.ok) {
+      setMessage(moderation.message);
+      return;
+    }
+    const waitMs = communitySubmissionWaitFromStorage("comment");
+    if (waitMs) {
+      setMessage(formatCommunityWait(waitMs));
+      return;
+    }
     setMessage("등록 중입니다.");
     try {
       const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/create_guest_comment`, {
@@ -71,6 +87,7 @@ export function GuestCommentThread({
         return;
       }
       setBody("");
+      recordCommunitySubmission("comment");
       await loadComments();
       setMessage("댓글이 저장되었습니다.");
     } catch {
