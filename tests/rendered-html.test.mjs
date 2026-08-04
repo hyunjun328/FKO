@@ -298,7 +298,9 @@ test("server-renders the guest community entry page", async () => {
   const html = await response.text();
   assert.match(html, /FKO COMMUNITY/);
   assert.match(html, /href="\/community"/);
-  assert.match(html, /community-compose/);
+  assert.match(html, /community-board-tabs/);
+  assert.match(html, /글쓰기/);
+  assert.doesNotMatch(html, /새 글 작성/);
   assert.doesNotMatch(html, /게시글 비밀번호|댓글 비밀번호/);
   assert.match(html, /로그인/);
 });
