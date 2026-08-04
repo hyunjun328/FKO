@@ -43,7 +43,11 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /대진과 선수 정보/);
   assert.match(html, /선수 통합 검색/);
   assert.match(html, /placeholder="예\. 이슬람 마카체프, Makhachev"/);
-  assert.match(html, /한국시간\(KST\)/);
+  const homeSearch = await readFile(
+    new URL("../app/components/HomeFighterSearch.tsx", import.meta.url),
+    "utf8",
+  );
+  assert.doesNotMatch(homeSearch, /FIGHTER LOOKUP|예정 대회, 최근 경기, 랭킹을 한 번에 확인하세요/);
   assert.doesNotMatch(html, /지금 한국시간/);
   assert.match(html, /메인카드 시작/);
   assert.match(html, /다음 주요 매치/);

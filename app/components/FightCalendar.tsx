@@ -482,17 +482,11 @@ export function FightCalendar() {
       </header>
 
       <section className="hero">
-        <div className="eyebrow">UFC EVENTS · FIGHTERS · RANKINGS</div>
         <h1 className="hero-title">
           UFC 일정
           <br />
           <em>대진과 선수 정보.</em>
         </h1>
-        <p className="hero-lead">
-          다가오는 UFC 대회, 전체 대진, 선수 정보를 한곳에서 확인하세요.
-          일정 시간은 한국시간(KST)으로 제공합니다.
-        </p>
-
         <HomeFighterSearch onSelect={setSelectedFighter} />
 
         <article className="next-event">
@@ -631,7 +625,6 @@ export function FightCalendar() {
         <div className="section-head">
           <div>
             <h2>다가오는 대회</h2>
-            <p>대회를 선택하면 현재 발표된 대진을 확인할 수 있습니다.</p>
           </div>
           <div className="view-switcher" aria-label="일정 보기 방식">
             <button

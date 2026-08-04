@@ -21,17 +21,15 @@ export function HomeFighterSearch({
     <section className="home-fighter-search" aria-labelledby="fighter-search-title">
       <div className="home-fighter-search-head">
         <div>
-          <span className="section-kicker">FIGHTER LOOKUP</span>
           <h2 id="fighter-search-title">선수 통합 검색</h2>
         </div>
-        <p>예정 대회, 최근 경기, 랭킹을 한 번에 확인하세요.</p>
       </div>
       <form className="home-fighter-search-form" onSubmit={(event) => event.preventDefault()}>
-        <label htmlFor="home-fighter-search-input">선수 이름</label>
         <div>
           <input
             id="home-fighter-search-input"
             type="search"
+            aria-label="선수 이름"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="예. 이슬람 마카체프, Makhachev"
@@ -96,7 +94,7 @@ export function HomeFighterSearch({
             ))}
           </div>
         ) : <p className="home-fighter-search-empty">일치하는 선수를 찾지 못했습니다.</p>
-      ) : <p className="home-fighter-search-empty">한글 또는 영문 선수 이름을 입력하세요.</p>}
+      ) : null}
     </section>
   );
 }

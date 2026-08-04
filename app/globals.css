@@ -6915,3 +6915,39 @@ body {
     font-size: 0.66rem;
   }
 }
+
+/* 제목을 반복해서 설명하는 작은 보조 문구를 숨겨 화면 밀도를 낮춘다. */
+.section-kicker,
+.eyebrow,
+.hero-lead,
+.home-fighter-search-head > p,
+.home-fighter-search-empty,
+.section-head > div > p,
+.fighters-page-hero > p,
+.rankings-hero > p,
+.p4p-hero > p,
+.results-hero > p,
+.community-hero > p,
+.archive-hero > p,
+.footer p,
+.brand-copy small {
+  display: none;
+}
+
+.home-fighter-search-head {
+  display: block;
+}
+
+.home-fighter-search-head h2 {
+  margin: 0;
+  font-size: clamp(1.55rem, 2.5vw, 1.9rem);
+}
+
+.home-fighter-search-form {
+  margin-top: 16px;
+}
+
+.home-fighter-search-facts b {
+  color: var(--text);
+  font-size: 0.78rem;
+}
