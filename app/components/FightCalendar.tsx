@@ -17,6 +17,7 @@ import {
 } from "./FighterProfileDialog";
 import { FighterFace } from "./FighterFace";
 import { HomeFighterSearch } from "./HomeFighterSearch";
+import { FavoriteFighters } from "./FavoriteFighters";
 import { GuestCommentThread } from "./GuestCommentThread";
 import { BoutPrediction } from "./BoutPrediction";
 
@@ -488,6 +489,7 @@ export function FightCalendar() {
           <em>대진과 선수 정보.</em>
         </h1>
         <HomeFighterSearch onSelect={setSelectedFighter} />
+        <FavoriteFighters onSelect={setSelectedFighter} />
 
         <article className="next-event">
           <div className="next-event-copy">

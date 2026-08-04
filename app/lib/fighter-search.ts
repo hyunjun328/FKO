@@ -122,6 +122,16 @@ function relatedEvent(name: string, now: number) {
   };
 }
 
+function fighterSearchResult(fighter: SearchableFighter, now: number): FighterSearchResult {
+  const profile = FIGHTER_PROFILES[fighter.name] ?? LEGEND_PROFILES[fighter.name];
+  return {
+    ...fighter,
+    ranking: rankingSummary(fighter.name),
+    lastFight: profile?.lastFight,
+    event: relatedEvent(fighter.name, now),
+  };
+}
+
 export function formatFighterSearchEvent(startUtc: string) {
   return KST_DATE_FORMATTER.format(new Date(startUtc));
 }
@@ -134,15 +144,7 @@ export function findFighterSearchResults(rawQuery: string, now = Date.now()) {
     .filter((fighter) =>
       rankingFighterMatches(fighter.name, query, () => fighter.koName),
     )
-    .map<FighterSearchResult>((fighter) => {
-      const profile = FIGHTER_PROFILES[fighter.name] ?? LEGEND_PROFILES[fighter.name];
-      return {
-        ...fighter,
-        ranking: rankingSummary(fighter.name),
-        lastFight: profile?.lastFight,
-        event: relatedEvent(fighter.name, now),
-      };
-    })
+    .map((fighter) => fighterSearchResult(fighter, now))
     .sort((left, right) => {
       const leftExact = normalizeRankingQuery(`${left.koName} ${left.name}`) === query;
       const rightExact = normalizeRankingQuery(`${right.koName} ${right.name}`) === query;
@@ -150,4 +152,9 @@ export function findFighterSearchResults(rawQuery: string, now = Date.now()) {
       return left.koName.localeCompare(right.koName, "ko-KR");
     })
     .slice(0, 8);
+}
+
+export function findFighterSearchResultByName(name: string, now = Date.now()) {
+  const fighter = ALL_SEARCHABLE_FIGHTERS.find((item) => item.name === name);
+  return fighter ? fighterSearchResult(fighter, now) : undefined;
 }

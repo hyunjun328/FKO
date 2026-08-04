@@ -42,6 +42,8 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /UFC 일정/);
   assert.match(html, /대진과 선수 정보/);
   assert.match(html, /선수 통합 검색/);
+  const favorites = await readFile(new URL("../app/components/FavoriteFighters.tsx", import.meta.url), "utf8");
+  assert.match(favorites, /관심 선수/);
   assert.match(html, /placeholder="예\. 이슬람 마카체프, Makhachev"/);
   const homeSearch = await readFile(
     new URL("../app/components/HomeFighterSearch.tsx", import.meta.url),
@@ -396,6 +398,7 @@ test("keeps at most four compact sources at the top of fighter details", async (
   assert.match(dialog, /verificationSources\.slice\(0, 4\)/);
   assert.match(dialog, /className="fighter-top-sources"/);
   assert.match(dialog, /GuestCommentThread/);
+  assert.match(dialog, /toggleFavoriteFighter/);
   assert.match(dialog, /targetId={`fighter:\$\{fighter\.name\}`}/);
   assert.doesNotMatch(dialog, /교차\s*검증/);
 });

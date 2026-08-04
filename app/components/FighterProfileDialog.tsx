@@ -1,7 +1,7 @@
 "use client";
 // 선수 카드와 검수된 상세 정보 창을 여러 화면에서 함께 제공한다.
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   FIGHTER_PROFILES,
   type KoreanFighter,
@@ -10,6 +10,10 @@ import { LEGEND_PROFILES } from "../data/legend-profiles";
 import { unofficialWorldRanking } from "../data/unofficial-rankings";
 import { FighterFace } from "./FighterFace";
 import { GuestCommentThread } from "./GuestCommentThread";
+import {
+  favoriteFighterNames,
+  toggleFavoriteFighter,
+} from "../lib/favorite-fighters";
 
 export type FighterSelection = {
   name: string;
@@ -128,6 +132,7 @@ export function FighterProfileDialog({
   fighter: FighterSelection;
   onClose: () => void;
 }) {
+  const [isFavorite, setIsFavorite] = useState(false);
   const profile = FIGHTER_PROFILES[fighter.name] ?? LEGEND_PROFILES[fighter.name];
   const showProfile = Boolean(profile && !fighter.simple);
   const worldRanking = unofficialWorldRanking(fighter.name);
@@ -152,6 +157,10 @@ export function FighterProfileDialog({
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [onClose]);
+
+  useEffect(() => {
+    setIsFavorite(favoriteFighterNames().includes(fighter.name));
+  }, [fighter.name]);
 
   return (
     <div
@@ -196,6 +205,14 @@ export function FighterProfileDialog({
                 “{profile.nickname}”
               </strong>
             ) : null}
+            <button
+              type="button"
+              className="fighter-favorite-button"
+              onClick={() => setIsFavorite(toggleFavoriteFighter(fighter.name).includes(fighter.name))}
+              aria-pressed={isFavorite}
+            >
+              {isFavorite ? "관심 해제" : "관심 등록"}
+            </button>
           </div>
         </div>
 

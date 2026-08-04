@@ -6951,3 +6951,123 @@ body {
   color: var(--text);
   font-size: 0.78rem;
 }
+
+/* 관심 선수의 다음 경기와 랭킹을 간결하게 보여 준다. */
+.favorite-fighters {
+  margin-top: 22px;
+  padding: 20px;
+  border: 1px solid #3b3e42;
+  border-radius: 8px;
+  background: #111315;
+}
+
+.favorite-fighters h2 {
+  margin: 0 0 14px;
+  font-size: 1.2rem;
+  letter-spacing: -0.04em;
+}
+
+.favorite-fighters > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 8px;
+}
+
+.favorite-fighter-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 16px;
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #34373a;
+  border-radius: 5px;
+  background: #0d0f10;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.favorite-fighter-card:hover,
+.favorite-fighter-card:focus-visible {
+  border-color: #7f3033;
+  background: #17191b;
+}
+
+.favorite-fighter-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.favorite-fighter-face {
+  flex: none;
+  width: 38px;
+  height: 48px;
+}
+
+.favorite-fighter-name strong {
+  min-width: 0;
+  overflow: hidden;
+  font-size: 1rem;
+  letter-spacing: -0.04em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.favorite-fighter-facts {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.favorite-fighter-facts > span {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  color: #bec1c4;
+  font-size: 0.76rem;
+  font-weight: 650;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.favorite-fighter-facts b {
+  color: var(--text);
+  font-size: 0.7rem;
+}
+
+.fighter-favorite-button {
+  min-height: 34px;
+  margin-top: 12px;
+  padding: 0 11px;
+  border: 1px solid #595d62;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.fighter-favorite-button[aria-pressed="true"] {
+  border-color: var(--lime);
+  color: var(--lime);
+}
+
+@media (max-width: 640px) {
+  .favorite-fighters {
+    padding: 16px;
+  }
+
+  .favorite-fighters > div,
+  .favorite-fighter-card {
+    grid-template-columns: 1fr;
+  }
+
+  .favorite-fighter-card {
+    gap: 12px;
+  }
+}
