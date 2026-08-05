@@ -44,7 +44,7 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /선수 통합 검색/);
   const favorites = await readFile(new URL("../app/components/FavoriteFighters.tsx", import.meta.url), "utf8");
   assert.match(favorites, /관심 선수/);
-  assert.match(html, /placeholder="예\. 이슬람 마카체프, Makhachev"/);
+  assert.match(html, /placeholder="예\. 알렉스 페레이라, Pereira"/);
   const homeSearch = await readFile(
     new URL("../app/components/HomeFighterSearch.tsx", import.meta.url),
     "utf8",
@@ -56,7 +56,7 @@ test("server-renders the UFC schedule product", async () => {
   assert.doesNotMatch(html, /지금 한국시간/);
   assert.match(html, /메인카드 시작/);
   assert.match(html, /UFC 330/);
-  assert.match(html, /30분 전 알림/);
+  assert.doesNotMatch(html, /30분 전 알림/);
   assert.match(html, /class="event-open-button">대회 상세 보기<\/button>/);
   assert.match(html, /class="event-selector-grid"/);
   assert.match(html, /class="event-selector-card"/);
@@ -86,6 +86,7 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(calendar, /function EventDialog/);
   assert.match(calendar, /className="event-dialog-backdrop"/);
   assert.match(calendar, /<EventDetail event=\{event\}/);
+  assert.match(css, /\.event-dialog \.bout\s*\{[^}]*grid-template-columns:\s*1fr/);
   assert.doesNotMatch(html, /class="fighter-face bout-fighter-face"/);
   assert.match(html, /src="\/fighters\/nobody\.webp"/);
   assert.doesNotMatch(html, /class="fighter-silhouette"/);

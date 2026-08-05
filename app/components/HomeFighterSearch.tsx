@@ -35,7 +35,7 @@ export function HomeFighterSearch({
             aria-label="선수 이름"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="예. 이슬람 마카체프, Makhachev"
+            placeholder="예. 알렉스 페레이라, Pereira"
             autoComplete="off"
           />
           <button type="submit">검색</button>

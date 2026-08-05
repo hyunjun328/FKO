@@ -6237,9 +6237,9 @@ body {
   }
 
   .event-dialog {
-    max-height: 92vh;
+    max-height: min(94dvh, 860px);
     border-width: 1px 0 0;
-    padding-bottom: max(12px, env(safe-area-inset-bottom));
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
   }
 
   .event-dialog-handle {
@@ -6249,6 +6249,52 @@ body {
     margin: 10px auto -2px;
     border-radius: 999px;
     background: #686d72;
+  }
+
+  .event-dialog .detail-top {
+    padding: 24px 20px;
+  }
+
+  .event-dialog .fight-card {
+    padding: 20px 16px 28px;
+  }
+
+  .event-dialog .bout {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 18px 4px;
+  }
+
+  .event-dialog .fighter,
+  .event-dialog .fighter-left,
+  .event-dialog .fighter-right {
+    justify-items: start;
+    padding-inline: 0;
+    text-align: left;
+  }
+
+  .event-dialog .fighter-left .fighter-name-line {
+    justify-content: flex-start;
+  }
+
+  .event-dialog .bout-vs,
+  .event-dialog .weight {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+    margin: 0;
+    transform: none;
+    text-align: left;
+  }
+
+  .event-dialog .bout-vs {
+    margin-top: 2px;
+    font-size: 1.05rem;
+    line-height: 1;
+  }
+
+  .event-dialog .fighter-record {
+    white-space: normal;
   }
 
   .calendar-panel {

@@ -36,6 +36,19 @@ const KST_DATE_FORMATTER = new Intl.DateTimeFormat("ko-KR", {
   weekday: "short",
 });
 
+const FIGHTER_SEARCH_ALIASES: Record<string, readonly string[]> = {
+  "Alex Pereira": ["chama", "샤마", "포아탄"],
+};
+
+function fighterSearchMatches(fighter: SearchableFighter, query: string) {
+  return (
+    rankingFighterMatches(fighter.name, query, () => fighter.koName) ||
+    (FIGHTER_SEARCH_ALIASES[fighter.name] ?? []).some((alias) =>
+      normalizeRankingQuery(alias).includes(query),
+    )
+  );
+}
+
 const rankingFighters: SearchableFighter[] = UFC_RANKING_DIVISIONS.flatMap(
   (division) => [
     {
@@ -143,9 +156,7 @@ export function findFighterSearchResults(rawQuery: string, now = Date.now()) {
   if (!query) return [];
 
   return ALL_SEARCHABLE_FIGHTERS
-    .filter((fighter) =>
-      rankingFighterMatches(fighter.name, query, () => fighter.koName),
-    )
+    .filter((fighter) => fighterSearchMatches(fighter, query))
     .map((fighter) => fighterSearchResult(fighter, now))
     .sort((left, right) => {
       const leftExact = normalizeRankingQuery(`${left.koName} ${left.name}`) === query;

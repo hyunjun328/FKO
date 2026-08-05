@@ -108,6 +108,13 @@ test("combines an event, recent fight, and ranking in home fighter search", () =
   assert.match(makhachev.ranking, /웰터급 챔피언/);
 });
 
+test("finds Alex Pereira by his common nicknames", () => {
+  for (const query of ["chama", "샤마", "포아탄"]) {
+    const [pereira] = findFighterSearchResults(query, Date.parse("2026-08-04T00:00:00Z"));
+    assert.equal(pereira.name, "Alex Pereira");
+  }
+});
+
 test("does not expose the unrelated lightweight champion for Oliveira", () => {
   const [lightweight] = filterRankingDivisions(
     UFC_RANKING_DIVISIONS,
