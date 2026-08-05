@@ -16,6 +16,7 @@ export function CommunityPostDialog({
     nickname: string;
     title: string;
     body: string;
+    isAdmin: boolean;
     createdAt: string;
     boardLabel: string;
   };
@@ -76,7 +77,7 @@ export function CommunityPostDialog({
         <header>
           <span className="community-post-board">{post.boardLabel}</span>
           <h2 id="community-post-title">{post.title}</h2>
-          <span>{post.nickname} · {new Date(post.createdAt).toLocaleString("ko-KR")}</span>
+          <span><strong className={post.isAdmin ? "community-admin-nickname" : undefined}>{post.isAdmin ? "[관리자] " : ""}{post.nickname}</strong> · {new Date(post.createdAt).toLocaleString("ko-KR")}</span>
         </header>
         <div className="community-post-actions">
           <CommunityReportButton targetType="post" targetId={String(post.id)} />

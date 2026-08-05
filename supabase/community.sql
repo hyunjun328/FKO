@@ -4,15 +4,17 @@ create table if not exists public.community_posts (
   nickname text not null check (char_length(nickname) between 2 and 20),
   title text not null check (char_length(title) between 2 and 100),
   body text not null check (char_length(body) between 2 and 3000),
+  is_admin boolean not null default false,
   created_at timestamptz not null default now()
 );
 
 alter table public.community_posts drop column if exists password_hash;
+alter table public.community_posts add column if not exists is_admin boolean not null default false;
 alter table public.community_posts enable row level security;
 revoke all on table public.community_posts from anon, authenticated;
 
 create or replace view public.community_post_feed as
-  select id, nickname, title, body, created_at
+  select id, nickname, title, body, is_admin, created_at
   from public.community_posts;
 
 revoke all on public.community_post_feed from public, anon, authenticated;
@@ -32,8 +34,10 @@ declare
   v_nickname text;
   v_content text;
   v_interval interval;
+  v_is_admin boolean;
 begin
   v_nickname := coalesce(nullif(auth.jwt() -> 'user_metadata' ->> 'username', ''), trim(p_nickname), '익명 1');
+  v_is_admin := coalesce((auth.jwt() -> 'app_metadata' ->> 'role') = 'admin', false);
   v_content := lower(trim(p_title) || ' ' || trim(p_body));
   v_interval := case when auth.uid() is null then interval '15 seconds' else interval '60 seconds' end;
 
@@ -49,11 +53,12 @@ begin
   ) then
     raise exception '작성 간격 제한이 적용 중입니다. 잠시 후 다시 시도해 주세요.';
   end if;
-  insert into public.community_posts (nickname, title, body)
+  insert into public.community_posts (nickname, title, body, is_admin)
   values (
     v_nickname,
     trim(p_title),
-    trim(p_body)
+    trim(p_body),
+    v_is_admin
   );
   return;
 end;
@@ -67,17 +72,19 @@ create table if not exists public.community_comments (
   target_id text not null check (char_length(target_id) between 3 and 160),
   nickname text not null check (char_length(nickname) between 2 and 20),
   body text not null check (char_length(body) between 2 and 1000),
+  is_admin boolean not null default false,
   created_at timestamptz not null default now()
 );
 
 alter table public.community_comments drop column if exists password_hash;
+alter table public.community_comments add column if not exists is_admin boolean not null default false;
 create index if not exists community_comments_target_created_at_idx
   on public.community_comments (target_id, created_at desc);
 alter table public.community_comments enable row level security;
 revoke all on table public.community_comments from anon, authenticated;
 
 create or replace view public.community_comment_feed as
-  select id, target_id, nickname, body, created_at
+  select id, target_id, nickname, body, is_admin, created_at
   from public.community_comments;
 
 revoke all on public.community_comment_feed from public, anon, authenticated;
@@ -97,8 +104,10 @@ declare
   v_nickname text;
   v_content text;
   v_interval interval;
+  v_is_admin boolean;
 begin
   v_nickname := coalesce(nullif(auth.jwt() -> 'user_metadata' ->> 'username', ''), trim(p_nickname), '익명 1');
+  v_is_admin := coalesce((auth.jwt() -> 'app_metadata' ->> 'role') = 'admin', false);
   v_content := lower(trim(p_body));
   v_interval := case when auth.uid() is null then interval '3 seconds' else interval '8 seconds' end;
 
@@ -120,11 +129,12 @@ begin
   ) >= 15 then
     raise exception '10분 동안 작성할 수 있는 댓글 수를 초과했습니다.';
   end if;
-  insert into public.community_comments (target_id, nickname, body)
+  insert into public.community_comments (target_id, nickname, body, is_admin)
   values (
     trim(p_target_id),
     v_nickname,
-    trim(p_body)
+    trim(p_body),
+    v_is_admin
   );
   return;
 end;

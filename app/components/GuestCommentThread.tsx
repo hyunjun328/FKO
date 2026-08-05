@@ -21,6 +21,7 @@ type GuestComment = {
   id: number;
   nickname: string;
   body: string;
+  is_admin: boolean;
   created_at: string;
 };
 
@@ -56,7 +57,7 @@ export function GuestCommentThread({
   async function loadComments() {
     const target = encodeURIComponent(`eq.${targetId}`);
     const url =
-      `${SUPABASE_URL}/rest/v1/community_comment_feed?select=id,nickname,body,created_at&target_id=${target}&order=created_at.desc&limit=30`;
+      `${SUPABASE_URL}/rest/v1/community_comment_feed?select=id,nickname,body,is_admin,created_at&target_id=${target}&order=created_at.desc&limit=30`;
     let response = await fetch(url, { headers: authHeaders() });
     if (!response.ok) {
       const error = await responseError(response);
@@ -155,7 +156,7 @@ export function GuestCommentThread({
       <div className="guest-comment-list" aria-live="polite">
         {comments.map((comment) => (
           <article key={comment.id}>
-            <strong>{comment.nickname}</strong>
+            <strong className={comment.is_admin ? "community-admin-nickname" : undefined}>{comment.is_admin ? "[관리자] " : ""}{comment.nickname}</strong>
             <time dateTime={comment.created_at}>{new Date(comment.created_at).toLocaleString("ko-KR")}</time>
             <p>{comment.body}</p>
             <div className="guest-comment-actions">

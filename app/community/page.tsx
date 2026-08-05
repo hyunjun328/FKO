@@ -24,6 +24,7 @@ type CommunityPost = {
   nickname: string;
   title: string;
   body: string;
+  is_admin: boolean;
   created_at: string;
   boardId: WritableCommunityBoardId;
 };
@@ -42,7 +43,7 @@ export default function CommunityPage() {
 
   async function loadPosts() {
     const response = await fetch(
-      `${SUPABASE_URL}/rest/v1/community_post_feed?select=id,nickname,title,body,created_at&order=created_at.desc&limit=80`,
+      `${SUPABASE_URL}/rest/v1/community_post_feed?select=id,nickname,title,body,is_admin,created_at&order=created_at.desc&limit=80`,
       { headers: authHeaders() },
     );
     if (!response.ok) throw new Error("게시글을 불러오지 못했습니다.");
@@ -178,7 +179,7 @@ export default function CommunityPage() {
                 <header>
                   <span className="community-post-board">{communityBoardLabel(post.boardId)}</span>
                   <strong>{post.title}</strong>
-                  <span>{post.nickname} · {new Date(post.created_at).toLocaleString("ko-KR")}</span>
+                  <span><strong className={post.is_admin ? "community-admin-nickname" : undefined}>{post.is_admin ? "[관리자] " : ""}{post.nickname}</strong> · {new Date(post.created_at).toLocaleString("ko-KR")}</span>
                 </header>
                 <p>{post.body}</p>
               </button>
@@ -195,6 +196,7 @@ export default function CommunityPage() {
             nickname: selectedPost.nickname,
             title: selectedPost.title,
             body: selectedPost.body,
+            isAdmin: selectedPost.is_admin,
             createdAt: selectedPost.created_at,
             boardLabel: communityBoardLabel(selectedPost.boardId),
           }}

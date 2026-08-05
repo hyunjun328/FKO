@@ -7470,6 +7470,11 @@ body {
   font-size: 13px;
 }
 
+.community-admin-nickname {
+  color: var(--lime);
+  font-weight: 950;
+}
+
 .admin-page > section {
   padding: clamp(24px, 4vw, 48px);
   border: 1px solid #343a42;
