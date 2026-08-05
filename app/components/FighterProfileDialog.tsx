@@ -230,13 +230,6 @@ export function FighterProfileDialog({
             <span className="fighter-profile-kicker">
               {profile ? "선수 상세 정보" : "랭킹 선수 정보"}
             </span>
-            <h2 id="fighter-dialog-title">{fighter.koName}</h2>
-            <p lang="en">{fighter.name}</p>
-            {showProfile && profile?.nickname ? (
-              <strong className="fighter-nickname">
-                “{profile.nickname}”
-              </strong>
-            ) : null}
             <button
               type="button"
               className="fighter-favorite-button"
@@ -245,6 +238,13 @@ export function FighterProfileDialog({
             >
               {isFavorite ? "관심 해제" : "관심 등록"}
             </button>
+            <h2 id="fighter-dialog-title">{fighter.koName}</h2>
+            <p lang="en">{fighter.name}</p>
+            {showProfile && profile?.nickname ? (
+              <strong className="fighter-nickname">
+                “{profile.nickname}”
+              </strong>
+            ) : null}
           </div>
         </div>
 
@@ -387,22 +387,6 @@ export function FighterProfileDialog({
                   <dd>{profile.octagonDebut}</dd>
                 </div>
               ) : null}
-              <div>
-                <dt>확인일</dt>
-                <dd>{profile.verifiedAt}</dd>
-              </div>
-              {officialProfile?.division ? (
-                <div>
-                  <dt>UFC 표기 체급</dt>
-                  <dd>{officialProfile.division}</dd>
-                </div>
-              ) : null}
-              {officialProfile?.status ? (
-                <div>
-                  <dt>UFC 상태</dt>
-                  <dd>{officialProfile.status}</dd>
-                </div>
-              ) : null}
               {officialProfile?.knockoutWins !== undefined ? (
                 <div>
                   <dt>KO승</dt>
@@ -450,8 +434,6 @@ export function FighterProfileDialog({
               </div>
               {officialProfile?.heightCm ? <div><dt>키</dt><dd>{officialProfile.heightCm}cm</dd></div> : null}
               {officialProfile?.reachCm ? <div><dt>리치</dt><dd>{officialProfile.reachCm}cm</dd></div> : null}
-              {officialProfile?.division ? <div><dt>UFC 표기 체급</dt><dd>{officialProfile.division}</dd></div> : null}
-              {officialProfile?.status ? <div><dt>UFC 상태</dt><dd>{officialProfile.status}</dd></div> : null}
               {officialProfile?.knockoutWins !== undefined ? <div><dt>KO승</dt><dd>{officialProfile.knockoutWins}</dd></div> : null}
               {officialProfile?.submissionWins !== undefined ? <div><dt>서브미션승</dt><dd>{officialProfile.submissionWins}</dd></div> : null}
               {officialProfile?.firstRoundFinishes !== undefined ? <div><dt>1라운드 피니쉬</dt><dd>{officialProfile.firstRoundFinishes}</dd></div> : null}

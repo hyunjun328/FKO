@@ -449,6 +449,7 @@ test("keeps at most four compact sources at the top of fighter details", async (
   assert.match(dialog, /targetId={`fighter:\$\{fighter\.name\}`}/);
   assert.match(dialog, /className="fighter-profile-copy"/);
   assert.match(css, /\.fighter-profile-copy\s*\{[^}]*padding-right/);
+  assert.doesNotMatch(dialog, /확인일|UFC 표기 체급|UFC 상태/);
   assert.doesNotMatch(dialog, /교차\s*검증/);
 });
 
