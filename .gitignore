@@ -43,3 +43,6 @@ next-env.d.ts
 /.npm-cache/
 /.dev*.log
 **/__pycache__/
+/.*server*.log
+/.*.err.log
+/.*.out.log

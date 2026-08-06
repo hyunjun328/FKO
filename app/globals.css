@@ -525,17 +525,6 @@ a:focus-visible {
   line-height: 1.08;
 }
 
-.next-event-title-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 14px;
-}
-
-.next-event-title-row h2 {
-  margin: 15px 0 8px;
-}
-
 .main-matchup {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
@@ -583,32 +572,6 @@ a:focus-visible {
   color: var(--muted);
   font-size: 0.9rem;
   font-weight: 650;
-}
-
-.event-start-time {
-  display: inline-flex;
-  align-items: baseline;
-  width: fit-content;
-  gap: 6px;
-  padding: 6px 9px;
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  background: var(--ink);
-}
-
-.event-start-time small {
-  color: var(--muted);
-  font-size: 0.72rem;
-  font-weight: 850;
-}
-
-.event-start-time strong {
-  color: var(--lime);
-  font-size: clamp(0.92rem, 1.5vw, 1.08rem);
-  font-weight: 850;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.045em;
-  line-height: 1.05;
 }
 
 .event-meta-details {
@@ -2467,14 +2430,6 @@ button.calendar-day:hover {
     font-size: clamp(1.65rem, 8.5vw, 2.65rem);
   }
 
-  .event-start-time {
-    width: 100%;
-  }
-
-  .next-event-title-row .event-start-time {
-    width: fit-content;
-  }
-
   .section-head {
     display: grid;
     align-items: start;
@@ -2748,18 +2703,6 @@ button.calendar-day:hover {
   font-size: clamp(1.75rem, 3.5vw, 2.8rem);
   font-weight: 850;
   letter-spacing: -0.045em;
-}
-
-.event-start-time {
-  padding: 11px 13px;
-  border-color: var(--line);
-  border-radius: 7px;
-  background: var(--ink);
-}
-
-.event-start-time strong {
-  font-size: clamp(1.15rem, 2vw, 1.55rem);
-  font-weight: 850;
 }
 
 .featured-match-card {
@@ -3712,7 +3655,7 @@ button.calendar-day:hover {
 :is(
     .brand,
     .matchup-fighter b,
-    .event-start-time strong,
+    .next-event-time strong,
     .korean-card-name strong,
     .fighter-profile-head h2,
     .ranking-board header h3,
@@ -7728,5 +7671,105 @@ body {
 
   .favorite-fighter-card {
     gap: 12px;
+  }
+}
+
+/* 홈 히어로는 대회명과 시각을 흰 글씨 한 줄로 읽히게 하고 대진을 주인공으로 둔다. */
+.next-event {
+  padding: 28px 32px 24px;
+}
+
+.next-event h2 {
+  margin: 14px 0 0;
+  color: var(--text);
+  font-size: clamp(1.15rem, 2vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.next-event-time {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 8px 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+.next-event-time strong {
+  color: var(--text);
+  font-size: clamp(1.35rem, 2.6vw, 1.95rem);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.next-event-time small {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.main-matchup {
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+/* 사진과 이름 사이가 벌어지지 않게 두 줄을 붙여 세로 가운데로 모은다. */
+.matchup-fighter {
+  grid-template-rows: auto auto;
+  align-content: center;
+  row-gap: 2px;
+}
+
+.matchup-fighter b {
+  align-self: end;
+  color: var(--text);
+}
+
+.matchup-fighter small {
+  align-self: start;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 18px;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.event-meta .event-open-button {
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 680px) {
+  .next-event {
+    padding: 22px;
+  }
+
+  .next-event-time {
+    flex-wrap: wrap;
+    gap: 4px 8px;
+  }
+
+  .main-matchup {
+    margin-top: 18px;
+    padding-top: 16px;
+  }
+
+  .event-meta .event-open-button {
+    width: 100%;
   }
 }

@@ -55,7 +55,8 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(homeSearch, /href="\/rankings"/);
   assert.doesNotMatch(html, /지금 한국시간/);
   assert.match(html, /메인카드 시작/);
-  assert.match(html, /class="next-event-title-row"/);
+  assert.match(html, /class="next-event-time"/);
+  assert.doesNotMatch(html, /class="event-start-time"/);
   assert.match(html, /UFC 330/);
   assert.doesNotMatch(html, /30분 전 알림/);
   assert.match(html, /class="event-open-button">대회 상세 보기<\/button>/);
@@ -100,13 +101,21 @@ test("server-renders the UFC schedule product", async () => {
   assert.doesNotMatch(html, /The Korean Tyson/);
   assert.match(
     normalizedHtml,
-    /메인카드 시작<\/small><strong>\d+월 \d+일[^<]*\d{2}:\d{2}[^<]*KST/,
+    /<strong>\d+월 \d+일[^<]*\d{2}:\d{2}<\/strong><small>메인카드 시작 · KST<\/small>/,
   );
   const schedule = await readFile(new URL("../app/components/FightCalendar.tsx", import.meta.url), "utf8");
   const events = await readFile(new URL("../app/data/events.ts", import.meta.url), "utf8");
   assert.match(schedule, /function openEvent\(eventId: string\)/);
   assert.match(schedule, /setOpenEventId\(eventId\)/);
   assert.match(schedule, /function mergeCollectedCard/);
+  // 자동 수집 대회와 수동 대회를 KST 날짜로 짝지어 같은 날 대회가 두 번 나오지 않게 한다.
+  assert.match(schedule, /function autoEventKey/);
+  assert.match(schedule, /function boutKoreanName/);
+  const scheduledDates = [
+    ...normalizedHtml.matchAll(/class="event-selector-card"><span>([^<]+)<\/span>/g),
+  ].map((match) => match[1]);
+  assert.ok(scheduledDates.length > 1);
+  assert.equal(new Set(scheduledDates).size, scheduledDates.length);
   assert.match(events, /Juliana Miller/);
   assert.match(events, /Darren Elkins/);
   assert.match(events, /Ty Miller/);

@@ -4,12 +4,16 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { EVENTS, type BoutSection, type FightEvent } from "../data/events";
-import { AUTO_SCHEDULED_EVENTS } from "../data/auto-scheduled-events";
+import {
+  AUTO_SCHEDULED_EVENTS,
+  type AutoScheduledEvent,
+} from "../data/auto-scheduled-events";
 import { EVENT_RESULTS } from "../data/event-results";
 import { FIGHTER_PROFILES } from "../data/fighters";
 import { eventDisplayStatus } from "../lib/event-status";
 import { SCHEDULE_CHECKED_AT } from "../data/schedule-status";
 import { unofficialWorldRanking } from "../data/unofficial-rankings";
+import { rankingKoreanName } from "../data/ranking-names";
 import {
   FighterProfileDialog,
   recordSummary,
@@ -65,16 +69,32 @@ const TBA_BOUT = {
   section: "announced" as const,
 };
 
+function kstDateKey(iso: string) {
+  return KST_DATE_FORMATTER.format(new Date(iso));
+}
+
+// 수집 데이터의 date는 UTC 기준이라 유럽 대회에서 하루가 밀린다. 양쪽 모두 KST 날짜로 맞춘다.
+function autoEventKey(event: AutoScheduledEvent) {
+  return event.startUtc ? kstDateKey(event.startUtc) : event.date;
+}
+
+// 자동 수집 대진은 영문 이름만 오므로 확인된 한글 표기가 있으면 그것을 먼저 쓴다.
+function boutKoreanName(name: string, collected: string) {
+  return collected && collected !== name ? collected : rankingKoreanName(name);
+}
+
 function mergeCollectedCard(event: FightEvent): FightEvent {
   const collected = AUTO_SCHEDULED_EVENTS.find(
-    (candidate) => candidate.date === kstDateKey(event.startUtc),
+    (candidate) => autoEventKey(candidate) === kstDateKey(event.startUtc),
   );
   if (!collected?.bouts?.length) return event;
 
   return {
     ...event,
     startUtc: collected.startUtc ?? event.startUtc,
-    venue: collected.venue ?? event.venue,
+    prelimsUtc: collected.prelimsUtc || event.prelimsUtc,
+    // 수집한 장소 문자열은 도시·주·국가가 붙어 있어 검수된 경기장 이름을 우선한다.
+    venue: event.venue || collected.venue || "",
     city: collected.city ?? event.city,
     sourceUrl: collected.sourceUrl || event.sourceUrl,
     bouts: collected.bouts.map((bout) => {
@@ -95,9 +115,9 @@ function mergeCollectedCard(event: FightEvent): FightEvent {
           : bout.rightKo;
       return {
         left: bout.left,
-        leftKo,
+        leftKo: boutKoreanName(bout.left, leftKo),
         right: bout.right,
-        rightKo,
+        rightKo: boutKoreanName(bout.right, rightKo),
         weight: existing?.weight ?? bout.weight,
         section: existing?.section ?? bout.section,
         title: existing?.title,
@@ -109,7 +129,10 @@ function mergeCollectedCard(event: FightEvent): FightEvent {
 const ALL_EVENTS: FightEvent[] = [
   ...EVENTS.map(mergeCollectedCard),
   ...AUTO_SCHEDULED_EVENTS
-    .filter((event) => !EVENTS.some((known) => kstDateKey(known.startUtc) === event.date))
+    .filter(
+      (event) =>
+        !EVENTS.some((known) => kstDateKey(known.startUtc) === autoEventKey(event)),
+    )
     .map((event) => ({
       id: event.id,
       series: "UFC FIGHT NIGHT" as const,
@@ -117,20 +140,21 @@ const ALL_EVENTS: FightEvent[] = [
       subtitle: event.subtitle ?? "Fight card to be announced",
       startUtc: event.startUtc ?? `${event.date}T00:00:00Z`,
       timeTbd: !event.startUtc,
+      prelimsUtc: event.prelimsUtc || undefined,
       venue: event.venue ?? "UFC 공식 발표 대기",
       city: event.city ?? "장소 발표 대기",
       country: "",
       status: "예정" as const,
-      sourceLabel: "UFCStats 예정 대회 목록",
+      sourceLabel: "UFC 공식 이벤트 페이지",
       sourceUrl: event.sourceUrl,
       verifiedAt: "",
-      bouts: event.bouts?.length ? event.bouts : [TBA_BOUT],
+      bouts: (event.bouts?.length ? event.bouts : [TBA_BOUT]).map((bout) => ({
+        ...bout,
+        leftKo: boutKoreanName(bout.left, bout.leftKo),
+        rightKo: boutKoreanName(bout.right, bout.rightKo),
+      })),
     })),
 ];
-
-function kstDateKey(iso: string) {
-  return KST_DATE_FORMATTER.format(new Date(iso));
-}
 
 function EventDetail({
   event,
@@ -588,22 +612,15 @@ export function FightCalendar() {
                 ? "FIGHT DAY"
                 : `다음 대회 · ${nextEvent.status}`}
             </span>
-            <div className="next-event-title-row">
-              <h2>{nextEvent.title}</h2>
-              <span className="event-start-time">
-                <small>메인카드 시작</small>
-                <strong>
-                  {nextEvent.timeTbd ? "시간 발표 대기" : `${KST_FORMATTER.format(new Date(nextEvent.startUtc))} KST`}
-                </strong>
-              </span>
-            </div>
-            <button
-              type="button"
-              className="event-open-button"
-              onClick={() => openEvent(nextEvent.id)}
-            >
-              대회 상세 보기
-            </button>
+            <h2>{nextEvent.title}</h2>
+            <p className="next-event-time">
+              <strong>
+                {nextEvent.timeTbd
+                  ? "시간 발표 대기"
+                  : KST_FORMATTER.format(new Date(nextEvent.startUtc))}
+              </strong>
+              <small>메인카드 시작 · KST</small>
+            </p>
             <div className="main-matchup">
               <button
                 type="button"
@@ -668,6 +685,13 @@ export function FightCalendar() {
                 </span>
                 <span>{nextEvent.bouts.length}경기 발표</span>
               </div>
+              <button
+                type="button"
+                className="event-open-button"
+                onClick={() => openEvent(nextEvent.id)}
+              >
+                대회 상세 보기
+              </button>
             </div>
           </div>
         </article>

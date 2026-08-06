@@ -1,6 +1,6 @@
 // 직접 수집한 UFC 예정 대회 목록을 화면 일정에 보조 데이터로 제공한다.
 export type AutoScheduledBout = { left: string; leftKo: string; right: string; rightKo: string; weight: string; section: "main" | "prelims" | "announced" };
-export type AutoScheduledEvent = { id: string; title: string; date: string; sourceUrl: string; subtitle?: string; startUtc?: string; venue?: string; city?: string; bouts?: AutoScheduledBout[] };
+export type AutoScheduledEvent = { id: string; title: string; date: string; sourceUrl: string; subtitle?: string; startUtc?: string; prelimsUtc?: string; venue?: string; city?: string; bouts?: AutoScheduledBout[] };
 
 export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
   {
@@ -9,6 +9,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "date": "2026-08-09",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-august-08-2026",
     "startUtc": "2026-08-09T00:00:00Z",
+    "prelimsUtc": "2026-08-08T21:00:00Z",
     "venue": "Meta APEX Las Vegas , NV United States",
     "bouts": [
       {
@@ -59,6 +60,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "date": "2026-08-16",
     "sourceUrl": "https://www.ufc.com/event/ufc-330",
     "startUtc": "2026-08-16T01:00:00Z",
+    "prelimsUtc": "2026-08-15T23:00:00Z",
     "venue": "Xfinity Mobile Arena Philadelphia , PA United States",
     "bouts": [
       {
@@ -101,6 +103,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "date": "2026-08-23",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-august-22-2026",
     "startUtc": "2026-08-23T00:00:00Z",
+    "prelimsUtc": "2026-08-22T21:00:00Z",
     "venue": "Golden 1 Center Sacramento , CA United States",
     "bouts": [
       {
@@ -151,6 +154,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "date": "2026-08-29",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-august-29-2026",
     "startUtc": "2026-08-29T10:00:00Z",
+    "prelimsUtc": "2026-08-29T07:00:00Z",
     "venue": "Oriental Sports Center Pudong District China",
     "bouts": [
       {
@@ -233,6 +237,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "date": "2026-09-05",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-september-05-2026",
     "startUtc": "2026-09-05T19:00:00Z",
+    "prelimsUtc": "2026-09-05T16:00:00Z",
     "venue": "Accor Arena Paris France",
     "bouts": [
       {
@@ -299,6 +304,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "date": "2026-09-12",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-september-12-2026",
     "startUtc": "2026-09-12T21:00:00Z",
+    "prelimsUtc": "2026-09-12T18:00:00Z",
     "venue": "Desert Diamond Arena Glendale , AZ United States",
     "bouts": [
       {
@@ -381,6 +387,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "date": "2026-09-20",
     "sourceUrl": "https://www.ufc.com/event/cryptocom-ufc-331",
     "startUtc": "2026-09-20T01:00:00Z",
+    "prelimsUtc": "2026-09-19T23:00:00Z",
     "venue": "Crypto.com Arena Los Angeles , CA United States",
     "bouts": [
       {
@@ -495,6 +502,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "date": "2026-10-18",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-october-17-2026",
     "startUtc": "2026-10-18T00:00:00Z",
+    "prelimsUtc": "2026-10-17T21:00:00Z",
     "venue": "Rogers Place Edmonton AB Canada",
     "bouts": [
       {

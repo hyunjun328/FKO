@@ -67,6 +67,14 @@ def find_official_upcoming_events(html: str, now: datetime | None = None) -> lis
     return events
 
 
+def card_timestamp(card, attribute: str) -> str:
+    element = card.select_one(f"[{attribute}]")
+    value = element.get(attribute, "") if element else ""
+    if not value.isdigit():
+        return ""
+    return datetime.fromtimestamp(int(value), timezone.utc).isoformat().replace("+00:00", "Z")
+
+
 def find_official_event_bouts(html: str) -> list[dict[str, str]]:
     soup = BeautifulSoup(html, "html.parser")
     bouts: list[dict[str, str]] = []
@@ -105,37 +113,19 @@ def official_event_details() -> dict[str, dict[str, object]]:
         if not link:
             continue
         href = link.get("href", "")
-        timestamp = card.select_one("[data-main-card-timestamp]")
-        start_utc = ""
-        if timestamp and timestamp.get("data-main-card-timestamp", "").isdigit():
-            start_utc = datetime.fromtimestamp(int(timestamp["data-main-card-timestamp"]), timezone.utc).isoformat().replace("+00:00", "Z")
-        title = card.select_one(".c-card-event--result__headline")
-        location = card.select_one(".c-card-event--result__location")
-        bouts = []
-        for fight in card.select("[data-fight-label]"):
-            label = " ".join(fight.get("data-fight-label", "").split())
-            if " vs " not in label:
-                continue
-            left, right = (part.strip() for part in label.split(" vs ", 1))
-            card = fight.get("data-fight-card", "").casefold()
-            bouts.append({
-                "left": left,
-                "leftKo": left,
-                "right": right,
-                "rightKo": right,
-                "weight": "체급 확인 중",
-                "section": "main" if card == "main" else "prelims" if "prelim" in card else "announced",
-            })
+        start_utc = card_timestamp(card, "data-main-card-timestamp")
         if not start_utc:
             continue
+        title = card.select_one(".c-card-event--result__headline")
+        location = card.select_one(".c-card-event--result__location")
         source_url = f"https://www.ufc.com{href}" if href.startswith("/") else href
-        bouts = find_official_event_bouts(fetch(source_url))
         details[start_utc[:10]] = {
             "title": title.get_text(" ", strip=True) if title else "",
             "sourceUrl": source_url,
             "startUtc": start_utc,
+            "prelimsUtc": card_timestamp(card, "data-prelims-card-timestamp"),
             "venue": location.get_text(" ", strip=True) if location else "",
-            "bouts": bouts,
+            "bouts": find_official_event_bouts(fetch(source_url)),
         }
     return details
 
@@ -176,7 +166,7 @@ def write_events(events: list[dict[str, str]]) -> None:
     OUTPUT_FILE.write_text(
         "// 직접 수집한 UFC 예정 대회 목록을 화면 일정에 보조 데이터로 제공한다.\n"
         "export type AutoScheduledBout = { left: string; leftKo: string; right: string; rightKo: string; weight: string; section: \"main\" | \"prelims\" | \"announced\" };\n"
-        "export type AutoScheduledEvent = { id: string; title: string; date: string; sourceUrl: string; subtitle?: string; startUtc?: string; venue?: string; city?: string; bouts?: AutoScheduledBout[] };\n\n"
+        "export type AutoScheduledEvent = { id: string; title: string; date: string; sourceUrl: string; subtitle?: string; startUtc?: string; prelimsUtc?: string; venue?: string; city?: string; bouts?: AutoScheduledBout[] };\n\n"
         f"export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = {json.dumps(payload, ensure_ascii=False, indent=2)};\n",
         encoding="utf-8",
     )
