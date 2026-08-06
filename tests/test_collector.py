@@ -1,9 +1,11 @@
 # 위키미디어 일정 수집기의 표 파싱과 날짜 필터를 검증하는 테스트
 import unittest
-from datetime import date
+from datetime import date, datetime, timezone
 
 from scripts.collect_wikipedia import find_scheduled_events
 from scripts.collect_ufc_results import find_bout_results, find_completed_events
+from scripts.collect_ufc_schedule import find_official_event_bouts, find_official_upcoming_events
+from scripts.collect_ufc_schedule import build_payload
 
 
 class CollectorTest(unittest.TestCase):
@@ -44,6 +46,76 @@ class CollectorTest(unittest.TestCase):
                 "url": "http://ufcstats.com/event-details/abc",
             }],
         )
+
+    def test_reads_upcoming_events_from_official_ufc_cards(self) -> None:
+        html = '''
+        <article class="c-card-event--result">
+          <h3 class="c-card-event--result__headline">Gamrot vs Salkilld</h3>
+          <div data-main-card-timestamp="1786233600"></div>
+          <a href="/event/ufc-fight-night-august-08-2026">Event details</a>
+        </article>
+        <article class="c-card-event--result">
+          <h3 class="c-card-event--result__headline">Past card</h3>
+          <div data-main-card-timestamp="1784995200"></div>
+          <a href="/event/past-card#1321">Summary</a>
+        </article>
+        '''
+
+        self.assertEqual(
+            find_official_upcoming_events(html, datetime(2026, 8, 1, tzinfo=timezone.utc)),
+            [{
+                "title": "Gamrot vs Salkilld",
+                "date": "2026-08-09",
+                "url": "https://www.ufc.com/event/ufc-fight-night-august-08-2026",
+            }],
+        )
+
+    def test_reads_bouts_from_official_ufc_event_cards(self) -> None:
+        html = '''
+        <div class="c-listing-fight">
+          <div class="c-listing-fight__class-text">Lightweight Bout</div>
+          <div class="c-listing-fight__corner-name--red">Mateusz Gamrot</div>
+          <div class="c-listing-fight__corner-name--blue">Quillan Salkilld</div>
+        </div>
+        <div class="c-listing-fight">
+          <div class="c-listing-fight__class-text">Light Heavyweight Bout</div>
+          <div class="c-listing-fight__corner-name--red">Diyar Nurgozhay</div>
+          <div class="c-listing-fight__corner-name--blue">Bruno Lopes</div>
+        </div>
+        '''
+
+        self.assertEqual(
+            find_official_event_bouts(html),
+            [
+                {
+                    "left": "Mateusz Gamrot", "leftKo": "Mateusz Gamrot",
+                    "right": "Quillan Salkilld", "rightKo": "Quillan Salkilld",
+                    "weight": "Lightweight", "section": "main",
+                },
+                {
+                    "left": "Diyar Nurgozhay", "leftKo": "Diyar Nurgozhay",
+                    "right": "Bruno Lopes", "rightKo": "Bruno Lopes",
+                    "weight": "Light Heavyweight", "section": "announced",
+                },
+            ],
+        )
+
+    def test_keeps_official_events_when_ufcstats_has_no_upcoming_rows(self) -> None:
+        payload = build_payload([], {
+            "2026-08-08": {
+                "title": "UFC Fight Night: Gamrot vs Salkilld",
+                "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-august-08-2026",
+                "startUtc": "2026-08-08T21:00:00Z",
+            },
+        })
+
+        self.assertEqual(payload, [{
+            "id": "ufcstats-2026-08-08-ufc-fight-night-gamrot-vs-salkilld",
+            "title": "UFC Fight Night: Gamrot vs Salkilld",
+            "date": "2026-08-08",
+            "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-august-08-2026",
+            "startUtc": "2026-08-08T21:00:00Z",
+        }])
 
     def test_reads_result_fields_from_their_table_cells(self) -> None:
         html = '''

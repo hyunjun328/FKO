@@ -103,8 +103,14 @@ test("server-renders the UFC schedule product", async () => {
     /메인카드 시작<\/small><strong>\d+월 \d+일[^<]*\d{2}:\d{2}[^<]*KST/,
   );
   const schedule = await readFile(new URL("../app/components/FightCalendar.tsx", import.meta.url), "utf8");
+  const events = await readFile(new URL("../app/data/events.ts", import.meta.url), "utf8");
   assert.match(schedule, /function openEvent\(eventId: string\)/);
   assert.match(schedule, /setOpenEventId\(eventId\)/);
+  assert.match(schedule, /function mergeCollectedCard/);
+  assert.match(events, /Juliana Miller/);
+  assert.match(events, /Darren Elkins/);
+  assert.match(events, /Ty Miller/);
+  assert.match(events, /Joel Alvarez/);
   assert.doesNotMatch(schedule, /scrollIntoView/);
   assert.match(schedule, /메인 이벤트 반응/);
   assert.match(schedule, /<BoutPrediction/);

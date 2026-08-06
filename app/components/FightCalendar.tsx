@@ -65,10 +65,51 @@ const TBA_BOUT = {
   section: "announced" as const,
 };
 
+function mergeCollectedCard(event: FightEvent): FightEvent {
+  const collected = AUTO_SCHEDULED_EVENTS.find(
+    (candidate) => candidate.date === kstDateKey(event.startUtc),
+  );
+  if (!collected?.bouts?.length) return event;
+
+  return {
+    ...event,
+    startUtc: collected.startUtc ?? event.startUtc,
+    venue: collected.venue ?? event.venue,
+    city: collected.city ?? event.city,
+    sourceUrl: collected.sourceUrl || event.sourceUrl,
+    bouts: collected.bouts.map((bout) => {
+      const existing = event.bouts.find(
+        (candidate) =>
+          (candidate.left === bout.left && candidate.right === bout.right) ||
+          (candidate.left === bout.right && candidate.right === bout.left),
+      );
+      const leftKo = existing?.left === bout.left
+        ? existing.leftKo
+        : existing?.right === bout.left
+          ? existing.rightKo
+          : bout.leftKo;
+      const rightKo = existing?.right === bout.right
+        ? existing.rightKo
+        : existing?.left === bout.right
+          ? existing.leftKo
+          : bout.rightKo;
+      return {
+        left: bout.left,
+        leftKo,
+        right: bout.right,
+        rightKo,
+        weight: existing?.weight ?? bout.weight,
+        section: existing?.section ?? bout.section,
+        title: existing?.title,
+      };
+    }),
+  };
+}
+
 const ALL_EVENTS: FightEvent[] = [
-  ...EVENTS,
+  ...EVENTS.map(mergeCollectedCard),
   ...AUTO_SCHEDULED_EVENTS
-    .filter((event) => !EVENTS.some((known) => known.startUtc.slice(0, 10) === event.date))
+    .filter((event) => !EVENTS.some((known) => kstDateKey(known.startUtc) === event.date))
     .map((event) => ({
       id: event.id,
       series: "UFC FIGHT NIGHT" as const,

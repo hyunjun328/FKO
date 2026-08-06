@@ -80,6 +80,9 @@ export const EVENTS: FightEvent[] = [
       { left: "Louie Sutherland", leftKo: "루이 서덜랜드", right: "Jose Montanha da Silva", rightKo: "조제 몬타냐 다 실바", weight: "헤비급", section: "announced" },
       { left: "Steven Asplund", leftKo: "스티븐 애스플런드", right: "Guilherme Pat", rightKo: "길례르미 팻", weight: "헤비급", section: "announced" },
       { left: "Amanda Lemos", leftKo: "아만다 레모스", right: "Alexia Thainara", rightKo: "알렉시아 타이나라", weight: "여성 스트로급", section: "announced" },
+      { left: "Juliana Miller", leftKo: "줄리아나 밀러", right: "Ravena Oliveira", rightKo: "라베나 올리베이라", weight: "여성 플라이급", section: "prelims" },
+      { left: "Darren Elkins", leftKo: "대런 엘킨스", right: "Yadier del Valle", rightKo: "야디에르 델 바예", weight: "페더급", section: "prelims" },
+      { left: "Ty Miller", leftKo: "타이 밀러", right: "Billy Goff", rightKo: "빌리 고프", weight: "웰터급", section: "prelims" },
     ],
   },
   {
@@ -102,7 +105,7 @@ export const EVENTS: FightEvent[] = [
       { left: "Jeremiah Wells", leftKo: "제레마이아 웰스", right: "Myktybek Orolbai", rightKo: "믹티벡 오롤바이", weight: "웰터급", section: "announced" },
       { left: "Erin Blanchfield", leftKo: "에린 블랜치필드", right: "Jasmine Jasudavicius", rightKo: "재스민 자수다비시우스", weight: "여성 플라이급", section: "announced" },
       { left: "Jalin Turner", leftKo: "제일린 터너", right: "Kaue Fernandes", rightKo: "카우에 페르난데스", weight: "라이트급", section: "announced" },
-      { left: "Geoff Neal", leftKo: "제프 닐", right: "Chidi Njokuani", rightKo: "치디 은조쿠아니", weight: "웰터급", section: "announced" },
+      { left: "Joel Alvarez", leftKo: "조엘 알바레즈", right: "Chidi Njokuani", rightKo: "치디 은조쿠아니", weight: "웰터급", section: "announced" },
       { left: "Neil Magny", leftKo: "닐 매그니", right: "Ramiz Brahimaj", rightKo: "라미즈 브라히마이", weight: "웰터급", section: "announced" },
       { left: "Mansur Abdul-Malik", leftKo: "만수르 압둘말릭", right: "Dustin Stoltzfus", rightKo: "더스틴 스톨츠푸스", weight: "미들급", section: "announced" },
       { left: "Vicente Luque", leftKo: "비센테 루케", right: "Tresean Gore", rightKo: "트레션 고어", weight: "미들급", section: "announced" },
