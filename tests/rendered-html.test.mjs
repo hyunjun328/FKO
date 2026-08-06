@@ -346,6 +346,7 @@ test("provides a role-gated community report admin page", async () => {
   const html = await response.text();
   const admin = await readFile(new URL("../app/admin/page.tsx", import.meta.url), "utf8");
   const community = await readFile(new URL("../app/community/page.tsx", import.meta.url), "utf8");
+  const comments = await readFile(new URL("../app/components/GuestCommentThread.tsx", import.meta.url), "utf8");
   const reportButton = await readFile(new URL("../app/components/CommunityReportButton.tsx", import.meta.url), "utf8");
   const schema = await readFile(new URL("../supabase/community.sql", import.meta.url), "utf8");
 
@@ -358,6 +359,7 @@ test("provides a role-gated community report admin page", async () => {
   assert.match(schema, /is_admin boolean not null default false/);
   assert.match(schema, /v_is_admin := coalesce/);
   assert.match(community, /\[관리자\]/);
+  assert.match(comments, /className="guest-comment-submit"/);
   assert.match(schema, /create_community_report/);
   assert.match(schema, /delete_community_comment/);
 });

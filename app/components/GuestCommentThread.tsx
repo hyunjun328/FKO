@@ -151,7 +151,7 @@ export function GuestCommentThread({
       </header>
       <form onSubmit={submit}>
         <textarea value={body} onChange={(event) => setBody(event.target.value)} placeholder="반응을 남겨 주세요." minLength={2} maxLength={1000} required />
-        <button type="submit">댓글 등록</button>
+        <button type="submit" className="guest-comment-submit">댓글 등록</button>
       </form>
       <div className="guest-comment-list" aria-live="polite">
         {comments.map((comment) => (
