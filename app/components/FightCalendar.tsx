@@ -547,7 +547,15 @@ export function FightCalendar() {
                 ? "FIGHT DAY"
                 : `다음 대회 · ${nextEvent.status}`}
             </span>
-            <h2>{nextEvent.title}</h2>
+            <div className="next-event-title-row">
+              <h2>{nextEvent.title}</h2>
+              <span className="event-start-time">
+                <small>메인카드 시작</small>
+                <strong>
+                  {nextEvent.timeTbd ? "시간 발표 대기" : `${KST_FORMATTER.format(new Date(nextEvent.startUtc))} KST`}
+                </strong>
+              </span>
+            </div>
             <button
               type="button"
               className="event-open-button"
@@ -607,12 +615,6 @@ export function FightCalendar() {
               </button>
             </div>
             <div className="event-meta">
-              <span className="event-start-time">
-                <small>메인카드 시작</small>
-                <strong>
-                  {nextEvent.timeTbd ? "시간 발표 대기" : `${KST_FORMATTER.format(new Date(nextEvent.startUtc))} KST`}
-                </strong>
-              </span>
               <div className="event-meta-details">
                 {nextEvent.prelimsUtc ? (
                   <span>
