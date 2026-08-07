@@ -239,38 +239,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "rightKo": "Felipe Lima",
         "weight": "Featherweight",
         "section": "announced"
-      },
-      {
-        "left": "Mario Pinto",
-        "leftKo": "Mario Pinto",
-        "right": "Ryan Spann",
-        "rightKo": "Ryan Spann",
-        "weight": "Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Kurtis Campbell",
-        "leftKo": "Kurtis Campbell",
-        "right": "Trevor Peek",
-        "rightKo": "Trevor Peek",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
-        "left": "Nathaniel Wood",
-        "leftKo": "Nathaniel Wood",
-        "right": "Mairon Santos",
-        "rightKo": "Mairon Santos",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
-        "left": "Matthieu Letho Duclos",
-        "leftKo": "Matthieu Letho Duclos",
-        "right": "Luis Felipe Dias",
-        "rightKo": "Luis Felipe Dias",
-        "weight": "Middleweight",
-        "section": "announced"
       }
     ]
   },
