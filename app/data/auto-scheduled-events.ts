@@ -174,14 +174,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Jack Jenkins",
-        "leftKo": "Jack Jenkins",
-        "right": "Sean Woodson",
-        "rightKo": "Sean Woodson",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
         "left": "Aoriqileng",
         "leftKo": "Aoriqileng",
         "right": "Kai Asakura",
@@ -198,22 +190,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Namsrai Batbayar",
-        "leftKo": "Namsrai Batbayar",
-        "right": "Andre Lima",
-        "rightKo": "Andre Lima",
-        "weight": "Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Rei Tsuruya",
-        "leftKo": "Rei Tsuruya",
-        "right": "Kevin Borjas",
-        "rightKo": "Kevin Borjas",
-        "weight": "Flyweight",
-        "section": "announced"
-      },
-      {
         "left": "Ce Liu",
         "leftKo": "Ce Liu",
         "right": "Junior Tafa",
@@ -222,11 +198,11 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Xiong Jingnan",
-        "leftKo": "Xiong Jingnan",
-        "right": "Julia Polastri",
-        "rightKo": "Julia Polastri",
-        "weight": "Women's Strawweight",
+        "left": "Namsrai Batbayar",
+        "leftKo": "Namsrai Batbayar",
+        "right": "Andre Lima",
+        "rightKo": "Andre Lima",
+        "weight": "Flyweight",
         "section": "announced"
       }
     ]
@@ -249,14 +225,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "main"
       },
       {
-        "left": "Nathaniel Wood",
-        "leftKo": "Nathaniel Wood",
-        "right": "Mairon Santos",
-        "rightKo": "Mairon Santos",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
         "left": "Michael Venom Page",
         "leftKo": "Michael Venom Page",
         "right": "Nursulton Ruziboev",
@@ -273,10 +241,26 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
+        "left": "Mario Pinto",
+        "leftKo": "Mario Pinto",
+        "right": "Ryan Spann",
+        "rightKo": "Ryan Spann",
+        "weight": "Heavyweight",
+        "section": "announced"
+      },
+      {
         "left": "Kurtis Campbell",
         "leftKo": "Kurtis Campbell",
         "right": "Trevor Peek",
         "rightKo": "Trevor Peek",
+        "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
+        "left": "Nathaniel Wood",
+        "leftKo": "Nathaniel Wood",
+        "right": "Mairon Santos",
+        "rightKo": "Mairon Santos",
         "weight": "Featherweight",
         "section": "announced"
       },
@@ -286,14 +270,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "right": "Luis Felipe Dias",
         "rightKo": "Luis Felipe Dias",
         "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Mario Pinto",
-        "leftKo": "Mario Pinto",
-        "right": "Ryan Spann",
-        "rightKo": "Ryan Spann",
-        "weight": "Heavyweight",
         "section": "announced"
       }
     ]
@@ -316,11 +292,11 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "main"
       },
       {
-        "left": "Waldo Cortes Acosta",
-        "leftKo": "Waldo Cortes Acosta",
-        "right": "Curtis Blaydes",
-        "rightKo": "Curtis Blaydes",
-        "weight": "Heavyweight",
+        "left": "Brandon Moreno",
+        "leftKo": "Brandon Moreno",
+        "right": "Joseph Morales",
+        "rightKo": "Joseph Morales",
+        "weight": "Flyweight",
         "section": "announced"
       },
       {
@@ -332,11 +308,11 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Brandon Moreno",
-        "leftKo": "Brandon Moreno",
-        "right": "Joseph Morales",
-        "rightKo": "Joseph Morales",
-        "weight": "Flyweight",
+        "left": "Waldo Cortes Acosta",
+        "leftKo": "Waldo Cortes Acosta",
+        "right": "Curtis Blaydes",
+        "rightKo": "Curtis Blaydes",
+        "weight": "Heavyweight",
         "section": "announced"
       },
       {
@@ -345,38 +321,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "right": "Dan Ige",
         "rightKo": "Dan Ige",
         "weight": "Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "Ignacio Bahamondes",
-        "leftKo": "Ignacio Bahamondes",
-        "right": "Muslim Salikhov",
-        "rightKo": "Muslim Salikhov",
-        "weight": "Welterweight",
-        "section": "announced"
-      },
-      {
-        "left": "Tim Elliott",
-        "leftKo": "Tim Elliott",
-        "right": "Edgar Chairez",
-        "rightKo": "Edgar Chairez",
-        "weight": "Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Kelvin Gastelum",
-        "leftKo": "Kelvin Gastelum",
-        "right": "Yousri Belgaroui",
-        "rightKo": "Yousri Belgaroui",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "JJ Aldrich",
-        "leftKo": "JJ Aldrich",
-        "right": "Regina Tarin",
-        "rightKo": "Regina Tarin",
-        "weight": "Women's Flyweight",
         "section": "announced"
       }
     ]
@@ -407,27 +351,11 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Gable Steveson",
-        "leftKo": "Gable Steveson",
-        "right": "Sean Sharaf",
-        "rightKo": "Sean Sharaf",
-        "weight": "Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Tai Tuivasa",
-        "leftKo": "Tai Tuivasa",
-        "right": "Robelis Despaigne",
-        "rightKo": "Robelis Despaigne",
-        "weight": "Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Ryan Gandra",
-        "leftKo": "Ryan Gandra",
-        "right": "Ozzy Diaz",
-        "rightKo": "Ozzy Diaz",
-        "weight": "Middleweight",
+        "left": "Patricio Pitbull",
+        "leftKo": "Patricio Pitbull",
+        "right": "Dooho Choi",
+        "rightKo": "Dooho Choi",
+        "weight": "Featherweight",
         "section": "announced"
       },
       {
@@ -439,88 +367,22 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Marlon Vera",
-        "leftKo": "Marlon Vera",
-        "right": "Charles Jourdain",
-        "rightKo": "Charles Jourdain",
-        "weight": "Bantamweight",
-        "section": "announced"
-      },
-      {
         "left": "Alonzo Menifield",
         "leftKo": "Alonzo Menifield",
         "right": "Iwo Baraniewski",
         "rightKo": "Iwo Baraniewski",
         "weight": "Light Heavyweight",
         "section": "announced"
-      },
-      {
-        "left": "Giga Chikadze",
-        "leftKo": "Giga Chikadze",
-        "right": "Joanderson Brito",
-        "rightKo": "Joanderson Brito",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
-        "left": "Patricio Pitbull",
-        "leftKo": "Patricio Pitbull",
-        "right": "Dooho Choi",
-        "rightKo": "Dooho Choi",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
-        "left": "Casey O'Neill",
-        "leftKo": "Casey O'Neill",
-        "right": "Eduarda Moura",
-        "rightKo": "Eduarda Moura",
-        "weight": "Women's Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Edmen Shahbazyan",
-        "leftKo": "Edmen Shahbazyan",
-        "right": "Brunno Ferreira",
-        "rightKo": "Brunno Ferreira",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Michael Aswell Jr.",
-        "leftKo": "Michael Aswell Jr.",
-        "right": "JooSang Yoo",
-        "rightKo": "JooSang Yoo",
-        "weight": "Featherweight",
-        "section": "announced"
       }
     ]
   },
   {
-    "id": "ufcstats-2026-10-18-buckley-vs-malott",
-    "title": "Buckley vs Malott",
-    "date": "2026-10-18",
-    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-october-17-2026",
-    "startUtc": "2026-10-18T00:00:00Z",
-    "prelimsUtc": "2026-10-17T21:00:00Z",
-    "venue": "Rogers Place Edmonton AB Canada",
-    "bouts": [
-      {
-        "left": "Joaquin Buckley",
-        "leftKo": "Joaquin Buckley",
-        "right": "Mike Malott",
-        "rightKo": "Mike Malott",
-        "weight": "Welterweight",
-        "section": "main"
-      },
-      {
-        "left": "Mandel Nallo",
-        "leftKo": "Mandel Nallo",
-        "right": "Nate Landwehr",
-        "rightKo": "Nate Landwehr",
-        "weight": "Lightweight",
-        "section": "announced"
-      }
-    ]
+    "id": "ufcstats-2026-09-26-tbd-vs-tbd",
+    "title": "TBD vs TBD",
+    "date": "2026-09-26",
+    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-september-26-2026",
+    "startUtc": "2026-09-26T22:00:00Z",
+    "prelimsUtc": "2026-09-26T20:00:00Z",
+    "venue": "Meta APEX Las Vegas , NV United States"
   }
 ];
