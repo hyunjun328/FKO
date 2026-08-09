@@ -43,7 +43,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "heightCm": 163,
     "knockoutWins": 8,
     "reachCm": 165,
-    "record": "15-6-1",
+    "record": "15-7-1",
     "sourceUrl": "https://www.ufc.com/athlete/amanda-lemos",
     "status": "Active",
     "submissionWins": 3
@@ -716,7 +716,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "heightCm": 178,
     "knockoutWins": 8,
     "reachCm": 179,
-    "record": "26-4-0",
+    "record": "26-5-0",
     "sourceUrl": "https://www.ufc.com/athlete/mateusz-gamrot",
     "status": "Active",
     "submissionWins": 6
