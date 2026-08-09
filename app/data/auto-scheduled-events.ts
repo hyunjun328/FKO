@@ -192,12 +192,12 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2026-09-12-rodriguez-vs-silva",
+    "id": "ufcstats-2026-09-13-rodriguez-vs-silva",
     "title": "Rodriguez vs Silva",
-    "date": "2026-09-12",
+    "date": "2026-09-13",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-september-12-2026",
-    "startUtc": "2026-09-12T21:00:00Z",
-    "prelimsUtc": "2026-09-12T18:00:00Z",
+    "startUtc": "2026-09-13T00:00:00Z",
+    "prelimsUtc": "2026-09-12T21:00:00Z",
     "venue": "Desert Diamond Arena Glendale , AZ United States",
     "bouts": [
       {
@@ -214,6 +214,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "right": "Joseph Morales",
         "rightKo": "Joseph Morales",
         "weight": "Flyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Tommy McMillen",
+        "leftKo": "Tommy McMillen",
+        "right": "Marwan Rahiki",
+        "rightKo": "Marwan Rahiki",
+        "weight": "Featherweight",
         "section": "announced"
       },
       {
