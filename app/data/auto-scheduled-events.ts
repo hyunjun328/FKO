@@ -4,57 +4,6 @@ export type AutoScheduledEvent = { id: string; title: string; date: string; sour
 
 export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
   {
-    "id": "ufcstats-2026-08-09-gamrot-vs-salkilld",
-    "title": "Gamrot vs Salkilld",
-    "date": "2026-08-09",
-    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-august-08-2026",
-    "startUtc": "2026-08-09T00:00:00Z",
-    "prelimsUtc": "2026-08-08T21:00:00Z",
-    "venue": "Meta APEX Las Vegas , NV United States",
-    "bouts": [
-      {
-        "left": "Mateusz Gamrot",
-        "leftKo": "Mateusz Gamrot",
-        "right": "Quillan Salkilld",
-        "rightKo": "Quillan Salkilld",
-        "weight": "Lightweight",
-        "section": "main"
-      },
-      {
-        "left": "Diego Ferreira",
-        "leftKo": "Diego Ferreira",
-        "right": "Billy Quarantillo",
-        "rightKo": "Billy Quarantillo",
-        "weight": "Lightweight",
-        "section": "announced"
-      },
-      {
-        "left": "Darren Elkins",
-        "leftKo": "Darren Elkins",
-        "right": "Yadier del Valle",
-        "rightKo": "Yadier del Valle",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
-        "left": "Amanda Lemos",
-        "leftKo": "Amanda Lemos",
-        "right": "Alexia Thainara",
-        "rightKo": "Alexia Thainara",
-        "weight": "Women's Strawweight",
-        "section": "announced"
-      },
-      {
-        "left": "Billy Ray Goff",
-        "leftKo": "Billy Ray Goff",
-        "right": "Ty Miller",
-        "rightKo": "Ty Miller",
-        "weight": "Welterweight",
-        "section": "announced"
-      }
-    ]
-  },
-  {
     "id": "ufcstats-2026-08-16-makhachev-vs-machado-garry",
     "title": "Makhachev vs Machado Garry",
     "date": "2026-08-16",
@@ -352,5 +301,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "startUtc": "2026-09-26T22:00:00Z",
     "prelimsUtc": "2026-09-26T20:00:00Z",
     "venue": "Meta APEX Las Vegas , NV United States"
+  },
+  {
+    "id": "ufcstats-2026-10-04-tbd-vs-tbd",
+    "title": "TBD vs TBD",
+    "date": "2026-10-04",
+    "sourceUrl": "https://www.ufc.com/event/ufc-332",
+    "startUtc": "2026-10-04T01:00:00Z",
+    "prelimsUtc": "2026-10-03T23:00:00Z",
+    "venue": "Delta Center Salt Lake City , UT United States"
   }
 ];
