@@ -2762,8 +2762,7 @@ button.calendar-day:hover {
   background: var(--card);
 }
 
-.event-results-card header,
-.event-results-card li {
+.event-results-card header {
   display: flex;
   justify-content: space-between;
   gap: 18px;
@@ -2783,15 +2782,118 @@ button.calendar-day:hover {
 
 .event-results-card ol {
   display: grid;
-  gap: 12px;
+  gap: 10px;
   margin: 24px 0;
   padding: 0;
   list-style: none;
 }
 
-.event-results-card li span { margin-left: auto; }
+.result-bout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  padding: 15px 16px;
+  border: 1px solid color-mix(in srgb, var(--line) 88%, transparent);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--panel) 78%, #000);
+}
 
-.event-results-card a { color: var(--lime); font-weight: 800; }
+.result-fighters {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.result-fighter {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 8px;
+}
+
+.result-fighter strong {
+  overflow: hidden;
+  color: var(--text);
+  font-size: 1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.result-fighter span {
+  display: inline-grid;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--yellow);
+  color: #17130a;
+  font-size: 0.74rem;
+  font-weight: 900;
+}
+
+.result-loser {
+  justify-content: flex-end;
+}
+
+.result-loser span {
+  background: #343a40;
+  color: #c9d0d6;
+}
+
+.result-defeated {
+  color: var(--muted);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+}
+
+.result-finish {
+  display: grid;
+  gap: 3px;
+  min-width: 142px;
+  text-align: right;
+}
+
+.result-finish strong {
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+.result-finish span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+
+@media (max-width: 640px) {
+  .event-results-card {
+    padding: 20px;
+  }
+
+  .event-results-card header {
+    align-items: flex-start;
+  }
+
+  .event-results-card header time {
+    white-space: nowrap;
+  }
+
+  .result-bout {
+    grid-template-columns: 1fr;
+    gap: 11px;
+    padding: 14px;
+  }
+
+  .result-finish {
+    min-width: 0;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+    text-align: left;
+  }
+}
 
 .community-page {
   padding-top: 46px;

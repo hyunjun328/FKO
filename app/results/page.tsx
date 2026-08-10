@@ -43,18 +43,27 @@ export default function ResultsPage() {
               ) : <time>공식 결과 수집 중</time>}
             </header>
             {result ? (
-              <>
-                <ol>
+              <ol className="result-bout-list">
                   {result.bouts.map((bout, index) => (
-                    <li key={`${bout.winner}-${bout.loser}-${index}`}>
-                      <strong>{bout.winner ?? "무효 경기"}</strong>
-                      <span>{bout.loser ? ` def. ${bout.loser}` : ""}</span>
-                      <small>{[bout.method, bout.round ? `${bout.round}R` : null, bout.time].filter(Boolean).join(" · ")}</small>
+                    <li className="result-bout" key={`${bout.winner}-${bout.loser}-${index}`}>
+                      <div className="result-fighters">
+                        <div className="result-fighter result-winner">
+                          <span>승</span>
+                          <strong>{bout.winner ?? "무효 경기"}</strong>
+                        </div>
+                        <b className="result-defeated">def.</b>
+                        <div className="result-fighter result-loser">
+                          <span>패</span>
+                          <strong>{bout.loser ?? "상대 없음"}</strong>
+                        </div>
+                      </div>
+                      <div className="result-finish">
+                        <strong>{bout.method}</strong>
+                        <span>{[bout.round ? `${bout.round}R` : null, bout.time].filter(Boolean).join(" · ")}</span>
+                      </div>
                     </li>
                   ))}
                 </ol>
-                <a href={result.sourceUrl} target="_blank" rel="noreferrer">원본 결과 보기</a>
-              </>
             ) : <p className="event-results-empty">공식 결과가 확인되면 승패와 종료 방식을 자동으로 표시합니다.</p>}
           </article>
         )) : <p className="event-results-empty">아직 자동 수집으로 확정된 대회 결과가 없습니다.</p>}
