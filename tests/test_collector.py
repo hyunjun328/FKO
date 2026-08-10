@@ -3,7 +3,12 @@ import unittest
 from datetime import date, datetime, timezone
 
 from scripts.collect_wikipedia import find_scheduled_events
-from scripts.collect_ufc_results import find_bout_results, find_completed_events
+from scripts.collect_ufc_results import (
+    find_bout_results,
+    find_completed_events,
+    find_sherdog_bout_results,
+    match_sherdog_event,
+)
 from scripts.collect_ufc_schedule import find_official_event_bouts, find_official_upcoming_events
 from scripts.collect_ufc_schedule import build_payload
 
@@ -130,6 +135,29 @@ class CollectorTest(unittest.TestCase):
             find_bout_results(html),
             [{"winner": "Winner Name", "loser": "Loser Name", "method": "KO/TKO", "round": 3, "time": "2:17"}],
         )
+
+    def test_reads_sherdog_results_when_ufcstats_is_unavailable(self) -> None:
+        html = '''
+        <div itemprop="subEvent">
+          <div itemprop="performer"><span itemprop="name">Quillan Salkilld</span><span class="final_result win">win</span></div>
+          <div itemprop="performer"><span itemprop="name">Mateusz Gamrot</span><span class="final_result loss">loss</span></div>
+          <table class="fight_card_resume"><tr>
+            <td><em>Method</em><br/>Submission (Rear-Naked Choke)</td>
+            <td><em>Round</em><br/>1</td><td><em>Time</em><br/>4:25</td>
+          </tr></table>
+        </div>
+        '''
+        event = {"subtitle": "Gamrot vs Salkilld"}
+        candidate = match_sherdog_event(event, [{
+            "title": "UFC Fight Night 284 - Gamrot vs. Salkilld",
+            "url": "https://www.sherdog.com/events/example",
+        }])
+
+        self.assertEqual(candidate["url"], "https://www.sherdog.com/events/example")
+        self.assertEqual(find_sherdog_bout_results(html), [{
+            "winner": "Quillan Salkilld", "loser": "Mateusz Gamrot",
+            "method": "Submission (Rear-Naked Choke)", "round": 1, "time": "4:25",
+        }])
 
 
 if __name__ == "__main__":

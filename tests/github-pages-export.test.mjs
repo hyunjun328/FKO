@@ -27,7 +27,8 @@ test("exports every public route below the FKO base path", async () => {
   assert.match(home, /FKO/);
   assert.doesNotMatch(home, /UFC 파이트 나이트 베오그라드/);
   assert.match(results, /UFC 파이트 나이트 베오그라드/);
-  assert.match(results, /공식 결과 수집 중/);
+  assert.match(results, /Quillan Salkilld/);
+  assert.match(results, /Submission \(Rear-Naked Choke\)/);
   assert.match(home, /\/FKO\/rankings\//);
   assert.match(rankings, /\/FKO\/p4p\//);
   assert.match(home, /\/FKO\/korean-fighters\//);
@@ -38,8 +39,6 @@ test("exports every public route below the FKO base path", async () => {
   assert.match(rankings, /총 400명 범위에서 검색합니다/);
   assert.match(p4p, /P4P 랭킹/);
   assert.match(p4p, /\/FKO\/rankings\//);
-  assert.match(home, /\/FKO\/fighters\/nobody\.webp/);
-  assert.match(p4p, /\/FKO\/fighters\/nobody-woman\.webp/);
   assert.match(koreanFighters, /코리안 파이터/);
   assert.match(photoCredits, /선수 사진 출처/);
   assert.match(photoCredits, /src="\/FKO\/fighters\/[^"]+\.webp"/);

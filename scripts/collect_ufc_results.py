@@ -7,8 +7,11 @@ from pathlib import Path
 import re
 from urllib.request import Request, urlopen
 
+from bs4 import BeautifulSoup
+
 
 COMPLETED_EVENTS_URL = "http://ufcstats.com/statistics/events/completed?page=all"
+SHERDOG_UFC_EVENTS_URL = "https://www.sherdog.com/organizations/Ultimate-Fighting-Championship-UFC-2"
 USER_AGENT = "FightCalendarKorea/0.1 (event result collector)"
 ROOT = Path(__file__).resolve().parents[1]
 EVENTS_FILE = ROOT / "app/data/events.ts"
@@ -78,6 +81,72 @@ def find_bout_results(html: str) -> list[dict[str, object]]:
     return bouts
 
 
+def find_sherdog_events(html: str) -> list[dict[str, str]]:
+    soup = BeautifulSoup(html, "html.parser")
+    events: list[dict[str, str]] = []
+    seen: set[str] = set()
+    for link in soup.select('a[href*="/events/"]'):
+        href = link.get("href", "")
+        title = link.get_text(" ", strip=True)
+        if not href or not title or href in seen:
+            continue
+        seen.add(href)
+        events.append({
+            "title": title,
+            "url": f"https://www.sherdog.com{href}" if href.startswith("/") else href,
+        })
+    return events
+
+
+def find_sherdog_bout_results(html: str) -> list[dict[str, object]]:
+    soup = BeautifulSoup(html, "html.parser")
+    bouts: list[dict[str, object]] = []
+    for fight in soup.select('[itemprop="subEvent"]'):
+        fighters = fight.select('[itemprop="performer"]')
+        if len(fighters) != 2:
+            continue
+        names = [
+            fighter.select_one('[itemprop="name"]').get_text(" ", strip=True)
+            if fighter.select_one('[itemprop="name"]')
+            else ""
+            for fighter in fighters
+        ]
+        outcomes = [
+            fighter.select_one(".final_result").get_text(" ", strip=True).casefold()
+            if fighter.select_one(".final_result")
+            else ""
+            for fighter in fighters
+        ]
+        if not all(names) or "win" not in outcomes or "loss" not in outcomes:
+            continue
+        details = {}
+        for cell in fight.select("table.fight_card_resume td"):
+            label = cell.select_one("em")
+            if not label:
+                continue
+            key = label.get_text(" ", strip=True).casefold()
+            details[key] = cell.get_text(" ", strip=True).replace(
+                label.get_text(" ", strip=True), "", 1
+            ).strip()
+        result_cells = fight.select("td")
+        result_method = fight.select_one("td.winby b")
+        if result_method:
+            details["method"] = result_method.get_text(" ", strip=True)
+            if len(result_cells) >= 2:
+                details["round"] = result_cells[-2].get_text(" ", strip=True)
+                details["time"] = result_cells[-1].get_text(" ", strip=True)
+        round_value = details.get("round", "")
+        time_value = details.get("time", "")
+        bouts.append({
+            "winner": names[outcomes.index("win")],
+            "loser": names[outcomes.index("loss")],
+            "method": details.get("method") or "Official result",
+            "round": int(round_value) if round_value.isdigit() else None,
+            "time": time_value if re.fullmatch(r"\d{1,2}:\d{2}", time_value) else None,
+        })
+    return bouts
+
+
 def scheduled_events(source: str) -> list[dict[str, str]]:
     pattern = re.compile(
         r'id: "(?P<id>[^"]+)"(?:(?!\n  \{).)*?subtitle: "(?P<subtitle>[^"]+)"(?:(?!\n  \{).)*?startUtc: "(?P<start>[^"]+)"',
@@ -86,17 +155,30 @@ def scheduled_events(source: str) -> list[dict[str, str]]:
     return [match.groupdict() for match in pattern.finditer(source)]
 
 
-def match_event(event: dict[str, str], completed: list[dict[str, str]]) -> dict[str, str] | None:
+def event_terms(event: dict[str, str]) -> list[str]:
     fighters = re.split(r"\s+vs\.?\s+", event["subtitle"], flags=re.IGNORECASE)
-    terms = [
+    return [
         normalize(part.split()[-1])
         for part in fighters
         if part.strip()
     ]
+
+
+def match_event(event: dict[str, str], completed: list[dict[str, str]]) -> dict[str, str] | None:
+    terms = event_terms(event)
     event_date = datetime.fromisoformat(event["start"].replace("Z", "+00:00")).date().isoformat()
     for candidate in completed:
         title = normalize(candidate["title"])
         if candidate["date"] == event_date and terms and all(term in title for term in terms):
+            return candidate
+    return None
+
+
+def match_sherdog_event(event: dict[str, str], candidates: list[dict[str, str]]) -> dict[str, str] | None:
+    terms = event_terms(event)
+    for candidate in candidates:
+        title = normalize(candidate["title"])
+        if terms and all(term in title for term in terms):
             return candidate
     return None
 
@@ -117,16 +199,21 @@ def write_results(results: list[dict[str, object]], output: Path) -> None:
 def main() -> int:
     source = EVENTS_FILE.read_text(encoding="utf-8")
     completed = find_completed_events(fetch(COMPLETED_EVENTS_URL))
+    sherdog_events = find_sherdog_events(fetch(SHERDOG_UFC_EVENTS_URL))
     results: list[dict[str, object]] = []
     for event in scheduled_events(source):
         candidate = match_event(event, completed)
-        if not candidate:
-            continue
-        bouts = find_bout_results(fetch(candidate["url"]))
+        bouts = find_bout_results(fetch(candidate["url"])) if candidate else []
+        source_url = candidate["url"] if candidate else ""
+        if not bouts:
+            sherdog_candidate = match_sherdog_event(event, sherdog_events)
+            if sherdog_candidate:
+                bouts = find_sherdog_bout_results(fetch(sherdog_candidate["url"]))
+                source_url = sherdog_candidate["url"]
         if not bouts:
             continue
         results.append({
-            "eventId": event["id"], "completed": True, "sourceUrl": candidate["url"],
+            "eventId": event["id"], "completed": True, "sourceUrl": source_url,
             "verifiedAt": datetime.now(timezone.utc).isoformat(), "bouts": bouts,
         })
     write_results(results, OUTPUT_FILE)

@@ -69,10 +69,6 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(html, /이안 마샤두 개리/);
   assert.doesNotMatch(html, /다음 주요 매치/);
   assert.doesNotMatch(html, /메인카드 시작까지/);
-  assert.match(html, /Mateusz Gamrot/);
-  assert.match(html, /마테우시 감롯/);
-  assert.match(html, /퀼런 살킬드/);
-  assert.match(html, /aria-label="마테우시 감롯 선수 정보 보기"/);
   assert.match(html, /코리안 파이터/);
   assert.match(html, /href="\/korean-fighters"/);
   assert.match(html, /선수 랭킹/);
@@ -90,7 +86,6 @@ test("server-renders the UFC schedule product", async () => {
   assert.match(calendar, /<EventDetail event=\{event\}/);
   assert.match(css, /\.event-dialog \.bout\s*\{[^}]*grid-template-columns:\s*1fr/);
   assert.doesNotMatch(html, /class="fighter-face bout-fighter-face"/);
-  assert.match(html, /src="\/fighters\/nobody\.webp"/);
   assert.doesNotMatch(html, /class="fighter-silhouette"/);
   assert.match(html, /href="\/photo-credits"/);
   assert.match(html, /Made by 정현준/);
@@ -192,7 +187,7 @@ test("server-renders active and former Korean fighters on a separate page", asyn
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
 
-test("moves finished events to the results page while collection is pending", async () => {
+test("moves finished events to the results page with collected outcomes", async () => {
   const home = await render();
   const homeHtml = await home.text();
   const results = await render("/results");
@@ -200,8 +195,9 @@ test("moves finished events to the results page while collection is pending", as
 
   assert.doesNotMatch(homeHtml, /UFC 파이트 나이트 베오그라드/);
   assert.match(resultsHtml, /UFC 파이트 나이트 베오그라드/);
-  assert.match(resultsHtml, /공식 결과 수집 중/);
-  assert.match(resultsHtml, /공식 결과가 확인되면 승패와 종료 방식을 자동으로 표시합니다/);
+  assert.match(resultsHtml, /Uros Medic/);
+  assert.match(resultsHtml, /Quillan Salkilld/);
+  assert.match(resultsHtml, /Submission \(Rear-Naked Choke\)/);
 });
 
 test("server-renders the official UFC ranking comparison page", async () => {
