@@ -693,6 +693,31 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Derrick Lewis after UFC 239.jpg"
   },
+  "Diego Brandao": {
+    "src": "/fighters/diego-brandao.webp",
+    "groups": [
+      "world-ranking"
+    ],
+    "wikidataId": "Q5274592",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Diego_Brandao_BJJ.png",
+    "author": "Gabe Gambino",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "file": "Diego Brandao BJJ.png"
+  },
+  "Diego Lopes": {
+    "src": "/fighters/diego-lopes.webp",
+    "groups": [
+      "ranking",
+      "world-ranking"
+    ],
+    "wikidataId": "Q124217612",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Diego_Lopes_2025.jpg",
+    "author": "Sexto Round",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "file": "Diego Lopes 2025.jpg"
+  },
   "Diego Sanchez": {
     "src": "/fighters/diego-sanchez.webp",
     "groups": [
@@ -1898,6 +1923,30 @@
     "license": "Public domain",
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:Michael_Morales._QUITO,_27_DE_MAYO_DEL_2025_(cropped).jpg",
     "file": "Michael Morales. QUITO, 27 DE MAYO DEL 2025 (cropped).jpg"
+  },
+  "Michael Page": {
+    "src": "/fighters/michael-page.webp",
+    "groups": [
+      "world-ranking"
+    ],
+    "wikidataId": "Q6833334",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michael_Venom_Page.png",
+    "author": "Hrhr prph",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "file": "Michael Venom Page.png"
+  },
+  "Michal Oleksiejczuk": {
+    "src": "/fighters/michal-oleksiejczuk.webp",
+    "groups": [
+      "world-ranking"
+    ],
+    "wikidataId": "Q65618791",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Micha%C5%82_Oleksiejczuk.jpg",
+    "author": "Secondseat",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "Michał Oleksiejczuk.jpg"
   },
   "Miesha Tate": {
     "src": "/fighters/miesha-tate.webp",
