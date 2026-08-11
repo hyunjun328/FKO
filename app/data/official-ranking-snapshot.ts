@@ -2,7 +2,7 @@
 export type OfficialRankingSnapshot = { checkedAt: string; divisions: Record<string, { champion?: string; entries: string[] }>; mensP4p: string[]; womensP4p: string[] };
 
 export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
-  "checkedAt": "2026-08-09",
+  "checkedAt": "2026-08-11",
   "divisions": {
     "flyweight": {
       "champion": "Joshua Van",
@@ -54,8 +54,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Arnold Allen",
         "Jean Silva",
         "Pat Sabatini",
-        "Youssef Zalal",
         "Nathaniel Wood",
+        "Youssef Zalal",
         "Kevin Vallejos",
         "Melquizael Costa",
         "Steve Garcia",
@@ -72,10 +72,10 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Charles Oliveira",
         "Max Holloway",
         "Paddy Pimblett",
-        "Mateusz Gamrot",
+        "Quillan Salkilld",
         "Renato Moicano",
         "Benoît Saint Denis",
-        "Quillan Salkilld",
+        "Mateusz Gamrot",
         "Mauricio Ruffy",
         "Tom Nolan",
         "Dan Hooker",
@@ -99,9 +99,9 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Uroš Medić",
         "Kamaru Usman",
         "Mike Malott",
-        "Michael Venom Page",
         "Yaroslav Amosov",
-        "Kevin Holland"
+        "Kevin Holland",
+        "Daniel Rodriguez"
       ]
     },
     "middleweight": {
@@ -114,14 +114,14 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Brendan Allen",
         "Caio Borralho",
         "Anthony Hernandez",
+        "Michael Venom Page",
         "Israel Adesanya",
         "Gregory Rodrigues",
         "Christian Leroy Duncan",
         "Ikram Aliskerov",
         "Bo Nickal",
         "Abus Magomedov",
-        "Nursulton Ruziboev",
-        "Reinier de Ridder"
+        "Nursulton Ruziboev"
       ]
     },
     "light-heavyweight": {
@@ -138,8 +138,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Azamat Murzakanov",
         "Bogdan Guskov",
         "Robert Whittaker",
-        "Johnny Walker",
         "Alonzo Menifield",
+        "Johnny Walker",
         "Muhammad Saidov",
         "Iwo Baraniewski"
       ]
@@ -173,14 +173,14 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Gillian Robertson",
         "Yan Xiaonan",
         "Fatima Kline",
+        "Alexia Thainara",
         "Piera Rodriguez",
         "Denise Gomes",
         "Mizuki",
-        "Alexia Thainara",
-        "Amanda Lemos",
         "Loopy Godinez",
         "Tabatha Ricci",
         "Jaqueline Amorim",
+        "Amanda Lemos",
         "Talita Alencar"
       ]
     },

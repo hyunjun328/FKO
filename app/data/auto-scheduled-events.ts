@@ -131,16 +131,16 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Sumudaerji",
-        "leftKo": "Sumudaerji",
-        "right": "Alex Perez",
-        "rightKo": "Alex Perez",
+        "left": "Alex Perez",
+        "leftKo": "Alex Perez",
+        "right": "Sumudaerji",
+        "rightKo": "Sumudaerji",
         "weight": "Flyweight",
         "section": "announced"
       },
       {
-        "left": "Ce Liu",
-        "leftKo": "Ce Liu",
+        "left": "Liu Ce",
+        "leftKo": "Liu Ce",
         "right": "Junior Tafa",
         "rightKo": "Junior Tafa",
         "weight": "Light Heavyweight",
@@ -192,12 +192,12 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2026-09-13-rodriguez-vs-silva",
+    "id": "ufcstats-2026-09-12-rodriguez-vs-silva",
     "title": "Rodriguez vs Silva",
-    "date": "2026-09-13",
+    "date": "2026-09-12",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-september-12-2026",
-    "startUtc": "2026-09-13T00:00:00Z",
-    "prelimsUtc": "2026-09-12T21:00:00Z",
+    "startUtc": "2026-09-12T21:00:00Z",
+    "prelimsUtc": "2026-09-12T18:00:00Z",
     "venue": "Desert Diamond Arena Glendale , AZ United States",
     "bouts": [
       {
