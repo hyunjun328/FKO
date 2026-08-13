@@ -94,14 +94,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "rightKo": "Jeisla Chaves",
         "weight": "Women's Flyweight",
         "section": "announced"
-      },
-      {
-        "left": "Kennedy Nzechukwu",
-        "leftKo": "Kennedy Nzechukwu",
-        "right": "Shamil Gaziev",
-        "rightKo": "Shamil Gaziev",
-        "weight": "Heavyweight",
-        "section": "announced"
       }
     ]
   },
