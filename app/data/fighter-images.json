@@ -2308,6 +2308,18 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:Ricky_Sim%C3%B3n_2019.jpg",
     "file": "Ricky Simón 2019.jpg"
   },
+  "Rinat Fakhretdinov": {
+    "src": "/fighters/rinat-fakhretdinov.webp",
+    "groups": [
+      "world-ranking"
+    ],
+    "wikidataId": "Q97664397",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Akhmetshin,_Kapkaev_and_Fakhretdinov_(2021-02-04)_02.jpg",
+    "author": "Полномочное представительство РТ в РФ",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "file": "Akhmetshin, Kapkaev and Fakhretdinov (2021-02-04) 02.jpg"
+  },
   "Rob Font": {
     "src": "/fighters/rob-font.webp",
     "groups": [
