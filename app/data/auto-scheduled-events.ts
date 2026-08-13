@@ -29,6 +29,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
+        "left": "Jalin Turner",
+        "leftKo": "Jalin Turner",
+        "right": "Kauê Fernandes",
+        "rightKo": "Kauê Fernandes",
+        "weight": "Lightweight",
+        "section": "announced"
+      },
+      {
         "left": "Mansur Abdul-Malik",
         "leftKo": "Mansur Abdul-Malik",
         "right": "Dustin Stoltzfus",
@@ -84,7 +92,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Carli Judice",
         "right": "Jeisla Chaves",
         "rightKo": "Jeisla Chaves",
-        "weight": "Women's Strawweight",
+        "weight": "Women's Flyweight",
         "section": "announced"
       },
       {
@@ -174,6 +182,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "main"
       },
       {
+        "left": "Farès Ziam",
+        "leftKo": "Farès Ziam",
+        "right": "Axel Sola",
+        "rightKo": "Axel Sola",
+        "weight": "Lightweight",
+        "section": "announced"
+      },
+      {
         "left": "Michael Venom Page",
         "leftKo": "Michael Venom Page",
         "right": "Nursulton Ruziboev",
@@ -186,6 +202,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Morgan Charriere",
         "right": "Felipe Lima",
         "rightKo": "Felipe Lima",
+        "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
+        "left": "Losene Keita",
+        "leftKo": "Losene Keita",
+        "right": "Muhammad Naimov",
+        "rightKo": "Muhammad Naimov",
         "weight": "Featherweight",
         "section": "announced"
       }
