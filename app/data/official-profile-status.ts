@@ -436,7 +436,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "heightCm": 165,
     "knockoutWins": 3,
     "reachCm": 160,
-    "record": "17-8-0",
+    "record": "17-9-0",
     "sourceUrl": "https://www.ufc.com/athlete/gillian-robertson",
     "status": "Active",
     "submissionWins": 9
@@ -511,7 +511,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "heightCm": 190,
     "knockoutWins": 7,
     "reachCm": 189,
-    "record": "17-1-0",
+    "record": "17-2-0",
     "sourceUrl": "https://www.ufc.com/athlete/ian-machado-garry",
     "status": "Active",
     "submissionWins": 1
@@ -681,7 +681,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "firstRoundFinishes": 6,
     "heightCm": 163,
     "reachCm": 160,
-    "record": "16-5-0",
+    "record": "17-5-0",
     "sourceUrl": "https://www.ufc.com/athlete/mackenzie-dern",
     "status": "Active",
     "submissionWins": 8

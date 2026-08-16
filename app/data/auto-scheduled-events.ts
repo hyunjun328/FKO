@@ -355,5 +355,80 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "startUtc": "2026-10-04T01:00:00Z",
     "prelimsUtc": "2026-10-03T23:00:00Z",
     "venue": "Delta Center Salt Lake City , UT United States"
+  },
+  {
+    "id": "ufcstats-2026-10-18-buckley-vs-malott",
+    "title": "Buckley vs Malott",
+    "date": "2026-10-18",
+    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-october-17-2026",
+    "startUtc": "2026-10-18T00:00:00Z",
+    "prelimsUtc": "2026-10-17T21:00:00Z",
+    "venue": "Rogers Place Edmonton AB Canada",
+    "bouts": [
+      {
+        "left": "Joaquin Buckley",
+        "leftKo": "Joaquin Buckley",
+        "right": "Mike Malott",
+        "rightKo": "Mike Malott",
+        "weight": "Welterweight",
+        "section": "main"
+      },
+      {
+        "left": "Erin Blanchfield",
+        "leftKo": "Erin Blanchfield",
+        "right": "Jasmine Jasudavicius",
+        "rightKo": "Jasmine Jasudavicius",
+        "weight": "Women's Flyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Marc-Andre Barriault",
+        "leftKo": "Marc-Andre Barriault",
+        "right": "Kyle Daukaus",
+        "rightKo": "Kyle Daukaus",
+        "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Jamey-Lyn Horth",
+        "leftKo": "Jamey-Lyn Horth",
+        "right": "Katlyn Cerminara",
+        "rightKo": "Katlyn Cerminara",
+        "weight": "Women's Flyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Tanner Boser",
+        "leftKo": "Tanner Boser",
+        "right": "Jhonata Diniz",
+        "rightKo": "Jhonata Diniz",
+        "weight": "Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Mandel Nallo",
+        "leftKo": "Mandel Nallo",
+        "right": "Nate Landwehr",
+        "rightKo": "Nate Landwehr",
+        "weight": "Lightweight",
+        "section": "announced"
+      },
+      {
+        "left": "Melissa Croden",
+        "leftKo": "Melissa Croden",
+        "right": "Chelsea Chandler",
+        "rightKo": "Chelsea Chandler",
+        "weight": "Women's Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "Louis Jourdain",
+        "leftKo": "Louis Jourdain",
+        "right": "Timmy Cuamba",
+        "rightKo": "Timmy Cuamba",
+        "weight": "Bantamweight",
+        "section": "announced"
+      }
+    ]
   }
 ];

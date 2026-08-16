@@ -9,7 +9,7 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-fight-night-belgrade-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-Fight-Night-283-Medic-vs-Rodriguez-112723",
-    "verifiedAt": "2026-08-16T03:49:31.621388+00:00",
+    "verifiedAt": "2026-08-16T15:22:51.626542+00:00",
     "bouts": [
       {
         "winner": "Uros Medic",
@@ -115,7 +115,7 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-fight-night-gamrot-salkilld-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-Fight-Night-284-Gamrot-vs-Salkilld-112957",
-    "verifiedAt": "2026-08-16T03:49:31.798135+00:00",
+    "verifiedAt": "2026-08-16T15:22:51.692791+00:00",
     "bouts": [
       {
         "winner": "Quillan Salkilld",
@@ -207,8 +207,15 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-330-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-330-Makhachev-vs-Garry-112557",
-    "verifiedAt": "2026-08-16T03:49:31.953808+00:00",
+    "verifiedAt": "2026-08-16T15:22:52.052250+00:00",
     "bouts": [
+      {
+        "winner": "Islam Makhachev",
+        "loser": "Ian Garry",
+        "method": "Decision (Unanimous)",
+        "round": 5,
+        "time": "5:00"
+      },
       {
         "winner": "Mackenzie Dern",
         "loser": "Gillian Robertson",
