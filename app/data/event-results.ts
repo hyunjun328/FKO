@@ -9,7 +9,7 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-fight-night-belgrade-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-Fight-Night-283-Medic-vs-Rodriguez-112723",
-    "verifiedAt": "2026-08-15T15:21:43.104325+00:00",
+    "verifiedAt": "2026-08-16T03:49:31.621388+00:00",
     "bouts": [
       {
         "winner": "Uros Medic",
@@ -115,7 +115,7 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-fight-night-gamrot-salkilld-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-Fight-Night-284-Gamrot-vs-Salkilld-112957",
-    "verifiedAt": "2026-08-15T15:21:43.245888+00:00",
+    "verifiedAt": "2026-08-16T03:49:31.798135+00:00",
     "bouts": [
       {
         "winner": "Quillan Salkilld",
@@ -200,6 +200,91 @@ export const EVENT_RESULTS: EventResult[] = [
         "method": "Decision (Unanimous)",
         "round": 3,
         "time": "5:00"
+      }
+    ]
+  },
+  {
+    "eventId": "ufc-330-2026",
+    "completed": true,
+    "sourceUrl": "https://www.sherdog.com/events/UFC-330-Makhachev-vs-Garry-112557",
+    "verifiedAt": "2026-08-16T03:49:31.953808+00:00",
+    "bouts": [
+      {
+        "winner": "Mackenzie Dern",
+        "loser": "Gillian Robertson",
+        "method": "Decision (Unanimous)",
+        "round": 5,
+        "time": "5:00"
+      },
+      {
+        "winner": "Jalin Turner",
+        "loser": "Kaue Fernandes",
+        "method": "KO (Punches)",
+        "round": 1,
+        "time": "0:39"
+      },
+      {
+        "winner": "Dustin Stoltzfus",
+        "loser": "Mansur Abdul-Malik",
+        "method": "Submission (Rear-Naked Choke)",
+        "round": 2,
+        "time": "4:25"
+      },
+      {
+        "winner": "Esteban Ribovics",
+        "loser": "Edson Barboza",
+        "method": "TKO (Punches)",
+        "round": 2,
+        "time": "1:32"
+      },
+      {
+        "winner": "Chidi Njokuani",
+        "loser": "Joel Alvarez",
+        "method": "Decision (Unanimous)",
+        "round": 3,
+        "time": "5:00"
+      },
+      {
+        "winner": "Charles Johnson",
+        "loser": "Eduardo Henrique",
+        "method": "Submission (Twister)",
+        "round": 3,
+        "time": "1:36"
+      },
+      {
+        "winner": "Donte Johnson",
+        "loser": "Eric McConico",
+        "method": "KO (Punches)",
+        "round": 1,
+        "time": "1:38"
+      },
+      {
+        "winner": "Tresean Gore",
+        "loser": "Vicente Luque",
+        "method": "Decision (Unanimous)",
+        "round": 3,
+        "time": "5:00"
+      },
+      {
+        "winner": "Lucas Fernando",
+        "loser": "Rafael Tobias",
+        "method": "TKO (Knee to the Body and Elbows)",
+        "round": 3,
+        "time": "1:10"
+      },
+      {
+        "winner": "Neil Magny",
+        "loser": "Ramiz Brahimaj",
+        "method": "TKO (Punches)",
+        "round": 2,
+        "time": "3:20"
+      },
+      {
+        "winner": "Jeremiah Wells",
+        "loser": "Myktybek Orolbai",
+        "method": "Technical Submission (Ninja Choke)",
+        "round": 3,
+        "time": "1:24"
       }
     ]
   }

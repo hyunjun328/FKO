@@ -4,57 +4,6 @@ export type AutoScheduledEvent = { id: string; title: string; date: string; sour
 
 export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
   {
-    "id": "ufcstats-2026-08-16-makhachev-vs-machado-garry",
-    "title": "Makhachev vs Machado Garry",
-    "date": "2026-08-16",
-    "sourceUrl": "https://www.ufc.com/event/ufc-330",
-    "startUtc": "2026-08-16T01:00:00Z",
-    "prelimsUtc": "2026-08-15T23:00:00Z",
-    "venue": "Xfinity Mobile Arena Philadelphia , PA United States",
-    "bouts": [
-      {
-        "left": "Islam Makhachev",
-        "leftKo": "Islam Makhachev",
-        "right": "Ian Machado Garry",
-        "rightKo": "Ian Machado Garry",
-        "weight": "Welterweight Title",
-        "section": "main"
-      },
-      {
-        "left": "Mackenzie Dern",
-        "leftKo": "Mackenzie Dern",
-        "right": "Gillian Robertson",
-        "rightKo": "Gillian Robertson",
-        "weight": "Women's Strawweight Title",
-        "section": "announced"
-      },
-      {
-        "left": "Jalin Turner",
-        "leftKo": "Jalin Turner",
-        "right": "Kauê Fernandes",
-        "rightKo": "Kauê Fernandes",
-        "weight": "Lightweight",
-        "section": "announced"
-      },
-      {
-        "left": "Mansur Abdul-Malik",
-        "leftKo": "Mansur Abdul-Malik",
-        "right": "Dustin Stoltzfus",
-        "rightKo": "Dustin Stoltzfus",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Edson Barboza",
-        "leftKo": "Edson Barboza",
-        "right": "Esteban Ribovics",
-        "rightKo": "Esteban Ribovics",
-        "weight": "Lightweight",
-        "section": "announced"
-      }
-    ]
-  },
-  {
     "id": "ufcstats-2026-08-23-hernandez-vs-rodrigues",
     "title": "Hernandez vs Rodrigues",
     "date": "2026-08-23",
@@ -88,11 +37,83 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
+        "left": "MarQuel Mederos",
+        "leftKo": "MarQuel Mederos",
+        "right": "Mason Jones",
+        "rightKo": "Mason Jones",
+        "weight": "Lightweight",
+        "section": "announced"
+      },
+      {
         "left": "Carli Judice",
         "leftKo": "Carli Judice",
         "right": "Jeisla Chaves",
         "rightKo": "Jeisla Chaves",
         "weight": "Women's Flyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Terrance Chatman",
+        "leftKo": "Terrance Chatman",
+        "right": "Anthony Wint",
+        "rightKo": "Anthony Wint",
+        "weight": "Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Jamall Emmers",
+        "leftKo": "Jamall Emmers",
+        "right": "Lerryan Douglas",
+        "rightKo": "Lerryan Douglas",
+        "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
+        "left": "Kennedy Nzechukwu",
+        "leftKo": "Kennedy Nzechukwu",
+        "right": "Shamil Gaziev",
+        "rightKo": "Shamil Gaziev",
+        "weight": "Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Chris Padilla",
+        "leftKo": "Chris Padilla",
+        "right": "Nasrat Haqparast",
+        "rightKo": "Nasrat Haqparast",
+        "weight": "Lightweight",
+        "section": "announced"
+      },
+      {
+        "left": "Marcio Barbosa",
+        "leftKo": "Marcio Barbosa",
+        "right": "Ryan Kuse",
+        "rightKo": "Ryan Kuse",
+        "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
+        "left": "Gauge Young",
+        "leftKo": "Gauge Young",
+        "right": "Stan Dorsainvil",
+        "rightKo": "Stan Dorsainvil",
+        "weight": "Lightweight",
+        "section": "announced"
+      },
+      {
+        "left": "Wes Schultz",
+        "leftKo": "Wes Schultz",
+        "right": "Jackson McVey",
+        "rightKo": "Jackson McVey",
+        "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Shanelle Dyer",
+        "leftKo": "Shanelle Dyer",
+        "right": "Elise Reed",
+        "rightKo": "Elise Reed",
+        "weight": "Women's Strawweight",
         "section": "announced"
       }
     ]
