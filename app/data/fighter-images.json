@@ -25,18 +25,6 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:UFC_Freedom_250_Press_Conference_(9747954)(cropped).jpg",
     "file": "UFC Freedom 250 Press Conference (9747954)(cropped).jpg"
   },
-  "Albert Tumenov": {
-    "src": "/fighters/albert-tumenov.webp",
-    "groups": [
-      "world-ranking"
-    ],
-    "wikidataId": "Q16708361",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tumenov.jpg",
-    "author": "Азнор",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "file": "Tumenov.jpg"
-  },
   "Aleksandar Rakic": {
     "src": "/fighters/aleksandar-rakic.webp",
     "groups": [
@@ -99,18 +87,6 @@
     "license": "CC BY 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Alexander Hernandez Jan 19, 2019.jpg"
-  },
-  "Alexander Shlemenko": {
-    "src": "/fighters/alexander-shlemenko.webp",
-    "groups": [
-      "world-ranking"
-    ],
-    "wikidataId": "Q4525405",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shlemenko_in_airport_after_Vianna.jpg",
-    "author": "Wikimedia Commons contributor",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Shlemenko in airport after Vianna.jpg"
   },
   "Alexander Volkanovski": {
     "src": "/fighters/alexander-volkanovski.webp",
@@ -200,18 +176,6 @@
     "license": "CC BY 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
     "file": "VR5 1744 (52868673328) (cropped).jpg"
-  },
-  "Amir Aliakbari": {
-    "src": "/fighters/amir-aliakbari.webp",
-    "groups": [
-      "world-ranking"
-    ],
-    "wikidataId": "Q471964",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amir_Aliakbari_11.jpg",
-    "author": "M.Mahdi Dorani",
-    "license": "CC BY 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-    "file": "Amir Aliakbari 11.jpg"
   },
   "Anatoly Malykhin": {
     "src": "/fighters/anatoly-malykhin.webp",
@@ -963,18 +927,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Germaine de Randamie at UFC Copenhagen.jpg"
   },
-  "Giga Chikadze": {
-    "src": "/fighters/giga-chikadze.webp",
-    "groups": [
-      "world-ranking"
-    ],
-    "wikidataId": "Q95453345",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giga_Chikadze_post_fight_interview_at_UFC_Fight_Night_160_in_Copenhagen.jpg",
-    "author": "MMAnytt",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Giga Chikadze post fight interview at UFC Fight Night 160 in Copenhagen.jpg"
-  },
   "Gilbert Burns": {
     "src": "/fighters/gilbert-burns.webp",
     "groups": [
@@ -1243,6 +1195,18 @@
     "license": "Public domain",
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:Jean_Silva_(54451587575).jpg",
     "file": "Jean Silva (54451587575).jpg"
+  },
+  "Jim Miller": {
+    "src": "/fighters/jim-miller.webp",
+    "groups": [
+      "world-ranking"
+    ],
+    "wikidataId": "Q742812",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jim.miller.2.jpg",
+    "author": "Aleks Ozolins",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "file": "Jim.miller.2.jpg"
   },
   "Jimmy Crute": {
     "src": "/fighters/jimmy-crute.webp",
