@@ -53,67 +53,11 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Terrance Chatman",
-        "leftKo": "Terrance Chatman",
-        "right": "Anthony Wint",
-        "rightKo": "Anthony Wint",
-        "weight": "Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Jamall Emmers",
-        "leftKo": "Jamall Emmers",
-        "right": "Lerryan Douglas",
-        "rightKo": "Lerryan Douglas",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
         "left": "Kennedy Nzechukwu",
         "leftKo": "Kennedy Nzechukwu",
         "right": "Shamil Gaziev",
         "rightKo": "Shamil Gaziev",
         "weight": "Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Chris Padilla",
-        "leftKo": "Chris Padilla",
-        "right": "Nasrat Haqparast",
-        "rightKo": "Nasrat Haqparast",
-        "weight": "Lightweight",
-        "section": "announced"
-      },
-      {
-        "left": "Marcio Barbosa",
-        "leftKo": "Marcio Barbosa",
-        "right": "Ryan Kuse",
-        "rightKo": "Ryan Kuse",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
-        "left": "Gauge Young",
-        "leftKo": "Gauge Young",
-        "right": "Stan Dorsainvil",
-        "rightKo": "Stan Dorsainvil",
-        "weight": "Lightweight",
-        "section": "announced"
-      },
-      {
-        "left": "Wes Schultz",
-        "leftKo": "Wes Schultz",
-        "right": "Jackson McVey",
-        "rightKo": "Jackson McVey",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Shanelle Dyer",
-        "leftKo": "Shanelle Dyer",
-        "right": "Elise Reed",
-        "rightKo": "Elise Reed",
-        "weight": "Women's Strawweight",
         "section": "announced"
       }
     ]
