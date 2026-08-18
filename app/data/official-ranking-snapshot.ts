@@ -2,7 +2,7 @@
 export type OfficialRankingSnapshot = { checkedAt: string; divisions: Record<string, { champion?: string; entries: string[] }>; mensP4p: string[]; womensP4p: string[] };
 
 export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
-  "checkedAt": "2026-08-16",
+  "checkedAt": "2026-08-18",
   "divisions": {
     "flyweight": {
       "champion": "Joshua Van",
@@ -20,8 +20,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Kevin Borjas",
         "Mitch Raposo",
         "Sumudaerji",
-        "Alessandro Costa",
-        "Alex Perez"
+        "Charles Johnson",
+        "Alessandro Costa"
       ]
     },
     "bantamweight": {
@@ -170,8 +170,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Zhang Weili",
         "Virna Jandiroba",
         "Tatiana Suarez",
-        "Gillian Robertson",
         "Yan Xiaonan",
+        "Gillian Robertson",
         "Fatima Kline",
         "Alexia Thainara",
         "Piera Rodriguez",

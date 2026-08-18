@@ -53,10 +53,10 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Kennedy Nzechukwu",
-        "leftKo": "Kennedy Nzechukwu",
-        "right": "Shamil Gaziev",
-        "rightKo": "Shamil Gaziev",
+        "left": "Anthony Wint",
+        "leftKo": "Anthony Wint",
+        "right": "Terrance Chatman",
+        "rightKo": "Terrance Chatman",
         "weight": "Heavyweight",
         "section": "announced"
       }
@@ -109,14 +109,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "right": "Junior Tafa",
         "rightKo": "Junior Tafa",
         "weight": "Light Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Namsrai Batbayar",
-        "leftKo": "Namsrai Batbayar",
-        "right": "Andre Lima",
-        "rightKo": "Andre Lima",
-        "weight": "Flyweight",
         "section": "announced"
       }
     ]
@@ -298,7 +290,65 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "sourceUrl": "https://www.ufc.com/event/ufc-332",
     "startUtc": "2026-10-04T01:00:00Z",
     "prelimsUtc": "2026-10-03T23:00:00Z",
-    "venue": "Delta Center Salt Lake City , UT United States"
+    "venue": "Delta Center Salt Lake City , UT United States",
+    "bouts": [
+      {
+        "left": "Deiveson Figueiredo",
+        "leftKo": "Deiveson Figueiredo",
+        "right": "Payton Talbott",
+        "rightKo": "Payton Talbott",
+        "weight": "Bantamweight",
+        "section": "main"
+      },
+      {
+        "left": "Johnny Walker",
+        "leftKo": "Johnny Walker",
+        "right": "Mick Parkin",
+        "rightKo": "Mick Parkin",
+        "weight": "Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Marvin Vettori",
+        "leftKo": "Marvin Vettori",
+        "right": "Ismail Naurdiev",
+        "rightKo": "Ismail Naurdiev",
+        "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Ateba Gautier",
+        "leftKo": "Ateba Gautier",
+        "right": "Roman Kopylov",
+        "rightKo": "Roman Kopylov",
+        "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Imanol Rodriguez",
+        "leftKo": "Imanol Rodriguez",
+        "right": "Alden Coria",
+        "rightKo": "Alden Coria",
+        "weight": "Flyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Damian Pinas",
+        "leftKo": "Damian Pinas",
+        "right": "Andrey Pulyaev",
+        "rightKo": "Andrey Pulyaev",
+        "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Court McGee",
+        "leftKo": "Court McGee",
+        "right": "Eric Nolan",
+        "rightKo": "Eric Nolan",
+        "weight": "Welterweight",
+        "section": "announced"
+      }
+    ]
   },
   {
     "id": "ufcstats-2026-10-18-buckley-vs-malott",
