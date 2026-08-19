@@ -110,6 +110,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "rightKo": "Junior Tafa",
         "weight": "Light Heavyweight",
         "section": "announced"
+      },
+      {
+        "left": "Bilal Hasan",
+        "leftKo": "Bilal Hasan",
+        "right": "Nilson Rojas",
+        "rightKo": "Nilson Rojas",
+        "weight": "Flyweight",
+        "section": "announced"
       }
     ]
   },
