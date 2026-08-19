@@ -275,13 +275,23 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2026-09-26-tbd-vs-tbd",
-    "title": "TBD vs TBD",
+    "id": "ufcstats-2026-09-26-rosas-jr-vs-barcelos",
+    "title": "Rosas Jr. vs Barcelos",
     "date": "2026-09-26",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-september-26-2026",
     "startUtc": "2026-09-26T22:00:00Z",
     "prelimsUtc": "2026-09-26T20:00:00Z",
-    "venue": "Meta APEX Las Vegas , NV United States"
+    "venue": "Meta APEX Las Vegas , NV United States",
+    "bouts": [
+      {
+        "left": "Raul Rosas Jr.",
+        "leftKo": "Raul Rosas Jr.",
+        "right": "Raoni Barcelos",
+        "rightKo": "Raoni Barcelos",
+        "weight": "Bantamweight",
+        "section": "main"
+      }
+    ]
   },
   {
     "id": "ufcstats-2026-10-04-tbd-vs-tbd",
@@ -421,6 +431,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "right": "Timmy Cuamba",
         "rightKo": "Timmy Cuamba",
         "weight": "Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "Julien Leblanc",
+        "leftKo": "Julien Leblanc",
+        "right": "Gilbert Urbina",
+        "rightKo": "Gilbert Urbina",
+        "weight": "Middleweight",
         "section": "announced"
       }
     ]
