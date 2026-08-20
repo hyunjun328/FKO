@@ -548,6 +548,18 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:UFC%27s_Corey_Sandhagen_brings_his_fighting_spirit_to_the_1st_SOW_(1)_(cropped).jpg",
     "file": "UFC's Corey Sandhagen brings his fighting spirit to the 1st SOW (1) (cropped).jpg"
   },
+  "Costello Van Steenis": {
+    "src": "/fighters/costello-van-steenis.webp",
+    "groups": [
+      "world-ranking"
+    ],
+    "wikidataId": "Q135420512",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Costello_van_Steenis_WOW_29_Valencia.jpg",
+    "author": "Byxelized",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "Costello van Steenis WOW 29 Valencia.jpg"
+  },
   "Dan Henderson": {
     "src": "/fighters/dan-henderson.webp",
     "groups": [
