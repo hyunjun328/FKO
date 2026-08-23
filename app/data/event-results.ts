@@ -9,7 +9,7 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-fight-night-belgrade-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-Fight-Night-283-Medic-vs-Rodriguez-112723",
-    "verifiedAt": "2026-08-22T15:21:50.428598+00:00",
+    "verifiedAt": "2026-08-23T03:51:24.755662+00:00",
     "bouts": [
       {
         "winner": "Uros Medic",
@@ -115,7 +115,7 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-fight-night-gamrot-salkilld-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-Fight-Night-284-Gamrot-vs-Salkilld-112957",
-    "verifiedAt": "2026-08-22T15:21:50.627234+00:00",
+    "verifiedAt": "2026-08-23T03:51:25.129186+00:00",
     "bouts": [
       {
         "winner": "Quillan Salkilld",
@@ -207,7 +207,7 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-330-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-330-Makhachev-vs-Garry-112557",
-    "verifiedAt": "2026-08-22T15:21:50.692868+00:00",
+    "verifiedAt": "2026-08-23T03:51:25.858510+00:00",
     "bouts": [
       {
         "winner": "Islam Makhachev",
@@ -292,6 +292,105 @@ export const EVENT_RESULTS: EventResult[] = [
         "method": "Technical Submission (Ninja Choke)",
         "round": 3,
         "time": "1:24"
+      }
+    ]
+  },
+  {
+    "eventId": "ufc-fight-night-sacramento-2026",
+    "completed": true,
+    "sourceUrl": "https://www.sherdog.com/events/UFC-Fight-Night-285-Hernandez-vs-Rodrigues-113260",
+    "verifiedAt": "2026-08-23T03:51:25.946617+00:00",
+    "bouts": [
+      {
+        "winner": "Gregory Rodrigues",
+        "loser": "Anthony Hernandez",
+        "method": "Decision (Unanimous)",
+        "round": 5,
+        "time": "5:00"
+      },
+      {
+        "winner": "Vitor Petrino",
+        "loser": "Serghei Spivac",
+        "method": "Decision (Unanimous)",
+        "round": 3,
+        "time": "5:00"
+      },
+      {
+        "winner": "Reinier de Ridder",
+        "loser": "Roman Dolidze",
+        "method": "TKO (Punches)",
+        "round": 1,
+        "time": "4:01"
+      },
+      {
+        "winner": "MarQuel Mederos",
+        "loser": "Mason Jones",
+        "method": "TKO (Elbows and Punches)",
+        "round": 2,
+        "time": "2:07"
+      },
+      {
+        "winner": "Carli Judice",
+        "loser": "Jeisla Chaves",
+        "method": "TKO (Front Kick to the Body and Punches)",
+        "round": 1,
+        "time": "1:39"
+      },
+      {
+        "winner": "Anthony Wint",
+        "loser": "Terrance Chatman",
+        "method": "Technical Submission (Arm-Triangle Choke)",
+        "round": 1,
+        "time": "4:29"
+      },
+      {
+        "winner": "Jamall Emmers",
+        "loser": "Lerryan Douglas",
+        "method": "TKO (Punches)",
+        "round": 1,
+        "time": "3:38"
+      },
+      {
+        "winner": "Shamil Gaziev",
+        "loser": "Kennedy Nzechukwu",
+        "method": "KO (Punch)",
+        "round": 1,
+        "time": "1:20"
+      },
+      {
+        "winner": "Chris Padilla",
+        "loser": "Nasrat Haqparast",
+        "method": "Technical Submission (Arm-Triangle Choke)",
+        "round": 3,
+        "time": "4:59"
+      },
+      {
+        "winner": "Marcio Barbosa",
+        "loser": "Ryan Kuse",
+        "method": "TKO (Punch)",
+        "round": 1,
+        "time": "2:47"
+      },
+      {
+        "winner": "Stanley Dorsainvil",
+        "loser": "Gauge Young",
+        "method": "Decision (Unanimous)",
+        "round": 3,
+        "time": "5:00"
+      },
+      {
+        "winner": "Jackson McVey",
+        "loser": "Wesley Schultz",
+        "method": "TKO (Knee to the Body and Punches)",
+        "round": 1,
+        "time": "4:13"
+      },
+      {
+        "winner": "Shanelle Dyer",
+        "loser": "Elise Reed",
+        "method": "TKO (Punches)",
+        "round": 3,
+        "time": "1:42"
       }
     ]
   }

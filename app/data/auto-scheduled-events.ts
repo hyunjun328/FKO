@@ -4,65 +4,6 @@ export type AutoScheduledEvent = { id: string; title: string; date: string; sour
 
 export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
   {
-    "id": "ufcstats-2026-08-23-hernandez-vs-rodrigues",
-    "title": "Hernandez vs Rodrigues",
-    "date": "2026-08-23",
-    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-august-22-2026",
-    "startUtc": "2026-08-23T00:00:00Z",
-    "prelimsUtc": "2026-08-22T21:00:00Z",
-    "venue": "Golden 1 Center Sacramento , CA United States",
-    "bouts": [
-      {
-        "left": "Anthony Hernandez",
-        "leftKo": "Anthony Hernandez",
-        "right": "Gregory Rodrigues",
-        "rightKo": "Gregory Rodrigues",
-        "weight": "Middleweight",
-        "section": "main"
-      },
-      {
-        "left": "Serghei Spivac",
-        "leftKo": "Serghei Spivac",
-        "right": "Vitor Petrino",
-        "rightKo": "Vitor Petrino",
-        "weight": "Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Reinier de Ridder",
-        "leftKo": "Reinier de Ridder",
-        "right": "Roman Dolidze",
-        "rightKo": "Roman Dolidze",
-        "weight": "Light Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "MarQuel Mederos",
-        "leftKo": "MarQuel Mederos",
-        "right": "Mason Jones",
-        "rightKo": "Mason Jones",
-        "weight": "Lightweight",
-        "section": "announced"
-      },
-      {
-        "left": "Carli Judice",
-        "leftKo": "Carli Judice",
-        "right": "Jeisla Chaves",
-        "rightKo": "Jeisla Chaves",
-        "weight": "Women's Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Anthony Wint",
-        "leftKo": "Anthony Wint",
-        "right": "Terrance Chatman",
-        "rightKo": "Terrance Chatman",
-        "weight": "Heavyweight",
-        "section": "announced"
-      }
-    ]
-  },
-  {
     "id": "ufcstats-2026-08-29-nurmagomedov-vs-song",
     "title": "Nurmagomedov vs Song",
     "date": "2026-08-29",
