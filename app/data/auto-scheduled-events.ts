@@ -391,5 +391,88 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       }
     ]
+  },
+  {
+    "id": "ufcstats-2026-10-24-volkanovski-vs-evloev",
+    "title": "Volkanovski vs Evloev",
+    "date": "2026-10-24",
+    "sourceUrl": "https://www.ufc.com/event/ufc-333",
+    "startUtc": "2026-10-24T18:00:00Z",
+    "prelimsUtc": "2026-10-24T16:00:00Z",
+    "venue": "Etihad Arena Abu Dhabi United Arab Emirates",
+    "bouts": [
+      {
+        "left": "Alexander Volkanovski",
+        "leftKo": "Alexander Volkanovski",
+        "right": "Movsar Evloev",
+        "rightKo": "Movsar Evloev",
+        "weight": "Featherweight Title",
+        "section": "main"
+      },
+      {
+        "left": "Petr Yan",
+        "leftKo": "Petr Yan",
+        "right": "Merab Dvalishvili",
+        "rightKo": "Merab Dvalishvili",
+        "weight": "Bantamweight Title",
+        "section": "announced"
+      },
+      {
+        "left": "Arnold Allen",
+        "leftKo": "Arnold Allen",
+        "right": "Aaron Pico",
+        "rightKo": "Aaron Pico",
+        "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
+        "left": "Azamat Murzakanov",
+        "leftKo": "Azamat Murzakanov",
+        "right": "Dominick Reyes",
+        "rightKo": "Dominick Reyes",
+        "weight": "Light Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Lone’er Kavanagh",
+        "leftKo": "Lone’er Kavanagh",
+        "right": "Ramazan Temirov",
+        "rightKo": "Ramazan Temirov",
+        "weight": "Flyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Nikita Krylov",
+        "leftKo": "Nikita Krylov",
+        "right": "Abdul Rakhman Yakhyaev",
+        "rightKo": "Abdul Rakhman Yakhyaev",
+        "weight": "Light Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Alexander Volkov",
+        "leftKo": "Alexander Volkov",
+        "right": "Rizvan Kuniev",
+        "rightKo": "Rizvan Kuniev",
+        "weight": "Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Abus Magomedov",
+        "leftKo": "Abus Magomedov",
+        "right": "Cam Rowston",
+        "rightKo": "Cam Rowston",
+        "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Grant Dawson",
+        "leftKo": "Grant Dawson",
+        "right": "Nurullo Aliev",
+        "rightKo": "Nurullo Aliev",
+        "weight": "Lightweight",
+        "section": "announced"
+      }
+    ]
   }
 ];

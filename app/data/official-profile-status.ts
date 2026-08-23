@@ -77,7 +77,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "heightCm": 183,
     "knockoutWins": 3,
     "reachCm": 190,
-    "record": "15-3-0",
+    "record": "15-4-0",
     "sourceUrl": "https://www.ufc.com/athlete/anthony-hernandez",
     "status": "Active",
     "submissionWins": 9
