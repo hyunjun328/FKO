@@ -47,8 +47,8 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
       {
         "left": "Liu Ce",
         "leftKo": "Liu Ce",
-        "right": "Junior Tafa",
-        "rightKo": "Junior Tafa",
+        "right": "Levi Rodrigues Jr.",
+        "rightKo": "Levi Rodrigues Jr.",
         "weight": "Light Heavyweight",
         "section": "announced"
       },
@@ -123,10 +123,10 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "venue": "Desert Diamond Arena Glendale , AZ United States",
     "bouts": [
       {
-        "left": "Yair Rodriguez",
-        "leftKo": "Yair Rodriguez",
-        "right": "Jean Silva",
-        "rightKo": "Jean Silva",
+        "left": "Jean Silva",
+        "leftKo": "Jean Silva",
+        "right": "Jose Miguel Delgado",
+        "rightKo": "Jose Miguel Delgado",
         "weight": "Featherweight",
         "section": "main"
       },
