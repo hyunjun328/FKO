@@ -4,6 +4,31 @@ export type AutoScheduledEvent = { id: string; title: string; date: string; sour
 
 export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
   {
+    "id": "ufcstats-2026-08-28-maheshate-vs-flowers",
+    "title": "Maheshate vs Flowers",
+    "date": "2026-08-28",
+    "sourceUrl": "https://www.ufc.com/event/road-to-ufc-season-5-semifinals",
+    "startUtc": "2026-08-28T09:00:00Z",
+    "bouts": [
+      {
+        "left": "Maheshate",
+        "leftKo": "Maheshate",
+        "right": "Darrius Flowers",
+        "rightKo": "Darrius Flowers",
+        "weight": "체급 확인 중",
+        "section": "main"
+      },
+      {
+        "left": "Yilizhati Maimaitijiang",
+        "leftKo": "Yilizhati Maimaitijiang",
+        "right": "Tre’ston Vines",
+        "rightKo": "Tre’ston Vines",
+        "weight": "체급 확인 중",
+        "section": "announced"
+      }
+    ]
+  },
+  {
     "id": "ufcstats-2026-08-29-nurmagomedov-vs-song",
     "title": "Nurmagomedov vs Song",
     "date": "2026-08-29",
@@ -109,6 +134,70 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "right": "Muhammad Naimov",
         "rightKo": "Muhammad Naimov",
         "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
+        "left": "Mario Pinto",
+        "leftKo": "Mario Pinto",
+        "right": "Ryan Spann",
+        "rightKo": "Ryan Spann",
+        "weight": "Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Kurtis Campbell",
+        "leftKo": "Kurtis Campbell",
+        "right": "Trevor Peek",
+        "rightKo": "Trevor Peek",
+        "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
+        "left": "Oumar Sy",
+        "leftKo": "Oumar Sy",
+        "right": "Modestas Bukauskas",
+        "rightKo": "Modestas Bukauskas",
+        "weight": "Light Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Nathaniel Wood",
+        "leftKo": "Nathaniel Wood",
+        "right": "Mairon Santos",
+        "rightKo": "Mairon Santos",
+        "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
+        "left": "Michael Aljarouj",
+        "leftKo": "Michael Aljarouj",
+        "right": "Fabia Sintes",
+        "rightKo": "Fabia Sintes",
+        "weight": "Flyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Nora Cornolle",
+        "leftKo": "Nora Cornolle",
+        "right": "Klaudia Sygula",
+        "rightKo": "Klaudia Sygula",
+        "weight": "Women's Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "Matthieu Letho Duclos",
+        "leftKo": "Matthieu Letho Duclos",
+        "right": "Luis Felipe Dias",
+        "rightKo": "Luis Felipe Dias",
+        "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Delphine Benouaich",
+        "leftKo": "Delphine Benouaich",
+        "right": "Sofia Montenegro",
+        "rightKo": "Sofia Montenegro",
+        "weight": "Women's Strawweight",
         "section": "announced"
       }
     ]
@@ -388,89 +477,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "right": "Gilbert Urbina",
         "rightKo": "Gilbert Urbina",
         "weight": "Middleweight",
-        "section": "announced"
-      }
-    ]
-  },
-  {
-    "id": "ufcstats-2026-10-24-volkanovski-vs-evloev",
-    "title": "Volkanovski vs Evloev",
-    "date": "2026-10-24",
-    "sourceUrl": "https://www.ufc.com/event/ufc-333",
-    "startUtc": "2026-10-24T18:00:00Z",
-    "prelimsUtc": "2026-10-24T16:00:00Z",
-    "venue": "Etihad Arena Abu Dhabi United Arab Emirates",
-    "bouts": [
-      {
-        "left": "Alexander Volkanovski",
-        "leftKo": "Alexander Volkanovski",
-        "right": "Movsar Evloev",
-        "rightKo": "Movsar Evloev",
-        "weight": "Featherweight Title",
-        "section": "main"
-      },
-      {
-        "left": "Petr Yan",
-        "leftKo": "Petr Yan",
-        "right": "Merab Dvalishvili",
-        "rightKo": "Merab Dvalishvili",
-        "weight": "Bantamweight Title",
-        "section": "announced"
-      },
-      {
-        "left": "Arnold Allen",
-        "leftKo": "Arnold Allen",
-        "right": "Aaron Pico",
-        "rightKo": "Aaron Pico",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
-        "left": "Azamat Murzakanov",
-        "leftKo": "Azamat Murzakanov",
-        "right": "Dominick Reyes",
-        "rightKo": "Dominick Reyes",
-        "weight": "Light Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Lone’er Kavanagh",
-        "leftKo": "Lone’er Kavanagh",
-        "right": "Ramazan Temirov",
-        "rightKo": "Ramazan Temirov",
-        "weight": "Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Nikita Krylov",
-        "leftKo": "Nikita Krylov",
-        "right": "Abdul Rakhman Yakhyaev",
-        "rightKo": "Abdul Rakhman Yakhyaev",
-        "weight": "Light Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Alexander Volkov",
-        "leftKo": "Alexander Volkov",
-        "right": "Rizvan Kuniev",
-        "rightKo": "Rizvan Kuniev",
-        "weight": "Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Abus Magomedov",
-        "leftKo": "Abus Magomedov",
-        "right": "Cam Rowston",
-        "rightKo": "Cam Rowston",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Grant Dawson",
-        "leftKo": "Grant Dawson",
-        "right": "Nurullo Aliev",
-        "rightKo": "Nurullo Aliev",
-        "weight": "Lightweight",
         "section": "announced"
       }
     ]

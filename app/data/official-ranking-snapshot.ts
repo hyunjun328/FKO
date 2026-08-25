@@ -2,7 +2,7 @@
 export type OfficialRankingSnapshot = { checkedAt: string; divisions: Record<string, { champion?: string; entries: string[] }>; mensP4p: string[]; womensP4p: string[] };
 
 export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
-  "checkedAt": "2026-08-23",
+  "checkedAt": "2026-08-25",
   "divisions": {
     "flyweight": {
       "champion": "Joshua Van",
@@ -38,8 +38,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Farid Basharat",
         "Marcus McGhee",
         "Deiveson Figueiredo",
-        "Aiemann Zahabi",
         "Charles Jourdain",
+        "Aiemann Zahabi",
         "Bryce Mitchell",
         "Montel Jackson"
       ]
@@ -60,8 +60,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Melquizael Costa",
         "Steve Garcia",
         "Aaron Pico",
-        "Jose Miguel Delgado",
-        "Joanderson Brito"
+        "Jamall Emmers",
+        "Jose Miguel Delgado"
       ]
     },
     "lightweight": {
@@ -113,10 +113,10 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Joe Pyfer",
         "Brendan Allen",
         "Caio Borralho",
-        "Anthony Hernandez",
-        "Michael Venom Page",
-        "Israel Adesanya",
         "Gregory Rodrigues",
+        "Michael Venom Page",
+        "Anthony Hernandez",
+        "Israel Adesanya",
         "Christian Leroy Duncan",
         "Ikram Aliskerov",
         "Bo Nickal",
@@ -135,13 +135,13 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Khalil Rountree Jr.",
         "Navajo Stirling",
         "Dominick Reyes",
+        "Reinier de Ridder",
         "Azamat Murzakanov",
         "Bogdan Guskov",
         "Robert Whittaker",
         "Alonzo Menifield",
         "Johnny Walker",
-        "Muhammad Saidov",
-        "Iwo Baraniewski"
+        "Muhammad Saidov"
       ]
     },
     "heavyweight": {
@@ -154,12 +154,12 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Rizvan Kuniev",
         "Josh Hokit",
         "Waldo Cortes Acosta",
-        "Valter Walker",
-        "Serghei Spivac",
-        "Curtis Blaydes",
         "Vitor Petrino",
+        "Valter Walker",
+        "Curtis Blaydes",
         "Brando Peričić",
         "Mario Pinto",
+        "Serghei Spivac",
         "Mick Parkin",
         "Ryan Spann"
       ]
@@ -180,8 +180,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Loopy Godinez",
         "Tabatha Ricci",
         "Jaqueline Amorim",
-        "Amanda Lemos",
-        "Talita Alencar"
+        "Talita Alencar",
+        "Amanda Lemos"
       ]
     },
     "womens-flyweight": {
@@ -201,7 +201,7 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "JJ Aldrich",
         "Karine Silva",
         "Eduarda Moura",
-        "Casey O'Neill"
+        "Carli Judice"
       ]
     },
     "womens-bantamweight": {
