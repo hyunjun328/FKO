@@ -114,8 +114,8 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2026-09-12-rodriguez-vs-silva",
-    "title": "Rodriguez vs Silva",
+    "id": "ufcstats-2026-09-12-silva-vs-delgado",
+    "title": "Silva vs Delgado",
     "date": "2026-09-12",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-september-12-2026",
     "startUtc": "2026-09-12T21:00:00Z",
