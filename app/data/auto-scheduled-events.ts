@@ -121,6 +121,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
+        "left": "Daniil Donchenko",
+        "leftKo": "Daniil Donchenko",
+        "right": "Punahele Soriano",
+        "rightKo": "Punahele Soriano",
+        "weight": "Welterweight",
+        "section": "announced"
+      },
+      {
         "left": "Morgan Charriere",
         "leftKo": "Morgan Charriere",
         "right": "Felipe Lima",
@@ -328,6 +336,86 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "rightKo": "Raoni Barcelos",
         "weight": "Bantamweight",
         "section": "main"
+      },
+      {
+        "left": "Melissa Amaya",
+        "leftKo": "Melissa Amaya",
+        "right": "Valesca Machado",
+        "rightKo": "Valesca Machado",
+        "weight": "Women's Strawweight",
+        "section": "announced"
+      },
+      {
+        "left": "Mehemmedeli Osmanli",
+        "leftKo": "Mehemmedeli Osmanli",
+        "right": "Ilimbek Akylbek Uulu",
+        "rightKo": "Ilimbek Akylbek Uulu",
+        "weight": "Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "Montel Jackson",
+        "leftKo": "Montel Jackson",
+        "right": "Ricky Simon",
+        "rightKo": "Ricky Simon",
+        "weight": "Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "Rodolfo Bellato",
+        "leftKo": "Rodolfo Bellato",
+        "right": "Christian Edwards",
+        "rightKo": "Christian Edwards",
+        "weight": "Light Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Rodolfo Vieira",
+        "leftKo": "Rodolfo Vieira",
+        "right": "Robert Bryczek",
+        "rightKo": "Robert Bryczek",
+        "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Brady Hiestand",
+        "leftKo": "Brady Hiestand",
+        "right": "Rinya Nakamura",
+        "rightKo": "Rinya Nakamura",
+        "weight": "Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "John Castaneda",
+        "leftKo": "John Castaneda",
+        "right": "Alatengheili",
+        "rightKo": "Alatengheili",
+        "weight": "Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "Josiah Harrell",
+        "leftKo": "Josiah Harrell",
+        "right": "Elves Brener",
+        "rightKo": "Elves Brener",
+        "weight": "Lightweight",
+        "section": "announced"
+      },
+      {
+        "left": "Norma Dumont",
+        "leftKo": "Norma Dumont",
+        "right": "Ailin Perez",
+        "rightKo": "Ailin Perez",
+        "weight": "Women's Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "Vanessa Demopoulos",
+        "leftKo": "Vanessa Demopoulos",
+        "right": "Yazmin Jauregui",
+        "rightKo": "Yazmin Jauregui",
+        "weight": "Women's Strawweight",
+        "section": "announced"
       }
     ]
   },
