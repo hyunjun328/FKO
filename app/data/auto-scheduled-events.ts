@@ -4,31 +4,6 @@ export type AutoScheduledEvent = { id: string; title: string; date: string; sour
 
 export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
   {
-    "id": "ufcstats-2026-08-28-maheshate-vs-flowers",
-    "title": "Maheshate vs Flowers",
-    "date": "2026-08-28",
-    "sourceUrl": "https://www.ufc.com/event/road-to-ufc-season-5-semifinals",
-    "startUtc": "2026-08-28T09:00:00Z",
-    "bouts": [
-      {
-        "left": "Maheshate",
-        "leftKo": "Maheshate",
-        "right": "Darrius Flowers",
-        "rightKo": "Darrius Flowers",
-        "weight": "체급 확인 중",
-        "section": "main"
-      },
-      {
-        "left": "Yilizhati Maimaitijiang",
-        "leftKo": "Yilizhati Maimaitijiang",
-        "right": "Tre’ston Vines",
-        "rightKo": "Tre’ston Vines",
-        "weight": "체급 확인 중",
-        "section": "announced"
-      }
-    ]
-  },
-  {
     "id": "ufcstats-2026-08-29-nurmagomedov-vs-song",
     "title": "Nurmagomedov vs Song",
     "date": "2026-08-29",
