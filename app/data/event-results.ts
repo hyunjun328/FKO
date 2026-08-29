@@ -9,7 +9,7 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-fight-night-belgrade-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-Fight-Night-283-Medic-vs-Rodriguez-112723",
-    "verifiedAt": "2026-08-28T23:59:37.383425+00:00",
+    "verifiedAt": "2026-08-29T09:47:48.204557+00:00",
     "bouts": [
       {
         "winner": "Uros Medic",
@@ -115,7 +115,7 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-fight-night-gamrot-salkilld-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-Fight-Night-284-Gamrot-vs-Salkilld-112957",
-    "verifiedAt": "2026-08-28T23:59:37.749325+00:00",
+    "verifiedAt": "2026-08-29T09:47:49.885085+00:00",
     "bouts": [
       {
         "winner": "Quillan Salkilld",
@@ -207,7 +207,7 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-330-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-330-Makhachev-vs-Garry-112557",
-    "verifiedAt": "2026-08-28T23:59:38.126047+00:00",
+    "verifiedAt": "2026-08-29T09:47:50.105428+00:00",
     "bouts": [
       {
         "winner": "Islam Makhachev",
@@ -299,7 +299,7 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-fight-night-sacramento-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-Fight-Night-285-Hernandez-vs-Rodrigues-113260",
-    "verifiedAt": "2026-08-28T23:59:38.520280+00:00",
+    "verifiedAt": "2026-08-29T09:47:50.206389+00:00",
     "bouts": [
       {
         "winner": "Gregory Rodrigues",
@@ -391,6 +391,56 @@ export const EVENT_RESULTS: EventResult[] = [
         "method": "TKO (Punches)",
         "round": 3,
         "time": "1:42"
+      }
+    ]
+  },
+  {
+    "eventId": "ufc-fight-night-shanghai-2026",
+    "completed": true,
+    "sourceUrl": "https://www.sherdog.com/events/UFC-Fight-Night-286-Nurmagomedov-vs-Song-113007",
+    "verifiedAt": "2026-08-29T09:47:50.325189+00:00",
+    "bouts": [
+      {
+        "winner": "Rei Tsuruya",
+        "loser": "Kevin Borjas",
+        "method": "Submission (Rear-Naked Choke)",
+        "round": 1,
+        "time": "4:14"
+      },
+      {
+        "winner": "Sean Woodson",
+        "loser": "Jack Jenkins",
+        "method": "Decision (Split)",
+        "round": 3,
+        "time": "5:00"
+      },
+      {
+        "winner": "Francesco Nuzzi",
+        "loser": "Long Xiao",
+        "method": "TKO (Punches)",
+        "round": 1,
+        "time": "1:00"
+      },
+      {
+        "winner": "Hector Santiago",
+        "loser": "Lawrence Lui",
+        "method": "KO (Punches)",
+        "round": 2,
+        "time": "0:53"
+      },
+      {
+        "winner": "Julia Polastri",
+        "loser": "Jingnan Xiong",
+        "method": "KO (Head Kick)",
+        "round": 1,
+        "time": "3:06"
+      },
+      {
+        "winner": "Cameron Nelson",
+        "loser": "Meng Ding",
+        "method": "Decision (Unanimous)",
+        "round": 3,
+        "time": "5:00"
       }
     ]
   }
