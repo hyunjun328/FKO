@@ -898,7 +898,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "heightCm": 173,
     "knockoutWins": 9,
     "reachCm": 170,
-    "record": "23-9-1",
+    "record": "24-9-1",
     "sourceUrl": "https://www.ufc.com/athlete/song-yadong",
     "status": "Active",
     "submissionWins": 4
@@ -964,7 +964,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "heightCm": 173,
     "knockoutWins": 2,
     "reachCm": 175,
-    "record": "20-1-0",
+    "record": "20-2-0",
     "sourceUrl": "https://www.ufc.com/athlete/umar-nurmagomedov",
     "status": "Active",
     "submissionWins": 7

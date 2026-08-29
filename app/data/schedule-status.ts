@@ -1,2 +1,2 @@
 // 12시간마다 실행한 일정 수집 시각을 화면에 제공한다.
-export const SCHEDULE_CHECKED_AT = "2026-08-29T09:47:42.987Z";
+export const SCHEDULE_CHECKED_AT = "2026-08-29T18:12:32.290Z";

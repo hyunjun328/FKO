@@ -4,65 +4,6 @@ export type AutoScheduledEvent = { id: string; title: string; date: string; sour
 
 export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
   {
-    "id": "ufcstats-2026-08-29-nurmagomedov-vs-song",
-    "title": "Nurmagomedov vs Song",
-    "date": "2026-08-29",
-    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-august-29-2026",
-    "startUtc": "2026-08-29T10:00:00Z",
-    "prelimsUtc": "2026-08-29T07:00:00Z",
-    "venue": "Oriental Sports Center Pudong District China",
-    "bouts": [
-      {
-        "left": "Umar Nurmagomedov",
-        "leftKo": "Umar Nurmagomedov",
-        "right": "Song Yadong",
-        "rightKo": "Song Yadong",
-        "weight": "Bantamweight",
-        "section": "main"
-      },
-      {
-        "left": "Yan Xiaonan",
-        "leftKo": "Yan Xiaonan",
-        "right": "Denise Gomes",
-        "rightKo": "Denise Gomes",
-        "weight": "Women's Strawweight",
-        "section": "announced"
-      },
-      {
-        "left": "Aoriqileng",
-        "leftKo": "Aoriqileng",
-        "right": "Kai Asakura",
-        "rightKo": "Kai Asakura",
-        "weight": "Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "Alex Perez",
-        "leftKo": "Alex Perez",
-        "right": "Sumudaerji",
-        "rightKo": "Sumudaerji",
-        "weight": "Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Liu Ce",
-        "leftKo": "Liu Ce",
-        "right": "Levi Rodrigues Jr.",
-        "rightKo": "Levi Rodrigues Jr.",
-        "weight": "Light Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Bilal Hasan",
-        "leftKo": "Bilal Hasan",
-        "right": "Nilson Rojas",
-        "rightKo": "Nilson Rojas",
-        "weight": "Flyweight",
-        "section": "announced"
-      }
-    ]
-  },
-  {
     "id": "ufcstats-2026-09-05-hooker-vs-parnasse",
     "title": "Hooker vs Parnasse",
     "date": "2026-09-05",
@@ -624,6 +565,25 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "rightKo": "Nurullo Aliev",
         "weight": "Lightweight",
         "section": "announced"
+      }
+    ]
+  },
+  {
+    "id": "ufcstats-2026-11-07-bonfim-vs-brady",
+    "title": "Bonfim vs Brady",
+    "date": "2026-11-07",
+    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-november-07-2026",
+    "startUtc": "2026-11-07T22:00:00Z",
+    "prelimsUtc": "2026-11-07T20:00:00Z",
+    "venue": "Meta APEX Las Vegas , NV United States",
+    "bouts": [
+      {
+        "left": "Gabriel Bonfim",
+        "leftKo": "Gabriel Bonfim",
+        "right": "Sean Brady",
+        "rightKo": "Sean Brady",
+        "weight": "Welterweight",
+        "section": "main"
       }
     ]
   }

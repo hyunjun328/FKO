@@ -9,7 +9,7 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-fight-night-belgrade-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-Fight-Night-283-Medic-vs-Rodriguez-112723",
-    "verifiedAt": "2026-08-29T09:47:48.204557+00:00",
+    "verifiedAt": "2026-08-29T18:12:36.117386+00:00",
     "bouts": [
       {
         "winner": "Uros Medic",
@@ -115,7 +115,7 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-fight-night-gamrot-salkilld-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-Fight-Night-284-Gamrot-vs-Salkilld-112957",
-    "verifiedAt": "2026-08-29T09:47:49.885085+00:00",
+    "verifiedAt": "2026-08-29T18:12:36.356675+00:00",
     "bouts": [
       {
         "winner": "Quillan Salkilld",
@@ -207,7 +207,7 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-330-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-330-Makhachev-vs-Garry-112557",
-    "verifiedAt": "2026-08-29T09:47:50.105428+00:00",
+    "verifiedAt": "2026-08-29T18:12:36.552725+00:00",
     "bouts": [
       {
         "winner": "Islam Makhachev",
@@ -299,7 +299,7 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-fight-night-sacramento-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-Fight-Night-285-Hernandez-vs-Rodrigues-113260",
-    "verifiedAt": "2026-08-29T09:47:50.206389+00:00",
+    "verifiedAt": "2026-08-29T18:12:36.768394+00:00",
     "bouts": [
       {
         "winner": "Gregory Rodrigues",
@@ -398,8 +398,57 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-fight-night-shanghai-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-Fight-Night-286-Nurmagomedov-vs-Song-113007",
-    "verifiedAt": "2026-08-29T09:47:50.325189+00:00",
+    "verifiedAt": "2026-08-29T18:12:36.854430+00:00",
     "bouts": [
+      {
+        "winner": "Yadong Song",
+        "loser": "Umar Nurmagomedov",
+        "method": "KO (Punch)",
+        "round": 2,
+        "time": "1:48"
+      },
+      {
+        "winner": "Denise Gomes",
+        "loser": "Xiaonan Yan",
+        "method": "KO (Elbow and Punches)",
+        "round": 1,
+        "time": "4:49"
+      },
+      {
+        "winner": "Kai Asakura",
+        "loser": "Qileng Aori",
+        "method": "TKO (Head Kick and Punches)",
+        "round": 2,
+        "time": "0:34"
+      },
+      {
+        "winner": "Su Mudaerji",
+        "loser": "Alex Perez",
+        "method": "Decision (Unanimous)",
+        "round": 3,
+        "time": "5:00"
+      },
+      {
+        "winner": "Ce Liu",
+        "loser": "Levi Rodrigues",
+        "method": "KO (Punch)",
+        "round": 1,
+        "time": "4:26"
+      },
+      {
+        "winner": "Bilal Hasan",
+        "loser": "Nilson Rojas",
+        "method": "KO (Punch)",
+        "round": 2,
+        "time": "2:28"
+      },
+      {
+        "winner": "Andre Lima",
+        "loser": "Namsrai Batbayar",
+        "method": "Submission (Guillotine Choke)",
+        "round": 3,
+        "time": "3:03"
+      },
       {
         "winner": "Rei Tsuruya",
         "loser": "Kevin Borjas",
