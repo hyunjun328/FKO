@@ -59,70 +59,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "rightKo": "Muhammad Naimov",
         "weight": "Featherweight",
         "section": "announced"
-      },
-      {
-        "left": "Mario Pinto",
-        "leftKo": "Mario Pinto",
-        "right": "Ryan Spann",
-        "rightKo": "Ryan Spann",
-        "weight": "Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Kurtis Campbell",
-        "leftKo": "Kurtis Campbell",
-        "right": "Trevor Peek",
-        "rightKo": "Trevor Peek",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
-        "left": "Oumar Sy",
-        "leftKo": "Oumar Sy",
-        "right": "Modestas Bukauskas",
-        "rightKo": "Modestas Bukauskas",
-        "weight": "Light Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Nathaniel Wood",
-        "leftKo": "Nathaniel Wood",
-        "right": "Mairon Santos",
-        "rightKo": "Mairon Santos",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
-        "left": "Michael Aljarouj",
-        "leftKo": "Michael Aljarouj",
-        "right": "Fabia Sintes",
-        "rightKo": "Fabia Sintes",
-        "weight": "Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Nora Cornolle",
-        "leftKo": "Nora Cornolle",
-        "right": "Klaudia Sygula",
-        "rightKo": "Klaudia Sygula",
-        "weight": "Women's Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "Matthieu Letho Duclos",
-        "leftKo": "Matthieu Letho Duclos",
-        "right": "Luis Felipe Dias",
-        "rightKo": "Luis Felipe Dias",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Delphine Benouaich",
-        "leftKo": "Delphine Benouaich",
-        "right": "Sofia Montenegro",
-        "rightKo": "Sofia Montenegro",
-        "weight": "Women's Strawweight",
-        "section": "announced"
       }
     ]
   },
@@ -403,6 +339,15 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
+    "id": "ufcstats-2026-10-11-tbd-vs-tbd",
+    "title": "TBD vs TBD",
+    "date": "2026-10-11",
+    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-october-10-2026",
+    "startUtc": "2026-10-11T00:00:00Z",
+    "prelimsUtc": "2026-10-10T21:00:00Z",
+    "venue": "Meta APEX Las Vegas , NV United States"
+  },
+  {
     "id": "ufcstats-2026-10-18-buckley-vs-malott",
     "title": "Buckley vs Malott",
     "date": "2026-10-18",
@@ -565,25 +510,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "rightKo": "Nurullo Aliev",
         "weight": "Lightweight",
         "section": "announced"
-      }
-    ]
-  },
-  {
-    "id": "ufcstats-2026-11-07-bonfim-vs-brady",
-    "title": "Bonfim vs Brady",
-    "date": "2026-11-07",
-    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-november-07-2026",
-    "startUtc": "2026-11-07T22:00:00Z",
-    "prelimsUtc": "2026-11-07T20:00:00Z",
-    "venue": "Meta APEX Las Vegas , NV United States",
-    "bouts": [
-      {
-        "left": "Gabriel Bonfim",
-        "leftKo": "Gabriel Bonfim",
-        "right": "Sean Brady",
-        "rightKo": "Sean Brady",
-        "weight": "Welterweight",
-        "section": "main"
       }
     ]
   }
