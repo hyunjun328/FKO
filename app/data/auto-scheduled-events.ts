@@ -45,18 +45,18 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Morgan Charriere",
-        "leftKo": "Morgan Charriere",
-        "right": "Felipe Lima",
-        "rightKo": "Felipe Lima",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
         "left": "Losene Keita",
         "leftKo": "Losene Keita",
         "right": "Muhammad Naimov",
         "rightKo": "Muhammad Naimov",
+        "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
+        "left": "Morgan Charriere",
+        "leftKo": "Morgan Charriere",
+        "right": "Felipe Lima",
+        "rightKo": "Felipe Lima",
         "weight": "Featherweight",
         "section": "announced"
       }

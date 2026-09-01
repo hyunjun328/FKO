@@ -2,7 +2,7 @@
 export type OfficialRankingSnapshot = { checkedAt: string; divisions: Record<string, { champion?: string; entries: string[] }>; mensP4p: string[]; womensP4p: string[] };
 
 export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
-  "checkedAt": "2026-08-30",
+  "checkedAt": "2026-09-01",
   "divisions": {
     "flyweight": {
       "champion": "Joshua Van",
@@ -17,9 +17,9 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Kyoji Horiguchi",
         "Amir Albazi",
         "Brandon Moreno",
-        "Kevin Borjas",
-        "Mitch Raposo",
         "Sumudaerji",
+        "Mitch Raposo",
+        "Rei Tsuruya",
         "Charles Johnson",
         "Alessandro Costa"
       ]
@@ -28,11 +28,11 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
       "champion": "Petr Yan",
       "entries": [
         "Merab Dvalishvili",
-        "Umar Nurmagomedov",
         "Sean O'Malley",
-        "Mario Bautista",
-        "Cory Sandhagen",
         "Song Yadong",
+        "Mario Bautista",
+        "Umar Nurmagomedov",
+        "Cory Sandhagen",
         "David Martinez",
         "Raoni Barcelos",
         "Farid Basharat",
@@ -170,12 +170,12 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Zhang Weili",
         "Virna Jandiroba",
         "Tatiana Suarez",
-        "Yan Xiaonan",
+        "Denise Gomes",
         "Gillian Robertson",
         "Fatima Kline",
         "Alexia Thainara",
         "Piera Rodriguez",
-        "Denise Gomes",
+        "Yan Xiaonan",
         "Mizuki",
         "Loopy Godinez",
         "Tabatha Ricci",
@@ -251,12 +251,12 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
     "Manon Fiorot",
     "Alexa Grasso",
     "Erin Blanchfield",
-    "Julianna Peña",
     "Tatiana Suarez",
+    "Julianna Peña",
     "Virna Jandiroba",
-    "Yan Xiaonan",
-    "Raquel Pennington",
     "Rose Namajunas",
+    "Raquel Pennington",
+    "Yan Xiaonan",
     "Maycee Barber"
   ]
 };
