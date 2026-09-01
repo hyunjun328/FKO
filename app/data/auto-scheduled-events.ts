@@ -339,13 +339,23 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2026-10-11-tbd-vs-tbd",
-    "title": "TBD vs TBD",
+    "id": "ufcstats-2026-10-11-allen-vs-duncan",
+    "title": "Allen vs Duncan",
     "date": "2026-10-11",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-october-10-2026",
     "startUtc": "2026-10-11T00:00:00Z",
     "prelimsUtc": "2026-10-10T21:00:00Z",
-    "venue": "Meta APEX Las Vegas , NV United States"
+    "venue": "Meta APEX Las Vegas , NV United States",
+    "bouts": [
+      {
+        "left": "Brendan Allen",
+        "leftKo": "Brendan Allen",
+        "right": "Christian Leroy Duncan",
+        "rightKo": "Christian Leroy Duncan",
+        "weight": "Middleweight",
+        "section": "main"
+      }
+    ]
   },
   {
     "id": "ufcstats-2026-10-18-buckley-vs-malott",
