@@ -45,18 +45,18 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Losene Keita",
-        "leftKo": "Losene Keita",
-        "right": "Muhammad Naimov",
-        "rightKo": "Muhammad Naimov",
+        "left": "Kurtis Campbell",
+        "leftKo": "Kurtis Campbell",
+        "right": "Trevor Peek",
+        "rightKo": "Trevor Peek",
         "weight": "Featherweight",
         "section": "announced"
       },
       {
-        "left": "Morgan Charriere",
-        "leftKo": "Morgan Charriere",
-        "right": "Felipe Lima",
-        "rightKo": "Felipe Lima",
+        "left": "Losene Keita",
+        "leftKo": "Losene Keita",
+        "right": "Muhammad Naimov",
+        "rightKo": "Muhammad Naimov",
         "weight": "Featherweight",
         "section": "announced"
       }
@@ -310,6 +310,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "right": "Roman Kopylov",
         "rightKo": "Roman Kopylov",
         "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Imanol Rodriguez",
+        "leftKo": "Imanol Rodriguez",
+        "right": "Alden Coria",
+        "rightKo": "Alden Coria",
+        "weight": "Flyweight",
         "section": "announced"
       },
       {
