@@ -313,14 +313,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Imanol Rodriguez",
-        "leftKo": "Imanol Rodriguez",
-        "right": "Alden Coria",
-        "rightKo": "Alden Coria",
-        "weight": "Flyweight",
-        "section": "announced"
-      },
-      {
         "left": "Damian Pinas",
         "leftKo": "Damian Pinas",
         "right": "Andrey Pulyaev",
