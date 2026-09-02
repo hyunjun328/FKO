@@ -12,6 +12,19 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "file": "Wrestler Aaron Pico 2014.png"
   },
+  "Abus Magomedov": {
+    "src": "/fighters/abus-magomedov.webp",
+    "groups": [
+      "ranking",
+      "world-ranking"
+    ],
+    "wikidataId": "Q66132201",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abusupiyan_Magomedov_on_Rue_Saint-Honor%C3%A9,_Paris,_2026-02-13_(cropped).jpg",
+    "author": "Verisurma",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "file": "Abusupiyan Magomedov on Rue Saint-Honoré, Paris, 2026-02-13 (cropped).jpg"
+  },
   "Aiemann Zahabi": {
     "src": "/fighters/aiemann-zahabi.webp",
     "groups": [
