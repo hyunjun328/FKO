@@ -2,7 +2,7 @@
 export type OfficialRankingSnapshot = { checkedAt: string; divisions: Record<string, { champion?: string; entries: string[] }>; mensP4p: string[]; womensP4p: string[] };
 
 export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
-  "checkedAt": "2026-09-01",
+  "checkedAt": "2026-09-03",
   "divisions": {
     "flyweight": {
       "champion": "Joshua Van",
@@ -221,7 +221,7 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Macy Chiasson",
         "Daria Zhelezniakova",
         "Raquel Pennington",
-        "Klaudia Sygula"
+        "Klaudia Syguła"
       ]
     }
   },
