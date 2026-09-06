@@ -4,65 +4,6 @@ export type AutoScheduledEvent = { id: string; title: string; date: string; sour
 
 export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
   {
-    "id": "ufcstats-2026-09-05-hooker-vs-parnasse",
-    "title": "Hooker vs Parnasse",
-    "date": "2026-09-05",
-    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-september-05-2026",
-    "startUtc": "2026-09-05T19:00:00Z",
-    "prelimsUtc": "2026-09-05T16:00:00Z",
-    "venue": "Accor Arena Paris France",
-    "bouts": [
-      {
-        "left": "Dan Hooker",
-        "leftKo": "Dan Hooker",
-        "right": "Salahdine Parnasse",
-        "rightKo": "Salahdine Parnasse",
-        "weight": "Lightweight",
-        "section": "main"
-      },
-      {
-        "left": "Farès Ziam",
-        "leftKo": "Farès Ziam",
-        "right": "Axel Sola",
-        "rightKo": "Axel Sola",
-        "weight": "Lightweight",
-        "section": "announced"
-      },
-      {
-        "left": "Michael Venom Page",
-        "leftKo": "Michael Venom Page",
-        "right": "Nursulton Ruziboev",
-        "rightKo": "Nursulton Ruziboev",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Daniil Donchenko",
-        "leftKo": "Daniil Donchenko",
-        "right": "Punahele Soriano",
-        "rightKo": "Punahele Soriano",
-        "weight": "Welterweight",
-        "section": "announced"
-      },
-      {
-        "left": "Kurtis Campbell",
-        "leftKo": "Kurtis Campbell",
-        "right": "Trevor Peek",
-        "rightKo": "Trevor Peek",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
-        "left": "Losene Keita",
-        "leftKo": "Losene Keita",
-        "right": "Muhammad Naimov",
-        "rightKo": "Muhammad Naimov",
-        "weight": "Featherweight",
-        "section": "announced"
-      }
-    ]
-  },
-  {
     "id": "ufcstats-2026-09-12-silva-vs-delgado",
     "title": "Silva vs Delgado",
     "date": "2026-09-12",
@@ -272,36 +213,36 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2026-10-04-tbd-vs-tbd",
-    "title": "TBD vs TBD",
+    "id": "ufcstats-2026-10-04-silva-vs-wang",
+    "title": "Silva vs Wang",
     "date": "2026-10-04",
     "sourceUrl": "https://www.ufc.com/event/ufc-332",
-    "startUtc": "2026-10-04T01:00:00Z",
-    "prelimsUtc": "2026-10-03T23:00:00Z",
+    "startUtc": "2026-10-04T00:00:00Z",
+    "prelimsUtc": "2026-10-03T22:00:00Z",
     "venue": "Delta Center Salt Lake City , UT United States",
     "bouts": [
+      {
+        "left": "Natalia Silva",
+        "leftKo": "Natalia Silva",
+        "right": "Wang Cong",
+        "rightKo": "Wang Cong",
+        "weight": "Women's Flyweight Title",
+        "section": "main"
+      },
       {
         "left": "Deiveson Figueiredo",
         "leftKo": "Deiveson Figueiredo",
         "right": "Payton Talbott",
         "rightKo": "Payton Talbott",
         "weight": "Bantamweight",
-        "section": "main"
-      },
-      {
-        "left": "Johnny Walker",
-        "leftKo": "Johnny Walker",
-        "right": "Mick Parkin",
-        "rightKo": "Mick Parkin",
-        "weight": "Heavyweight",
         "section": "announced"
       },
       {
-        "left": "Marvin Vettori",
-        "leftKo": "Marvin Vettori",
-        "right": "Ismail Naurdiev",
-        "rightKo": "Ismail Naurdiev",
-        "weight": "Middleweight",
+        "left": "Khaos Williams",
+        "leftKo": "Khaos Williams",
+        "right": "Roberto Soldic",
+        "rightKo": "Roberto Soldic",
+        "weight": "Welterweight",
         "section": "announced"
       },
       {
@@ -325,6 +266,46 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Damian Pinas",
         "right": "Andrey Pulyaev",
         "rightKo": "Andrey Pulyaev",
+        "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Marcus McGhee",
+        "leftKo": "Marcus McGhee",
+        "right": "Benardo Sopaj",
+        "rightKo": "Benardo Sopaj",
+        "weight": "Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "King Green",
+        "leftKo": "King Green",
+        "right": "Esteban Ribovics",
+        "rightKo": "Esteban Ribovics",
+        "weight": "Lightweight",
+        "section": "announced"
+      },
+      {
+        "left": "Johnny Walker",
+        "leftKo": "Johnny Walker",
+        "right": "Mick Parkin",
+        "rightKo": "Mick Parkin",
+        "weight": "Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Rafael Dos Anjos",
+        "leftKo": "Rafael Dos Anjos",
+        "right": "Alexander Hernandez",
+        "rightKo": "Alexander Hernandez",
+        "weight": "Lightweight",
+        "section": "announced"
+      },
+      {
+        "left": "Marvin Vettori",
+        "leftKo": "Marvin Vettori",
+        "right": "Ismail Naurdiev",
+        "rightKo": "Ismail Naurdiev",
         "weight": "Middleweight",
         "section": "announced"
       },
@@ -519,6 +500,33 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "right": "Nurullo Aliev",
         "rightKo": "Nurullo Aliev",
         "weight": "Lightweight",
+        "section": "announced"
+      }
+    ]
+  },
+  {
+    "id": "ufcstats-2026-11-01-tbd-vs-tbd",
+    "title": "TBD vs TBD",
+    "date": "2026-11-01",
+    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-october-31-2026",
+    "startUtc": "2026-11-01T00:00:00Z",
+    "prelimsUtc": "2026-10-31T21:00:00Z",
+    "venue": "Meta APEX Las Vegas , NV United States",
+    "bouts": [
+      {
+        "left": "Lucia Szabova",
+        "leftKo": "Lucia Szabova",
+        "right": "Tainara Lisboa",
+        "rightKo": "Tainara Lisboa",
+        "weight": "Women's Flyweight",
+        "section": "main"
+      },
+      {
+        "left": "Nick Klein",
+        "leftKo": "Nick Klein",
+        "right": "Joseph Kropschot",
+        "rightKo": "Joseph Kropschot",
+        "weight": "Middleweight",
         "section": "announced"
       }
     ]
