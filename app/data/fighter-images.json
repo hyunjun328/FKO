@@ -214,18 +214,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
     "file": "Anderson Silva.jpg"
   },
-  "Andre Muniz": {
-    "src": "/fighters/andre-muniz.webp",
-    "groups": [
-      "world-ranking"
-    ],
-    "wikidataId": "Q20047921",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Andre_Sergipano.jpg",
-    "author": "André Sergipano Muniz",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "file": "Andre Sergipano.jpg"
-  },
   "Anthony Pettis": {
     "src": "/fighters/anthony-pettis.webp",
     "groups": [
