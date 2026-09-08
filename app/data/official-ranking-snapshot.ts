@@ -2,7 +2,7 @@
 export type OfficialRankingSnapshot = { checkedAt: string; divisions: Record<string, { champion?: string; entries: string[] }>; mensP4p: string[]; womensP4p: string[] };
 
 export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
-  "checkedAt": "2026-09-06",
+  "checkedAt": "2026-09-08",
   "divisions": {
     "flyweight": {
       "champion": "Joshua Van",
@@ -28,8 +28,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
       "champion": "Petr Yan",
       "entries": [
         "Merab Dvalishvili",
-        "Sean O'Malley",
         "Song Yadong",
+        "Sean O'Malley",
         "Mario Bautista",
         "Umar Nurmagomedov",
         "Cory Sandhagen",
@@ -54,7 +54,7 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Arnold Allen",
         "Jean Silva",
         "Pat Sabatini",
-        "Nathaniel Wood",
+        "Pavel Andrusca",
         "Youssef Zalal",
         "Kevin Vallejos",
         "Melquizael Costa",
@@ -78,10 +78,10 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Mateusz Gamrot",
         "Mauricio Ruffy",
         "Tom Nolan",
-        "Dan Hooker",
         "Rafael Fiziev",
         "Tofiq Musayev",
-        "Grant Dawson"
+        "Grant Dawson",
+        "Rafa Garcia"
       ]
     },
     "welterweight": {
@@ -97,8 +97,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Leon Edwards",
         "Joaquin Buckley",
         "Uroš Medić",
-        "Kamaru Usman",
         "Mike Malott",
+        "Kamaru Usman",
         "Yaroslav Amosov",
         "Kevin Holland",
         "Daniel Rodriguez"
@@ -121,7 +121,7 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Ikram Aliskerov",
         "Bo Nickal",
         "Abus Magomedov",
-        "Nursulton Ruziboev"
+        "Jared Cannonier"
       ]
     },
     "light-heavyweight": {
@@ -155,13 +155,13 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Josh Hokit",
         "Waldo Cortes Acosta",
         "Vitor Petrino",
+        "Mario Pinto",
         "Valter Walker",
         "Curtis Blaydes",
         "Brando Peričić",
-        "Mario Pinto",
         "Serghei Spivac",
         "Mick Parkin",
-        "Ryan Spann"
+        "Shamil Gaziev"
       ]
     },
     "womens-strawweight": {
@@ -218,10 +218,10 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Melissa Croden",
         "Karol Rosa",
         "Bia Mesquita",
+        "Nora Cornolle",
         "Macy Chiasson",
         "Daria Zhelezniakova",
-        "Raquel Pennington",
-        "Klaudia Syguła"
+        "Raquel Pennington"
       ]
     }
   },
@@ -256,7 +256,7 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
     "Virna Jandiroba",
     "Rose Namajunas",
     "Raquel Pennington",
-    "Yan Xiaonan",
+    "Denise Gomes",
     "Maycee Barber"
   ]
 };

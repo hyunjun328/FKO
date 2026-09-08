@@ -114,12 +114,12 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2026-09-26-rosas-jr-vs-barcelos",
+    "id": "ufcstats-2026-09-27-rosas-jr-vs-barcelos",
     "title": "Rosas Jr. vs Barcelos",
-    "date": "2026-09-26",
+    "date": "2026-09-27",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-september-26-2026",
-    "startUtc": "2026-09-26T22:00:00Z",
-    "prelimsUtc": "2026-09-26T20:00:00Z",
+    "startUtc": "2026-09-27T00:00:00Z",
+    "prelimsUtc": "2026-09-26T21:00:00Z",
     "venue": "Meta APEX Las Vegas , NV United States",
     "bouts": [
       {
@@ -129,38 +129,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "rightKo": "Raoni Barcelos",
         "weight": "Bantamweight",
         "section": "main"
-      },
-      {
-        "left": "Melissa Amaya",
-        "leftKo": "Melissa Amaya",
-        "right": "Valesca Machado",
-        "rightKo": "Valesca Machado",
-        "weight": "Women's Strawweight",
-        "section": "announced"
-      },
-      {
-        "left": "Mehemmedeli Osmanli",
-        "leftKo": "Mehemmedeli Osmanli",
-        "right": "Ilimbek Akylbek Uulu",
-        "rightKo": "Ilimbek Akylbek Uulu",
-        "weight": "Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "Montel Jackson",
-        "leftKo": "Montel Jackson",
-        "right": "Ricky Simon",
-        "rightKo": "Ricky Simon",
-        "weight": "Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "Rodolfo Bellato",
-        "leftKo": "Rodolfo Bellato",
-        "right": "Christian Edwards",
-        "rightKo": "Christian Edwards",
-        "weight": "Light Heavyweight",
-        "section": "announced"
       },
       {
         "left": "Rodolfo Vieira",
@@ -179,11 +147,19 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "John Castaneda",
-        "leftKo": "John Castaneda",
-        "right": "Alatengheili",
-        "rightKo": "Alatengheili",
+        "left": "Mehemmedeli Osmanli",
+        "leftKo": "Mehemmedeli Osmanli",
+        "right": "Ilimbek Akylbek",
+        "rightKo": "Ilimbek Akylbek",
         "weight": "Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "Melissa Amaya",
+        "leftKo": "Melissa Amaya",
+        "right": "Valesca Machado",
+        "rightKo": "Valesca Machado",
+        "weight": "Women's Strawweight",
         "section": "announced"
       },
       {
@@ -192,22 +168,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "right": "Elves Brener",
         "rightKo": "Elves Brener",
         "weight": "Lightweight",
-        "section": "announced"
-      },
-      {
-        "left": "Norma Dumont",
-        "leftKo": "Norma Dumont",
-        "right": "Ailin Perez",
-        "rightKo": "Ailin Perez",
-        "weight": "Women's Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "Vanessa Demopoulos",
-        "leftKo": "Vanessa Demopoulos",
-        "right": "Yazmin Jauregui",
-        "rightKo": "Yazmin Jauregui",
-        "weight": "Women's Strawweight",
         "section": "announced"
       }
     ]
@@ -246,10 +206,10 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Khaos Williams",
-        "leftKo": "Khaos Williams",
-        "right": "Roberto Soldic",
-        "rightKo": "Roberto Soldic",
+        "left": "Roberto Soldic",
+        "leftKo": "Roberto Soldic",
+        "right": "Khaos Williams",
+        "rightKo": "Khaos Williams",
         "weight": "Welterweight",
         "section": "announced"
       },
