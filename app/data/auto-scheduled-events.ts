@@ -238,6 +238,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
+        "left": "King Green",
+        "leftKo": "King Green",
+        "right": "Esteban Ribovics",
+        "rightKo": "Esteban Ribovics",
+        "weight": "Lightweight",
+        "section": "announced"
+      },
+      {
         "left": "Khaos Williams",
         "leftKo": "Khaos Williams",
         "right": "Roberto Soldic",
@@ -251,70 +259,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "right": "Roman Kopylov",
         "rightKo": "Roman Kopylov",
         "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Imanol Rodriguez",
-        "leftKo": "Imanol Rodriguez",
-        "right": "Alden Coria",
-        "rightKo": "Alden Coria",
-        "weight": "Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Damian Pinas",
-        "leftKo": "Damian Pinas",
-        "right": "Andrey Pulyaev",
-        "rightKo": "Andrey Pulyaev",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Marcus McGhee",
-        "leftKo": "Marcus McGhee",
-        "right": "Benardo Sopaj",
-        "rightKo": "Benardo Sopaj",
-        "weight": "Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "King Green",
-        "leftKo": "King Green",
-        "right": "Esteban Ribovics",
-        "rightKo": "Esteban Ribovics",
-        "weight": "Lightweight",
-        "section": "announced"
-      },
-      {
-        "left": "Johnny Walker",
-        "leftKo": "Johnny Walker",
-        "right": "Mick Parkin",
-        "rightKo": "Mick Parkin",
-        "weight": "Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Rafael Dos Anjos",
-        "leftKo": "Rafael Dos Anjos",
-        "right": "Alexander Hernandez",
-        "rightKo": "Alexander Hernandez",
-        "weight": "Lightweight",
-        "section": "announced"
-      },
-      {
-        "left": "Marvin Vettori",
-        "leftKo": "Marvin Vettori",
-        "right": "Ismail Naurdiev",
-        "rightKo": "Ismail Naurdiev",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Court McGee",
-        "leftKo": "Court McGee",
-        "right": "Eric Nolan",
-        "rightKo": "Eric Nolan",
-        "weight": "Welterweight",
         "section": "announced"
       }
     ]
