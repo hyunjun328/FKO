@@ -268,6 +268,22 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
+        "left": "Javad Mahjoub",
+        "leftKo": "Javad Mahjoub",
+        "right": "Louie Sutherland",
+        "rightKo": "Louie Sutherland",
+        "weight": "Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Chad Anheliger",
+        "leftKo": "Chad Anheliger",
+        "right": "Steven Koslow",
+        "rightKo": "Steven Koslow",
+        "weight": "Bantamweight",
+        "section": "announced"
+      },
+      {
         "left": "Marc-Andre Barriault",
         "leftKo": "Marc-Andre Barriault",
         "right": "Kyle Daukaus",
