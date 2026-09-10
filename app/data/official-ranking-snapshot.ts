@@ -2,7 +2,7 @@
 export type OfficialRankingSnapshot = { checkedAt: string; divisions: Record<string, { champion?: string; entries: string[] }>; mensP4p: string[]; womensP4p: string[] };
 
 export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
-  "checkedAt": "2026-09-08",
+  "checkedAt": "2026-09-10",
   "divisions": {
     "flyweight": {
       "champion": "Joshua Van",
@@ -235,8 +235,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
     "Sean Strickland",
     "Merab Dvalishvili",
     "Alex Pereira",
-    "Ciryl Gane",
     "Joshua Van",
+    "Ciryl Gane",
     "Khamzat Chimaev",
     "Alexandre Pantoja",
     "Arman Tsarukyan",
