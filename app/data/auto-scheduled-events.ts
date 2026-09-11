@@ -37,14 +37,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Manon Fiorot",
-        "leftKo": "Manon Fiorot",
-        "right": "Alexa Grasso",
-        "rightKo": "Alexa Grasso",
-        "weight": "Women's Flyweight",
-        "section": "announced"
-      },
-      {
         "left": "Waldo Cortes Acosta",
         "leftKo": "Waldo Cortes Acosta",
         "right": "Curtis Blaydes",
