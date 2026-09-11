@@ -37,6 +37,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
+        "left": "Manon Fiorot",
+        "leftKo": "Manon Fiorot",
+        "right": "Alexa Grasso",
+        "rightKo": "Alexa Grasso",
+        "weight": "Women's Flyweight",
+        "section": "announced"
+      },
+      {
         "left": "Waldo Cortes Acosta",
         "leftKo": "Waldo Cortes Acosta",
         "right": "Curtis Blaydes",
@@ -250,6 +258,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "rightKo": "Mike Malott",
         "weight": "Welterweight",
         "section": "main"
+      },
+      {
+        "left": "Cody Chovancek",
+        "leftKo": "Cody Chovancek",
+        "right": "SuYoung You",
+        "rightKo": "SuYoung You",
+        "weight": "Bantamweight",
+        "section": "announced"
       },
       {
         "left": "Erin Blanchfield",
