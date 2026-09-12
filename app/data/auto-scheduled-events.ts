@@ -88,6 +88,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
+        "left": "Patricio Pitbull",
+        "leftKo": "Patricio Pitbull",
+        "right": "Dooho Choi",
+        "rightKo": "Dooho Choi",
+        "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
         "left": "Renato Moicano",
         "leftKo": "Renato Moicano",
         "right": "Brian Ortega",
