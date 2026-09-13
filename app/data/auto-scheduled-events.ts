@@ -4,65 +4,6 @@ export type AutoScheduledEvent = { id: string; title: string; date: string; sour
 
 export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
   {
-    "id": "ufcstats-2026-09-12-silva-vs-delgado",
-    "title": "Silva vs Delgado",
-    "date": "2026-09-12",
-    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-september-12-2026",
-    "startUtc": "2026-09-12T21:00:00Z",
-    "prelimsUtc": "2026-09-12T18:00:00Z",
-    "venue": "Desert Diamond Arena Glendale , AZ United States",
-    "bouts": [
-      {
-        "left": "Jean Silva",
-        "leftKo": "Jean Silva",
-        "right": "Jose Miguel Delgado",
-        "rightKo": "Jose Miguel Delgado",
-        "weight": "Featherweight",
-        "section": "main"
-      },
-      {
-        "left": "Brandon Moreno",
-        "leftKo": "Brandon Moreno",
-        "right": "Joseph Morales",
-        "rightKo": "Joseph Morales",
-        "weight": "Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Tommy McMillen",
-        "leftKo": "Tommy McMillen",
-        "right": "Marwan Rahiki",
-        "rightKo": "Marwan Rahiki",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
-        "left": "Manon Fiorot",
-        "leftKo": "Manon Fiorot",
-        "right": "Alexa Grasso",
-        "rightKo": "Alexa Grasso",
-        "weight": "Women's Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Waldo Cortes Acosta",
-        "leftKo": "Waldo Cortes Acosta",
-        "right": "Curtis Blaydes",
-        "rightKo": "Curtis Blaydes",
-        "weight": "Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "David Martinez",
-        "leftKo": "David Martinez",
-        "right": "Dan Ige",
-        "rightKo": "Dan Ige",
-        "weight": "Bantamweight",
-        "section": "announced"
-      }
-    ]
-  },
-  {
     "id": "ufcstats-2026-09-20-van-vs-pantoja-2",
     "title": "Van vs Pantoja 2",
     "date": "2026-09-20",
