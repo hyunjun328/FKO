@@ -399,5 +399,24 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       }
     ]
+  },
+  {
+    "id": "ufcstats-2026-11-07-bonfim-vs-brady",
+    "title": "Bonfim vs Brady",
+    "date": "2026-11-07",
+    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-november-07-2026",
+    "startUtc": "2026-11-07T22:00:00Z",
+    "prelimsUtc": "2026-11-07T20:00:00Z",
+    "venue": "Meta APEX Las Vegas , NV United States",
+    "bouts": [
+      {
+        "left": "Gabriel Bonfim",
+        "leftKo": "Gabriel Bonfim",
+        "right": "Sean Brady",
+        "rightKo": "Sean Brady",
+        "weight": "Welterweight",
+        "section": "main"
+      }
+    ]
   }
 ];
