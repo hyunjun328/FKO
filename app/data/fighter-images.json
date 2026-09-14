@@ -101,6 +101,18 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Alexander Hernandez Jan 19, 2019.jpg"
   },
+  "Alexander Shlemenko": {
+    "src": "/fighters/alexander-shlemenko.webp",
+    "groups": [
+      "world-ranking"
+    ],
+    "wikidataId": "Q4525405",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shlemenko_in_airport_after_Vianna.jpg",
+    "author": "Wikimedia Commons contributor",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "file": "Shlemenko in airport after Vianna.jpg"
+  },
   "Alexander Volkanovski": {
     "src": "/fighters/alexander-volkanovski.webp",
     "groups": [
@@ -1614,18 +1626,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
     "file": "Lyoto Machida by Marcos Joel Reis.jpg"
   },
-  "Mads Burnell": {
-    "src": "/fighters/mads-burnell.webp",
-    "groups": [
-      "world-ranking"
-    ],
-    "wikidataId": "Q54860978",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mads_Burnell.jpg",
-    "author": "MMAnytt",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Mads Burnell.jpg"
-  },
   "Magomed Ankalaev": {
     "src": "/fighters/magomed-ankalaev.webp",
     "groups": [
@@ -2384,18 +2384,6 @@
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "file": "RoyceGracie.png"
-  },
-  "Said Nurmagomedov": {
-    "src": "/fighters/said-nurmagomedov.webp",
-    "groups": [
-      "world-ranking"
-    ],
-    "wikidataId": "Q48471434",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Said_2022.png",
-    "author": "SPORTS UZ",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Said 2022.png"
   },
   "Salahdine Parnasse": {
     "src": "/fighters/salahdine-parnasse.webp",
