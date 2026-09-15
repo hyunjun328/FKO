@@ -37,19 +37,19 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Renato Moicano",
-        "leftKo": "Renato Moicano",
-        "right": "Brian Ortega",
-        "rightKo": "Brian Ortega",
-        "weight": "Lightweight",
-        "section": "announced"
-      },
-      {
         "left": "Alonzo Menifield",
         "leftKo": "Alonzo Menifield",
         "right": "Iwo Baraniewski",
         "rightKo": "Iwo Baraniewski",
         "weight": "Light Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Gable Steveson",
+        "leftKo": "Gable Steveson",
+        "right": "Sean Sharaf",
+        "rightKo": "Sean Sharaf",
+        "weight": "Heavyweight",
         "section": "announced"
       }
     ]
