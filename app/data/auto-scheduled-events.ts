@@ -374,8 +374,8 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2026-11-01-tbd-vs-tbd",
-    "title": "TBD vs TBD",
+    "id": "ufcstats-2026-11-01-moicano-vs-nolan",
+    "title": "Moicano vs Nolan",
     "date": "2026-11-01",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-october-31-2026",
     "startUtc": "2026-11-01T00:00:00Z",
@@ -383,12 +383,20 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "venue": "Meta APEX Las Vegas , NV United States",
     "bouts": [
       {
+        "left": "Renato Moicano",
+        "leftKo": "Renato Moicano",
+        "right": "Tom Nolan",
+        "rightKo": "Tom Nolan",
+        "weight": "Lightweight",
+        "section": "main"
+      },
+      {
         "left": "Lucia Szabova",
         "leftKo": "Lucia Szabova",
         "right": "Tainara Lisboa",
         "rightKo": "Tainara Lisboa",
         "weight": "Women's Flyweight",
-        "section": "main"
+        "section": "announced"
       },
       {
         "left": "Nick Klein",
