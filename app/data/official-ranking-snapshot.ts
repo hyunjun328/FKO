@@ -2,7 +2,7 @@
 export type OfficialRankingSnapshot = { checkedAt: string; divisions: Record<string, { champion?: string; entries: string[] }>; mensP4p: string[]; womensP4p: string[] };
 
 export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
-  "checkedAt": "2026-09-13",
+  "checkedAt": "2026-09-15",
   "divisions": {
     "flyweight": {
       "champion": "Joshua Van",
@@ -15,8 +15,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Lone’er Kavanagh",
         "Ramazan Temirov",
         "Kyoji Horiguchi",
-        "Amir Albazi",
         "Brandon Moreno",
+        "Amir Albazi",
         "Sumudaerji",
         "Mitch Raposo",
         "Rei Tsuruya",
@@ -51,8 +51,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Diego Lopes",
         "Lerone Murphy",
         "Aljamain Sterling",
-        "Arnold Allen",
         "Jean Silva",
+        "Arnold Allen",
         "Pat Sabatini",
         "Pavel Andrusca",
         "Youssef Zalal",
@@ -61,7 +61,7 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Steve Garcia",
         "Aaron Pico",
         "Jamall Emmers",
-        "Jose Miguel Delgado"
+        "Joanderson Brito"
       ]
     },
     "lightweight": {
@@ -73,15 +73,15 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Max Holloway",
         "Paddy Pimblett",
         "Quillan Salkilld",
-        "Renato Moicano",
         "Benoît Saint Denis",
+        "Renato Moicano",
         "Mateusz Gamrot",
         "Mauricio Ruffy",
         "Tom Nolan",
         "Rafael Fiziev",
         "Tofiq Musayev",
         "Grant Dawson",
-        "Rafa Garcia"
+        "Jalin Turner"
       ]
     },
     "welterweight": {
@@ -114,14 +114,14 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Brendan Allen",
         "Caio Borralho",
         "Gregory Rodrigues",
-        "Michael Venom Page",
         "Anthony Hernandez",
         "Israel Adesanya",
         "Christian Leroy Duncan",
         "Ikram Aliskerov",
         "Bo Nickal",
         "Abus Magomedov",
-        "Jared Cannonier"
+        "Jared Cannonier",
+        "Shara Magomedov"
       ]
     },
     "light-heavyweight": {
@@ -153,11 +153,11 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Alex Pereira",
         "Rizvan Kuniev",
         "Josh Hokit",
+        "Curtis Blaydes",
         "Waldo Cortes Acosta",
         "Vitor Petrino",
         "Mario Pinto",
         "Valter Walker",
-        "Curtis Blaydes",
         "Brando Peričić",
         "Serghei Spivac",
         "Mick Parkin",
@@ -188,9 +188,9 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
       "champion": "Valentina Shevchenko",
       "entries": [
         "Natalia Silva",
-        "Manon Fiorot",
         "Alexa Grasso",
         "Erin Blanchfield",
+        "Manon Fiorot",
         "Zhang Weili",
         "Wang Cong",
         "Jasmine Jasudavicius",
@@ -198,7 +198,7 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Maycee Barber",
         "Tracy Cortez",
         "Miranda Maverick",
-        "JJ Aldrich",
+        "Regina Tarin",
         "Karine Silva",
         "Eduarda Moura",
         "Carli Judice"
@@ -248,14 +248,14 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
     "Zhang Weili",
     "Natalia Silva",
     "Mackenzie Dern",
-    "Manon Fiorot",
     "Alexa Grasso",
+    "Manon Fiorot",
     "Erin Blanchfield",
     "Tatiana Suarez",
     "Julianna Peña",
     "Virna Jandiroba",
-    "Rose Namajunas",
     "Raquel Pennington",
+    "Rose Namajunas",
     "Denise Gomes",
     "Maycee Barber"
   ]
