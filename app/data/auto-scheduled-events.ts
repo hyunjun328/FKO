@@ -374,8 +374,8 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2026-11-01-vs",
-    "title": "モイカノ vs ノーラン",
+    "id": "ufcstats-2026-11-01-moicano-vs-nolan",
+    "title": "Moicano vs Nolan",
     "date": "2026-11-01",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-october-31-2026",
     "startUtc": "2026-11-01T00:00:00Z",
