@@ -4,57 +4,6 @@ export type AutoScheduledEvent = { id: string; title: string; date: string; sour
 
 export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
   {
-    "id": "ufcstats-2026-09-20-van-vs-pantoja-2",
-    "title": "Van vs Pantoja 2",
-    "date": "2026-09-20",
-    "sourceUrl": "https://www.ufc.com/event/cryptocom-ufc-331",
-    "startUtc": "2026-09-20T01:00:00Z",
-    "prelimsUtc": "2026-09-19T23:00:00Z",
-    "venue": "Crypto.com Arena Los Angeles , CA United States",
-    "bouts": [
-      {
-        "left": "Joshua Van",
-        "leftKo": "Joshua Van",
-        "right": "Alexandre Pantoja",
-        "rightKo": "Alexandre Pantoja",
-        "weight": "Flyweight Title",
-        "section": "main"
-      },
-      {
-        "left": "Arman Tsarukyan",
-        "leftKo": "Arman Tsarukyan",
-        "right": "Mauricio Ruffy",
-        "rightKo": "Mauricio Ruffy",
-        "weight": "Lightweight",
-        "section": "announced"
-      },
-      {
-        "left": "Patricio Pitbull",
-        "leftKo": "Patricio Pitbull",
-        "right": "Dooho Choi",
-        "rightKo": "Dooho Choi",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
-        "left": "Gable Steveson",
-        "leftKo": "Gable Steveson",
-        "right": "Sean Sharaf",
-        "rightKo": "Sean Sharaf",
-        "weight": "Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Alonzo Menifield",
-        "leftKo": "Alonzo Menifield",
-        "right": "Iwo Baraniewski",
-        "rightKo": "Iwo Baraniewski",
-        "weight": "Light Heavyweight",
-        "section": "announced"
-      }
-    ]
-  },
-  {
     "id": "ufcstats-2026-09-27-rosas-jr-vs-barcelos",
     "title": "Rosas Jr. vs Barcelos",
     "date": "2026-09-27",
@@ -426,5 +375,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "main"
       }
     ]
+  },
+  {
+    "id": "ufcstats-2026-11-15-tbd-vs-tbd",
+    "title": "TBD vs TBD",
+    "date": "2026-11-15",
+    "sourceUrl": "https://www.ufc.com/event/ufc-334",
+    "startUtc": "2026-11-15T02:00:00Z",
+    "prelimsUtc": "2026-11-15T00:00:00Z",
+    "venue": "Madison Square Garden New York , NY United States"
   }
 ];
