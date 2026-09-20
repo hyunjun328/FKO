@@ -310,7 +310,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "heightCm": 178,
     "knockoutWins": 14,
     "reachCm": 178,
-    "record": "17-4-1",
+    "record": "17-5-1",
     "sourceUrl": "https://www.ufc.com/athlete/dooho-choi",
     "status": "Active",
     "submissionWins": 1
