@@ -38,6 +38,18 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:UFC_Freedom_250_Press_Conference_(9747954)(cropped).jpg",
     "file": "UFC Freedom 250 Press Conference (9747954)(cropped).jpg"
   },
+  "Albert Tumenov": {
+    "src": "/fighters/albert-tumenov.webp",
+    "groups": [
+      "world-ranking"
+    ],
+    "wikidataId": "Q16708361",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tumenov.jpg",
+    "author": "Азнор",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "Tumenov.jpg"
+  },
   "Aleksandar Rakic": {
     "src": "/fighters/aleksandar-rakic.webp",
     "groups": [
@@ -2320,6 +2332,18 @@
     "license": "CC BY 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Robbie Lawler.png"
+  },
+  "Robelis Despaigne": {
+    "src": "/fighters/robelis-despaigne.webp",
+    "groups": [
+      "world-ranking"
+    ],
+    "wikidataId": "Q961740",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:RobelisDespaigne.jpg",
+    "author": "Gustavo Trujillo",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "file": "RobelisDespaigne.jpg"
   },
   "Robert Whittaker": {
     "src": "/fighters/robert-whittaker.webp",
