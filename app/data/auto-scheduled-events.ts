@@ -29,14 +29,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Brady Hiestand",
-        "leftKo": "Brady Hiestand",
-        "right": "Rinya Nakamura",
-        "rightKo": "Rinya Nakamura",
-        "weight": "Bantamweight",
-        "section": "announced"
-      },
-      {
         "left": "Mehemmedeli Osmanli",
         "leftKo": "Mehemmedeli Osmanli",
         "right": "Ilimbek Akylbek",
@@ -47,17 +39,17 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
       {
         "left": "Melissa Amaya",
         "leftKo": "Melissa Amaya",
-        "right": "Valesca Machado",
-        "rightKo": "Valesca Machado",
+        "right": "Tina Black",
+        "rightKo": "Tina Black",
         "weight": "Women's Strawweight",
         "section": "announced"
       },
       {
-        "left": "Josiah Harrell",
-        "leftKo": "Josiah Harrell",
-        "right": "Elves Brener",
-        "rightKo": "Elves Brener",
-        "weight": "Lightweight",
+        "left": "Brady Hiestand",
+        "leftKo": "Brady Hiestand",
+        "right": "Rinya Nakamura",
+        "rightKo": "Rinya Nakamura",
+        "weight": "Bantamweight",
         "section": "announced"
       }
     ]
@@ -150,35 +142,11 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "main"
       },
       {
-        "left": "Cody Chovancek",
-        "leftKo": "Cody Chovancek",
-        "right": "SuYoung You",
-        "rightKo": "SuYoung You",
-        "weight": "Bantamweight",
-        "section": "announced"
-      },
-      {
         "left": "Erin Blanchfield",
         "leftKo": "Erin Blanchfield",
         "right": "Jasmine Jasudavicius",
         "rightKo": "Jasmine Jasudavicius",
         "weight": "Women's Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Javad Mahjoub",
-        "leftKo": "Javad Mahjoub",
-        "right": "Louie Sutherland",
-        "rightKo": "Louie Sutherland",
-        "weight": "Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Chad Anheliger",
-        "leftKo": "Chad Anheliger",
-        "right": "Steven Koslow",
-        "rightKo": "Steven Koslow",
-        "weight": "Bantamweight",
         "section": "announced"
       },
       {
@@ -190,22 +158,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Jamey-Lyn Horth",
-        "leftKo": "Jamey-Lyn Horth",
-        "right": "Katlyn Cerminara",
-        "rightKo": "Katlyn Cerminara",
-        "weight": "Women's Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Tanner Boser",
-        "leftKo": "Tanner Boser",
-        "right": "Jhonata Diniz",
-        "rightKo": "Jhonata Diniz",
-        "weight": "Heavyweight",
-        "section": "announced"
-      },
-      {
         "left": "Mandel Nallo",
         "leftKo": "Mandel Nallo",
         "right": "Nate Landwehr",
@@ -214,27 +166,11 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Melissa Croden",
-        "leftKo": "Melissa Croden",
-        "right": "Chelsea Chandler",
-        "rightKo": "Chelsea Chandler",
-        "weight": "Women's Bantamweight",
-        "section": "announced"
-      },
-      {
         "left": "Louis Jourdain",
         "leftKo": "Louis Jourdain",
         "right": "Timmy Cuamba",
         "rightKo": "Timmy Cuamba",
         "weight": "Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "Julien Leblanc",
-        "leftKo": "Julien Leblanc",
-        "right": "Gilbert Urbina",
-        "rightKo": "Gilbert Urbina",
-        "weight": "Middleweight",
         "section": "announced"
       }
     ]
@@ -377,12 +313,110 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2026-11-15-tbd-vs-tbd",
-    "title": "TBD vs TBD",
+    "id": "ufcstats-2026-11-15-gane-vs-hokit",
+    "title": "Gane vs Hokit",
     "date": "2026-11-15",
     "sourceUrl": "https://www.ufc.com/event/ufc-334",
     "startUtc": "2026-11-15T02:00:00Z",
     "prelimsUtc": "2026-11-15T00:00:00Z",
-    "venue": "Madison Square Garden New York , NY United States"
+    "venue": "Madison Square Garden New York , NY United States",
+    "bouts": [
+      {
+        "left": "Ciryl Gane",
+        "leftKo": "Ciryl Gane",
+        "right": "Josh Hokit",
+        "rightKo": "Josh Hokit",
+        "weight": "Heavyweight Title",
+        "section": "main"
+      },
+      {
+        "left": "Kayla Harrison",
+        "leftKo": "Kayla Harrison",
+        "right": "Amanda Nunes",
+        "rightKo": "Amanda Nunes",
+        "weight": "Women's Bantamweight Title",
+        "section": "announced"
+      },
+      {
+        "left": "Caio Borralho",
+        "leftKo": "Caio Borralho",
+        "right": "Yousri Belgaroui",
+        "rightKo": "Yousri Belgaroui",
+        "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Uroš Medić",
+        "leftKo": "Uroš Medić",
+        "right": "Kevin Holland",
+        "rightKo": "Kevin Holland",
+        "weight": "Welterweight",
+        "section": "announced"
+      },
+      {
+        "left": "Bilal Hasan",
+        "leftKo": "Bilal Hasan",
+        "right": "Luis Gurule",
+        "rightKo": "Luis Gurule",
+        "weight": "Flyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Drew Dober",
+        "leftKo": "Drew Dober",
+        "right": "Chris Duncan",
+        "rightKo": "Chris Duncan",
+        "weight": "Lightweight",
+        "section": "announced"
+      },
+      {
+        "left": "Stephen Thompson",
+        "leftKo": "Stephen Thompson",
+        "right": "Charles Radtke",
+        "rightKo": "Charles Radtke",
+        "weight": "Welterweight",
+        "section": "announced"
+      },
+      {
+        "left": "Donte Johnson",
+        "leftKo": "Donte Johnson",
+        "right": "Baisangur Susurkaev",
+        "rightKo": "Baisangur Susurkaev",
+        "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Jim Miller",
+        "leftKo": "Jim Miller",
+        "right": "Terrance McKinney",
+        "rightKo": "Terrance McKinney",
+        "weight": "Lightweight",
+        "section": "announced"
+      },
+      {
+        "left": "Macy Chiasson",
+        "leftKo": "Macy Chiasson",
+        "right": "Bia Mesquita",
+        "rightKo": "Bia Mesquita",
+        "weight": "Women's Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "Adrian Yanez",
+        "leftKo": "Adrian Yanez",
+        "right": "Juan Diaz",
+        "rightKo": "Juan Diaz",
+        "weight": "Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "Nazim Sadykhov",
+        "leftKo": "Nazim Sadykhov",
+        "right": "Jefferson Nascimento",
+        "rightKo": "Jefferson Nascimento",
+        "weight": "Lightweight",
+        "section": "announced"
+      }
+    ]
   }
 ];
