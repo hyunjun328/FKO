@@ -158,19 +158,19 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Mandel Nallo",
-        "leftKo": "Mandel Nallo",
-        "right": "Nate Landwehr",
-        "rightKo": "Nate Landwehr",
-        "weight": "Lightweight",
-        "section": "announced"
-      },
-      {
         "left": "Louis Jourdain",
         "leftKo": "Louis Jourdain",
         "right": "Timmy Cuamba",
         "rightKo": "Timmy Cuamba",
         "weight": "Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "Mandel Nallo",
+        "leftKo": "Mandel Nallo",
+        "right": "Nate Landwehr",
+        "rightKo": "Nate Landwehr",
+        "weight": "Lightweight",
         "section": "announced"
       }
     ]

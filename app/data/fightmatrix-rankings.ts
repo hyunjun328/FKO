@@ -6,7 +6,7 @@ export type FightMatrixRankingEntry = {
   sourceUrl: string;
 };
 
-export const FIGHT_MATRIX_RANKING_CHECKED_AT = "2026-09-20";
+export const FIGHT_MATRIX_RANKING_CHECKED_AT = "2026-09-22";
 
 export const FIGHT_MATRIX_RANKINGS: Record<string, FightMatrixRankingEntry[]> = {
   "flyweight": [

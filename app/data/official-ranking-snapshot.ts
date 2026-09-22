@@ -2,13 +2,13 @@
 export type OfficialRankingSnapshot = { checkedAt: string; divisions: Record<string, { champion?: string; entries: string[] }>; mensP4p: string[]; womensP4p: string[] };
 
 export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
-  "checkedAt": "2026-09-20",
+  "checkedAt": "2026-09-22",
   "divisions": {
     "flyweight": {
       "champion": "Joshua Van",
       "entries": [
-        "Alexandre Pantoja",
         "Manel Kape",
+        "Alexandre Pantoja",
         "Brandon Royval",
         "Tatsuro Taira",
         "Asu Almabayev",
@@ -38,7 +38,7 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Farid Basharat",
         "Marcus McGhee",
         "Deiveson Figueiredo",
-        "Charles Jourdain",
+        "Marlon Vera",
         "Aiemann Zahabi",
         "Bryce Mitchell",
         "Montel Jackson"
@@ -57,11 +57,11 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Pavel Andrusca",
         "Youssef Zalal",
         "Kevin Vallejos",
+        "Joanderson Brito",
         "Melquizael Costa",
         "Steve Garcia",
         "Aaron Pico",
-        "Jamall Emmers",
-        "Joanderson Brito"
+        "Jamall Emmers"
       ]
     },
     "lightweight": {
@@ -94,9 +94,9 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Sean Brady",
         "Gabriel Bonfim",
         "Belal Muhammad",
-        "Leon Edwards",
         "Joaquin Buckley",
         "Uroš Medić",
+        "Leon Edwards",
         "Mike Malott",
         "Kamaru Usman",
         "Yaroslav Amosov",
@@ -120,8 +120,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Ikram Aliskerov",
         "Bo Nickal",
         "Abus Magomedov",
-        "Jared Cannonier",
-        "Shara Magomedov"
+        "Edmen Shahbazyan",
+        "Jared Cannonier"
       ]
     },
     "light-heavyweight": {
@@ -137,20 +137,20 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Dominick Reyes",
         "Reinier de Ridder",
         "Azamat Murzakanov",
+        "Alonzo Menifield",
         "Bogdan Guskov",
         "Robert Whittaker",
-        "Alonzo Menifield",
         "Johnny Walker",
         "Muhammad Saidov"
       ]
     },
     "heavyweight": {
-      "champion": "Tom Aspinall",
+      "champion": "Ciryl Gane",
       "entries": [
-        "Ciryl Gane",
-        "Alexander Volkov",
+        "Tom Aspinall",
         "Sergei Pavlovich",
         "Alex Pereira",
+        "Alexander Volkov",
         "Rizvan Kuniev",
         "Josh Hokit",
         "Curtis Blaydes",
@@ -197,10 +197,10 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Rose Namajunas",
         "Maycee Barber",
         "Tracy Cortez",
+        "Casey O'Neill",
         "Miranda Maverick",
         "Regina Tarin",
         "Karine Silva",
-        "Eduarda Moura",
         "Carli Judice"
       ]
     },
@@ -228,19 +228,19 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
   "mensP4p": [
     "Islam Makhachev",
     "Alexander Volkanovski",
-    "Petr Yan",
     "Justin Gaethje",
+    "Petr Yan",
     "Ilia Topuria",
-    "Tom Aspinall",
+    "Joshua Van",
     "Sean Strickland",
+    "Tom Aspinall",
     "Merab Dvalishvili",
     "Alex Pereira",
     "Ciryl Gane",
-    "Joshua Van",
     "Khamzat Chimaev",
-    "Alexandre Pantoja",
     "Arman Tsarukyan",
-    "Charles Oliveira"
+    "Alexandre Pantoja",
+    "Carlos Ulberg"
   ],
   "womensP4p": [
     "Valentina Shevchenko",
