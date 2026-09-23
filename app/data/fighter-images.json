@@ -2544,6 +2544,18 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Tai Tuivasa at UFC 234.jpg"
   },
+  "Tallison Teixeira": {
+    "src": "/fighters/tallison-teixeira.webp",
+    "groups": [
+      "world-ranking"
+    ],
+    "wikidataId": "Q134289443",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tallison_Teixeira_2025.jpg",
+    "author": "Sexto Round",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "file": "Tallison Teixeira 2025.jpg"
+  },
   "Tatiana Suarez": {
     "src": "/fighters/tatiana-suarez.webp",
     "groups": [
