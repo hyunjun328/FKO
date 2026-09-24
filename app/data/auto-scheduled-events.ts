@@ -21,11 +21,19 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "main"
       },
       {
-        "left": "Rodolfo Vieira",
-        "leftKo": "Rodolfo Vieira",
-        "right": "Robert Bryczek",
-        "rightKo": "Robert Bryczek",
-        "weight": "Middleweight",
+        "left": "Norma Dumont",
+        "leftKo": "Norma Dumont",
+        "right": "Ailin Perez",
+        "rightKo": "Ailin Perez",
+        "weight": "Women's Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "Luis Hernandez",
+        "leftKo": "Luis Hernandez",
+        "right": "Sedriques Dumas",
+        "rightKo": "Sedriques Dumas",
+        "weight": "Light Heavyweight",
         "section": "announced"
       },
       {
@@ -42,14 +50,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "right": "Tina Black",
         "rightKo": "Tina Black",
         "weight": "Women's Strawweight",
-        "section": "announced"
-      },
-      {
-        "left": "Brady Hiestand",
-        "leftKo": "Brady Hiestand",
-        "right": "Rinya Nakamura",
-        "rightKo": "Rinya Nakamura",
-        "weight": "Bantamweight",
         "section": "announced"
       }
     ]
@@ -147,6 +147,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "right": "Jasmine Jasudavicius",
         "rightKo": "Jasmine Jasudavicius",
         "weight": "Women's Flyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Kyle Nelson",
+        "leftKo": "Kyle Nelson",
+        "right": "Cristian Perez Gonzalez",
+        "rightKo": "Cristian Perez Gonzalez",
+        "weight": "Lightweight",
         "section": "announced"
       },
       {
