@@ -29,8 +29,8 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Mehemmedeli Osmanli",
-        "leftKo": "Mehemmedeli Osmanli",
+        "left": "Mahammadali Osmanli",
+        "leftKo": "Mahammadali Osmanli",
         "right": "Ilimbek Akylbek",
         "rightKo": "Ilimbek Akylbek",
         "weight": "Bantamweight",
@@ -201,35 +201,11 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Arnold Allen",
-        "leftKo": "Arnold Allen",
-        "right": "Aaron Pico",
-        "rightKo": "Aaron Pico",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
-        "left": "Azamat Murzakanov",
-        "leftKo": "Azamat Murzakanov",
-        "right": "Dominick Reyes",
-        "rightKo": "Dominick Reyes",
-        "weight": "Light Heavyweight",
-        "section": "announced"
-      },
-      {
         "left": "Lone’er Kavanagh",
         "leftKo": "Lone’er Kavanagh",
         "right": "Ramazan Temirov",
         "rightKo": "Ramazan Temirov",
         "weight": "Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Nikita Krylov",
-        "leftKo": "Nikita Krylov",
-        "right": "Abdul Rakhman Yakhyaev",
-        "rightKo": "Abdul Rakhman Yakhyaev",
-        "weight": "Light Heavyweight",
         "section": "announced"
       },
       {
@@ -241,19 +217,11 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Abus Magomedov",
-        "leftKo": "Abus Magomedov",
-        "right": "Cam Rowston",
-        "rightKo": "Cam Rowston",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Grant Dawson",
-        "leftKo": "Grant Dawson",
-        "right": "Nurullo Aliev",
-        "rightKo": "Nurullo Aliev",
-        "weight": "Lightweight",
+        "left": "Arnold Allen",
+        "leftKo": "Arnold Allen",
+        "right": "Aaron Pico",
+        "rightKo": "Aaron Pico",
+        "weight": "Featherweight",
         "section": "announced"
       }
     ]
