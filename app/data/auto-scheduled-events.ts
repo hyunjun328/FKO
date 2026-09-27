@@ -4,57 +4,6 @@ export type AutoScheduledEvent = { id: string; title: string; date: string; sour
 
 export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
   {
-    "id": "ufcstats-2026-09-27-rosas-jr-vs-barcelos",
-    "title": "Rosas Jr. vs Barcelos",
-    "date": "2026-09-27",
-    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-september-26-2026",
-    "startUtc": "2026-09-27T00:00:00Z",
-    "prelimsUtc": "2026-09-26T21:00:00Z",
-    "venue": "Meta APEX Las Vegas , NV United States",
-    "bouts": [
-      {
-        "left": "Raul Rosas Jr.",
-        "leftKo": "Raul Rosas Jr.",
-        "right": "Raoni Barcelos",
-        "rightKo": "Raoni Barcelos",
-        "weight": "Bantamweight",
-        "section": "main"
-      },
-      {
-        "left": "Norma Dumont",
-        "leftKo": "Norma Dumont",
-        "right": "Ailin Perez",
-        "rightKo": "Ailin Perez",
-        "weight": "Women's Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "Luis Hernandez",
-        "leftKo": "Luis Hernandez",
-        "right": "Sedriques Dumas",
-        "rightKo": "Sedriques Dumas",
-        "weight": "Light Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Mahammadali Osmanli",
-        "leftKo": "Mahammadali Osmanli",
-        "right": "Ilimbek Akylbek",
-        "rightKo": "Ilimbek Akylbek",
-        "weight": "Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "Melissa Amaya",
-        "leftKo": "Melissa Amaya",
-        "right": "Tina Black",
-        "rightKo": "Tina Black",
-        "weight": "Women's Strawweight",
-        "section": "announced"
-      }
-    ]
-  },
-  {
     "id": "ufcstats-2026-10-04-silva-vs-wang",
     "title": "Silva vs Wang",
     "date": "2026-10-04",
