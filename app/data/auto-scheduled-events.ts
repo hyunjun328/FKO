@@ -37,8 +37,8 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Roberto Soldic",
-        "leftKo": "Roberto Soldic",
+        "left": "Roberto Soldić",
+        "leftKo": "Roberto Soldić",
         "right": "Khaos Williams",
         "rightKo": "Khaos Williams",
         "weight": "Welterweight",
@@ -343,5 +343,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       }
     ]
+  },
+  {
+    "id": "ufcstats-2026-11-21-tbd-vs-tbd",
+    "title": "TBD vs TBD",
+    "date": "2026-11-21",
+    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-november-21-2026",
+    "startUtc": "2026-11-21T22:00:00Z",
+    "prelimsUtc": "2026-11-21T20:00:00Z",
+    "venue": "ABHA Arena Doha Qatar"
   }
 ];
