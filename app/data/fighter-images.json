@@ -113,18 +113,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Alexander Hernandez Jan 19, 2019.jpg"
   },
-  "Alexander Shlemenko": {
-    "src": "/fighters/alexander-shlemenko.webp",
-    "groups": [
-      "world-ranking"
-    ],
-    "wikidataId": "Q4525405",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shlemenko_in_airport_after_Vianna.jpg",
-    "author": "Wikimedia Commons contributor",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Shlemenko in airport after Vianna.jpg"
-  },
   "Alexander Volkanovski": {
     "src": "/fighters/alexander-volkanovski.webp",
     "groups": [
@@ -1405,18 +1393,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
     "file": "Kai Asakura 2023.png"
   },
-  "Kai Kara-France": {
-    "src": "/fighters/kai-kara-france.webp",
-    "groups": [
-      "world-ranking"
-    ],
-    "wikidataId": "Q27999448",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kaikarafrance.png",
-    "author": "ZalesDB",
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "file": "Kaikarafrance.png"
-  },
   "Kamaru Usman": {
     "src": "/fighters/kamaru-usman.webp",
     "groups": [
@@ -2174,18 +2150,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
     "file": "Petr Yan at Kremlin award ceremonies with president Putin.jpg"
   },
-  "Phil Davis": {
-    "src": "/fighters/phil-davis.webp",
-    "groups": [
-      "world-ranking"
-    ],
-    "wikidataId": "Q576360",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:UFC_fighter_visits_Freedom_Crossing_121116-A-UK859-003_(cropped).jpg",
-    "author": "Sgt. Barry St. Clair",
-    "license": "Public domain",
-    "licenseUrl": "https://commons.wikimedia.org/wiki/File:UFC_fighter_visits_Freedom_Crossing_121116-A-UK859-003_(cropped).jpg",
-    "file": "UFC fighter visits Freedom Crossing 121116-A-UK859-003 (cropped).jpg"
-  },
   "Randy Couture": {
     "src": "/fighters/randy-couture.webp",
     "groups": [
@@ -2284,18 +2248,6 @@
     "license": "Public domain",
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:RichFranklin2.png",
     "file": "RichFranklin2.png"
-  },
-  "Ricky Simon": {
-    "src": "/fighters/ricky-simon.webp",
-    "groups": [
-      "world-ranking"
-    ],
-    "wikidataId": "Q61663571",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ricky_Sim%C3%B3n_2019.jpg",
-    "author": "ASG Jordan",
-    "license": "Public domain",
-    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Ricky_Sim%C3%B3n_2019.jpg",
-    "file": "Ricky Simón 2019.jpg"
   },
   "Rinat Fakhretdinov": {
     "src": "/fighters/rinat-fakhretdinov.webp",
