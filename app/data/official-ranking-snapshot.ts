@@ -2,7 +2,7 @@
 export type OfficialRankingSnapshot = { checkedAt: string; divisions: Record<string, { champion?: string; entries: string[] }>; mensP4p: string[]; womensP4p: string[] };
 
 export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
-  "checkedAt": "2026-09-27",
+  "checkedAt": "2026-09-29",
   "divisions": {
     "flyweight": {
       "champion": "Joshua Van",
@@ -34,14 +34,14 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Umar Nurmagomedov",
         "Cory Sandhagen",
         "David Martinez",
-        "Raoni Barcelos",
+        "Raul Rosas Jr.",
         "Farid Basharat",
         "Marcus McGhee",
         "Deiveson Figueiredo",
-        "Marlon Vera",
+        "Montel Jackson",
         "Aiemann Zahabi",
-        "Bryce Mitchell",
-        "Montel Jackson"
+        "Marlon Vera",
+        "Bryce Mitchell"
       ]
     },
     "featherweight": {
@@ -121,7 +121,7 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Bo Nickal",
         "Abus Magomedov",
         "Edmen Shahbazyan",
-        "Jared Cannonier"
+        "Shara Magomedov"
       ]
     },
     "light-heavyweight": {
@@ -160,8 +160,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Valter Walker",
         "Brando Peričić",
         "Serghei Spivac",
-        "Mick Parkin",
-        "Shamil Gaziev"
+        "Shamil Gaziev",
+        "Aleksandar Rakić"
       ]
     },
     "womens-strawweight": {
@@ -208,9 +208,9 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
       "champion": "Kayla Harrison",
       "entries": [
         "Joselyne Edwards",
+        "Ailin Perez",
         "Norma Dumont",
         "Luana Santos",
-        "Ailin Perez",
         "Julianna Peña",
         "Yana Santos",
         "Jacqueline Cavalcanti",
@@ -254,8 +254,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
     "Tatiana Suarez",
     "Julianna Peña",
     "Virna Jandiroba",
-    "Raquel Pennington",
     "Rose Namajunas",
+    "Raquel Pennington",
     "Denise Gomes",
     "Maycee Barber"
   ]
