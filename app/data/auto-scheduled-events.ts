@@ -70,6 +70,46 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "rightKo": "Christian Leroy Duncan",
         "weight": "Middleweight",
         "section": "main"
+      },
+      {
+        "left": "Matheus Camilo",
+        "leftKo": "Matheus Camilo",
+        "right": "Jai Herbert",
+        "rightKo": "Jai Herbert",
+        "weight": "Lightweight",
+        "section": "announced"
+      },
+      {
+        "left": "Loopy Godinez",
+        "leftKo": "Loopy Godinez",
+        "right": "Ketlen Souza",
+        "rightKo": "Ketlen Souza",
+        "weight": "Women's Strawweight",
+        "section": "announced"
+      },
+      {
+        "left": "Andre Fili",
+        "leftKo": "Andre Fili",
+        "right": "Kai Kamaka III",
+        "rightKo": "Kai Kamaka III",
+        "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
+        "left": "Julius Walker",
+        "leftKo": "Julius Walker",
+        "right": "Gerald Meerschaert",
+        "rightKo": "Gerald Meerschaert",
+        "weight": "Light Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Malcolm Wellmaker",
+        "leftKo": "Malcolm Wellmaker",
+        "right": "Otari Tanzilovi",
+        "rightKo": "Otari Tanzilovi",
+        "weight": "Bantamweight",
+        "section": "announced"
       }
     ]
   },
@@ -201,6 +241,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "main"
       },
       {
+        "left": "Randy Brown",
+        "leftKo": "Randy Brown",
+        "right": "Carlos Leal",
+        "rightKo": "Carlos Leal",
+        "weight": "Welterweight",
+        "section": "announced"
+      },
+      {
         "left": "Lucia Szabova",
         "leftKo": "Lucia Szabova",
         "right": "Tainara Lisboa",
@@ -209,11 +257,67 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
+        "left": "Yana Santos",
+        "leftKo": "Yana Santos",
+        "right": "Luana Santos",
+        "rightKo": "Luana Santos",
+        "weight": "Women's Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "Talita Alencar",
+        "leftKo": "Talita Alencar",
+        "right": "Piera Rodriguez",
+        "rightKo": "Piera Rodriguez",
+        "weight": "Women's Strawweight",
+        "section": "announced"
+      },
+      {
         "left": "Nick Klein",
         "leftKo": "Nick Klein",
         "right": "Joseph Kropschot",
         "rightKo": "Joseph Kropschot",
         "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Rodrigo Sezinando",
+        "leftKo": "Rodrigo Sezinando",
+        "right": "Theodor Berggren",
+        "rightKo": "Theodor Berggren",
+        "weight": "Welterweight",
+        "section": "announced"
+      },
+      {
+        "left": "Jean-Paul Lebosnoyani",
+        "leftKo": "Jean-Paul Lebosnoyani",
+        "right": "Farman Hasanov",
+        "rightKo": "Farman Hasanov",
+        "weight": "Welterweight",
+        "section": "announced"
+      },
+      {
+        "left": "Azamat Bekoev",
+        "leftKo": "Azamat Bekoev",
+        "right": "Andre Petroski",
+        "rightKo": "Andre Petroski",
+        "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Julian Erosa",
+        "leftKo": "Julian Erosa",
+        "right": "JeongYeong Lee",
+        "rightKo": "JeongYeong Lee",
+        "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
+        "left": "Francis Marshall",
+        "leftKo": "Francis Marshall",
+        "right": "Gaston Bolanos",
+        "rightKo": "Gaston Bolanos",
+        "weight": "Featherweight",
         "section": "announced"
       }
     ]
@@ -234,6 +338,102 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "rightKo": "Sean Brady",
         "weight": "Welterweight",
         "section": "main"
+      },
+      {
+        "left": "Tatiana Suarez",
+        "leftKo": "Tatiana Suarez",
+        "right": "Virna Jandiroba",
+        "rightKo": "Virna Jandiroba",
+        "weight": "Women's Strawweight",
+        "section": "announced"
+      },
+      {
+        "left": "Mantas Kondratavičius",
+        "leftKo": "Mantas Kondratavičius",
+        "right": "Wes Schultz",
+        "rightKo": "Wes Schultz",
+        "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Billy Elekana",
+        "leftKo": "Billy Elekana",
+        "right": "Lucas Fernando",
+        "rightKo": "Lucas Fernando",
+        "weight": "Light Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Austin Bashi",
+        "leftKo": "Austin Bashi",
+        "right": "Lucas Brennan",
+        "rightKo": "Lucas Brennan",
+        "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
+        "left": "Karine Silva",
+        "leftKo": "Karine Silva",
+        "right": "Gabriella Fernandes",
+        "rightKo": "Gabriella Fernandes",
+        "weight": "Women's Flyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Priscila Cachoeira",
+        "leftKo": "Priscila Cachoeira",
+        "right": "Nina Milošević",
+        "rightKo": "Nina Milošević",
+        "weight": "Women's Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "Keiichiro Nakamura",
+        "leftKo": "Keiichiro Nakamura",
+        "right": "Ollie Schmid",
+        "rightKo": "Ollie Schmid",
+        "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
+        "left": "Seokhyeon Ko",
+        "leftKo": "Seokhyeon Ko",
+        "right": "Wellington Turman",
+        "rightKo": "Wellington Turman",
+        "weight": "Welterweight",
+        "section": "announced"
+      },
+      {
+        "left": "Jonny Parsons",
+        "leftKo": "Jonny Parsons",
+        "right": "José Souza",
+        "rightKo": "José Souza",
+        "weight": "Welterweight",
+        "section": "announced"
+      },
+      {
+        "left": "Davey Grant",
+        "leftKo": "Davey Grant",
+        "right": "Elijah Smith",
+        "rightKo": "Elijah Smith",
+        "weight": "Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "Jose Delano",
+        "leftKo": "Jose Delano",
+        "right": "Murtazali Magomedov",
+        "rightKo": "Murtazali Magomedov",
+        "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
+        "left": "Gabriel Lorenco",
+        "leftKo": "Gabriel Lorenco",
+        "right": "Alvin Hines",
+        "rightKo": "Alvin Hines",
+        "weight": "Heavyweight",
+        "section": "announced"
       }
     ]
   },
@@ -349,8 +549,50 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "title": "TBD vs TBD",
     "date": "2026-11-21",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-november-21-2026",
-    "startUtc": "2026-11-21T22:00:00Z",
-    "prelimsUtc": "2026-11-21T20:00:00Z",
-    "venue": "ABHA Arena Doha Qatar"
+    "startUtc": "2026-11-21T18:00:00Z",
+    "prelimsUtc": "2026-11-21T15:00:00Z",
+    "venue": "ABHA Arena Doha Qatar",
+    "bouts": [
+      {
+        "left": "Jared Cannonier",
+        "leftKo": "Jared Cannonier",
+        "right": "Ikram Aliskerov",
+        "rightKo": "Ikram Aliskerov",
+        "weight": "Middleweight",
+        "section": "main"
+      },
+      {
+        "left": "Jake Matthews",
+        "leftKo": "Jake Matthews",
+        "right": "Tahir Abdullayev",
+        "rightKo": "Tahir Abdullayev",
+        "weight": "Welterweight",
+        "section": "announced"
+      },
+      {
+        "left": "Aleksandre Topuria",
+        "leftKo": "Aleksandre Topuria",
+        "right": "Santiago Luna",
+        "rightKo": "Santiago Luna",
+        "weight": "Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "Asu Almabayev",
+        "leftKo": "Asu Almabayev",
+        "right": "Kyoji Horiguchi",
+        "rightKo": "Kyoji Horiguchi",
+        "weight": "Flyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Amir Albazi",
+        "leftKo": "Amir Albazi",
+        "right": "Alessandro Costa",
+        "rightKo": "Alessandro Costa",
+        "weight": "Flyweight",
+        "section": "announced"
+      }
+    ]
   }
 ];
