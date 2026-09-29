@@ -1839,6 +1839,18 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:Blue_Angels%27_VIP_Rider_Max_Holloway_(1)_(cropped).jpg",
     "file": "Blue Angels' VIP Rider Max Holloway (1) (cropped).jpg"
   },
+  "Maycee Barber": {
+    "src": "/fighters/maycee-barber.webp",
+    "groups": [
+      "ranking"
+    ],
+    "wikidataId": "Q58454724",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maycee_Barber_(cropped).png",
+    "author": "Maritza Sanchez",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "file": "Maycee Barber (cropped).png"
+  },
   "Merab Dvalishvili": {
     "src": "/fighters/merab-dvalishvili.webp",
     "groups": [
