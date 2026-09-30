@@ -545,8 +545,8 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2026-11-21-tbd-vs-tbd",
-    "title": "TBD vs TBD",
+    "id": "ufcstats-2026-11-21-prochazka-vs-stirling",
+    "title": "Prochazka vs Stirling",
     "date": "2026-11-21",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-november-21-2026",
     "startUtc": "2026-11-21T18:00:00Z",
@@ -554,12 +554,44 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "venue": "ABHA Arena Doha Qatar",
     "bouts": [
       {
+        "left": "Jiří Procházka",
+        "leftKo": "Jiří Procházka",
+        "right": "Navajo Stirling",
+        "rightKo": "Navajo Stirling",
+        "weight": "Light Heavyweight",
+        "section": "main"
+      },
+      {
+        "left": "Aljamain Sterling",
+        "leftKo": "Aljamain Sterling",
+        "right": "Kevin Vallejos",
+        "rightKo": "Kevin Vallejos",
+        "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
+        "left": "Dan Hooker",
+        "leftKo": "Dan Hooker",
+        "right": "Brian Ortega",
+        "rightKo": "Brian Ortega",
+        "weight": "Lightweight",
+        "section": "announced"
+      },
+      {
         "left": "Jared Cannonier",
         "leftKo": "Jared Cannonier",
         "right": "Ikram Aliskerov",
         "rightKo": "Ikram Aliskerov",
         "weight": "Middleweight",
-        "section": "main"
+        "section": "announced"
+      },
+      {
+        "left": "Shamil Gaziev",
+        "leftKo": "Shamil Gaziev",
+        "right": "Tallison Teixeira",
+        "rightKo": "Tallison Teixeira",
+        "weight": "Heavyweight",
+        "section": "announced"
       },
       {
         "left": "Jake Matthews",
