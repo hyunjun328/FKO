@@ -4,57 +4,6 @@ export type AutoScheduledEvent = { id: string; title: string; date: string; sour
 
 export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
   {
-    "id": "ufcstats-2026-10-04-silva-vs-wang",
-    "title": "Silva vs Wang",
-    "date": "2026-10-04",
-    "sourceUrl": "https://www.ufc.com/event/ufc-332",
-    "startUtc": "2026-10-04T00:00:00Z",
-    "prelimsUtc": "2026-10-03T22:00:00Z",
-    "venue": "Delta Center Salt Lake City , UT United States",
-    "bouts": [
-      {
-        "left": "Natalia Silva",
-        "leftKo": "Natalia Silva",
-        "right": "Wang Cong",
-        "rightKo": "Wang Cong",
-        "weight": "Women's Flyweight Title",
-        "section": "main"
-      },
-      {
-        "left": "Deiveson Figueiredo",
-        "leftKo": "Deiveson Figueiredo",
-        "right": "Payton Talbott",
-        "rightKo": "Payton Talbott",
-        "weight": "Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "King Green",
-        "leftKo": "King Green",
-        "right": "Esteban Ribovics",
-        "rightKo": "Esteban Ribovics",
-        "weight": "Lightweight",
-        "section": "announced"
-      },
-      {
-        "left": "Roberto Soldić",
-        "leftKo": "Roberto Soldić",
-        "right": "Khaos Williams",
-        "rightKo": "Khaos Williams",
-        "weight": "Welterweight",
-        "section": "announced"
-      },
-      {
-        "left": "Ateba Gautier",
-        "leftKo": "Ateba Gautier",
-        "right": "Roman Kopylov",
-        "rightKo": "Roman Kopylov",
-        "weight": "Middleweight",
-        "section": "announced"
-      }
-    ]
-  },
-  {
     "id": "ufcstats-2026-10-11-allen-vs-duncan",
     "title": "Allen vs Duncan",
     "date": "2026-10-11",
@@ -626,5 +575,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       }
     ]
+  },
+  {
+    "id": "ufcstats-2026-12-13-tbd-vs-tbd",
+    "title": "TBD vs TBD",
+    "date": "2026-12-13",
+    "sourceUrl": "https://www.ufc.com/event/ufc-335",
+    "startUtc": "2026-12-13T02:00:00Z",
+    "prelimsUtc": "2026-12-13T00:00:00Z",
+    "venue": "T-Mobile Arena Las Vegas , NV United States"
   }
 ];
