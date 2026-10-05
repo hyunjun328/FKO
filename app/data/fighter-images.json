@@ -1082,6 +1082,18 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Islam Makhachev 2022 UFC belt.png"
   },
+  "Ismail Naurdiev": {
+    "src": "/fighters/ismail-naurdiev.webp",
+    "groups": [
+      "world-ranking"
+    ],
+    "wikidataId": "Q48869871",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ismail_Naurdiev_at_UFC_Fight_Night_160_in_Copenhagen.jpg",
+    "author": "MMAnytt",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "file": "Ismail Naurdiev at UFC Fight Night 160 in Copenhagen.jpg"
+  },
   "Israel Adesanya": {
     "src": "/fighters/israel-adesanya.webp",
     "groups": [
@@ -2261,6 +2273,18 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:RichFranklin2.png",
     "file": "RichFranklin2.png"
   },
+  "Ricky Simon": {
+    "src": "/fighters/ricky-simon.webp",
+    "groups": [
+      "world-ranking"
+    ],
+    "wikidataId": "Q61663571",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ricky_Sim%C3%B3n_2019.jpg",
+    "author": "ASG Jordan",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Ricky_Sim%C3%B3n_2019.jpg",
+    "file": "Ricky Simón 2019.jpg"
+  },
   "Rinat Fakhretdinov": {
     "src": "/fighters/rinat-fakhretdinov.webp",
     "groups": [
@@ -2321,6 +2345,18 @@
     "license": "CC0",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "file": "Robert whittaker.jpg"
+  },
+  "Roberto Soldic": {
+    "src": "/fighters/roberto-soldic.webp",
+    "groups": [
+      "world-ranking"
+    ],
+    "wikidataId": "Q46706516",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Roberto_Soldi%C4%87.png",
+    "author": "PIXSELL",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "Roberto Soldić.png"
   },
   "Roman Dolidze": {
     "src": "/fighters/roman-dolidze.webp",
