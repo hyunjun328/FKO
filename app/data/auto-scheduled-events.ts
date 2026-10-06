@@ -45,14 +45,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Julius Walker",
-        "leftKo": "Julius Walker",
-        "right": "Gerald Meerschaert",
-        "rightKo": "Gerald Meerschaert",
-        "weight": "Light Heavyweight",
-        "section": "announced"
-      },
-      {
         "left": "Malcolm Wellmaker",
         "leftKo": "Malcolm Wellmaker",
         "right": "Otari Tanzilovi",
@@ -272,12 +264,12 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2026-11-07-bonfim-vs-brady",
+    "id": "ufcstats-2026-11-08-bonfim-vs-brady",
     "title": "Bonfim vs Brady",
-    "date": "2026-11-07",
+    "date": "2026-11-08",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-november-07-2026",
-    "startUtc": "2026-11-07T22:00:00Z",
-    "prelimsUtc": "2026-11-07T20:00:00Z",
+    "startUtc": "2026-11-08T01:00:00Z",
+    "prelimsUtc": "2026-11-07T22:00:00Z",
     "venue": "Meta APEX Las Vegas , NV United States",
     "bouts": [
       {
@@ -329,14 +321,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Priscila Cachoeira",
-        "leftKo": "Priscila Cachoeira",
-        "right": "Nina Milošević",
-        "rightKo": "Nina Milošević",
-        "weight": "Women's Bantamweight",
-        "section": "announced"
-      },
-      {
         "left": "Keiichiro Nakamura",
         "leftKo": "Keiichiro Nakamura",
         "right": "Ollie Schmid",
@@ -382,6 +366,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "right": "Alvin Hines",
         "rightKo": "Alvin Hines",
         "weight": "Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Priscila Cachoeira",
+        "leftKo": "Priscila Cachoeira",
+        "right": "Nina Milošević",
+        "rightKo": "Nina Milošević",
+        "weight": "Women's Bantamweight",
         "section": "announced"
       }
     ]

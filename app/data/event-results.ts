@@ -9,7 +9,7 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-fight-night-belgrade-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-Fight-Night-283-Medic-vs-Rodriguez-112723",
-    "verifiedAt": "2026-10-06T09:50:51.747765+00:00",
+    "verifiedAt": "2026-10-06T20:01:01.709732+00:00",
     "bouts": [
       {
         "winner": "Uros Medic",
@@ -115,7 +115,7 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-fight-night-gamrot-salkilld-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-Fight-Night-284-Gamrot-vs-Salkilld-112957",
-    "verifiedAt": "2026-10-06T09:50:51.973366+00:00",
+    "verifiedAt": "2026-10-06T20:01:02.268756+00:00",
     "bouts": [
       {
         "winner": "Quillan Salkilld",
@@ -207,7 +207,7 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-330-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-330-Makhachev-vs-Garry-112557",
-    "verifiedAt": "2026-10-06T09:50:52.157422+00:00",
+    "verifiedAt": "2026-10-06T20:01:02.853999+00:00",
     "bouts": [
       {
         "winner": "Islam Makhachev",
@@ -299,7 +299,7 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-fight-night-sacramento-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-Fight-Night-285-Hernandez-vs-Rodrigues-113260",
-    "verifiedAt": "2026-10-06T09:50:52.478510+00:00",
+    "verifiedAt": "2026-10-06T20:01:08.288683+00:00",
     "bouts": [
       {
         "winner": "Gregory Rodrigues",
@@ -398,7 +398,7 @@ export const EVENT_RESULTS: EventResult[] = [
     "eventId": "ufc-fight-night-shanghai-2026",
     "completed": true,
     "sourceUrl": "https://www.sherdog.com/events/UFC-Fight-Night-286-Nurmagomedov-vs-Song-113007",
-    "verifiedAt": "2026-10-06T09:50:52.909279+00:00",
+    "verifiedAt": "2026-10-06T20:01:09.983114+00:00",
     "bouts": [
       {
         "winner": "Yadong Song",
