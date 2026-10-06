@@ -3,711 +3,995 @@ export type OfficialProfileStatus = { record?: string; heightCm?: number; reachC
 
 export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
   "Aleksandar Rakić": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Heavyweight Division",
+    "firstRoundFinishes": 8,
+    "heightCm": 193,
     "knockoutWins": 9,
+    "reachCm": 198,
     "record": "15-6-0",
     "sourceUrl": "https://www.ufc.com/athlete/aleksandar-rakic",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 1
   },
   "Alex Pereira": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Heavyweight Division",
+    "firstRoundFinishes": 5,
+    "heightCm": 193,
     "knockoutWins": 11,
+    "reachCm": 201,
     "record": "13-4-0",
     "sourceUrl": "https://www.ufc.com/athlete/alex-pereira",
-    "status": "Actif"
+    "status": "Active"
   },
   "Alistair Overeem": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Heavyweight Division",
+    "heightCm": 193,
     "knockoutWins": 25,
+    "reachCm": 203,
     "record": "47-19-0",
     "sourceUrl": "https://www.ufc.com/athlete/alistair-overeem",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting",
+    "submissionWins": 17
   },
   "Amanda Lemos": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids paille féminins Division",
+    "checkedAt": "2026-10-06",
+    "division": "Women's Strawweight Division",
+    "firstRoundFinishes": 8,
+    "heightCm": 163,
     "knockoutWins": 8,
+    "reachCm": 165,
     "record": "15-7-1",
     "sourceUrl": "https://www.ufc.com/athlete/amanda-lemos",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 3
   },
   "Amanda Nunes": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids coq féminins Division",
+    "checkedAt": "2026-10-06",
+    "division": "Women's Bantamweight Division",
+    "firstRoundFinishes": 14,
+    "heightCm": 173,
     "knockoutWins": 13,
+    "reachCm": 175,
     "record": "23-5-0",
     "sourceUrl": "https://www.ufc.com/athlete/amanda-nunes",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 4
   },
   "Anderson Silva": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Middleweight Division",
+    "heightCm": 188,
     "knockoutWins": 22,
+    "reachCm": 196,
     "record": "34-11-0",
-    "sourceUrl": "https://www.ufc.com/athlete/anderson-silva"
+    "sourceUrl": "https://www.ufc.com/athlete/anderson-silva",
+    "submissionWins": 4
   },
   "Anthony Hernandez": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Middleweight Division",
+    "firstRoundFinishes": 5,
+    "heightCm": 183,
     "knockoutWins": 3,
+    "reachCm": 190,
     "record": "15-4-0",
     "sourceUrl": "https://www.ufc.com/athlete/anthony-hernandez",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 9
   },
   "Anthony Pettis": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Welterweight Division",
+    "heightCm": 178,
     "knockoutWins": 11,
+    "reachCm": 184,
     "record": "24-10-0",
     "sourceUrl": "https://www.ufc.com/athlete/anthony-pettis",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting",
+    "submissionWins": 7
   },
   "Benson Henderson": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Welterweight Division",
+    "heightCm": 175,
+    "reachCm": 178,
     "record": "23-5-0",
     "sourceUrl": "https://www.ufc.com/athlete/benson-henderson",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting"
   },
   "Brock Lesnar": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Heavyweight Division",
+    "heightCm": 190,
+    "reachCm": 206,
     "record": "6-3-0",
     "sourceUrl": "https://www.ufc.com/athlete/brock-lesnar",
-    "status": "Retraité"
+    "status": "Retired"
   },
   "Cain Velasquez": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Heavyweight Division",
+    "heightCm": 187,
     "knockoutWins": 12,
+    "reachCm": 196,
     "record": "14-3-0",
     "sourceUrl": "https://www.ufc.com/athlete/cain-velasquez",
-    "status": "Retraité"
+    "status": "Retired"
   },
   "Carla Esparza": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids paille féminins Division",
+    "checkedAt": "2026-10-06",
+    "division": "Women's Strawweight Division",
+    "heightCm": 155,
     "knockoutWins": 4,
+    "reachCm": 160,
     "record": "20-8-0",
     "sourceUrl": "https://www.ufc.com/athlete/carla-esparza",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting",
+    "submissionWins": 4
   },
   "Carlos Condit": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Welterweight Division",
+    "heightCm": 188,
     "knockoutWins": 15,
+    "reachCm": 192,
     "record": "32-14-0",
     "sourceUrl": "https://www.ufc.com/athlete/carlos-condit",
-    "status": "Retraité"
+    "status": "Retired",
+    "submissionWins": 13
   },
   "Chan Sung Jung": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids plume Division",
+    "checkedAt": "2026-10-06",
+    "division": "Featherweight Division",
+    "heightCm": 170,
+    "knockoutWins": 6,
+    "reachCm": 183,
     "record": "17-8-0",
     "sourceUrl": "https://www.ufc.com/athlete/chan-sung-jung",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 8
   },
   "ChangHo Lee": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids coq Division",
+    "checkedAt": "2026-10-06",
+    "division": "Bantamweight Division",
+    "heightCm": 173,
     "knockoutWins": 6,
+    "reachCm": 175,
     "record": "11-2-0",
     "sourceUrl": "https://www.ufc.com/athlete/chang-ho-lee",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 1
   },
   "Chris Weidman": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Middleweight Division",
+    "firstRoundFinishes": 6,
+    "heightCm": 188,
     "knockoutWins": 6,
+    "reachCm": 198,
     "record": "16-8-0",
     "sourceUrl": "https://www.ufc.com/athlete/chris-weidman",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting",
+    "submissionWins": 4
   },
   "Chuck Liddell": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Light Heavyweight Division",
     "record": "21-8-0",
     "sourceUrl": "https://www.ufc.com/athlete/chuck-liddell",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting"
   },
   "Conor McGregor": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Welterweight Division",
+    "firstRoundFinishes": 5,
+    "heightCm": 175,
     "knockoutWins": 19,
+    "reachCm": 188,
     "record": "22-7-0",
     "sourceUrl": "https://www.ufc.com/athlete/conor-mcgregor",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 1
   },
   "Da Woon Jung": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Light Heavyweight Division",
+    "firstRoundFinishes": 7,
+    "heightCm": 193,
     "knockoutWins": 11,
+    "reachCm": 199,
     "record": "15-6-1",
     "sourceUrl": "https://www.ufc.com/athlete/da-woon-jung",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting",
+    "submissionWins": 2
   },
   "Dan Henderson": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Middleweight Division",
+    "heightCm": 180,
+    "reachCm": 188,
     "record": "32-15-0",
     "sourceUrl": "https://www.ufc.com/athlete/dan-henderson",
-    "status": "Retraité"
+    "status": "Retired"
   },
   "Daniel Cormier": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Heavyweight Division",
+    "heightCm": 180,
     "knockoutWins": 10,
+    "reachCm": 184,
     "record": "22-3-0",
     "sourceUrl": "https://www.ufc.com/athlete/daniel-cormier",
-    "status": "Retraité"
+    "status": "Retired",
+    "submissionWins": 5
   },
   "Daniel Rodriguez": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Welterweight Division",
+    "firstRoundFinishes": 5,
+    "heightCm": 185,
     "knockoutWins": 9,
+    "reachCm": 188,
     "record": "20-6-0",
     "sourceUrl": "https://www.ufc.com/athlete/daniel-rodriguez",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 4
   },
   "Demetrious Johnson": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mouche Division",
+    "checkedAt": "2026-10-06",
+    "division": "Flyweight Division",
+    "heightCm": 160,
+    "reachCm": 168,
     "record": "27-3-1",
     "sourceUrl": "https://www.ufc.com/athlete/demetrious-johnson",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting",
+    "submissionWins": 11
   },
   "Demian Maia": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Welterweight Division",
+    "heightCm": 185,
     "knockoutWins": 3,
+    "reachCm": 183,
     "record": "28-11-0",
     "sourceUrl": "https://www.ufc.com/athlete/demian-maia",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting",
+    "submissionWins": 14
   },
   "Diego Sanchez": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Welterweight Division",
+    "heightCm": 178,
     "knockoutWins": 10,
+    "reachCm": 184,
     "record": "32-13-0",
     "sourceUrl": "https://www.ufc.com/athlete/diego-sanchez",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting",
+    "submissionWins": 6
   },
   "Dominick Cruz": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids coq Division",
+    "checkedAt": "2026-10-06",
+    "division": "Bantamweight Division",
+    "heightCm": 173,
     "knockoutWins": 7,
+    "reachCm": 173,
     "record": "24-4-0",
     "sourceUrl": "https://www.ufc.com/athlete/dominick-cruz",
-    "status": "Retraité"
+    "status": "Retired",
+    "submissionWins": 1
   },
   "Donald Cerrone": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Welterweight Division",
+    "firstRoundFinishes": 15,
+    "heightCm": 185,
     "knockoutWins": 10,
+    "reachCm": 185,
     "record": "36-17-0",
     "sourceUrl": "https://www.ufc.com/athlete/donald-cerrone",
-    "status": "Retraité"
+    "status": "Retired",
+    "submissionWins": 17
   },
   "DongHun Choi": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mouche Division",
+    "checkedAt": "2026-10-06",
+    "division": "Flyweight Division",
     "knockoutWins": 3,
     "record": "3-0-0",
     "sourceUrl": "https://www.ufc.com/athlete/donghun-choi",
-    "status": "Actif"
+    "status": "Active"
   },
   "Dooho Choi": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids plume Division",
+    "checkedAt": "2026-10-06",
+    "division": "Featherweight Division",
+    "firstRoundFinishes": 8,
+    "heightCm": 178,
     "knockoutWins": 14,
+    "reachCm": 178,
     "record": "17-5-1",
     "sourceUrl": "https://www.ufc.com/athlete/dooho-choi",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 1
   },
   "Dustin Poirier": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids légers Division",
+    "checkedAt": "2026-10-06",
+    "division": "Lightweight Division",
+    "firstRoundFinishes": 13,
+    "heightCm": 175,
     "knockoutWins": 16,
+    "reachCm": 183,
     "record": "30-10-0",
     "sourceUrl": "https://www.ufc.com/athlete/dustin-poirier",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 7
   },
   "Duško Todorović": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Middleweight Division",
+    "firstRoundFinishes": 8,
+    "heightCm": 185,
     "knockoutWins": 8,
+    "reachCm": 188,
     "record": "13-7-0",
     "sourceUrl": "https://www.ufc.com/athlete/dusko-todorovic",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 4
   },
   "Eddie Alvarez": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids légers Division",
+    "checkedAt": "2026-10-06",
+    "division": "Lightweight Division",
+    "heightCm": 175,
     "knockoutWins": 18,
+    "reachCm": 175,
     "record": "29-6-0",
     "sourceUrl": "https://www.ufc.com/athlete/eddie-alvarez",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting",
+    "submissionWins": 7
   },
   "Erin Blanchfield": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mouche féminins Division",
+    "checkedAt": "2026-10-06",
+    "division": "Women's Flyweight Division",
+    "firstRoundFinishes": 3,
+    "heightCm": 163,
     "knockoutWins": 2,
+    "reachCm": 168,
     "record": "14-2-0",
     "sourceUrl": "https://www.ufc.com/athlete/erin-blanchfield",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 5
   },
   "Fabricio Werdum": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Heavyweight Division",
+    "heightCm": 193,
     "knockoutWins": 6,
+    "reachCm": 196,
     "record": "24-8-1",
     "sourceUrl": "https://www.ufc.com/athlete/fabricio-werdum",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting",
+    "submissionWins": 11
   },
   "Francis Ngannou": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Heavyweight Division",
+    "heightCm": 193,
     "knockoutWins": 12,
+    "reachCm": 211,
     "record": "17-3-0",
     "sourceUrl": "https://www.ufc.com/athlete/francis-ngannou",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting",
+    "submissionWins": 4
   },
   "Frankie Edgar": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids coq Division",
+    "checkedAt": "2026-10-06",
+    "division": "Bantamweight Division",
+    "firstRoundFinishes": 6,
+    "heightCm": 168,
     "knockoutWins": 6,
+    "reachCm": 173,
     "record": "23-11-1",
     "sourceUrl": "https://www.ufc.com/athlete/frankie-edgar",
-    "status": "Retraité"
+    "status": "Retired",
+    "submissionWins": 4
   },
   "Georges St-Pierre": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Middleweight Division",
+    "heightCm": 179,
+    "reachCm": 193,
     "record": "26-2-0",
     "sourceUrl": "https://www.ufc.com/athlete/georges-st-pierre",
-    "status": "Retraité"
+    "status": "Retired"
   },
   "Germaine de Randamie": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids coq féminins Division",
+    "checkedAt": "2026-10-06",
+    "division": "Women's Bantamweight Division",
+    "firstRoundFinishes": 3,
+    "heightCm": 175,
     "knockoutWins": 4,
+    "reachCm": 180,
     "record": "10-5-0",
     "sourceUrl": "https://www.ufc.com/athlete/germaine-de-randamie",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting",
+    "submissionWins": 1
   },
   "Gilbert Urbina": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Middleweight Division",
+    "firstRoundFinishes": 3,
+    "heightCm": 175,
     "knockoutWins": 3,
+    "reachCm": 190,
     "record": "8-5-0",
     "sourceUrl": "https://www.ufc.com/athlete/gilbert-urbina",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 2
   },
   "Gillian Robertson": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids paille féminins Division",
+    "checkedAt": "2026-10-06",
+    "division": "Women's Strawweight Division",
+    "firstRoundFinishes": 3,
+    "heightCm": 165,
     "knockoutWins": 3,
+    "reachCm": 160,
     "record": "17-9-0",
     "sourceUrl": "https://www.ufc.com/athlete/gillian-robertson",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 9
   },
   "Glover Teixeira": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Light Heavyweight Division",
+    "heightCm": 188,
     "knockoutWins": 18,
+    "reachCm": 193,
     "record": "33-9-0",
     "sourceUrl": "https://www.ufc.com/athlete/glover-teixeira",
-    "status": "Retraité"
+    "status": "Retired",
+    "submissionWins": 10
   },
   "Gray Maynard": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids plume Division",
+    "checkedAt": "2026-10-06",
+    "division": "Featherweight Division",
+    "heightCm": 175,
     "knockoutWins": 2,
+    "reachCm": 178,
     "record": "14-8-1",
     "sourceUrl": "https://www.ufc.com/athlete/gray-maynard",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting"
   },
   "Henry Cejudo": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids coq Division",
+    "checkedAt": "2026-10-06",
+    "division": "Bantamweight Division",
+    "firstRoundFinishes": 5,
+    "heightCm": 163,
     "knockoutWins": 8,
+    "reachCm": 163,
     "record": "16-6-0",
     "sourceUrl": "https://www.ufc.com/athlete/henry-cejudo",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting"
   },
   "Holly Holm": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids coq féminins Division",
+    "checkedAt": "2026-10-06",
+    "division": "Women's Bantamweight Division",
+    "heightCm": 173,
     "knockoutWins": 8,
+    "reachCm": 175,
     "record": "15-7-0",
     "sourceUrl": "https://www.ufc.com/athlete/holly-holm",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting"
   },
   "Hyun Gyu Lim": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Welterweight Division",
+    "heightCm": 190,
+    "reachCm": 196,
     "record": "13-7-1",
     "sourceUrl": "https://www.ufc.com/athlete/hyun-gyu-lim",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting"
   },
   "HyunSung Park": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mouche Division",
+    "checkedAt": "2026-10-06",
+    "division": "Flyweight Division",
+    "firstRoundFinishes": 5,
+    "heightCm": 170,
     "knockoutWins": 4,
+    "reachCm": 168,
     "record": "10-2-0",
     "sourceUrl": "https://www.ufc.com/athlete/hyunsung-park",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 5
   },
   "Ian Machado Garry": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Welterweight Division",
+    "firstRoundFinishes": 4,
+    "heightCm": 190,
     "knockoutWins": 7,
+    "reachCm": 189,
     "record": "17-2-0",
     "sourceUrl": "https://www.ufc.com/athlete/ian-machado-garry",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 1
   },
   "Ilia Topuria": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids légers Division",
+    "checkedAt": "2026-10-06",
+    "division": "Lightweight Division",
+    "firstRoundFinishes": 10,
+    "heightCm": 170,
     "knockoutWins": 7,
+    "reachCm": 175,
     "record": "17-1-0",
     "sourceUrl": "https://www.ufc.com/athlete/ilia-topuria",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 8
   },
   "Islam Makhachev": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Welterweight Division",
+    "heightCm": 178,
     "knockoutWins": 5,
+    "reachCm": 179,
     "record": "29-1-0",
     "sourceUrl": "https://www.ufc.com/athlete/islam-makhachev",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 13
   },
   "Jan Błachowicz": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Light Heavyweight Division",
+    "firstRoundFinishes": 7,
+    "heightCm": 188,
     "knockoutWins": 9,
+    "reachCm": 198,
     "record": "29-12-2",
     "sourceUrl": "https://www.ufc.com/athlete/jan-blachowicz",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 9
   },
   "JeongYeong Lee": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids plume Division",
+    "checkedAt": "2026-10-06",
+    "division": "Featherweight Division",
+    "firstRoundFinishes": 5,
+    "heightCm": 178,
     "knockoutWins": 4,
+    "reachCm": 187,
     "record": "11-3-0",
     "sourceUrl": "https://www.ufc.com/athlete/jeongyeong-lee",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 3
   },
   "Joanna Jędrzejczyk": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids paille féminins Division",
+    "checkedAt": "2026-10-06",
+    "division": "Women's Strawweight Division",
+    "heightCm": 168,
     "knockoutWins": 4,
+    "reachCm": 166,
     "record": "16-5-0",
     "sourceUrl": "https://www.ufc.com/athlete/joanna-jedrzejczyk",
-    "status": "Retraité"
+    "status": "Retired",
+    "submissionWins": 1
   },
   "Jon Jones": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Heavyweight Division",
+    "heightCm": 193,
     "knockoutWins": 11,
+    "reachCm": 215,
     "record": "28-1-0",
     "sourceUrl": "https://www.ufc.com/athlete/jon-jones",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 7
   },
   "JooSang Yoo": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids plume Division",
+    "checkedAt": "2026-10-06",
+    "division": "Featherweight Division",
+    "firstRoundFinishes": 4,
+    "heightCm": 170,
     "knockoutWins": 4,
+    "reachCm": 182,
     "record": "9-2-0",
     "sourceUrl": "https://www.ufc.com/athlete/joo-sang-yoo",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 1
   },
   "José Aldo": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids plume Division",
+    "checkedAt": "2026-10-06",
+    "division": "Featherweight Division",
+    "firstRoundFinishes": 12,
+    "heightCm": 170,
     "knockoutWins": 17,
+    "reachCm": 178,
     "record": "32-10-0",
     "sourceUrl": "https://www.ufc.com/athlete/jose-aldo",
-    "status": "Retraité"
+    "status": "Retired",
+    "submissionWins": 1
   },
   "JunYong Park": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Middleweight Division",
+    "firstRoundFinishes": 5,
+    "heightCm": 178,
     "knockoutWins": 5,
+    "reachCm": 185,
     "record": "19-7-0",
     "sourceUrl": "https://www.ufc.com/athlete/jun-yong-park",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 6
   },
   "Justin Gaethje": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids légers Division",
+    "checkedAt": "2026-10-06",
+    "division": "Lightweight Division",
+    "firstRoundFinishes": 9,
+    "heightCm": 180,
     "knockoutWins": 21,
+    "reachCm": 178,
     "record": "28-5-0",
     "sourceUrl": "https://www.ufc.com/athlete/justin-gaethje",
-    "status": "Actif"
+    "status": "Active"
   },
   "Khabib Nurmagomedov": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids légers Division",
+    "checkedAt": "2026-10-06",
+    "division": "Lightweight Division",
+    "heightCm": 178,
     "knockoutWins": 8,
+    "reachCm": 178,
     "record": "29-0-0",
     "sourceUrl": "https://www.ufc.com/athlete/khabib-nurmagomedov",
-    "status": "Retraité"
+    "status": "Retired",
+    "submissionWins": 11
   },
   "Kyung Ho Kang": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids coq Division",
+    "checkedAt": "2026-10-06",
+    "division": "Bantamweight Division",
+    "firstRoundFinishes": 9,
+    "heightCm": 175,
     "knockoutWins": 2,
+    "reachCm": 185,
     "record": "19-11-0",
     "sourceUrl": "https://www.ufc.com/athlete/kyung-ho-kang",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting",
+    "submissionWins": 12
   },
   "Luke Rockhold": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Middleweight Division",
+    "firstRoundFinishes": 10,
+    "heightCm": 190,
     "knockoutWins": 6,
+    "reachCm": 196,
     "record": "16-6-0",
     "sourceUrl": "https://www.ufc.com/athlete/luke-rockhold",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting",
+    "submissionWins": 8
   },
   "Lyoto Machida": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Middleweight Division",
+    "heightCm": 185,
+    "reachCm": 188,
     "record": "24-8-0",
     "sourceUrl": "https://www.ufc.com/athlete/lyoto-machida",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting"
   },
   "Mackenzie Dern": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids paille féminins Division",
+    "checkedAt": "2026-10-06",
+    "division": "Women's Strawweight Division",
+    "firstRoundFinishes": 6,
+    "heightCm": 163,
+    "reachCm": 160,
     "record": "17-5-0",
     "sourceUrl": "https://www.ufc.com/athlete/mackenzie-dern",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 8
   },
   "Marcin Tybura": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Heavyweight Division",
+    "firstRoundFinishes": 11,
+    "heightCm": 190,
     "knockoutWins": 10,
+    "reachCm": 198,
     "record": "27-12-0",
     "sourceUrl": "https://www.ufc.com/athlete/marcin-tybura",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 7
   },
   "Mark Hunt": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Heavyweight Division",
+    "firstRoundFinishes": 3,
+    "heightCm": 178,
     "knockoutWins": 10,
+    "reachCm": 183,
     "record": "13-14-1",
     "sourceUrl": "https://www.ufc.com/athlete/mark-hunt",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting"
   },
   "Mateusz Gamrot": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids légers Division",
+    "checkedAt": "2026-10-06",
+    "division": "Lightweight Division",
+    "firstRoundFinishes": 3,
+    "heightCm": 178,
     "knockoutWins": 8,
+    "reachCm": 179,
     "record": "26-5-0",
     "sourceUrl": "https://www.ufc.com/athlete/mateusz-gamrot",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 6
   },
   "Matt Hughes": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Welterweight Division",
+    "heightCm": 175,
     "record": "46-9-0",
     "sourceUrl": "https://www.ufc.com/athlete/matt-hughes",
-    "status": "Retraité"
+    "status": "Retired"
   },
   "Matt Serra": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Welterweight Division",
+    "heightCm": 168,
     "record": "17-7-0",
     "sourceUrl": "https://www.ufc.com/athlete/matt-serra",
-    "status": "Retraité"
+    "status": "Retired"
   },
   "Mauricio Rua": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Light Heavyweight Division",
+    "heightCm": 185,
     "knockoutWins": 21,
+    "reachCm": 193,
     "record": "27-14-1",
     "sourceUrl": "https://www.ufc.com/athlete/mauricio-rua",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting",
+    "submissionWins": 1
   },
   "Michael Bisping": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Middleweight Division",
+    "heightCm": 185,
+    "reachCm": 192,
     "record": "31-9-0",
     "sourceUrl": "https://www.ufc.com/athlete/michael-bisping",
-    "status": "Retraité"
+    "status": "Retired"
   },
   "Mirko Cro Cop": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Heavyweight Division",
+    "heightCm": 188,
+    "reachCm": 185,
     "record": "31-11-2",
     "sourceUrl": "https://www.ufc.com/athlete/mirko-cro-cop",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting"
   },
   "Nate Diaz": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Welterweight Division",
+    "firstRoundFinishes": 8,
+    "heightCm": 185,
     "knockoutWins": 5,
+    "reachCm": 193,
     "record": "22-13-0",
     "sourceUrl": "https://www.ufc.com/athlete/nate-diaz",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting",
+    "submissionWins": 13
   },
   "Navajo Stirling": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Light Heavyweight Division",
+    "firstRoundFinishes": 3,
+    "heightCm": 193,
     "knockoutWins": 7,
+    "reachCm": 201,
     "record": "11-0-0",
     "sourceUrl": "https://www.ufc.com/athlete/navajo-stirling",
-    "status": "Actif"
+    "status": "Active"
   },
   "Nick Diaz": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Middleweight Division",
+    "heightCm": 185,
     "knockoutWins": 13,
+    "reachCm": 193,
     "record": "26-11-0",
     "sourceUrl": "https://www.ufc.com/athlete/nick-diaz",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 8
   },
   "Randy Couture": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Light Heavyweight Division",
+    "heightCm": 188,
+    "reachCm": 190,
     "record": "19-11-0",
     "sourceUrl": "https://www.ufc.com/athlete/randy-couture",
-    "status": "Retraité"
+    "status": "Retired"
   },
   "Rashad Evans": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Light Heavyweight Division",
+    "heightCm": 183,
+    "reachCm": 190,
     "record": "24-8-1",
     "sourceUrl": "https://www.ufc.com/athlete/rashad-evans",
-    "status": "Retraité"
+    "status": "Retired"
   },
   "Renan Barao": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids coq Division",
+    "checkedAt": "2026-10-06",
+    "division": "Bantamweight Division",
+    "heightCm": 168,
     "knockoutWins": 8,
+    "reachCm": 178,
     "record": "36-9-0",
     "sourceUrl": "https://www.ufc.com/athlete/renan-barao",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting",
+    "submissionWins": 15
   },
   "Rich Franklin": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Middleweight Division",
+    "heightCm": 185,
+    "reachCm": 193,
     "record": "29-7-0",
     "sourceUrl": "https://www.ufc.com/athlete/rich-franklin",
-    "status": "Retraité"
+    "status": "Retired"
   },
   "Robert Valentin": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Middleweight Division",
+    "firstRoundFinishes": 9,
+    "heightCm": 188,
     "knockoutWins": 3,
+    "reachCm": 196,
     "record": "13-6-0",
     "sourceUrl": "https://www.ufc.com/athlete/robert-valentin-frey",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 9
   },
   "Ronda Rousey": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids coq féminins Division",
+    "checkedAt": "2026-10-06",
+    "division": "Women's Bantamweight Division",
+    "heightCm": 168,
+    "reachCm": 173,
     "record": "12-2-0",
     "sourceUrl": "https://www.ufc.com/athlete/ronda-rousey",
-    "status": "Retraité"
+    "status": "Retired"
   },
   "Rory MacDonald": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Welterweight Division",
+    "heightCm": 183,
+    "reachCm": 193,
     "record": "18-4-0",
     "sourceUrl": "https://www.ufc.com/athlete/rory-macdonald",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting"
   },
   "Rose Namajunas": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mouche féminins Division",
+    "checkedAt": "2026-10-06",
+    "division": "Women's Flyweight Division",
+    "firstRoundFinishes": 5,
+    "heightCm": 165,
     "knockoutWins": 2,
+    "reachCm": 165,
     "record": "15-8-0",
     "sourceUrl": "https://www.ufc.com/athlete/rose-namajunas",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 6
   },
   "Seokhyeon Ko": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Welterweight Division",
+    "firstRoundFinishes": 4,
+    "heightCm": 178,
     "knockoutWins": 6,
+    "reachCm": 180,
     "record": "13-3-0",
     "sourceUrl": "https://www.ufc.com/athlete/seokhyeon-ko",
-    "status": "Actif"
+    "status": "Active"
   },
   "Song Yadong": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids coq Division",
+    "checkedAt": "2026-10-06",
+    "division": "Bantamweight Division",
+    "firstRoundFinishes": 7,
+    "heightCm": 173,
     "knockoutWins": 10,
+    "reachCm": 170,
     "record": "24-9-1",
     "sourceUrl": "https://www.ufc.com/athlete/song-yadong",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 4
   },
   "Stipe Miocic": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Heavyweight Division",
+    "firstRoundFinishes": 9,
+    "heightCm": 196,
     "knockoutWins": 15,
+    "reachCm": 203,
     "record": "20-5-0",
     "sourceUrl": "https://www.ufc.com/athlete/stipe-miocic",
-    "status": "Retraité"
+    "status": "Retired"
   },
   "SuYoung You": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids coq Division",
+    "checkedAt": "2026-10-06",
+    "division": "Bantamweight Division",
+    "firstRoundFinishes": 5,
+    "heightCm": 168,
     "knockoutWins": 3,
+    "reachCm": 165,
     "record": "16-4-0",
     "sourceUrl": "https://www.ufc.com/athlete/suyoung-yu",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 5
   },
   "TJ Dillashaw": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids coq Division",
+    "checkedAt": "2026-10-06",
+    "division": "Bantamweight Division",
+    "heightCm": 169,
     "knockoutWins": 8,
+    "reachCm": 170,
     "record": "18-5-0",
     "sourceUrl": "https://www.ufc.com/athlete/tj-dillashaw",
-    "status": "Retraité"
+    "status": "Retired",
+    "submissionWins": 3
   },
   "Tito Ortiz": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-lourds Division",
+    "checkedAt": "2026-10-06",
+    "division": "Light Heavyweight Division",
+    "heightCm": 190,
     "record": "0-0-0",
     "sourceUrl": "https://www.ufc.com/athlete/tito-ortiz",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting"
   },
   "Tony Ferguson": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Welterweight Division",
+    "firstRoundFinishes": 9,
+    "heightCm": 180,
     "knockoutWins": 13,
+    "reachCm": 194,
     "record": "26-11-0",
     "sourceUrl": "https://www.ufc.com/athlete/tony-ferguson",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting",
+    "submissionWins": 8
   },
   "Umar Nurmagomedov": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids coq Division",
+    "checkedAt": "2026-10-06",
+    "division": "Bantamweight Division",
+    "firstRoundFinishes": 5,
+    "heightCm": 173,
     "knockoutWins": 2,
+    "reachCm": 175,
     "record": "20-2-0",
     "sourceUrl": "https://www.ufc.com/athlete/umar-nurmagomedov",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 7
   },
   "Urijah Faber": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids coq Division",
+    "checkedAt": "2026-10-06",
+    "division": "Bantamweight Division",
+    "heightCm": 168,
     "knockoutWins": 10,
+    "reachCm": 170,
     "record": "35-11-0",
     "sourceUrl": "https://www.ufc.com/athlete/urijah-faber",
-    "status": "Ne se bat pas"
+    "status": "Not Fighting",
+    "submissionWins": 17
   },
   "Uroš Medić": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids mi-moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Welterweight Division",
+    "firstRoundFinishes": 11,
+    "heightCm": 185,
     "knockoutWins": 12,
+    "reachCm": 180,
     "record": "14-3-0",
     "sourceUrl": "https://www.ufc.com/athlete/uros-medic",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 2
   },
   "Yan Xiaonan": {
     "checkedAt": "2026-08-11",
@@ -722,11 +1006,14 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 1
   },
   "YiSak Lee": {
-    "checkedAt": "2026-10-05",
-    "division": "Poids moyens Division",
+    "checkedAt": "2026-10-06",
+    "division": "Middleweight Division",
+    "firstRoundFinishes": 6,
+    "heightCm": 188,
     "knockoutWins": 4,
     "record": "8-2-0",
     "sourceUrl": "https://www.ufc.com/athlete/yi-sak-lee",
-    "status": "Actif"
+    "status": "Active",
+    "submissionWins": 3
   }
 };
