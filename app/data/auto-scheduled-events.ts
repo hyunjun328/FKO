@@ -155,10 +155,10 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Arnold Allen",
-        "leftKo": "Arnold Allen",
-        "right": "Aaron Pico",
-        "rightKo": "Aaron Pico",
+        "left": "Aaron Pico",
+        "leftKo": "Aaron Pico",
+        "right": "Losene Keita",
+        "rightKo": "Losene Keita",
         "weight": "Featherweight",
         "section": "announced"
       }
