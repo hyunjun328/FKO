@@ -569,38 +569,12 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2026-12-13-oliveira-vs-lopes",
-    "title": "Oliveira vs Lopes",
-    "date": "2026-12-13",
-    "sourceUrl": "https://www.ufc.com/event/ufc-335",
-    "startUtc": "2026-12-13T02:00:00Z",
-    "prelimsUtc": "2026-12-13T00:00:00Z",
-    "venue": "T-Mobile Arena Las Vegas , NV United States",
-    "bouts": [
-      {
-        "left": "Charles Oliveira",
-        "leftKo": "Charles Oliveira",
-        "right": "Diego Lopes",
-        "rightKo": "Diego Lopes",
-        "weight": "Lightweight",
-        "section": "main"
-      },
-      {
-        "left": "Sergei Pavlovich",
-        "leftKo": "Sergei Pavlovich",
-        "right": "Alex Pereira",
-        "rightKo": "Alex Pereira",
-        "weight": "Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Joe Pyfer",
-        "leftKo": "Joe Pyfer",
-        "right": "Bo Nickal",
-        "rightKo": "Bo Nickal",
-        "weight": "Middleweight",
-        "section": "announced"
-      }
-    ]
+    "id": "ufcstats-2026-12-11-tbd-vs-tbd",
+    "title": "TBD vs TBD",
+    "date": "2026-12-11",
+    "sourceUrl": "https://www.ufc.com/event/ufc-176",
+    "startUtc": "2026-12-11T22:00:00Z",
+    "prelimsUtc": "2026-12-11T20:00:00Z",
+    "venue": "Principality Stadium United Kingdom"
   }
 ];
