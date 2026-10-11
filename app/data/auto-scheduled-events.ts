@@ -4,57 +4,6 @@ export type AutoScheduledEvent = { id: string; title: string; date: string; sour
 
 export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
   {
-    "id": "ufcstats-2026-10-11-allen-vs-duncan",
-    "title": "Allen vs Duncan",
-    "date": "2026-10-11",
-    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-october-10-2026",
-    "startUtc": "2026-10-11T00:00:00Z",
-    "prelimsUtc": "2026-10-10T21:00:00Z",
-    "venue": "Meta APEX Las Vegas , NV United States",
-    "bouts": [
-      {
-        "left": "Brendan Allen",
-        "leftKo": "Brendan Allen",
-        "right": "Christian Leroy Duncan",
-        "rightKo": "Christian Leroy Duncan",
-        "weight": "Middleweight",
-        "section": "main"
-      },
-      {
-        "left": "Matheus Camilo",
-        "leftKo": "Matheus Camilo",
-        "right": "Jai Herbert",
-        "rightKo": "Jai Herbert",
-        "weight": "Lightweight",
-        "section": "announced"
-      },
-      {
-        "left": "Loopy Godinez",
-        "leftKo": "Loopy Godinez",
-        "right": "Ketlen Souza",
-        "rightKo": "Ketlen Souza",
-        "weight": "Women's Strawweight",
-        "section": "announced"
-      },
-      {
-        "left": "Andre Fili",
-        "leftKo": "Andre Fili",
-        "right": "Kai Kamaka III",
-        "rightKo": "Kai Kamaka III",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
-        "left": "Malcolm Wellmaker",
-        "leftKo": "Malcolm Wellmaker",
-        "right": "Otari Tanzilovi",
-        "rightKo": "Otari Tanzilovi",
-        "weight": "Bantamweight",
-        "section": "announced"
-      }
-    ]
-  },
-  {
     "id": "ufcstats-2026-10-18-buckley-vs-malott",
     "title": "Buckley vs Malott",
     "date": "2026-10-18",
@@ -576,5 +525,48 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "startUtc": "2026-12-11T22:00:00Z",
     "prelimsUtc": "2026-12-11T20:00:00Z",
     "venue": "Principality Stadium United Kingdom"
+  },
+  {
+    "id": "ufcstats-2026-12-13-oliveira-vs-lopes",
+    "title": "Oliveira vs Lopes",
+    "date": "2026-12-13",
+    "sourceUrl": "https://www.ufc.com/event/ufc-335",
+    "startUtc": "2026-12-13T02:00:00Z",
+    "prelimsUtc": "2026-12-13T00:00:00Z",
+    "venue": "T-Mobile Arena Las Vegas , NV United States",
+    "bouts": [
+      {
+        "left": "Charles Oliveira",
+        "leftKo": "Charles Oliveira",
+        "right": "Diego Lopes",
+        "rightKo": "Diego Lopes",
+        "weight": "Lightweight",
+        "section": "main"
+      },
+      {
+        "left": "Sergei Pavlovich",
+        "leftKo": "Sergei Pavlovich",
+        "right": "Alex Pereira",
+        "rightKo": "Alex Pereira",
+        "weight": "Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Joe Pyfer",
+        "leftKo": "Joe Pyfer",
+        "right": "Bo Nickal",
+        "rightKo": "Bo Nickal",
+        "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Brandon Moreno",
+        "leftKo": "Brandon Moreno",
+        "right": "Charles Johnson",
+        "rightKo": "Charles Johnson",
+        "weight": "Flyweight",
+        "section": "announced"
+      }
+    ]
   }
 ];
