@@ -518,15 +518,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2026-12-11-tbd-vs-tbd",
-    "title": "TBD vs TBD",
-    "date": "2026-12-11",
-    "sourceUrl": "https://www.ufc.com/event/ufc-176",
-    "startUtc": "2026-12-11T22:00:00Z",
-    "prelimsUtc": "2026-12-11T20:00:00Z",
-    "venue": "Principality Stadium United Kingdom"
-  },
-  {
     "id": "ufcstats-2026-12-13-oliveira-vs-lopes",
     "title": "Oliveira vs Lopes",
     "date": "2026-12-13",
@@ -568,5 +559,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       }
     ]
+  },
+  {
+    "id": "ufcstats-2027-02-06-tbd-vs-tbd",
+    "title": "TBD vs TBD",
+    "date": "2027-02-06",
+    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-february-06-2027",
+    "startUtc": "2027-02-06T22:00:00Z",
+    "prelimsUtc": "2027-02-06T20:00:00Z",
+    "venue": "Afterpay Arena Sydney Olympic Park NSW Australia"
   }
 ];
