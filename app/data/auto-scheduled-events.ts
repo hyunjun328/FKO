@@ -31,8 +31,8 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
       {
         "left": "Kyle Nelson",
         "leftKo": "Kyle Nelson",
-        "right": "Cristian Perez Gonzalez",
-        "rightKo": "Cristian Perez Gonzalez",
+        "right": "Cristian Perez",
+        "rightKo": "Cristian Perez",
         "weight": "Lightweight",
         "section": "announced"
       },
