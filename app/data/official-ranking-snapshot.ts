@@ -2,7 +2,7 @@
 export type OfficialRankingSnapshot = { checkedAt: string; divisions: Record<string, { champion?: string; entries: string[] }>; mensP4p: string[]; womensP4p: string[] };
 
 export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
-  "checkedAt": "2026-10-12",
+  "checkedAt": "2026-10-14",
   "divisions": {
     "flyweight": {
       "champion": "Joshua Van",
@@ -40,8 +40,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Payton Talbott",
         "Montel Jackson",
         "Aiemann Zahabi",
-        "Marlon Vera",
-        "Bryce Mitchell"
+        "Bryce Mitchell",
+        "Marlon Vera"
       ]
     },
     "featherweight": {
@@ -110,14 +110,14 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Khamzat Chimaev",
         "Dricus Du Plessis",
         "Nassourdine Imavov",
-        "Joe Pyfer",
         "Brendan Allen",
+        "Joe Pyfer",
         "Caio Borralho",
         "Gregory Rodrigues",
         "Anthony Hernandez",
         "Israel Adesanya",
-        "Christian Leroy Duncan",
         "Ikram Aliskerov",
+        "Christian Leroy Duncan",
         "Bo Nickal",
         "Abus Magomedov",
         "Roman Kopylov",
@@ -174,10 +174,10 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Gillian Robertson",
         "Fatima Kline",
         "Alexia Thainara",
+        "Loopy Godinez",
         "Piera Rodriguez",
         "Yan Xiaonan",
         "Mizuki",
-        "Loopy Godinez",
         "Tabatha Ricci",
         "Jaqueline Amorim",
         "Talita Alencar",
@@ -218,10 +218,10 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Melissa Croden",
         "Karol Rosa",
         "Bia Mesquita",
+        "Alice Pereira",
         "Nora Cornolle",
         "Macy Chiasson",
-        "Daria Zhelezniakova",
-        "Raquel Pennington"
+        "Chelsea Chandler"
       ]
     }
   },
