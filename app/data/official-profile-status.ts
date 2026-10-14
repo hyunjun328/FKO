@@ -210,7 +210,6 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
   },
   "Dan Henderson": {
     "checkedAt": "2026-10-14",
-    "division": "Middleweight Division",
     "heightCm": 180,
     "reachCm": 188,
     "record": "32-15-0",
@@ -364,7 +363,6 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
   },
   "Fabricio Werdum": {
     "checkedAt": "2026-10-14",
-    "division": "Heavyweight Division",
     "heightCm": 193,
     "knockoutWins": 6,
     "reachCm": 196,
@@ -862,7 +860,6 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
   },
   "Rory MacDonald": {
     "checkedAt": "2026-10-14",
-    "division": "Welterweight Division",
     "heightCm": 183,
     "reachCm": 193,
     "record": "18-4-0",
@@ -940,7 +937,6 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
   },
   "Tito Ortiz": {
     "checkedAt": "2026-10-14",
-    "division": "Light Heavyweight Division",
     "heightCm": 190,
     "record": "0-0-0",
     "sourceUrl": "https://www.ufc.com/athlete/tito-ortiz",
@@ -948,7 +944,6 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
   },
   "Tony Ferguson": {
     "checkedAt": "2026-10-14",
-    "division": "Welterweight Division",
     "firstRoundFinishes": 9,
     "heightCm": 180,
     "knockoutWins": 13,

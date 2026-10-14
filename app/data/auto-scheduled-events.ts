@@ -557,6 +557,22 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "rightKo": "Charles Johnson",
         "weight": "Flyweight",
         "section": "announced"
+      },
+      {
+        "left": "Maycee Barber",
+        "leftKo": "Maycee Barber",
+        "right": "Carli Judice",
+        "rightKo": "Carli Judice",
+        "weight": "Women's Flyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Quentin Pasley",
+        "leftKo": "Quentin Pasley",
+        "right": "Junior Tafa",
+        "rightKo": "Junior Tafa",
+        "weight": "Light Heavyweight",
+        "section": "announced"
       }
     ]
   },
