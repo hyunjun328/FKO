@@ -254,42 +254,10 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Austin Bashi",
-        "leftKo": "Austin Bashi",
-        "right": "Lucas Brennan",
-        "rightKo": "Lucas Brennan",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
-        "left": "Karine Silva",
-        "leftKo": "Karine Silva",
-        "right": "Gabriella Fernandes",
-        "rightKo": "Gabriella Fernandes",
-        "weight": "Women's Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Keiichiro Nakamura",
-        "leftKo": "Keiichiro Nakamura",
-        "right": "Ollie Schmid",
-        "rightKo": "Ollie Schmid",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
         "left": "Seokhyeon Ko",
         "leftKo": "Seokhyeon Ko",
         "right": "Wellington Turman",
         "rightKo": "Wellington Turman",
-        "weight": "Welterweight",
-        "section": "announced"
-      },
-      {
-        "left": "Jonny Parsons",
-        "leftKo": "Jonny Parsons",
-        "right": "José Souza",
-        "rightKo": "José Souza",
         "weight": "Welterweight",
         "section": "announced"
       },
@@ -299,30 +267,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "right": "Elijah Smith",
         "rightKo": "Elijah Smith",
         "weight": "Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "Jose Delano",
-        "leftKo": "Jose Delano",
-        "right": "Murtazali Magomedov",
-        "rightKo": "Murtazali Magomedov",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
-        "left": "Gabriel Lorenco",
-        "leftKo": "Gabriel Lorenco",
-        "right": "Alvin Hines",
-        "rightKo": "Alvin Hines",
-        "weight": "Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Priscila Cachoeira",
-        "leftKo": "Priscila Cachoeira",
-        "right": "Nina Milošević",
-        "rightKo": "Nina Milošević",
-        "weight": "Women's Bantamweight",
         "section": "announced"
       }
     ]
@@ -374,62 +318,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "right": "Luis Gurule",
         "rightKo": "Luis Gurule",
         "weight": "Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Drew Dober",
-        "leftKo": "Drew Dober",
-        "right": "Chris Duncan",
-        "rightKo": "Chris Duncan",
-        "weight": "Lightweight",
-        "section": "announced"
-      },
-      {
-        "left": "Stephen Thompson",
-        "leftKo": "Stephen Thompson",
-        "right": "Charles Radtke",
-        "rightKo": "Charles Radtke",
-        "weight": "Welterweight",
-        "section": "announced"
-      },
-      {
-        "left": "Donte Johnson",
-        "leftKo": "Donte Johnson",
-        "right": "Baisangur Susurkaev",
-        "rightKo": "Baisangur Susurkaev",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Jim Miller",
-        "leftKo": "Jim Miller",
-        "right": "Terrance McKinney",
-        "rightKo": "Terrance McKinney",
-        "weight": "Lightweight",
-        "section": "announced"
-      },
-      {
-        "left": "Macy Chiasson",
-        "leftKo": "Macy Chiasson",
-        "right": "Bia Mesquita",
-        "rightKo": "Bia Mesquita",
-        "weight": "Women's Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "Adrian Yanez",
-        "leftKo": "Adrian Yanez",
-        "right": "Juan Diaz",
-        "rightKo": "Juan Diaz",
-        "weight": "Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "Nazim Sadykhov",
-        "leftKo": "Nazim Sadykhov",
-        "right": "Jefferson Nascimento",
-        "rightKo": "Jefferson Nascimento",
-        "weight": "Lightweight",
         "section": "announced"
       }
     ]
