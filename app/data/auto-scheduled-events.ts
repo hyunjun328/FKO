@@ -375,14 +375,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Joe Pyfer",
-        "leftKo": "Joe Pyfer",
-        "right": "Bo Nickal",
-        "rightKo": "Bo Nickal",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
         "left": "Brandon Moreno",
         "leftKo": "Brandon Moreno",
         "right": "Charles Johnson",
@@ -391,19 +383,19 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Maycee Barber",
-        "leftKo": "Maycee Barber",
-        "right": "Carli Judice",
-        "rightKo": "Carli Judice",
-        "weight": "Women's Flyweight",
-        "section": "announced"
-      },
-      {
         "left": "Quentin Pasley",
         "leftKo": "Quentin Pasley",
         "right": "Junior Tafa",
         "rightKo": "Junior Tafa",
         "weight": "Light Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Joe Pyfer",
+        "leftKo": "Joe Pyfer",
+        "right": "Bo Nickal",
+        "rightKo": "Bo Nickal",
+        "weight": "Middleweight",
         "section": "announced"
       }
     ]
