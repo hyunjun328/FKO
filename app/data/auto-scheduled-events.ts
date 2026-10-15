@@ -139,14 +139,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Lucia Szabova",
-        "leftKo": "Lucia Szabova",
-        "right": "Tainara Lisboa",
-        "rightKo": "Tainara Lisboa",
-        "weight": "Women's Flyweight",
-        "section": "announced"
-      },
-      {
         "left": "Yana Santos",
         "leftKo": "Yana Santos",
         "right": "Luana Santos",
@@ -155,59 +147,11 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Talita Alencar",
-        "leftKo": "Talita Alencar",
-        "right": "Piera Rodriguez",
-        "rightKo": "Piera Rodriguez",
-        "weight": "Women's Strawweight",
-        "section": "announced"
-      },
-      {
-        "left": "Nick Klein",
-        "leftKo": "Nick Klein",
-        "right": "Joseph Kropschot",
-        "rightKo": "Joseph Kropschot",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Rodrigo Sezinando",
-        "leftKo": "Rodrigo Sezinando",
-        "right": "Theodor Berggren",
-        "rightKo": "Theodor Berggren",
-        "weight": "Welterweight",
-        "section": "announced"
-      },
-      {
         "left": "Jean-Paul Lebosnoyani",
         "leftKo": "Jean-Paul Lebosnoyani",
         "right": "Farman Hasanov",
         "rightKo": "Farman Hasanov",
         "weight": "Welterweight",
-        "section": "announced"
-      },
-      {
-        "left": "Azamat Bekoev",
-        "leftKo": "Azamat Bekoev",
-        "right": "Andre Petroski",
-        "rightKo": "Andre Petroski",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Julian Erosa",
-        "leftKo": "Julian Erosa",
-        "right": "JeongYeong Lee",
-        "rightKo": "JeongYeong Lee",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
-        "left": "Francis Marshall",
-        "leftKo": "Francis Marshall",
-        "right": "Gaston Bolanos",
-        "rightKo": "Gaston Bolanos",
-        "weight": "Featherweight",
         "section": "announced"
       }
     ]
@@ -238,19 +182,11 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Mantas Kondratavičius",
-        "leftKo": "Mantas Kondratavičius",
-        "right": "Wes Schultz",
-        "rightKo": "Wes Schultz",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Billy Elekana",
-        "leftKo": "Billy Elekana",
-        "right": "Lucas Fernando",
-        "rightKo": "Lucas Fernando",
-        "weight": "Light Heavyweight",
+        "left": "Davey Grant",
+        "leftKo": "Davey Grant",
+        "right": "Elijah Smith",
+        "rightKo": "Elijah Smith",
+        "weight": "Bantamweight",
         "section": "announced"
       },
       {
@@ -262,11 +198,19 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Davey Grant",
-        "leftKo": "Davey Grant",
-        "right": "Elijah Smith",
-        "rightKo": "Elijah Smith",
-        "weight": "Bantamweight",
+        "left": "Billy Elekana",
+        "leftKo": "Billy Elekana",
+        "right": "Lucas Fernando",
+        "rightKo": "Lucas Fernando",
+        "weight": "Light Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Mantas Kondratavičius",
+        "leftKo": "Mantas Kondratavičius",
+        "right": "Wes Schultz",
+        "rightKo": "Wes Schultz",
+        "weight": "Middleweight",
         "section": "announced"
       }
     ]
