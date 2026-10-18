@@ -4,65 +4,6 @@ export type AutoScheduledEvent = { id: string; title: string; date: string; sour
 
 export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
   {
-    "id": "ufcstats-2026-10-18-buckley-vs-malott",
-    "title": "Buckley vs Malott",
-    "date": "2026-10-18",
-    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-october-17-2026",
-    "startUtc": "2026-10-18T00:00:00Z",
-    "prelimsUtc": "2026-10-17T21:00:00Z",
-    "venue": "Rogers Place Edmonton AB Canada",
-    "bouts": [
-      {
-        "left": "Joaquin Buckley",
-        "leftKo": "Joaquin Buckley",
-        "right": "Mike Malott",
-        "rightKo": "Mike Malott",
-        "weight": "Welterweight",
-        "section": "main"
-      },
-      {
-        "left": "Erin Blanchfield",
-        "leftKo": "Erin Blanchfield",
-        "right": "Jasmine Jasudavicius",
-        "rightKo": "Jasmine Jasudavicius",
-        "weight": "Women's Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Kyle Nelson",
-        "leftKo": "Kyle Nelson",
-        "right": "Cristian Perez",
-        "rightKo": "Cristian Perez",
-        "weight": "Lightweight",
-        "section": "announced"
-      },
-      {
-        "left": "Marc-Andre Barriault",
-        "leftKo": "Marc-Andre Barriault",
-        "right": "Kyle Daukaus",
-        "rightKo": "Kyle Daukaus",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Louis Jourdain",
-        "leftKo": "Louis Jourdain",
-        "right": "Timmy Cuamba",
-        "rightKo": "Timmy Cuamba",
-        "weight": "Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "Mandel Nallo",
-        "leftKo": "Mandel Nallo",
-        "right": "Nate Landwehr",
-        "rightKo": "Nate Landwehr",
-        "weight": "Lightweight",
-        "section": "announced"
-      }
-    ]
-  },
-  {
     "id": "ufcstats-2026-10-24-volkanovski-vs-evloev",
     "title": "Volkanovski vs Evloev",
     "date": "2026-10-24",
