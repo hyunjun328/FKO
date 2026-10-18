@@ -357,7 +357,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "heightCm": 163,
     "knockoutWins": 2,
     "reachCm": 168,
-    "record": "14-2-0",
+    "record": "14-3-0",
     "sourceUrl": "https://www.ufc.com/athlete/erin-blanchfield",
     "status": "Active",
     "submissionWins": 5
