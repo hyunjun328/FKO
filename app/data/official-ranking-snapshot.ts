@@ -2,7 +2,7 @@
 export type OfficialRankingSnapshot = { checkedAt: string; divisions: Record<string, { champion?: string; entries: string[] }>; mensP4p: string[]; womensP4p: string[] };
 
 export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
-  "checkedAt": "2026-10-18",
+  "checkedAt": "2026-10-20",
   "divisions": {
     "flyweight": {
       "champion": "Joshua Van",
@@ -35,13 +35,13 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Cory Sandhagen",
         "David Martinez",
         "Raul Rosas Jr.",
-        "Farid Basharat",
         "Marcus McGhee",
         "Payton Talbott",
         "Montel Jackson",
         "Aiemann Zahabi",
         "Bryce Mitchell",
-        "Marlon Vera"
+        "Marlon Vera",
+        "Raoni Barcelos"
       ]
     },
     "featherweight": {
@@ -94,11 +94,11 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Sean Brady",
         "Gabriel Bonfim",
         "Belal Muhammad",
-        "Joaquin Buckley",
+        "Mike Malott",
         "Uroš Medić",
         "Leon Edwards",
-        "Mike Malott",
         "Kamaru Usman",
+        "Joaquin Buckley",
         "Yaroslav Amosov",
         "Kevin Holland",
         "Daniel Rodriguez"
@@ -179,9 +179,9 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Yan Xiaonan",
         "Mizuki",
         "Tabatha Ricci",
-        "Jaqueline Amorim",
         "Talita Alencar",
-        "Amanda Lemos"
+        "Amanda Lemos",
+        "Sam Hughes"
       ]
     },
     "womens-flyweight": {
@@ -189,10 +189,10 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
       "entries": [
         "Valentina Shevchenko",
         "Alexa Grasso",
-        "Erin Blanchfield",
-        "Manon Fiorot",
-        "Zhang Weili",
         "Jasmine Jasudavicius",
+        "Manon Fiorot",
+        "Erin Blanchfield",
+        "Zhang Weili",
         "Rose Namajunas",
         "Wang Cong",
         "Maycee Barber",
@@ -215,13 +215,13 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Yana Santos",
         "Jacqueline Cavalcanti",
         "Michelle Montague",
-        "Melissa Croden",
+        "Chelsea Chandler",
         "Karol Rosa",
         "Bia Mesquita",
         "Alice Pereira",
         "Nora Cornolle",
         "Macy Chiasson",
-        "Chelsea Chandler"
+        "Melissa Croden"
       ]
     }
   },
@@ -250,13 +250,13 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
     "Mackenzie Dern",
     "Alexa Grasso",
     "Manon Fiorot",
-    "Erin Blanchfield",
     "Tatiana Suarez",
+    "Erin Blanchfield",
     "Julianna Peña",
     "Virna Jandiroba",
+    "Jasmine Jasudavicius",
     "Rose Namajunas",
     "Raquel Pennington",
-    "Denise Gomes",
-    "Maycee Barber"
+    "Denise Gomes"
   ]
 };
