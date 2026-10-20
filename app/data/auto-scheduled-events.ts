@@ -342,12 +342,12 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2027-01-30-tbd-vs-tbd",
+    "id": "ufcstats-2027-01-31-tbd-vs-tbd",
     "title": "TBD vs TBD",
-    "date": "2027-01-30",
+    "date": "2027-01-31",
     "sourceUrl": "https://www.ufc.com/event/ufc-336",
-    "startUtc": "2027-01-30T22:00:00Z",
-    "prelimsUtc": "2027-01-30T20:00:00Z",
+    "startUtc": "2027-01-31T02:00:00Z",
+    "prelimsUtc": "2027-01-31T00:00:00Z",
     "venue": "Scotiabank Arena Toronto ON Canada"
   },
   {
