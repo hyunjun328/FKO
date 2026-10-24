@@ -281,12 +281,20 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "venue": "ABHA Arena Doha Qatar",
     "bouts": [
       {
+        "left": "Jiří Procházka",
+        "leftKo": "Jiří Procházka",
+        "right": "Navajo Stirling",
+        "rightKo": "Navajo Stirling",
+        "weight": "Light Heavyweight",
+        "section": "main"
+      },
+      {
         "left": "Aljamain Sterling",
         "leftKo": "Aljamain Sterling",
         "right": "Kevin Vallejos",
         "rightKo": "Kevin Vallejos",
         "weight": "Featherweight",
-        "section": "main"
+        "section": "announced"
       },
       {
         "left": "Dan Hooker",
