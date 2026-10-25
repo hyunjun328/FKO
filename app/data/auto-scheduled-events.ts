@@ -4,57 +4,6 @@ export type AutoScheduledEvent = { id: string; title: string; date: string; sour
 
 export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
   {
-    "id": "ufcstats-2026-10-24-volkanovski-vs-evloev",
-    "title": "Volkanovski vs Evloev",
-    "date": "2026-10-24",
-    "sourceUrl": "https://www.ufc.com/event/ufc-333",
-    "startUtc": "2026-10-24T18:00:00Z",
-    "prelimsUtc": "2026-10-24T16:00:00Z",
-    "venue": "Etihad Arena Abu Dhabi United Arab Emirates",
-    "bouts": [
-      {
-        "left": "Alexander Volkanovski",
-        "leftKo": "Alexander Volkanovski",
-        "right": "Movsar Evloev",
-        "rightKo": "Movsar Evloev",
-        "weight": "Featherweight Title",
-        "section": "main"
-      },
-      {
-        "left": "Petr Yan",
-        "leftKo": "Petr Yan",
-        "right": "Merab Dvalishvili",
-        "rightKo": "Merab Dvalishvili",
-        "weight": "Bantamweight Title",
-        "section": "announced"
-      },
-      {
-        "left": "Lone’er Kavanagh",
-        "leftKo": "Lone’er Kavanagh",
-        "right": "Ramazan Temirov",
-        "rightKo": "Ramazan Temirov",
-        "weight": "Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Alexander Volkov",
-        "leftKo": "Alexander Volkov",
-        "right": "Rizvan Kuniev",
-        "rightKo": "Rizvan Kuniev",
-        "weight": "Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Aaron Pico",
-        "leftKo": "Aaron Pico",
-        "right": "Losene Keita",
-        "rightKo": "Losene Keita",
-        "weight": "Featherweight",
-        "section": "announced"
-      }
-    ]
-  },
-  {
     "id": "ufcstats-2026-11-01-moicano-vs-nolan",
     "title": "Moicano vs Nolan",
     "date": "2026-11-01",
@@ -406,13 +355,40 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2027-01-31-tbd-vs-tbd",
+    "id": "ufcstats-2027-01-17-tbd-vs-tbd",
     "title": "TBD vs TBD",
+    "date": "2027-01-17",
+    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-january-16-2027",
+    "startUtc": "2027-01-17T01:00:00Z",
+    "prelimsUtc": "2027-01-16T22:00:00Z",
+    "venue": "American Airlines Center Dallas , TX United States"
+  },
+  {
+    "id": "ufcstats-2027-01-31-van-vs-kape",
+    "title": "Van vs Kape",
     "date": "2027-01-31",
     "sourceUrl": "https://www.ufc.com/event/ufc-336",
     "startUtc": "2027-01-31T02:00:00Z",
     "prelimsUtc": "2027-01-31T00:00:00Z",
-    "venue": "Scotiabank Arena Toronto ON Canada"
+    "venue": "Scotiabank Arena Toronto ON Canada",
+    "bouts": [
+      {
+        "left": "Joshua Van",
+        "leftKo": "Joshua Van",
+        "right": "Manel Kape",
+        "rightKo": "Manel Kape",
+        "weight": "체급 확인 중",
+        "section": "main"
+      },
+      {
+        "left": "Carlos Prates",
+        "leftKo": "Carlos Prates",
+        "right": "Michael Morales",
+        "rightKo": "Michael Morales",
+        "weight": "체급 확인 중",
+        "section": "announced"
+      }
+    ]
   },
   {
     "id": "ufcstats-2027-02-06-tbd-vs-tbd",
