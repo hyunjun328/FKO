@@ -377,7 +377,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Joshua Van",
         "right": "Manel Kape",
         "rightKo": "Manel Kape",
-        "weight": "체급 확인 중",
+        "weight": "Flyweight Title",
         "section": "main"
       },
       {
@@ -385,7 +385,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Carlos Prates",
         "right": "Michael Morales",
         "rightKo": "Michael Morales",
-        "weight": "체급 확인 중",
+        "weight": "Welterweight Interim Title",
         "section": "announced"
       }
     ]
