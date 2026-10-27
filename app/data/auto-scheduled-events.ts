@@ -29,14 +29,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Yana Santos",
-        "leftKo": "Yana Santos",
-        "right": "Luana Santos",
-        "rightKo": "Luana Santos",
-        "weight": "Women's Bantamweight",
-        "section": "announced"
-      },
-      {
         "left": "Ode' Osbourne",
         "leftKo": "Ode' Osbourne",
         "right": "Cody Durden",
@@ -45,11 +37,11 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Zachary Reese",
-        "leftKo": "Zachary Reese",
-        "right": "Mickey Gall",
-        "rightKo": "Mickey Gall",
-        "weight": "Middleweight",
+        "left": "Yana Santos",
+        "leftKo": "Yana Santos",
+        "right": "Luana Santos",
+        "rightKo": "Luana Santos",
+        "weight": "Women's Bantamweight",
         "section": "announced"
       },
       {
@@ -58,54 +50,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "right": "Farman Hasanov",
         "rightKo": "Farman Hasanov",
         "weight": "Welterweight",
-        "section": "announced"
-      },
-      {
-        "left": "Francis Marshall",
-        "leftKo": "Francis Marshall",
-        "right": "Dakota Hope",
-        "rightKo": "Dakota Hope",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
-        "left": "Rodrigo Sezinando",
-        "leftKo": "Rodrigo Sezinando",
-        "right": "Theodor Berggren",
-        "rightKo": "Theodor Berggren",
-        "weight": "Welterweight",
-        "section": "announced"
-      },
-      {
-        "left": "Julian Erosa",
-        "leftKo": "Julian Erosa",
-        "right": "JeongYeong Lee",
-        "rightKo": "JeongYeong Lee",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
-        "left": "Nick Klein",
-        "leftKo": "Nick Klein",
-        "right": "Joseph Kropschot",
-        "rightKo": "Joseph Kropschot",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Talita Alencar",
-        "leftKo": "Talita Alencar",
-        "right": "Piera Rodriguez",
-        "rightKo": "Piera Rodriguez",
-        "weight": "Women's Strawweight",
-        "section": "announced"
-      },
-      {
-        "left": "Lucia Szabova",
-        "leftKo": "Lucia Szabova",
-        "right": "Tainara Lisboa",
-        "rightKo": "Tainara Lisboa",
-        "weight": "Women's Flyweight",
         "section": "announced"
       }
     ]
@@ -152,19 +96,19 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Mantas Kondratavičius",
-        "leftKo": "Mantas Kondratavičius",
-        "right": "Andre Petroski",
-        "rightKo": "Andre Petroski",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
         "left": "Billy Elekana",
         "leftKo": "Billy Elekana",
         "right": "Lucas Fernando",
         "rightKo": "Lucas Fernando",
         "weight": "Light Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Mantas Kondratavičius",
+        "leftKo": "Mantas Kondratavičius",
+        "right": "Andre Petroski",
+        "rightKo": "Andre Petroski",
+        "weight": "Middleweight",
         "section": "announced"
       }
     ]
