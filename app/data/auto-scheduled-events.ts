@@ -123,12 +123,20 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "venue": "Madison Square Garden New York , NY United States",
     "bouts": [
       {
+        "left": "Ciryl Gane",
+        "leftKo": "Ciryl Gane",
+        "right": "Josh Hokit",
+        "rightKo": "Josh Hokit",
+        "weight": "Heavyweight Title",
+        "section": "main"
+      },
+      {
         "left": "Kayla Harrison",
         "leftKo": "Kayla Harrison",
         "right": "Amanda Nunes",
         "rightKo": "Amanda Nunes",
         "weight": "Women's Bantamweight Title",
-        "section": "main"
+        "section": "announced"
       },
       {
         "left": "Caio Borralho",

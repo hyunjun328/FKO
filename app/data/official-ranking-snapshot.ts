@@ -2,7 +2,7 @@
 export type OfficialRankingSnapshot = { checkedAt: string; divisions: Record<string, { champion?: string; entries: string[] }>; mensP4p: string[]; womensP4p: string[] };
 
 export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
-  "checkedAt": "2026-10-25",
+  "checkedAt": "2026-10-28",
   "divisions": {
     "flyweight": {
       "champion": "Joshua Van",
@@ -11,12 +11,12 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Alexandre Pantoja",
         "Brandon Royval",
         "Tatsuro Taira",
-        "Asu Almabayev",
         "Lone’er Kavanagh",
-        "Ramazan Temirov",
+        "Asu Almabayev",
         "Kyoji Horiguchi",
         "Amir Albazi",
         "Brandon Moreno",
+        "Ramazan Temirov",
         "Sumudaerji",
         "Mitch Raposo",
         "Imanol Rodriguez",
@@ -56,11 +56,11 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Pat Sabatini",
         "Pavel Andrusca",
         "Youssef Zalal",
+        "Aaron Pico",
         "Kevin Vallejos",
         "Joanderson Brito",
         "Melquizael Costa",
         "Steve Garcia",
-        "Aaron Pico",
         "Jamall Emmers"
       ]
     },
@@ -77,10 +77,10 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Renato Moicano",
         "Mateusz Gamrot",
         "Mauricio Ruffy",
-        "Tom Nolan",
-        "Rafael Fiziev",
-        "Tofiq Musayev",
         "Grant Dawson",
+        "Tom Nolan",
+        "Tofiq Musayev",
+        "Rafael Fiziev",
         "Esteban Ribovics"
       ]
     },
@@ -115,11 +115,11 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Caio Borralho",
         "Gregory Rodrigues",
         "Anthony Hernandez",
+        "Abus Magomedov",
         "Israel Adesanya",
         "Ikram Aliskerov",
         "Christian Leroy Duncan",
         "Bo Nickal",
-        "Abus Magomedov",
         "Roman Kopylov",
         "Edmen Shahbazyan"
       ]
@@ -130,30 +130,30 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Alex Pereira",
         "Magomed Ankalaev",
         "Jiří Procházka",
+        "Dominick Reyes",
         "Paulo Costa",
         "Khalil Rountree Jr.",
         "Navajo Stirling",
-        "Dominick Reyes",
         "Reinier de Ridder",
-        "Azamat Murzakanov",
         "Alonzo Menifield",
         "Bogdan Guskov",
         "Robert Whittaker",
         "Muhammad Saidov",
-        "Modestas Bukauskas",
-        "Abdul Rakhman Yakhyaev"
+        "Abdul Rakhman Yakhyaev",
+        "Azamat Murzakanov",
+        "Modestas Bukauskas"
       ]
     },
     "heavyweight": {
       "champion": "Ciryl Gane",
       "entries": [
         "Tom Aspinall",
-        "Sergei Pavlovich",
-        "Alex Pereira",
         "Alexander Volkov",
-        "Rizvan Kuniev",
+        "Alex Pereira",
+        "Sergei Pavlovich",
         "Josh Hokit",
         "Curtis Blaydes",
+        "Rizvan Kuniev",
         "Waldo Cortes Acosta",
         "Vitor Petrino",
         "Mario Pinto",
@@ -173,6 +173,7 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Denise Gomes",
         "Gillian Robertson",
         "Fatima Kline",
+        "Iasmin Lucindo",
         "Alexia Thainara",
         "Loopy Godinez",
         "Piera Rodriguez",
@@ -180,8 +181,7 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Mizuki",
         "Tabatha Ricci",
         "Talita Alencar",
-        "Amanda Lemos",
-        "Sam Hughes"
+        "Amanda Lemos"
       ]
     },
     "womens-flyweight": {
@@ -232,8 +232,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
     "Petr Yan",
     "Ilia Topuria",
     "Joshua Van",
-    "Tom Aspinall",
     "Sean Strickland",
+    "Tom Aspinall",
     "Merab Dvalishvili",
     "Alex Pereira",
     "Ciryl Gane",
@@ -251,12 +251,12 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
     "Alexa Grasso",
     "Manon Fiorot",
     "Tatiana Suarez",
-    "Erin Blanchfield",
     "Julianna Peña",
     "Virna Jandiroba",
     "Jasmine Jasudavicius",
     "Rose Namajunas",
     "Raquel Pennington",
+    "Erin Blanchfield",
     "Denise Gomes"
   ]
 };
