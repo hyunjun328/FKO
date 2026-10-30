@@ -17,7 +17,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Renato Moicano",
         "right": "Tom Nolan",
         "rightKo": "Tom Nolan",
-        "weight": "Ligero",
+        "weight": "Lightweight",
         "section": "main"
       },
       {
@@ -25,7 +25,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Randy Brown",
         "right": "Jacobe Smith",
         "rightKo": "Jacobe Smith",
-        "weight": "Peso welter",
+        "weight": "Welterweight",
         "section": "announced"
       },
       {
@@ -33,7 +33,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Ode' Osbourne",
         "right": "Cody Durden",
         "rightKo": "Cody Durden",
-        "weight": "Peso mosca",
+        "weight": "Flyweight",
         "section": "announced"
       },
       {
@@ -41,7 +41,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Yana Santos",
         "right": "Luana Santos",
         "rightKo": "Luana Santos",
-        "weight": "Gallo de las mujeres",
+        "weight": "Women's Bantamweight",
         "section": "announced"
       },
       {
@@ -49,7 +49,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Jean-Paul Lebosnoyani",
         "right": "Farman Hasanov",
         "rightKo": "Farman Hasanov",
-        "weight": "Peso welter",
+        "weight": "Welterweight",
         "section": "announced"
       }
     ]
@@ -68,7 +68,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Gabriel Bonfim",
         "right": "Sean Brady",
         "rightKo": "Sean Brady",
-        "weight": "Peso welter",
+        "weight": "Welterweight",
         "section": "main"
       },
       {
@@ -76,7 +76,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Tatiana Suarez",
         "right": "Virna Jandiroba",
         "rightKo": "Virna Jandiroba",
-        "weight": "Peso de la mujer",
+        "weight": "Women's Strawweight",
         "section": "announced"
       },
       {
@@ -84,7 +84,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Davey Grant",
         "right": "Elijah Smith",
         "rightKo": "Elijah Smith",
-        "weight": "Peso gallo",
+        "weight": "Bantamweight",
         "section": "announced"
       },
       {
@@ -92,7 +92,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Seokhyeon Ko",
         "right": "Wellington Turman",
         "rightKo": "Wellington Turman",
-        "weight": "Peso welter",
+        "weight": "Welterweight",
         "section": "announced"
       },
       {
@@ -100,7 +100,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Billy Elekana",
         "right": "Lucas Fernando",
         "rightKo": "Lucas Fernando",
-        "weight": "Peso semipesado",
+        "weight": "Light Heavyweight",
         "section": "announced"
       },
       {
@@ -108,7 +108,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Mantas Kondratavičius",
         "right": "Andre Petroski",
         "rightKo": "Andre Petroski",
-        "weight": "Peso medio",
+        "weight": "Middleweight",
         "section": "announced"
       }
     ]
@@ -127,7 +127,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Ciryl Gane",
         "right": "Josh Hokit",
         "rightKo": "Josh Hokit",
-        "weight": "De peso pesado Title",
+        "weight": "Heavyweight Title",
         "section": "main"
       },
       {
@@ -135,7 +135,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Kayla Harrison",
         "right": "Amanda Nunes",
         "rightKo": "Amanda Nunes",
-        "weight": "Gallo de las mujeres Title",
+        "weight": "Women's Bantamweight Title",
         "section": "announced"
       },
       {
@@ -143,7 +143,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Caio Borralho",
         "right": "Yousri Belgaroui",
         "rightKo": "Yousri Belgaroui",
-        "weight": "Peso medio",
+        "weight": "Middleweight",
         "section": "announced"
       },
       {
@@ -151,7 +151,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Uroš Medić",
         "right": "Kevin Holland",
         "rightKo": "Kevin Holland",
-        "weight": "Peso welter",
+        "weight": "Welterweight",
         "section": "announced"
       },
       {
@@ -159,7 +159,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Bilal Hasan",
         "right": "Luis Gurule",
         "rightKo": "Luis Gurule",
-        "weight": "Peso mosca",
+        "weight": "Flyweight",
         "section": "announced"
       }
     ]
@@ -178,7 +178,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Jiří Procházka",
         "right": "Navajo Stirling",
         "rightKo": "Navajo Stirling",
-        "weight": "Peso semipesado",
+        "weight": "Light Heavyweight",
         "section": "main"
       },
       {
@@ -186,7 +186,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Aljamain Sterling",
         "right": "Kevin Vallejos",
         "rightKo": "Kevin Vallejos",
-        "weight": "Peso pluma",
+        "weight": "Featherweight",
         "section": "announced"
       },
       {
@@ -194,7 +194,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Dan Hooker",
         "right": "Brian Ortega",
         "rightKo": "Brian Ortega",
-        "weight": "Ligero",
+        "weight": "Lightweight",
         "section": "announced"
       },
       {
@@ -202,7 +202,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Jared Cannonier",
         "right": "Ikram Aliskerov",
         "rightKo": "Ikram Aliskerov",
-        "weight": "Peso medio",
+        "weight": "Middleweight",
         "section": "announced"
       },
       {
@@ -210,7 +210,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Shamil Gaziev",
         "right": "Tallison Teixeira",
         "rightKo": "Tallison Teixeira",
-        "weight": "De peso pesado",
+        "weight": "Heavyweight",
         "section": "announced"
       },
       {
@@ -218,7 +218,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Jake Matthews",
         "right": "Tahir Abdullayev",
         "rightKo": "Tahir Abdullayev",
-        "weight": "Peso welter",
+        "weight": "Welterweight",
         "section": "announced"
       },
       {
@@ -226,7 +226,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Aleksandre Topuria",
         "right": "Santiago Luna",
         "rightKo": "Santiago Luna",
-        "weight": "Peso gallo",
+        "weight": "Bantamweight",
         "section": "announced"
       },
       {
@@ -234,7 +234,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Asu Almabayev",
         "right": "Kyoji Horiguchi",
         "rightKo": "Kyoji Horiguchi",
-        "weight": "Peso mosca",
+        "weight": "Flyweight",
         "section": "announced"
       },
       {
@@ -242,7 +242,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Amir Albazi",
         "right": "Alessandro Costa",
         "rightKo": "Alessandro Costa",
-        "weight": "Peso mosca",
+        "weight": "Flyweight",
         "section": "announced"
       }
     ]
@@ -261,7 +261,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Charles Oliveira",
         "right": "Diego Lopes",
         "rightKo": "Diego Lopes",
-        "weight": "Ligero",
+        "weight": "Lightweight",
         "section": "main"
       },
       {
@@ -269,7 +269,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Sergei Pavlovich",
         "right": "Alex Pereira",
         "rightKo": "Alex Pereira",
-        "weight": "De peso pesado",
+        "weight": "Heavyweight",
         "section": "announced"
       },
       {
@@ -277,7 +277,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Brandon Moreno",
         "right": "Charles Johnson",
         "rightKo": "Charles Johnson",
-        "weight": "Peso mosca",
+        "weight": "Flyweight",
         "section": "announced"
       },
       {
@@ -285,7 +285,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Quentin Pasley",
         "right": "Junior Tafa",
         "rightKo": "Junior Tafa",
-        "weight": "Peso semipesado",
+        "weight": "Light Heavyweight",
         "section": "announced"
       },
       {
@@ -293,7 +293,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Joe Pyfer",
         "right": "Bo Nickal",
         "rightKo": "Bo Nickal",
-        "weight": "Peso medio",
+        "weight": "Middleweight",
         "section": "announced"
       }
     ]
@@ -321,7 +321,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Joshua Van",
         "right": "Manel Kape",
         "rightKo": "Manel Kape",
-        "weight": "Peso mosca Title",
+        "weight": "Flyweight Title",
         "section": "main"
       },
       {
@@ -329,7 +329,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Carlos Prates",
         "right": "Michael Morales",
         "rightKo": "Michael Morales",
-        "weight": "Peso welter Interim Title",
+        "weight": "Welterweight Interim Title",
         "section": "announced"
       }
     ]
