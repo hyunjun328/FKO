@@ -3,7 +3,7 @@ export type OfficialProfileStatus = { record?: string; heightCm?: number; reachC
 
 export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
   "Aleksandar Rakić": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Heavyweight Division",
     "firstRoundFinishes": 8,
     "heightCm": 193,
@@ -15,7 +15,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 1
   },
   "Alex Pereira": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Heavyweight Division",
     "firstRoundFinishes": 5,
     "heightCm": 193,
@@ -26,7 +26,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Active"
   },
   "Alistair Overeem": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Heavyweight Division",
     "heightCm": 193,
     "knockoutWins": 25,
@@ -37,7 +37,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 17
   },
   "Amanda Lemos": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Women's Strawweight Division",
     "firstRoundFinishes": 8,
     "heightCm": 163,
@@ -49,7 +49,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 3
   },
   "Amanda Nunes": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Women's Bantamweight Division",
     "firstRoundFinishes": 14,
     "heightCm": 173,
@@ -61,7 +61,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 4
   },
   "Anderson Silva": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Middleweight Division",
     "heightCm": 188,
     "knockoutWins": 22,
@@ -71,7 +71,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 4
   },
   "Anthony Hernandez": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Middleweight Division",
     "firstRoundFinishes": 5,
     "heightCm": 183,
@@ -83,7 +83,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 9
   },
   "Anthony Pettis": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Welterweight Division",
     "heightCm": 178,
     "knockoutWins": 11,
@@ -101,7 +101,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "No peleando"
   },
   "Benson Henderson": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Welterweight Division",
     "heightCm": 175,
     "reachCm": 178,
@@ -110,7 +110,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Not Fighting"
   },
   "Brock Lesnar": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Heavyweight Division",
     "heightCm": 190,
     "reachCm": 206,
@@ -119,7 +119,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Retired"
   },
   "Cain Velasquez": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Heavyweight Division",
     "heightCm": 187,
     "knockoutWins": 12,
@@ -129,7 +129,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Retired"
   },
   "Carla Esparza": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Women's Strawweight Division",
     "heightCm": 155,
     "knockoutWins": 4,
@@ -140,7 +140,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 4
   },
   "Carlos Condit": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Welterweight Division",
     "heightCm": 188,
     "knockoutWins": 15,
@@ -151,7 +151,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 13
   },
   "Chan Sung Jung": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Featherweight Division",
     "heightCm": 170,
     "knockoutWins": 6,
@@ -162,7 +162,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 8
   },
   "ChangHo Lee": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Bantamweight Division",
     "heightCm": 173,
     "knockoutWins": 6,
@@ -173,7 +173,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 1
   },
   "Chris Weidman": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Middleweight Division",
     "firstRoundFinishes": 6,
     "heightCm": 188,
@@ -185,14 +185,14 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 4
   },
   "Chuck Liddell": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Light Heavyweight Division",
     "record": "21-8-0",
     "sourceUrl": "https://www.ufc.com/athlete/chuck-liddell",
     "status": "Not Fighting"
   },
   "Conor McGregor": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Welterweight Division",
     "firstRoundFinishes": 5,
     "heightCm": 175,
@@ -204,7 +204,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 1
   },
   "Da Woon Jung": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Light Heavyweight Division",
     "firstRoundFinishes": 7,
     "heightCm": 193,
@@ -216,7 +216,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 2
   },
   "Dan Henderson": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Middleweight Division",
     "heightCm": 180,
     "reachCm": 188,
@@ -225,7 +225,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Retired"
   },
   "Daniel Cormier": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Heavyweight Division",
     "heightCm": 180,
     "knockoutWins": 10,
@@ -236,7 +236,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 5
   },
   "Daniel Rodriguez": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Welterweight Division",
     "firstRoundFinishes": 5,
     "heightCm": 185,
@@ -248,7 +248,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 4
   },
   "Demetrious Johnson": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Flyweight Division",
     "heightCm": 160,
     "reachCm": 168,
@@ -258,7 +258,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 11
   },
   "Demian Maia": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Welterweight Division",
     "heightCm": 185,
     "knockoutWins": 3,
@@ -269,7 +269,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 14
   },
   "Diego Sanchez": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Welterweight Division",
     "heightCm": 178,
     "knockoutWins": 10,
@@ -280,7 +280,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 6
   },
   "Dominick Cruz": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Bantamweight Division",
     "heightCm": 173,
     "knockoutWins": 7,
@@ -291,7 +291,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 1
   },
   "Donald Cerrone": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Welterweight Division",
     "firstRoundFinishes": 15,
     "heightCm": 185,
@@ -303,7 +303,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 17
   },
   "DongHun Choi": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Flyweight Division",
     "knockoutWins": 3,
     "record": "3-0-0",
@@ -311,7 +311,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Active"
   },
   "Dooho Choi": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Featherweight Division",
     "firstRoundFinishes": 8,
     "heightCm": 178,
@@ -323,7 +323,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 1
   },
   "Dustin Poirier": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Lightweight Division",
     "firstRoundFinishes": 13,
     "heightCm": 175,
@@ -335,7 +335,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 7
   },
   "Duško Todorović": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Middleweight Division",
     "firstRoundFinishes": 8,
     "heightCm": 185,
@@ -347,7 +347,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 4
   },
   "Eddie Alvarez": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Lightweight Division",
     "heightCm": 175,
     "knockoutWins": 18,
@@ -358,7 +358,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 7
   },
   "Erin Blanchfield": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Women's Flyweight Division",
     "firstRoundFinishes": 3,
     "heightCm": 163,
@@ -370,7 +370,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 5
   },
   "Fabricio Werdum": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Heavyweight Division",
     "heightCm": 193,
     "knockoutWins": 6,
@@ -381,7 +381,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 11
   },
   "Francis Ngannou": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Heavyweight Division",
     "heightCm": 193,
     "knockoutWins": 12,
@@ -392,7 +392,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 4
   },
   "Frankie Edgar": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Bantamweight Division",
     "firstRoundFinishes": 6,
     "heightCm": 168,
@@ -404,7 +404,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 4
   },
   "Georges St-Pierre": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Middleweight Division",
     "heightCm": 179,
     "reachCm": 193,
@@ -413,7 +413,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Retired"
   },
   "Germaine de Randamie": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Women's Bantamweight Division",
     "firstRoundFinishes": 3,
     "heightCm": 175,
@@ -425,7 +425,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 1
   },
   "Gilbert Urbina": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Middleweight Division",
     "firstRoundFinishes": 3,
     "heightCm": 175,
@@ -437,7 +437,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 2
   },
   "Gillian Robertson": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Women's Strawweight Division",
     "firstRoundFinishes": 3,
     "heightCm": 165,
@@ -449,7 +449,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 9
   },
   "Glover Teixeira": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Light Heavyweight Division",
     "heightCm": 188,
     "knockoutWins": 18,
@@ -460,7 +460,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 10
   },
   "Gray Maynard": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Featherweight Division",
     "heightCm": 175,
     "knockoutWins": 2,
@@ -470,7 +470,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Not Fighting"
   },
   "Henry Cejudo": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Bantamweight Division",
     "firstRoundFinishes": 5,
     "heightCm": 163,
@@ -481,7 +481,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Not Fighting"
   },
   "Holly Holm": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Women's Bantamweight Division",
     "heightCm": 173,
     "knockoutWins": 8,
@@ -491,7 +491,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Not Fighting"
   },
   "Hyun Gyu Lim": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Welterweight Division",
     "heightCm": 190,
     "reachCm": 196,
@@ -500,7 +500,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Not Fighting"
   },
   "HyunSung Park": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Flyweight Division",
     "firstRoundFinishes": 5,
     "heightCm": 170,
@@ -512,7 +512,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 5
   },
   "Ian Machado Garry": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Welterweight Division",
     "firstRoundFinishes": 4,
     "heightCm": 190,
@@ -524,7 +524,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 1
   },
   "Ilia Topuria": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Lightweight Division",
     "firstRoundFinishes": 10,
     "heightCm": 170,
@@ -536,7 +536,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 8
   },
   "Islam Makhachev": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Welterweight Division",
     "heightCm": 178,
     "knockoutWins": 5,
@@ -547,7 +547,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 13
   },
   "Jan Błachowicz": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Light Heavyweight Division",
     "firstRoundFinishes": 7,
     "heightCm": 188,
@@ -559,7 +559,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 9
   },
   "JeongYeong Lee": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Featherweight Division",
     "firstRoundFinishes": 5,
     "heightCm": 178,
@@ -571,7 +571,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 3
   },
   "Joanna Jędrzejczyk": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Women's Strawweight Division",
     "heightCm": 168,
     "knockoutWins": 4,
@@ -582,7 +582,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 1
   },
   "Jon Jones": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Heavyweight Division",
     "heightCm": 193,
     "knockoutWins": 11,
@@ -593,7 +593,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 7
   },
   "JooSang Yoo": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Featherweight Division",
     "firstRoundFinishes": 4,
     "heightCm": 170,
@@ -612,7 +612,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Retirado"
   },
   "José Aldo": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Featherweight Division",
     "firstRoundFinishes": 12,
     "heightCm": 170,
@@ -624,7 +624,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 1
   },
   "JunYong Park": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Middleweight Division",
     "firstRoundFinishes": 5,
     "heightCm": 178,
@@ -636,7 +636,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 6
   },
   "Justin Gaethje": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Lightweight Division",
     "firstRoundFinishes": 9,
     "heightCm": 180,
@@ -647,7 +647,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Active"
   },
   "Khabib Nurmagomedov": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Lightweight Division",
     "heightCm": 178,
     "knockoutWins": 8,
@@ -658,7 +658,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 11
   },
   "Kyung Ho Kang": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Bantamweight Division",
     "firstRoundFinishes": 9,
     "heightCm": 175,
@@ -670,7 +670,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 12
   },
   "Luke Rockhold": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Middleweight Division",
     "firstRoundFinishes": 10,
     "heightCm": 190,
@@ -682,7 +682,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 8
   },
   "Lyoto Machida": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Middleweight Division",
     "heightCm": 185,
     "reachCm": 188,
@@ -691,7 +691,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Not Fighting"
   },
   "Mackenzie Dern": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Women's Strawweight Division",
     "firstRoundFinishes": 6,
     "heightCm": 163,
@@ -702,7 +702,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 8
   },
   "Marcin Tybura": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Heavyweight Division",
     "firstRoundFinishes": 11,
     "heightCm": 190,
@@ -714,7 +714,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 7
   },
   "Mark Hunt": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Heavyweight Division",
     "firstRoundFinishes": 3,
     "heightCm": 178,
@@ -725,7 +725,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Not Fighting"
   },
   "Mateusz Gamrot": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Lightweight Division",
     "firstRoundFinishes": 3,
     "heightCm": 178,
@@ -737,7 +737,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 6
   },
   "Matt Hughes": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Welterweight Division",
     "heightCm": 175,
     "record": "46-9-0",
@@ -745,7 +745,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Retired"
   },
   "Matt Serra": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Welterweight Division",
     "heightCm": 168,
     "record": "17-7-0",
@@ -753,7 +753,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Retired"
   },
   "Mauricio Rua": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Light Heavyweight Division",
     "heightCm": 185,
     "knockoutWins": 21,
@@ -764,7 +764,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 1
   },
   "Michael Bisping": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Middleweight Division",
     "heightCm": 185,
     "reachCm": 192,
@@ -773,7 +773,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Retired"
   },
   "Mirko Cro Cop": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Heavyweight Division",
     "heightCm": 188,
     "reachCm": 185,
@@ -782,7 +782,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Not Fighting"
   },
   "Nate Diaz": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Welterweight Division",
     "firstRoundFinishes": 8,
     "heightCm": 185,
@@ -794,7 +794,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 13
   },
   "Navajo Stirling": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Light Heavyweight Division",
     "firstRoundFinishes": 3,
     "heightCm": 193,
@@ -805,7 +805,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Active"
   },
   "Nick Diaz": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Middleweight Division",
     "heightCm": 185,
     "knockoutWins": 13,
@@ -816,7 +816,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 8
   },
   "Randy Couture": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Light Heavyweight Division",
     "heightCm": 188,
     "reachCm": 190,
@@ -825,7 +825,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Retired"
   },
   "Rashad Evans": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Light Heavyweight Division",
     "heightCm": 183,
     "reachCm": 190,
@@ -834,7 +834,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Retired"
   },
   "Renan Barao": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Bantamweight Division",
     "heightCm": 168,
     "knockoutWins": 8,
@@ -845,7 +845,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 15
   },
   "Rich Franklin": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Middleweight Division",
     "heightCm": 185,
     "reachCm": 193,
@@ -854,7 +854,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Retired"
   },
   "Robert Valentin": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Middleweight Division",
     "firstRoundFinishes": 9,
     "heightCm": 188,
@@ -866,7 +866,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 9
   },
   "Ronda Rousey": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Women's Bantamweight Division",
     "heightCm": 168,
     "reachCm": 173,
@@ -875,7 +875,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Retired"
   },
   "Rory MacDonald": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Welterweight Division",
     "heightCm": 183,
     "reachCm": 193,
@@ -884,7 +884,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Not Fighting"
   },
   "Rose Namajunas": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Women's Flyweight Division",
     "firstRoundFinishes": 5,
     "heightCm": 165,
@@ -896,7 +896,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 6
   },
   "Seokhyeon Ko": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Welterweight Division",
     "firstRoundFinishes": 4,
     "heightCm": 178,
@@ -907,7 +907,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Active"
   },
   "Song Yadong": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Bantamweight Division",
     "firstRoundFinishes": 7,
     "heightCm": 173,
@@ -919,7 +919,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 4
   },
   "Stipe Miocic": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Heavyweight Division",
     "firstRoundFinishes": 9,
     "heightCm": 196,
@@ -930,7 +930,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Retired"
   },
   "SuYoung You": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Bantamweight Division",
     "firstRoundFinishes": 5,
     "heightCm": 168,
@@ -942,7 +942,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 5
   },
   "TJ Dillashaw": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Bantamweight Division",
     "heightCm": 169,
     "knockoutWins": 8,
@@ -953,7 +953,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 3
   },
   "Tito Ortiz": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Light Heavyweight Division",
     "heightCm": 190,
     "record": "0-0-0",
@@ -961,7 +961,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Not Fighting"
   },
   "Tony Ferguson": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Welterweight Division",
     "firstRoundFinishes": 9,
     "heightCm": 180,
@@ -973,7 +973,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 8
   },
   "Umar Nurmagomedov": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Bantamweight Division",
     "firstRoundFinishes": 5,
     "heightCm": 173,
@@ -985,7 +985,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 7
   },
   "Urijah Faber": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Bantamweight Division",
     "heightCm": 168,
     "knockoutWins": 10,
@@ -996,7 +996,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 17
   },
   "Uroš Medić": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Welterweight Division",
     "firstRoundFinishes": 11,
     "heightCm": 185,
@@ -1020,7 +1020,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 1
   },
   "YiSak Lee": {
-    "checkedAt": "2026-10-30",
+    "checkedAt": "2026-10-31",
     "division": "Middleweight Division",
     "firstRoundFinishes": 6,
     "heightCm": 188,

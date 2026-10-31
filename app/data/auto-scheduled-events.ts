@@ -55,8 +55,8 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2026-11-08-bonfim-vs-brady",
-    "title": "Bonfim vs Brady",
+    "id": "ufcstats-2026-11-08-cortes-acosta-vs-walker",
+    "title": "Cortes Acosta vs Walker",
     "date": "2026-11-08",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-november-07-2026",
     "startUtc": "2026-11-08T01:00:00Z",
@@ -64,11 +64,11 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "venue": "Meta APEX Las Vegas , NV United States",
     "bouts": [
       {
-        "left": "Gabriel Bonfim",
-        "leftKo": "Gabriel Bonfim",
-        "right": "Sean Brady",
-        "rightKo": "Sean Brady",
-        "weight": "Welterweight",
+        "left": "Waldo Cortes Acosta",
+        "leftKo": "Waldo Cortes Acosta",
+        "right": "Johnny Walker",
+        "rightKo": "Johnny Walker",
+        "weight": "Heavyweight",
         "section": "main"
       },
       {
