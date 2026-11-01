@@ -4,57 +4,6 @@ export type AutoScheduledEvent = { id: string; title: string; date: string; sour
 
 export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
   {
-    "id": "ufcstats-2026-11-01-moicano-vs-nolan",
-    "title": "Moicano vs Nolan",
-    "date": "2026-11-01",
-    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-october-31-2026",
-    "startUtc": "2026-11-01T00:00:00Z",
-    "prelimsUtc": "2026-10-31T21:00:00Z",
-    "venue": "Meta APEX Las Vegas , NV United States",
-    "bouts": [
-      {
-        "left": "Renato Moicano",
-        "leftKo": "Renato Moicano",
-        "right": "Tom Nolan",
-        "rightKo": "Tom Nolan",
-        "weight": "Lightweight",
-        "section": "main"
-      },
-      {
-        "left": "Randy Brown",
-        "leftKo": "Randy Brown",
-        "right": "Jacobe Smith",
-        "rightKo": "Jacobe Smith",
-        "weight": "Welterweight",
-        "section": "announced"
-      },
-      {
-        "left": "Ode' Osbourne",
-        "leftKo": "Ode' Osbourne",
-        "right": "Cody Durden",
-        "rightKo": "Cody Durden",
-        "weight": "Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Yana Santos",
-        "leftKo": "Yana Santos",
-        "right": "Luana Santos",
-        "rightKo": "Luana Santos",
-        "weight": "Women's Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "Jean-Paul Lebosnoyani",
-        "leftKo": "Jean-Paul Lebosnoyani",
-        "right": "Farman Hasanov",
-        "rightKo": "Farman Hasanov",
-        "weight": "Welterweight",
-        "section": "announced"
-      }
-    ]
-  },
-  {
     "id": "ufcstats-2026-11-08-cortes-acosta-vs-walker",
     "title": "Cortes Acosta vs Walker",
     "date": "2026-11-08",
