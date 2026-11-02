@@ -284,12 +284,30 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2027-02-06-tbd-vs-tbd",
-    "title": "TBD vs TBD",
+    "id": "ufcstats-2027-02-06-salkilld-vs-saint-denis",
+    "title": "Salkilld vs Saint Denis",
     "date": "2027-02-06",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-february-06-2027",
     "startUtc": "2027-02-06T22:00:00Z",
     "prelimsUtc": "2027-02-06T20:00:00Z",
-    "venue": "Afterpay Arena Sydney Olympic Park NSW Australia"
+    "venue": "Afterpay Arena Sydney Olympic Park NSW Australia",
+    "bouts": [
+      {
+        "left": "Quillan Salkilld",
+        "leftKo": "Quillan Salkilld",
+        "right": "Benoît Saint Denis",
+        "rightKo": "Benoît Saint Denis",
+        "weight": "Lightweight",
+        "section": "main"
+      },
+      {
+        "left": "Bogdan Guskov",
+        "leftKo": "Bogdan Guskov",
+        "right": "Robert Whittaker",
+        "rightKo": "Robert Whittaker",
+        "weight": "Light Heavyweight",
+        "section": "announced"
+      }
+    ]
   }
 ];
