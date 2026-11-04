@@ -37,14 +37,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Seokhyeon Ko",
-        "leftKo": "Seokhyeon Ko",
-        "right": "Wellington Turman",
-        "rightKo": "Wellington Turman",
-        "weight": "Welterweight",
-        "section": "announced"
-      },
-      {
         "left": "Billy Elekana",
         "leftKo": "Billy Elekana",
         "right": "Lucas Fernando",
@@ -53,11 +45,19 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Mantas Kondratavičius",
-        "leftKo": "Mantas Kondratavičius",
-        "right": "Andre Petroski",
-        "rightKo": "Andre Petroski",
-        "weight": "Middleweight",
+        "left": "Priscila Cachoeira",
+        "leftKo": "Priscila Cachoeira",
+        "right": "Nina Milošević",
+        "rightKo": "Nina Milošević",
+        "weight": "Women's Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "Mitch Raposo",
+        "leftKo": "Mitch Raposo",
+        "right": "Marcos Degli",
+        "rightKo": "Marcos Degli",
+        "weight": "Flyweight",
         "section": "announced"
       }
     ]
