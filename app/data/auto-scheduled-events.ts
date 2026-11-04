@@ -307,6 +307,22 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "rightKo": "Robert Whittaker",
         "weight": "Light Heavyweight",
         "section": "announced"
+      },
+      {
+        "left": "Marwan Rahiki",
+        "leftKo": "Marwan Rahiki",
+        "right": "JooSang Yoo",
+        "rightKo": "JooSang Yoo",
+        "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
+        "left": "Kaan Ofli",
+        "leftKo": "Kaan Ofli",
+        "right": "Joanderson Brito",
+        "rightKo": "Joanderson Brito",
+        "weight": "Featherweight",
+        "section": "announced"
       }
     ]
   }
