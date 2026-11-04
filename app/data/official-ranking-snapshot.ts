@@ -2,7 +2,7 @@
 export type OfficialRankingSnapshot = { checkedAt: string; divisions: Record<string, { champion?: string; entries: string[] }>; mensP4p: string[]; womensP4p: string[] };
 
 export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-04",
   "divisions": {
     "flyweight": {
       "champion": "Joshua Van",
@@ -73,14 +73,14 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Max Holloway",
         "Paddy Pimblett",
         "Quillan Salkilld",
+        "Tom Nolan",
         "Benoît Saint Denis",
-        "Renato Moicano",
         "Mateusz Gamrot",
         "Mauricio Ruffy",
         "Grant Dawson",
-        "Tom Nolan",
         "Tofiq Musayev",
         "Rafael Fiziev",
+        "Renato Moicano",
         "Esteban Ribovics"
       ]
     },
@@ -100,8 +100,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Kamaru Usman",
         "Joaquin Buckley",
         "Yaroslav Amosov",
-        "Kevin Holland",
-        "Daniel Rodriguez"
+        "Jacobe Smith",
+        "Kevin Holland"
       ]
     },
     "middleweight": {
@@ -173,15 +173,15 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Denise Gomes",
         "Gillian Robertson",
         "Fatima Kline",
+        "Piera Rodriguez",
         "Iasmin Lucindo",
         "Alexia Thainara",
         "Loopy Godinez",
-        "Piera Rodriguez",
         "Yan Xiaonan",
         "Mizuki",
         "Tabatha Ricci",
-        "Talita Alencar",
-        "Amanda Lemos"
+        "Amanda Lemos",
+        "Sam Hughes"
       ]
     },
     "womens-flyweight": {
@@ -209,12 +209,12 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
       "entries": [
         "Joselyne Edwards",
         "Ailin Perez",
-        "Norma Dumont",
         "Luana Santos",
+        "Norma Dumont",
         "Julianna Peña",
-        "Yana Santos",
         "Jacqueline Cavalcanti",
         "Michelle Montague",
+        "Yana Santos",
         "Chelsea Chandler",
         "Karol Rosa",
         "Bia Mesquita",
@@ -228,8 +228,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
   "mensP4p": [
     "Islam Makhachev",
     "Alexander Volkanovski",
-    "Justin Gaethje",
     "Petr Yan",
+    "Justin Gaethje",
     "Ilia Topuria",
     "Joshua Van",
     "Sean Strickland",
@@ -251,12 +251,12 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
     "Alexa Grasso",
     "Manon Fiorot",
     "Tatiana Suarez",
+    "Jasmine Jasudavicius",
+    "Erin Blanchfield",
     "Julianna Peña",
     "Virna Jandiroba",
-    "Jasmine Jasudavicius",
     "Rose Namajunas",
     "Raquel Pennington",
-    "Erin Blanchfield",
     "Denise Gomes"
   ]
 };

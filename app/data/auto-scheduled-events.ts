@@ -218,7 +218,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Alex Pereira",
         "right": "Sergei Pavlovich",
         "rightKo": "Sergei Pavlovich",
-        "weight": "체급 확인 중",
+        "weight": "Heavyweight",
         "section": "announced"
       },
       {
