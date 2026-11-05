@@ -147,51 +147,19 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
+        "left": "Kyoji Horiguchi",
+        "leftKo": "Kyoji Horiguchi",
+        "right": "Asu Almabayev",
+        "rightKo": "Asu Almabayev",
+        "weight": "Flyweight",
+        "section": "announced"
+      },
+      {
         "left": "Jared Cannonier",
         "leftKo": "Jared Cannonier",
         "right": "Ikram Aliskerov",
         "rightKo": "Ikram Aliskerov",
         "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Shamil Gaziev",
-        "leftKo": "Shamil Gaziev",
-        "right": "Tallison Teixeira",
-        "rightKo": "Tallison Teixeira",
-        "weight": "Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Jake Matthews",
-        "leftKo": "Jake Matthews",
-        "right": "Tahir Abdullayev",
-        "rightKo": "Tahir Abdullayev",
-        "weight": "Welterweight",
-        "section": "announced"
-      },
-      {
-        "left": "Aleksandre Topuria",
-        "leftKo": "Aleksandre Topuria",
-        "right": "Santiago Luna",
-        "rightKo": "Santiago Luna",
-        "weight": "Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "Asu Almabayev",
-        "leftKo": "Asu Almabayev",
-        "right": "Kyoji Horiguchi",
-        "rightKo": "Kyoji Horiguchi",
-        "weight": "Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Amir Albazi",
-        "leftKo": "Amir Albazi",
-        "right": "Alessandro Costa",
-        "rightKo": "Alessandro Costa",
-        "weight": "Flyweight",
         "section": "announced"
       }
     ]
