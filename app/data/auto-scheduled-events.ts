@@ -4,65 +4,6 @@ export type AutoScheduledEvent = { id: string; title: string; date: string; sour
 
 export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
   {
-    "id": "ufcstats-2026-11-08-cortes-acosta-vs-walker",
-    "title": "Cortes Acosta vs Walker",
-    "date": "2026-11-08",
-    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-november-07-2026",
-    "startUtc": "2026-11-08T01:00:00Z",
-    "prelimsUtc": "2026-11-07T22:00:00Z",
-    "venue": "Meta APEX Las Vegas , NV United States",
-    "bouts": [
-      {
-        "left": "Waldo Cortes Acosta",
-        "leftKo": "Waldo Cortes Acosta",
-        "right": "Johnny Walker",
-        "rightKo": "Johnny Walker",
-        "weight": "Heavyweight",
-        "section": "main"
-      },
-      {
-        "left": "Tatiana Suarez",
-        "leftKo": "Tatiana Suarez",
-        "right": "Virna Jandiroba",
-        "rightKo": "Virna Jandiroba",
-        "weight": "Women's Strawweight",
-        "section": "announced"
-      },
-      {
-        "left": "Davey Grant",
-        "leftKo": "Davey Grant",
-        "right": "Elijah Smith",
-        "rightKo": "Elijah Smith",
-        "weight": "Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "Billy Elekana",
-        "leftKo": "Billy Elekana",
-        "right": "Lucas Fernando",
-        "rightKo": "Lucas Fernando",
-        "weight": "Light Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Priscila Cachoeira",
-        "leftKo": "Priscila Cachoeira",
-        "right": "Nina Milošević",
-        "rightKo": "Nina Milošević",
-        "weight": "Women's Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "Mitch Raposo",
-        "leftKo": "Mitch Raposo",
-        "right": "Marcos Degli",
-        "rightKo": "Marcos Degli",
-        "weight": "Flyweight",
-        "section": "announced"
-      }
-    ]
-  },
-  {
     "id": "ufcstats-2026-11-15-gane-vs-hokit",
     "title": "Gane vs Hokit",
     "date": "2026-11-15",
