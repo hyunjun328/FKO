@@ -106,6 +106,113 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
+    "id": "ufcstats-2026-12-05-adesanya-vs-magomedov",
+    "title": "Adesanya vs Magomedov",
+    "date": "2026-12-05",
+    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-december-05-2026",
+    "startUtc": "2026-12-05T18:00:00Z",
+    "prelimsUtc": "2026-12-05T15:00:00Z",
+    "venue": "Venue TBD Riyadh Saudi Arabia",
+    "bouts": [
+      {
+        "left": "Israel Adesanya",
+        "leftKo": "Israel Adesanya",
+        "right": "Shara Magomedov",
+        "rightKo": "Shara Magomedov",
+        "weight": "Middleweight",
+        "section": "main"
+      },
+      {
+        "left": "Ian Machado Garry",
+        "leftKo": "Ian Machado Garry",
+        "right": "Yaroslav Amosov",
+        "rightKo": "Yaroslav Amosov",
+        "weight": "Welterweight",
+        "section": "announced"
+      },
+      {
+        "left": "Serghei Spivac",
+        "leftKo": "Serghei Spivac",
+        "right": "Mario Pinto",
+        "rightKo": "Mario Pinto",
+        "weight": "Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Levan Chokheli",
+        "leftKo": "Levan Chokheli",
+        "right": "Islam Dulatov",
+        "rightKo": "Islam Dulatov",
+        "weight": "Welterweight",
+        "section": "announced"
+      },
+      {
+        "left": "Mairon Santos",
+        "leftKo": "Mairon Santos",
+        "right": "Akbar Abdullaev",
+        "rightKo": "Akbar Abdullaev",
+        "weight": "Lightweight",
+        "section": "announced"
+      },
+      {
+        "left": "Magomed Tuchalov",
+        "leftKo": "Magomed Tuchalov",
+        "right": "Ion Cutelaba",
+        "rightKo": "Ion Cutelaba",
+        "weight": "Light Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Bruno Silva",
+        "leftKo": "Bruno Silva",
+        "right": "Jafel Filho",
+        "rightKo": "Jafel Filho",
+        "weight": "Flyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Uran Satybaldiev",
+        "leftKo": "Uran Satybaldiev",
+        "right": "Ivan Gnizditskiy",
+        "rightKo": "Ivan Gnizditskiy",
+        "weight": "Light Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Marco Tulio",
+        "leftKo": "Marco Tulio",
+        "right": "JunYong Park",
+        "rightKo": "JunYong Park",
+        "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Pavel Andrusca",
+        "leftKo": "Pavel Andrusca",
+        "right": "Mahammadali Osmanli",
+        "rightKo": "Mahammadali Osmanli",
+        "weight": "Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "Modestino Rodrigues",
+        "leftKo": "Modestino Rodrigues",
+        "right": "Matthieu Duclos",
+        "rightKo": "Matthieu Duclos",
+        "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Abdul Hussein",
+        "leftKo": "Abdul Hussein",
+        "right": "Hecher Sosa",
+        "rightKo": "Hecher Sosa",
+        "weight": "Bantamweight",
+        "section": "announced"
+      }
+    ]
+  },
+  {
     "id": "ufcstats-2026-12-13-oliveira-vs-lopes",
     "title": "Oliveira vs Lopes",
     "date": "2026-12-13",
