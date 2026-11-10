@@ -112,7 +112,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-december-05-2026",
     "startUtc": "2026-12-05T18:00:00Z",
     "prelimsUtc": "2026-12-05T15:00:00Z",
-    "venue": "Venue TBD Riyadh Saudi Arabia",
+    "venue": "The Venue Riyadh Saudi Arabia",
     "bouts": [
       {
         "left": "Israel Adesanya",
