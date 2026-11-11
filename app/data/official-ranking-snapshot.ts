@@ -2,7 +2,7 @@
 export type OfficialRankingSnapshot = { checkedAt: string; divisions: Record<string, { champion?: string; entries: string[] }>; mensP4p: string[]; womensP4p: string[] };
 
 export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
-  "checkedAt": "2026-11-09",
+  "checkedAt": "2026-11-11",
   "divisions": {
     "flyweight": {
       "champion": "Joshua Van",
@@ -54,14 +54,14 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Jean Silva",
         "Arnold Allen",
         "Pat Sabatini",
-        "Pavel Andrusca",
         "Youssef Zalal",
         "Aaron Pico",
         "Kevin Vallejos",
         "Joanderson Brito",
         "Melquizael Costa",
         "Steve Garcia",
-        "Jamall Emmers"
+        "Jamall Emmers",
+        "Patricio Pitbull"
       ]
     },
     "lightweight": {
@@ -152,13 +152,13 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Alex Pereira",
         "Sergei Pavlovich",
         "Josh Hokit",
-        "Curtis Blaydes",
         "Rizvan Kuniev",
-        "Waldo Cortes Acosta",
+        "Curtis Blaydes",
+        "Johnny Walker",
         "Vitor Petrino",
         "Mario Pinto",
         "Valter Walker",
-        "Johnny Walker",
+        "Waldo Cortes Acosta",
         "Brando Peričić",
         "Serghei Spivac",
         "Anthony Wint"
@@ -167,9 +167,9 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
     "womens-strawweight": {
       "champion": "Mackenzie Dern",
       "entries": [
+        "Tatiana Suarez",
         "Zhang Weili",
         "Virna Jandiroba",
-        "Tatiana Suarez",
         "Denise Gomes",
         "Gillian Robertson",
         "Fatima Kline",
@@ -198,9 +198,9 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Maycee Barber",
         "Tracy Cortez",
         "Casey O'Neill",
+        "Karine Silva",
         "Miranda Maverick",
         "Regina Tarin",
-        "Karine Silva",
         "Carli Judice"
       ]
     },
@@ -256,7 +256,7 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
     "Julianna Peña",
     "Virna Jandiroba",
     "Rose Namajunas",
-    "Raquel Pennington",
-    "Denise Gomes"
+    "Denise Gomes",
+    "Raquel Pennington"
   ]
 };
