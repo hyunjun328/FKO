@@ -4,57 +4,6 @@ export type AutoScheduledEvent = { id: string; title: string; date: string; sour
 
 export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
   {
-    "id": "ufcstats-2026-11-15-gane-vs-hokit",
-    "title": "Gane vs Hokit",
-    "date": "2026-11-15",
-    "sourceUrl": "https://www.ufc.com/event/ufc-334",
-    "startUtc": "2026-11-15T02:00:00Z",
-    "prelimsUtc": "2026-11-15T00:00:00Z",
-    "venue": "Madison Square Garden New York , NY United States",
-    "bouts": [
-      {
-        "left": "Ciryl Gane",
-        "leftKo": "Ciryl Gane",
-        "right": "Josh Hokit",
-        "rightKo": "Josh Hokit",
-        "weight": "Heavyweight Title",
-        "section": "main"
-      },
-      {
-        "left": "Kayla Harrison",
-        "leftKo": "Kayla Harrison",
-        "right": "Amanda Nunes",
-        "rightKo": "Amanda Nunes",
-        "weight": "Women's Bantamweight Title",
-        "section": "announced"
-      },
-      {
-        "left": "Caio Borralho",
-        "leftKo": "Caio Borralho",
-        "right": "Yousri Belgaroui",
-        "rightKo": "Yousri Belgaroui",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Uroš Medić",
-        "leftKo": "Uroš Medić",
-        "right": "Kevin Holland",
-        "rightKo": "Kevin Holland",
-        "weight": "Welterweight",
-        "section": "announced"
-      },
-      {
-        "left": "Bilal Hasan",
-        "leftKo": "Bilal Hasan",
-        "right": "Luis Gurule",
-        "rightKo": "Luis Gurule",
-        "weight": "Flyweight",
-        "section": "announced"
-      }
-    ]
-  },
-  {
     "id": "ufcstats-2026-11-21-prochazka-vs-stirling",
     "title": "Prochazka vs Stirling",
     "date": "2026-11-21",
@@ -264,13 +213,58 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2027-01-17-tbd-vs-tbd",
-    "title": "TBD vs TBD",
+    "id": "ufcstats-2027-01-17-rodriguez-vs-garcia",
+    "title": "Rodriguez vs Garcia",
     "date": "2027-01-17",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-january-16-2027",
     "startUtc": "2027-01-17T01:00:00Z",
     "prelimsUtc": "2027-01-16T22:00:00Z",
-    "venue": "American Airlines Center Dallas , TX United States"
+    "venue": "American Airlines Center Dallas , TX United States",
+    "bouts": [
+      {
+        "left": "Yair Rodriguez",
+        "leftKo": "Yair Rodriguez",
+        "right": "Steve Garcia",
+        "rightKo": "Steve Garcia",
+        "weight": "Featherweight",
+        "section": "main"
+      },
+      {
+        "left": "Daniel Rodriguez",
+        "leftKo": "Daniel Rodriguez",
+        "right": "Roberto Soldić",
+        "rightKo": "Roberto Soldić",
+        "weight": "Welterweight",
+        "section": "announced"
+      },
+      {
+        "left": "Chidi Njokuani",
+        "leftKo": "Chidi Njokuani",
+        "right": "Ignacio Bahamondes",
+        "rightKo": "Ignacio Bahamondes",
+        "weight": "Welterweight",
+        "section": "announced"
+      }
+    ]
+  },
+  {
+    "id": "ufcstats-2027-01-23-bonfim-vs-brady",
+    "title": "Bonfim vs Brady",
+    "date": "2027-01-23",
+    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-january-23-2027",
+    "startUtc": "2027-01-23T22:00:00Z",
+    "prelimsUtc": "2027-01-23T20:00:00Z",
+    "venue": "Meta APEX Las Vegas , NV United States",
+    "bouts": [
+      {
+        "left": "Gabriel Bonfim",
+        "leftKo": "Gabriel Bonfim",
+        "right": "Sean Brady",
+        "rightKo": "Sean Brady",
+        "weight": "Welterweight",
+        "section": "main"
+      }
+    ]
   },
   {
     "id": "ufcstats-2027-01-31-van-vs-kape",
@@ -339,6 +333,25 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "rightKo": "Joanderson Brito",
         "weight": "Featherweight",
         "section": "announced"
+      }
+    ]
+  },
+  {
+    "id": "ufcstats-2027-02-13-pyfer-vs-nickal",
+    "title": "Pyfer vs Nickal",
+    "date": "2027-02-13",
+    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-february-13-2027",
+    "startUtc": "2027-02-13T22:00:00Z",
+    "prelimsUtc": "2027-02-13T20:00:00Z",
+    "venue": "Rocket Arena Cleveland , OH United States",
+    "bouts": [
+      {
+        "left": "Joe Pyfer",
+        "leftKo": "Joe Pyfer",
+        "right": "Bo Nickal",
+        "rightKo": "Bo Nickal",
+        "weight": "Middleweight",
+        "section": "main"
       }
     ]
   }
