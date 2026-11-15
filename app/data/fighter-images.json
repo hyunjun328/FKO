@@ -2186,6 +2186,21 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
     "file": "Petr Yan at Kremlin award ceremonies with president Putin.jpg"
   },
+  "Quillan Salkilld": {
+    "src": "/fighters/quillan-salkilld.webp",
+    "groups": [
+      "event-card",
+      "main-card",
+      "ranking",
+      "world-ranking"
+    ],
+    "wikidataId": "Q134467028",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Qsalkilld.png",
+    "author": "Dsdcrewsmoke",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "file": "Qsalkilld.png"
+  },
   "Ramazonbek Temirov": {
     "src": "/fighters/ramazonbek-temirov.webp",
     "groups": [
