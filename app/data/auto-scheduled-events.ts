@@ -195,6 +195,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
+        "left": "Kyler Phillips",
+        "leftKo": "Kyler Phillips",
+        "right": "Ethyn Ewing",
+        "rightKo": "Ethyn Ewing",
+        "weight": "Bantamweight",
+        "section": "announced"
+      },
+      {
         "left": "Quentin Pasley",
         "leftKo": "Quentin Pasley",
         "right": "Junior Tafa",
@@ -203,10 +211,10 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Joe Pyfer",
-        "leftKo": "Joe Pyfer",
-        "right": "Bo Nickal",
-        "rightKo": "Bo Nickal",
+        "left": "Damian Pinas",
+        "leftKo": "Damian Pinas",
+        "right": "Baisangur Susurkaev",
+        "rightKo": "Baisangur Susurkaev",
         "weight": "Middleweight",
         "section": "announced"
       }
@@ -289,6 +297,30 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "right": "Michael Morales",
         "rightKo": "Michael Morales",
         "weight": "Welterweight Interim Title",
+        "section": "announced"
+      },
+      {
+        "left": "Lance Gibson Jr.",
+        "leftKo": "Lance Gibson Jr.",
+        "right": "Michael Johnson",
+        "rightKo": "Michael Johnson",
+        "weight": "Lightweight",
+        "section": "announced"
+      },
+      {
+        "left": "Serhiy Sidey",
+        "leftKo": "Serhiy Sidey",
+        "right": "Louis Lee Scott",
+        "rightKo": "Louis Lee Scott",
+        "weight": "Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "Cam Nelson",
+        "leftKo": "Cam Nelson",
+        "right": "Sean Clancy Jr.",
+        "rightKo": "Sean Clancy Jr.",
+        "weight": "Welterweight",
         "section": "announced"
       }
     ]
