@@ -238,18 +238,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "file": "Anthony Pettis WEC 53.jpg"
   },
-  "Antonio Carlos Jr.": {
-    "src": "/fighters/antonio-carlos-jr.webp",
-    "groups": [
-      "world-ranking"
-    ],
-    "wikidataId": "Q17465610",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Antonio_Cara_de_Sapato_at_Big_Brother_Brasil_23.png",
-    "author": "Multishow",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "file": "Antonio Cara de Sapato at Big Brother Brasil 23.png"
-  },
   "Antonio Rodrigo Nogueira": {
     "src": "/fighters/antonio-rodrigo-nogueira.webp",
     "groups": [
@@ -1221,18 +1209,6 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:Jean_Silva_(54451587575).jpg",
     "file": "Jean Silva (54451587575).jpg"
   },
-  "Jim Miller": {
-    "src": "/fighters/jim-miller.webp",
-    "groups": [
-      "world-ranking"
-    ],
-    "wikidataId": "Q742812",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jim.miller.2.jpg",
-    "author": "Aleks Ozolins",
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "file": "Jim.miller.2.jpg"
-  },
   "Jimmy Crute": {
     "src": "/fighters/jimmy-crute.webp",
     "groups": [
@@ -2024,18 +2000,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
     "file": "Movsar Evloev M-1 Challenge 2018.jpg"
   },
-  "Muhammad Mokaev": {
-    "src": "/fighters/muhammad-mokaev.webp",
-    "groups": [
-      "world-ranking"
-    ],
-    "wikidataId": "Q109492182",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B0_%D1%80%D0%BE%D0%B4%D0%B8%D0%BD%D1%83_%D0%9C%D1%83%D1%85%D0%B0%D0%BC%D0%BC%D0%B0%D0%B4_%D0%9C%D0%BE%D0%BA%D0%B0%D0%B5%D0%B2_%D0%9B%D0%AE%D0%94%D0%98_%D0%A1%D0%9F%D0%9E%D0%A0%D0%A2%D0%90_1-20.png",
-    "author": "Sportleader TV",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "file": "Возвращение на родину Мухаммад Мокаев ЛЮДИ СПОРТА 1-20.png"
-  },
   "Muslim Salikhov": {
     "src": "/fighters/muslim-salikhov.webp",
     "groups": [
@@ -2510,6 +2474,18 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Sharabutdin Magomedov 2024.png"
   },
+  "Stephen Thompson": {
+    "src": "/fighters/stephen-thompson.webp",
+    "groups": [
+      "world-ranking"
+    ],
+    "wikidataId": "Q11253984",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:From_cancer_to_company_commander_130802-M-AR522-306_(cropped).jpg",
+    "author": "Cpl. Devin Nichols",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:From_cancer_to_company_commander_130802-M-AR522-306_(cropped).jpg",
+    "file": "From cancer to company commander 130802-M-AR522-306 (cropped).jpg"
+  },
   "Steve Garcia": {
     "src": "/fighters/steve-garcia.webp",
     "groups": [
@@ -2534,6 +2510,18 @@
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "file": "Stipebrowns4.jpg"
+  },
+  "Szymon Kolecki": {
+    "src": "/fighters/szymon-kolecki.webp",
+    "groups": [
+      "world-ranking"
+    ],
+    "wikidataId": "Q1385467",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Szymon_Ko%C5%82ecki_(2007).jpg",
+    "author": "Sławek",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "file": "Szymon Kołecki (2007).jpg"
   },
   "T.J. Dillashaw": {
     "src": "/fighters/t-j-dillashaw.webp",
