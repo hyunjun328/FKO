@@ -110,54 +110,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "rightKo": "Ion Cutelaba",
         "weight": "Light Heavyweight",
         "section": "announced"
-      },
-      {
-        "left": "Bruno Silva",
-        "leftKo": "Bruno Silva",
-        "right": "Jafel Filho",
-        "rightKo": "Jafel Filho",
-        "weight": "Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Uran Satybaldiev",
-        "leftKo": "Uran Satybaldiev",
-        "right": "Ivan Gnizditskiy",
-        "rightKo": "Ivan Gnizditskiy",
-        "weight": "Light Heavyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Marco Tulio",
-        "leftKo": "Marco Tulio",
-        "right": "JunYong Park",
-        "rightKo": "JunYong Park",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Pavel Andrusca",
-        "leftKo": "Pavel Andrusca",
-        "right": "Mahammadali Osmanli",
-        "rightKo": "Mahammadali Osmanli",
-        "weight": "Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "Modestino Rodrigues",
-        "leftKo": "Modestino Rodrigues",
-        "right": "Matthieu Duclos",
-        "rightKo": "Matthieu Duclos",
-        "weight": "Middleweight",
-        "section": "announced"
-      },
-      {
-        "left": "Abdul Hussein",
-        "leftKo": "Abdul Hussein",
-        "right": "Hecher Sosa",
-        "rightKo": "Hecher Sosa",
-        "weight": "Bantamweight",
-        "section": "announced"
       }
     ]
   },
@@ -200,14 +152,6 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "right": "Ethyn Ewing",
         "rightKo": "Ethyn Ewing",
         "weight": "Bantamweight",
-        "section": "announced"
-      },
-      {
-        "left": "Quentin Pasley",
-        "leftKo": "Quentin Pasley",
-        "right": "Junior Tafa",
-        "rightKo": "Junior Tafa",
-        "weight": "Light Heavyweight",
         "section": "announced"
       },
       {
@@ -256,12 +200,12 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2027-01-23-bonfim-vs-brady",
+    "id": "ufcstats-2027-01-24-bonfim-vs-brady",
     "title": "Bonfim vs Brady",
-    "date": "2027-01-23",
+    "date": "2027-01-24",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-january-23-2027",
-    "startUtc": "2027-01-23T22:00:00Z",
-    "prelimsUtc": "2027-01-23T20:00:00Z",
+    "startUtc": "2027-01-24T01:00:00Z",
+    "prelimsUtc": "2027-01-23T22:00:00Z",
     "venue": "Meta APEX Las Vegas , NV United States",
     "bouts": [
       {
