@@ -190,11 +190,91 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
+        "left": "Geoff Neal",
+        "leftKo": "Geoff Neal",
+        "right": "Chris Curtis",
+        "rightKo": "Chris Curtis",
+        "weight": "Welterweight",
+        "section": "announced"
+      },
+      {
         "left": "Chidi Njokuani",
         "leftKo": "Chidi Njokuani",
         "right": "Ignacio Bahamondes",
         "rightKo": "Ignacio Bahamondes",
         "weight": "Welterweight",
+        "section": "announced"
+      },
+      {
+        "left": "Ryan Spann",
+        "leftKo": "Ryan Spann",
+        "right": "Louie Sutherland",
+        "rightKo": "Louie Sutherland",
+        "weight": "Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Kennedy Nzechukwu",
+        "leftKo": "Kennedy Nzechukwu",
+        "right": "Elisha Ellison",
+        "rightKo": "Elisha Ellison",
+        "weight": "Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Gilbert Urbina",
+        "leftKo": "Gilbert Urbina",
+        "right": "Robert Valentin",
+        "rightKo": "Robert Valentin",
+        "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Alden Coria",
+        "leftKo": "Alden Coria",
+        "right": "Michael Aljarouj",
+        "rightKo": "Michael Aljarouj",
+        "weight": "Flyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Diego Ferreira",
+        "leftKo": "Diego Ferreira",
+        "right": "MarQuel Mederos",
+        "rightKo": "MarQuel Mederos",
+        "weight": "Lightweight",
+        "section": "announced"
+      },
+      {
+        "left": "Magomed Zaynukov",
+        "leftKo": "Magomed Zaynukov",
+        "right": "Piero Guaylupo",
+        "rightKo": "Piero Guaylupo",
+        "weight": "Lightweight",
+        "section": "announced"
+      },
+      {
+        "left": "John Garza",
+        "leftKo": "John Garza",
+        "right": "Toshiomi Kazama",
+        "rightKo": "Toshiomi Kazama",
+        "weight": "Bantamweight",
+        "section": "announced"
+      },
+      {
+        "left": "Steven Asplund",
+        "leftKo": "Steven Asplund",
+        "right": "Gokhan Saricam",
+        "rightKo": "Gokhan Saricam",
+        "weight": "Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Sam Hughes",
+        "leftKo": "Sam Hughes",
+        "right": "Karolina Kowalkiewicz",
+        "rightKo": "Karolina Kowalkiewicz",
+        "weight": "Women's Strawweight",
         "section": "announced"
       }
     ]
@@ -292,6 +372,14 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "right": "Robert Whittaker",
         "rightKo": "Robert Whittaker",
         "weight": "Light Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Jonathan Micallef",
+        "leftKo": "Jonathan Micallef",
+        "right": "Sam Patterson",
+        "rightKo": "Sam Patterson",
+        "weight": "Welterweight",
         "section": "announced"
       },
       {
