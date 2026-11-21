@@ -4,57 +4,6 @@ export type AutoScheduledEvent = { id: string; title: string; date: string; sour
 
 export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
   {
-    "id": "ufcstats-2026-11-21-prochazka-vs-stirling",
-    "title": "Prochazka vs Stirling",
-    "date": "2026-11-21",
-    "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-november-21-2026",
-    "startUtc": "2026-11-21T18:00:00Z",
-    "prelimsUtc": "2026-11-21T15:00:00Z",
-    "venue": "ABHA Arena Doha Qatar",
-    "bouts": [
-      {
-        "left": "Jiří Procházka",
-        "leftKo": "Jiří Procházka",
-        "right": "Navajo Stirling",
-        "rightKo": "Navajo Stirling",
-        "weight": "Light Heavyweight",
-        "section": "main"
-      },
-      {
-        "left": "Aljamain Sterling",
-        "leftKo": "Aljamain Sterling",
-        "right": "Kevin Vallejos",
-        "rightKo": "Kevin Vallejos",
-        "weight": "Featherweight",
-        "section": "announced"
-      },
-      {
-        "left": "Dan Hooker",
-        "leftKo": "Dan Hooker",
-        "right": "Brian Ortega",
-        "rightKo": "Brian Ortega",
-        "weight": "Lightweight",
-        "section": "announced"
-      },
-      {
-        "left": "Kyoji Horiguchi",
-        "leftKo": "Kyoji Horiguchi",
-        "right": "Asu Almabayev",
-        "rightKo": "Asu Almabayev",
-        "weight": "Flyweight",
-        "section": "announced"
-      },
-      {
-        "left": "Jared Cannonier",
-        "leftKo": "Jared Cannonier",
-        "right": "Ikram Aliskerov",
-        "rightKo": "Ikram Aliskerov",
-        "weight": "Middleweight",
-        "section": "announced"
-      }
-    ]
-  },
-  {
     "id": "ufcstats-2026-12-05-adesanya-vs-magomedov",
     "title": "Adesanya vs Magomedov",
     "date": "2026-12-05",
