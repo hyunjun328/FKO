@@ -92,7 +92,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Brandon Moreno",
         "right": "Charles Johnson",
         "rightKo": "Charles Johnson",
-        "weight": "Flyweight",
+        "weight": "체급 확인 중",
         "section": "announced"
       },
       {
@@ -242,7 +242,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Gabriel Bonfim",
         "right": "Sean Brady",
         "rightKo": "Sean Brady",
-        "weight": "Welterweight",
+        "weight": "체급 확인 중",
         "section": "main"
       }
     ]
@@ -261,7 +261,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Joshua Van",
         "right": "Manel Kape",
         "rightKo": "Manel Kape",
-        "weight": "Flyweight Title",
+        "weight": "체급 확인 중",
         "section": "main"
       },
       {
@@ -269,7 +269,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Carlos Prates",
         "right": "Michael Morales",
         "rightKo": "Michael Morales",
-        "weight": "Welterweight Interim Title",
+        "weight": "체급 확인 중",
         "section": "announced"
       },
       {
@@ -277,7 +277,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Lance Gibson Jr.",
         "right": "Michael Johnson",
         "rightKo": "Michael Johnson",
-        "weight": "Lightweight",
+        "weight": "체급 확인 중",
         "section": "announced"
       },
       {
@@ -285,7 +285,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Serhiy Sidey",
         "right": "Louis Lee Scott",
         "rightKo": "Louis Lee Scott",
-        "weight": "Bantamweight",
+        "weight": "체급 확인 중",
         "section": "announced"
       },
       {
@@ -293,7 +293,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Cam Nelson",
         "right": "Sean Clancy Jr.",
         "rightKo": "Sean Clancy Jr.",
-        "weight": "Welterweight",
+        "weight": "체급 확인 중",
         "section": "announced"
       }
     ]
@@ -312,7 +312,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Quillan Salkilld",
         "right": "Benoît Saint Denis",
         "rightKo": "Benoît Saint Denis",
-        "weight": "Lightweight",
+        "weight": "체급 확인 중",
         "section": "main"
       },
       {
@@ -320,7 +320,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Bogdan Guskov",
         "right": "Robert Whittaker",
         "rightKo": "Robert Whittaker",
-        "weight": "Light Heavyweight",
+        "weight": "체급 확인 중",
         "section": "announced"
       },
       {
@@ -328,7 +328,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Jonathan Micallef",
         "right": "Sam Patterson",
         "rightKo": "Sam Patterson",
-        "weight": "Welterweight",
+        "weight": "체급 확인 중",
         "section": "announced"
       },
       {
@@ -336,7 +336,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Marwan Rahiki",
         "right": "JooSang Yoo",
         "rightKo": "JooSang Yoo",
-        "weight": "Featherweight",
+        "weight": "체급 확인 중",
         "section": "announced"
       },
       {
@@ -344,7 +344,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Kaan Ofli",
         "right": "Joanderson Brito",
         "rightKo": "Joanderson Brito",
-        "weight": "Featherweight",
+        "weight": "체급 확인 중",
         "section": "announced"
       }
     ]
@@ -363,7 +363,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Joe Pyfer",
         "right": "Bo Nickal",
         "rightKo": "Bo Nickal",
-        "weight": "Middleweight",
+        "weight": "체급 확인 중",
         "section": "main"
       }
     ]
