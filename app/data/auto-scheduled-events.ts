@@ -92,7 +92,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Brandon Moreno",
         "right": "Charles Johnson",
         "rightKo": "Charles Johnson",
-        "weight": "체급 확인 중",
+        "weight": "Flyweight",
         "section": "announced"
       },
       {
