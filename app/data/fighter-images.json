@@ -1183,6 +1183,18 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Jared Cannonier at UFC Fight Night 160 in Copenhagen.jpg"
   },
+  "Jarred Brooks": {
+    "src": "/fighters/jarred-brooks.webp",
+    "groups": [
+      "world-ranking"
+    ],
+    "wikidataId": "Q32857433",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jarred_Brooks_2018.png",
+    "author": "MMAnytt",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "file": "Jarred Brooks 2018.png"
+  },
   "Jasmine Jasudavicius": {
     "src": "/fighters/jasmine-jasudavicius.webp",
     "groups": [
@@ -2473,18 +2485,6 @@
     "license": "CC BY 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "file": "Sharabutdin Magomedov 2024.png"
-  },
-  "Stephen Thompson": {
-    "src": "/fighters/stephen-thompson.webp",
-    "groups": [
-      "world-ranking"
-    ],
-    "wikidataId": "Q11253984",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:From_cancer_to_company_commander_130802-M-AR522-306_(cropped).jpg",
-    "author": "Cpl. Devin Nichols",
-    "license": "Public domain",
-    "licenseUrl": "https://commons.wikimedia.org/wiki/File:From_cancer_to_company_commander_130802-M-AR522-306_(cropped).jpg",
-    "file": "From cancer to company commander 130802-M-AR522-306 (cropped).jpg"
   },
   "Steve Garcia": {
     "src": "/fighters/steve-garcia.webp",
