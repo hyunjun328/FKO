@@ -2,7 +2,7 @@
 export type OfficialRankingSnapshot = { checkedAt: string; divisions: Record<string, { champion?: string; entries: string[] }>; mensP4p: string[]; womensP4p: string[] };
 
 export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
-  "checkedAt": "2026-11-20",
+  "checkedAt": "2026-11-23",
   "divisions": {
     "flyweight": {
       "champion": "Joshua Van",
@@ -95,8 +95,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Gabriel Bonfim",
         "Belal Muhammad",
         "Mike Malott",
-        "Uroš Medić",
         "Kevin Holland",
+        "Uroš Medić",
         "Leon Edwards",
         "Kamaru Usman",
         "Joaquin Buckley",
@@ -169,7 +169,6 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
       "entries": [
         "Tatiana Suarez",
         "Zhang Weili",
-        "Virna Jandiroba",
         "Denise Gomes",
         "Gillian Robertson",
         "Fatima Kline",
@@ -181,7 +180,8 @@ export const OFFICIAL_RANKING_SNAPSHOT: OfficialRankingSnapshot = {
         "Mizuki",
         "Tabatha Ricci",
         "Amanda Lemos",
-        "Sam Hughes"
+        "Sam Hughes",
+        "Talita Alencar"
       ]
     },
     "womens-flyweight": {
