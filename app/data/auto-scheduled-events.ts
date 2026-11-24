@@ -96,19 +96,19 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Kyler Phillips",
-        "leftKo": "Kyler Phillips",
-        "right": "Ethyn Ewing",
-        "rightKo": "Ethyn Ewing",
-        "weight": "Bantamweight",
-        "section": "announced"
-      },
-      {
         "left": "Damian Pinas",
         "leftKo": "Damian Pinas",
         "right": "Baisangur Susurkaev",
         "rightKo": "Baisangur Susurkaev",
         "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Kyler Phillips",
+        "leftKo": "Kyler Phillips",
+        "right": "Ethyn Ewing",
+        "rightKo": "Ethyn Ewing",
+        "weight": "Bantamweight",
         "section": "announced"
       }
     ]
@@ -281,6 +281,30 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
+        "left": "Tanner Boser",
+        "leftKo": "Tanner Boser",
+        "right": "José Montanha",
+        "rightKo": "José Montanha",
+        "weight": "Heavyweight",
+        "section": "announced"
+      },
+      {
+        "left": "Marc-Andre Barriault",
+        "leftKo": "Marc-Andre Barriault",
+        "right": "Tresean Gore",
+        "rightKo": "Tresean Gore",
+        "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Gable Steveson",
+        "leftKo": "Gable Steveson",
+        "right": "Terrance Chatman",
+        "rightKo": "Terrance Chatman",
+        "weight": "Heavyweight",
+        "section": "announced"
+      },
+      {
         "left": "Serhiy Sidey",
         "leftKo": "Serhiy Sidey",
         "right": "Louis Lee Scott",
@@ -295,16 +319,24 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "rightKo": "Sean Clancy Jr.",
         "weight": "Welterweight",
         "section": "announced"
+      },
+      {
+        "left": "Julien Leblanc",
+        "leftKo": "Julien Leblanc",
+        "right": "Vlasto Čepo",
+        "rightKo": "Vlasto Čepo",
+        "weight": "Middleweight",
+        "section": "announced"
       }
     ]
   },
   {
-    "id": "ufcstats-2027-02-06-salkilld-vs-saint-denis",
+    "id": "ufcstats-2027-02-07-salkilld-vs-saint-denis",
     "title": "Salkilld vs Saint Denis",
-    "date": "2027-02-06",
+    "date": "2027-02-07",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-february-06-2027",
-    "startUtc": "2027-02-06T22:00:00Z",
-    "prelimsUtc": "2027-02-06T20:00:00Z",
+    "startUtc": "2027-02-07T01:00:00Z",
+    "prelimsUtc": "2027-02-06T22:00:00Z",
     "venue": "Afterpay Arena Sydney Olympic Park NSW Australia",
     "bouts": [
       {
