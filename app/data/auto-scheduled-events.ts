@@ -29,19 +29,19 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "section": "announced"
       },
       {
-        "left": "Serghei Spivac",
-        "leftKo": "Serghei Spivac",
-        "right": "Mario Pinto",
-        "rightKo": "Mario Pinto",
-        "weight": "Heavyweight",
-        "section": "announced"
-      },
-      {
         "left": "Levan Chokheli",
         "leftKo": "Levan Chokheli",
         "right": "Islam Dulatov",
         "rightKo": "Islam Dulatov",
         "weight": "Welterweight",
+        "section": "announced"
+      },
+      {
+        "left": "Serghei Spivac",
+        "leftKo": "Serghei Spivac",
+        "right": "Mario Pinto",
+        "rightKo": "Mario Pinto",
+        "weight": "Heavyweight",
         "section": "announced"
       },
       {
@@ -229,8 +229,8 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     ]
   },
   {
-    "id": "ufcstats-2027-01-24-bonfim-vs-brady",
-    "title": "Bonfim vs Brady",
+    "id": "ufcstats-2027-01-24-brady-vs-bonfim",
+    "title": "Brady vs Bonfim",
     "date": "2027-01-24",
     "sourceUrl": "https://www.ufc.com/event/ufc-fight-night-january-23-2027",
     "startUtc": "2027-01-24T01:00:00Z",
@@ -238,11 +238,11 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
     "venue": "Meta APEX Las Vegas , NV United States",
     "bouts": [
       {
-        "left": "Gabriel Bonfim",
-        "leftKo": "Gabriel Bonfim",
-        "right": "Sean Brady",
-        "rightKo": "Sean Brady",
-        "weight": "체급 확인 중",
+        "left": "Sean Brady",
+        "leftKo": "Sean Brady",
+        "right": "Gabriel Bonfim",
+        "rightKo": "Gabriel Bonfim",
+        "weight": "Welterweight",
         "section": "main"
       }
     ]
@@ -261,7 +261,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Joshua Van",
         "right": "Manel Kape",
         "rightKo": "Manel Kape",
-        "weight": "체급 확인 중",
+        "weight": "Flyweight Title",
         "section": "main"
       },
       {
@@ -269,7 +269,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Carlos Prates",
         "right": "Michael Morales",
         "rightKo": "Michael Morales",
-        "weight": "체급 확인 중",
+        "weight": "Welterweight Interim Title",
         "section": "announced"
       },
       {
@@ -277,7 +277,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Lance Gibson Jr.",
         "right": "Michael Johnson",
         "rightKo": "Michael Johnson",
-        "weight": "체급 확인 중",
+        "weight": "Lightweight",
         "section": "announced"
       },
       {
@@ -285,7 +285,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Serhiy Sidey",
         "right": "Louis Lee Scott",
         "rightKo": "Louis Lee Scott",
-        "weight": "체급 확인 중",
+        "weight": "Bantamweight",
         "section": "announced"
       },
       {
@@ -293,7 +293,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Cam Nelson",
         "right": "Sean Clancy Jr.",
         "rightKo": "Sean Clancy Jr.",
-        "weight": "체급 확인 중",
+        "weight": "Welterweight",
         "section": "announced"
       }
     ]
@@ -312,7 +312,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Quillan Salkilld",
         "right": "Benoît Saint Denis",
         "rightKo": "Benoît Saint Denis",
-        "weight": "체급 확인 중",
+        "weight": "Lightweight",
         "section": "main"
       },
       {
@@ -320,7 +320,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Bogdan Guskov",
         "right": "Robert Whittaker",
         "rightKo": "Robert Whittaker",
-        "weight": "체급 확인 중",
+        "weight": "Light Heavyweight",
         "section": "announced"
       },
       {
@@ -328,7 +328,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Jonathan Micallef",
         "right": "Sam Patterson",
         "rightKo": "Sam Patterson",
-        "weight": "체급 확인 중",
+        "weight": "Welterweight",
         "section": "announced"
       },
       {
@@ -336,7 +336,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Marwan Rahiki",
         "right": "JooSang Yoo",
         "rightKo": "JooSang Yoo",
-        "weight": "체급 확인 중",
+        "weight": "Featherweight",
         "section": "announced"
       },
       {
@@ -344,7 +344,7 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Kaan Ofli",
         "right": "Joanderson Brito",
         "rightKo": "Joanderson Brito",
-        "weight": "체급 확인 중",
+        "weight": "Featherweight",
         "section": "announced"
       }
     ]
@@ -363,9 +363,18 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "leftKo": "Joe Pyfer",
         "right": "Bo Nickal",
         "rightKo": "Bo Nickal",
-        "weight": "체급 확인 중",
+        "weight": "Middleweight",
         "section": "main"
       }
     ]
+  },
+  {
+    "id": "ufcstats-2027-02-20-tbd-vs-tbd",
+    "title": "TBD vs TBD",
+    "date": "2027-02-20",
+    "sourceUrl": "https://www.ufc.com/event/ufc-337",
+    "startUtc": "2027-02-20T22:00:00Z",
+    "prelimsUtc": "2027-02-20T20:00:00Z",
+    "venue": "Kia Center Orlando , FL United States"
   }
 ];
