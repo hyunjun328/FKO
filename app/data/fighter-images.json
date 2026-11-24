@@ -2620,6 +2620,19 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
     "file": "Tracy Cortez UFC.png"
   },
+  "Tyrell Fortune": {
+    "src": "/fighters/tyrell-fortune.webp",
+    "groups": [
+      "ranking",
+      "world-ranking"
+    ],
+    "wikidataId": "Q30231735",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bradley_v_Fortune_Tournoi_GPSO_2014_t135657_(cropped).jpg",
+    "author": "Marie-Lan Nguyen",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "file": "Bradley v Fortune Tournoi GPSO 2014 t135657 (cropped).jpg"
+  },
   "Umar Nurmagomedov": {
     "src": "/fighters/umar-nurmagomedov.webp",
     "groups": [
