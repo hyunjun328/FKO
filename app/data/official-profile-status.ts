@@ -101,7 +101,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "No peleando"
   },
   "Benson Henderson": {
-    "checkedAt": "2026-11-23",
+    "checkedAt": "2026-11-24",
     "division": "Welterweight Division",
     "heightCm": 175,
     "reachCm": 178,
@@ -110,7 +110,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Not Fighting"
   },
   "Brock Lesnar": {
-    "checkedAt": "2026-11-23",
+    "checkedAt": "2026-11-24",
     "division": "Heavyweight Division",
     "heightCm": 190,
     "reachCm": 206,
@@ -119,7 +119,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Retired"
   },
   "Cain Velasquez": {
-    "checkedAt": "2026-11-23",
+    "checkedAt": "2026-11-24",
     "division": "Heavyweight Division",
     "heightCm": 187,
     "knockoutWins": 12,
@@ -129,7 +129,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "status": "Retired"
   },
   "Carla Esparza": {
-    "checkedAt": "2026-11-23",
+    "checkedAt": "2026-11-24",
     "division": "Women's Strawweight Division",
     "heightCm": 155,
     "knockoutWins": 4,
@@ -140,7 +140,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 4
   },
   "Carlos Condit": {
-    "checkedAt": "2026-11-23",
+    "checkedAt": "2026-11-24",
     "division": "Welterweight Division",
     "heightCm": 188,
     "knockoutWins": 15,
@@ -151,7 +151,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 13
   },
   "Chan Sung Jung": {
-    "checkedAt": "2026-11-23",
+    "checkedAt": "2026-11-24",
     "division": "Featherweight Division",
     "heightCm": 170,
     "knockoutWins": 6,
@@ -162,7 +162,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 8
   },
   "ChangHo Lee": {
-    "checkedAt": "2026-11-23",
+    "checkedAt": "2026-11-24",
     "division": "Bantamweight Division",
     "heightCm": 173,
     "knockoutWins": 6,
@@ -173,7 +173,7 @@ export const OFFICIAL_PROFILE_STATUS: Record<string, OfficialProfileStatus> = {
     "submissionWins": 1
   },
   "Chris Weidman": {
-    "checkedAt": "2026-11-23",
+    "checkedAt": "2026-11-24",
     "division": "Middleweight Division",
     "firstRoundFinishes": 6,
     "heightCm": 188,
