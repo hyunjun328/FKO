@@ -244,6 +244,86 @@ export const AUTO_SCHEDULED_EVENTS: AutoScheduledEvent[] = [
         "rightKo": "Gabriel Bonfim",
         "weight": "Welterweight",
         "section": "main"
+      },
+      {
+        "left": "Pat Sabatini",
+        "leftKo": "Pat Sabatini",
+        "right": "Vinicius Oliveira",
+        "rightKo": "Vinicius Oliveira",
+        "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
+        "left": "Neil Magny",
+        "leftKo": "Neil Magny",
+        "right": "Daniil Donchenko",
+        "rightKo": "Daniil Donchenko",
+        "weight": "Welterweight",
+        "section": "announced"
+      },
+      {
+        "left": "Azamat Bekoev",
+        "leftKo": "Azamat Bekoev",
+        "right": "Eric McConico",
+        "rightKo": "Eric McConico",
+        "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Yadier del Valle",
+        "leftKo": "Yadier del Valle",
+        "right": "Ezra Elliot",
+        "rightKo": "Ezra Elliot",
+        "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
+        "left": "Trent Miller",
+        "leftKo": "Trent Miller",
+        "right": "Nick Klein",
+        "rightKo": "Nick Klein",
+        "weight": "Middleweight",
+        "section": "announced"
+      },
+      {
+        "left": "Ramon Taveras",
+        "leftKo": "Ramon Taveras",
+        "right": "Roman Puga",
+        "rightKo": "Roman Puga",
+        "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
+        "left": "Jamall Emmers",
+        "leftKo": "Jamall Emmers",
+        "right": "Ramiro Jimenez",
+        "rightKo": "Ramiro Jimenez",
+        "weight": "Featherweight",
+        "section": "announced"
+      },
+      {
+        "left": "Anna Melisano",
+        "leftKo": "Anna Melisano",
+        "right": "Marina Spasić",
+        "rightKo": "Marina Spasić",
+        "weight": "Women's Strawweight",
+        "section": "announced"
+      },
+      {
+        "left": "Ty Miller",
+        "leftKo": "Ty Miller",
+        "right": "Christopher Alvidrez",
+        "rightKo": "Christopher Alvidrez",
+        "weight": "Welterweight",
+        "section": "announced"
+      },
+      {
+        "left": "Smilla Sundell",
+        "leftKo": "Smilla Sundell",
+        "right": "Melissa Mullins",
+        "rightKo": "Melissa Mullins",
+        "weight": "Women's Bantamweight",
+        "section": "announced"
       }
     ]
   },
